@@ -1,0 +1,50 @@
+---
+title: "14a  Budget cycle of a local government unit (province, city or municipality) under the Local Government Code"
+---
+sequenceDiagram
+  autonumber
+  %% QUESTION THIS DIAGRAM ANSWERS: a local government has its own budget, separate from the GAA. Who prepares, enacts, reviews and executes it, and by which dates?
+  %% IDEA: the local cycle repeats the national cycle on a smaller scale, in which the local chief executive (governor or mayor) corresponds to the President and the sanggunian (local legislature) corresponds to Congress. One step has no national equivalent: a higher authority reviews the enacted budget.
+  %% SOURCES: Republic Act No. 7160, sections read one by one [LGC]: local finance committee s.316, budget proposals of department heads on or before 15 July s.317, executive budget to the sanggunian by 16 October s.318, enactment by the end of the fiscal year s.319, failure to enact and reenactment after 90 days s.323, budgetary requirements s.324, general limitations s.325, review by DBM s.326, review by the provincial sanggunian within 90 days and its effects s.327, certifications before disbursement s.344, automatic release of the national tax share s.286 and release by BTr through authorized government servicing banks [ALGU2026], fundamental principles s.305. Reports of local treasurers to BLGF through eSRE [eSRE]. COA audits local governments [CONST IX-D]. Barangay review within 60 days [BB4].
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: step 1 (annual investment program), step 3 (budget call of the local chief executive), step 6 (budget hearings), step 9 (approval of the ordinance by the local chief executive), the first half of step 14 (release of allotments inside the local government).
+  participant LCE as Local chief executive<br/>(governor or mayor)
+  participant LFC as Local finance committee<br/>(planning officer, budget<br/>officer, treasurer)
+  participant DEP as Heads of<br/>departments
+  participant SAN as Sanggunian<br/>(local legislature)
+  participant REV as Reviewing authority:<br/>DBM, or the provincial<br/>sanggunian
+  participant TRE as Local treasurer,<br/>accountant,<br/>budget officer
+  participant NAT as BTr, BLGF,<br/>COA
+
+  Note over LCE,DEP: PREPARATION (the year before)
+  LCE->>LFC: Annual investment program from the approved local development plan
+  LFC-->>LCE: Income estimate and recommended spending ceiling<br/>by sector, based on the approved local plans
+  LCE->>DEP: Budget call with the ceilings
+  TRE-->>LCE: Statements of income and expenditures
+  DEP->>LCE: Budget proposals, on or before 15 July
+  LCE->>LFC: Review and budget hearings
+  LCE->>SAN: Executive budget, not later than 16 October
+
+  Note over LCE,SAN: AUTHORIZATION
+  SAN->>SAN: Enact the appropriation ordinance on or before the end<br/>of the current fiscal year, within the legal limits (see 14b)<br/>#nbsp;
+  SAN->>LCE: Ordinance for approval
+  alt No ordinance at the start of the fiscal year
+    SAN->>SAN: Stay in session, with no other business.<br/>After 90 days the ordinance of the previous year is deemed reenacted,<br/>only for salaries, statutory and contractual obligations,<br/>and essential operating expenses<br/>#nbsp;
+  end
+
+  Note over SAN,REV: REVIEW BY A HIGHER AUTHORITY
+  SAN->>REV: Copy of the ordinance.<br/>DBM reviews provinces, highly urbanized cities, independent component cities,<br/>and municipalities in Metro Manila. The provincial sanggunian reviews<br/>component cities and municipalities
+  alt No action within 90 days
+    REV-->>SAN: The ordinance is deemed reviewed and stays in full force
+  else Items exceed the legal limits
+    REV-->>SAN: Ordinance declared inoperative in whole or in part.<br/>The treasurer may not pay from those items
+  end
+
+  Note over LCE,NAT: EXECUTION
+  TRE->>TRE: Release allotments. Collect local taxes and fees<br/>#nbsp;
+  NAT->>TRE: National Tax Allotment released automatically<br/>and directly to the treasurer (BTr)
+  TRE->>TRE: Before each payment: budget officer certifies the appropriation,<br/>accountant obligates it, treasurer certifies available funds<br/>#nbsp;
+  DEP->>LCE: Voucher certified and approved by the head of the department.<br/>The local chief executive also approves it, except for regularly recurring<br/>administrative expenses (payrolls, utilities, remittances)
+
+  Note over TRE,NAT: ACCOUNTABILITY
+  TRE->>NAT: Statement of receipts and expenditures to BLGF (eSRE),<br/>quarterly and annual. Accounts to COA
+  NAT-->>LCE: COA audit report

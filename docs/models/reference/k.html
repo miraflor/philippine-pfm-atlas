@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reference K — Source assurance, conformance rules and reproducibility · Philippine PFM Atlas</title>
+<meta name="description" content="Reference K — Source assurance, conformance rules and reproducibility">
+<meta name="color-scheme" content="light">
+<script>document.documentElement.classList.add('js');try{if(localStorage.getItem('pfm-atlas-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(error){}</script>
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="site-header">
+<div class="wrap header-row">
+<a class="brand" href="../../index.html"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="6" fill="#ffffff" stroke="#deded9"/><path d="M6 8.5H26" stroke="#1f4e8c" stroke-width="3.2" stroke-linecap="round"/><path d="M6 14H26" stroke="#2e6b2e" stroke-width="3.2" stroke-linecap="round"/><path d="M6 19.5H26" stroke="#a35200" stroke-width="3.2" stroke-linecap="round"/><path d="M6 25H26" stroke="#555555" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="0.1 4.9"/><path d="M17 8.5V14" stroke="#1b1b1b" stroke-width="3.6" stroke-linecap="round"/></svg><span>Philippine PFM Atlas</span></a>
+<form class="header-search" action="../../search.html" role="search"><label class="visually-hidden" for="q-top">Search the atlas</label><input id="q-top" name="q" type="search" placeholder="Search: SARO, voucher, BTMS"></form>
+<button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">Dark mode</button>
+</div>
+<nav class="wrap site-nav" aria-label="Main"><a href="../../index.html">Map</a><a href="../../walkthrough.html">Guided lessons</a><a href="../../big-picture.html">Big picture</a><a href="../../chapters/index.html">Chapters</a><a href="../../reference/index.html">References</a><a href="../../diagrams/index.html">Diagrams</a><a href="../../systems.html">Systems &amp; UACS</a><a href="../../models/index.html">Research models</a><a href="../../reference/g.html">Open points</a><a href="../../search.html">Search</a></nav>
+</header>
+<main id="main" class="wrap">
+<div class="model-note"><strong>Historical research reference (10 October 2026).</strong> Proposed modeling material, not the current procedural atlas and not an official information-system specification. Some older diagram IDs and claims have been superseded.</div><article class="prose"><h1>Reference K — Source assurance, conformance rules and reproducibility</h1>
+<h2>1. Traceability</h2>
+<p>Original chapters and diagrams remain unchanged except explicit analytical navigation notes and additions. Version 3 additions are indexed in <code>reference/diagram_index.csv</code> and detailed in <code>reference/L_change_log_and_remaining_limits.md</code>. New diagrams have editable source code but intentionally <strong>no PNG render</strong>; original 81 PNGs remain as legacy visual snapshots and are not claimed to have been updated.</p>
+<h2>2. Non-equivalent assertions</h2>
+<ul>
+<li><code>record has UACS</code> is not <code>record belongs to a known contract</code>;</li>
+<li><code>system is deployed</code> is not <code>its integration with a second system is deployed</code>;</li>
+<li><code>appropriation</code> is not <code>allotment</code>, which is not <code>obligation</code>, <code>payable</code> or <code>cash</code>;</li>
+<li><code>source says planned</code> is not <code>production evidence</code>;</li>
+<li><code>COA audit may occur</code> is not <code>COA approved this individual payment in advance</code>;</li>
+<li><code>classified amount reconciles</code> is not <code>each micro-record matches</code>.</li>
+</ul>
+<h2>3. Automated checks</h2>
+<p>Run <code>python tools/check_atlas.py</code> (the original checker) and <code>python tools/check_strengthened_atlas.py</code> (new source / metadata / register checks). The latter checks uniqueness and file presence, cross-references in new docs, code fences / diagram starts, allowed source values, event/authority/control/record references and duplicate IDs. It does <strong>not</strong> certify Mermaid rendering, PlantUML rendering, legal correctness, deployments or actual transaction tests.</p>
+<h2>4. Evidence and correction log</h2>
+<p>A correction requires <code>statement_id</code>, file+line or diagram ID, previous wording, replacement, source URL/title, date, reason, status (<code>confirmed</code> / <code>inferred</code> / <code>open</code>), and reviewer. If a source has changed since 8 October 2026, record its release/effective date rather than retroactively rewriting FY 2026 rules. The atlas is a mapping exercise, not legal advice or a substitute for current agency manuals.</p>
+<h2>5. Research priorities</h2>
+<ol>
+<li>Cross-check payment and accounting entries against actual COA GAM Volumes I/II and current implementing circulars.</li>
+<li>Obtain primary production evidence for actual BTMS and banking interfaces.</li>
+<li>Validate UACS mapping and crosswalks at record-level, not only aggregate code lists.</li>
+<li>Deepen BIR, BOC, BTr revenue and debt transaction details and reconciliation.</li>
+<li>Model LGU, GOCC, GFI, BARMM and special account variants with the same rigor as central NGAs.</li>
+</ol>
+</article><p><a href="../index.html">← Research models</a></p>
+</main>
+<footer class="site-footer"><div class="wrap"><p>Philippine PFM Atlas. An independent reference. It is not an official publication of the Philippine government, and it does not replace the laws, circulars and manuals that it cites. Facts on current events are as of 8 October 2026.</p><p><a href="../../about.html">About the atlas</a> · <a href="../../reference/f.html">Sources</a> · <a href="../../reference/g.html">Open points</a></p></div></footer>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+---
+title: "16a  Information systems by PFM function: in use today, and planned under the IFMIS"
+config:
+  flowchart:
+    wrappingWidth: 900
+---
+flowchart LR
+  %% QUESTION THIS DIAGRAM ANSWERS: for each PFM function, which system holds the record today, who owns it, and what does the PFM Reforms Roadmap plan for that function?
+  %% READING: one row = one function. Left = the system in use today and its owner. Right = the plan. Orange = a function of BTMS, the planned core. A dotted arrow means "planned change", not a finished one. Today the systems on the left are separate: data passes between them by reports, by files and by typing the same data again.
+  %% SOURCES: systems by function, gaps (duplicate reports, manual processing, no integration), design with interfaces (APIs) and a central core, list of systems in the national hub [ROADMAP2024]. The five functions of the BTMS Budget Execution Module, later modules for budget management and treasury, interfaces to procurement, document, payment and financial systems [CL2025-8]. BTMS status [INQ-BTMS]. Reports through URS until agencies migrate to BTMS [GAA2026-GP]. Planned systems, UACS review, data architecture, off-budget accounts, portal [SFA6]. OSBPS [NBM156]. ADRS [ADRS][NBC599]. GMIS [GMIS]. PhilGEPS [RA12009 s.20]. eMDS [eMDS]. COA systems [COA-GAS]. BTr systems [BTR-SYS]. BIR channels [BIR-PAY]. PAS [PAS]. eSRE [eSRE]. PIPOL [PIP-MEMO].
+  %% NOT STATED IN THE SOURCES I READ: a one-to-one replacement plan for each system. The Roadmap says that agencies keep their systems and connect them to the core. Rows 2, 4 and 14 on the right are my reading of that statement.
+  %% MORE SOURCES: the COMPASS portal and Executive Order No. 126 [COMPASS-LAUNCH][EO126]; the name of the customs system [BOC-MOD].
+  %% INFERENCE: the action plan of the Roadmap names "a unified portal and mobile applications" [SFA6]. The sources I read do not say that COMPASS is this planned portal. I place COMPASS in the same box because both are portals for the public.
+  %% MORE SOURCES ON PLANS: the planned integrated planning and budgeting tool for the investment program [SFA1]. The payment feature that the procurement rules require of PhilGEPS, and the place of the IFMIS in those rules [IRR12009 s.20.2.8, s.21].
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: what BPMS and the DBM e-Budget do in detail, the debt recording system.
+
+  subgraph TODAY["TODAY"]
+    A1["1  Investment program<br/>PIPOL (DEPDev)"]
+    A2["2  Budget proposals and proposed budget<br/>OSBPS v2.0 and BPMS (DBM)"]
+    A3["3  Positions and personnel budget<br/>GMIS with PSIPOP (DBM)"]
+    A4["4  Appropriations and release documents<br/>e-Budget and ADRS (DBM)"]
+    A5["5  Procurement notices and awards<br/>PhilGEPS (PS-DBM)"]
+    A6["6  Obligations<br/>registry in each agency: paper, spreadsheet,<br/>or the eBudget of COA"]
+    A7["7  Payment orders<br/>LDDAP-ADA or check to the servicing bank,<br/>bank facility such as eMDS (LBP)"]
+    A8["8  Agency receipts<br/>official receipts, agency records,<br/>bank collection reports in NGCDS (BTr)"]
+    A9["9  Property<br/>records in each agency,<br/>National Asset Registry System (BTr)"]
+    A10["10  Accounting<br/>eNGAS of COA, another software,<br/>or spreadsheets, in each agency"]
+    A11["11  Plans and accountability reports<br/>URS (DBM). Statements to COA: AFR System"]
+    A12["12  Cash, collections, debt<br/>eTRAMS, NGCDS, NRoSS and<br/>accounting systems of BTr"]
+    A13["13  Tax and customs<br/>eFPS, eBIRForms, ePay (BIR).<br/>E2M customs system and PAS (BOC, banks)"]
+    A14["14  Payroll<br/>separate system in each agency"]
+    A15["15  Project monitoring<br/>DIME (DBM) and agency systems"]
+    A16["16  Local governments<br/>own systems. Reports to BLGF in eSRE"]
+    A17["17  Common to all rows<br/>UACS codes. Data passed by reports and repeated typing.<br/>Controls by signatures on paper.<br/>Off-budget funds only in periodic reports"]
+  end
+
+  subgraph PLAN["PLANNED"]
+    B1["Integrated planning and budgeting tool<br/>(pilot 2026 to 2027). IPMRS, with PIPOL and<br/>DIME assessed for fit. A DEPDev and DBM working group<br/>was created to link PIPOL and OSBPS"]
+    B2["Kept, and connected to the core<br/>through interfaces (APIs)"]
+    B3["NGHRPS: one HR and payroll<br/>system for the national government"]
+    C4["BTMS, later stage:<br/>budget management module"]:::core
+    B5["Interface between PhilGEPS and BTMS"]
+    C6["BTMS: commitment and<br/>obligations management"]:::core
+    C7["BTMS: payments management<br/>(electronic transfer or check)"]:::core
+    C8["BTMS: receipt management.<br/>eGovPay platform (DICT)"]:::core
+    C9["BTMS: property, plant and<br/>equipment management"]:::core
+    C10["BTMS: accounting and<br/>financial reporting"]:::core
+    B11["Reports produced from BTMS data.<br/>URS stays until agencies migrate"]
+    C12["BTMS, later stage: treasury modules"]:::core
+    B13["Receipts side connected<br/>through interfaces"]
+    B14["NGHRPS (the same system as in row 3)"]
+    B15["IPMRS: Integrated Project Monitoring<br/>and Reporting System (pilot 2028)"]
+    B16["Separate systems hub<br/>for local governments"]
+    X1["Integration and data architecture: interfaces,<br/>one PFM data model, metadata registry"]
+    X2["Review and update of UACS (2026-2027)"]
+    X3["Off-budget accounts into BTMS or URS<br/>(pilot 2028)"]
+    X4["Portal for the public. The plan names a unified portal and<br/>mobile applications. COMPASS is in use since June 2026 and is,<br/>by an order of September 2026, the platform for budget disclosures"]
+  end
+
+  A1 -.-> B1
+  A2 -.-> B2
+  A3 -.-> B3
+  A4 -.-> C4
+  A5 -.-> B5
+  A6 -.-> C6
+  A7 -.-> C7
+  A8 -.-> C8
+  A9 -.-> C9
+  A10 -.-> C10
+  A11 -.-> B11
+  A12 -.-> C12
+  A13 -.-> B13
+  A14 -.-> B14
+  A15 -.-> B15
+  A16 -.-> B16
+  A17 -.-> X1
+  A17 -.-> X2
+  A17 -.-> X3
+  A17 -.-> X4
+
+  classDef default fill:#ffffff,stroke:#444444,color:#111
+  classDef core fill:#fde0c2,stroke:#a35200,color:#111,stroke-width:2px
+  style TODAY fill:#f2f2f2,stroke:#555555
+  style PLAN fill:#eef4fb,stroke:#1f4e8c

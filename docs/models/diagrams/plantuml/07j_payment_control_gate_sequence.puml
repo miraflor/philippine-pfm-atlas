@@ -1,0 +1,32 @@
+' QUESTION THIS DIAGRAM ANSWERS: How do payments take different substantiation routes before settlement?
+' SOURCES: Generic abstraction [RA12009] [GAM] [NBC599]
+@startuml
+title 07j Alternative disbursement control gates
+skinparam shadowing false
+start
+:Determine expenditure, legal authority, fund, payment route;
+if (Payment type?) then (contract)
+  :Verify contract and obligation;
+  if (Evidence?) then (completed delivery)
+    :Inspect and accept delivery;
+  else (advance or progress)
+    :Apply case-specific advance or progress billing controls;
+  endif
+elseif (payroll)
+  :Validate position, entitlement and payroll;
+elseif (transfer)
+  :Validate recipient, transfer conditions and legal basis;
+elseif (debt)
+  :Validate due amounts, schedules and debt authority;
+else (other)
+  :Validate applicable documentary and legal conditions;
+endif
+:Validate claim, cash authority or alternative valid channel;
+if (All controls met?) then (yes)
+  :Issue payment and obtain bank evidence;
+  :Record, reconcile and retain audit trail;
+else (no)
+  :Hold, reject or cure exception;
+endif
+stop
+@enduml

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research model 19c: 19c  Future-year fiscal commitments and contingent risk · Philippine PFM Atlas</title>
+<meta name="description" content="Research model 19c: 19c  Future-year fiscal commitments and contingent risk">
+<meta name="color-scheme" content="light">
+<script>document.documentElement.classList.add('js');try{if(localStorage.getItem('pfm-atlas-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(error){}</script>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="site-header">
+<div class="wrap header-row">
+<a class="brand" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="6" fill="#ffffff" stroke="#deded9"/><path d="M6 8.5H26" stroke="#1f4e8c" stroke-width="3.2" stroke-linecap="round"/><path d="M6 14H26" stroke="#2e6b2e" stroke-width="3.2" stroke-linecap="round"/><path d="M6 19.5H26" stroke="#a35200" stroke-width="3.2" stroke-linecap="round"/><path d="M6 25H26" stroke="#555555" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="0.1 4.9"/><path d="M17 8.5V14" stroke="#1b1b1b" stroke-width="3.6" stroke-linecap="round"/></svg><span>Philippine PFM Atlas</span></a>
+<form class="header-search" action="../search.html" role="search"><label class="visually-hidden" for="q-top">Search the atlas</label><input id="q-top" name="q" type="search" placeholder="Search: SARO, voucher, BTMS"></form>
+<button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">Dark mode</button>
+</div>
+<nav class="wrap site-nav" aria-label="Main"><a href="../index.html">Map</a><a href="../walkthrough.html">Guided lessons</a><a href="../big-picture.html">Big picture</a><a href="../chapters/index.html">Chapters</a><a href="../reference/index.html">References</a><a href="../diagrams/index.html">Diagrams</a><a href="../systems.html">Systems &amp; UACS</a><a href="../models/index.html">Research models</a><a href="../reference/g.html">Open points</a><a href="../search.html">Search</a></nav>
+</header>
+<main id="main" class="wrap">
+<p class="eyebrow">Supplementary analytic model · 10 October 2026</p><h1>19c  Future-year fiscal commitments and contingent risk</h1><div class="model-note"><strong>Versioned, source-only model.</strong> This diagram is from the earlier strengthened research edition. It has not been reconciled against the latest 12 October procedures, and no verified PNG rendering is supplied. A reused ID such as 07h does <em>not</em> replace the current diagram of that ID.</div><p><strong>Historical ID:</strong> 19c · <strong>Notation:</strong> mermaid · <a href="diagrams/mermaid/19c_fiscal_risk_multiyear.mmd" download>Download original editable code</a> · <a href="../diagrams/index.html">Current diagram gallery</a></p><h2>Source code</h2><div class="copy-row"><button type="button" data-copy="model-19c">Copy code</button></div><pre class="model-code" id="model-19c"><code class="model-source">---
+title: &quot;19c  Future-year fiscal commitments and contingent risk&quot;
+---
+  %% QUESTION THIS DIAGRAM ANSWERS: What may require resources without appearing fully in the current budget appropriation?
+  %% SOURCES: [RA11966] [ROADMAP2024] [MYCA] legal treatments differ by instrument
+  %% SCOPE: Reference view; not a verified deployed system interface.
+  %% READING: Arrows show possible evidence, authority or event dependencies, not a universal time order or verified API.
+flowchart TB
+  NOW[&quot;Current-year authority / fiscal aggregates&quot;] --&gt; DEC{&quot;Decision with possible future-year effect?&quot;}
+  DEC --&gt; CONTRACT[&quot;Multi-year procurement / contractual commitment&quot;]
+  DEC --&gt; PPP[&quot;PPP availability payments, guarantees, termination risk&quot;]
+  DEC --&gt; DEBT[&quot;Debt principal, interest, refinancing and FX&quot;]
+  DEC --&gt; GOCC[&quot;GOCC support, financial guarantees and contingent liabilities&quot;]
+  DEC --&gt; CLIM[&quot;Disaster / climate shocks, legal claims, pensions and other liabilities&quot;]
+  CONTRACT --&gt; MON[&quot;Fiscal risk register: source, amount or range, timing, triggers, mitigating controls&quot;]
+  PPP --&gt; MON
+  DEBT --&gt; MON
+  GOCC --&gt; MON
+  CLIM --&gt; MON
+  MON --&gt; TEST[&quot;Stress test / disclosures / medium-term planning&quot;] --&gt; LATER[&quot;Later budget decisions and financing&quot;]
+</code></pre><p><a href="index.html">← All research models</a></p>
+</main>
+<footer class="site-footer"><div class="wrap"><p>Philippine PFM Atlas. An independent reference. It is not an official publication of the Philippine government, and it does not replace the laws, circulars and manuals that it cites. Facts on current events are as of 8 October 2026.</p><p><a href="../about.html">About the atlas</a> · <a href="../reference/f.html">Sources</a> · <a href="../reference/g.html">Open points</a></p></div></footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

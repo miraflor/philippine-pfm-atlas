@@ -1,0 +1,5 @@
+# Packages for tools/build_site.py and tools/validate_site.py
+mistune>=3.2,<4
+beautifulsoup4>=4.12,<5
+# Package for tools/render_diagrams.py (reduces each image to 256 colours)
+Pillow>=10

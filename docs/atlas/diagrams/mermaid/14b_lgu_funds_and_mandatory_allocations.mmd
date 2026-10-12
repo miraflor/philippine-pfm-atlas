@@ -1,0 +1,54 @@
+---
+title: "14b  Money of a local government: sources, and the limits that every local budget must respect"
+config:
+  flowchart:
+    wrappingWidth: 900
+---
+flowchart LR
+  %% QUESTION THIS DIAGRAM ANSWERS: where does the money of a local government come from, and which parts of its budget are fixed by national law?
+  %% READING: left = sources. Middle = the local budget. Right = minimum allocations (must spend at least) and maximum limits (may not spend more than).
+  %% SOURCES: share of 40 percent of national taxes of the third preceding fiscal year, possible reduction to not less than 30 percent [LGC s.284]. Base widened from internal revenue taxes to all national taxes by the Supreme Court, applied from FY 2022 [MANDANAS]. Division among levels and the formula [LGC s.285]. Republic Act No. 11683 of 2022 does not change these shares. It lets a newly converted city bring its allotment as a municipality into the allotment of cities for three years [RA11683]. Automatic and direct release, no lien or holdback [LGC s.286][CONST X.6]. At least 20 percent for development projects [LGC s.287]. Budgetary requirements [LGC s.324]. General limitations [LGC s.325]. Power to create own revenue sources [CONST X.5]. Local Government Support Fund [NBC599]. Barangay rules [BB4].
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: the list of local taxes, the shares in national wealth and other special shares, the special education fund. The later law that turned the 5 percent calamity fund into the local disaster risk reduction and management fund was read only in two documents that quote it [RA10121].
+
+  subgraph SRC["SOURCES"]
+    S1["NATIONAL TAX ALLOTMENT<br/>40 percent of national taxes collected<br/>in the third fiscal year before the budget year.<br/>Provinces 23, cities 23, municipalities 34, barangays 20 percent.<br/>Inside a level: population 50, land area 25, equal share 25 percent"]:::nta
+    S2["OTHER SHARES AND NATIONAL TRANSFERS<br/>special shares fixed by law, and the<br/>Local Government Support Fund (released by DBM and BTr)"]
+    S3["LOCAL TAXES<br/>real property tax, business tax<br/>and other taxes allowed by the Code"]
+    S4["FEES, CHARGES, INCOME OF<br/>LOCAL ECONOMIC ENTERPRISES"]
+    S5["LOANS AND GRANTS"]
+  end
+
+  B["LOCAL BUDGET<br/>appropriation ordinance of the sanggunian.<br/>Total appropriations may not exceed<br/>the estimated income (balanced budget)"]:::bud
+
+  subgraph MIN["MINIMUM ALLOCATIONS"]
+    M1["Development projects<br/>at least 20 percent of the<br/>National Tax Allotment"]
+    M2["Disaster fund (see 15e)<br/>at least 5 percent of estimated revenue<br/>from regular sources"]
+    M3["Statutory and contractual<br/>obligations: fully provided"]
+    M4["Aid to each component barangay<br/>at least PHP 1,000"]
+  end
+
+  subgraph MAX["MAXIMUM LIMITS"]
+    X1["Personal services<br/>45 percent of regular income of the previous year<br/>(first to third class), or 55 percent (fourth class or lower)"]
+    X2["Debt service<br/>20 percent of regular income"]
+    X3["Discretionary purposes of the<br/>local chief executive: 2 percent of basic<br/>real property tax receipts of the previous year"]
+  end
+
+  S1 --> B
+  S2 --> B
+  S3 --> B
+  S4 --> B
+  S5 --> B
+  B --> M1
+  B --> M2
+  B --> M3
+  B --> M4
+  B --> X1
+  B --> X2
+  B --> X3
+
+  classDef default fill:#ffffff,stroke:#444444,color:#111
+  classDef nta fill:#fde0c2,stroke:#a35200,color:#111,stroke-width:2px
+  classDef bud fill:#d5ecd5,stroke:#2e6b2e,color:#111,stroke-width:2px
+  style SRC fill:#fff8dc,stroke:#8a6d00
+  style MIN fill:#eef4fb,stroke:#1f4e8c
+  style MAX fill:#fdf1e3,stroke:#a35200

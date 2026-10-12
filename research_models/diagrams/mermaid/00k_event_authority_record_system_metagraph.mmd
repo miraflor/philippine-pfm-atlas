@@ -1,0 +1,26 @@
+---
+title: "00k  Shared reference model of a financial event"
+---
+  %% QUESTION THIS DIAGRAM ANSWERS: What entities must be connected for an event to be understood and tested?
+  %% SOURCES: Atlas modeling proposal, not a statutory schema; GENERAL KNOWLEDGE / atlas inference
+  %% SCOPE: Reference view; not a verified deployed system interface.
+  %% READING: Arrows show possible evidence, authority or event dependencies, not a universal time order or verified API.
+flowchart LR
+  E["PFM EVENT
+identifiable action or state change"]
+  AU["Authority
+issuer, approver, recorder"] -->|authorized / performed by| E
+  RULE["Rule
+validity date, condition, exception"] -->|constrains| E
+  IN["Input record
+versioned ID"] -->|evidence| E
+  E -->|creates / changes| OUT["Result record
+versioned ID"]
+  E -->|classified under| U["UACS / other taxonomy
+versioned"]
+  E -->|held or transmitted by| SYS["System and deployment scope"]
+  E -->|changes balance| FIN["Financial position
+authority, liability or cash"]
+  E -->|triggers / confirms| PERF["Physical delivery or outcome"]
+  SYS -->|interface proof| INT["Exchange evidence
+API, batch, portal, manual, unknown"]

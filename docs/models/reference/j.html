@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reference J — Control gates, exception patterns, and time · Philippine PFM Atlas</title>
+<meta name="description" content="Reference J — Control gates, exception patterns, and time">
+<meta name="color-scheme" content="light">
+<script>document.documentElement.classList.add('js');try{if(localStorage.getItem('pfm-atlas-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(error){}</script>
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="site-header">
+<div class="wrap header-row">
+<a class="brand" href="../../index.html"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="6" fill="#ffffff" stroke="#deded9"/><path d="M6 8.5H26" stroke="#1f4e8c" stroke-width="3.2" stroke-linecap="round"/><path d="M6 14H26" stroke="#2e6b2e" stroke-width="3.2" stroke-linecap="round"/><path d="M6 19.5H26" stroke="#a35200" stroke-width="3.2" stroke-linecap="round"/><path d="M6 25H26" stroke="#555555" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="0.1 4.9"/><path d="M17 8.5V14" stroke="#1b1b1b" stroke-width="3.6" stroke-linecap="round"/></svg><span>Philippine PFM Atlas</span></a>
+<form class="header-search" action="../../search.html" role="search"><label class="visually-hidden" for="q-top">Search the atlas</label><input id="q-top" name="q" type="search" placeholder="Search: SARO, voucher, BTMS"></form>
+<button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">Dark mode</button>
+</div>
+<nav class="wrap site-nav" aria-label="Main"><a href="../../index.html">Map</a><a href="../../walkthrough.html">Guided lessons</a><a href="../../big-picture.html">Big picture</a><a href="../../chapters/index.html">Chapters</a><a href="../../reference/index.html">References</a><a href="../../diagrams/index.html">Diagrams</a><a href="../../systems.html">Systems &amp; UACS</a><a href="../../models/index.html">Research models</a><a href="../../reference/g.html">Open points</a><a href="../../search.html">Search</a></nav>
+</header>
+<main id="main" class="wrap">
+<div class="model-note"><strong>Historical research reference (10 October 2026).</strong> Proposed modeling material, not the current procedural atlas and not an official information-system specification. Some older diagram IDs and claims have been superseded.</div><article class="prose"><h1>Reference J — Control gates, exception patterns, and time</h1>
+<h2>1. Replace one universal payment gate with payment families</h2>
+<table>
+<thead>
+<tr>
+<th>Family</th>
+<th>Typical initiating event</th>
+<th>Critical evidence (illustrative, not exhaustive)</th>
+<th>Why a delivered-goods rule can fail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Standard contractor invoice</td>
+<td>Delivery / work achievement</td>
+<td>Contract, obligation, acceptance/progress evidence, approved claim, valid authority</td>
+<td>Correct main pattern; but progress bills and advances have conditional documentation</td>
+</tr>
+<tr>
+<td>Lawful advance or mobilization</td>
+<td>Contractual advance authorized</td>
+<td>Contract conditions, guarantees/security if required, liquidation</td>
+<td>Payment may precede final acceptance</td>
+</tr>
+<tr>
+<td>Personnel</td>
+<td>Service / entitlement in payroll period</td>
+<td>Lawful appointment, payroll certifications, deductions, funding</td>
+<td>No bidding or supplier acceptance</td>
+</tr>
+<tr>
+<td>Cash benefit / assistance</td>
+<td>Beneficiary entitlement</td>
+<td>Program rules, eligibility, approved distribution / controls</td>
+<td>Payment is not to supplier for accepted goods</td>
+</tr>
+<tr>
+<td>Interagency / LGU / GOCC transfer</td>
+<td>Lawful transfer decision</td>
+<td>Appropriation/automatic share, transfer conditions, reporting</td>
+<td>Receiving unit has its own accounting process</td>
+</tr>
+<tr>
+<td>Debt service</td>
+<td>Interest/principal becomes due</td>
+<td>Debt instrument, payment schedule and statutory authority</td>
+<td>No procurement / inspection gate</td>
+</tr>
+<tr>
+<td>Tax refund</td>
+<td>Valid refundable tax / final determination</td>
+<td>Claim, original collection/assessment, offset, refund authority</td>
+<td>Corrects revenue and produces outgoing cash</td>
+</tr>
+</tbody>
+</table>
+<p><strong>No row is a complete legal checklist.</strong> FY validity, delegation, amount thresholds, case-specific rules, and controls must be checked against the primary issuances. <a href="https://www.gppb.gov.ph/public-advisory-no-09-2026/">RA 12009 official IRR advisory</a> cautions against citing withdrawn 2026 IRR text.</p>
+<h2>2. The temporal model</h2>
+<p>A transaction has at least four dates: <code>authority_effective</code>, <code>economic_event</code>, <code>record_posting</code>, and <code>cash_settlement</code>. Another clock describes the FY and appropriation validity. The clocks need not match. FY 2026 agency action might pay an older payable under a lawful special validity rule; audit may occur later, while estimates for FY 2027 are already being prepared.</p>
+<h2>3. Accounting is event-driven</h2>
+<p>Record items <strong>when recognition criteria are met</strong>, not only after cash moves. Accrual accounting may recognize a payable at delivery, a receivable prior to collection or asset changes independent of cash settlement. Bank settlement supplies separate evidence. Budgetary and financial accounting should be reconciled, not treated as identical.</p>
+<h2>4. Audit is not a terminal payment approval</h2>
+<p>Agency management controls operate during procurement, obligation, payment, accounting and reporting. Internal audit is separate where established. COA's independent audit may examine transactions and balances over time; specific notices, appeals and outcomes require the governing COA rules and procedural facts. Avoid the inference that every payment must wait for COA's audit.</p>
+<p><strong>Diagrams:</strong> <a href="../diagrams/mermaid/07h_disbursement_pattern_catalog.mmd">07h</a>, <a href="../diagrams/mermaid/08e_accounting_recognition_events.mmd">08e</a>, <a href="../diagrams/mermaid/08f_multilateral_reconciliation.mmd">08f</a>, <a href="../diagrams/mermaid/09d_controls_audit_and_responses.mmd">09d</a>.</p>
+</article><p><a href="../index.html">← Research models</a></p>
+</main>
+<footer class="site-footer"><div class="wrap"><p>Philippine PFM Atlas. An independent reference. It is not an official publication of the Philippine government, and it does not replace the laws, circulars and manuals that it cites. Facts on current events are as of 8 October 2026.</p><p><a href="../../about.html">About the atlas</a> · <a href="../../reference/f.html">Sources</a> · <a href="../../reference/g.html">Open points</a></p></div></footer>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

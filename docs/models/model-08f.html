@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research model 08f: 08f  Reconciliation across budget, accounting, bank and physical evidence · Philippine PFM Atlas</title>
+<meta name="description" content="Research model 08f: 08f  Reconciliation across budget, accounting, bank and physical evidence">
+<meta name="color-scheme" content="light">
+<script>document.documentElement.classList.add('js');try{if(localStorage.getItem('pfm-atlas-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(error){}</script>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="site-header">
+<div class="wrap header-row">
+<a class="brand" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="6" fill="#ffffff" stroke="#deded9"/><path d="M6 8.5H26" stroke="#1f4e8c" stroke-width="3.2" stroke-linecap="round"/><path d="M6 14H26" stroke="#2e6b2e" stroke-width="3.2" stroke-linecap="round"/><path d="M6 19.5H26" stroke="#a35200" stroke-width="3.2" stroke-linecap="round"/><path d="M6 25H26" stroke="#555555" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="0.1 4.9"/><path d="M17 8.5V14" stroke="#1b1b1b" stroke-width="3.6" stroke-linecap="round"/></svg><span>Philippine PFM Atlas</span></a>
+<form class="header-search" action="../search.html" role="search"><label class="visually-hidden" for="q-top">Search the atlas</label><input id="q-top" name="q" type="search" placeholder="Search: SARO, voucher, BTMS"></form>
+<button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">Dark mode</button>
+</div>
+<nav class="wrap site-nav" aria-label="Main"><a href="../index.html">Map</a><a href="../walkthrough.html">Guided lessons</a><a href="../big-picture.html">Big picture</a><a href="../chapters/index.html">Chapters</a><a href="../reference/index.html">References</a><a href="../diagrams/index.html">Diagrams</a><a href="../systems.html">Systems &amp; UACS</a><a href="../models/index.html">Research models</a><a href="../reference/g.html">Open points</a><a href="../search.html">Search</a></nav>
+</header>
+<main id="main" class="wrap">
+<p class="eyebrow">Supplementary analytic model · 10 October 2026</p><h1>08f  Reconciliation across budget, accounting, bank and physical evidence</h1><div class="model-note"><strong>Versioned, source-only model.</strong> This diagram is from the earlier strengthened research edition. It has not been reconciled against the latest 12 October procedures, and no verified PNG rendering is supplied. A reused ID such as 07h does <em>not</em> replace the current diagram of that ID.</div><p><strong>Historical ID:</strong> 08f · <strong>Notation:</strong> mermaid · <a href="diagrams/mermaid/08f_multilateral_reconciliation.mmd" download>Download original editable code</a> · <a href="../diagrams/index.html">Current diagram gallery</a></p><h2>Source code</h2><div class="copy-row"><button type="button" data-copy="model-08f">Copy code</button></div><pre class="model-code" id="model-08f"><code class="model-source">---
+title: &quot;08f  Reconciliation across budget, accounting, bank and physical evidence&quot;
+---
+  %% QUESTION THIS DIAGRAM ANSWERS: What differences must be explained instead of assumed to be errors?
+  %% SOURCES: [GAM] [JC2019-1] conceptual control model
+  %% SCOPE: Reference view; not a verified deployed system interface.
+  %% READING: Arrows show possible evidence, authority or event dependencies, not a universal time order or verified API.
+flowchart TB
+  BR[&quot;Budget registers
+allotment / obligation / disbursement&quot;] --&gt; MATCH[&quot;Reconciliation and exception worklist&quot;]
+  GL[&quot;Accounting books
+receivable / payable / expense / asset&quot;] --&gt; MATCH
+  BNK[&quot;Servicing bank and BTr
+settlement / cash balances&quot;] --&gt; MATCH
+  DOC[&quot;Contracts, receipts, deliveries, claims&quot;] --&gt; MATCH
+  ASSET[&quot;Property and asset ledgers&quot;] --&gt; MATCH
+  MATCH --&gt; CAUSE{&quot;Difference explained?&quot;}
+  CAUSE --&gt;|Timing| TIM[&quot;Cutoff / in-transit / accrual difference&quot;]
+  CAUSE --&gt;|Classification| CL[&quot;UACS / account / fund / fiscal period mapping&quot;]
+  CAUSE --&gt;|Missing link| MIS[&quot;Obligation / contract / voucher / payment reference issue&quot;]
+  CAUSE --&gt;|Irregularity| EXC[&quot;Escalate as control exception and investigate&quot;]
+  CAUSE --&gt;|Aligned| OK[&quot;Reconciled with evidence and sign-off&quot;]
+  TIM --&gt; FIX[&quot;Document adjusting or reconciling item&quot;]
+  CL --&gt; FIX
+  MIS --&gt; FIX
+  EXC --&gt; FIX
+  FIX --&gt; MATCH
+</code></pre><p><a href="index.html">← All research models</a></p>
+</main>
+<footer class="site-footer"><div class="wrap"><p>Philippine PFM Atlas. An independent reference. It is not an official publication of the Philippine government, and it does not replace the laws, circulars and manuals that it cites. Facts on current events are as of 8 October 2026.</p><p><a href="../about.html">About the atlas</a> · <a href="../reference/f.html">Sources</a> · <a href="../reference/g.html">Open points</a></p></div></footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

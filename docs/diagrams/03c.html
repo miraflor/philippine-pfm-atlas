@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diagram 03c: The Two-Tier Budgeting Approach: how one program or project enters the proposed budget · Philippine PFM Atlas</title>
+<meta name="description" content="why are some proposals accepted almost automatically while others must compete, and what decides the amount of money available for competition?">
+<meta name="color-scheme" content="light">
+<script>document.documentElement.classList.add('js');try{if(localStorage.getItem('pfm-atlas-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(error){}</script>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="site-header">
+<div class="wrap header-row">
+<a class="brand" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="6" fill="#ffffff" stroke="#deded9"/><path d="M6 8.5H26" stroke="#1f4e8c" stroke-width="3.2" stroke-linecap="round"/><path d="M6 14H26" stroke="#2e6b2e" stroke-width="3.2" stroke-linecap="round"/><path d="M6 19.5H26" stroke="#a35200" stroke-width="3.2" stroke-linecap="round"/><path d="M6 25H26" stroke="#555555" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="0.1 4.9"/><path d="M17 8.5V14" stroke="#1b1b1b" stroke-width="3.6" stroke-linecap="round"/></svg><span>Philippine PFM Atlas</span></a>
+<form class="header-search" action="../search.html" role="search"><label class="visually-hidden" for="q-top">Search the atlas</label><input id="q-top" name="q" type="search" placeholder="Search: SARO, voucher, BTMS"></form>
+<button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">Dark mode</button>
+</div>
+<nav class="wrap site-nav" aria-label="Main"><a href="../index.html">Map</a><a href="../walkthrough.html">Guided lessons</a><a href="../big-picture.html">Big picture</a><a href="../chapters/index.html">Chapters</a><a href="../reference/index.html">References</a><a href="../diagrams/index.html" aria-current="page">Diagrams</a><a href="../systems.html">Systems &amp; UACS</a><a href="../models/index.html">Research models</a><a href="../reference/g.html">Open points</a><a href="../search.html">Search</a></nav>
+</header>
+<main id="main" class="wrap">
+<div class="doc-head"><p class="eyebrow">Diagram <span class="id">03c</span> · Mermaid flowchart</p><h1>The Two-Tier Budgeting Approach: how one program or project enters the proposed budget</h1><p class="prose-block"><strong>Question:</strong> Why are some proposals accepted almost automatically while others must compete, and what decides the amount of money available for competition?</p><p class="muted">In: <a href="../chapters/03.html">03. Budget preparation</a></p></div><figure class="diagram" id="figure-03c"><a href="../atlas/rendered/03c_two_tier_budgeting.png"><img alt="Diagram 03c: The Two-Tier Budgeting Approach: how one program or project enters the proposed budget" height="3468" loading="lazy" src="../atlas/rendered/03c_two_tier_budgeting.png" width="2828"/></a></figure><div class="prose-block"><h2 id="about">What the diagram shows</h2><ul>
+<li><strong>Question:</strong> why are some proposals accepted almost automatically while others must compete, and what decides the amount of money available for competition?</li>
+<li><strong>Idea:</strong> the cost of what the government already does is fixed first (Tier 1). Only the money that remains under the spending ceiling (the fiscal space) is available for new or expanded programs (Tier 2).</li>
+<li><strong>Sources:</strong> definitions of Tier 1, Tier 2 and fiscal space, Forward Estimates, BP Forms 202 and 203, conditions of readiness and endorsement <a class="basis" href="../reference/f.html#source-nbm156" title="DBM National Budget Memorandum No. 156 (2026), National Budget Call for FY 2027.">[NBM156]</a>. Cash budgeting rule in the last node <a class="basis" href="../reference/f.html#source-eo91" title="Executive Order No. 91 of 9 September 2019, cash budgeting system.">[EO91]</a>.</li>
+<li><strong>General knowledge, not opened in a source here:</strong> what happens to a proposal that is not included.</li>
+</ul>
+</div><h2 id="code">Code</h2><div class="copy-row"><button type="button" data-copy="code-03c">Copy the code</button><a href="../atlas/diagrams/mermaid/03c_two_tier_budgeting.mmd">Code file</a><a href="../atlas/rendered/03c_two_tier_budgeting.png">Image in full size</a></div><pre id="code-03c"><code>---
+title: &quot;03c  The Two-Tier Budgeting Approach: how one program or project enters the proposed budget&quot;
+config:
+  flowchart:
+    wrappingWidth: 460
+---
+flowchart TB
+  %% QUESTION THIS DIAGRAM ANSWERS: why are some proposals accepted almost automatically while others must compete, and what decides the amount of money available for competition?
+  %% IDEA: the cost of what the government already does is fixed first (Tier 1). Only the money that remains under the spending ceiling (the fiscal space) is available for new or expanded programs (Tier 2).
+  %% SOURCES: definitions of Tier 1, Tier 2 and fiscal space, Forward Estimates, BP Forms 202 and 203, conditions of readiness and endorsement [NBM156]. Cash budgeting rule in the last node [EO91].
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: what happens to a proposal that is not included.
+
+  A([&quot;One program, activity or project&lt;br/&gt;of an agency&quot;]) --&gt; Q1{&quot;Ongoing, at the&lt;br/&gt;same scope and&lt;br/&gt;quality?&quot;}
+
+  Q1 -- &quot;yes&quot; --&gt; T1[&quot;TIER 1&lt;br/&gt;Estimated cash requirement of ongoing programs and commitments.&lt;br/&gt;Based on the Forward Estimates (three years),&lt;br/&gt;formulated by DBM together with the agency&quot;]:::t1
+  Q1 -- &quot;no: new, or expanded&quot; --&gt; T2[&quot;TIER 2 PROPOSAL&lt;br/&gt;BP Form 202. BP Form 203 for a foreign-assisted project&quot;]:::t2
+
+  T2 --&gt; Q2{&quot;Implementation-ready,&lt;br/&gt;and endorsed or approved&lt;br/&gt;where required?&quot;}
+  Q2 -- &quot;no&quot; --&gt; X1[&quot;Not accepted in this budget.&lt;br/&gt;May be proposed again in a later year&quot;]:::out
+  Q2 -- &quot;yes&quot; --&gt; Q3{&quot;Fits in the&lt;br/&gt;fiscal space, by&lt;br/&gt;order of priority?&quot;}
+
+  CEIL[&quot;Spending program of the DBCC&lt;br/&gt;(after considering projected&lt;br/&gt;revenues and deficit targets)&quot;] --&gt; FS[&quot;FISCAL SPACE&lt;br/&gt;= spending program&lt;br/&gt;minus total Tier 1 of all agencies&quot;]:::fs
+  T1 -- &quot;sum of all agencies&quot; --&gt; FS
+  FS --&gt; Q3
+
+  Q3 -- &quot;no&quot; --&gt; X1
+  Q3 -- &quot;yes&quot; --&gt; L[&quot;Recommended budget level of the agency&lt;br/&gt;= Tier 1 + accepted Tier 2&quot;]
+  T1 --&gt; L
+  L --&gt; NEP[&quot;National Expenditure Program (NEP)&quot;]
+
+  N[&quot;CASH BUDGETING (EO 91, since 2019): an amount is proposed for a year&lt;br/&gt;only if the goods, services or works can be delivered and accepted&lt;br/&gt;within the validity period of that year&#x27;s appropriation&quot;]
+  NEP ~~~ N
+
+  classDef default fill:#ffffff,stroke:#444444,color:#111
+  classDef t1 fill:#d6e4f7,stroke:#1f4e8c,color:#111
+  classDef t2 fill:#fde0c2,stroke:#a35200,color:#111
+  classDef fs fill:#fff8dc,stroke:#8a6d00,color:#111,stroke-width:2px
+  classDef out fill:#f2f2f2,stroke:#555555,color:#111,stroke-dasharray: 5 4
+</code></pre><nav class="pager" aria-label="Pages"><a class="prev" href="03b.html">← Diagram 03b</a><a class="next" href="03d.html">Diagram 03d →</a></nav>
+</main>
+<footer class="site-footer"><div class="wrap"><p>Philippine PFM Atlas. An independent reference. It is not an official publication of the Philippine government, and it does not replace the laws, circulars and manuals that it cites. Facts on current events are as of 8 October 2026.</p><p><a href="../about.html">About the atlas</a> · <a href="../reference/f.html">Sources</a> · <a href="../reference/g.html">Open points</a></p></div></footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+# Quotations that the automatic check cannot find in the text files, each checked by hand.
+# Format: quotation | where it is from and why the automatic check fails
+most active government accounts are reconciled quarterly | PEFA2025 (not one of the text files)
+1st Edition, as of 31 March 2026 | title of the edition that the GPPB withdrew (not a text file)
+an authorization made by law or other legislative enactment, directing payment out of government funds under specified conditions or for specified purposes | EO292-B6 s.2, read at the Official Gazette (not a text file)
+an authorization issued by the Department of the Budget to an agency, which allows it to incur obligations for specified amounts contained in a legislative appropriation | EO292-B6 s.2, read at the Official Gazette (not a text file)
+an amount committed to be paid by the Government for any lawful act made by an authorized officer for and in behalf of the government | EO292-B6 s.2, read at the Official Gazette (not a text file)
+Charges to appropriation/allotment are necessary, lawful and under my direct supervision; and supporting documents valid, proper and legal | GAM-V2 App.11, form in two columns; the form prints "alloment", corrected here
+Allotment available and obligated for the purpose | GAM-V2 App.11, form in two columns
+Draft_IRR of R.A. 12009_as of 10 February 2025 | IRR12009: title in the document properties of the PDF file, read with the program pdfinfo. It is not part of the text of the Rules

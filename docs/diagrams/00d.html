@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diagram 00d: Three lines of steps, the three points where they must meet, and the record that each act writes (one payment under a contract) · Philippine PFM Atlas</title>
+<meta name="description" content="which conditions must all be true before one payment to a contractor can be made, who makes each condition true, and which record is written at each act?">
+<meta name="color-scheme" content="light">
+<script>document.documentElement.classList.add('js');try{if(localStorage.getItem('pfm-atlas-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(error){}</script>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="site-header">
+<div class="wrap header-row">
+<a class="brand" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="6" fill="#ffffff" stroke="#deded9"/><path d="M6 8.5H26" stroke="#1f4e8c" stroke-width="3.2" stroke-linecap="round"/><path d="M6 14H26" stroke="#2e6b2e" stroke-width="3.2" stroke-linecap="round"/><path d="M6 19.5H26" stroke="#a35200" stroke-width="3.2" stroke-linecap="round"/><path d="M6 25H26" stroke="#555555" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="0.1 4.9"/><path d="M17 8.5V14" stroke="#1b1b1b" stroke-width="3.6" stroke-linecap="round"/></svg><span>Philippine PFM Atlas</span></a>
+<form class="header-search" action="../search.html" role="search"><label class="visually-hidden" for="q-top">Search the atlas</label><input id="q-top" name="q" type="search" placeholder="Search: SARO, voucher, BTMS"></form>
+<button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">Dark mode</button>
+</div>
+<nav class="wrap site-nav" aria-label="Main"><a href="../index.html">Map</a><a href="../walkthrough.html">Guided lessons</a><a href="../big-picture.html">Big picture</a><a href="../chapters/index.html">Chapters</a><a href="../reference/index.html">References</a><a href="../diagrams/index.html" aria-current="page">Diagrams</a><a href="../systems.html">Systems &amp; UACS</a><a href="../models/index.html">Research models</a><a href="../reference/g.html">Open points</a><a href="../search.html">Search</a></nav>
+</header>
+<main id="main" class="wrap">
+<div class="doc-head"><p class="eyebrow">Diagram <span class="id">00d</span> · Mermaid flowchart</p><h1>Three lines of steps, the three points where they must meet, and the record that each act writes (one payment under a contract)</h1><p class="prose-block"><strong>Question:</strong> Which conditions must all be true before one payment to a contractor can be made, who makes each condition true, and which record is written at each act?</p><p class="muted">In: <a href="../big-picture.html">Philippine PFM Atlas: the big picture</a></p></div><figure class="diagram" id="figure-00d"><a href="../atlas/rendered/00d_four_chains.png"><img alt="Diagram 00d: Three lines of steps, the three points where they must meet, and the record that each act writes (one payment under a contract)" height="5650" loading="lazy" src="../atlas/rendered/00d_four_chains.png" width="3902"/></a></figure><div class="prose-block"><h2 id="about">What the diagram shows</h2><ul>
+<li><strong>Question:</strong> which conditions must all be true before one payment to a contractor can be made, who makes each condition true, and which record is written at each act?</li>
+<li><strong>Idea:</strong> a payment is not the end of one line of steps. Three lines of steps run at the same time: legal authority, the claim, and cash. A payment is possible only when they meet. The fourth line, the records, does not come after the payment: each act writes its record when it happens. A diagram with one line of steps hides both facts.</li>
+<li><strong>Form (Petri-net style):</strong> rounded node p = a state that can be true or not yet true. Rectangle t = an act by the persons named in it. An act with two incoming solid arrows needs BOTH states. A grey node r = a record. A dotted arrow from an act to a grey node = the act writes this record at the time of the act.</li>
+<li><strong>Colours:</strong> blue = legal authority to spend. Green = the claim: the contract, the work and its acceptance. Orange = cash. Grey = records, reports and audit.</li>
+<li><strong>The small separate chain (pT to p19):</strong> the closing of a period does not follow one payment. It follows the calendar, and it uses all records that exist on that day. The audit of one paid transaction (t14) follows the payment, because the paid voucher goes to the auditor with the daily report of payment orders issued <a class="basis" href="../reference/f.html#source-gam-v1" title="Commission on Audit, Government Accounting Manual for National Government Agencies, Volume I, Accounting Policies, Guidelines and Procedures, and Illustrative Accounting …">[GAM-V1 Ch.6 s.56]</a>.</li>
+<li><strong>The three meeting points:</strong> t3 (allotment meets award), t6 (obligation meets accepted delivery), t6c (the claim meets cash authority). The third point is the certificate "cash available" on the voucher: the head of accounting looks into the registry of the NCA, and when the balance is not sufficient the voucher is kept until cash is available <a class="basis" href="../reference/f.html#source-gam-v1" title="Commission on Audit, Government Accounting Manual for National Government Agencies, Volume I, Accounting Policies, Guidelines and Procedures, and Illustrative Accounting …">[GAM-V1 Ch.6 s.12]</a>. No check and no payment order may be issued without a covering NCA <a class="basis" href="../reference/f.html#source-gam-v1" title="Commission on Audit, Government Accounting Manual for National Government Agencies, Volume I, Accounting Policies, Guidelines and Procedures, and Illustrative Accounting …">[GAM-V1 Ch.6 s.3]</a>.</li>
+<li>THE EXCEPTION AT t6: the law allows no advance payment without the prior approval of the President, and no payment without a certificate that the delivery was inspected and accepted <a class="basis" href="../reference/f.html#source-pd1445" title='Presidential Decree No. 1445 of 11 June 1978, Government Auditing Code of the Philippines. Read as a file of 37 pages, from 10 October 2026. Its title page says "THE STATE …'>[PD1445 s.88]</a>. The procurement rules give that approval in defined cases: for works, an advance of not more than 15 percent on the written request of the contractor and against an irrevocable standby letter of credit, a bank guarantee or a surety bond <a class="basis" href="../reference/f.html#source-irr12009" title="Implementing Rules and Regulations of Republic Act No. 12009, Annex A of GPPB Resolution No. 02-2025 of 4 February 2025, in effect since 25 February 2025. Read as a file of 193 …">[IRR12009 s.71.2.5]</a>. In that case the security (p8b) replaces the accepted delivery (p8). The dashed green path shows it. <a href="07i.html">Diagram 07i</a> follows such a contract with amounts.</li>
+<li>The dotted arrow into t9 is a read arc: DBM consults the cash position of the Treasury but does not consume it when it issues an NCA.</li>
+<li><strong>Limits of this form:</strong> (1) allotment and NCA are balances, so each token would need an amount. (2) One appropriation line funds many contracts and one contract has many payments, so one case identifier does not fit all places (see 17d). (3) The claim is drawn for a purchase. For a salary, a transfer, debt service or a refund another event creates the claim (<a href="07h.html">diagram 07h</a>).</li>
+<li><strong>Sources:</strong> allotment before commitment and NCA before payment <a class="basis" href="../reference/f.html#source-nbc599" title="DBM National Budget Circular No. 599 of 5 January 2026, Guidelines on the Release of Funds for FY 2026.">[NBC599]</a>. Certificate of availability of funds before a contract <a class="basis" href="../reference/f.html#source-pd1445" title='Presidential Decree No. 1445 of 11 June 1978, Government Auditing Code of the Philippines. Read as a file of 37 pages, from 10 October 2026. Its title page says "THE STATE …'>[PD1445 s.86]</a><a class="basis" href="../reference/f.html#source-eo292-b6" title="Executive Order No. 292 of 25 July 1987, Administrative Code of 1987, Book VI, National Government Budgeting. Two copies:">[EO292-B6 s.40]</a>. Award only after funding is effective <a class="basis" href="../reference/f.html#source-ra12009" title="Republic Act No. 12009, New Government Procurement Act, 20 July 2024.">[RA12009 s.12]</a>. Payable = delivered and accepted <a class="basis" href="../reference/f.html#source-gam-v1" title="Commission on Audit, Government Accounting Manual for National Government Agencies, Volume I, Accounting Policies, Guidelines and Procedures, and Illustrative Accounting …">[GAM-V1 Ch.6 s.2]</a>. The boxes of the voucher <a class="basis" href="../reference/f.html#source-gam-v2" title="The same Manual, Volume II, Accounting Books, Registries, Records, Forms and Reports: 81 appendices. Each appendix is a form with its instructions. Files read: the forms as …">[GAM-V2 App.32]</a>. Registry of the NCA, checked before the voucher is certified <a class="basis" href="../reference/f.html#source-gam-v1" title="Commission on Audit, Government Accounting Manual for National Government Agencies, Volume I, Accounting Policies, Guidelines and Procedures, and Illustrative Accounting …">[GAM-V1 Ch.6 s.12]</a>. Payment order, bank and Treasury steps <a class="basis" href="../reference/f.html#source-cl2013-16a" title="DBM Circular Letter No. 2013-16-A, Expanded Modified Direct Payment Scheme.">[CL2013-16A]</a><a class="basis" href="../reference/f.html#source-gam-v1" title="Commission on Audit, Government Accounting Manual for National Government Agencies, Volume I, Accounting Policies, Guidelines and Procedures, and Illustrative Accounting …">[GAM-V1 Ch.6 s.56]</a>. Which record is written at which act, and that appropriation, allotment and obligation have no journal entry <a class="basis" href="../reference/f.html#source-gam-v1" title="Commission on Audit, Government Accounting Manual for National Government Agencies, Volume I, Accounting Policies, Guidelines and Procedures, and Illustrative Accounting …">[GAM-V1 Annex H, Ch.3 ss.8-17]</a>. Entry in the books of the Treasury <a class="basis" href="../reference/f.html#source-gam-v1" title="Commission on Audit, Government Accounting Manual for National Government Agencies, Volume I, Accounting Policies, Guidelines and Procedures, and Illustrative Accounting …">[GAM-V1 Annex H]</a>. Audit after payment <a class="basis" href="../reference/f.html#source-coa2011-002" title="COA Circular No. 2011-002 of 22 July 2011, lifting of pre-audit.">[COA2011-002]</a>.</li>
+<li><strong>A difference inside the manual:</strong> its worked example records the payable at delivery, from the delivery receipt and the acceptance report <a class="basis" href="../reference/f.html#source-gam-v1" title="Commission on Audit, Government Accounting Manual for National Government Agencies, Volume I, Accounting Policies, Guidelines and Procedures, and Illustrative Accounting …">[GAM-V1 Annex H]</a>. Its section on payment orders says that payables are recorded "based on approved DVs" <a class="basis" href="../reference/f.html#source-gam-v1" title="Commission on Audit, Government Accounting Manual for National Government Agencies, Volume I, Accounting Policies, Guidelines and Procedures, and Illustrative Accounting …">[GAM-V1 Ch.6 s.57]</a>. The diagram follows the worked example.</li>
+</ul>
+</div><h2 id="code">Code</h2><div class="copy-row"><button type="button" data-copy="code-00d">Copy the code</button><a href="../atlas/diagrams/mermaid/00d_four_chains.mmd">Code file</a><a href="../atlas/rendered/00d_four_chains.png">Image in full size</a></div><pre id="code-00d"><code>---
+title: &quot;00d  Three lines of steps, the three points where they must meet, and the record that each act writes (one payment under a contract)&quot;
+config:
+  flowchart:
+    wrappingWidth: 460
+---
+flowchart TB
+  %% QUESTION THIS DIAGRAM ANSWERS: which conditions must all be true before one payment to a contractor can be made, who makes each condition true, and which record is written at each act?
+  %% IDEA: a payment is not the end of one line of steps. Three lines of steps run at the same time: legal authority, the claim, and cash. A payment is possible only when they meet. The fourth line, the records, does not come after the payment: each act writes its record when it happens. A diagram with one line of steps hides both facts.
+  %% FORM (Petri-net style): rounded node p = a state that can be true or not yet true. Rectangle t = an act by the persons named in it. An act with two incoming solid arrows needs BOTH states. A grey node r = a record. A dotted arrow from an act to a grey node = the act writes this record at the time of the act.
+  %% COLOURS: blue = legal authority to spend. Green = the claim: the contract, the work and its acceptance. Orange = cash. Grey = records, reports and audit.
+  %% THE SMALL SEPARATE CHAIN (pT to p19): the closing of a period does not follow one payment. It follows the calendar, and it uses all records that exist on that day. The audit of one paid transaction (t14) follows the payment, because the paid voucher goes to the auditor with the daily report of payment orders issued [GAM-V1 Ch.6 s.56].
+  %% THE THREE MEETING POINTS: t3 (allotment meets award), t6 (obligation meets accepted delivery), t6c (the claim meets cash authority). The third point is the certificate &quot;cash available&quot; on the voucher: the head of accounting looks into the registry of the NCA, and when the balance is not sufficient the voucher is kept until cash is available [GAM-V1 Ch.6 s.12]. No check and no payment order may be issued without a covering NCA [GAM-V1 Ch.6 s.3].
+  %% THE EXCEPTION AT t6: the law allows no advance payment without the prior approval of the President, and no payment without a certificate that the delivery was inspected and accepted [PD1445 s.88]. The procurement rules give that approval in defined cases: for works, an advance of not more than 15 percent on the written request of the contractor and against an irrevocable standby letter of credit, a bank guarantee or a surety bond [IRR12009 s.71.2.5]. In that case the security (p8b) replaces the accepted delivery (p8). The dashed green path shows it. Diagram 07i follows such a contract with amounts.
+  %% The dotted arrow into t9 is a read arc: DBM consults the cash position of the Treasury but does not consume it when it issues an NCA.
+  %% LIMITS OF THIS FORM: (1) allotment and NCA are balances, so each token would need an amount. (2) One appropriation line funds many contracts and one contract has many payments, so one case identifier does not fit all places (see 17d). (3) The claim is drawn for a purchase. For a salary, a transfer, debt service or a refund another event creates the claim (diagram 07h).
+  %% SOURCES: allotment before commitment and NCA before payment [NBC599]. Certificate of availability of funds before a contract [PD1445 s.86][EO292-B6 s.40]. Award only after funding is effective [RA12009 s.12]. Payable = delivered and accepted [GAM-V1 Ch.6 s.2]. The boxes of the voucher [GAM-V2 App.32]. Registry of the NCA, checked before the voucher is certified [GAM-V1 Ch.6 s.12]. Payment order, bank and Treasury steps [CL2013-16A][GAM-V1 Ch.6 s.56]. Which record is written at which act, and that appropriation, allotment and obligation have no journal entry [GAM-V1 Annex H, Ch.3 ss.8-17]. Entry in the books of the Treasury [GAM-V1 Annex H]. Audit after payment [COA2011-002].
+  %% A DIFFERENCE INSIDE THE MANUAL: its worked example records the payable at delivery, from the delivery receipt and the acceptance report [GAM-V1 Annex H]. Its section on payment orders says that payables are recorded &quot;based on approved DVs&quot; [GAM-V1 Ch.6 s.57]. The diagram follows the worked example.
+
+  p1([&quot;p1  Appropriation&lt;br/&gt;one line of the GAA&quot;]):::auth
+  t1[&quot;t1  Release allotment&lt;br/&gt;DBM (GAA as allotment order,&lt;br/&gt;or SARO / GARO)&quot;]:::tr
+  p2([&quot;p2  Allotment available&quot;]):::auth
+  p3([&quot;p3  Obligation recorded&quot;]):::auth
+
+  p4([&quot;p4  Project ready: design,&lt;br/&gt;cost estimate, item in the&lt;br/&gt;procurement plan (APP)&quot;]):::thing
+  t2[&quot;t2  Procure&lt;br/&gt;BAC, head of procuring entity,&lt;br/&gt;bidders, PhilGEPS&quot;]:::tr
+  p5([&quot;p5  Award&quot;]):::thing
+  t3[&quot;t3  Sign contract and obligate&lt;br/&gt;chief accountant certifies that funds are available,&lt;br/&gt;head of agency signs, budget officer&lt;br/&gt;signs the obligation request&quot;]:::tr
+  p6([&quot;p6  Contract in force&quot;]):::thing
+  t4[&quot;t4  Deliver or perform&lt;br/&gt;contractor&quot;]:::tr
+  p7([&quot;p7  Delivery claimed:&lt;br/&gt;delivery receipt, billing,&lt;br/&gt;statement of work accomplished&quot;]):::thing
+  t5[&quot;t5  Inspect and accept&lt;br/&gt;inspection officer inspects,&lt;br/&gt;property custodian accepts&quot;]:::tr
+  p8([&quot;p8  Delivery accepted:&lt;br/&gt;the obligation is now&lt;br/&gt;due and demandable&quot;]):::thing
+  t4b[&quot;t4b  Ask for an advance and post a security&lt;br/&gt;contractor (exception, see header)&quot;]:::trx
+  p8b([&quot;p8b  Advance secured:&lt;br/&gt;letter of credit, bank&lt;br/&gt;guarantee or surety&quot;]):::thingx
+
+  t6[&quot;t6  Prepare and examine the claim&lt;br/&gt;supervisor certifies the voucher (Box A).&lt;br/&gt;Accounting checks it against the obligation request,&lt;br/&gt;the acceptance report and the index of payments&quot;]:::tr
+  p9a([&quot;p9a  Claim in order:&lt;br/&gt;a payable&quot;]):::auth
+  t6c[&quot;t6c  Certify cash and approve the voucher&lt;br/&gt;head of accounting (Box C: cash available per the&lt;br/&gt;registry of the NCA, documents complete),&lt;br/&gt;head of agency (Box D: approved for payment)&quot;]:::tr
+  p9([&quot;p9  Claim approved&lt;br/&gt;for payment&quot;]):::auth
+
+  p10([&quot;p10  Monthly disbursement&lt;br/&gt;program of the agency&quot;]):::cash
+  t7[&quot;t7  Collect revenue&lt;br/&gt;BIR, BOC, agencies, banks&quot;]:::tr
+  t8[&quot;t8  Borrow&lt;br/&gt;BTr, DOF&quot;]:::tr
+  p11([&quot;p11  Cash in the Treasury&lt;br/&gt;Single Account at BSP&quot;]):::cash
+  t9[&quot;t9  Issue cash authority (NCA)&lt;br/&gt;DBM&quot;]:::tr
+  p12([&quot;p12  Cash authority: NCA balance&lt;br/&gt;in the MDS sub-account at the&lt;br/&gt;servicing bank (a limit, no cash)&quot;]):::cash
+  t10[&quot;t10  Issue payment order (LDDAP-ADA) or check&lt;br/&gt;head of accounting certifies the list, head of agency approves,&lt;br/&gt;cash unit signs the advice, head of agency countersigns&quot;]:::tr
+  p13([&quot;p13  Payment order&lt;br/&gt;at the servicing bank&quot;]):::cash
+  t11[&quot;t11  Debit the sub-account,&lt;br/&gt;credit the payee&lt;br/&gt;servicing bank&quot;]:::tr
+  p14([&quot;p14  Payee paid&quot;]):::cash
+  p15([&quot;p15  Claim of the bank&lt;br/&gt;on the Treasury&quot;]):::cash
+  t12[&quot;t12  Replenish the bank&lt;br/&gt;BTr, BSP&quot;]:::tr
+  p16([&quot;p16  Settled&quot;]):::cash
+
+  r1([&quot;r1  Registries of the budget unit:&lt;br/&gt;allotment received.&lt;br/&gt;No journal entry&quot;]):::rec
+  r2([&quot;r2  Obligation request, and registry&lt;br/&gt;of the budget unit: obligation.&lt;br/&gt;No journal entry&quot;]):::rec
+  r3([&quot;r3  Journal entry: Cash-MDS, Regular&lt;br/&gt;and Subsidy from National Government.&lt;br/&gt;Registry of the NCA: received&quot;]):::rec
+  r4([&quot;r4  Acceptance report. Journal entry:&lt;br/&gt;asset or expense, and Accounts Payable.&lt;br/&gt;Obligation request, part C: payable&quot;]):::rec
+  r5([&quot;r5  Voucher with its number and signatures.&lt;br/&gt;Registry of the NCA: amount used&quot;]):::rec
+  r6([&quot;r6  Report of payment orders issued, with the paid&lt;br/&gt;vouchers, to accounting, budget unit and auditor.&lt;br/&gt;Journal entry: Accounts Payable, Cash-MDS, Regular&lt;br/&gt;and Due to BIR. Registries: payment, disbursement&quot;]):::rec
+  r7([&quot;r7  Books of the Treasury:&lt;br/&gt;Subsidy to NGAs and Cash in Bank&quot;]):::rec
+  t14[&quot;t14  Audit the paid transaction&lt;br/&gt;COA auditor, after payment&quot;]:::tr
+  p18([&quot;p18  Audit result: allowed,&lt;br/&gt;suspended, disallowed&lt;br/&gt;or charged&quot;]):::rec
+
+  pT([&quot;pT  End of a month,&lt;br/&gt;a quarter or the year&quot;]):::rec
+  t13[&quot;t13  Close the period from the records r1 to r7:&lt;br/&gt;reconcile with the bank, then report&lt;br/&gt;to DBM, COA and BTr&lt;br/&gt;agency&quot;]:::tr
+  p17([&quot;p17  Reports and&lt;br/&gt;financial statements&quot;]):::rec
+  t15[&quot;t15  Audit the statements&lt;br/&gt;COA&quot;]:::tr
+  p19([&quot;p19  Audit report&lt;br/&gt;of the agency&quot;]):::rec
+
+  p1 --&gt; t1 --&gt; p2
+  p4 --&gt; t2 --&gt; p5
+  p2 --&gt; t3
+  p5 --&gt; t3
+  t3 --&gt; p3
+  t3 --&gt; p6
+  p6 --&gt; t4 --&gt; p7 --&gt; t5 --&gt; p8
+  p6 -.-&gt; t4b -.-&gt; p8b
+  p3 --&gt; t6
+  p8 --&gt; t6
+  p8b -. &quot;advance:&lt;br/&gt;replaces p8&quot; .-&gt; t6
+  t6 --&gt; p9a
+  p9a --&gt; t6c
+  p12 --&gt; t6c
+  t6c --&gt; p9
+  t7 --&gt; p11
+  t8 --&gt; p11
+  p10 --&gt; t9
+  p11 -. &quot;read&quot; .-&gt; t9
+  t9 --&gt; p12
+  p9 --&gt; t10
+  t10 --&gt; p13 --&gt; t11
+  t11 --&gt; p14
+  t11 --&gt; p15
+  p15 --&gt; t12
+  p11 --&gt; t12
+  t12 --&gt; p16
+
+  t1 -.-&gt; r1
+  t3 -.-&gt; r2
+  t9 -.-&gt; r3
+  t5 -.-&gt; r4
+  t6c -.-&gt; r5
+  t10 -.-&gt; r6
+  t12 -.-&gt; r7
+  r6 --&gt; t14 --&gt; p18
+  pT --&gt; t13 --&gt; p17 --&gt; t15 --&gt; p19
+
+  classDef auth fill:#d6e4f7,stroke:#1f4e8c,color:#111
+  classDef thing fill:#d5ecd5,stroke:#2e6b2e,color:#111
+  classDef thingx fill:#eef7ee,stroke:#2e6b2e,stroke-dasharray: 5 4,color:#111
+  classDef cash fill:#fde0c2,stroke:#a35200,color:#111
+  classDef rec fill:#e6e6e6,stroke:#555555,color:#111
+  classDef tr fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111
+  classDef trx fill:#ffffff,stroke:#2e6b2e,stroke-width:2px,stroke-dasharray: 5 4,color:#111
+</code></pre><nav class="pager" aria-label="Pages"><a class="prev" href="00c.html">← Diagram 00c</a><a class="next" href="00e.html">Diagram 00e →</a></nav>
+</main>
+<footer class="site-footer"><div class="wrap"><p>Philippine PFM Atlas. An independent reference. It is not an official publication of the Philippine government, and it does not replace the laws, circulars and manuals that it cites. Facts on current events are as of 8 October 2026.</p><p><a href="../about.html">About the atlas</a> · <a href="../reference/f.html">Sources</a> · <a href="../reference/g.html">Open points</a></p></div></footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

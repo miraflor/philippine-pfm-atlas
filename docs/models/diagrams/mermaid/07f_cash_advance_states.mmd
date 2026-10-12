@@ -1,0 +1,34 @@
+---
+title: "07f  States of one cash advance, from grant to liquidation"
+---
+stateDiagram-v2
+  direction TB
+  %% QUESTION THIS DIAGRAM ANSWERS: a cash advance leaves the Treasury before any delivery is accepted. How does the government ensure that the money is later accounted for?
+  %% IDEA: a cash advance is money given to a named officer, who is personally accountable for it until he or she presents proof of how it was spent (liquidation) and returns the rest.
+  %% SOURCES: accountable officers must be bonded, and BTr administers the bonding [EO449]. Weakness reported: a part of the advances, in particular advances to government corporations, was not liquidated at the end of 2023 (indicator 27.3, score C) [PEFA2025].
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: all states and time limits in this diagram follow my recollection of COA Circular No. 97-002 (rules on cash advances). I did not open that circular. Check it before relying on a time limit.
+
+  state "Requested (voucher for a specific purpose)" as REQ
+  state "Granted to a bonded accountable officer" as GR
+  state "In use (officer pays and collects receipts)" as USE
+  state "Liquidation report submitted with receipts" as LIQ
+  state "Liquidated (accounting verifies, journal entry, expense recorded)" as DONE
+  state "Unspent cash returned (official receipt)" as RET
+  state "Overdue (not liquidated within the time limit)" as OVD
+  state "Demand letter, then salary withheld" as DEM
+  state "Disallowed, or charged to the officer" as DIS
+
+  [*] --> REQ: head of unit
+  REQ --> GR: approved voucher, no earlier advance remains unliquidated
+  GR --> USE: only for the stated purpose
+  USE --> LIQ: officer, within the time limit for the kind of advance
+  USE --> RET: purpose fulfilled, cash remains
+  RET --> LIQ
+  LIQ --> DONE: accountant and auditor find the documents complete and proper
+  LIQ --> DIS: documents missing or expense not allowed
+  USE --> OVD: time limit passes
+  OVD --> DEM: accountant, auditor
+  DEM --> LIQ: officer complies
+  DEM --> DIS: officer does not comply
+  DONE --> [*]
+  DIS --> [*]: recovery from the officer (chapter 09)

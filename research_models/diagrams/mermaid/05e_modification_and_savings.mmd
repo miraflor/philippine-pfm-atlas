@@ -1,0 +1,40 @@
+---
+title: "05e  Changing an allotment during the year: modification, use of personnel allotment, augmentation from savings"
+config:
+  flowchart:
+    wrappingWidth: 480
+---
+flowchart TB
+  %% QUESTION THIS DIAGRAM ANSWERS: an agency needs to move money from one use to another during the year. Who may approve the change, and with which document?
+  %% IDEA: three different acts are often confused. (1) MODIFICATION changes the details of an allotment inside the same program, activity or project. (2) USE OF PERSONNEL ALLOTMENT covers a shortage in one personnel benefit from available personnel allotment. (3) AUGMENTATION adds to an item that is deficient from SAVINGS in other items, and the Constitution limits who may do it.
+  %% SOURCES: modification, the Modification Advice Form, the Advice for use of PS Allotment, reports [NBC599 s.3.13, s.3.14, s.5]. Who may augment [CONST VI.25(5)].
+  %% CONFLICT BETWEEN MY TWO READINGS OF THE CIRCULAR: it is clear that DBM approves a change between allotment classes. It is not clear from the copy I read whether a change between operating units is approved by DBM or by the head of agency. Check section 5.1 of National Budget Circular No. 599.
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: the definition of savings.
+
+  S(["The agency needs to change<br/>how an allotment is used"]) --> Q{"What kind<br/>of change?"}
+
+  Q --> M["MODIFICATION<br/>change inside the same program, activity or project"]
+  Q --> P["USE OF PERSONNEL SERVICES ALLOTMENT<br/>shortage in a personnel benefit"]
+  Q --> A["AUGMENTATION<br/>an item of the GAA is deficient and savings<br/>from other items would be added to it"]
+
+  M --> M1{"Between allotment<br/>classes?"}
+  M1 -- "no: same class,<br/>for example between objects<br/>of expenditure" --> M2["Head of agency or designated<br/>official approves"]:::ag
+  M1 -- "yes: for example from operating<br/>expenses to capital outlays" --> M3["DBM approves"]:::dbm
+  M2 --> MAF["Documents: Special Budget Request where needed,<br/>revised Financial Plan (BED 1),<br/>Modification Advice Form (MAF)"]
+  M3 --> MAF
+
+  P --> P1["Head of agency approves with the<br/>Advice for use of PS Allotment (APSA).<br/>For some deficiencies in special benefits<br/>the DBM Secretary approves"]:::ag
+
+  A --> A1{"Is the approving official<br/>one of the five named<br/>in the Constitution?"}
+  A1 -- "President, Senate President, Speaker,<br/>Chief Justice, head of a<br/>Constitutional Commission" --> A2["May augment an item of the own office<br/>from savings in other items of the<br/>own appropriations, as the GAA allows"]:::con
+  A1 -- "any other official" --> A3["Not allowed.<br/>No transfer of appropriations<br/>between branches or offices"]:::no
+
+  MAF --> R["The change is entered in the registries and shown<br/>in FAR 1 (appropriations, allotments, obligations,<br/>disbursements and balances)"]
+  P1 --> R
+  A2 --> R
+
+  classDef default fill:#ffffff,stroke:#444444,color:#111
+  classDef ag fill:#d5ecd5,stroke:#2e6b2e,color:#111
+  classDef dbm fill:#d6e4f7,stroke:#1f4e8c,color:#111
+  classDef con fill:#f3eefa,stroke:#5b3a8c,color:#111
+  classDef no fill:#f2f2f2,stroke:#555555,color:#111,stroke-dasharray: 5 4

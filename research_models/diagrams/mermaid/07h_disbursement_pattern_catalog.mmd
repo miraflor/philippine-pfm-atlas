@@ -1,0 +1,22 @@
+---
+title: "07h  Different disbursement patterns have different gates"
+---
+  %% QUESTION THIS DIAGRAM ANSWERS: What distinct validation patterns exist instead of one universal delivery-to-voucher rule?
+  %% SOURCES: [RA12009] [NBC599] [GAM] and case-specific issuances; conditions are conceptual, not exhaustive
+  %% SCOPE: Reference view; not a verified deployed system interface.
+  %% READING: Arrows show possible evidence, authority or event dependencies, not a universal time order or verified API.
+flowchart LR
+  START["Proposed outgoing payment"] --> TYPE{"Determine legal / transaction pattern"}
+  TYPE --> GOODS["Goods / services / works: contract, progress or acceptance evidence"]
+  TYPE --> ADV["Mobilization / lawful advance: advance basis, required security and liquidation rules"]
+  TYPE --> STAFF["Payroll / benefits: appointment, entitlement, attendance and payroll controls"]
+  TYPE --> GRANT["Subsidy / transfer / benefits: statutory or program eligibility and liquidation"]
+  TYPE --> DEBT["Debt service: debt instrument, schedule, due date and authorization"]
+  TYPE --> REF["Refund / reimbursement: entitlement, offset checks and approval"]
+  GOODS --> COMMON["Applicable appropriation / allotment, claim validation and payment method"]
+  ADV --> COMMON
+  STAFF --> COMMON
+  GRANT --> COMMON
+  DEBT --> COMMON
+  REF --> COMMON
+  COMMON --> CASH["Cash / disbursement authority if required for this payment channel"] --> BANK["Release / settlement / reconciliation"]

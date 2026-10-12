@@ -1,0 +1,35 @@
+---
+title: "15f  Cash aid to persons: from the list of beneficiaries to the credit in each account"
+---
+sequenceDiagram
+  autonumber
+  %% QUESTION THIS DIAGRAM ANSWERS: in a purchase, one supplier delivers and one voucher is paid. In a cash aid program, one payment order pays many thousands of persons and nothing is delivered to the government. What replaces the contract, the delivery and the acceptance?
+  %% IDEA: the law of the program replaces the contract: it says who has a right to the money and under which conditions. The list of persons who qualify replaces the delivery: the control is that each person on the list exists, qualifies and has met the conditions. The proof of payment is the record of the bank for each person.
+  %% SOURCES: the example is the Pantawid Pamilyang Pilipino Program. Selection of households with a standardized targeting system and revalidation every three years (section 5); amounts fixed by an advisory council and reviewed every six years (sections 7 and 10); "direct and secured access to cash grants" through authorized government depository banks, and through remittance institutions accredited by the central bank where no such bank serves the area (section 9); cost charged to the yearly budget law (section 22); independent monitoring committee and yearly report to Congress before the President's budget message (sections 16 and 18) [RA11310].
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: steps 4, 5, 6, 7, 9 and 10 (checking of conditions, the payroll of beneficiaries, the obligation, the cash authority, the payment order, the report of the bank, the accounting). Other aid programs have their own rules, and some pay in cash through accountable officers (see 07f).
+  %% INFERENCE: the note at the end.
+  participant CON as Congress
+  participant AG as Program agency<br/>(DSWD)
+  participant DBM as DBM
+  participant BANK as Government bank<br/>or remittance institution
+  participant HH as Household
+  participant MON as Monitoring bodies<br/>and COA
+
+  Note over CON,AG: WHO HAS A RIGHT TO THE MONEY
+  CON->>AG: Program law: who qualifies, conditions, kinds of grant.<br/>Budget law: the amount for the year
+  AG->>AG: Select households with a standardized targeting system.<br/>Check the list again every three years<br/>#nbsp;
+  AG->>AG: Amount of each grant, as fixed by the advisory council<br/>of the program and reviewed every six years<br/>#nbsp;
+
+  Note over AG,HH: EACH PAYMENT PERIOD
+  AG->>AG: Check that each household met the conditions<br/>(for example school attendance, health visits)<br/>#nbsp;
+  AG->>AG: Payroll of beneficiaries for the period, certified and approved.<br/>Obligation recorded against the allotment<br/>#nbsp;
+  DBM-->>AG: Cash authority (NCA) for the period (chapter 05)
+  AG->>BANK: Payment order with the list of accounts,<br/>within the cash authority
+  BANK->>HH: Grant credited to the account of the household,<br/>or paid out by a remittance institution
+  BANK-->>AG: Report of amounts credited and of amounts not credited
+
+  Note over AG,MON: RECORDS AND REVIEW
+  AG->>AG: Accounting entries. Amounts not credited are returned or paid again<br/>#nbsp;
+  AG->>CON: Yearly report on the program, before the<br/>President's budget message
+  MON->>AG: Independent monitoring committee, and audit by COA
+  Note over AG,HH: The books of the agency show one payment for many persons.<br/>The evidence that each person was paid is in the records of the bank.

@@ -1,0 +1,44 @@
+---
+title: "06g  A framework agreement: funds are certified before each order, not before the agreement"
+config:
+  flowchart:
+    wrappingWidth: 900
+---
+flowchart TB
+  %% QUESTION THIS DIAGRAM ANSWERS: an agency fixes a supplier and prices now, and does not know yet how much it will buy, or when. At which moment must funds be certified, and at which moment is the government bound to pay?
+  %% IDEA: the agreement gives the agency a right to order and no duty to order. Each order is a separate purchase order, named a Call-Off, and each one needs its own certificate of funds. In the main model of the atlas, the allotment and the award meet in a contract. Here they meet once for every order, and not at the agreement.
+  %% READING: top = the agreement, which is made once. Green frame = what is repeated for every order. Purple boxes = rules of the agreement. Grey boxes = two inferences of mine.
+  %% SOURCES: the framework agreement as an option contract, subject to guidelines of the GPPB [IRR12009 s.16]. The guidelines of 23 July 2026: the modes by which the agreement is procured, the period of one to three years, no Multi-Year Contractual Authority, no certificate of funds before the agreement, a certificate for every Call-Off, the Call-Off as the purchase order, the competition among several suppliers, the limits of quantity and price, the price of the option [GPPB2026-12]. The form of the purchase order, with the place for the certificate and for the number of the obligation request [GAM-V2 App.61].
+  %% LIMIT: I read the guidelines through a tool that returned a summary with short quotations, not the full text. The guidelines take effect 15 days after their publication. I did not read the date of publication.
+  %% INFERENCE: the two grey boxes. First, that the obligation is recorded when the certificate for an order is issued. Second, that no Call-Off can be made when funds are not available. The summary of the guidelines does not name the obligation request.
+  %% EXAMPLE: the example in the first box is mine. It is not from a source.
+
+  S(["A need that repeats during one to three years.<br/>The quantity or the time is not known yet.<br/>Example: medicines for a hospital"])
+  S --> P["PROCUREMENT, ONCE<br/>by competitive bidding or by limited source bidding (see 06b),<br/>for goods, infrastructure projects or consulting services"]
+  P --> FA["FRAMEWORK AGREEMENT SIGNED<br/>an option contract with one supplier or with several:<br/>the agency may order later, or not at all.<br/>Period fixed at 1, 2 or 3 years. It cannot be extended.<br/>Price of the option: PHP 1.00"]:::auth
+  FA --- N0["NOT NEEDED AT THE AGREEMENT<br/>no certificate of availability of funds,<br/>no Multi-Year Contractual Authority.<br/>The amount needed in each year must be<br/>in the approved budget of that year"]:::rule
+  FA --- LIM["LIMITS OF THE AGREEMENT<br/>All Call-Offs together stay within the maximum quantity<br/>or the total contract price of the agreement.<br/>The Call-Offs of one year stay within<br/>the approved budget for the contract"]:::rule
+
+  subgraph ORDER["REPEATED FOR EVERY ORDER, AS LONG AS THE AGREEMENT RUNS"]
+    direction TB
+    Q{"Agreement of more than one<br/>year with several suppliers?"}
+    MC["MINI COMPETITION<br/>among the suppliers of the agreement"]
+    CAF["CERTIFICATE OF AVAILABILITY OF FUNDS<br/>for the amount of this order"]:::auth
+    CO["CALL-OFF<br/>the purchase order by which the agency uses its option.<br/>The contract for this delivery is perfected here"]:::auth
+    DL["Delivery, inspection and acceptance,<br/>voucher and payment (chapter 07).<br/>The next need starts again at the top of this frame"]
+    OB["INFERENCE: the obligation for this order is recorded<br/>when the certificate is issued, and no obligation<br/>is recorded at the agreement. The purchase order form<br/>of the Manual has the place for the certificate and for<br/>the number, date and amount of the obligation request"]:::edge
+    X["INFERENCE: when funds are not available,<br/>no Call-Off can be made. The agreement stays valid.<br/>It gave the agency a supplier and prices.<br/>It did not give it money"]:::edge
+    Q -- "yes" --> MC --> CAF
+    Q -- "no" --> CAF
+    CAF --> CO --> DL
+    CAF -.- OB
+    CAF -. "funds are<br/>not available" .-> X
+  end
+
+  FA -- "a need arises" --> Q
+
+  classDef default fill:#ffffff,stroke:#444444,color:#111
+  classDef auth fill:#dbe9f7,stroke:#1f4e8c,color:#111,stroke-width:2px
+  classDef rule fill:#f3eefa,stroke:#5b3a8c,color:#111,stroke-width:2px
+  classDef edge fill:#e6e6e6,stroke:#555555,color:#111
+  style ORDER fill:#edf7ed,stroke:#2e6b2e

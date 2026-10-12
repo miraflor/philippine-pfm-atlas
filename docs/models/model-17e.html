@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research model 17e: 17e  Multi-identifier lineage across planning, budget and payments · Philippine PFM Atlas</title>
+<meta name="description" content="Research model 17e: 17e  Multi-identifier lineage across planning, budget and payments">
+<meta name="color-scheme" content="light">
+<script>document.documentElement.classList.add('js');try{if(localStorage.getItem('pfm-atlas-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(error){}</script>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="site-header">
+<div class="wrap header-row">
+<a class="brand" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="6" fill="#ffffff" stroke="#deded9"/><path d="M6 8.5H26" stroke="#1f4e8c" stroke-width="3.2" stroke-linecap="round"/><path d="M6 14H26" stroke="#2e6b2e" stroke-width="3.2" stroke-linecap="round"/><path d="M6 19.5H26" stroke="#a35200" stroke-width="3.2" stroke-linecap="round"/><path d="M6 25H26" stroke="#555555" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="0.1 4.9"/><path d="M17 8.5V14" stroke="#1b1b1b" stroke-width="3.6" stroke-linecap="round"/></svg><span>Philippine PFM Atlas</span></a>
+<form class="header-search" action="../search.html" role="search"><label class="visually-hidden" for="q-top">Search the atlas</label><input id="q-top" name="q" type="search" placeholder="Search: SARO, voucher, BTMS"></form>
+<button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">Dark mode</button>
+</div>
+<nav class="wrap site-nav" aria-label="Main"><a href="../index.html">Map</a><a href="../walkthrough.html">Guided lessons</a><a href="../big-picture.html">Big picture</a><a href="../chapters/index.html">Chapters</a><a href="../reference/index.html">References</a><a href="../diagrams/index.html">Diagrams</a><a href="../systems.html">Systems &amp; UACS</a><a href="../models/index.html">Research models</a><a href="../reference/g.html">Open points</a><a href="../search.html">Search</a></nav>
+</header>
+<main id="main" class="wrap">
+<p class="eyebrow">Supplementary analytic model · 10 October 2026</p><h1>17e  Multi-identifier lineage across planning, budget and payments</h1><div class="model-note"><strong>Versioned, source-only model.</strong> This diagram is from the earlier strengthened research edition. It has not been reconciled against the latest 12 October procedures, and no verified PNG rendering is supplied. A reused ID such as 07h does <em>not</em> replace the current diagram of that ID.</div><p><strong>Historical ID:</strong> 17e · <strong>Notation:</strong> mermaid · <a href="diagrams/mermaid/17e_multi_identifier_lineage.mmd" download>Download original editable code</a> · <a href="../diagrams/index.html">Current diagram gallery</a></p><h2>Source code</h2><div class="copy-row"><button type="button" data-copy="model-17e">Copy code</button></div><pre class="model-code" id="model-17e"><code class="model-source">---
+title: &quot;17e  Multi-identifier lineage across planning, budget and payments&quot;
+---
+  %% QUESTION THIS DIAGRAM ANSWERS: How can one project, many appropriations and many payments be joined without conflating IDs?
+  %% SOURCES: Proposed conceptual model; actual agency field links not proven; GENERAL KNOWLEDGE / atlas inference
+  %% SCOPE: Reference view; not a verified deployed system interface.
+  %% READING: Arrows show possible evidence, authority or event dependencies, not a universal time order or verified API.
+flowchart LR
+  PIP[&quot;Investment project ID (if assigned)&quot;] --&gt; XW[&quot;Documented project-PAP crosswalk&quot;]
+  XW --&gt; PAP[&quot;Program / activity / project code and budget version&quot;]
+  PAP --&gt; APP[&quot;Appropriation item and fiscal year&quot;] --&gt; ALL[&quot;Allotment source / release ID&quot;]
+  ALL --&gt; ORS[&quot;One or many obligation references&quot;]
+  CON[&quot;Contract or award ID&quot;] --&gt; ORS
+  ORS --&gt; CLAIM[&quot;One or many deliveries / billings / vouchers&quot;]
+  CLAIM --&gt; PAY[&quot;One or many bank payment IDs&quot;]
+  CLAIM --&gt; GL[&quot;Accounting entry / liability ID&quot;]
+  PAY --&gt; GL
+  UACS[&quot;UACS class code with effective dates&quot;] -.-&gt; PAP
+  UACS -.-&gt; ORS
+  UACS -.-&gt; GL
+  NOTE[&quot;Links require evidence; identical UACS does not prove same event&quot;] -.-&gt; XW
+</code></pre><p><a href="index.html">← All research models</a></p>
+</main>
+<footer class="site-footer"><div class="wrap"><p>Philippine PFM Atlas. An independent reference. It is not an official publication of the Philippine government, and it does not replace the laws, circulars and manuals that it cites. Facts on current events are as of 8 October 2026.</p><p><a href="../about.html">About the atlas</a> · <a href="../reference/f.html">Sources</a> · <a href="../reference/g.html">Open points</a></p></div></footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

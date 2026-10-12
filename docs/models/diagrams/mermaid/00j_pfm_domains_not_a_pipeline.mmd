@@ -1,0 +1,21 @@
+---
+title: "00j  PFM domains and non-procurement exceptions"
+---
+  %% QUESTION THIS DIAGRAM ANSWERS: Which fiscal activities have their own processes and should not be treated as exceptions to purchasing?
+  %% SOURCES: [ROADMAP2024] [PEFA2025] [PD1445] [RA12009]
+  %% SCOPE: Reference view; not a verified deployed system interface.
+  %% READING: Arrows show possible evidence, authority or event dependencies, not a universal time order or verified API.
+flowchart TB
+  PFM["Public financial management"]
+  PFM --> REV["Revenue assessment, collection, enforcement, refunds"]
+  PFM --> BUD["Fiscal policy, budget authorization and execution"]
+  PFM --> DEBT["Borrowing, debt service, guarantees and fiscal risks"]
+  PFM --> TRE["Cash, payments, TSA and bank reconciliation"]
+  PFM --> COMP["Procurement and non-procurement commitments"]
+  PFM --> ACC["Accrual accounting, assets, liabilities, consolidation"]
+  PFM --> OUT["Outputs, performance, audit and oversight"]
+  PFM --> SUB["LGU, GOCC, GFI, BARMM and other jurisdictional variants"]
+  COMP --> EXP["Contractor payment"]
+  COMP --> PAYROLL["Payroll and benefits"]
+  COMP --> TRANS["Transfers and subsidies"]
+  COMP --> DIRECT["Debt charges, refunds, advances and special methods"]

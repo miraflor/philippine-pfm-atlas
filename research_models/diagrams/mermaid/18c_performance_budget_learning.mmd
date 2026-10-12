@@ -1,0 +1,16 @@
+---
+title: "18c  Performance evidence flows into later budget cycles"
+---
+  %% QUESTION THIS DIAGRAM ANSWERS: How do outputs and outcomes differ from disbursement and feed later policy?
+  %% SOURCES: [PRIMER] [ROADMAP2024] [NEPF] evaluation feedback may lag multiple years
+  %% SCOPE: Reference view; not a verified deployed system interface.
+  %% READING: Arrows show possible evidence, authority or event dependencies, not a universal time order or verified API.
+flowchart LR
+  P["Program theory, intervention and target"] --> B["Appropriation and resource inputs"] --> A["Actions and delivery activities"] --> O["Measured outputs"] --> Y["Outcomes / impact subject to attribution limits"]
+  B --> FIN["Financial actuals / obligations / cash"]
+  O --> PERF["Performance and physical reports"]
+  Y --> EVAL["Monitoring, evaluations, audit and outside evidence"]
+  FIN --> REVIEW["Budget and policy review for later years"]
+  PERF --> REVIEW
+  EVAL --> REVIEW
+  REVIEW -.-> P

@@ -1,0 +1,47 @@
+---
+title: "06a  Procurement planning: from a need to an approved procurement plan, aligned with the budget calendar"
+config:
+  flowchart:
+    wrappingWidth: 900
+---
+flowchart TB
+  %% QUESTION THIS DIAGRAM ANSWERS: what must exist before an agency may start a procurement, and how does the procurement plan follow the budget from proposal to law?
+  %% READING: left column = the budget of the same fiscal year. Right column = the procurement plan. Each horizontal dotted arrow shows which budget document a version of the plan is based on.
+  %% SOURCES: Annual Procurement Plan (APP), approval by the head of the procuring entity, no procurement outside the approved or indicative APP [RA12009 s.7]. Market scoping [RA12009 s.10]. Early procurement and the rule on award [RA12009 s.12]. Life-cycle assessment [RA12009 s.13]. Common-use supplies through the Procurement Service [RA12009 s.20, s.40]. Column "Code (PAP)" in the APP form [APP-FORM]. Certification of availability of funds at the pre-procurement conference [RA12009 s.49].
+  %% CHECKED IN THE IMPLEMENTING RULES IN OCTOBER 2026 [IRR12009]: the Project Procurement Management Plan (PPMP) of each end-user unit and its content, the indicative plan prepared with the budget proposal and revised after the President's budget is submitted, the final plan approved by the head of the procuring entity, published and sent to the GPPB by the end of January of the budget year (section 7); the Approved Budget for the Contract (section 5); market scoping led by the end-user unit (section 10); early procurement from the submission of the President's budget, with no award before the funding is in effect and the final plan is approved (section 12); the Multi-Year Contractual Authority before any procurement activity for a contract of more than one year (section 9).
+
+  subgraph BUD["BUDGET OF THE FISCAL YEAR"]
+    B1["Agency budget proposal<br/>(Tier 1 and Tier 2)"]
+    B2["National Expenditure Program (NEP)<br/>submitted to Congress"]
+    B3["General Appropriations Act (GAA)<br/>in effect"]
+    B4["Allotment available<br/>(GAA as allotment order, or SARO)"]
+    B1 --> B2 --> B3 --> B4
+  end
+
+  subgraph PROC["PROCUREMENT PLAN OF THE SAME FISCAL YEAR"]
+    P0["End-user units state their needs<br/>specifications, quantities, schedule"]
+    P1["Market scoping and life-cycle assessment<br/>what the market offers, at what total cost of ownership"]
+    P2["Project Procurement Management Plan (PPMP)<br/>one per end-user unit: item, estimated budget,<br/>proposed mode of procurement, timing"]
+    P3["INDICATIVE Annual Procurement Plan (APP)<br/>consolidated by the BAC Secretariat with the budget proposal,<br/>updated after the President's budget is submitted,<br/>approved by the head of the procuring entity"]
+    P4["EARLY PROCUREMENT ACTIVITIES (optional)<br/>bidding may be held once the President's budget is submitted.<br/>No award until the funding is approved and effective"]
+    P5["FINAL Annual Procurement Plan (APP)<br/>adjusted to the GAA, published and sent to the GPPB by the end<br/>of January. Each line contains the program code (PAP)<br/>of the budget line that pays for it"]
+    P6["Procurement of each line<br/>by the mode stated in the APP (see 06b, 06c)"]
+    P0 --> P1 --> P2 --> P3 --> P4 --> P5 --> P6
+  end
+
+  RULE["RULE: no procurement may be undertaken unless<br/>it is in the approved APP or indicative APP"]:::rule
+  PS["Common-use supplies and equipment<br/>are bought from the Procurement Service (PS-DBM),<br/>not by separate bidding"]
+  MY["A contract for more than one year needs a<br/>Multi-Year Contractual Authority from DBM<br/>BEFORE any procurement activity (see 06f)"]:::rule
+
+  B1 -.-> P2
+  B2 -.-> P3
+  B3 -.-> P5
+  B4 -. "certification that<br/>funds are available" .-> P6
+  P5 --- RULE
+  P6 --- PS
+  P3 --- MY
+
+  classDef default fill:#ffffff,stroke:#444444,color:#111
+  classDef rule fill:#f3eefa,stroke:#5b3a8c,color:#111,stroke-width:2px
+  style BUD fill:#eef4fb,stroke:#1f4e8c
+  style PROC fill:#edf7ed,stroke:#2e6b2e

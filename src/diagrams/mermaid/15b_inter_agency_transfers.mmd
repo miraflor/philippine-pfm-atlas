@@ -1,0 +1,33 @@
+---
+title: "15b  Transfer of funds from one agency to another body that will implement"
+---
+sequenceDiagram
+  autonumber
+  %% QUESTION THIS DIAGRAM ANSWERS: an agency gives its money to another agency, a corporation or a local government to implement a project. When is the money "spent", and who is responsible for it?
+  %% IDEA: a transfer moves cash but not accountability. Under the FY 2026 rules the source agency may not treat the transfer as a disbursement until the receiver has used it for works, goods or services that were delivered, inspected and accepted. Until then the source agency holds a receivable and the receiver holds a liability.
+  %% SOURCES: transfers to other agencies, corporations and local governments are not treated as disbursed by the source until used by the receiver for accepted deliveries within the validity period [NBC599 s.3.4]. Report FAR 1-C on obligations, disbursements, liquidations and balances of inter-agency fund transfers [JC2019-1]. A part of the advances, in particular advances to government corporations, was not liquidated at the end of 2023 (indicator 27.3, score C) [PEFA2025]. Schedule of fund transfers required from corporations [COA2015-004].
+  %% FROM THE ACCOUNTING MANUAL OF 2015: the memorandum of agreement, the amount (enough for three months, or the total project cost), the check in the name of the implementing agency for its trust account, its official receipt, the monthly reports within ten days, the return of an unused balance when the agreement says so, the audit by the auditor of the implementing agency [GAM-V1 Ch.6 s.63]. The entries of both agencies side by side: Due from National Government Agencies in the books of the source, Due to NGAs in the trust fund books of the implementer [GAM-V1 Annex M].
+  %% A CONDITION IN THE MANUAL: the receivable and the liability are recorded when the agreement requires that unused money is returned. When the agreement has no such condition, the source agency records an expense and the receiver records revenue at the transfer [GAM-V1 Ch.6 s.63]. The diagram shows the first case.
+  %% LIMIT: the Manual describes a transfer between two national agencies. For a transfer to a corporation or to a local government I read only the rule of the FY 2026 circular [NBC599 s.3.4].
+  participant SRC as Source agency<br/>(holds the appropriation)
+  participant IMP as Implementing body<br/>(agency, corporation or<br/>local government)
+  participant SUP as Suppliers and<br/>contractors
+  participant OV as DBM<br/>and COA
+
+  SRC->>IMP: Memorandum of agreement: purpose, amount (enough for three months,<br/>or the total project cost), period, reports
+  SRC->>SRC: Obligation recorded against its own allotment<br/>#nbsp;
+  SRC->>IMP: Check in the name of the implementing body.<br/>The receiver issues an official receipt
+  SRC->>SRC: Books: Due from National Government Agencies (a receivable).<br/>Not yet an expense, not yet a disbursement in the budget reports<br/>#nbsp;
+  IMP->>IMP: Trust fund books: Due to NGAs (a liability). The money goes to a trust<br/>account, or to the Treasury, from which DBM gives an NCA for trust<br/>#nbsp;
+  IMP->>SUP: Procurement, contract
+  SUP-->>IMP: Delivery, inspected and accepted
+  IMP->>SUP: Payment from the trust account or under the NCA for trust
+  IMP->>SRC: Within ten days after each month: reports of checks issued and<br/>of cash disbursements, approved by the head of the implementing body
+  SRC->>SRC: Books: expense recorded, receivable reduced. Now reported as disbursed.<br/>The implementing body reduces its liability by the same expenses<br/>#nbsp;
+  opt Money remains at the end of the project or of the validity period
+    IMP->>SRC: Unused balance returned, if the agreement says so
+  end
+  SRC->>OV: FAR 1-C each quarter: obligations, disbursements,<br/>liquidations and balances of fund transfers
+  OV-->>SRC: The auditor of the implementing body audits its payments.<br/>The auditor of the source agency audits the transfer
+
+  Note over SRC,OV: REPORTED WEAKNESS: a part of the advances, in particular advances to government corporations,<br/>was not liquidated at the end of 2023 (PEFA 2025, indicator 27.3, score C).

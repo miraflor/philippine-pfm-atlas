@@ -1,0 +1,27 @@
+---
+title: "08f  Reconciliation across budget, accounting, bank and physical evidence"
+---
+  %% QUESTION THIS DIAGRAM ANSWERS: What differences must be explained instead of assumed to be errors?
+  %% SOURCES: [GAM] [JC2019-1] conceptual control model
+  %% SCOPE: Reference view; not a verified deployed system interface.
+  %% READING: Arrows show possible evidence, authority or event dependencies, not a universal time order or verified API.
+flowchart TB
+  BR["Budget registers
+allotment / obligation / disbursement"] --> MATCH["Reconciliation and exception worklist"]
+  GL["Accounting books
+receivable / payable / expense / asset"] --> MATCH
+  BNK["Servicing bank and BTr
+settlement / cash balances"] --> MATCH
+  DOC["Contracts, receipts, deliveries, claims"] --> MATCH
+  ASSET["Property and asset ledgers"] --> MATCH
+  MATCH --> CAUSE{"Difference explained?"}
+  CAUSE -->|Timing| TIM["Cutoff / in-transit / accrual difference"]
+  CAUSE -->|Classification| CL["UACS / account / fund / fiscal period mapping"]
+  CAUSE -->|Missing link| MIS["Obligation / contract / voucher / payment reference issue"]
+  CAUSE -->|Irregularity| EXC["Escalate as control exception and investigate"]
+  CAUSE -->|Aligned| OK["Reconciled with evidence and sign-off"]
+  TIM --> FIX["Document adjusting or reconciling item"]
+  CL --> FIX
+  MIS --> FIX
+  EXC --> FIX
+  FIX --> MATCH

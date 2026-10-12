@@ -1,0 +1,138 @@
+[
+  {
+    "slug": "01_orient",
+    "name": "See the whole system",
+    "kicker": "01 / Orientation",
+    "time": "6 min",
+    "diagram_ids": [
+      "00a",
+      "00b",
+      "00g"
+    ],
+    "chapters": [
+      "01_planning_and_investment_programming"
+    ]
+  },
+  {
+    "slug": "02_budget",
+    "name": "From a priority to the GAA",
+    "kicker": "02 / Decide",
+    "time": "9 min",
+    "diagram_ids": [
+      "01a",
+      "02a",
+      "03a",
+      "03c",
+      "04a"
+    ],
+    "chapters": [
+      "01_planning_and_investment_programming",
+      "02_macro_fiscal_framework",
+      "03_budget_preparation",
+      "04_budget_legislation"
+    ]
+  },
+  {
+    "slug": "03_authority",
+    "name": "Authority to commit is not cash",
+    "kicker": "03 / Authorize",
+    "time": "8 min",
+    "diagram_ids": [
+      "05a",
+      "05b",
+      "05d",
+      "00d"
+    ],
+    "chapters": [
+      "05_budget_release_allotment_and_cash_authority"
+    ]
+  },
+  {
+    "slug": "04_claim",
+    "name": "How a payment becomes due",
+    "kicker": "04 / Commit and verify",
+    "time": "10 min",
+    "diagram_ids": [
+      "06a",
+      "06b",
+      "07h",
+      "07a",
+      "07i"
+    ],
+    "chapters": [
+      "06_procurement",
+      "07_obligation_delivery_payment",
+      "12_personnel_and_payroll"
+    ]
+  },
+  {
+    "slug": "05_treasury",
+    "name": "How public money moves",
+    "kicker": "05 / Finance and settle",
+    "time": "9 min",
+    "diagram_ids": [
+      "10b",
+      "11a",
+      "11b",
+      "07d"
+    ],
+    "chapters": [
+      "10_revenue_collection",
+      "11_treasury_cash_and_debt"
+    ]
+  },
+  {
+    "slug": "06_records",
+    "name": "What is recorded, reconciled and audited",
+    "kicker": "06 / Account and assure",
+    "time": "10 min",
+    "diagram_ids": [
+      "08e",
+      "08c",
+      "08d",
+      "09a"
+    ],
+    "chapters": [
+      "08_accounting_and_reporting",
+      "09_audit_and_oversight",
+      "13_assets_and_property"
+    ]
+  },
+  {
+    "slug": "07_beyond",
+    "name": "LGUs, GOCCs, payroll and future risks",
+    "kicker": "07 / Other pathways",
+    "time": "10 min",
+    "diagram_ids": [
+      "12a",
+      "14a",
+      "14c",
+      "15a",
+      "19a"
+    ],
+    "chapters": [
+      "12_personnel_and_payroll",
+      "14_local_governments",
+      "15_gocc_transfers_and_fund_clusters",
+      "19_fiscal_risks_ppp_and_contingent_liabilities"
+    ]
+  },
+  {
+    "slug": "08_integration",
+    "name": "UACS, IFMIS and missing interfaces",
+    "kicker": "08 / Connect systems",
+    "time": "10 min",
+    "diagram_ids": [
+      "16a",
+      "16b",
+      "16d",
+      "17a",
+      "17b",
+      "17d"
+    ],
+    "chapters": [
+      "16_information_systems_and_ifmis",
+      "17_uacs_and_record_identifiers"
+    ]
+  }
+]

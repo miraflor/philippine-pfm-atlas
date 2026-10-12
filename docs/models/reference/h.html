@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reference H — PFM system model: typed events, records, authorities, jurisdictions · Philippine PFM Atlas</title>
+<meta name="description" content="Reference H — PFM system model: typed events, records, authorities, jurisdictions">
+<meta name="color-scheme" content="light">
+<script>document.documentElement.classList.add('js');try{if(localStorage.getItem('pfm-atlas-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(error){}</script>
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="site-header">
+<div class="wrap header-row">
+<a class="brand" href="../../index.html"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="6" fill="#ffffff" stroke="#deded9"/><path d="M6 8.5H26" stroke="#1f4e8c" stroke-width="3.2" stroke-linecap="round"/><path d="M6 14H26" stroke="#2e6b2e" stroke-width="3.2" stroke-linecap="round"/><path d="M6 19.5H26" stroke="#a35200" stroke-width="3.2" stroke-linecap="round"/><path d="M6 25H26" stroke="#555555" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="0.1 4.9"/><path d="M17 8.5V14" stroke="#1b1b1b" stroke-width="3.6" stroke-linecap="round"/></svg><span>Philippine PFM Atlas</span></a>
+<form class="header-search" action="../../search.html" role="search"><label class="visually-hidden" for="q-top">Search the atlas</label><input id="q-top" name="q" type="search" placeholder="Search: SARO, voucher, BTMS"></form>
+<button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">Dark mode</button>
+</div>
+<nav class="wrap site-nav" aria-label="Main"><a href="../../index.html">Map</a><a href="../../walkthrough.html">Guided lessons</a><a href="../../big-picture.html">Big picture</a><a href="../../chapters/index.html">Chapters</a><a href="../../reference/index.html">References</a><a href="../../diagrams/index.html">Diagrams</a><a href="../../systems.html">Systems &amp; UACS</a><a href="../../models/index.html">Research models</a><a href="../../reference/g.html">Open points</a><a href="../../search.html">Search</a></nav>
+</header>
+<main id="main" class="wrap">
+<div class="model-note"><strong>Historical research reference (10 October 2026).</strong> Proposed modeling material, not the current procedural atlas and not an official information-system specification. Some older diagram IDs and claims have been superseded.</div><article class="prose"><h1>Reference H — PFM system model: typed events, records, authorities, jurisdictions</h1>
+<p><strong>Status:</strong> proposed reference ontology; not enacted law, not BTMS database schema. This document strengthens the descriptive atlas without claiming the public PFM applications share one internal implementation.</p>
+<h2>1. Ontological layers</h2>
+<ol>
+<li><strong>Jurisdiction and financial entity:</strong> NGA, attached operating unit, LGU, GOCC, GFI, BARMM and special statutory funds can have different spending powers and reporting boundaries. An entity is not an application account.</li>
+<li><strong>Authority:</strong> a law, appropriation item, allotment instrument, signed approval or delegated competence. Authorities have author, recipient, amount/purpose limits and validity intervals; authority is not cash.</li>
+<li><strong>Event:</strong> a dated occurrence or state change (assessment, appropriation enactment, allotment, obligation, delivery, payment, journal posting, reconciliation, audit notice). Events may be planned, recorded, reversed or corrected. Event records must carry IDs and provenance.</li>
+<li><strong>Record:</strong> one identifiable, versioned document, register line, contract, transaction or journal entry. A record's issuer differs from the software displaying a copy.</li>
+<li><strong>Classification:</strong> UACS (with funding, organization, location, program/PAP, object dimensions as applicable), COA accounts and other code systems. Classification codes are <em>types</em>, not unique document or event identifiers.</li>
+<li><strong>Financial or physical state:</strong> allotment balance, unpaid obligations, payables, bank cash, asset ownership, delivered output or claim status. These are not automatically equal amounts.</li>
+<li><strong>System and interface:</strong> named application and deployment scope, data owner, exchange method, evidence, and reconciliation; a system in a slide is not evidence of an implemented integration.</li>
+</ol>
+<h2>2. Explicit predicates and relationships</h2>
+<p><code>AUTHORIZES(authority,event,rule_version)</code>; <code>EVIDENCES(record,event)</code>; <code>REFERENCES(record_1,record_2,role)</code>; <code>CLASSIFIES(record,code,version,valid_at)</code>; <code>RECORDED_IN(record,system,environment)</code>; <code>SENT_VIA(exchange,source_system,target_system,mode)</code>; <code>CHANGES(event,balance,amount,as_of)</code>; <code>CONSTRains(rule,event,period)</code>; <code>SUPERSEDES(new_record,old_record)</code>; <code>RECONCILES(record_a,record_b,as_of)</code>.</p>
+<p>References are explicitly many-to-many. One contract can have several obligations, releases and payments; one UACS class can cover many unrelated payments. Shared coding never proves shared identity. An interface may preserve one ID, map it to another, or lose it, and this difference must be recorded.</p>
+<h2>3. Time is mandatory</h2>
+<p>Store at least <code>event_date</code>, <code>posting_date</code>, <code>fiscal_year</code>, <code>authority_valid_from/to</code>, <code>code_version/effective_date</code>, and <code>evidence_checked_at</code>. A document dated 2025 might pay under 2026 rules; the transaction must be assessed under the appropriate law and fund validity. Cross-year comparison needs a documented code crosswalk, not silent recoding.</p>
+<h2>4. Modeling conventions</h2>
+<ul>
+<li><code>observed</code>: authoritative primary documents or operational evidence examined.</li>
+<li><code>reported</code>: credible publication says practice exists; no independently tested interface.</li>
+<li><code>inferred</code>: model joins established facts but technical or legal conditionality remains unverified.</li>
+<li><code>target</code>: planned architecture, <strong>never</strong> a production assertion.</li>
+<li><code>unknown</code>: absence of evidence; <strong>never</strong> assert an integration does not exist.</li>
+</ul>
+<p><strong>Reference diagrams:</strong> <a href="../diagrams/mermaid/00i_concurrent_pfm_architecture.mmd">00i</a>, <a href="../diagrams/mermaid/00k_event_authority_record_system_metagraph.mmd">00k</a>, <a href="../diagrams/mermaid/17e_multi_identifier_lineage.mmd">17e</a>, <a href="../diagrams/plantuml/17g_financial_record_class_model.puml">17g</a>.</p>
+<p><strong>Primary research anchors:</strong> <a href="https://www.dbm.gov.ph/wp-content/uploads/DBM%20Publications/PFM-Reforms/Midterm-Update/PHIL%20PFM%20Roadmap%20Midterm%20Update%20v2.pdf">DBM PFM Roadmap Midterm Update</a>; COA Government Accounting Manual; FY 2026 <a href="https://www.dbm.gov.ph/index.php/dbm-issuances/national-budget-circulars?catid=428&amp;id=3824%3Anational-budget-circular-no-599&amp;view=article">NBC 599</a>. The ontology itself is this atlas's proposed analytic structure.</p>
+</article><p><a href="../index.html">← Research models</a></p>
+</main>
+<footer class="site-footer"><div class="wrap"><p>Philippine PFM Atlas. An independent reference. It is not an official publication of the Philippine government, and it does not replace the laws, circulars and manuals that it cites. Facts on current events are as of 8 October 2026.</p><p><a href="../../about.html">About the atlas</a> · <a href="../../reference/f.html">Sources</a> · <a href="../../reference/g.html">Open points</a></p></div></footer>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

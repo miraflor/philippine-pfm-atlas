@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.env
+.env.*
+!.env.example
+.pytest_cache/
+node_modules/
+*.log
+# Plain-text conversions of the source documents, used by tools/check_quotes.py and tools/check_refs.py
+source_texts/

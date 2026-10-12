@@ -1,0 +1,50 @@
+---
+title: "11d  One foreign project loan: approvals, signing, use of the loan and repayment"
+---
+sequenceDiagram
+  autonumber
+  %% QUESTION THIS DIAGRAM ANSWERS: a project is to be financed by a foreign loan. Which bodies must approve before the loan is signed, and how does the loan money reach the project?
+  %% SOURCES: ICC review of every project funded by a foreign loan [ICC-NEWS]. Order of approvals seen in one concessional loan (approval by the NEDA Board, DBM Forward Obligational Authority, Monetary Board approval in principle, Special Presidential Authority, clearance of the Inter-Agency Committee for the Review of Foreign Loan Documents, final Monetary Board approval, legal opinion of DOJ) [ODA]. Documents that DOF sends to the Office of the President and the lead time of 10 working days [MC51]. Prior concurrence of the Monetary Board [CONST VII.20]. Non-Cash Availment Authority for direct payment, MDS sub-account for foreign-assisted projects [NBC599]. The steps and the entries of a direct payment by the lender, of a cash availment and of the debt service [GAM-V1 Ch.6 ss.66-68, Annex I]. Loan proceeds may be used only after a release of funds [EO292-B6 s.29]. Tier 2 profile of foreign-assisted projects, BP Form 203 [NBM156]. BTr services the debt [EO449].
+  %% NOTE: the ED Council replaced the NEDA Board in 2025 [AO37]. The loan in the source was approved before that change.
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: step 3 (request to provide for the project in the budget) and step 13 (declaration of effectiveness).
+  participant AGY as Implementing<br/>agency
+  participant DEP as DEPDev, ICC,<br/>ED Council
+  participant DBM as DBM
+  participant DOF as DOF
+  participant MB as Monetary Board<br/>(BSP)
+  participant OP as Office of the<br/>President
+  participant LEN as Lender
+  participant DOJ as DOJ
+  participant BTR as BTr
+
+  Note over AGY,OP: BEFORE SIGNING
+  AGY->>DEP: Project proposal for ICC review
+  DEP-->>AGY: ICC recommendation, ED Council approval
+  AGY->>DBM: Request to provide for the project in the budget
+  DBM-->>DOF: Forward Obligational Authority (project loan)
+  DOF->>MB: Request for approval in principle of the loan terms
+  MB-->>DOF: Approval in principle
+  DOF->>OP: Request for Special Authority, at least 10 working days before the date needed, with:<br/>agency letter, draft loan agreement, Monetary Board concurrence,<br/>statement of compliance with laws, Forward Obligational Authority
+  OP-->>DOF: Special Authority (or Full Powers) to negotiate and sign
+
+  Note over DOF,DOJ: SIGNING
+  DOF->>LEN: Negotiation. Loan documents cleared by the<br/>inter-agency committee that reviews foreign loan documents
+  DOF->>LEN: Loan agreement signed
+  MB-->>DOF: Final approval of the loan terms
+  DOJ-->>DOF: Legal opinion on the authority of the borrower
+  LEN-->>DOF: Loan declared effective
+
+  Note over AGY,BTR: USE OF THE LOAN. The project also needs an appropriation and an allotment like any other spending.
+  alt Direct payment
+    AGY->>LEN: Withdrawal application, after the delivery is accepted and<br/>the bill is approved. The agency records the asset and a payable
+    LEN->>LEN: Pays the supplier directly<br/>#nbsp;
+    BTR-->>AGY: Journal entry voucher of BTr: the lender has paid.<br/>BTr records the subsidy to the agency and the loan
+    AGY->>DBM: Copy of that voucher and the list of suppliers paid
+    DBM-->>AGY: Non-Cash Availment Authority. The agency closes<br/>the payable against Subsidy from National Government
+  else Cash through the Treasury
+    LEN->>BTR: Loan proceeds to the Treasury. BTr records cash<br/>and Loans Payable-Foreign on the credit advice of BSP
+    DBM-->>AGY: NCA under the MDS sub-account for foreign-assisted projects
+  end
+
+  Note over DOF,BTR: REPAYMENT
+  BTR->>LEN: Interest and principal on the due dates, from the Treasury<br/>Single Account. Only the books of BTr record them: principal<br/>reduces the loan payable, interest is an expense

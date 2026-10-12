@@ -1,0 +1,21 @@
+---
+title: "15g  Entity and funding channel variants"
+---
+  %% QUESTION THIS DIAGRAM ANSWERS: Which paths must be documented separately from the regular NGA appropriation route?
+  %% SOURCES: [GAM] [LGC] RA 10149 (statute, primary provisions still to verify) [ROADMAP2024] conceptual taxonomy
+  %% SCOPE: Reference view; not a verified deployed system interface.
+  %% READING: Arrows show possible evidence, authority or event dependencies, not a universal time order or verified API.
+flowchart TB
+  PUB["Public resources and expenditures"] --> ENTITY{"Entity / fund / legal authority?"}
+  ENTITY --> NGA["NGA under GAA, allotment and MDS rules as applicable"]
+  ENTITY --> LGU["LGU: local appropriation ordinance / local treasury"]
+  ENTITY --> GOCC["GOCC: approved corporate budget, own receipts, transfers as applicable"]
+  ENTITY --> GFI["GFI: prudential, corporate and government control overlay"]
+  ENTITY --> BARMM["BARMM: organic law / annual block grant and region-specific authorities"]
+  ENTITY --> SPECIAL["Trust funds, special accounts, retained receipts, foreign-assisted disbursements"]
+  NGA --> X["Record source and applicable controls per event"]
+  LGU --> X
+  GOCC --> X
+  GFI --> X
+  BARMM --> X
+  SPECIAL --> X

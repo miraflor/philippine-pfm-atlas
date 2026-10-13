@@ -63,11 +63,8 @@ def home(body):
         raise ValueError('Homepage structure changed: .home not found')
     body=body.replace('<div class="home">', '<div class="home atlas-experience" '+MARK+'>',1)
     body=body.replace('<section class="home-intro">', '<section class="home-intro atlas-home-hero"><p class="atlas-kicker">An atlas of public financial management · Philippines</p>',1)
-    body=body.replace('<h1>Philippine PFM Atlas</h1>', '<h1>Public finance is <em>not a straight line.</em></h1><p class="atlas-identity">Philippine PFM Atlas</p>',1)
-    m=re.search(r'(<p class="lead">.*?</p>)',body,re.S)
-    if m:
-        body=body[:m.end()]+('<div class="atlas-hero-art" aria-label="Four concurrent lines">'+hero_threads()+
-            '<div class="atlas-art-caption"><span>FOUR CONCURRENT LINES</span><span>THREE MEETING POINTS</span><a href="#lines">Explore the working map ↓</a></div></div>')+body[m.end():]
+    body=body.replace('<h1>Philippine PFM Atlas</h1>', '<div class="atlas-home-grid"><div class="atlas-home-headline"><h1>Public finance is <em>not a straight line.</em></h1><p class="atlas-identity">Philippine PFM Atlas</p><a class="atlas-home-jump" href="#lines">Explore the working four-line map ↓</a></div><div class="atlas-home-explainer">',1)
+    body=body.replace('</section>\n<section class="start-paths"', '</div></div></section>\n<section class="start-paths"',1)
     nav='''<nav class="atlas-page-wayfinder" aria-label="Explore this page">
 <a href="#lines"><span>01</span> Four lines</a><a href="#meeting-points"><span>02</span> Where they meet</a><a href="#parts"><span>03</span> The five parts</a><a href="#reference-files"><span>04</span> References</a><a href="#reliability"><span>05</span> Evidence</a></nav>'''
     body=body.replace('</section>\n<section class="start-paths"', '</section>'+nav+'\n<section class="start-paths"',1)
@@ -196,13 +193,8 @@ def library(body,diagrams):
     return body
 
 
+# PFM ATLAS BALANCED HERO + ABOUT COLOPHON v1
 def about(body):
-    content='''<section class="atlas-about-author" '''+MARK+'''><p class="atlas-kicker">About · Authorship and methods</p>
-<div class="atlas-about-grid"><div><p class="atlas-about-overline">AN INDEPENDENT REFERENCE</p><h1>Built to make a complex public system easier to examine.</h1><p class="atlas-about-lead">The Philippine PFM Atlas is developed and maintained by <strong>James Matthew Miraflor</strong>.</p>
-<a href="diagrams/index.html" class="atlas-lesson-link">Explore the atlas ↗</a></div>
-<div class="atlas-about-facts"><p class="atlas-about-label">AUTHOR / AFFILIATION</p><strong>James Matthew Miraflor</strong><p>Graduate student, Department of Computer Science, University of the Philippines Diliman<br>Scientific Computing Laboratory</p>
-<div class="atlas-about-divider"></div><p class="atlas-about-label">HOW IT WAS MADE</p><p>This is an <strong>AI-assisted</strong> project. AI tools have supported research organization, drafting, code, and diagram development. The author directs the work and is responsible for what is published, including its claims, interpretations, corrections and limitations.</p>
-<div class="atlas-about-divider"></div><p class="atlas-about-label">INDEPENDENCE</p><p>The atlas is not an official publication or endorsement of UP Diliman, the Scientific Computing Laboratory, or any Philippine government institution. Consult the cited primary sources and the recorded open questions.</p>
-<p><a href="reference/f.html">Source register ↗</a> &nbsp; <a href="reference/g.html">Open questions ↗</a></p></div></div></section>
-<div class="atlas-about-archive-label"><span>ORIGINAL PROJECT DOCUMENTATION</span><p>The existing README-based About documentation follows in full.</p></div>'''
-    return content+body
+    """Place authorship and AI disclosure after the unchanged documentation."""
+    content = '<section class="atlas-about-colophon" data-atlas-experience="1" aria-labelledby="atlas-colophon-heading">\n<h2 id="atlas-colophon-heading">Authorship and methods</h2>\n<p>The Philippine PFM Atlas is an AI-assisted project. AI tools supported research organization, drafting, code and diagram development. The author directs the work and is responsible for the published material, including its interpretations, corrections, and limitations.</p>\n<p>The atlas is an independent reference, not an official publication or endorsement of the University of the Philippines Diliman, the Scientific Computing Laboratory, or any Philippine government institution. Readers should consult the cited primary sources and recorded open questions.</p>\n<p class="atlas-colophon-signature">Developed and maintained by <strong>James Matthew Miraflor</strong> · Graduate student, Department of Computer Science, University of the Philippines Diliman · Scientific Computing Laboratory.</p>\n</section>'
+    return body + "\n" + content

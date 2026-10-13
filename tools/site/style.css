@@ -723,3 +723,66 @@ body:has(.atlas-walk-layout) main.wrap > p:not(.eyebrow):not(.lead) {
   .pfm-live-panel.atlas-theater-fallback { position: static; width: auto; height: auto; }
 }
 /* END PH PFM Atlas compact editorial tuning v1 */
+
+/* PFM ATLAS BALANCED HERO + ABOUT COLOPHON v1 */
+/* Quiet, two-column editorial introduction; the useful four-line map below stays. */
+.home.atlas-experience .atlas-home-hero {
+  min-height: 0;
+  padding: clamp(1.35rem, 3vw, 2.8rem) 0 clamp(1.5rem, 3vw, 2.6rem);
+}
+.home.atlas-experience .atlas-home-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.8rem, 4.5vw, 4.8rem);
+  align-items: center;
+  margin-top: clamp(.8rem, 2vw, 1.6rem);
+}
+.home .atlas-home-grid .atlas-home-headline,
+.home .atlas-home-grid .atlas-home-explainer { min-width:0; }
+.home .atlas-home-grid h1 {
+  font-size: clamp(2.35rem, 3.65vw, 3.7rem);
+  line-height: 1.115;
+  max-width: none;
+  letter-spacing: -.052em;
+  margin: 0 0 1rem;
+}
+.home .atlas-home-grid .atlas-identity { margin: 0 0 1.1rem; font-size: .75rem; }
+.home .atlas-home-grid .lead {
+  max-width: none;
+  margin: 0 0 1rem;
+  font-size: clamp(1.06rem, 1.35vw, 1.27rem);
+  line-height: 1.52;
+}
+.home .atlas-home-grid .search-large { max-width:none; margin:1rem 0 .8rem; box-shadow:none; }
+.home .atlas-home-grid .muted { font-size:.83rem; line-height:1.5; margin:0; }
+.atlas-home-jump { color:var(--authority);text-decoration:none;font-size:.9rem;font-weight:650; }
+.atlas-home-jump:hover { text-decoration:underline; }
+/* The old hero animation is not used. The linked interactive map remains. */
+.home .atlas-hero-art { display:none; }
+@media (max-width: 820px) {
+  .home.atlas-experience .atlas-home-grid { grid-template-columns:1fr; gap:1.15rem; align-items:start; }
+  .home .atlas-home-grid h1 { font-size:clamp(2.2rem,7.6vw,3.35rem); }
+  .home .atlas-home-grid .atlas-home-explainer { max-width:40rem; }
+}
+/* Authorship is an understated colophon after the existing documentation. */
+.atlas-about-colophon {
+  max-width:var(--prose);
+  margin: 2rem 0 1rem;
+  padding: 1.2rem 0 0;
+  border-top: 1px solid var(--rule);
+  color:var(--muted);
+  font-size:.86rem;
+  line-height:1.6;
+}
+.atlas-about-colophon h2 {
+  border:0;
+  padding:0;
+  color:var(--text);
+  font-size:1rem;
+  letter-spacing:0;
+  margin:0 0 .8rem;
+}
+.atlas-about-colophon p { margin:0 0 .75rem; }
+.atlas-about-colophon .atlas-colophon-signature { margin-top:1rem; }
+.atlas-about-colophon strong { color:var(--text);font-weight:600; }
+/* END PFM ATLAS BALANCED HERO + ABOUT COLOPHON v1 */

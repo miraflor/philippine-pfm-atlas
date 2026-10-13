@@ -26,6 +26,7 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
+from site_experience import enhance_page
 import mistune
 from bs4 import BeautifulSoup, Comment, NavigableString
 
@@ -51,6 +52,7 @@ NAV = [
     ("models/index.html", "Research models"),
     ("reference/g.html", "Open points"),
     ("search.html", "Search"),
+    ("about.html", "About"),
 ]
 
 BRAND_MARK = ('<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="6" '
@@ -559,6 +561,7 @@ def render(md_text, md_rel, page_url, page=""):
 
 def frame(url, title, body, description="", section=None, md_source=None, scripts=("site.js",), body_class=""):
     root = root_prefix(url)
+    body = enhance_page(url, body, DIAGRAMS)
     nav = []
     for target, label in NAV:
         current = target == (section or url)

@@ -459,3 +459,110 @@
   });
 })();
 /* END PFM MERMAID INTERACTIVE PATCH v2 */
+
+/* Philippine PFM Atlas editorial experience. Progressive enhancement only. */
+(function () {
+  'use strict';
+  var hasExperience = document.querySelector('[data-atlas-experience="1"]');
+  if (!hasExperience) return;
+
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('atlas-motion');
+    var reveal = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in-view');
+          reveal.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.04, rootMargin: '0px 0px 60px 0px' });
+    document.querySelectorAll('.atlas-story-section, .atlas-lesson-scene, .atlas-diagram-group').forEach(function (element) {
+      reveal.observe(element);
+    });
+  }
+
+  var lineMap = document.querySelector('.home #lines .map[data-highlight-line]');
+  if (lineMap) {
+    document.querySelectorAll('.atlas-map-controls button[data-atlas-line]').forEach(function (button) {
+      button.addEventListener('click', function () {
+        lineMap.dataset.highlightLine = button.dataset.atlasLine;
+        document.querySelectorAll('.atlas-map-controls button').forEach(function (other) {
+          other.setAttribute('aria-pressed', String(other === button));
+        });
+      });
+    });
+  }
+
+  var orbit = document.querySelector('.atlas-orbit');
+  var scenes = Array.prototype.slice.call(document.querySelectorAll('.atlas-lesson-scene'));
+  if (orbit && scenes.length) {
+    var active = -1;
+    var portrait = document.getElementById('atlas-active-diagram');
+    var previewLink = document.getElementById('atlas-active-diagram-link');
+    var number = document.getElementById('atlas-active-number');
+
+    function activate(index) {
+      if (active === index || index < 0 || index >= scenes.length) return;
+      active = index;
+      var scene = scenes[index];
+      scenes.forEach(function (s, i) { s.classList.toggle('is-active', i === index); });
+      orbit.querySelectorAll('[data-orbit]').forEach(function (node) {
+        node.classList.toggle('is-active', Number(node.dataset.orbit) === index + 1);
+      });
+      if (number) number.textContent = String(index + 1).padStart(2, '0') + ' / ' + String(scenes.length).padStart(2, '0');
+      if (portrait) {
+        var url = scene.dataset.preview;
+        if (portrait.getAttribute('src') !== url) portrait.setAttribute('src', url);
+        portrait.setAttribute('alt', 'Diagram ' + scene.dataset.previewId + ': ' + scene.dataset.previewTitle);
+      }
+      if (previewLink) {
+        previewLink.href = 'diagrams/' + encodeURIComponent(scene.dataset.previewId) + '.html';
+        previewLink.textContent = 'Explore diagram ' + scene.dataset.previewId + ' ↗';
+      }
+    }
+
+    var ticking = false;
+    function syncCurrentScene() {
+      ticking = false;
+      var targetY = window.innerHeight * 0.48;
+      var best = 0;
+      var bestDistance = Infinity;
+      scenes.forEach(function (scene, i) {
+        var bounds = scene.getBoundingClientRect();
+        var distance = bounds.top <= targetY && bounds.bottom >= targetY ? 0 :
+          Math.min(Math.abs(bounds.top - targetY), Math.abs(bounds.bottom - targetY));
+        if (distance < bestDistance) { bestDistance = distance; best = i; }
+      });
+      activate(best);
+    }
+    function onPositionChange() {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(syncCurrentScene); }
+    }
+    window.addEventListener('scroll', onPositionChange, {passive:true});
+    window.addEventListener('resize', onPositionChange);
+    activate(0);
+    onPositionChange();
+  }
+
+  if (document.querySelector('.home.atlas-experience')) {
+    var meter = document.createElement('div');
+    meter.className = 'atlas-scroll-meter';
+    meter.setAttribute('aria-hidden', 'true');
+    var bar = document.createElement('span');
+    meter.appendChild(bar);
+    document.body.appendChild(meter);
+    var busy = false;
+    function updateMeter() {
+      busy = false;
+      var max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      var pct = Math.min(1, Math.max(0, window.scrollY / max));
+      bar.style.transform = 'scaleX(' + pct.toFixed(4) + ')';
+    }
+    window.addEventListener('scroll', function () {
+      if (!busy) { busy = true; window.requestAnimationFrame(updateMeter); }
+    }, {passive:true});
+    updateMeter();
+  }
+})();
+

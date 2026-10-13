@@ -1,0 +1,208 @@
+"""Presentation-only enhancements for Philippine PFM Atlas.
+
+Retains the source-backed text, documents, citations, PNGs, and diagram code.
+This file is called by tools/build_site.py and by apply_patch.py when
+updating the currently published static HTML. Python stdlib only.
+"""
+from __future__ import annotations
+import html
+import json
+import math
+import re
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent if Path(__file__).name == 'site_experience.py' and Path(__file__).parent.name == 'tools' else None
+# Overlay source is alongside apply_patch.py until installed under tools/.
+if ROOT is None:
+    ROOT = Path(__file__).resolve().parent
+
+MARK = 'data-atlas-experience="1"'
+
+def esc(s):
+    return html.escape(str(s), quote=True)
+
+
+def enhance_page(url: str, body: str, diagrams: list[dict]) -> str:
+    """Idempotent: eligible pages get additional presentation, not new facts."""
+    if MARK in body:
+        return body
+    if url == 'index.html':
+        return home(body)
+    if url == 'walkthrough.html':
+        return walkthrough(body, diagrams)
+    if url == 'diagrams/index.html':
+        return library(body, diagrams)
+    if url == 'about.html':
+        return about(body)
+    return body
+
+
+def hero_threads():
+    colors = ['#1f4e8c', '#2e6b2e', '#a35200', '#747474']
+    labels = ['Legal authority', 'The claim', 'Cash', 'Records & control']
+    out = ['<svg viewBox="0 0 920 310" role="img" aria-labelledby="atlas-hero-title atlas-hero-desc" xmlns="http://www.w3.org/2000/svg">',
+        '<title id="atlas-hero-title">Four concurrent lines of public financial management</title>',
+        '<desc id="atlas-hero-desc">Authority, claim, cash and recording progress concurrently. A payment depends on the relevant conditions meeting; it is not a single linear chain.</desc>',
+        '<g class="thread-guide">']
+    for i, (color,label) in enumerate(zip(colors,labels)):
+        y = 46+i*69
+        out.append(f'<text x="19" y="{y-14}" class="thread-title" fill="{color}">{esc(label)}</text>')
+        out.append(f'<path d="M24 {y} H896" stroke="{color}" class="thread-track"/>')
+        out.append(f'<path d="M24 {y} H896" stroke="{color}" class="thread-flow thread-{i}"/>')
+        for x in (220,480,705):
+            out.append(f'<circle cx="{x}" cy="{y}" r="7" fill="#ffffff" stroke="{color}" stroke-width="3"/>')
+    out.append('</g>')
+    for x,y,label in [(480,115,'01'),(705,115,'02'),(790,184,'03')]:
+        out.append(f'<circle cx="{x}" cy="{y}" r="19" class="thread-meet"/><text x="{x}" y="{y+5}" class="thread-num" text-anchor="middle">{label}</text>')
+    out.append('</svg>')
+    return ''.join(out)
+
+
+def home(body):
+    if '<div class="home">' not in body:
+        raise ValueError('Homepage structure changed: .home not found')
+    body=body.replace('<div class="home">', '<div class="home atlas-experience" '+MARK+'>',1)
+    body=body.replace('<section class="home-intro">', '<section class="home-intro atlas-home-hero"><p class="atlas-kicker">An atlas of public financial management · Philippines</p>',1)
+    body=body.replace('<h1>Philippine PFM Atlas</h1>', '<h1>Public finance is <em>not a straight line.</em></h1><p class="atlas-identity">Philippine PFM Atlas</p>',1)
+    m=re.search(r'(<p class="lead">.*?</p>)',body,re.S)
+    if m:
+        body=body[:m.end()]+('<div class="atlas-hero-art" aria-label="Four concurrent lines">'+hero_threads()+
+            '<div class="atlas-art-caption"><span>FOUR CONCURRENT LINES</span><span>THREE MEETING POINTS</span><a href="#lines">Explore the working map ↓</a></div></div>')+body[m.end():]
+    nav='''<nav class="atlas-page-wayfinder" aria-label="Explore this page">
+<a href="#lines"><span>01</span> Four lines</a><a href="#meeting-points"><span>02</span> Where they meet</a><a href="#parts"><span>03</span> The five parts</a><a href="#reference-files"><span>04</span> References</a><a href="#reliability"><span>05</span> Evidence</a></nav>'''
+    body=body.replace('</section>\n<section class="start-paths"', '</section>'+nav+'\n<section class="start-paths"',1)
+    accents={'lines':'01 / A system of concurrent processes', 'meeting-points':'02 / Conditions before payment',
+             'parts':'03 / Navigate the process', 'reference-files':'04 / Explore the evidence', 'reliability':'05 / Limits and uncertainties'}
+    for ident,kicker in accents.items():
+        body=body.replace(f'<section id="{ident}">',f'<section id="{ident}" class="atlas-story-section"><p class="atlas-kicker">{kicker}</p>',1)
+    controls='''<div class="atlas-map-controls" role="group" aria-label="Highlight a line of public financial management">
+<button type="button" data-atlas-line="all" aria-pressed="true">All four lines</button>
+<button type="button" data-atlas-line="authority" aria-pressed="false">Legal authority</button>
+<button type="button" data-atlas-line="claim" aria-pressed="false">The claim</button>
+<button type="button" data-atlas-line="cash" aria-pressed="false">Cash</button>
+<button type="button" data-atlas-line="records" aria-pressed="false">Records &amp; control</button></div>'''
+    body=body.replace('<div class="map">',controls+'<div class="map" data-highlight-line="all">',1)
+    body=body.replace('<section class="start-paths"', '<section class="start-paths atlas-story-section"',1)
+    return body
+
+
+LESSON_COPY={
+ '01_orient':'Locate the institutions, records and exchanges before following any single transaction.',
+ '02_budget':'Trace how priorities and proposals become appropriations through the budget process.',
+ '03_authority':'Distinguish permission to incur an obligation from permission and resources to pay it.',
+ '04_claim':'Follow procurement, delivery, acceptance and the conditions that make payment due.',
+ '05_treasury':'Examine collection, cash management and the mechanisms for settling a payment.',
+ '06_records':'Follow the records created by events, the reconciliations, and subsequent oversight.',
+ '07_beyond':'Explore important pathways and obligations that do not fit a single purchasing example.',
+ '08_integration':'Consider UACS, record identities and what is—and is not—known about systems integration.',
+}
+
+def lesson_orbit():
+    items=['Orient','Decide','Authorize','Verify','Settle','Account','Beyond','Connect']
+    out=['<svg class="atlas-orbit" viewBox="0 0 420 390" role="img" aria-labelledby="atlas-orbit-title atlas-orbit-desc">',
+         '<title id="atlas-orbit-title">Eight perspectives on public financial management</title>',
+         '<desc id="atlas-orbit-desc">Eight thematic lessons arranged around a common system, rather than presented as a single sequential approval flow.</desc>',
+         '<circle cx="210" cy="193" r="135" fill="none" stroke="currentColor" opacity=".14" stroke-dasharray="3 9"/>',
+         '<circle cx="210" cy="193" r="77" fill="none" stroke="currentColor" opacity=".07"/>',
+         ]
+    for i,name in enumerate(items,1):
+        angle=-math.pi/2+(i-1)*math.pi/4
+        x=210+135*math.cos(angle); y=193+135*math.sin(angle)
+        out.append(f'<g class="atlas-orbit-item" data-orbit="{i}">')
+        out.append(f'<line x1="210" y1="193" x2="{x:.2f}" y2="{y:.2f}" class="atlas-orbit-spoke"/>')
+        out.append(f'<circle cx="{x:.2f}" cy="{y:.2f}" r="19" class="atlas-orbit-node"/>')
+        out.append(f'<text x="{x:.2f}" y="{y+5:.2f}" class="atlas-orbit-number" text-anchor="middle">{i:02}</text>')
+        # Labels are kept separate in the lesson story cards for readability.
+        out.append('</g>')
+    out += ['<circle class="atlas-orbit-hub" cx="210" cy="193" r="57"/>',
+            '<text x="210" y="187" text-anchor="middle" class="atlas-orbit-label">PFM</text>',
+            '<text x="210" y="205" text-anchor="middle" class="atlas-orbit-sub">ONE SYSTEM</text>']
+    out.append('</svg>')
+    return ''.join(out)
+
+
+def walkthrough(body, diagrams):
+    if '<div class="lesson-grid">' not in body:
+        raise ValueError('Walkthrough structure changed: .lesson-grid not found')
+    root=ROOT
+    path=root/'content'/'guides'/'index.json'
+    if not path.exists():
+        raise ValueError(f'Guide metadata missing: {path}')
+    guides=json.loads(path.read_text(encoding='utf-8'))
+    lookup={d['id']:d for d in diagrams}
+    cards=[]
+    for i,g in enumerate(guides,1):
+        if not g.get('diagram_ids') or g['diagram_ids'][0] not in lookup:
+            raise ValueError('Missing diagram metadata for lesson '+g['slug'])
+        first=lookup[g['diagram_ids'][0]]
+        path='atlas/'+first['image']
+        title=g['name']; slug=g['slug']
+        cards.append(f'''<article class="atlas-lesson-scene" id="lesson-{i:02d}" data-lesson="{i}" data-preview="{esc(path)}" data-preview-id="{esc(first['id'])}" data-preview-title="{esc(first['title'])}">
+<div class="atlas-lesson-index"><span>LESSON {i:02d}</span><span>{esc(g['time'])} read</span></div>
+<p class="atlas-scene-kicker">{esc(g['kicker'])}</p><h2>{esc(title)}</h2>
+<p>{esc(LESSON_COPY[slug])}</p>
+<p class="atlas-scene-meta">{len(g['diagram_ids'])} diagrams · {len(g['chapters'])} {"chapter" if len(g['chapters'])==1 else "chapters"}</p>
+<a class="atlas-lesson-link" href="guide/{esc(slug)}.html">Read this lesson <span aria-hidden="true">↗</span></a>
+<a class="atlas-lesson-preview-link" href="diagrams/{esc(first['id'])}.html">Explore diagram {esc(first['id'])} ↗</a>
+</article>''')
+    first=lookup[guides[0]['diagram_ids'][0]]
+    intro='''<div class="atlas-walk-intro" '''+MARK+'''><p class="atlas-kicker">Eight lenses on one interconnected system</p><div class="atlas-walk-decoration" aria-hidden="true"><span></span><span></span><span></span><span></span></div></div>'''
+    body=intro+body
+    body=body.replace('<div class="lesson-grid">', '''<div class="atlas-walk-layout">
+<aside class="atlas-walk-pin" aria-label="Lesson visualisation">
+<div class="atlas-walk-pin-inner"><p class="atlas-kicker">CURRENT PERSPECTIVE <strong id="atlas-active-number">01 / 08</strong></p>
+'''+lesson_orbit()+f'''<div class="atlas-live-figure"><div class="atlas-live-figure-bar"><span>DIAGRAM PREVIEW</span><a id="atlas-active-diagram-link" href="diagrams/{esc(first['id'])}.html">Explore diagram ↗</a></div>
+<img id="atlas-active-diagram" src="atlas/{esc(first['image'])}" alt="Diagram {esc(first['id'])}: {esc(first['title'])}" loading="eager"></div>
+<p class="atlas-visual-note">These lessons are perspectives on interrelated processes, not eight compulsory steps in one transaction.</p></div></aside>
+<div class="atlas-walk-scenes">'''+''.join(cards)+'''</div></div><div class="atlas-all-lessons"><h2>All eight lessons at a glance</h2><div class="lesson-grid">''',1)
+    # close original lesson-grid followed by its existing paragraphs
+    ending='</div><p><a href="big-picture.html">'
+    if ending not in body:
+        raise ValueError('Walkthrough closing marker missing')
+    body=body.replace(ending,'</div></div><p><a href="big-picture.html">',1)
+    return body
+
+
+def library(body,diagrams):
+    if 'class="diagram-group"' not in body:
+        raise ValueError('Diagram library structure changed')
+    n_mermaid=sum(1 for d in diagrams if d['notation']=='Mermaid')
+    n_puml=len(diagrams)-n_mermaid
+    hero=f'''<div class="atlas-catalog-hero" {MARK}><p class="atlas-kicker">Visual index · An atlas to explore</p><div class="atlas-catalog-heading"><div><p class="atlas-catalog-overline">DIAGRAM LIBRARY</p><h1>See the system.<br><em>Explore its forms.</em></h1><p>Browse the existing diagrams by chapter, question and notation. Open any card for its explanation, original image, source code and interactive Mermaid view where available.</p></div>
+<div class="atlas-catalog-stat" aria-label="Diagram counts"><strong>{len(diagrams)}</strong><span>diagrams in the current atlas</span><div><b>{n_mermaid}</b> Mermaid <b>{n_puml}</b> PlantUML</div></div></div></div>'''
+    body=hero+body
+    # Keep original title and explanatory paragraph, only restyle it (no content removed).
+    body=body.replace('<div class="doc-head"><p class="eyebrow">Diagrams</p><h1>The diagrams</h1></div>',
+                      '<div class="doc-head atlas-catalog-original"><p class="eyebrow">Reference catalogue</p><h2>The diagrams</h2></div>',1)
+    data={d['id']:d for d in diagrams}
+    def make_group(m):
+        ident=m.group(1)
+        heading=m.group(2)
+        entries=[d for d in diagrams if d['chapter']==ident]
+        if not entries:
+            raise ValueError('No diagrams for chapter '+ident)
+        cards=[]
+        for d in entries:
+            did=d['id']
+            cards.append(f'''<li class="atlas-diagram-card"><a class="atlas-diagram-card-link" href="{esc(did)}.html">
+<div class="atlas-diagram-thumb"><img loading="lazy" decoding="async" src="../atlas/{esc(d['image'])}" alt="Preview of diagram {esc(did)}"/><span class="atlas-diagram-id">{esc(did)}</span></div>
+<div class="atlas-diagram-content"><span class="form">{esc(d['form'])}</span><strong>{esc(d['title'])}</strong><span class="q">Question: {esc(d['question'])}</span><span class="atlas-open-caption">Open diagram <span aria-hidden="true">↗</span></span></div>
+</a></li>''')
+        return f'''<section class="diagram-group atlas-diagram-group" id="group-{esc(ident)}"><div class="atlas-diagram-group-head"><div><span class="atlas-chapter-label">CHAPTER {esc(ident)}</span><h2 id="chapter-{esc(ident)}">{heading}</h2></div><span class="atlas-group-count">{len(entries)} {"diagram" if len(entries)==1 else "diagrams"}</span></div><ul class="diagram-list atlas-diagram-grid">{''.join(cards)}</ul></section>'''
+    regex=re.compile(r'<section class="diagram-group"><h2 id="chapter-(\d{2})">(.*?)</h2><ul class="diagram-list">.*?</ul></section>',re.S)
+    body,n=regex.subn(make_group,body)
+    if n!=len({d['chapter'] for d in diagrams}):
+        raise ValueError(f'Library transformed {n} groups, expected {len(set(d["chapter"] for d in diagrams))}')
+    return body
+
+
+def about(body):
+    content='''<section class="atlas-about-author" '''+MARK+'''><p class="atlas-kicker">About · Authorship and methods</p>
+<div class="atlas-about-grid"><div><p class="atlas-about-overline">AN INDEPENDENT REFERENCE</p><h1>Built to make a complex public system easier to examine.</h1><p class="atlas-about-lead">The Philippine PFM Atlas is developed and maintained by <strong>James Matthew Miraflor</strong>.</p>
+<a href="diagrams/index.html" class="atlas-lesson-link">Explore the atlas ↗</a></div>
+<div class="atlas-about-facts"><p class="atlas-about-label">AUTHOR / AFFILIATION</p><strong>James Matthew Miraflor</strong><p>Graduate student, Department of Computer Science, University of the Philippines Diliman<br>Scientific Computing Laboratory</p>
+<div class="atlas-about-divider"></div><p class="atlas-about-label">HOW IT WAS MADE</p><p>This is an <strong>AI-assisted</strong> project. AI tools have supported research organization, drafting, code, and diagram development. The author directs the work and is responsible for what is published, including its claims, interpretations, corrections and limitations.</p>
+<div class="atlas-about-divider"></div><p class="atlas-about-label">INDEPENDENCE</p><p>The atlas is not an official publication or endorsement of UP Diliman, the Scientific Computing Laboratory, or any Philippine government institution. Consult the cited primary sources and the recorded open questions.</p>
+<p><a href="reference/f.html">Source register ↗</a> &nbsp; <a href="reference/g.html">Open questions ↗</a></p></div></div></section>
+<div class="atlas-about-archive-label"><span>ORIGINAL PROJECT DOCUMENTATION</span><p>The existing README-based About documentation follows in full.</p></div>'''
+    return content+body

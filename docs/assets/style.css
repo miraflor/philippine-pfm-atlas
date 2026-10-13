@@ -557,3 +557,169 @@ ul.atlas-diagram-grid>li[hidden]{display:none}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.atlas-hero-art .thread-flow{animation:none}*{scroll-behavior:auto!important}}
 @media print{.atlas-page-wayfinder,.atlas-scroll-meter,.atlas-map-controls,.atlas-hero-art,.atlas-walk-pin{display:none!important}.atlas-walk-layout{display:block}.atlas-lesson-scene{min-height:0;break-inside:avoid}ul.atlas-diagram-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.atlas-diagram-card{break-inside:avoid}}
 
+/* PH PFM Atlas compact editorial tuning v1.
+   Reduces forced blank space and oversized typography without hiding content. */
+
+/* The homepage should introduce the four-line map without spending a viewport
+   on a typographic poster. All original introduction/search/map copy remains. */
+.home.atlas-experience .atlas-home-hero {
+  min-height: 0;
+  padding: clamp(1.1rem, 2.5vw, 2.5rem) 0 1.25rem;
+}
+.home .atlas-home-hero h1 {
+  font-size: clamp(2.25rem, 4.4vw, 4.25rem);
+  line-height: 1.075;
+  max-width: 55rem;
+  letter-spacing: -.047em;
+  margin: .2rem 0 .9rem;
+}
+.home .atlas-home-hero .atlas-identity { margin: -.12rem 0 .8rem; font-size: .75rem; }
+.home .atlas-home-hero .lead {
+  font-size: clamp(1.02rem, 1.35vw, 1.18rem);
+  line-height: 1.5;
+  max-width: 64rem;
+}
+.home .atlas-home-hero .search-large { margin: 1rem 0 .6rem; max-width: 46rem; }
+.home .atlas-home-hero .search-large input { padding: .58rem .85rem; }
+.atlas-hero-art { margin: 1.25rem 0 1rem; padding: clamp(.65rem, 1.4vw, 1.15rem); border-radius: 13px; }
+.atlas-hero-art svg { max-height: 195px; }
+.atlas-art-caption { gap: .6rem 1.3rem; padding-top: .45rem; }
+.home .atlas-story-section { padding: clamp(1.4rem, 3.5vw, 3rem) 0 1.3rem; }
+.home .atlas-story-section h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+  line-height: 1.16;
+  letter-spacing: -.03em;
+}
+.home .start-paths .path-grid a { min-height: 140px; padding: 1.15rem; }
+
+/* The decorative banner is a compact chapter marker, not an empty hero.
+   Keep the eight-lens metaphor, the full prose, the preview and the orbit. */
+.atlas-walk-intro {
+  min-height: 0;
+  margin: .5rem 0 .7rem;
+  padding: .75rem 1.05rem;
+  border-radius: 10px;
+}
+.atlas-walk-intro > .atlas-kicker { margin: 0 !important; }
+.atlas-walk-decoration { top: -3rem; right: 2rem; opacity: .65; }
+.atlas-walk-decoration span { width: 20px; height: 140px; }
+body:has(.atlas-walk-layout) main.wrap > h1 {
+  font-size: clamp(2rem, 3.15vw, 3.15rem);
+  line-height: 1.12;
+  letter-spacing: -.038em;
+  max-width: 62rem;
+  margin: .35rem 0 .65rem;
+}
+body:has(.atlas-walk-layout) main.wrap > .lead {
+  font-size: clamp(1.02rem, 1.25vw, 1.16rem);
+  line-height: 1.5;
+  max-width: 64rem;
+  margin-bottom: .5rem;
+}
+body:has(.atlas-walk-layout) main.wrap > p:not(.eyebrow):not(.lead) {
+  font-size: .94rem;
+  max-width: 65rem;
+  margin-bottom: .7rem;
+}
+.atlas-walk-layout {
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+  gap: clamp(1rem, 2.7vw, 2.5rem);
+  margin: 1.2rem 0 2.2rem;
+}
+.atlas-walk-pin { top: 1rem; }
+.atlas-walk-pin-inner { padding: .95rem 1.05rem; border-radius: 12px; }
+.atlas-walk-pin .atlas-kicker { margin-bottom: .4rem !important; }
+.atlas-orbit { max-height: 220px; }
+.atlas-live-figure img { height: clamp(130px, 14vw, 175px); }
+.atlas-live-figure-bar { padding: .48rem .7rem; }
+.atlas-visual-note { font-size: .73rem; line-height: 1.4; margin: .5rem 0 0; }
+.atlas-lesson-scene {
+  min-height: clamp(285px, 47vh, 390px);
+  padding: 1.25rem 0 1.7rem;
+  scroll-margin-top: 2rem;
+}
+.atlas-scene-kicker { margin: 1.05rem 0 .55rem; }
+.atlas-lesson-scene h2 {
+  font-size: clamp(1.5rem, 2.25vw, 2.25rem);
+  line-height: 1.17;
+  letter-spacing: -.029em;
+  margin: 0 0 .8rem;
+}
+.atlas-lesson-scene > p:not(.atlas-scene-kicker) { font-size: .96rem; line-height: 1.5; }
+.atlas-lesson-link { padding: .65rem .95rem; font-size: .85rem; }
+.atlas-lesson-preview-link { margin-top: .3rem; }
+
+/* Keep typography consistent across the catalogue and About page too. */
+.atlas-catalog-hero { padding: clamp(1.1rem, 2.8vw, 2.1rem); margin: .7rem 0 1.3rem; }
+.atlas-catalog-hero h1 { font-size: clamp(2rem, 3.1vw, 3.2rem); letter-spacing: -.035em; }
+.atlas-about-grid h1 { font-size: clamp(2rem, 3.25vw, 3.25rem); letter-spacing: -.04em; }
+
+/* Theater mode uses the browser Fullscreen API. CSS-only fixed positioning is
+   the fallback where requestFullscreen is unavailable (notably some phones). */
+.pfm-live-panel:fullscreen,
+.pfm-live-panel.atlas-theater-fallback {
+  display: flex !important;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  margin: 0;
+  padding: clamp(.5rem, 1vw, 1rem);
+  border: 0;
+  border-radius: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+.pfm-live-panel.atlas-theater-fallback {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+}
+:root.atlas-theater-open { overflow: hidden; }
+.pfm-live-panel:fullscreen .pfm-live-stage,
+.pfm-live-panel.atlas-theater-fallback .pfm-live-stage {
+  flex: 1 1 0;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  border-radius: 6px;
+}
+.pfm-live-panel:fullscreen .pfm-live-toolbar,
+.pfm-live-panel.atlas-theater-fallback .pfm-live-toolbar { flex: 0 0 auto; }
+.pfm-live-panel:fullscreen .pfm-live-status,
+.pfm-live-panel.atlas-theater-fallback .pfm-live-status { flex: 0 0 auto; margin: .4rem 0 0; }
+.pfm-live-panel:fullscreen .pfm-live-editor:not([hidden]),
+.pfm-live-panel.atlas-theater-fallback .pfm-live-editor:not([hidden]) {
+  flex: 0 0 auto;
+  max-height: min(35vh, 320px);
+  overflow-y: auto;
+}
+.pfm-live-panel:fullscreen .pfm-live-code,
+.pfm-live-panel.atlas-theater-fallback .pfm-live-code { min-height: 90px; max-height: 180px; }
+.pfm-live-toolbar [data-action="theater"] { font-weight: 650; white-space: nowrap; }
+@media (max-width: 780px) {
+  .atlas-walk-layout { grid-template-columns: 1fr; gap: .85rem; }
+  .atlas-walk-pin { position: relative; top: auto; }
+  .atlas-walk-pin-inner { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: .5rem 1rem; align-items: center; }
+  .atlas-walk-pin .atlas-kicker, .atlas-walk-pin .atlas-visual-note { grid-column: 1 / -1; }
+  .atlas-orbit { max-height: 165px; }
+  .atlas-live-figure img { height: 138px; }
+  .atlas-lesson-scene { min-height: 0; padding: 1.25rem 0 1.55rem; }
+  .home .atlas-home-hero h1 { font-size: clamp(2.2rem, 8vw, 3.35rem); }
+  .home .atlas-home-hero .lead { font-size: 1rem; }
+}
+@media (max-width: 510px) {
+  .atlas-walk-pin-inner { display: block; }
+  .atlas-orbit { max-height: 180px; }
+  .atlas-live-figure img { height: 150px; }
+  .atlas-walk-intro { padding: .65rem .75rem; }
+  .home .atlas-home-hero h1 { font-size: clamp(2rem, 9.5vw, 2.75rem); }
+}
+@media print {
+  .pfm-live-panel.atlas-theater-fallback { position: static; width: auto; height: auto; }
+}
+/* END PH PFM Atlas compact editorial tuning v1 */

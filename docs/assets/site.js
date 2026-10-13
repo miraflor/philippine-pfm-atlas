@@ -566,3 +566,103 @@
   }
 })();
 
+/* PH PFM Atlas Mermaid theater view v1.
+   Non-invasive enhancement of the existing default-on Mermaid viewer.
+   No renderer downloads, changed diagram sources or extra dependencies. */
+(function () {
+  'use strict';
+
+  // The existing Mermaid viewer constructs all panels before this script runs.
+  // Attaching to its toolbar retains the existing zoom, pan, editor and PNG view.
+  var panels = document.querySelectorAll('.pfm-live-panel');
+  panels.forEach(function (panel) {
+    var toolbar = panel.querySelector('.pfm-live-toolbar');
+    var fitButton = toolbar && toolbar.querySelector('[data-action="fit"]');
+    if (!toolbar || !fitButton || toolbar.querySelector('[data-action="theater"]')) return;
+
+    var theaterButton = document.createElement('button');
+    theaterButton.type = 'button';
+    theaterButton.className = 'pfm-live-button';
+    theaterButton.dataset.action = 'theater';
+    theaterButton.textContent = 'Theater view';
+    theaterButton.title = 'Expand the interactive diagram to fill the screen';
+    theaterButton.setAttribute('aria-pressed', 'false');
+    var editorButton = toolbar.querySelector('[data-action="edit"]');
+    toolbar.insertBefore(theaterButton, editorButton || toolbar.lastElementChild);
+
+    var fallback = false;
+    var previouslyActive = false;
+    function isActive() { return document.fullscreenElement === panel || fallback; }
+    function refit() {
+      if (panel.hidden) return;
+      // Fullscreen layout must settle before measuring the stage dimensions.
+      requestAnimationFrame(function () { requestAnimationFrame(function () { fitButton.click(); }); });
+    }
+    function update() {
+      var active = isActive();
+      theaterButton.textContent = active ? 'Exit theater' : 'Theater view';
+      theaterButton.title = active ? 'Return the diagram to its normal page size' : 'Expand the diagram to fill the screen';
+      theaterButton.setAttribute('aria-pressed', String(active));
+      if (active !== previouslyActive) refit();
+      previouslyActive = active;
+    }
+    function exitFallback() {
+      if (!fallback) return;
+      fallback = false;
+      panel.classList.remove('atlas-theater-fallback');
+      document.documentElement.classList.remove('atlas-theater-open');
+      update();
+    }
+    function enterFallback() {
+      fallback = true;
+      panel.classList.add('atlas-theater-fallback');
+      document.documentElement.classList.add('atlas-theater-open');
+      update();
+    }
+    theaterButton.addEventListener('click', function () {
+      if (fallback) { exitFallback(); return; }
+      if (document.fullscreenElement === panel) {
+        if (document.exitFullscreen) {
+          document.exitFullscreen().catch(function () { update(); });
+        } else update();
+        return;
+      }
+      // User gesture is required: call the Fullscreen API inside this click handler.
+      if (typeof panel.requestFullscreen === 'function') {
+        try {
+          var result = panel.requestFullscreen();
+          if (result && result.catch) result.catch(function () { enterFallback(); });
+        } catch (error) { enterFallback(); }
+      } else enterFallback();
+    });
+    document.addEventListener('fullscreenchange', function () { update(); });
+    toolbar.addEventListener('click', function (event) {
+      var button = event.target.closest && event.target.closest('button[data-action]');
+      if (button && button.dataset.action === 'edit' && isActive()) refit();
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && fallback) { event.preventDefault(); exitFallback(); }
+    });
+    // If an existing viewer button switches to PNG or closes the panel, leave
+    // theater mode first so the user never gets stuck in an empty fullscreen view.
+    toolbar.addEventListener('click', function (event) {
+      var button = event.target.closest && event.target.closest('button[data-action]');
+      if (button && button.dataset.action === 'close') {
+        if (fallback) exitFallback();
+        else if (document.fullscreenElement === panel && document.exitFullscreen) {
+          document.exitFullscreen().catch(function () {});
+        }
+      }
+    }, true);
+    var wrapper = panel.closest('.pfm-live-wrapper');
+    var pngButton = wrapper && wrapper.querySelector('[data-action="png"]');
+    if (pngButton) pngButton.addEventListener('click', function () {
+      if (fallback) exitFallback();
+      else if (document.fullscreenElement === panel && document.exitFullscreen) {
+        document.exitFullscreen().catch(function () {});
+      }
+    }, true);
+    update();
+  });
+})();
+/* END PH PFM Atlas Mermaid theater view v1 */

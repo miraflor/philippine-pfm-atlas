@@ -311,9 +311,11 @@ code.model-source{white-space:pre}.model-code{overflow:auto;max-height:55rem;fon
 #atlas-zoom button{cursor:pointer;padding:.45rem .9rem}#atlas-zoom img{display:block;width:100%;height:calc(94vh - 64px);object-fit:contain}
 @media(max-width:680px){.path-grid,.lesson-grid,.guided-diagrams,.model-grid{grid-template-columns:1fr}}
 
-/* PFM MERMAID INTERACTIVE PATCH v1 -- optional interactive display above the existing PNG. */
+/* PFM MERMAID INTERACTIVE PATCH v2 -- interactive diagram displayed by default with optional PNG fallback. */
 .pfm-live-wrapper { margin: 1.1rem 0 0.5rem; }
 .pfm-live-launch { display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap; }
+.pfm-live-button[aria-pressed="true"] { font-weight: 650; border-color: var(--authority); }
+figure.diagram[hidden] { display: none !important; }
 .pfm-live-note { font-size: 0.83rem; color: var(--muted); }
 .pfm-live-button {
   display: inline-flex; align-items: center; justify-content: center;
@@ -355,5 +357,9 @@ code.model-source{white-space:pre}.model-code{overflow:auto;max-height:55rem;fon
   .pfm-live-toolbar { gap: 0.3rem; }
   .pfm-live-button { padding: 0.4rem 0.55rem; }
 }
-@media print { .pfm-live-wrapper { display: none !important; } }
-/* END PFM MERMAID INTERACTIVE PATCH v1 */
+/* For printing, use the original PNG, which is still the canonical print asset. */
+@media print {
+  .pfm-live-wrapper { display: none !important; }
+  figure.diagram[hidden] { display: block !important; }
+}
+/* END PFM MERMAID INTERACTIVE PATCH v2 */

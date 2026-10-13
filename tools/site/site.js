@@ -93,16 +93,17 @@
   });
 })();
 
-/* PFM MERMAID INTERACTIVE PATCH v1 -- browser-only, on-demand Mermaid rendering.
+/* PFM MERMAID INTERACTIVE PATCH v2 -- browser-only, default-on, viewport-lazy Mermaid rendering.
    Does not alter original PNGs or PlantUML views. The atlas source is the source of truth. */
 (function () {
   "use strict";
 
-  // Load the diagram engine only when a reader opens a viewer, not on ordinary page loads.
+  // Load the engine only when a diagram enters the viewport, not on every page load.
   // This version matches the Mermaid engine recorded by the atlas PNG rendering script.
   const MERMAID_URL = "https://cdn.jsdelivr.net/npm/mermaid@11.16.0/dist/mermaid.esm.min.mjs";
   let enginePromise;
   let renderId = 0;
+  let renderQueue = Promise.resolve(); // Prevent simultaneous Mermaid.render calls on long chapters.
 
   function engine() {
     if (!enginePromise) {
@@ -137,14 +138,19 @@
     const wrapper = document.createElement("div");
     wrapper.className = "pfm-live-wrapper";
 
-    const launch = button("toggle", "Open interactive Mermaid", "Render Mermaid from the original source in your browser");
-    launch.setAttribute("aria-expanded", "false");
+    const pngFigure = beforeElement.matches("figure.diagram") ? beforeElement : null;
+    const launch = button("toggle", "Interactive Mermaid", "Show the live Mermaid renderer");
+    launch.setAttribute("aria-pressed", "true");
+    const pngButton = pngFigure ? button("png", "View original PNG", "Show the pre-rendered diagram") : null;
+    if (pngButton) pngButton.setAttribute("aria-pressed", "false");
     const note = document.createElement("span");
     note.className = "pfm-live-note";
-    note.textContent = "Browser renderer · PNG remains below";
+    note.textContent = "Live diagram · zoom, pan, and edit source";
     const launchRow = document.createElement("div");
     launchRow.className = "pfm-live-launch";
-    launchRow.append(launch, note);
+    launchRow.append(launch);
+    if (pngButton) launchRow.append(pngButton);
+    launchRow.append(note);
     wrapper.append(launchRow);
     beforeElement.parentNode.insertBefore(wrapper, beforeElement);
 
@@ -257,9 +263,15 @@
         const request = ++rendering;
         status.textContent = "Rendering the Mermaid source in your browser…";
         try {
-          const mermaid = await engine();
-          const output = await mermaid.render("pfm-live-svg-" + (++renderId), editor.value);
-          if (request !== rendering) return;
+          // Serialize Mermaid renders; several diagrams may enter view together.
+          const sourceSnapshot = editor.value;
+          const job = renderQueue.catch(function () {}).then(async function () {
+            const mermaid = await engine();
+            return mermaid.render("pfm-live-svg-" + (++renderId), sourceSnapshot);
+          });
+          renderQueue = job.catch(function () {});
+          const output = await job;
+          if (request !== rendering) return false;
           surface.innerHTML = output.svg;
           if (typeof output.bindFunctions === "function") output.bindFunctions(surface);
           const svg = surface.querySelector("svg");
@@ -271,11 +283,13 @@
           svg.style.height = chartH + "px";
           svg.style.maxWidth = "none";
           fit();
-          status.textContent = "Rendered locally in this browser. Drag to pan; use +/− to zoom, or Ctrl + wheel.";
+          status.textContent = "Rendered in your browser. Drag to pan, use +/− to zoom, or Ctrl + wheel.";
+          return true;
         } catch (error) {
-          if (request !== rendering) return;
+          if (request !== rendering) return false;
           status.textContent = "Unable to render: " + (error && error.message ? error.message : String(error)) +
-            ". The original PNG is still available below.";
+            ". The original PNG is available as a fallback.";
+          return false;
         }
       }
 
@@ -290,9 +304,12 @@
           if (!editorRegion.hidden) editor.focus();
         }
         if (action === "close") {
-          panel.hidden = true;
-          launch.textContent = "Open interactive Mermaid";
-          launch.setAttribute("aria-expanded", "false");
+          if (pngFigure) {
+            selectPng();
+          } else {
+            panel.hidden = true;
+            launch.setAttribute("aria-pressed", "false");
+          }
           launch.focus();
         }
       });
@@ -343,26 +360,78 @@
       return { panel: panel, editor: editor, render: render };
     }
 
-    launch.addEventListener("click", async function () {
-      if (viewer) {
-        viewer.panel.hidden = !viewer.panel.hidden;
-        const open = !viewer.panel.hidden;
-        launch.textContent = open ? "Hide interactive Mermaid" : "Open interactive Mermaid";
-        launch.setAttribute("aria-expanded", String(open));
-        return;
-      }
-      viewer = build();
+    // A viewer is the default, rather than a second view below an always-visible PNG.
+    // Build its controls immediately; initialize the drawing only near the viewport.
+    viewer = build();
+    viewer.panel.hidden = false;
+    if (pngFigure) pngFigure.hidden = true;
+    let successful = false;
+    let pending = null;
+
+    function selectPng(message) {
+      if (!pngFigure) return;
+      pngFigure.hidden = false;
+      viewer.panel.hidden = true;
+      launch.setAttribute("aria-pressed", "false");
+      pngButton.setAttribute("aria-pressed", "true");
+      if (message) note.textContent = message;
+      else note.textContent = "Original PNG image";
+    }
+
+    function selectInteractive() {
+      if (pngFigure) pngFigure.hidden = true;
       viewer.panel.hidden = false;
-      launch.textContent = "Hide interactive Mermaid";
-      launch.setAttribute("aria-expanded", "true");
-      try {
-        viewer.editor.value = await getSource();
-        await viewer.render();
-      } catch (error) {
-        viewer.panel.querySelector(".pfm-live-status").textContent = "Could not read Mermaid source: " +
-          (error && error.message ? error.message : String(error));
-      }
+      launch.setAttribute("aria-pressed", "true");
+      if (pngButton) pngButton.setAttribute("aria-pressed", "false");
+      note.textContent = "Live diagram · zoom, pan, and edit source";
+    }
+
+    function ensureRendered() {
+      if (successful) return Promise.resolve(true);
+      if (pending) return pending;
+      pending = (async function () {
+        try {
+          viewer.editor.value = await getSource();
+          const ok = await viewer.render();
+          if (!ok) {
+            if (pngFigure) selectPng("Live rendering unavailable · showing original PNG");
+            return false;
+          }
+          successful = true;
+          return true;
+        } catch (error) {
+          viewer.panel.querySelector(".pfm-live-status").textContent = "Unable to load Mermaid source: " +
+            (error && error.message ? error.message : String(error));
+          if (pngFigure) selectPng("Live rendering unavailable · showing original PNG");
+          return false;
+        } finally {
+          pending = null;
+        }
+      })();
+      return pending;
+    }
+
+    launch.addEventListener("click", function () {
+      selectInteractive();
+      void ensureRendered();
     });
+    if (pngButton) {
+      pngButton.addEventListener("click", function () { selectPng(); });
+    }
+
+    // An offline/no-JavaScript visitor sees the PNG, because it is hidden only
+    // after this script actually creates the live viewer successfully.
+    // Chapter pages may contain many diagrams; don't render all simultaneously.
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(function (entries) {
+        if (!entries.some(function (entry) { return entry.isIntersecting; })) return;
+        observer.disconnect();
+        if (!viewer.panel.hidden) void ensureRendered();
+      }, { rootMargin: "350px 0px" });
+      observer.observe(wrapper);
+    } else {
+      void ensureRendered();
+    }
   }
 
   // Current atlas figures. The existing 'Code file' anchor identifies Mermaid versus PlantUML.
@@ -389,4 +458,4 @@
     createViewer(pre, function () { return code.textContent; }, "Historical research model");
   });
 })();
-/* END PFM MERMAID INTERACTIVE PATCH v1 */
+/* END PFM MERMAID INTERACTIVE PATCH v2 */

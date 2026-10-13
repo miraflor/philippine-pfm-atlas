@@ -786,3 +786,45 @@ body:has(.atlas-walk-layout) main.wrap > p:not(.eyebrow):not(.lead) {
 .atlas-about-colophon .atlas-colophon-signature { margin-top:1rem; }
 .atlas-about-colophon strong { color:var(--text);font-weight:600; }
 /* END PFM ATLAS BALANCED HERO + ABOUT COLOPHON v1 */
+
+/* PFM ATLAS MEETING-POINTS WIDTH FIX v1
+   The global 46rem .prose-block constraint is appropriate for paragraphs,
+   but it must not constrain the diagrammatic meeting-point and case grids. */
+.home #meeting-points > .prose-block {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+}
+/* Keep the introduction easy to read, while widening only the grids. */
+.home #meeting-points > .prose-block > p {
+  max-width: 52rem;
+}
+.home #meeting-points ol.meeting-points,
+.home #meeting-points .cases {
+  width: 100%;
+  max-width: none;
+}
+.home #meeting-points ol.meeting-points {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(.8rem, 1.4vw, 1.25rem);
+}
+.home #meeting-points .cases {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(.8rem, 1.4vw, 1.25rem);
+}
+.home #meeting-points ol.meeting-points > li,
+.home #meeting-points .cases > p {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+@media (max-width: 980px) {
+  .home #meeting-points ol.meeting-points {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 720px) {
+  .home #meeting-points .cases {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+/* END PFM ATLAS MEETING-POINTS WIDTH FIX v1 */

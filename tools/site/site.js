@@ -92,3 +92,301 @@
     }
   });
 })();
+
+/* PFM MERMAID INTERACTIVE PATCH v1 -- browser-only, on-demand Mermaid rendering.
+   Does not alter original PNGs or PlantUML views. The atlas source is the source of truth. */
+(function () {
+  "use strict";
+
+  // Load the diagram engine only when a reader opens a viewer, not on ordinary page loads.
+  // This version matches the Mermaid engine recorded by the atlas PNG rendering script.
+  const MERMAID_URL = "https://cdn.jsdelivr.net/npm/mermaid@11.16.0/dist/mermaid.esm.min.mjs";
+  let enginePromise;
+  let renderId = 0;
+
+  function engine() {
+    if (!enginePromise) {
+      enginePromise = import(MERMAID_URL).then(function (module) {
+        const mermaid = module.default;
+        mermaid.initialize({
+          startOnLoad: false,
+          securityLevel: "strict",
+          theme: "default",
+          flowchart: { useMaxWidth: false }
+        });
+        return mermaid;
+      }).catch(function (error) {
+        enginePromise = null; // Make retry possible after a transient network failure.
+        throw error;
+      });
+    }
+    return enginePromise;
+  }
+
+  function button(action, caption, title) {
+    const element = document.createElement("button");
+    element.type = "button";
+    element.className = "pfm-live-button";
+    element.dataset.action = action;
+    element.textContent = caption;
+    if (title) element.title = title;
+    return element;
+  }
+
+  function createViewer(beforeElement, sourceLoader, title) {
+    const wrapper = document.createElement("div");
+    wrapper.className = "pfm-live-wrapper";
+
+    const launch = button("toggle", "Open interactive Mermaid", "Render Mermaid from the original source in your browser");
+    launch.setAttribute("aria-expanded", "false");
+    const note = document.createElement("span");
+    note.className = "pfm-live-note";
+    note.textContent = "Browser renderer · PNG remains below";
+    const launchRow = document.createElement("div");
+    launchRow.className = "pfm-live-launch";
+    launchRow.append(launch, note);
+    wrapper.append(launchRow);
+    beforeElement.parentNode.insertBefore(wrapper, beforeElement);
+
+    let viewer = null;
+    let sourcePromise = null;
+    let pristineSource = "";
+    let rendering = 0;
+    let scale = 1;
+    let x = 0;
+    let y = 0;
+    let chartW = 1000;
+    let chartH = 600;
+
+    function getSource() {
+      if (!sourcePromise) {
+        sourcePromise = Promise.resolve().then(sourceLoader).then(function (value) {
+          if (!value || !value.trim()) throw new Error("The Mermaid source is empty.");
+          pristineSource = value.replace(/^\uFEFF/, "");
+          return pristineSource;
+        }).catch(function (error) {
+          sourcePromise = null;
+          throw error;
+        });
+      }
+      return sourcePromise;
+    }
+
+    function build() {
+      const panel = document.createElement("section");
+      panel.className = "pfm-live-panel";
+      panel.setAttribute("aria-label", title + " interactive Mermaid viewer");
+      panel.hidden = true;
+
+      const toolbar = document.createElement("div");
+      toolbar.className = "pfm-live-toolbar";
+      const heading = document.createElement("strong");
+      heading.textContent = "Interactive Mermaid";
+      toolbar.append(heading);
+      toolbar.append(
+        button("zoom-out", "−", "Zoom out"),
+        button("zoom-in", "+", "Zoom in"),
+        button("fit", "Fit", "Fit the diagram in the window"),
+        button("edit", "Edit code", "Show or hide the editable source"),
+        button("close", "Close", "Close the interactive viewer")
+      );
+      panel.append(toolbar);
+
+      const stage = document.createElement("div");
+      stage.className = "pfm-live-stage";
+      stage.tabIndex = 0;
+      stage.setAttribute("role", "region");
+      stage.setAttribute("aria-label", "Diagram: drag to pan, use the toolbar to zoom, or hold Ctrl and scroll");
+      const surface = document.createElement("div");
+      surface.className = "pfm-live-surface";
+      stage.append(surface);
+      panel.append(stage);
+
+      const status = document.createElement("p");
+      status.className = "pfm-live-status";
+      status.setAttribute("role", "status");
+      status.textContent = "Loading original Mermaid source…";
+      panel.append(status);
+
+      const editorRegion = document.createElement("div");
+      editorRegion.className = "pfm-live-editor";
+      editorRegion.hidden = true;
+      const label = document.createElement("label");
+      const editor = document.createElement("textarea");
+      editor.spellcheck = false;
+      editor.rows = 14;
+      editor.className = "pfm-live-code";
+      const editorId = "pfm-live-code-" + (++renderId);
+      editor.id = editorId;
+      label.htmlFor = editorId;
+      label.textContent = "Mermaid source (edits stay in this browser tab):";
+      editorRegion.append(label, editor);
+      const editorActions = document.createElement("div");
+      editorActions.className = "pfm-live-toolbar pfm-live-editor-actions";
+      editorActions.append(button("render", "Render changes", "Render the edited Mermaid source"),
+                           button("restore", "Restore original", "Restore the repository source"));
+      editorRegion.append(editorActions);
+      panel.append(editorRegion);
+      wrapper.append(panel);
+
+      function applyTransform() {
+        surface.style.transform = "translate(" + x + "px," + y + "px) scale(" + scale + ")";
+      }
+      function fit() {
+        if (!surface.querySelector("svg")) return;
+        const w = stage.clientWidth;
+        const h = stage.clientHeight;
+        if (!w || !h) return;
+        scale = Math.min((w - 32) / chartW, (h - 32) / chartH, 1.5);
+        scale = Math.max(scale, 0.015);
+        x = (w - chartW * scale) / 2;
+        y = (h - chartH * scale) / 2;
+        applyTransform();
+      }
+      function zoomAt(factor, localX, localY) {
+        const next = Math.max(0.015, Math.min(8, scale * factor));
+        x = localX - ((localX - x) / scale) * next;
+        y = localY - ((localY - y) / scale) * next;
+        scale = next;
+        applyTransform();
+      }
+      function centerZoom(factor) {
+        zoomAt(factor, stage.clientWidth / 2, stage.clientHeight / 2);
+      }
+      async function render() {
+        const request = ++rendering;
+        status.textContent = "Rendering the Mermaid source in your browser…";
+        try {
+          const mermaid = await engine();
+          const output = await mermaid.render("pfm-live-svg-" + (++renderId), editor.value);
+          if (request !== rendering) return;
+          surface.innerHTML = output.svg;
+          if (typeof output.bindFunctions === "function") output.bindFunctions(surface);
+          const svg = surface.querySelector("svg");
+          if (!svg) throw new Error("The renderer did not produce a diagram.");
+          const viewBox = svg.viewBox && svg.viewBox.baseVal;
+          chartW = viewBox && viewBox.width > 0 ? viewBox.width : (parseFloat(svg.getAttribute("width")) || 1000);
+          chartH = viewBox && viewBox.height > 0 ? viewBox.height : (parseFloat(svg.getAttribute("height")) || 600);
+          svg.style.width = chartW + "px";
+          svg.style.height = chartH + "px";
+          svg.style.maxWidth = "none";
+          fit();
+          status.textContent = "Rendered locally in this browser. Drag to pan; use +/− to zoom, or Ctrl + wheel.";
+        } catch (error) {
+          if (request !== rendering) return;
+          status.textContent = "Unable to render: " + (error && error.message ? error.message : String(error)) +
+            ". The original PNG is still available below.";
+        }
+      }
+
+      toolbar.addEventListener("click", function (event) {
+        const action = event.target.closest("button[data-action]")?.dataset.action;
+        if (action === "zoom-out") centerZoom(1 / 1.25);
+        if (action === "zoom-in") centerZoom(1.25);
+        if (action === "fit") fit();
+        if (action === "edit") {
+          editorRegion.hidden = !editorRegion.hidden;
+          toolbar.querySelector('[data-action="edit"]').setAttribute("aria-pressed", String(!editorRegion.hidden));
+          if (!editorRegion.hidden) editor.focus();
+        }
+        if (action === "close") {
+          panel.hidden = true;
+          launch.textContent = "Open interactive Mermaid";
+          launch.setAttribute("aria-expanded", "false");
+          launch.focus();
+        }
+      });
+      editorActions.addEventListener("click", function (event) {
+        const action = event.target.closest("button[data-action]")?.dataset.action;
+        if (action === "render") void render();
+        if (action === "restore") { editor.value = pristineSource; void render(); }
+      });
+      editor.addEventListener("keydown", function (event) {
+        if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
+          event.preventDefault(); void render();
+        }
+      });
+      stage.addEventListener("wheel", function (event) {
+        if (!event.ctrlKey) return; // Preserve normal page scrolling.
+        event.preventDefault();
+        const rect = stage.getBoundingClientRect();
+        zoomAt(event.deltaY < 0 ? 1.13 : 1 / 1.13, event.clientX - rect.left, event.clientY - rect.top);
+      }, { passive: false });
+      let drag = null;
+      stage.addEventListener("pointerdown", function (event) {
+        if (event.button !== 0) return;
+        drag = { id: event.pointerId, px: event.clientX, py: event.clientY, x: x, y: y };
+        stage.setPointerCapture(event.pointerId);
+        stage.classList.add("is-dragging");
+      });
+      stage.addEventListener("pointermove", function (event) {
+        if (!drag || event.pointerId !== drag.id) return;
+        x = drag.x + event.clientX - drag.px;
+        y = drag.y + event.clientY - drag.py;
+        applyTransform();
+      });
+      function stopDrag() { drag = null; stage.classList.remove("is-dragging"); }
+      stage.addEventListener("pointerup", stopDrag);
+      stage.addEventListener("pointercancel", stopDrag);
+      stage.addEventListener("lostpointercapture", stopDrag);
+      stage.addEventListener("keydown", function (event) {
+        if (event.key === "+" || event.key === "=") { event.preventDefault(); centerZoom(1.25); }
+        if (event.key === "-") { event.preventDefault(); centerZoom(1 / 1.25); }
+        if (event.key === "0") { event.preventDefault(); fit(); }
+        const pan = 45;
+        if (event.key === "ArrowLeft") { x += pan; event.preventDefault(); applyTransform(); }
+        if (event.key === "ArrowRight") { x -= pan; event.preventDefault(); applyTransform(); }
+        if (event.key === "ArrowUp") { y += pan; event.preventDefault(); applyTransform(); }
+        if (event.key === "ArrowDown") { y -= pan; event.preventDefault(); applyTransform(); }
+      });
+      window.addEventListener("resize", function () { if (!panel.hidden) fit(); });
+      return { panel: panel, editor: editor, render: render };
+    }
+
+    launch.addEventListener("click", async function () {
+      if (viewer) {
+        viewer.panel.hidden = !viewer.panel.hidden;
+        const open = !viewer.panel.hidden;
+        launch.textContent = open ? "Hide interactive Mermaid" : "Open interactive Mermaid";
+        launch.setAttribute("aria-expanded", String(open));
+        return;
+      }
+      viewer = build();
+      viewer.panel.hidden = false;
+      launch.textContent = "Hide interactive Mermaid";
+      launch.setAttribute("aria-expanded", "true");
+      try {
+        viewer.editor.value = await getSource();
+        await viewer.render();
+      } catch (error) {
+        viewer.panel.querySelector(".pfm-live-status").textContent = "Could not read Mermaid source: " +
+          (error && error.message ? error.message : String(error));
+      }
+    });
+  }
+
+  // Current atlas figures. The existing 'Code file' anchor identifies Mermaid versus PlantUML.
+  document.querySelectorAll("figure.diagram[id^='figure-']").forEach(function (figure) {
+    const preceding = figure.previousElementSibling;
+    let sourceAnchor = preceding && preceding.querySelector('a[href$=".mmd"]');
+    if (!sourceAnchor && document.querySelectorAll("figure.diagram").length === 1) {
+      sourceAnchor = document.querySelector('.copy-row a[href$=".mmd"]');
+    }
+    if (!sourceAnchor) return; // PlantUML stays as its existing PNG.
+    const sourceUrl = sourceAnchor.href;
+    createViewer(figure, async function () {
+      const response = await fetch(sourceUrl);
+      if (!response.ok) throw new Error("Source request failed (HTTP " + response.status + ")");
+      return response.text();
+    }, figure.id.replace(/^figure-/, "Diagram "));
+  });
+
+  // Supplementary historical models have editable source but no authoritative PNG.
+  // Reuse that source without confusing their IDs with current atlas diagrams.
+  document.querySelectorAll("pre.model-code").forEach(function (pre) {
+    const code = pre.querySelector("code.model-source");
+    if (!code || !document.querySelector('a[download][href$=".mmd"]')) return;
+    createViewer(pre, function () { return code.textContent; }, "Historical research model");
+  });
+})();
+/* END PFM MERMAID INTERACTIVE PATCH v1 */

@@ -1,6 +1,6 @@
 /* Philippine PFM Atlas: style of the website.
    Colour is used only for meaning: the four lines of the atlas, with the colours of diagram 00d.
-   Everything else is neutral. The website loads nothing from other servers. */
+   Everything else is neutral. The optional browser-based Mermaid viewer loads its library on demand from jsDelivr. */
 
 :root {
   --bg: #ffffff;
@@ -310,3 +310,50 @@ code.model-source{white-space:pre}.model-code{overflow:auto;max-height:55rem;fon
 #atlas-zoom::backdrop{background:rgba(0,0,0,.85)}#atlas-zoom .zoom-toolbar{display:flex;align-items:center;justify-content:space-between;padding:.65rem 1rem;border-bottom:1px solid #ddd}
 #atlas-zoom button{cursor:pointer;padding:.45rem .9rem}#atlas-zoom img{display:block;width:100%;height:calc(94vh - 64px);object-fit:contain}
 @media(max-width:680px){.path-grid,.lesson-grid,.guided-diagrams,.model-grid{grid-template-columns:1fr}}
+
+/* PFM MERMAID INTERACTIVE PATCH v1 -- optional interactive display above the existing PNG. */
+.pfm-live-wrapper { margin: 1.1rem 0 0.5rem; }
+.pfm-live-launch { display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap; }
+.pfm-live-note { font-size: 0.83rem; color: var(--muted); }
+.pfm-live-button {
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid var(--rule-strong); border-radius: 4px;
+  padding: 0.4rem 0.7rem; background: var(--bg); color: var(--text);
+  font: inherit; font-size: 0.86rem; line-height: 1.25; cursor: pointer;
+}
+.pfm-live-button:hover { background: var(--surface); }
+.pfm-live-button:focus-visible { outline: 2px solid var(--authority); outline-offset: 2px; }
+.pfm-live-panel { margin: 0.6rem 0 1rem; padding: 0.75rem; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); }
+.pfm-live-panel[hidden], .pfm-live-editor[hidden] { display: none !important; }
+.pfm-live-toolbar { display: flex; gap: 0.45rem; align-items: center; flex-wrap: wrap; margin-bottom: 0.6rem; }
+.pfm-live-toolbar strong { font-size: 0.92rem; margin-right: auto; }
+.pfm-live-stage {
+  width: 100%; height: min(65vh, 640px); min-height: 300px;
+  border: 1px solid var(--rule-strong); border-radius: 4px;
+  overflow: hidden; position: relative;
+  background: #fff; color: #1b1b1b;
+  cursor: grab; touch-action: none;
+}
+.pfm-live-stage.is-dragging { cursor: grabbing; }
+.pfm-live-surface {
+  position: absolute; left: 0; top: 0; transform-origin: 0 0;
+  width: max-content; height: max-content; will-change: transform;
+  pointer-events: auto;
+}
+.pfm-live-surface svg { display: block; max-width: none !important; }
+.pfm-live-status { color: var(--muted); font-size: 0.83rem; margin: 0.5rem 0 0; overflow-wrap: anywhere; }
+.pfm-live-editor { margin: 0.7rem 0 0; }
+.pfm-live-editor label { display: block; margin-bottom: 0.35rem; color: var(--text); font-size: 0.87rem; }
+.pfm-live-code {
+  display: block; width: 100%; min-height: 12rem; padding: 0.7rem; border: 1px solid var(--rule-strong);
+  border-radius: 4px; color: var(--text); background: var(--bg);
+  font: 0.82rem/1.5 var(--mono); tab-size: 2;
+}
+.pfm-live-editor-actions { margin: 0.5rem 0 0; }
+@media (max-width: 650px) {
+  .pfm-live-stage { height: 400px; min-height: 260px; }
+  .pfm-live-toolbar { gap: 0.3rem; }
+  .pfm-live-button { padding: 0.4rem 0.55rem; }
+}
+@media print { .pfm-live-wrapper { display: none !important; } }
+/* END PFM MERMAID INTERACTIVE PATCH v1 */

@@ -828,3 +828,61 @@ body:has(.atlas-walk-layout) main.wrap > p:not(.eyebrow):not(.lead) {
   }
 }
 /* END PFM ATLAS MEETING-POINTS WIDTH FIX v1 */
+
+/* BUDGET-CYCLE NAVIGATION — uses the Atlas's existing type, colours, surfaces and cards. */
+.pfm-cycle { scroll-margin-top: 4rem; }
+.pfm-cycle-lede { max-width: 50rem; color: var(--muted); font-size: 1.05rem; }
+.pfm-cycle-nav { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.8rem; margin:1.4rem 0 1rem; }
+.pfm-cycle-nav a { min-width:0; min-height:144px; display:flex; flex-direction:column; align-items:flex-start; gap:.55rem; padding:1.1rem; border-radius:12px; border:1px solid var(--rule); background:var(--exp-surface,var(--surface)); text-decoration:none; transition:transform .2s,border-color .2s; }
+.pfm-cycle-nav a:hover { transform:translateY(-2px); border-color:var(--rule-strong); }
+.pfm-cycle-nav .pfm-cycle-num { color:var(--authority); font:700 .78rem var(--mono); }
+.pfm-cycle-nav a strong { font-size:clamp(1rem,1.55vw,1.28rem); line-height:1.3; letter-spacing:-.02em; }
+.pfm-cycle-nav .pfm-cycle-nav-sub { font-size:.78rem; color:var(--muted); line-height:1.4; margin-top:auto; }
+.pfm-cycle-caveat { max-width:62rem; color:var(--muted); border-left:3px solid var(--rule-strong); padding:.55rem 1rem; margin:1.75rem 0 2rem; font-size:.91rem; }
+.pfm-cycle-caveat strong { color:var(--text); }
+.home .pfm-cycle-phase { padding:2rem 0; border-top:1px solid var(--rule); scroll-margin-top:5.6rem; }
+.home .pfm-cycle-phase h3 { font-size:clamp(1.8rem,3vw,2.75rem); line-height:1.13; letter-spacing:-.04em; margin:.1rem 0 .6rem; }
+.pfm-cycle-phase-head { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.4fr); align-items:end; gap:1.5rem; margin-bottom:1.2rem; }
+.pfm-cycle-phase-head p:last-child { font-size:1.05rem; color:var(--muted); margin:0 0 .25rem; }
+.pfm-cycle-eyebrow { font-size:.72rem; font-weight:750; letter-spacing:.1em; text-transform:uppercase; color:var(--authority); margin:0 0 .6rem; }
+.pfm-cycle-activities { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 1.5rem; padding:0; margin:0 0 1.25rem; list-style:none; }
+.pfm-cycle-activities li { display:flex; gap:.9rem; min-width:0; padding:.8rem .15rem; margin:0; border-bottom:1px solid var(--rule); }
+.pfm-cycle-step { flex:0 0 1.7rem; color:var(--authority); font:.75rem var(--mono); padding-top:.25rem; }
+.pfm-cycle-activities li a { display:block; font-weight:640; line-height:1.35; }
+.pfm-cycle-activities li small { display:block; margin-top:.35rem; color:var(--muted); font-size:.8rem; line-height:1.45; }
+.pfm-cycle-metadata { display:grid; grid-template-columns:1fr 1fr; gap:1rem 2rem; margin-top:1rem; font-size:.88rem; color:var(--muted); }
+.pfm-cycle-metadata strong { display:block; color:var(--text); margin-bottom:.25rem; }
+.pfm-cycle-metadata p { margin:.3rem 0; }
+.pfm-cycle-read { margin:1rem 0 0; color:var(--muted); font-size:.88rem; }
+.pfm-cycle-read strong { color:var(--text); }
+.pfm-cycle-related { border:1px solid var(--rule); background:var(--exp-surface,var(--surface)); border-radius:12px; padding:clamp(1.25rem,3vw,2rem); margin:2rem 0 1rem; }
+.home .pfm-cycle-related h3 { font-size:clamp(1.5rem,2.4vw,2.25rem); margin:.2rem 0 .7rem; }
+.pfm-cycle-related p { max-width:53rem; }
+.pfm-cycle-note { font-size:.78rem; color:var(--muted); max-width:59rem; margin:1rem 0 0; }
+.pfm-cycle-catalog { margin:1.5rem 0 3.5rem; }
+.pfm-cycle-secondary { margin:0 0 1.5rem; font-size:.86rem; color:var(--muted); }
+.pfm-cycle-index-group { border-top:1px solid var(--rule); padding:2rem 0 1rem; scroll-margin-top:5rem; }
+.pfm-cycle-index-group h2, .pfm-cycle-index-group h3 { border:0; margin:0 0 1rem; padding:0; line-height:1.2; letter-spacing:-.025em; font-size:clamp(1.4rem,2.2vw,2rem); }
+.pfm-cycle-index-group .table-wrap { margin:1.1rem 0; }
+.pfm-cycle-index-group .atlas-diagram-group { margin-left:0; margin-right:0; }
+.pfm-cycle-lessons h2 { font-size:clamp(1.65rem,3vw,2.8rem); border:0; padding:0; margin:.6rem 0 1rem; letter-spacing:-.04em; }
+.pfm-cycle-lesson-links { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.75rem; margin:1rem 0; }
+.pfm-cycle-lesson-links a { display:flex; flex-direction:column; gap:.5rem; padding:1.1rem; border:1px solid var(--rule); border-radius:10px; text-decoration:none; background:var(--exp-surface,var(--surface)); }
+.pfm-cycle-lesson-links a:hover { border-color:var(--rule-strong); }
+.pfm-cycle-lesson-links span { font-size:.72rem; font-weight:700; color:var(--authority); letter-spacing:.04em; }
+.pfm-cycle-lesson-links strong { font-size:1.03rem; line-height:1.3; }
+.pfm-cycle-lesson-links small { margin-top:auto; color:var(--muted); }
+.pfm-cycle-context { display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; font-size:.83rem; color:var(--muted); margin:.45rem 0 1.5rem; border-bottom:1px solid var(--rule); padding-bottom:.8rem; }
+.pfm-cycle-context a { color:var(--text); }
+.pfm-cycle-context span { color:var(--muted); }
+@media (max-width:800px) {
+ .pfm-cycle-nav { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .pfm-cycle-phase-head { grid-template-columns:1fr; gap:.15rem; }
+ .pfm-cycle-lesson-links { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:540px) {
+ .pfm-cycle-nav { gap:.6rem; }
+ .pfm-cycle-nav a { padding:.85rem; min-height:125px; }
+ .pfm-cycle-activities, .pfm-cycle-metadata, .pfm-cycle-lesson-links { grid-template-columns:1fr; }
+}
+@media (prefers-reduced-motion:reduce) { .pfm-cycle-nav a { transition:none; } }

@@ -10,6 +10,7 @@ import json
 import math
 import re
 from pathlib import Path
+from budget_cycle_nav import (home_cycle, chapter_index, reorganize_diagram_library, lesson_index, phase_context)
 
 ROOT = Path(__file__).resolve().parent.parent if Path(__file__).name == 'site_experience.py' and Path(__file__).parent.name == 'tools' else None
 # Overlay source is alongside apply_patch.py until installed under tools/.
@@ -34,6 +35,12 @@ def enhance_page(url: str, body: str, diagrams: list[dict]) -> str:
         return library(body, diagrams)
     if url == 'about.html':
         return about(body)
+    if url == 'chapters/index.html':
+        return chapter_index(body)
+    if url.startswith(('chapters/', 'diagrams/', 'guide/')):
+        context = phase_context(url)
+        if context:
+            return context + body
     return body
 
 
@@ -63,10 +70,10 @@ def home(body):
         raise ValueError('Homepage structure changed: .home not found')
     body=body.replace('<div class="home">', '<div class="home atlas-experience" '+MARK+'>',1)
     body=body.replace('<section class="home-intro">', '<section class="home-intro atlas-home-hero"><p class="atlas-kicker">An atlas of public financial management · Philippines</p>',1)
-    body=body.replace('<h1>Philippine PFM Atlas</h1>', '<div class="atlas-home-grid"><div class="atlas-home-headline"><h1>Public finance is <em>not a straight line.</em></h1><p class="atlas-identity">Philippine PFM Atlas</p><a class="atlas-home-jump" href="#lines">Explore the working four-line map ↓</a></div><div class="atlas-home-explainer">',1)
+    body=body.replace('<h1>Philippine PFM Atlas</h1>', '<div class="atlas-home-grid"><div class="atlas-home-headline"><h1>Follow the <em>budget cycle.</em></h1><p class="atlas-identity">Philippine PFM Atlas</p><a class="atlas-home-jump" href="#budget-cycle">Explore the budget cycle ↓</a></div><div class="atlas-home-explainer">',1)
     body=body.replace('</section>\n<section class="start-paths"', '</div></div></section>\n<section class="start-paths"',1)
     nav='''<nav class="atlas-page-wayfinder" aria-label="Explore this page">
-<a href="#lines"><span>01</span> Four lines</a><a href="#meeting-points"><span>02</span> Where they meet</a><a href="#parts"><span>03</span> The five parts</a><a href="#reference-files"><span>04</span> References</a><a href="#reliability"><span>05</span> Evidence</a></nav>'''
+<a href="#budget-cycle"><span>01</span> Budget cycle</a><a href="#phase-preparation"><span>02</span> Preparation</a><a href="#phase-legislation"><span>03</span> Legislation</a><a href="#phase-execution"><span>04</span> Execution</a><a href="#phase-accountability"><span>05</span> Accountability</a><a href="#lines"><span>06</span> Systems map</a><a href="#reference-files"><span>07</span> References</a><a href="#reliability"><span>08</span> Evidence</a></nav>'''
     body=body.replace('</section>\n<section class="start-paths"', '</section>'+nav+'\n<section class="start-paths"',1)
     accents={'lines':'01 / A system of concurrent processes', 'meeting-points':'02 / Conditions before payment',
              'parts':'03 / Navigate the process', 'reference-files':'04 / Explore the evidence', 'reliability':'05 / Limits and uncertainties'}
@@ -78,8 +85,10 @@ def home(body):
 <button type="button" data-atlas-line="claim" aria-pressed="false">The claim</button>
 <button type="button" data-atlas-line="cash" aria-pressed="false">Cash</button>
 <button type="button" data-atlas-line="records" aria-pressed="false">Records &amp; control</button></div>'''
+    body=body.replace('How do the parts of Philippine public financial management (PFM) relate to each other: the functions, the authorities that perform them, the information systems that these authorities use, and the records that pass from one to the next?', 'Begin with Preparation, Legislation, Execution and Accountability. At each step, examine the institutions, documents, information systems and controls.', 1)
     body=body.replace('<div class="map">',controls+'<div class="map" data-highlight-line="all">',1)
     body=body.replace('<section class="start-paths"', '<section class="start-paths atlas-story-section"',1)
+    body=body.replace('<section class="start-paths atlas-story-section"', home_cycle() + '\n<section class="start-paths atlas-story-section"', 1)
     return body
 
 
@@ -145,7 +154,7 @@ def walkthrough(body, diagrams):
     first=lookup[guides[0]['diagram_ids'][0]]
     intro='''<div class="atlas-walk-intro" '''+MARK+'''><p class="atlas-kicker">Eight lenses on one interconnected system</p><div class="atlas-walk-decoration" aria-hidden="true"><span></span><span></span><span></span><span></span></div></div>'''
     body=intro+body
-    body=body.replace('<div class="lesson-grid">', '''<div class="atlas-walk-layout">
+    body=body.replace('<div class="lesson-grid">', lesson_index(guides) + '''<div class="atlas-walk-layout">
 <aside class="atlas-walk-pin" aria-label="Lesson visualisation">
 <div class="atlas-walk-pin-inner"><p class="atlas-kicker">CURRENT PERSPECTIVE <strong id="atlas-active-number">01 / 08</strong></p>
 '''+lesson_orbit()+f'''<div class="atlas-live-figure"><div class="atlas-live-figure-bar"><span>DIAGRAM PREVIEW</span><a id="atlas-active-diagram-link" href="diagrams/{esc(first['id'])}.html">Explore diagram ↗</a></div>
@@ -190,7 +199,7 @@ def library(body,diagrams):
     body,n=regex.subn(make_group,body)
     if n!=len({d['chapter'] for d in diagrams}):
         raise ValueError(f'Library transformed {n} groups, expected {len(set(d["chapter"] for d in diagrams))}')
-    return body
+    return reorganize_diagram_library(body, diagrams)
 
 
 # PFM ATLAS BALANCED HERO + ABOUT COLOPHON v1

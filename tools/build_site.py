@@ -42,7 +42,7 @@ LINES = ["authority", "claim", "cash", "records"]
 LINE_NAMES = {"authority": "Legal authority", "claim": "The claim", "cash": "Cash", "records": "Records and control"}
 
 NAV = [
-    ("index.html", "Map"),
+    ("index.html", "Budget cycle"),
     ("walkthrough.html", "Guided lessons"),
     ("big-picture.html", "Big picture"),
     ("chapters/index.html", "Chapters"),

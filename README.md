@@ -31,11 +31,15 @@ header template in `tools/build_site.py`. Rebuild with `python tools/build_site.
 
 ## The website
 
-The main finding of the atlas is about structure. PFM is not one flow of steps. Four lines of steps run at the same time: legal authority, the claim, cash, and records. A payment is possible only where the lines meet. The home page of the website therefore shows these four lines and the three points where they meet, and every step on it leads to its chapter.
+**Budget-cycle-first navigation.** The main website is organized around the four familiar national-government budget phases: Preparation, Legislation, Execution and Accountability. Guided lessons, the 19-chapter reference and the 85-diagram library all provide the same phase navigation, plus an explicitly cross-cutting section for topics outside the central expenditure sequence. Phase-to-chapter links preserve the original numbering and URLs. The original four-line map and all technical content, systems evidence, citations and interactive diagrams are unchanged. Dates in the supplied budget-cycle illustration are indicative, not authoritative annual deadlines.
+
+Edit the shared mapping in `tools/budget_cycle_nav.py` and rebuild with `python tools/build_site.py`; verify the generated pages using `python tools/check_budget_cycle_nav.py`. The default light mode and the current Atlas design tokens remain in use.
+
+The main finding of the atlas is about structure. PFM is not one flow of steps. Four lines of steps run at the same time: legal authority, the claim, cash, and records. A payment is possible only where the lines meet. These four lines remain on the home page as an analytical view below the budget-cycle navigation; each point on the map still links to its source-backed chapter.
 
 | Page | Content |
 |---|---|
-| Map (the home page) | The four lines and their meeting points, as a drawing and in words, two cases, the five parts of PFM with their chapters, and the reference files |
+| Budget cycle (the home page) | Four phases and 32 linked activities, followed by the original four-line systems map, meeting points and reference sources |
 | Big picture | The whole on a few pages |
 | Chapters | The 19 chapters, each marked with the lines and parts to which it belongs |
 | References | Authorities, systems, documents and identifiers, laws, terms, sources, open points |

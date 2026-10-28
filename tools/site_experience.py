@@ -11,6 +11,7 @@ import math
 import re
 from pathlib import Path
 from budget_cycle_nav import (home_cycle, chapter_index, reorganize_diagram_library, lesson_index, phase_context)
+from budget_cycle_story import SLOT as CYCLE_STORY_SLOT
 
 ROOT = Path(__file__).resolve().parent.parent if Path(__file__).name == 'site_experience.py' and Path(__file__).parent.name == 'tools' else None
 # Overlay source is alongside apply_patch.py until installed under tools/.
@@ -88,7 +89,7 @@ def home(body):
     body=body.replace('How do the parts of Philippine public financial management (PFM) relate to each other: the functions, the authorities that perform them, the information systems that these authorities use, and the records that pass from one to the next?', 'Begin with Preparation, Legislation, Execution and Accountability. At each step, examine the institutions, documents, information systems and controls.', 1)
     body=body.replace('<div class="map">',controls+'<div class="map" data-highlight-line="all">',1)
     body=body.replace('<section class="start-paths"', '<section class="start-paths atlas-story-section"',1)
-    body=body.replace('<section class="start-paths atlas-story-section"', home_cycle() + '\n<section class="start-paths atlas-story-section"', 1)
+    body=body.replace('<section class="start-paths atlas-story-section"', CYCLE_STORY_SLOT + '\n' + home_cycle() + '\n<section class="start-paths atlas-story-section"', 1)
     return body
 
 

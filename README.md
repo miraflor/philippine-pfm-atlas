@@ -18,6 +18,9 @@ This is an independent reference. It is not an official publication of the Phili
 - **In the repository.** Start with [the big picture](docs/atlas/00_BIG_PICTURE.md). The [README of the atlas](docs/atlas/README.md) lists every chapter, reference file and diagram.
 - **Sources and open points.** [Reference F](docs/atlas/reference/F_sources_and_verification.md) lists every source and how it was read. [Reference G](docs/atlas/reference/G_open_questions_and_known_gaps.md) lists what is not settled.
 
+
+**Reading cross-phase links.** The story uses a calendar-year 2026 snapshot to show concurrent budgets, while the step links describe general relationships within a budget lifecycle. These are not evidence that an FY 2027 GAA authorizes an FY 2026 release. Performance-review feedback to subsequent budget proposals is a separately identified, cross-year relationship. The scene showing three budgets does not imply that every fiscal year has active steps on every date.
+
 ## Appearance: light mode by default
 
 Every visitor starts in **light mode**, regardless of the computer or phone's system appearance.
@@ -35,6 +38,8 @@ header template in `tools/build_site.py`. Rebuild with `python tools/build_site.
 
 Edit the shared mapping in `tools/budget_cycle_nav.py` and rebuild with `python tools/build_site.py`; verify the generated pages using `python tools/check_budget_cycle_nav.py`. The default light mode and the current Atlas design tokens remain in use.
 
+**Budget-cycle story and step explorer.** Below the opening of the home page, a scroll story follows the 32 steps of the DBM budget-cycle illustration: the loop, the same steps on a calendar (three budgets in one year), the Execution steps on the four lines with one payment and its three meeting points, and the documents that connect steps across the loop. A step explorer below it opens each step: its documents, its place on the four lines, the atlas sections and diagrams, the sources, and the steps that receive its documents. Each step has an address, for example `index.html#step-E4`. The links depict procedural relationships rather than a literal transfer between the fiscal-year labels shown for calendar year 2026. Most relationships trace one budget through its lifecycle; performance-review feedback can inform a later budget. The step data and the connecting sentences are in `tools/budget_cycle_story.py`, which checks every chapter section, diagram, source code and step that it names when the site is built, and checks that the months of each step agree with the budget it serves; the quotations are taken from section 2 of the big picture at build time, so they stay word for word. `THREE_BUDGETS_VIEW` in the same file chooses how the scene "Three budgets in one year" draws the steps: `'rows'` (each budget in full) or `'slice'` (one bar for each step, at its place in 2026). The drawing and the explorer run in `tools/site/cycle-story.js`. Without JavaScript the story reads as text and all 32 step panels are shown. `python tools/check_budget_cycle_nav.py` also checks the story and the explorer, and that `docs/` was rebuilt after the last change to these tools.
+
 The main finding of the atlas is about structure. PFM is not one flow of steps. Four lines of steps run at the same time: legal authority, the claim, cash, and records. A payment is possible only where the lines meet. These four lines remain on the home page as an analytical view below the budget-cycle navigation; each point on the map still links to its source-backed chapter.
 
 | Page | Content |
@@ -47,7 +52,7 @@ The main finding of the atlas is about structure. PFM is not one flow of steps. 
 | Open points | Reference G, with a filter by status: open, partly settled, settled, sources differ |
 | Search | Search in the text of all pages, including codes and form names such as `LDDAP-ADA` |
 
-All text of the website comes from the Markdown files of the atlas. The website adds navigation and links: each source code in square brackets, for example `[GAM-V1 Ch.6 s.12]`, links to its entry in Reference F, and each mention of a chapter, a diagram or a reference file links to it. Colour marks only the four lines, with the colours of diagram 00d: blue for legal authority, green for the claim, orange for cash, grey for records. The website loads nothing from other servers. Every page can be read without JavaScript; only the search and the two filters (open points, diagrams) need it.
+All text of the website comes from the Markdown files of the atlas. The website adds navigation and links: each source code in square brackets, for example `[GAM-V1 Ch.6 s.12]`, links to its entry in Reference F, and each mention of a chapter, a diagram or a reference file links to it. Colour marks the four lines, with the colours of diagram 00d: blue for legal authority, green for the claim, orange for cash, grey for records. The budget-cycle story of the home page also gives each of the four budget phases a colour that no line uses. The website loads nothing from other servers. Every page can be read without JavaScript; only the search and the two filters (open points, diagrams) need it.
 
 ## Identifiers that do not change
 
@@ -61,6 +66,7 @@ Other texts can cite the atlas by these identifiers. After the website is public
 | Row of the register of interfaces (Reference B, section 4) | Its number | `reference/b.html#flow-41` |
 | Source | Its code in Reference F | `reference/f.html#source-gam-v1` |
 | Diagram | Its ID, for example 07b | `diagrams/07b.html` |
+| Budget-cycle step | Phase code and number (P1–P12, L1–L5, E1–E6, A1–A9) | `index.html#step-E4` |
 
 Sections also have addresses, for example `chapters/07.html#section-7-2`. A section number changes when a section is added before it, so these addresses are not fixed.
 

@@ -27,6 +27,7 @@ from collections import defaultdict
 from pathlib import Path
 
 from site_experience import enhance_page
+import budget_cycle_story
 import mistune
 from bs4 import BeautifulSoup, Comment, NavigableString
 
@@ -925,7 +926,25 @@ def build_home():
 <p><a href="big-picture.html#section-15">Section 15 of the big picture</a> says what this means for the use of the atlas. <a href="reference/f.html">Reference F</a> names every source and how it was read.</p></div>
 </section>
 </div>"""
-    write_page(url, frame(url, SITE_NAME, body, description=question, section="index.html", body_class="home-page"))
+    page = frame(url, SITE_NAME, body, description=question, section="index.html", body_class="home-page",
+                 scripts=("site.js", "cycle-story.js"))
+    if page.count(budget_cycle_story.SLOT) != 1:
+        fail("the place of the budget-cycle story is missing on the home page")
+
+    def link_fragment(fragment):
+        soup = BeautifulSoup(fragment, "html.parser")
+        link_sources(soup, url)
+        link_references(soup, "", url)
+        return str(soup)
+
+    try:
+        story = budget_cycle_story.build(
+            render_md=lambda md: str(render(md, "00_BIG_PICTURE.md", url)[0]), block=block, big_text=read(BIG),
+            link=link_fragment, chapter_dir=ATLAS / "processes", diagram_ids=set(DIAG),
+            source_codes=set(CODES))
+    except ValueError as exc:
+        fail(str(exc))
+    write_page(url, page.replace(budget_cycle_story.SLOT, story, 1))
 
 
 # --- Index pages -------------------------------------------------------------------------------------------------
@@ -1084,7 +1103,7 @@ def clean_docs():
 
 def main():
     clean_docs()
-    for name in ("style.css", "site.js", "search.js", "favicon.svg"):
+    for name in ("style.css", "site.js", "search.js", "cycle-story.js", "favicon.svg"):
         save(DOCS / "assets" / name, read(SITE_FILES / name))
     save(DOCS / ".nojekyll", "")
     build_home()

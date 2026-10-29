@@ -102,7 +102,7 @@ def build_extensions(c):
                'Application inventory and 69 interface/exchange claims with evidence qualifications.</span></a><a '
                'href="chapters/IS.html"><strong>BTMS and IFMIS</strong><span>Chapter IS: the current system landscape and '
                'integration reform.</span></a><a href="chapters/UACS.html"><strong>UACS and record identities</strong><span>'
-               'Chapter UACS: codes versus individual document and transaction identifiers.</span></a></div>'
+               'Codes versus individual document and transaction identifiers.</span></a></div>'
                '<h2>Five diagrams to begin with</h2><div class="model-grid">' + ''.join(links) + '</div><h2>Research '
                'models</h2><p>Models of the identity of records, of the evidence for interfaces, of failed exchanges and '
                'of versioned UACS codes are kept apart as <a href="models/index.html">research models</a>, each with a note '
@@ -140,7 +140,9 @@ def build_extensions(c):
         h1 = soup.find('h1'); title = h1.get_text(' ', strip=True) if h1 else mdpath.stem
         make_page('models/reference/%s.html' % letter.lower(), title,
                   intro + '<article class="prose">' + str(soup) + '</article><p><a href="../index.html">← Research models</a></p>')
-        references.append((letter, title))
+        # K/L are retained as unlisted historical research records, not promoted into the current navigation.
+        if letter not in ('K','L'):
+            references.append((letter, title))
     registries = []
     for f in sorted((modelroot / 'registers').glob('*.csv')):
         with f.open(encoding='utf-8-sig', newline='') as fp:
@@ -173,6 +175,38 @@ def build_extensions(c):
                 + esc(mid) + '">Copy the code</button></div><pre class="model-code" id="model-' + esc(mid) + '"><code '
                 'class="model-source">' + esc(code) + '</code></pre><p><a href="index.html">← All research models</a></p>')
         make_page('models/%s.html' % mid, 'Research model %s: %s' % (mid, item['title']), body)
+    # Restore the entire source-only analytical collection, not just models considered non-redundant.
+    # This collection is not another public chapter structure. An old research sketch must never be
+    # silently replaced by a different current operational diagram merely because the topics overlap.
+    supplemental = modelroot / 'supplemental_index.json'
+    retained_supplemental = []
+    if supplemental.is_file():
+        entries = json.loads(supplemental.read_text(encoding='utf-8'))
+        if len(entries) != 25 or len({x['id'] for x in entries}) != 25:
+            raise ValueError('Preserved analytical collection must contain all 25 distinct sketches')
+        for entry in entries:
+            rel = Path(entry['path'])
+            if rel.is_absolute() or '..' in rel.parts:
+                raise ValueError('Unsafe analytical source location: ' + str(rel))
+            source = modelroot / rel
+            if not source.is_file():
+                raise ValueError('Missing preserved model source: ' + str(source))
+            code = source.read_text(encoding='utf-8-sig')
+            mid = entry['id']
+            label = rel.stem.replace('_', ' ').replace('-', ' ')
+            category = 'Mermaid' if entry['kind'] == 'mermaid' else 'PlantUML'
+            content = ('<p class="eyebrow">Supplementary analytical sketch</p><h1>' + esc(label) + '</h1>'
+                       '<p class="model-note"><strong>Source-only analytical sketch.</strong> This model is '
+                       'exploratory and is not evidence of an operational interface or a universal government process. '
+                       'It is retained for analysis, not substituted for a diagram that answers a narrower question.</p>'
+                       '<p><strong>Notation:</strong> ' + category + ' · <a href="' + esc(entry['path']) + '" download>'
+                       'Get source code</a></p><h2>Source</h2><pre class="model-code"><code class="model-source">'
+                       + esc(code) + '</code></pre><p><a href="index.html">← Analytical models</a></p>')
+            make_page('models/model-%s.html' % mid, 'Supplementary model: ' + label, content)
+            retained_supplemental.append((mid, label))
+    supplemental_cards = ''.join('<a class="model-card" href="model-%s.html"><strong>%s</strong>'
+                                 '<small>Source-only supplementary analysis</small></a>' % (esc(i), esc(label))
+                                 for i, label in retained_supplemental)
     cards = ''.join('<a class="model-card" href="%s.html"><strong>%s · %s</strong><small>%s</small></a>'
                     % (esc(m['id']), esc(m['id']), esc(m['title']), esc(m['purpose'])) for m in models)
     reference_cards = ''.join('<a class="model-card" href="reference/%s.html"><strong>%s</strong><small>Research reference</small></a>'
@@ -184,22 +218,30 @@ def build_extensions(c):
             '<div class="model-note"><strong>Not part of the chapters.</strong> A research model is a proposal, a method or a '
             'general model. It is not a description of Philippine PFM from a source, so it is kept apart from the '
             'chapters. Each model page says what the model is for, and why it is not in a chapter.</div>'
-            '<h2>The research models</h2><div class="model-grid">%s</div><h2>Research references</h2><div class="model-grid">%s</div>'
+            '<h2>The research models</h2><div class="model-grid">%s</div>'
+            '<h2>Additional analytical sketches</h2><p>Supplementary source-only models remain available in full; '
+            'conceptual similarity does not establish equivalence.</p><div class="model-grid">%s</div>'
+            '<h2>Research references</h2><div class="model-grid">%s</div>'
             '<h2>Research registers</h2><div class="model-grid">%s</div>'
             '<p><a href="../big-picture.html">Read the big picture</a> · <a href="../systems.html">Authorities, systems and '
             'UACS</a> · <a href="../reference/g.html">Open points</a></p>'
-            % (len(models), len(references), len(registries), cards, reference_cards, regcards))
+            % (len(models) + len(retained_supplemental), len(references), len(registries), cards, supplemental_cards, reference_cards, regcards))
     make_page('models/index.html', 'Research models and registers', body)
 
     # --- Pages at addresses that the site no longer uses ------------------------------------------------------
     rf = json.loads((root / 'tools' / 'research_forwarding.json').read_text(encoding='utf-8'))
     for old, new in rf['kept'].items():
-        forward('models/model-%s.html' % old, 'models/%s.html' % new, 'research model %s' % new)
+        if not any(mid == old for mid, _ in retained_supplemental):
+            forward('models/model-%s.html' % old, 'models/%s.html' % new, 'research model %s' % new)
     for old, did in rf['redundant'].items():
-        forward('models/model-%s.html' % old, 'diagrams/%s.html' % did, 'diagram %s: %s' % (did, diagrams[did]['title']))
+        # Only use a fallback forwarding page if the preserved model source genuinely is unavailable.
+        # Do not redirect a broadly scoped research sketch to a narrower current-procedure diagram.
+        if not any(mid == old for mid, _ in retained_supplemental):
+            forward('models/model-%s.html' % old, 'diagrams/%s.html' % did, 'diagram %s: %s' % (did, diagrams[did]['title']))
     forward('models/history.html', 'models/index.html', 'the research models')
     for letter in 'kl':
-        forward('models/reference/%s.html' % letter, 'models/index.html', 'the research models')
+        if letter.upper() not in own_refs:
+            forward('models/reference/%s.html' % letter, 'models/index.html', 'the research models')
     forward('overview.html', 'big-picture.html', 'the big picture')
     for source in c['REFERENCES']:
         forward('reference/' + source.stem + '.html', 'reference/' + source.name[0].lower() + '.html',

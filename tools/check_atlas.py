@@ -30,7 +30,7 @@ What it does not check
   Whether a statement of the atlas is true. That needs the sources. Reference F lists them, and Reference G lists
   the statements that are not verified.
 """
-import csv, glob, os, re, shutil, subprocess, sys, tempfile
+import csv, filecmp, glob, os, re, shutil, subprocess, sys, tempfile
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from atlas_pages import ID as CHAPTER_ID, DIAGRAM_ID  # noqa: E402
@@ -82,10 +82,25 @@ def main():
     repo = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     root = os.path.abspath(args[0]) if args else os.path.join(repo, "docs", "atlas")
     rel = lambda p: os.path.relpath(p, root)
-    mmd = sorted(glob.glob(os.path.join(root, "diagrams", "mermaid", "*.mmd")))
-    puml = sorted(glob.glob(os.path.join(root, "diagrams", "plantuml", "*.puml")))
-    png = sorted(glob.glob(os.path.join(root, "rendered", "*.png")))
-    mds = sorted(glob.glob(os.path.join(root, "**", "*.md"), recursive=True))
+    def verified_raw_alias(path):
+        """Ignore only byte-verified historical URLs with no matching current source artifact."""
+        rel = os.path.relpath(path, root)
+        archived = os.path.join(repo, 'preservation', 'legacy_web', 'atlas', rel)
+        if not os.path.isfile(archived) or not filecmp.cmp(path, archived, shallow=False):
+            return False
+        source = os.path.join(repo, 'src', rel)
+        if os.path.isfile(source):
+            return False
+        if rel.startswith('rendered' + os.sep) and rel.endswith('.png'):
+            name = os.path.basename(path)[:-4]
+            if glob.glob(os.path.join(repo, 'src', 'diagrams', '*', name + '.*')):
+                return False
+        return True
+
+    mmd = sorted(p for p in glob.glob(os.path.join(root, 'diagrams', 'mermaid', '*.mmd')) if not verified_raw_alias(p))
+    puml = sorted(p for p in glob.glob(os.path.join(root, 'diagrams', 'plantuml', '*.puml')) if not verified_raw_alias(p))
+    png = sorted(p for p in glob.glob(os.path.join(root, 'rendered', '*.png')) if not verified_raw_alias(p))
+    mds = sorted(p for p in glob.glob(os.path.join(root, '**', '*.md'), recursive=True) if not verified_raw_alias(p))
     if not mmd or not mds:
         print("No atlas found in", root)
         return 2

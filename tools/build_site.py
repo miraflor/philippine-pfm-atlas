@@ -811,9 +811,9 @@ def insert_status_filter(soup):
 def chapter_eyebrow(pid):
     key = PHASE_KEY[pid]
     if key == "shared":
-        return "Chapter %s · Shared by all phases" % pid
+        return "Technical reference · %s" % pid
     if is_phase_intro(pid):
-        return "Chapter %s · %s: the phase as a whole" % (pid, PHASE_NAME[key])
+        return "%s · Phase overview" % PHASE_NAME[key]
     return "Chapter %s · %s, step %s" % (pid, PHASE_NAME[key], pid[1:])
 
 
@@ -1070,37 +1070,45 @@ INDEX_GROUPS = [("preparation", "Budget phase 01", "Preparation"), ("legislation
 
 
 def build_chapter_index():
+    """Exactly 32 public numbered chapters, with separately labelled phase overviews and technical references."""
+    from atlas_pages import STEP_ORDER
     url = "chapters/index.html"
     subjects = {posixpath.basename(t).split("_", 1)[0]: cells[0] for t, cells in readme_table("## 4. The chapters")}
     missing = [pid for pid in CHAPTER_FILE if pid not in subjects]
     if missing:
-        fail("chapters without a subject in section 4 of the README of the atlas: " + ", ".join(missing))
+        fail("chapters without a subject in the README: " + ", ".join(missing))
     groups = []
-    for key, eyebrow, title in INDEX_GROUPS:
+    phase_order = [('preparation', 'Preparation', 'P'), ('legislation', 'Legislation', 'L'),
+                   ('execution', 'Execution', 'E'), ('accountability', 'Accountability', 'A')]
+    for key, title, letter in phase_order:
+        intro_id = letter + '0'
         rows = []
-        for pid in [x for x in CHAPTER_FILE if PHASE_KEY[x] == key]:
+        for pid in [i for i in STEP_ORDER if i.startswith(letter)]:
             diagrams = ", ".join('<a class="id" href="../diagrams/%s.html">%s</a>' % (d["id"], d["id"])
                                  for d in DIAGRAMS if d["chapter"] == pid)
-            intro = is_phase_intro(pid)
-            rows.append('<tr%s><td><a class="row-id" href="%s.html">%s</a></td><td><a href="%s.html">%s</a>%s%s</td>'
-                        '<td>%s</td><td>%s</td></tr>'
-                        % (' class="phase-intro"' if intro else "", pid, pid, pid, esc(chapter_title(pid)),
-                           '<span class="muted"> · the phase as a whole</span>' if intro else "",
-                           chips_html(CHAPTER_TAGS.get(pid, [])), inline_md(subjects[pid], "README.md", url),
-                           diagrams or '<span class="muted">None</span>'))
-        anchor = "across" if key == "shared" else key
-        groups.append('<section class="pfm-cycle-index-group" id="cycle-chapters-%s"><p class="pfm-cycle-eyebrow">%s</p>'
-                      '<h2>%s</h2><div class="table-wrap"><table><thead><tr><th>No.</th><th>Chapter</th><th>Subject</th>'
-                      '<th>Diagrams</th></tr></thead><tbody>%s</tbody></table></div></section>'
-                      % (anchor, esc(eyebrow.upper()), esc(title), "".join(rows)))
-    body = ('<div class="doc-head"><p class="eyebrow">Chapters</p><h1>The chapters</h1></div>'
-            '<p class="prose-block">The chapters follow the budget cycle in the illustration of DBM. Each of the four '
-            'phases has a chapter that describes it as a whole, and each of its steps has a chapter of its own. Two '
-            'chapters describe what all phases share: the information systems and UACS. The colours mark the lines to '
-            'which a chapter belongs, as on the <a href="../index.html#lines">map</a>.</p>'
-            '<div class="pfm-cycle-catalog" data-atlas-experience="1">%s%s</div>'
-            % (budget_cycle_nav.section_nav("chapters"), "".join(groups)))
-    write_page(url, frame(url, "The chapters", body, section="chapters/index.html"))
+            rows.append('<tr><td><a class="row-id" href="%s.html">%s</a></td><td><a href="%s.html">%s</a>%s</td>'
+                        '<td>%s</td><td>%s</td></tr>' %
+                        (pid, pid, pid, esc(chapter_title(pid)), chips_html(CHAPTER_TAGS.get(pid, [])),
+                         inline_md(subjects[pid], "README.md", url), diagrams or '<span class="muted">—</span>'))
+        groups.append('<section class="pfm-cycle-index-group" id="cycle-chapters-%s">'
+                      '<p class="pfm-cycle-eyebrow">BUDGET PHASE</p><h2>%s</h2>'
+                      '<p class="pfm-cycle-lede"><a href="%s.html">Read the %s phase overview</a></p>'
+                      '<div class="table-wrap"><table><thead><tr><th>Step</th><th>Chapter</th><th>Subject</th>'
+                      '<th>Diagrams</th></tr></thead><tbody>%s</tbody></table></div></section>' %
+                      (key, esc(title), intro_id, esc(title), ''.join(rows)))
+    extra = ('<section class="pfm-cycle-index-group" id="cycle-chapters-across">'
+             '<h2>Technical references</h2><p>The information systems and record classifications support multiple '
+             'activities; they are not additional numbered chapters.</p>'
+             '<p><a href="IS.html">Information systems and IFMIS</a> · '
+             '<a href="UACS.html">UACS and record identifiers</a></p></section>')
+    body = ('<div class="doc-head"><p class="eyebrow">Budget cycle</p>'
+            '<h1>32 activity chapters</h1></div>'
+            '<p class="prose-block">Follow the four phases in budget-cycle order. '
+            'Each numbered chapter corresponds to one activity. Phase introductions and technical '
+            'references are available where relevant, without forming a second chapter sequence.</p>'
+            '<div class="pfm-cycle-catalog" data-atlas-experience="1">%s%s%s</div>' %
+            (budget_cycle_nav.section_nav("chapters"), ''.join(groups), extra))
+    write_page(url, frame(url, "32 activity chapters", body, section="chapters/index.html"))
 
 
 def build_reference_index():
@@ -1253,6 +1261,15 @@ def main():
     n_forward = forwarding.build(write_page, frame, relurl, chapter_label, lambda d: DIAG[d]["title"],
                                  set(CHAPTER_FILE), set(DIAG))
     save(DOCS / "assets" / "search-index.json", json.dumps(SEARCH, ensure_ascii=False, separators=(",", ":")))
+    # Preserve previous direct URLs for raw Markdown, diagram sources and PNGs, without exposing a second catalogue.
+    legacy_root = ROOT / "preservation" / "legacy_web"
+    if legacy_root.is_dir():
+        for item in sorted(legacy_root.rglob("*")):
+            if item.is_file():
+                destination = DOCS / item.relative_to(legacy_root)
+                if not destination.exists():
+                    destination.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copy2(item, destination)
     print("built site: %d pages, %d diagrams, %d chapters, %d references, %d search entries, %d forwarding pages"
           % (len(WRITTEN), len(DIAGRAMS), len(CHAPTERS), len(REFERENCES), len(SEARCH), n_forward))
 

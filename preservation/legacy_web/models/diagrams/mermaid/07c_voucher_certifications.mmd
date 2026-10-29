@@ -1,0 +1,59 @@
+---
+title: "07c  The chain of certifications for one payment: who signs, what the signature states, and who checks it"
+config:
+  flowchart:
+    wrappingWidth: 900
+---
+flowchart TB
+  %% QUESTION THIS DIAGRAM ANSWERS: a payment depends on several signatures. What exactly does each signature assert, and is that assertion checked by anyone outside the agency before the money leaves?
+  %% READING: each row is one document. Left = who signs. Middle = what the signature states. The colour of the row shows who makes the statement: green = an officer of the agency, yellow = the bank, orange = the auditor.
+  %% WHAT THE DIAGRAM SHOWS: the facts "the goods were delivered" and "the delivery meets the contract" are stated only by officers of the agency. The bank checks the form of the payment order. COA checks the substance, after payment.
+  %% SOURCES: ORS boxes A and B [ORS-FORM]. Voucher boxes A to D [DV-BOXES]. LDDAP-ADA and SLIIE signatories [CL2013-16A]. Pre-audit by COA lifted in 2011, COA may restore it where internal control is inadequate [COA2011-002]. Certification of availability of funds before procurement [RA12009 s.49].
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: the wording of the certifications on the ORS and on the inspection and acceptance report, Box E of the voucher, what the bank checks, the role of the internal audit unit.
+
+  subgraph R1["1  OBLIGATION REQUEST AND STATUS (ORS)"]
+    direction LR
+    A1["Box A<br/>Head of the requesting unit"] --> A2["The charge to the allotment is necessary<br/>and lawful, and the supporting<br/>documents are valid and proper"]
+    A3["Box B<br/>Head of the budget unit"] --> A4["An allotment is available and<br/>is now obligated for this purpose"]
+  end
+
+  subgraph R2["2  INSPECTION AND ACCEPTANCE REPORT, or certified statement of work accomplished"]
+    direction LR
+    B1["Inspection officer<br/>or committee"] --> B2["The delivery was inspected and meets<br/>the quantity and the specifications"]
+    B3["Property officer or<br/>end-user"] --> B4["The delivery was received<br/>and accepted, in full or in part"]
+  end
+
+  subgraph R3["3  DISBURSEMENT VOUCHER (DV)"]
+    direction LR
+    C1["Box A<br/>Officer with direct supervision<br/>and knowledge of the facts"] --> C2["The expense is necessary and lawful<br/>and was incurred under<br/>my direct supervision"]
+    C3["Box C<br/>Head of the accounting unit"] --> C4["Cash is available, the supporting<br/>documents are complete,<br/>the amount claimed is proper"]
+    C5["Box D<br/>Head of agency or<br/>authorized official"] --> C6["Approved for payment"]
+  end
+
+  subgraph R4["4  PAYMENT ORDER (LDDAP-ADA) and its summary list (SLIIE)"]
+    direction LR
+    D1["Head of the accounting unit<br/>certifies"] --> D2["The listed accounts payable<br/>are due and demandable"]
+    D3["Head of agency or authorized<br/>official approves"] --> D4["The bank may debit the MDS sub-account<br/>and credit the listed payees"]
+  end
+
+  subgraph R5["5  SERVICING BANK"]
+    direction LR
+    E1["Bank officer"]:::bank --> E2["Signatures match the specimens, the account<br/>details are valid, the NCA balance is enough.<br/>The bank does not examine the delivery"]:::bank
+  end
+
+  subgraph R6["6  COMMISSION ON AUDIT, after payment"]
+    direction LR
+    F1["Audit team assigned<br/>to the agency"]:::aud --> F2["Examines the paid voucher and its documents.<br/>May suspend, disallow or charge (chapter 09)"]:::aud
+  end
+
+  R1 --> R2 --> R3 --> R4 --> R5 --> R6
+
+  classDef default fill:#edf7ed,stroke:#2e6b2e,color:#111
+  classDef bank fill:#fff8dc,stroke:#8a6d00,color:#111
+  classDef aud fill:#fdf1e3,stroke:#a35200,color:#111
+  style R1 fill:#ffffff,stroke:#444444
+  style R2 fill:#ffffff,stroke:#444444
+  style R3 fill:#ffffff,stroke:#444444
+  style R4 fill:#ffffff,stroke:#444444
+  style R5 fill:#ffffff,stroke:#444444
+  style R6 fill:#ffffff,stroke:#444444

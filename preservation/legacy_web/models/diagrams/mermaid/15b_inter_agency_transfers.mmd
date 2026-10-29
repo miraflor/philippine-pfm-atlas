@@ -1,0 +1,31 @@
+---
+title: "15b  Transfer of funds from one agency to another body that will implement"
+---
+sequenceDiagram
+  autonumber
+  %% QUESTION THIS DIAGRAM ANSWERS: an agency gives its money to another agency, a corporation or a local government to implement a project. When is the money "spent", and who is responsible for it?
+  %% IDEA: a transfer moves cash but not accountability. Under the FY 2026 rules the source agency may not treat the transfer as a disbursement until the receiver has used it for works, goods or services that were delivered, inspected and accepted. Until then the source agency holds a receivable and the receiver holds a liability.
+  %% SOURCES: transfers to other agencies, corporations and local governments are not treated as disbursed by the source until used by the receiver for accepted deliveries within the validity period [NBC599 s.3.4]. Report FAR 1-C on obligations, disbursements, liquidations and balances of inter-agency fund transfers [JC2019-1]. A part of the advances, in particular advances to government corporations, was not liquidated at the end of 2023 (indicator 27.3, score C) [PEFA2025]. Schedule of fund transfers required from corporations [COA2015-004].
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: the memorandum of agreement, the account names (due from, due to), the trust account of the receiver, the liquidation report and the return of unused money. These follow my recollection of COA rules on fund transfers, which I did not open.
+  participant SRC as Source agency<br/>(holds the appropriation)
+  participant IMP as Implementing body<br/>(agency, corporation or<br/>local government)
+  participant SUP as Suppliers and<br/>contractors
+  participant OV as DBM<br/>and COA
+
+  SRC->>IMP: Memorandum of agreement: purpose, amount, period, reports
+  SRC->>SRC: Obligation recorded against its own allotment<br/>#nbsp;
+  SRC->>IMP: Cash transferred
+  SRC->>SRC: Books: receivable from the implementing body.<br/>Not yet an expense, not yet a disbursement in the budget reports<br/>#nbsp;
+  IMP->>IMP: Books: money held for the source agency (a liability),<br/>separate from its own budget<br/>#nbsp;
+  IMP->>SUP: Procurement, contract
+  SUP-->>IMP: Delivery, inspected and accepted
+  IMP->>SUP: Payment from the transferred money
+  IMP->>SRC: Liquidation: report of payments with copies of documents
+  SRC->>SRC: Books: expense or asset recorded, receivable reduced.<br/>Now reported as disbursed<br/>#nbsp;
+  opt Money remains at the end of the project or of the validity period
+    IMP->>SRC: Unused balance returned
+  end
+  SRC->>OV: FAR 1-C each quarter: obligations, disbursements,<br/>liquidations and balances of fund transfers
+  OV-->>SRC: COA examines both the source and the implementing body
+
+  Note over SRC,OV: REPORTED WEAKNESS: a part of the advances, in particular advances to government corporations,<br/>was not liquidated at the end of 2023 (PEFA 2025, indicator 27.3, score C).

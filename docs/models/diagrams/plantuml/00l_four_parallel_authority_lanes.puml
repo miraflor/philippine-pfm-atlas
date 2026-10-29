@@ -1,0 +1,37 @@
+' QUESTION THIS DIAGRAM ANSWERS: Who works concurrently across budget execution and accounting?
+' SOURCES: Reference activity model [GAM] [NBC599]
+@startuml
+title 00l Parallel PFM workstreams by authority
+skinparam shadowing false
+|#EEF4FB|DBM|
+start
+:Release applicable allotments under FY rules;
+fork
+  |#EDF7ED|Agency procurement and programs|
+  :Plan / procure / award under legal conditions;
+  :Document contract, obligation and receipt of goods/services;
+fork again
+  |#FFF8DC|DBM, BTr and banks|
+  :Receive revenue and financing information;
+  :Program cash and arrange payment authority;
+fork again
+  |#F2F2F2|Agency budget and accounting units|
+  :Record opening authorities and transactions as they arise;
+  :Reconcile registers, journals, subledgers and third-party statements;
+end fork
+|#EDF7ED|Agency authorized payment officials|
+:Validate transaction-specific claim and cash/payment controls;
+|#FFF8DC|Bank and Treasury|
+:Settle and reconcile payment;
+fork
+  |#F2F2F2|Agency accounting and budget units|
+  :Post settlement / adjustments / report and reconcile;
+fork again
+  |#FDF1E3|COA and assurance functions|
+  :Examine transactions, balances, controls, performance;
+  :Issue findings as applicable;
+end fork
+|#EEF4FB|Agency management and budget authorities|
+:Correct records and systems; apply lessons to subsequent budgets;
+stop
+@enduml

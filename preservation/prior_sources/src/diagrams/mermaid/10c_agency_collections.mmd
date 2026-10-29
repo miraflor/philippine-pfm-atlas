@@ -1,0 +1,35 @@
+---
+title: "10c  Fees and other income collected by an agency: from payment to the correct fund"
+config:
+  flowchart:
+    wrappingWidth: 900
+---
+flowchart TB
+  %% QUESTION THIS DIAGRAM ANSWERS: an agency collects a fee. What must the collecting officer do with the money, and under which condition may the agency itself spend it?
+  %% READING: the upper part is the same for every collection. The lower part depends on what the law says about that kind of income.
+  %% SOURCES: numbered official receipt immediately for every payment, deposit of the full amount not later than the following banking day, income to the National Treasury and the General Fund unless a law provides otherwise [PD1445 s.65, s.68, s.69]. The steps, the forms and the copies: order of payment prepared by the accounting unit, official receipt, cash receipts record, deposit through a depository bank for the account of the National Treasurer, daily report of collections and deposits, journal entry [GAM-V1 Ch.5 s.39, s.40][GAM-V2 App.26, App.28, App.29]. Bonding of accountable officers [PD1445 s.101]. Banks upload collection reports, BTr issues deposit certificates [BTR-SYS]. General Fund, special accounts, trust receipts, revolving funds in the general provisions [GAA2026-GP]. Release of special accounts after BTr certifies the balance [NBC599]. FAR 5, FAR 2, FAR 6 [JC2019-1]. Receipt records in BTMS (revenue voucher, revenue receipt voucher) [CL2025-8].
+  %% THE ENTRIES: collection: debit Cash-Collecting Officers, credit the income account or Accounts Receivable. Remittance: debit Cash-Treasury/Agency Deposit, Regular, credit Cash-Collecting Officers. The books of the Treasury: debit Cash in Bank, credit Cash-Treasury/Agency Deposit, Regular [GAM-V1 Annex H].
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: electronic collection channels of each agency.
+
+  A(["A person owes a fee,<br/>charge or fine to an agency"]) --> B["Accounting unit prepares an order of payment<br/>that names the payor, the bill and the bank account"]
+  B --> C["Collecting officer (bonded) receives the payment<br/>and issues a numbered official receipt.<br/>Or the person pays through an electronic channel"]
+  C --> D["Collecting officer deposits the full amount in an authorized<br/>government depository bank, for the account of the National Treasurer,<br/>not later than the following banking day"]
+  D --> E["At the close of each business day: report of collections and<br/>deposits, with all official receipts in the order of their numbers<br/>and the validated deposit slips, to the accounting unit"]
+  E --> F["Accounting unit makes the journal entry from the report.<br/>In BTMS: revenue voucher and revenue receipt voucher"]
+  D --> G["Bank uploads its collection report to BTr (NGCDS).<br/>BTr issues a certificate of deposited collections to the agency"]
+
+  F --> Q{"What does the law<br/>say about this<br/>kind of income?"}
+  G --> Q
+
+  Q -- "no special rule<br/>(general rule)" --> H1["GENERAL FUND<br/>The bank transfers the money to the Treasury Single Account.<br/>The agency cannot spend it. Its own budget comes<br/>only from appropriations"]:::gen
+  Q -- "earmarked for<br/>a purpose" --> H2["SPECIAL ACCOUNT IN THE GENERAL FUND<br/>Money goes to the Treasury, recorded under the special account.<br/>To spend: Special Budget Request, BTr certifies the balance,<br/>DBM issues a SARO and an NCA"]
+  Q -- "agency may keep<br/>and use it" --> H3["RETAINED INCOME OR REVOLVING FUND<br/>Money stays in the agency account at the depository bank.<br/>Spent under the conditions of the law that allows it.<br/>Budget and use reported in FAR 2"]
+  Q -- "not the agency's<br/>own money" --> H4["TRUST RECEIPT<br/>Money is held for its purpose or its owner.<br/>Reported in FAR 6. Dormant balances<br/>are reverted to the General Fund"]
+
+  H1 --> R(["Every receipt is reported in FAR 5 each quarter<br/>and examined by COA"])
+  H2 --> R
+  H3 --> R
+  H4 --> R
+
+  classDef default fill:#ffffff,stroke:#444444,color:#111
+  classDef gen fill:#d6e4f7,stroke:#1f4e8c,color:#111,stroke-width:2px

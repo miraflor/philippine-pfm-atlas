@@ -1,0 +1,83 @@
+---
+title: "00d  Four parallel chains and the three points where they must meet (one contract payment)"
+config:
+  flowchart:
+    wrappingWidth: 460
+---
+flowchart TB
+  %% QUESTION THIS DIAGRAM ANSWERS: which conditions must all be true before one payment to a contractor can be made, and who makes each condition true?
+  %% IDEA: a payment is not the end of one line of steps. Four lines of steps run at the same time, and a payment is possible only when they meet. A diagram with one line of steps hides this.
+  %% FORM (Petri-net style): rounded node p = a state that can be true or not yet true. Rectangle t = an act by the persons named in it. An act with two incoming solid arrows needs BOTH states.
+  %% FOUR CHAINS: blue = legal authority to spend. Green = the contract and the physical work. Orange = cash. Grey = records and audit.
+  %% THE THREE MEETING POINTS: t3 (allotment meets award), t6 (obligation meets accepted delivery), t10 (approved claim meets cash authority).
+  %% The dotted arrow into t9 is a read arc: DBM consults the cash position of the Treasury but does not consume it when it issues an NCA.
+  %% LIMITS OF THIS FORM: (1) allotment and NCA are balances, so each token would need an amount. (2) One appropriation line funds many contracts and one contract has many payments, so one case identifier does not fit all places (see 17d).
+  %% SOURCES: allotment before commitment and NCA before payment [NBC599]. Award only after funding is effective [RA12009 s.12]. Due and demandable = delivered and accepted [JC2019-1]. Voucher certifications [DV-BOXES]. Payment order and bank steps [CL2013-16A]. Audit after payment [COA2011-002].
+
+  p1(["p1  Appropriation<br/>one line of the GAA"]):::auth
+  t1["t1  Release allotment<br/>DBM (GAA as allotment order,<br/>or SARO / GARO)"]:::tr
+  p2(["p2  Allotment available"]):::auth
+  p3(["p3  Obligation recorded<br/>ORS entered in the registry"]):::auth
+
+  p4(["p4  Project ready: design,<br/>cost estimate, item in the<br/>procurement plan (APP)"]):::thing
+  t2["t2  Procure<br/>BAC, head of procuring entity,<br/>bidders, PhilGEPS"]:::tr
+  p5(["p5  Award"]):::thing
+  t3["t3  Sign contract and obligate<br/>head of agency, budget officer,<br/>contractor"]:::tr
+  p6(["p6  Contract in force"]):::thing
+  t4["t4  Deliver or perform<br/>contractor"]:::tr
+  p7(["p7  Delivery claimed:<br/>billing, statement of<br/>work accomplished"]):::thing
+  t5["t5  Inspect and accept<br/>inspection committee, end user"]:::tr
+  p8(["p8  Delivery accepted"]):::thing
+
+  t6["t6  Approve disbursement voucher<br/>requesting head (Box A), accountant<br/>(Box C), head of agency (Box D)"]:::tr
+  p9(["p9  Claim approved:<br/>due and demandable,<br/>recorded by journal entry"]):::auth
+
+  p10(["p10  Monthly disbursement<br/>program of the agency"]):::cash
+  t7["t7  Collect revenue<br/>BIR, BOC, agencies, banks"]:::tr
+  t8["t8  Borrow<br/>BTr, DOF"]:::tr
+  p11(["p11  Cash in the Treasury<br/>Single Account at BSP"]):::cash
+  t9["t9  Issue cash authority (NCA)<br/>DBM"]:::tr
+  p12(["p12  Cash authority: NCA balance<br/>in the MDS sub-account<br/>at the servicing bank"]):::cash
+  t10["t10  Issue payment order (LDDAP-ADA)<br/>accountant certifies,<br/>head of agency approves"]:::tr
+  p13(["p13  Payment order<br/>at the servicing bank"]):::cash
+  t11["t11  Debit the sub-account,<br/>credit the payee<br/>servicing bank"]:::tr
+  p14(["p14  Payee paid"]):::cash
+  p15(["p15  Claim of the bank<br/>on the Treasury"]):::cash
+  t12["t12  Replenish the bank<br/>BTr, BSP"]:::tr
+  p16(["p16  Settled"]):::cash
+
+  t13["t13  Record and report<br/>agency to DBM, COA, BTr"]:::tr
+  p17(["p17  Registries, books,<br/>reports and statements"]):::rec
+  t14["t14  Audit<br/>COA"]:::tr
+  p18(["p18  Audit result: allowed,<br/>suspended, disallowed<br/>or charged"]):::rec
+
+  p1 --> t1 --> p2
+  p4 --> t2 --> p5
+  p2 --> t3
+  p5 --> t3
+  t3 --> p3
+  t3 --> p6
+  p6 --> t4 --> p7 --> t5 --> p8
+  p3 --> t6
+  p8 --> t6
+  t6 --> p9
+  t7 --> p11
+  t8 --> p11
+  p10 --> t9
+  p11 -. "read" .-> t9
+  t9 --> p12
+  p9 --> t10
+  p12 --> t10
+  t10 --> p13 --> t11
+  t11 --> p14
+  t11 --> p15
+  p15 --> t12
+  p11 --> t12
+  t12 --> p16
+  p14 --> t13 --> p17 --> t14 --> p18
+
+  classDef auth fill:#d6e4f7,stroke:#1f4e8c,color:#111
+  classDef thing fill:#d5ecd5,stroke:#2e6b2e,color:#111
+  classDef cash fill:#fde0c2,stroke:#a35200,color:#111
+  classDef rec fill:#e6e6e6,stroke:#555555,color:#111
+  classDef tr fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111

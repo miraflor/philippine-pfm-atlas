@@ -1,0 +1,17 @@
+---
+title: "10f  Tax refund, overpayment and payment corrections"
+---
+  %% QUESTION THIS DIAGRAM ANSWERS: How does a refund differ from a new expenditure and how are records linked?
+  %% SOURCES: Tax Code / BIR / BOC instruments need case-level verification; conceptual only; GENERAL KNOWLEDGE / atlas inference
+  %% SCOPE: Reference view; not a verified deployed system interface.
+  %% READING: Arrows show possible evidence, authority or event dependencies, not a universal time order or verified API.
+flowchart LR
+  RC["Original collection or assessment (unique reference)"] --> REQ["Taxpayer request / statutory correction event"]
+  REQ --> CHECK["Verify grounds, dates, ownership, offsets, and supporting evidence"]
+  CHECK --> DEC{"Refund, credit / offset, or reject?"}
+  DEC -->|Reject| AP["Dispute or appeal avenue"]
+  DEC -->|Credit / offset| TAX["Adjust taxpayer ledger and future obligation"]
+  DEC -->|Cash refund| AUT["Check statutory funding and authority for refund"] --> PM["Payment channel and settlement"]
+  PM --> RECON["Link cash movement, revenue correction and accounting"]
+  TAX --> RECON
+  AP --> DEC

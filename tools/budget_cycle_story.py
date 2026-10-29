@@ -56,7 +56,7 @@ POS = {'P1': (1, 1), 'P2': (2, 1), 'P3': (3, 1), 'P4': (4, 1), 'P5': (5, 1), 'P6
 # September of the next fiscal year ("within the next FY").
 # Each range in r is relative to the fiscal year of one budget. The same step therefore happens in different calendar
 # months for different budgets (calendar_span). In calendar year 2026 a step serves exactly one budget, fy; the build
-# checks this against r. A hand-off in 'to' is always between steps of the same budget year.
+# checks this against r. Edges describe generic procedural links, not a transfer between 2026 snapshot cohorts.
 STEP = {
     'P1': dict(short=['Budget Call'], r=(-12, -11), fy=2027, to=['P5', 'P8'],
              refs=[('P0', '5'), ('P5', '2'), ('P0', '8')], dg=['P0-a']),
@@ -202,6 +202,23 @@ def steps(chapter_dir=None):
     return out
 
 
+def typed_edges(steps_list):
+    """Classify process connections separately from the 2026 fiscal-year snapshot.
+
+    The edges are about abstract process relationships, not literal transfers between
+    the different fiscal-year cohorts displayed on a calendar-year cross section.
+    """
+    by = {step['id']: step for step in steps_list}
+    edges = []
+    for source in steps_list:
+        for target in source['to']:
+            feedback = source['id'] == 'A5' and target in ('P5', 'P8')
+            edges.append({'from': source['id'], 'to': target,
+                          'relation': 'feedback-next-budget' if feedback else 'same-budget-schematic',
+                          'snapshot_cohorts_differ': source['fy'] != by[target]['fy']})
+    return edges
+
+
 def calendar_span(step, fy=None):
     """Calendar months of a step for the budget of fiscal year fy (default: the budget it serves in 2026).
     Month 0 is January 2025; calendar year 2026 is months 12 to 24."""
@@ -339,7 +356,7 @@ def build(render_md, block, big_text, link, chapter_dir, diagram_ids, source_cod
                  '<p>Scroll down. The same 32 steps then show when each one happens, how one payment clears, and '
                  'which documents pass from one step to another.</p>'
                  '<p class="cs-skip"><a href="#cycle-explorer">Go to the step explorer</a> · '
-                 '<a href="#budget-cycle">Go to the list of steps</a></p>'),
+                 '<a href="#budget-cycle">Go to phase summaries</a></p>'),
         ('prep', pill('prep', 1) + '<h3>Preparation</h3><p>%s. It starts with the Budget Call in January and ends '
                  'when the President\'s Budget goes to Congress in July or August, all in the year before the budget '
                  'year.</p><p class="cs-note">For the FY 2027 budget, agencies encoded their Tier 1 and Tier 2 '
@@ -419,6 +436,7 @@ def build(render_md, block, big_text, link, chapter_dir, diagram_ids, source_cod
         'steps': [{'id': s['id'], 'ph': s['ph'], 'short': s['short'], 'name': s['name'], 'r': list(s['r']),
                    'calendar': list(calendar_span(s)), 'fy': s['fy'], 'pos': list(POS[s['id']]),
                    'line': list(s['line']) if s['line'] else None, 'to': s['to']} for s in S],
+        'edges': typed_edges(S),
         'threeView': THREE_BUDGETS_VIEW,
         'inserted': [list(x) for x in INSERTED],
         'arcs': {k: [list(a) for a in v] for k, v in ARCS.items()},
@@ -468,6 +486,16 @@ def build(render_md, block, big_text, link, chapter_dir, diagram_ids, source_cod
             rows.append(('What the loop does not show', _esc(s['note'])))
         if s['to']:
             rows.append(('Downstream process links', chips(s['to'])))
+            atypical = [by[t] for t in s['to'] if by[t]['fy'] != s['fy']]
+            if atypical:
+                if s['id'] == 'A5':
+                    desc = ('The performance-review links may inform a later budget year; '
+                            'they do not belong to the same fiscal-year transaction.')
+                else:
+                    desc = ('These are schematic links between steps of the same budget lifecycle. '
+                            'The displayed FY labels are a calendar-2026 cross-section of different budgets, '
+                            'not the fiscal years of a single transaction.')
+                rows.append(('How to read the FY labels', _esc(desc)))
         if receives:
             rows.append(('Upstream process links', chips(receives)))
         rows.append(('In the loop', chips([prev_id, next_id])))

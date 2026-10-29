@@ -136,48 +136,28 @@ def _intro_nav(destination='home', prefix=''):
 
 
 def home_cycle():
-    """Phase-first navigation, followed by all activities in the supplied diagram."""
+    """Compact four-phase wayfinder; the adjacent illustrated explorer is the one actionable 32-step route."""
     out = [
         '<section id="budget-cycle" class="atlas-story-section pfm-cycle" aria-labelledby="pfm-cycle-title">',
-        '<p class="atlas-kicker">01 / The national budget process</p>',
-        '<h2 id="pfm-cycle-title">Follow the budget, from proposal to audit.</h2>',
-        '<p class="pfm-cycle-lede">Choose a familiar phase. Each step opens its own chapter: its documents, its '
-        'timing, and the sections of the atlas that describe it.</p>',
+        '<p class="atlas-kicker">The national budget process</p>',
+        '<h2 id="pfm-cycle-title">Explore the budget through its four phases.</h2>',
+        '<p class="pfm-cycle-lede">The interactive step explorer above opens each of the 32 activities. '
+        'Browse the same activities as full chapters, or read an introduction to any phase.</p>',
         _intro_nav(),
-        '<p class="pfm-cycle-caveat"><strong>The phases overlap.</strong> Preparation and legislation '
-        'for the next fiscal year run alongside execution of the current budget and review of prior years. '
-        'The illustrative months below are not binding deadlines; consult current DBM issuances.</p>',
+        '<p class="pfm-cycle-caveat"><strong>Several budget years overlap.</strong> '
+        'The calendar is illustrative, not an authoritative schedule of annual deadlines.</p>',
     ]
     for p in PHASES:
-        out.extend([
-            '<section class="pfm-cycle-phase" id="phase-{}" aria-labelledby="pfm-cycle-{}-title">'.format(p['id'], p['id']),
-            '<div class="pfm-cycle-phase-head"><p class="pfm-cycle-eyebrow">PHASE {}</p>'
-            '<h3 id="pfm-cycle-{}-title">{}</h3><p>{}</p></div>'.format(p['number'],p['id'],_esc(p['name']),_esc(p['summary'])),
-            '<ol class="pfm-cycle-activities">',
-        ])
-        for index, (label, timing, chapter) in enumerate(p['steps'], 1):
-            out.append('<li><span class="pfm-cycle-step">{:02d}</span><div>{}'
-                       '<small>{}</small></div></li>'.format(index, _link(chapter,label), _esc(timing)))
-        out.extend([
-            '</ol>',
-            '<div class="pfm-cycle-metadata"><p><strong>Key actors</strong> {}</p>'
-            '<p><strong>Main documents</strong> {}</p></div>'.format(_esc(p['actors']), _esc(p['records'])),
-            '<p class="pfm-cycle-read"><strong>Explore further:</strong> {}</p>'.format(
-                ' · '.join(_link(ch,label) for label,ch in p['read'])),
-            '</section>',
-        ])
-    out.extend([
-        '<aside class="pfm-cycle-related"><p class="pfm-cycle-eyebrow">Across every phase</p>',
-        '<h3>How do the records and systems connect?</h3>',
-        '<p>The budget cycle orders the work. The original four-line map explains how legal authority, '
-        'claims, cash and records intersect. Both views are necessary. Systems and UACS are not a fifth budget phase.</p>',
-        '<p><a href="#lines">Four-line analytical map</a> · <a href="systems.html">Systems and UACS</a>'
-        ' · <a href="chapters/index.html#cycle-chapters-across">Chapters shared by all phases</a></p>',
-        '</aside>',
-        '<p class="pfm-cycle-note">The sequence of the steps and their indicative timing follow the budget-cycle '
-        'illustration of DBM. Procedural particulars and source qualifications are in the linked chapters.</p>',
-        '</section>',
-    ])
+        out.append('<section class="pfm-cycle-phase" id="phase-%s"><div class="pfm-cycle-phase-head">'
+                   '<p class="pfm-cycle-eyebrow">PHASE %s</p><h3>%s</h3><p>%s</p></div>'
+                   '<p><a href="chapters/index.html#cycle-chapters-%s">Explore the %d activities</a> · '
+                   '<a href="chapters/%s0.html">Phase overview</a></p></section>' %
+                   (p['id'], p['number'], _esc(p['name']), _esc(p['summary']), p['id'],
+                    len(p['steps']), p['id'][0].upper()))
+    out.append('<aside class="pfm-cycle-related"><h3>Evidence beyond the expenditure sequence</h3>'
+               '<p>The four-line map below explains how legal authority, claims, cash and records interact. '
+               '<a href="systems.html">Information systems and UACS</a> support multiple activities.</p></aside>'
+               '</section>')
     return '\n'.join(out)
 
 

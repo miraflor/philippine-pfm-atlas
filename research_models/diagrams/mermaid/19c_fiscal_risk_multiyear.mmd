@@ -1,0 +1,20 @@
+---
+title: "19c  Future-year fiscal commitments and contingent risk"
+---
+  %% QUESTION THIS DIAGRAM ANSWERS: What may require resources without appearing fully in the current budget appropriation?
+  %% SOURCES: [RA11966] [ROADMAP2024] [MYCA] legal treatments differ by instrument
+  %% SCOPE: Reference view; not a verified deployed system interface.
+  %% READING: Arrows show possible evidence, authority or event dependencies, not a universal time order or verified API.
+flowchart TB
+  NOW["Current-year authority / fiscal aggregates"] --> DEC{"Decision with possible future-year effect?"}
+  DEC --> CONTRACT["Multi-year procurement / contractual commitment"]
+  DEC --> PPP["PPP availability payments, guarantees, termination risk"]
+  DEC --> DEBT["Debt principal, interest, refinancing and FX"]
+  DEC --> GOCC["GOCC support, financial guarantees and contingent liabilities"]
+  DEC --> CLIM["Disaster / climate shocks, legal claims, pensions and other liabilities"]
+  CONTRACT --> MON["Fiscal risk register: source, amount or range, timing, triggers, mitigating controls"]
+  PPP --> MON
+  DEBT --> MON
+  GOCC --> MON
+  CLIM --> MON
+  MON --> TEST["Stress test / disclosures / medium-term planning"] --> LATER["Later budget decisions and financing"]

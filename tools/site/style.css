@@ -1066,3 +1066,9 @@ ol.cs-hand li.cs-gk b { background: transparent; color: var(--text); border: 1.5
   .cs-panels, .cs-live .cs-panels { grid-column: 1 / -1; grid-row: auto; }
   .cs-panel[hidden] { display: block; }
 }
+
+/* Activity scope aids: explain where supporting evidence is broader or thinner than one DBM step. */
+.activity-reading{border:1px solid var(--line, #ccd4d8);border-left:3px solid var(--ink, #243a47);border-radius:6px;padding:1rem 1.2rem;margin:1rem 0 1.5rem;background:var(--surface, transparent)}
+.activity-reading p{margin:.35rem 0 .65rem;line-height:1.65}
+.activity-reading-links{font-size:.89rem;line-height:1.8;display:flex;gap:.35rem 1rem;flex-wrap:wrap}
+.activity-reading-links a{font-weight:600}

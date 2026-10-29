@@ -1,0 +1,58 @@
+---
+title: "17b  The chain of records for one purchase: each record's own number, the codes it contains, and the link to the next record"
+config:
+  flowchart:
+    wrappingWidth: 900
+---
+flowchart TB
+  %% QUESTION THIS DIAGRAM ANSWERS: to follow one purchase from the budget line to the bank payment and the audit, which number connects each record to the next one, and where is there no such number?
+  %% READING: each box is one record. Line 1 = its name. Line 2 = its own number (this identifies ONE record). Line 3 = the UACS segments it contains (these identify a CLASS of records). The text on each arrow is the key that connects two records. Green arrow = a number or code is copied from one record to the next. Red dotted arrow = no coded key: the link exists only as text, as an attachment, or in a person's knowledge.
+  %% SOURCES: UACS segments [JC2017-1]. Column "Code (PAP)" in the procurement plan [APP-FORM]. Fields of the obligation request: responsibility center, particulars, program code, object code, amount [ORS-FORM]. Fields of the LDDAP-ADA: creditor, bank account, ORS number, allotment class per UACS, amounts, fund cluster, MDS sub-account, NCA number [LDDAP-FORM]. Obligations in registries, not in the journal [GAM-GUIDE]. No single system follows a proposal from plan to budget [ROADMAP2024]. In BTMS the voucher is linked to an approved obligation request, and the obligation request can be created from an approved purchase order [BTMS-SITE]. Inconsistent classification codes across PFM systems reported as a gap [SFA6].
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: the fields of the disbursement voucher, of the journal entry voucher and of audit notices (from the forms of the Government Accounting Manual, Volume II, which I did not open), the PhilGEPS reference number, contract and property numbers. Please check these against the actual forms of one agency.
+
+  PIP["Investment program entry<br/>own number: project entry in PIPOL<br/>codes: none from UACS until it enters the budget"]
+  BP["Budget proposal line<br/>own number: none (a line in a form in OSBPS)<br/>codes: organization, program code, object or expense class"]
+  GAA["GAA line<br/>own number: none (identified by its full code and year)<br/>codes: funding source, organization, program code, expense class"]:::uacs
+  ALL["Allotment<br/>own number: SARO number (none when the GAA itself is the allotment order)<br/>codes: funding source, organization, program code, expense class"]:::uacs
+  APP["Procurement plan line<br/>own number: line in the Annual Procurement Plan<br/>codes: program code (PAP)"]
+  PROC["Procurement<br/>own number: PhilGEPS reference number<br/>codes: none"]
+  CON["Contract or purchase order<br/>own number: contract or purchase order number<br/>codes: none"]
+  ORS["Obligation<br/>own number: ORS number<br/>codes: responsibility center, program code, object code"]:::uacs
+  IAR["Accepted delivery<br/>own number: number of the inspection and acceptance report<br/>codes: none"]
+  DV["Approved claim<br/>own number: disbursement voucher number<br/>codes: object (account) code in the accounting entry"]:::uacs
+  JEV["Journal entry<br/>own number: JEV number<br/>codes: fund cluster, account codes"]:::uacs
+  NCA["Cash authority<br/>own number: NCA number<br/>codes: fund cluster, organization"]:::uacs
+  ADA["Payment order<br/>own number: LDDAP-ADA number (or check number)<br/>codes: fund cluster, allotment class"]:::uacs
+  BANK["Bank transaction<br/>own number: bank reference<br/>codes: none"]
+  ASSET["Asset record<br/>own number: property number<br/>codes: asset account code"]
+  REP["Report row (FAR 1 and others)<br/>own number: none (a total per code and period)<br/>codes: fund cluster, organization, program code, expense class or object"]:::uacs
+  AUD["Audit finding<br/>own number: number of the observation or notice<br/>codes: none"]
+
+  PIP -. "no common key<br/>(separate systems)" .-> BP
+  BP -- "same codes" --> GAA
+  GAA -- "same codes" --> ALL
+  GAA -- "program code" --> APP
+  APP -- "plan line" --> PROC
+  PROC -- "PhilGEPS<br/>reference number" --> CON
+  ALL -- "same codes" --> ORS
+  CON -. "named only in the text<br/>of the ORS (particulars)" .-> ORS
+  CON -- "contract number" --> IAR
+  ORS -- "ORS number" --> DV
+  DV -- "voucher number" --> AUD
+  IAR -. "attachment<br/>(paper)" .-> DV
+  DV -- "voucher number" --> JEV
+  DV -- "ORS number, payee" --> ADA
+  NCA -- "NCA number" --> ADA
+  ADA -- "LDDAP-ADA or<br/>check number" --> BANK
+  IAR -. "by documents" .-> ASSET
+  ORS -- "codes" --> REP
+  ADA -- "amount paid, by code" --> REP
+
+  linkStyle 0,7,11,16 stroke:#b00020,stroke-width:2px,stroke-dasharray: 4 3
+  linkStyle 1,2,3,4,5,6,8,9,10,12,13,14,15,17,18 stroke:#2e6b2e,stroke-width:2px
+
+  N["WHAT THE CHAIN SHOWS: UACS connects the records at the top (budget line, allotment, procurement plan, obligation, report). From the obligation onward the connection is a document number.<br/>The bank transaction contains no program code. Four links have no coded key at all. In agencies that use BTMS, the purchase order, obligation request, voucher and journal entry are created one from the other, so these links are stored by the system."]
+  AUD ~~~ N
+
+  classDef default fill:#ffffff,stroke:#444444,color:#111
+  classDef uacs fill:#d6e4f7,stroke:#1f4e8c,color:#111

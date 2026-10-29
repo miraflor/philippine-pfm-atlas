@@ -7,8 +7,8 @@ import sys
 from pathlib import Path
 from bs4 import BeautifulSoup
 from budget_cycle_nav import CHAPTER_PHASE, LESSON_PHASES, PHASES
-from atlas_pages import ORDER
-from budget_cycle_story import THREE_BUDGETS_VIEW, calendar_span, steps, validate_timeline
+from atlas_pages import ORDER, STEP_ORDER
+from budget_cycle_story import THREE_BUDGETS_VIEW, calendar_span, steps, validate_timeline, typed_edges
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / 'docs'
@@ -23,10 +23,10 @@ def check():
 
     home = page('index.html')
     assert len(home.select('#budget-cycle .pfm-cycle-phase')) == 4
-    assert len(home.select('#budget-cycle .pfm-cycle-activities li')) == 32
+    assert len(home.select('#budget-cycle .pfm-cycle-activities li')) == 0, 'duplicate activity lists reintroduced'
     for p in PHASES:
         assert home.select_one('#phase-' + p['id'])
-        assert len(home.select('#phase-{} .pfm-cycle-activities li'.format(p['id']))) == len(p['steps'])
+        assert home.select_one('#phase-' + p['id'] + ' a[href^="chapters/index.html"]')
     assert home.select_one('#lines .map'), 'Four-line map must not be removed'
 
     # Budget-cycle story and step explorer (tools/budget_cycle_story.py, tools/site/cycle-story.js).
@@ -48,6 +48,9 @@ def check():
             'docs/assets/%s is older than tools/site/%s: rebuild the site' % (name, name)
     current = steps()
     validate_timeline(current)
+    assert data['edges'] == typed_edges(current), 'stale fiscal-year relation annotations'
+    assert sum(e['snapshot_cohorts_differ'] for e in data['edges']) == 8
+    assert len([e for e in data['edges'] if e['relation'] == 'feedback-next-budget']) == 2
     assert data['threeView'] == THREE_BUDGETS_VIEW, 'docs/index.html is older than tools/budget_cycle_story.py'
     by_id = {s['id']: s for s in current}
     for item in data['steps']:
@@ -74,13 +77,9 @@ def check():
     assert 'performance-review feedback informs proposals for a later budget' in explorer_text
     assert 'Hands its documents to (same budget year)' not in explorer_text
 
-    for p in PHASES:
-        for label, _, chapter in p['steps']:
-            assert home.select_one('#phase-%s a[href="chapters/%s.html"]' % (p['id'], chapter)), \
-                'the cycle list does not link %s to its chapter' % chapter
     chapters = page('chapters/index.html')
     rows = chapters.select('a.row-id[href$=".html"]')
-    assert [n.get_text(strip=True) for n in rows] == ORDER, 'the chapter index does not list the chapters in order'
+    assert [n.get_text(strip=True) for n in rows] == STEP_ORDER, 'public chapter index must list exactly 32 steps in order'
     assert set(ORDER) == set(CHAPTER_PHASE)
     for key in ('preparation', 'legislation', 'execution', 'accountability', 'across'):
         assert chapters.select_one('#cycle-chapters-' + key)
@@ -111,7 +110,7 @@ def check():
         detail=page('guide/'+slug+'.html')
         assert detail.select_one('.pfm-cycle-context'), slug
 
-    print('OK: four phases, 32 activities, %d chapters in the order of the cycle, 85 diagrams, 8 lessons' % len(ORDER))
+    print('OK: four phases, exactly 32 public chapters in cycle order; 85 diagrams, 8 lessons')
     print('OK: each step links to its own chapter; four-line analytical map retained')
     print('OK: budget-cycle story with 15 scenes; step explorer with 32 steps and 32 panels')
     print('OK: calendar months agree with the budgets served in 2026; built page and assets match the tools')

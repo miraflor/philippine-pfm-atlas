@@ -17,6 +17,10 @@ PHASES = [
     ('A', 'accountability', 'Accountability', 9),
 ]
 SHARED = ['IS', 'UACS']
+# Only these 32 IDs are numbered public activity chapters; P0/L0/E0/A0 are phase overviews.
+STEP_ORDER = [p + str(i) for p, _, _, n in PHASES for i in range(1, n + 1)]
+PHASE_OVERVIEWS = [p + '0' for p, _, _, _ in PHASES]
+SUPPORT_PAGES = PHASE_OVERVIEWS + SHARED
 ORDER = [p + str(i) for p, _, _, n in PHASES for i in range(0, n + 1)] + SHARED
 PHASE_KEY = {p + str(i): key for p, key, _, n in PHASES for i in range(0, n + 1)}
 PHASE_KEY.update({x: 'shared' for x in SHARED})

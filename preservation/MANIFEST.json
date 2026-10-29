@@ -1,0 +1,2771 @@
+{
+  "prior_commit": "092f0e7d3f59fcef684d086509c453c3fefc738e",
+  "counts": {
+    "research_sources_restored": 111,
+    "original_research_snapshots": 9,
+    "original_atlas_sources": 113,
+    "legacy_raw_urls": 319
+  },
+  "files": [
+    {
+      "file": "preservation/legacy_web/atlas/00_BIG_PICTURE.md",
+      "origin": "docs/atlas/00_BIG_PICTURE.md",
+      "sha256": "38bc51e21d27efefc1799f2ab19a612ede8f36e21585e0783fe69a3cbdb71e46"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/README.md",
+      "origin": "docs/atlas/README.md",
+      "sha256": "42a849a58c4b5ce726b28ca1fe9b14fcab82b158386b232a268554b68cdad7f6"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/00a_pfm_cycle_overview.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/00a_pfm_cycle_overview.mmd",
+      "sha256": "6c65083e0627ec62183b03e6590581d8b5c423ebbbe50ff8b33af296791227c4"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/00b_authorities_map.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/00b_authorities_map.mmd",
+      "sha256": "76f6dacb49a804fb4d3d607dd9001906f475670f18773bc8922d40130cb1a37c"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/00c_systems_landscape.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/00c_systems_landscape.mmd",
+      "sha256": "9c2c16e01105d9beba135be6286edfa55dc6fa7fe59ded7c245265be7a695047"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/00d_four_chains.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/00d_four_chains.mmd",
+      "sha256": "cf13711be7c03a5585da16404d414d53240dfd88bef04560de4fe721dbf5990b"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/00e_calendar_three_budgets.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/00e_calendar_three_budgets.mmd",
+      "sha256": "a0474cb0bc0701d99bb261d408a9e41d2a8e4b209f771e30fb07e0f293f1c7b8"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/00g_exchanges_between_authorities.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/00g_exchanges_between_authorities.mmd",
+      "sha256": "933a2370524a0cba2be6bad8f695476ac39595d05d856a627706312e08c8199a"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/00h_worked_example_one_contract.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/00h_worked_example_one_contract.mmd",
+      "sha256": "11d67579f00f8e742fbaffebef3ae27a176d80a579a3e7f4590ccf8199105445"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/01a_plan_hierarchy.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/01a_plan_hierarchy.mmd",
+      "sha256": "1c4bdc5fe1305212b5b5e4ecfd81e51c8b97dd615f936da8a9d709cc153b4bdf"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/01b_investment_programming_sequence.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/01b_investment_programming_sequence.mmd",
+      "sha256": "2fc8689f9e5067cd614d216ad2c902db887b8d086dce930bf39c7c787b0e39bb"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/02a_fiscal_framework.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/02a_fiscal_framework.mmd",
+      "sha256": "85a0d9463a0f9635b2638c7f42cc59a5717bc6c856563daf12127eedb4464c4e"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/03a_budget_preparation_sequence.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/03a_budget_preparation_sequence.mmd",
+      "sha256": "987218d6f6e146f52ff765bf6dc11adcb9ea3942b978868fb9429dff2923bf74"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/03c_two_tier_budgeting.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/03c_two_tier_budgeting.mmd",
+      "sha256": "8429d0e0ebae9d55ae58437458b58980b9ef25313a316c9dd044649078da7935"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/03d_budget_forms_and_documents.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/03d_budget_forms_and_documents.mmd",
+      "sha256": "5c05f9a928f16296aad6708e81da50daa0033610fed51a6d9e3df675baf47bb6"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/04a_legislation_sequence.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/04a_legislation_sequence.mmd",
+      "sha256": "2ae18b685a570ba5030877cc56b25cdf1b6f8a359226e9f9237e6481ce489ade"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/04b_bill_states.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/04b_bill_states.mmd",
+      "sha256": "79562c2d66d3a2d2e6a8c704c2da5d795e55b82b5c917b9aef00b5ae142c24fe"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/04c_appropriation_types.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/04c_appropriation_types.mmd",
+      "sha256": "ff29436afa13f8a54e4525884af0455583ecc9454efd66f5b1e4da352890f62a"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/05a_release_sequence.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/05a_release_sequence.mmd",
+      "sha256": "c901f5d855007cba7152adb8f7087bf2d92df56ae27cbba8438eccaa80c600c3"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/05b_release_decision_tree.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/05b_release_decision_tree.mmd",
+      "sha256": "61f771540a6b5960315198a98861cbfe3fcc5e8a545a53864367cfec2e3597c6"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/05c_budget_line_states.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/05c_budget_line_states.mmd",
+      "sha256": "9feed47882ec931d39cb9997926b987997c2f24c54156e8f2130e3b835c7d1ff"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/05d_cash_authorities.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/05d_cash_authorities.mmd",
+      "sha256": "37a3ef103a63c7869934394e803ff59d6f99a747c00e30917c0aa1a59fc1f427"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/05e_modification_and_savings.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/05e_modification_and_savings.mmd",
+      "sha256": "c920d9522b79545fef5e16335b8fb1cdbc3c101d3d768ce1b10a46c7ad9a5abc"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/06a_procurement_planning.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/06a_procurement_planning.mmd",
+      "sha256": "5e8412d791c8eb8b46b89f852458c0caa25144e34fd807f247f61ebb2bc2289a"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/06b_competitive_bidding_sequence.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/06b_competitive_bidding_sequence.mmd",
+      "sha256": "ed36e5bf6e56f6d7cb6948bc0478faee7f440755fd262231be3bf77ad873af13"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/06c_procurement_modes.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/06c_procurement_modes.mmd",
+      "sha256": "ae4ba0e729f9e0281f2dcde94324e691c3c0b91d26ed980318bf6ec20cfee2f5"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/06e_contract_implementation.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/06e_contract_implementation.mmd",
+      "sha256": "4c109d7b133e74209399c9d213daf901c70461d836d3a478d3add0facf6e7590"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/06f_multi_year_contracts.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/06f_multi_year_contracts.mmd",
+      "sha256": "6a7d94fa98379bbe566af837b422e7a6939694453ac6de468cab6fe48946546b"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/06g_framework_agreement.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/06g_framework_agreement.mmd",
+      "sha256": "5128cb1a93d4f5313d1b251e94d58aba57ee86d6ece9c77031ed68e31f32ef75"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/07a_obligation_to_payment_sequence.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/07a_obligation_to_payment_sequence.mmd",
+      "sha256": "580541aa1e52d6751036d5e23905dc22969a3965184fe5bed460b6d26ec079f7"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/07c_voucher_certifications.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/07c_voucher_certifications.mmd",
+      "sha256": "3026f996517932474ef7cc411980678ce1356908c1583c3f6ade04c994c36132"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/07d_payment_settlement_sequence.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/07d_payment_settlement_sequence.mmd",
+      "sha256": "9f7dcedec9e795822ca99c349df24cefe90bd24f92303d0043459f50b0573854"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/07e_payment_modes.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/07e_payment_modes.mmd",
+      "sha256": "0ffddf489456ea8fb966e52183c797473920938e43f55c8929c7c9b570b3c264"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/07f_cash_advance_states.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/07f_cash_advance_states.mmd",
+      "sha256": "e54e78299dd5a7a7c71a3dc86dd4d09930a21c9f2ebfb58f7ba9d6c26c0c208f"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/07g_when_a_step_fails.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/07g_when_a_step_fails.mmd",
+      "sha256": "676b96d832bbb43f046defb558ab402936ae09c9cd1a761675927b00edfcf9f1"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/07h_kinds_of_claim.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/07h_kinds_of_claim.mmd",
+      "sha256": "d50d9fd99eb6a5803042645b60cc436755c7beca451b0bd84b20c66cd3aa0b0a"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/07i_advance_progress_retention.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/07i_advance_progress_retention.mmd",
+      "sha256": "c1d7691a3606f0a1c77bfcb2777d31b2bc956c1d534ca3f62621c75cc7584a71"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/08a_accounting_records_flow.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/08a_accounting_records_flow.mmd",
+      "sha256": "11e4d300526e47274c4278290f60ebfeb82bb3d6ff1f1845456758630b43f7a9"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/08b_reporting_flows.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/08b_reporting_flows.mmd",
+      "sha256": "bb73efa442d3fb53d3edb68ed1f584bf2275bca726618965722ab3020f1ed338"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/08c_five_measures_of_one_spending.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/08c_five_measures_of_one_spending.mmd",
+      "sha256": "a2e617825616ef2b4c9e834ab822dabc0916de4002daa55576b7b40a7575bc69"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/08d_from_agency_reports_to_national_totals.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/08d_from_agency_reports_to_national_totals.mmd",
+      "sha256": "8f62d4b9045faceb1125c8101633db42c00051eb8281fe8f49f6ad3fc42562c9"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/08e_one_event_several_records.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/08e_one_event_several_records.mmd",
+      "sha256": "c7b00f9b89e8e360f22564f3da1d0ca5f943c9dd146088a044df06e4ec7448ed"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/09a_audit_sequence.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/09a_audit_sequence.mmd",
+      "sha256": "9061302a30945bbb4554aef658918d5d20a28caa9718c329c2aa2e60a5d4f253"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/09b_audit_finding_states.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/09b_audit_finding_states.mmd",
+      "sha256": "ab5d38fb780d2531a172d549a43c3756d8553feebd3d1bc344d7debb9110f25e"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/09c_oversight_map.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/09c_oversight_map.mmd",
+      "sha256": "469b31a89592b22ece11dae4d39a79571c96152dc6df65bdead90a04d1805e79"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/10a_revenue_classification.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/10a_revenue_classification.mmd",
+      "sha256": "332be97cfbcb765743b83d6601ca5191578bb3ad16f9bf26915f7ab66377d7cb"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/10b_tax_and_customs_collection_sequence.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/10b_tax_and_customs_collection_sequence.mmd",
+      "sha256": "8a03d5f04a4cecc4a0bd02024f7e5b115127ed6b35e30789ebdd811c284b6e51"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/10c_agency_collections.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/10c_agency_collections.mmd",
+      "sha256": "102be34c9607d5d77178bd511be03cbb99dc20975d737981aaf97fa07ad710d9"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/10d_tax_refund_sequence.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/10d_tax_refund_sequence.mmd",
+      "sha256": "f7831d2a747544aefe30346243624ca2655a5dc272b6b50fc9bc025880ea8bb3"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/11a_tsa_account_structure.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/11a_tsa_account_structure.mmd",
+      "sha256": "4672d89638287abf87a5d3b6f73e5cf9279f03b41555f3b1af707339752bdbd6"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/11b_cash_programming_sequence.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/11b_cash_programming_sequence.mmd",
+      "sha256": "dabbf5d9d370dfed51175b3e0863b8954f77b0e8f56118f5ad3bb6560aa8dfb5"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/11c_financing_and_debt.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/11c_financing_and_debt.mmd",
+      "sha256": "49c74d8c0bc232c5fdca5b2d2adc885145c9298070611fe5dfacfd90acadd52a"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/11d_foreign_loan_sequence.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/11d_foreign_loan_sequence.mmd",
+      "sha256": "1ed97e224b881dfac79288887fc9b09b2765a196215e2292ac10d87d1f405fb7"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/12a_position_to_payroll_sequence.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/12a_position_to_payroll_sequence.mmd",
+      "sha256": "5c1d4346f2aab00b748a721cc85eaea4c9d1c3ed56b7adcf87634c59f2fc0dc7"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/12b_personnel_funding_and_deductions.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/12b_personnel_funding_and_deductions.mmd",
+      "sha256": "d224efff247fd7503b6599f17b7f662cdce08adcd649fa38c442314aaa19fd33"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/13a_asset_lifecycle.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/13a_asset_lifecycle.mmd",
+      "sha256": "36102677a0b3fffd64bf46583f9e9942308958ff8a467cf8f46dd7da39759e7b"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/14a_lgu_budget_sequence.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/14a_lgu_budget_sequence.mmd",
+      "sha256": "253503e6a1487f967286b4ff6f7ef526dd00b6a544415fce6782a63677da88ba"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/14b_lgu_funds_and_mandatory_allocations.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/14b_lgu_funds_and_mandatory_allocations.mmd",
+      "sha256": "eca4eeff0c814388ecfdbcea6cc0416bbb6858d913f03bf591d8262dc92a9511"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/14c_national_local_interfaces.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/14c_national_local_interfaces.mmd",
+      "sha256": "f80c5a5c96aa88ed303d8831aface8fc833f9401f4b47cefc0ebf156e6b552da"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/14e_local_revenue_and_borrowing.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/14e_local_revenue_and_borrowing.mmd",
+      "sha256": "89a4c6b2d036dfc9fb8fe4b47fb999f294d6c8bc14d754b44969440b547df192"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/14f_barangay_budget_sequence.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/14f_barangay_budget_sequence.mmd",
+      "sha256": "270d6ea523de5465820eadfcc8de314d6e193f32d2cc2e0bbca98170fb845ba8"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/15a_gocc_budget_sequence.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/15a_gocc_budget_sequence.mmd",
+      "sha256": "344b61b2102d3f50629c07d9bb5b3925ffbcec1d2955405910fae8b52c2afe75"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/15b_inter_agency_transfers.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/15b_inter_agency_transfers.mmd",
+      "sha256": "36e2b4c8aa58ace58d5af195d0ffa8370e073888a23a8750fe1d055dc99390f6"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/15c_spending_paths.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/15c_spending_paths.mmd",
+      "sha256": "c7b36798c9a6ddecbf42e1907e6426c718b9fa3807475f21b4166d41991e92c1"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/15d_fund_clusters.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/15d_fund_clusters.mmd",
+      "sha256": "0c05a916bd661ed811eab8d3c1eec4ef6b852c67c26bcf5f06f13cb16618ccd4"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/15e_disaster_funds.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/15e_disaster_funds.mmd",
+      "sha256": "503741a4453735a71996e0e003e665e0bf792fd04e411ee76a8871e4b48d828c"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/15f_cash_aid_to_persons_sequence.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/15f_cash_aid_to_persons_sequence.mmd",
+      "sha256": "d0c94b26205b2bca01cfd488c2cae30dc1793ac89aee857d99ced19abbace5eb"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/16a_systems_by_function.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/16a_systems_by_function.mmd",
+      "sha256": "d396853e541d519fdeb8b982174b3666f3e789f3918f626df46348971cc574c9"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/16c_btms_execution_flow.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/16c_btms_execution_flow.mmd",
+      "sha256": "a3be9514e0a20088a38e646668688e13d07b710a98154e710b4bdd0f40ac8b5f"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/16d_ifmis_target_architecture.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/16d_ifmis_target_architecture.mmd",
+      "sha256": "0a6134dd54a88aebb27b2bb4c6af07eb5787e628d3b92c90217485051fe2e8b1"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/16e_digital_pfm_timeline.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/16e_digital_pfm_timeline.mmd",
+      "sha256": "46317fe19dcbe07212dbee8a174584cc7738cb56b1ff9c14983493dbcce15834"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/16f_document_verification_blockchain.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/16f_document_verification_blockchain.mmd",
+      "sha256": "2add6a456dabe89141d4410c0f4172e555d7db66491e829a79bfb6c0764d2b96"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/17a_uacs_structure.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/17a_uacs_structure.mmd",
+      "sha256": "16cddc65f51c00f61fa8ed003ab9318b21cfc69d3f9ca3a31c8967db053c03ab"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/17b_identifier_chain.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/17b_identifier_chain.mmd",
+      "sha256": "bf685badb80b9045ae53903561bf9ec8d15b5d0270868c6178c29d13d545ab3e"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/17c_record_lineage_er.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/17c_record_lineage_er.mmd",
+      "sha256": "89ffc3ef3b1379a28730f8fd75ca20671d808536fd7985fda5fab3ad57fd3f6c"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/17d_uacs_class_not_instance.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/17d_uacs_class_not_instance.mmd",
+      "sha256": "9cbefc41a1958567241e65a4746f7c8b0010e2ecc060aadb9e1d286f84ebb308"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/18a_performance_information_flow.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/18a_performance_information_flow.mmd",
+      "sha256": "cb2045ff2a1d205168385485da5eff6fd2139cd632d386015b0604537a357d16"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/18b_four_examinations_of_performance.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/18b_four_examinations_of_performance.mmd",
+      "sha256": "cb47f29be1269f6e3979399b747db5328c28d8aa77f167f9121225b6261c67ee"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/mermaid/19a_fiscal_risks_map.mmd",
+      "origin": "docs/atlas/diagrams/mermaid/19a_fiscal_risks_map.mmd",
+      "sha256": "a6ae1fb4b8a0b92597faa26bdd43780ab0ce10a59641876e73529b01cc64f5d5"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/plantuml/00f_end_to_end_swimlane.puml",
+      "origin": "docs/atlas/diagrams/plantuml/00f_end_to_end_swimlane.puml",
+      "sha256": "1aa4ac255cee805cb1b426cbdef4de9ab50d1d509e77281e7aa7298232f7a5fe"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/plantuml/03b_budget_preparation_swimlane.puml",
+      "origin": "docs/atlas/diagrams/plantuml/03b_budget_preparation_swimlane.puml",
+      "sha256": "40a641b706c3f1ec470e02ea1d977aba640df45c229d43f825a9425049310df1"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/plantuml/06d_competitive_bidding_swimlane.puml",
+      "origin": "docs/atlas/diagrams/plantuml/06d_competitive_bidding_swimlane.puml",
+      "sha256": "1931a22fe899828c48bfbf5a91f7f900b215bcee061f2565b79f4f11e8c37af4"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/plantuml/07b_obligation_to_payment_swimlane.puml",
+      "origin": "docs/atlas/diagrams/plantuml/07b_obligation_to_payment_swimlane.puml",
+      "sha256": "e1e4ee5c4e3a2bfbd24caa28880d18fd5654b03529803b9868760944f788d64e"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/plantuml/14d_lgu_budget_swimlane.puml",
+      "origin": "docs/atlas/diagrams/plantuml/14d_lgu_budget_swimlane.puml",
+      "sha256": "113a3ee7ad5401391cfa17d1d4fb2c87640c70971d01f8010d8923a5c9ffb273"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/plantuml/16b_systems_components_spending.puml",
+      "origin": "docs/atlas/diagrams/plantuml/16b_systems_components_spending.puml",
+      "sha256": "2194fa2d7e11d33ed49bbb05d7270ac279f93cb6c7f5e853472703c6887b89f2"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/plantuml/16g_systems_components_revenue_treasury.puml",
+      "origin": "docs/atlas/diagrams/plantuml/16g_systems_components_revenue_treasury.puml",
+      "sha256": "30fa228ea268fab721fa0e0ade06c15486983c57a072f9943afd55059836a62e"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/diagrams/plantuml/19b_ppp_project_swimlane.puml",
+      "origin": "docs/atlas/diagrams/plantuml/19b_ppp_project_swimlane.puml",
+      "sha256": "5905f55e665001721b3f1fc58268d966b10ee87d10d65e15dcfc416edd2073d5"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/processes/01_planning_and_investment_programming.md",
+      "origin": "docs/atlas/processes/01_planning_and_investment_programming.md",
+      "sha256": "cfdbb16ddc966377efc2125ad825d9e3cbb8aac2d15d8c426dc8f48c4c5ac24f"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/processes/02_macro_fiscal_framework.md",
+      "origin": "docs/atlas/processes/02_macro_fiscal_framework.md",
+      "sha256": "e858c8de924fcdc26640a719bf013fbca64d82547b90f40c032c87eaed200cfd"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/processes/03_budget_preparation.md",
+      "origin": "docs/atlas/processes/03_budget_preparation.md",
+      "sha256": "05856714f6972ac8b15444b8aa04b3472fa94bac9cea7b03b8edc1a9cacc3390"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/processes/04_budget_legislation.md",
+      "origin": "docs/atlas/processes/04_budget_legislation.md",
+      "sha256": "a4870658853f94969436db3d62db4a0a54be58cf6316472440ab394fc1dc8201"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/processes/05_budget_release_allotment_and_cash_authority.md",
+      "origin": "docs/atlas/processes/05_budget_release_allotment_and_cash_authority.md",
+      "sha256": "3a3aae2645489027f89d0ea3a90ede1db72549448d9ed68a43b7015614f9d0dc"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/processes/06_procurement.md",
+      "origin": "docs/atlas/processes/06_procurement.md",
+      "sha256": "483291d848afd404786d68f2acd4fa097e5f9d4d74ec8c06cbd9b728fa0abc30"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/processes/07_obligation_delivery_payment.md",
+      "origin": "docs/atlas/processes/07_obligation_delivery_payment.md",
+      "sha256": "c35f5de013aee8f1340b558366fd3975df840e88100f5d5b5098a23007574935"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/processes/08_accounting_and_reporting.md",
+      "origin": "docs/atlas/processes/08_accounting_and_reporting.md",
+      "sha256": "edd4e061b46143d04970968cb5c4553573ca0518b8cde1baf9c7c64b6316f6e6"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/processes/09_audit_and_oversight.md",
+      "origin": "docs/atlas/processes/09_audit_and_oversight.md",
+      "sha256": "aa738de76412c628d3884ca7f4e15413d200cfa0dcc7ad660c27bf48d16765e4"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/processes/10_revenue_collection.md",
+      "origin": "docs/atlas/processes/10_revenue_collection.md",
+      "sha256": "3511239b4842db7ee4f8f9076331a3f331ca736eaa413a08b6790cdda17c872b"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/processes/11_treasury_cash_and_debt.md",
+      "origin": "docs/atlas/processes/11_treasury_cash_and_debt.md",
+      "sha256": "156bb2ae602b0f6fabbf7c0f9c6e729590ee4ff121f89b9c3baad18818b0cd4b"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/processes/12_personnel_and_payroll.md",
+      "origin": "docs/atlas/processes/12_personnel_and_payroll.md",
+      "sha256": "9b783712509d23789a58452ade61c79bcd6323b9aea116faec69bbe33de48523"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/processes/13_assets_and_property.md",
+      "origin": "docs/atlas/processes/13_assets_and_property.md",
+      "sha256": "74554b4779402f1596b3b2e3ad53509959539a0eb9708d00934d45e2c75be9a5"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/processes/14_local_governments.md",
+      "origin": "docs/atlas/processes/14_local_governments.md",
+      "sha256": "b3117c09d0e8004bd3bcc5b76417a4ce57f099e64d7e92c846c16bd00d661399"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/processes/15_gocc_transfers_and_fund_clusters.md",
+      "origin": "docs/atlas/processes/15_gocc_transfers_and_fund_clusters.md",
+      "sha256": "b797140924332cadef6325b9869c1c5ba4bc7e8d98bd655f2ed0ae6b386f552a"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/processes/16_information_systems_and_ifmis.md",
+      "origin": "docs/atlas/processes/16_information_systems_and_ifmis.md",
+      "sha256": "15ce424fa02c664e4776eb71254c0b3477564f0798c2e547f662523ded2c4b4e"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/processes/17_uacs_and_record_identifiers.md",
+      "origin": "docs/atlas/processes/17_uacs_and_record_identifiers.md",
+      "sha256": "5591f167fd7bdcecac76b69554822173193c1cea8b3f01d845c6481becf3e305"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/processes/18_performance_information_and_evaluation.md",
+      "origin": "docs/atlas/processes/18_performance_information_and_evaluation.md",
+      "sha256": "77b6949a2b08d59a95f77ce3bf3c5981744690df100ee6c2fcd73ac7066063a3"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/processes/19_fiscal_risks_ppp_and_contingent_liabilities.md",
+      "origin": "docs/atlas/processes/19_fiscal_risks_ppp_and_contingent_liabilities.md",
+      "sha256": "ed1b015af38a75c2a32d2240c9ebb8d110a63af350f57fcc8e41024029563002"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/reference/A_authorities_and_mandates.md",
+      "origin": "docs/atlas/reference/A_authorities_and_mandates.md",
+      "sha256": "8fbc8f36a23065fde2eb730e490e09f97df88765c7bfce9cf2b2721b0aedd232"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/reference/B_information_systems_inventory.md",
+      "origin": "docs/atlas/reference/B_information_systems_inventory.md",
+      "sha256": "b7bad3b5be4bdd721c4c6b5310ff3662a91edafd52b262774cf66e5b95a9107a"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/reference/C_documents_and_identifiers.md",
+      "origin": "docs/atlas/reference/C_documents_and_identifiers.md",
+      "sha256": "4487c2555ae50ddc9822965351bc69812c2b17eafc545f9b7003a08ae072bd59"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/reference/D_legal_framework.md",
+      "origin": "docs/atlas/reference/D_legal_framework.md",
+      "sha256": "d92fec775781bfc8ecf0e0f043a646161fc3dac495454077fb1d9229ccbed303"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/reference/E_glossary.md",
+      "origin": "docs/atlas/reference/E_glossary.md",
+      "sha256": "153332b33e5c9132479da46db7351b3e8478a658aaa3275e8d613415ae340759"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/reference/F_sources_and_verification.md",
+      "origin": "docs/atlas/reference/F_sources_and_verification.md",
+      "sha256": "7dbab67364cc6632d32c47ec9b39cbf15f69095f1fccabc171be2d637ca21a96"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/reference/G_open_questions_and_known_gaps.md",
+      "origin": "docs/atlas/reference/G_open_questions_and_known_gaps.md",
+      "sha256": "52306fe23cd861609f666d71487b043e85e632694d2a9ff420e180fcb369f9a5"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/reference/diagram_index.csv",
+      "origin": "docs/atlas/reference/diagram_index.csv",
+      "sha256": "7ca9f4f768fb2d5c12619bc435a24b4d03a0f76ba9d4747a8fe3a4514b9fca51"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/reference/interface_register.csv",
+      "origin": "docs/atlas/reference/interface_register.csv",
+      "sha256": "b921b3cef39850dc52aadc8d14ad1e5b8b4d1e652e99fe48c4290aa65e641161"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/reference/steps_register.csv",
+      "origin": "docs/atlas/reference/steps_register.csv",
+      "sha256": "19e864d627abe4a49639672e0aa26c709aceaf2f9490672d64c33510d320571e"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/00a_pfm_cycle_overview.png",
+      "origin": "docs/atlas/rendered/00a_pfm_cycle_overview.png",
+      "sha256": "0e66c01e3f58dc972ff16a81e6da1cd2de1289fe0b4ffc99f47cb6a1f8837b5a"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/00b_authorities_map.png",
+      "origin": "docs/atlas/rendered/00b_authorities_map.png",
+      "sha256": "ad2db241193665a69c525c024188cd326fe3e2458d258dad107c7facee5d2310"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/00c_systems_landscape.png",
+      "origin": "docs/atlas/rendered/00c_systems_landscape.png",
+      "sha256": "4338556e97629474c9ba22b4f7d29f6fbfab1378d694a7dd7ded30d0818b2adb"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/00d_four_chains.png",
+      "origin": "docs/atlas/rendered/00d_four_chains.png",
+      "sha256": "f7328bc0c8c71e2121e7dcc822d7c0399abb73954d63efbbf43eae4282591e03"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/00e_calendar_three_budgets.png",
+      "origin": "docs/atlas/rendered/00e_calendar_three_budgets.png",
+      "sha256": "cbed91098076dc34415ca5b3096286f4269582426caac9fee1119bd53ed04599"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/00f_end_to_end_swimlane.png",
+      "origin": "docs/atlas/rendered/00f_end_to_end_swimlane.png",
+      "sha256": "fc8e38e97de20327794308265dbf8cb4a5bb3d0855b43bf889ebf13a0e49af28"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/00g_exchanges_between_authorities.png",
+      "origin": "docs/atlas/rendered/00g_exchanges_between_authorities.png",
+      "sha256": "ecb89512f18a5fdae15f381b25a06885553c932dbdc204cfde7d9799fe6012e6"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/00h_worked_example_one_contract.png",
+      "origin": "docs/atlas/rendered/00h_worked_example_one_contract.png",
+      "sha256": "2246070873a21f3c30adcd9f1f901e08bd28ba273b5d4519a588685fd4cd7ef9"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/01a_plan_hierarchy.png",
+      "origin": "docs/atlas/rendered/01a_plan_hierarchy.png",
+      "sha256": "ac73bf2760ce43419336fe235be6c2de08730f03c8f4be230b5b6a2849f2c7ca"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/01b_investment_programming_sequence.png",
+      "origin": "docs/atlas/rendered/01b_investment_programming_sequence.png",
+      "sha256": "f175e241d8e1b29e8bc424038e6b6dd0505f849160574764eab4b3e85d79c53a"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/02a_fiscal_framework.png",
+      "origin": "docs/atlas/rendered/02a_fiscal_framework.png",
+      "sha256": "f3627e20e929fe84c9703ee75cca15dad01a84d2c9d9b9d9a49e18aea661d204"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/03a_budget_preparation_sequence.png",
+      "origin": "docs/atlas/rendered/03a_budget_preparation_sequence.png",
+      "sha256": "bafdf27768af9004819516e45f86bb4a1b6b14ecd64a1a14808f672ae24eba0a"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/03b_budget_preparation_swimlane.png",
+      "origin": "docs/atlas/rendered/03b_budget_preparation_swimlane.png",
+      "sha256": "4409a56a298a147e43e37824e5d4db657f5b39fc3c4838670c8b7dd3fecb9b00"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/03c_two_tier_budgeting.png",
+      "origin": "docs/atlas/rendered/03c_two_tier_budgeting.png",
+      "sha256": "b2358e35de001fff5b3d760e5f0920b642dcb65b3405bd1faf4c404e835dbd7e"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/03d_budget_forms_and_documents.png",
+      "origin": "docs/atlas/rendered/03d_budget_forms_and_documents.png",
+      "sha256": "511f2866763877f9546c83ddf42af48d31c439c995c9d747746c8251e474b5ea"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/04a_legislation_sequence.png",
+      "origin": "docs/atlas/rendered/04a_legislation_sequence.png",
+      "sha256": "ec4e22f50b34329ac5f70ee919e524a75db42c09dff465461176a7daf4394b16"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/04b_bill_states.png",
+      "origin": "docs/atlas/rendered/04b_bill_states.png",
+      "sha256": "9db3427fa3c0709e57b2c88e78f37d664354227fa75c8ad96f94bf6dde871b79"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/04c_appropriation_types.png",
+      "origin": "docs/atlas/rendered/04c_appropriation_types.png",
+      "sha256": "5da0356331492cadf95b386ab6aecefeb9da405db24478d29068a77040b8fd2e"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/05a_release_sequence.png",
+      "origin": "docs/atlas/rendered/05a_release_sequence.png",
+      "sha256": "0268527a699d0f458b953296c76649ec92affd90a4d28e8b15e8022f428c91a7"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/05b_release_decision_tree.png",
+      "origin": "docs/atlas/rendered/05b_release_decision_tree.png",
+      "sha256": "5844cb325c2680e0dbe3acd6cdee96c848a18e0a99c3b1c276ca2b22a93f1bd6"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/05c_budget_line_states.png",
+      "origin": "docs/atlas/rendered/05c_budget_line_states.png",
+      "sha256": "ca99ef9ea8f6bc94d5e26ae81deec83aefaa5a6c41fba563ed6d9e06c944adbe"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/05d_cash_authorities.png",
+      "origin": "docs/atlas/rendered/05d_cash_authorities.png",
+      "sha256": "fa9fbd9397d351403e53225ecad9b91e581f665472775441c14b12d47d685d9e"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/05e_modification_and_savings.png",
+      "origin": "docs/atlas/rendered/05e_modification_and_savings.png",
+      "sha256": "92b991308c96c28123acfdd07794bc2313c8bf17129aa7e7f4c2ffa2982e90ec"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/06a_procurement_planning.png",
+      "origin": "docs/atlas/rendered/06a_procurement_planning.png",
+      "sha256": "e3fbb67607e599737d57b792ef3c2fb30d01f7e5f95b90c7501312ea8cdad7c0"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/06b_competitive_bidding_sequence.png",
+      "origin": "docs/atlas/rendered/06b_competitive_bidding_sequence.png",
+      "sha256": "74b34038717a4b2918ad3d6118f0b3a86c35db94a92adee16c0d521d5493884f"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/06c_procurement_modes.png",
+      "origin": "docs/atlas/rendered/06c_procurement_modes.png",
+      "sha256": "b624508239ee7fb209f035889fd308e20116474a4f192415f6fd39e5db2e37f0"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/06d_competitive_bidding_swimlane.png",
+      "origin": "docs/atlas/rendered/06d_competitive_bidding_swimlane.png",
+      "sha256": "d231fa6f757e943229d809912c9ba60e0c2c4b0d39a09bb557948b12986587ac"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/06e_contract_implementation.png",
+      "origin": "docs/atlas/rendered/06e_contract_implementation.png",
+      "sha256": "083e78b919ec3a3a82e50e5534c069e2bce926ba7c6d4c2ee0380c82dbe788f4"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/06f_multi_year_contracts.png",
+      "origin": "docs/atlas/rendered/06f_multi_year_contracts.png",
+      "sha256": "d5f1e3b01c9cd07b21d7c76a8dc8235f08a3535f48b29634abcd7a12b9825dc4"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/06g_framework_agreement.png",
+      "origin": "docs/atlas/rendered/06g_framework_agreement.png",
+      "sha256": "f01c64500cd506bdd21588b985a1e19c02bdfdb82ef74d8c273a9b185befdc04"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/07a_obligation_to_payment_sequence.png",
+      "origin": "docs/atlas/rendered/07a_obligation_to_payment_sequence.png",
+      "sha256": "f6b5d2134e55bb89d517f1822a10a05a325dc0ad8d5a195e2d6d727796f9c7dc"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/07b_obligation_to_payment_swimlane.png",
+      "origin": "docs/atlas/rendered/07b_obligation_to_payment_swimlane.png",
+      "sha256": "76f0a022df6c41f38fe48d053d35bb1dbd2277702d014f84add1b52066b8d99b"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/07c_voucher_certifications.png",
+      "origin": "docs/atlas/rendered/07c_voucher_certifications.png",
+      "sha256": "2df7c3164c0b753b0cb075cf00d5a9c167986aac4ca6e9eaa8bdce9647f119df"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/07d_payment_settlement_sequence.png",
+      "origin": "docs/atlas/rendered/07d_payment_settlement_sequence.png",
+      "sha256": "a209ed9a79814dc0c8ebc8d417067307ef831ddb157be6fbc60f0cf48773dddd"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/07e_payment_modes.png",
+      "origin": "docs/atlas/rendered/07e_payment_modes.png",
+      "sha256": "7b705a93263c31c40707899fc6c6c85110b2dfe9af60fb6f066924aa44280de9"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/07f_cash_advance_states.png",
+      "origin": "docs/atlas/rendered/07f_cash_advance_states.png",
+      "sha256": "85f80570835f34f867cc2164b1140d53d929e699089446f64f8c8e9c57cc3327"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/07g_when_a_step_fails.png",
+      "origin": "docs/atlas/rendered/07g_when_a_step_fails.png",
+      "sha256": "e189b54d6cb05889ae7b63a015a7415d95085f72fe7a207d48af99e153c12cd2"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/07h_kinds_of_claim.png",
+      "origin": "docs/atlas/rendered/07h_kinds_of_claim.png",
+      "sha256": "24c8a0c471cd812684c1ce57b6b4d43867d6f96d96c2e8829a612d5569067f80"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/07i_advance_progress_retention.png",
+      "origin": "docs/atlas/rendered/07i_advance_progress_retention.png",
+      "sha256": "657c051d9ecbe60362cac731131cd22ff460805b3f06af02c1fe9edbe7cab00e"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/08a_accounting_records_flow.png",
+      "origin": "docs/atlas/rendered/08a_accounting_records_flow.png",
+      "sha256": "71ad4d9ec5ccb0b76ff73d388597af63d72b8546860b99c79f589ea9e2a40066"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/08b_reporting_flows.png",
+      "origin": "docs/atlas/rendered/08b_reporting_flows.png",
+      "sha256": "ffb89466d6ef0e7b83584053ee57a454f82671ea2416c49c18bab4b17e86aed2"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/08c_five_measures_of_one_spending.png",
+      "origin": "docs/atlas/rendered/08c_five_measures_of_one_spending.png",
+      "sha256": "18cf8a6989837fd7b7338db1bfec6589adceeb73de415505cc95c4f91977c164"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/08d_from_agency_reports_to_national_totals.png",
+      "origin": "docs/atlas/rendered/08d_from_agency_reports_to_national_totals.png",
+      "sha256": "6314ff7e37ce028aa94132ee82b88103723a52989723d514c1a0cd5b0d61c23b"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/08e_one_event_several_records.png",
+      "origin": "docs/atlas/rendered/08e_one_event_several_records.png",
+      "sha256": "56d2a9443d9c0acacc0e137b2cec4d3c2e86e172d3007fa0fe10d4569a7a27ae"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/09a_audit_sequence.png",
+      "origin": "docs/atlas/rendered/09a_audit_sequence.png",
+      "sha256": "99f26ce9898ddb927b2639388eedbc842067cc125ff5498b6e9affffcc64b946"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/09b_audit_finding_states.png",
+      "origin": "docs/atlas/rendered/09b_audit_finding_states.png",
+      "sha256": "9c03ca492ebdbc0f4cfbd5f7cae15e0da2a83349aec531f6b501bbfd0a7fb614"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/09c_oversight_map.png",
+      "origin": "docs/atlas/rendered/09c_oversight_map.png",
+      "sha256": "2ed0c71916669841aace5504d31f307b141ca9fd46c71efe75fc9097614ac77d"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/10a_revenue_classification.png",
+      "origin": "docs/atlas/rendered/10a_revenue_classification.png",
+      "sha256": "5de3d2352da077792c902629f15429b2430159a15736fc5561ed6bab6da42e46"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/10b_tax_and_customs_collection_sequence.png",
+      "origin": "docs/atlas/rendered/10b_tax_and_customs_collection_sequence.png",
+      "sha256": "6c3b116e93ca2826f0572066d62e84aefb403f60e63d347bab27443c02daa371"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/10c_agency_collections.png",
+      "origin": "docs/atlas/rendered/10c_agency_collections.png",
+      "sha256": "aeca4667b8e8bc8e96f2cc74f672b533bb05234633b01067b5fc0f2ea2ea5977"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/10d_tax_refund_sequence.png",
+      "origin": "docs/atlas/rendered/10d_tax_refund_sequence.png",
+      "sha256": "906bcf42660900d3a34615ea381cf7cc307c600fbf7fe740f03a1fac62e13c28"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/11a_tsa_account_structure.png",
+      "origin": "docs/atlas/rendered/11a_tsa_account_structure.png",
+      "sha256": "6744eb006369b1fab9264483db9d7cd05e38fb09f092a842fc35ef15244a30a9"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/11b_cash_programming_sequence.png",
+      "origin": "docs/atlas/rendered/11b_cash_programming_sequence.png",
+      "sha256": "5dbc81ffd905504ad6eced5915e610428527ed72ea0b238c9d7a7c5e01c1861b"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/11c_financing_and_debt.png",
+      "origin": "docs/atlas/rendered/11c_financing_and_debt.png",
+      "sha256": "02da69fccc4b7f78aa63f274143c1d25a5e556fa6fc0a96381203df5354ae096"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/11d_foreign_loan_sequence.png",
+      "origin": "docs/atlas/rendered/11d_foreign_loan_sequence.png",
+      "sha256": "70e716908674be9638c050a0bc6314a22a9980c1be035b5e2a95d3eb2a5f228a"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/12a_position_to_payroll_sequence.png",
+      "origin": "docs/atlas/rendered/12a_position_to_payroll_sequence.png",
+      "sha256": "863311530772bbcee78089cf80f77b3a1f1df4d3e0dcf71288c059335d179484"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/12b_personnel_funding_and_deductions.png",
+      "origin": "docs/atlas/rendered/12b_personnel_funding_and_deductions.png",
+      "sha256": "795248b0a3b33ce3c9f6bf545ed164f259b4fd4d70523bd842bd1c857a4f111a"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/13a_asset_lifecycle.png",
+      "origin": "docs/atlas/rendered/13a_asset_lifecycle.png",
+      "sha256": "273d306b741da884e8d733bfc5f2309b3ae7cb753261309827638fc89c183a6c"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/14a_lgu_budget_sequence.png",
+      "origin": "docs/atlas/rendered/14a_lgu_budget_sequence.png",
+      "sha256": "ef1a29b98eadab165216fc4c6954c008552bd35550715941764ed69169cfe709"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/14b_lgu_funds_and_mandatory_allocations.png",
+      "origin": "docs/atlas/rendered/14b_lgu_funds_and_mandatory_allocations.png",
+      "sha256": "58c67653da781c6156ba047d6caa6f0837f119d165149eb0b0d515005d17bc4b"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/14c_national_local_interfaces.png",
+      "origin": "docs/atlas/rendered/14c_national_local_interfaces.png",
+      "sha256": "affc3400f9ff8baefad81f10f761c91c677b67e5155235b51cab3971e39d2d8d"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/14d_lgu_budget_swimlane.png",
+      "origin": "docs/atlas/rendered/14d_lgu_budget_swimlane.png",
+      "sha256": "681cdcc4e528ca80eb3ea1e3e57feed50748c5a993ff0b667e719980af08e5aa"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/14e_local_revenue_and_borrowing.png",
+      "origin": "docs/atlas/rendered/14e_local_revenue_and_borrowing.png",
+      "sha256": "e5ded9744f0714473bcb4d9d0ac1097c3a35bdd4e023c7ef88d49fb6455512c1"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/14f_barangay_budget_sequence.png",
+      "origin": "docs/atlas/rendered/14f_barangay_budget_sequence.png",
+      "sha256": "a621b18d9661e4fe62db497aceee50d6fe87635ce85b49f305a4c38e2c078f72"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/15a_gocc_budget_sequence.png",
+      "origin": "docs/atlas/rendered/15a_gocc_budget_sequence.png",
+      "sha256": "adf61fe9530204ef675eed6b0e2fc478726d1591cced13083dbe4520cb420cc9"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/15b_inter_agency_transfers.png",
+      "origin": "docs/atlas/rendered/15b_inter_agency_transfers.png",
+      "sha256": "9c7465640b9d4ccc5dae591ad1a70f1fe5e8f0a134bd4df6eb0a5ba42690f49f"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/15c_spending_paths.png",
+      "origin": "docs/atlas/rendered/15c_spending_paths.png",
+      "sha256": "45cbba6f599d5fc759771805dc537158368517c9d1551321d126e55ab62c98a9"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/15d_fund_clusters.png",
+      "origin": "docs/atlas/rendered/15d_fund_clusters.png",
+      "sha256": "bf58503a5ba386c71a60e0696e1ceff2f4dd4a7d98d50d44e22a1591578d678e"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/15e_disaster_funds.png",
+      "origin": "docs/atlas/rendered/15e_disaster_funds.png",
+      "sha256": "6432f992b43d6249f984b818f76a9eac449af3ed6f570500d0bda0966a7876ec"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/15f_cash_aid_to_persons_sequence.png",
+      "origin": "docs/atlas/rendered/15f_cash_aid_to_persons_sequence.png",
+      "sha256": "8c1d5d2c20261d5f1d3658730569685bc2af50230d4f704ddccc80955d2d3740"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/16a_systems_by_function.png",
+      "origin": "docs/atlas/rendered/16a_systems_by_function.png",
+      "sha256": "5c524563793e83e840f1270bfdd21c0c21b81620d587f5a1834164d8f763ab9f"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/16b_systems_components_spending.png",
+      "origin": "docs/atlas/rendered/16b_systems_components_spending.png",
+      "sha256": "e247f7c961b08d3f6408875a7be0dc7ab7aeeeac775cb1f9573722fa8826ad6d"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/16c_btms_execution_flow.png",
+      "origin": "docs/atlas/rendered/16c_btms_execution_flow.png",
+      "sha256": "5f945a994deab25db3a88fba81f91fac9a23591533d7039887569d66d9714917"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/16d_ifmis_target_architecture.png",
+      "origin": "docs/atlas/rendered/16d_ifmis_target_architecture.png",
+      "sha256": "1a35fda9aa86fe80d4e77d4bfb072c438cd550e052ec0bb59d801c041b6721d6"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/16e_digital_pfm_timeline.png",
+      "origin": "docs/atlas/rendered/16e_digital_pfm_timeline.png",
+      "sha256": "1ca4e4be7a85ec5e2e9c87805daadd80407761735e17ff9efa7736beacd0a234"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/16f_document_verification_blockchain.png",
+      "origin": "docs/atlas/rendered/16f_document_verification_blockchain.png",
+      "sha256": "5a028a81729b8ea431eda685a2ed930aeb9c1a749d337c6c57c822eae9fdba72"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/16g_systems_components_revenue_treasury.png",
+      "origin": "docs/atlas/rendered/16g_systems_components_revenue_treasury.png",
+      "sha256": "804d8b80b2d8b65126a0d23e903c66f8cc7e8f6bc5efd959a6a8f3284992e2d9"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/17a_uacs_structure.png",
+      "origin": "docs/atlas/rendered/17a_uacs_structure.png",
+      "sha256": "dbe1730416fcc22ae3ee534a2732f923ed8145d7cffa770ffb7a7d174529420c"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/17b_identifier_chain.png",
+      "origin": "docs/atlas/rendered/17b_identifier_chain.png",
+      "sha256": "963a2bdc4e0129ddbe6fe27b0db417edd62feceb1def67a8b214f97ee40d2204"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/17c_record_lineage_er.png",
+      "origin": "docs/atlas/rendered/17c_record_lineage_er.png",
+      "sha256": "449798579a60df7b0a94d62a5283647f5393bd26da0d3109fe93123771b5aeaa"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/17d_uacs_class_not_instance.png",
+      "origin": "docs/atlas/rendered/17d_uacs_class_not_instance.png",
+      "sha256": "2d80e1e0a2e2650b836371cc8fef4ff52157d4b38fb2dc0021e2b55770e06547"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/18a_performance_information_flow.png",
+      "origin": "docs/atlas/rendered/18a_performance_information_flow.png",
+      "sha256": "cd37c9e271fca601a29544eadb9afd2ff4d5ad4324141745b06a667aa6abffdb"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/18b_four_examinations_of_performance.png",
+      "origin": "docs/atlas/rendered/18b_four_examinations_of_performance.png",
+      "sha256": "8a45ce730b4eff406a1e2a4d00d3a28ca1479368dec974c56febc7d22a76ea65"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/19a_fiscal_risks_map.png",
+      "origin": "docs/atlas/rendered/19a_fiscal_risks_map.png",
+      "sha256": "575ef32232a9200271bf80872cd0aa6d34288c0195f577f7af6ca334e108112f"
+    },
+    {
+      "file": "preservation/legacy_web/atlas/rendered/19b_ppp_project_swimlane.png",
+      "origin": "docs/atlas/rendered/19b_ppp_project_swimlane.png",
+      "sha256": "ed0981d5c52a828ef0babb92d118cd0c6c82360e8cb3e1b082972fd58b6a22cb"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/00a_pfm_cycle_overview.mmd",
+      "origin": "docs/models/diagrams/mermaid/00a_pfm_cycle_overview.mmd",
+      "sha256": "8498120fb2074b82ed992ff04ceeb059eff03f3420061b325ee7c34e570bf1a0"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/00b_authorities_map.mmd",
+      "origin": "docs/models/diagrams/mermaid/00b_authorities_map.mmd",
+      "sha256": "76f6dacb49a804fb4d3d607dd9001906f475670f18773bc8922d40130cb1a37c"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/00c_systems_landscape.mmd",
+      "origin": "docs/models/diagrams/mermaid/00c_systems_landscape.mmd",
+      "sha256": "781e5f895283640c2ba145cb17603b93e2cf98e52971ffbd3ba24878e641d4a6"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/00d_four_chains.mmd",
+      "origin": "docs/models/diagrams/mermaid/00d_four_chains.mmd",
+      "sha256": "c13939a624ec604ca5227320483db61e3738288330ec1503fb54c0450f14ec05"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/00e_calendar_three_budgets.mmd",
+      "origin": "docs/models/diagrams/mermaid/00e_calendar_three_budgets.mmd",
+      "sha256": "a0474cb0bc0701d99bb261d408a9e41d2a8e4b209f771e30fb07e0f293f1c7b8"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/00g_exchanges_between_authorities.mmd",
+      "origin": "docs/models/diagrams/mermaid/00g_exchanges_between_authorities.mmd",
+      "sha256": "933a2370524a0cba2be6bad8f695476ac39595d05d856a627706312e08c8199a"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/00h_worked_example_one_contract.mmd",
+      "origin": "docs/models/diagrams/mermaid/00h_worked_example_one_contract.mmd",
+      "sha256": "bb022b117f4c2c58f13fb643c2f17e0035a214891c5b65fc19ad08bd16cf89f0"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/00i_concurrent_pfm_architecture.mmd",
+      "origin": "docs/models/diagrams/mermaid/00i_concurrent_pfm_architecture.mmd",
+      "sha256": "6fdf7ccfb1cae242cd23c8325d865b9eb661b9c1447ca6e769deedcc9ea6fb11"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/00j_pfm_domains_not_a_pipeline.mmd",
+      "origin": "docs/models/diagrams/mermaid/00j_pfm_domains_not_a_pipeline.mmd",
+      "sha256": "e31dedbcbb14739ce6aef59bef31d8b860b15d52864bf1830264cdf7dc91547b"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/00k_event_authority_record_system_metagraph.mmd",
+      "origin": "docs/models/diagrams/mermaid/00k_event_authority_record_system_metagraph.mmd",
+      "sha256": "63f27cf0644794caf610c2431650a71d746f0651c86ac30885e8a7d9373d866e"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/01a_plan_hierarchy.mmd",
+      "origin": "docs/models/diagrams/mermaid/01a_plan_hierarchy.mmd",
+      "sha256": "1c4bdc5fe1305212b5b5e4ecfd81e51c8b97dd615f936da8a9d709cc153b4bdf"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/01b_investment_programming_sequence.mmd",
+      "origin": "docs/models/diagrams/mermaid/01b_investment_programming_sequence.mmd",
+      "sha256": "945fc4ac976ea37160d0ed643dd8401e206c85997a2b1ed5634b0bcf7f76e7a9"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/02a_fiscal_framework.mmd",
+      "origin": "docs/models/diagrams/mermaid/02a_fiscal_framework.mmd",
+      "sha256": "85a0d9463a0f9635b2638c7f42cc59a5717bc6c856563daf12127eedb4464c4e"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/03a_budget_preparation_sequence.mmd",
+      "origin": "docs/models/diagrams/mermaid/03a_budget_preparation_sequence.mmd",
+      "sha256": "987218d6f6e146f52ff765bf6dc11adcb9ea3942b978868fb9429dff2923bf74"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/03c_two_tier_budgeting.mmd",
+      "origin": "docs/models/diagrams/mermaid/03c_two_tier_budgeting.mmd",
+      "sha256": "8429d0e0ebae9d55ae58437458b58980b9ef25313a316c9dd044649078da7935"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/03d_budget_forms_and_documents.mmd",
+      "origin": "docs/models/diagrams/mermaid/03d_budget_forms_and_documents.mmd",
+      "sha256": "5c05f9a928f16296aad6708e81da50daa0033610fed51a6d9e3df675baf47bb6"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/04a_legislation_sequence.mmd",
+      "origin": "docs/models/diagrams/mermaid/04a_legislation_sequence.mmd",
+      "sha256": "2ae18b685a570ba5030877cc56b25cdf1b6f8a359226e9f9237e6481ce489ade"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/04b_bill_states.mmd",
+      "origin": "docs/models/diagrams/mermaid/04b_bill_states.mmd",
+      "sha256": "79562c2d66d3a2d2e6a8c704c2da5d795e55b82b5c917b9aef00b5ae142c24fe"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/04c_appropriation_types.mmd",
+      "origin": "docs/models/diagrams/mermaid/04c_appropriation_types.mmd",
+      "sha256": "c2e00f8a8828808cd46ef2adad89581cdc4f99d88c685767e90a095b254eb66b"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/05a_release_sequence.mmd",
+      "origin": "docs/models/diagrams/mermaid/05a_release_sequence.mmd",
+      "sha256": "e5900b821c005e1f5e3edb2ed944d565f347bf635346c1d040f9cb9146f5eff6"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/05b_release_decision_tree.mmd",
+      "origin": "docs/models/diagrams/mermaid/05b_release_decision_tree.mmd",
+      "sha256": "61f771540a6b5960315198a98861cbfe3fcc5e8a545a53864367cfec2e3597c6"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/05c_budget_line_states.mmd",
+      "origin": "docs/models/diagrams/mermaid/05c_budget_line_states.mmd",
+      "sha256": "b0acd570420789edce9ce0ed1a7cd3fdd2bd5acbd1d9962601ea7673ecc94b13"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/05d_cash_authorities.mmd",
+      "origin": "docs/models/diagrams/mermaid/05d_cash_authorities.mmd",
+      "sha256": "ce1802bc9bbb2c65abdfae4c081fca42b76f965e7b9bb01a0211a3978e105369"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/05e_modification_and_savings.mmd",
+      "origin": "docs/models/diagrams/mermaid/05e_modification_and_savings.mmd",
+      "sha256": "c920d9522b79545fef5e16335b8fb1cdbc3c101d3d768ce1b10a46c7ad9a5abc"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/05f_independent_authorities_and_cash.mmd",
+      "origin": "docs/models/diagrams/mermaid/05f_independent_authorities_and_cash.mmd",
+      "sha256": "e887c175b0172e48a22b3ebd8cd42cd34257f39eb7f428ad1203f21d726ef0de"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/06a_procurement_planning.mmd",
+      "origin": "docs/models/diagrams/mermaid/06a_procurement_planning.mmd",
+      "sha256": "a3c6ecd9feda7e540036df471294a4cb36c0bb95cfa223a9a54da6a917ab403e"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/06b_competitive_bidding_sequence.mmd",
+      "origin": "docs/models/diagrams/mermaid/06b_competitive_bidding_sequence.mmd",
+      "sha256": "8ce722f6d3b9ec992f32a321b4c79ab139d3c161fca24467b11eb117b3a19f9f"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/06c_procurement_modes.mmd",
+      "origin": "docs/models/diagrams/mermaid/06c_procurement_modes.mmd",
+      "sha256": "dfec640d4691a2981c2f65fd4ee806973b277c9fc04db46058aceb31795eac6a"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/06e_contract_implementation.mmd",
+      "origin": "docs/models/diagrams/mermaid/06e_contract_implementation.mmd",
+      "sha256": "d89304dfc1b48a94f4395fb8b8845febf9902f77d3f74ecb02e8f05323b7e54e"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/06f_multi_year_contracts.mmd",
+      "origin": "docs/models/diagrams/mermaid/06f_multi_year_contracts.mmd",
+      "sha256": "6a7d94fa98379bbe566af837b422e7a6939694453ac6de468cab6fe48946546b"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/07a_obligation_to_payment_sequence.mmd",
+      "origin": "docs/models/diagrams/mermaid/07a_obligation_to_payment_sequence.mmd",
+      "sha256": "ad25daacd073b66efe856fbf5d45415c7d810bf11210a4624ca27e3c38b4a7e7"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/07c_voucher_certifications.mmd",
+      "origin": "docs/models/diagrams/mermaid/07c_voucher_certifications.mmd",
+      "sha256": "a158db9ef83faae88fc0a6c0b01b6acc46713b9eacd71bcd8dc1db7f623ed068"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/07d_payment_settlement_sequence.mmd",
+      "origin": "docs/models/diagrams/mermaid/07d_payment_settlement_sequence.mmd",
+      "sha256": "9969ef7e99e48a11f235c34c4a1d13d598309b4ea4811559b1a581aa3ba8102b"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/07e_payment_modes.mmd",
+      "origin": "docs/models/diagrams/mermaid/07e_payment_modes.mmd",
+      "sha256": "af512d6cb073dfdd9dbbddd6989786f3206808e4b998e74dcae5c9f78b36903d"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/07f_cash_advance_states.mmd",
+      "origin": "docs/models/diagrams/mermaid/07f_cash_advance_states.mmd",
+      "sha256": "70d67df7fa046a470e8cc9e96d119a5a96b4ecbf7dff03fa1b178825dac10002"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/07g_when_a_step_fails.mmd",
+      "origin": "docs/models/diagrams/mermaid/07g_when_a_step_fails.mmd",
+      "sha256": "1bea594607fe1a1ec61cc5dfa44df62a68f67d3448d2db173029680f9023ee0b"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/07h_disbursement_pattern_catalog.mmd",
+      "origin": "docs/models/diagrams/mermaid/07h_disbursement_pattern_catalog.mmd",
+      "sha256": "8b85864b768692d0debcc9adca1cabd5c5d780b9ada24d77bec3206dccfd1ab7"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/07i_standard_contract_payment_controls.mmd",
+      "origin": "docs/models/diagrams/mermaid/07i_standard_contract_payment_controls.mmd",
+      "sha256": "2756bc6fd514bb4ce5750e75186f8dc18019122e147dce3c24a09751164dab8f"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/08a_accounting_records_flow.mmd",
+      "origin": "docs/models/diagrams/mermaid/08a_accounting_records_flow.mmd",
+      "sha256": "1a6ce0122e7a8b56c13fd8ce0f4020e98a994110af4cb7ccd5fc4a7c5bbc33df"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/08b_reporting_flows.mmd",
+      "origin": "docs/models/diagrams/mermaid/08b_reporting_flows.mmd",
+      "sha256": "acd0e747f9ad14e1cd60aa542342ac398b3277cf34966f881559c5f75a4337d4"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/08c_five_measures_of_one_spending.mmd",
+      "origin": "docs/models/diagrams/mermaid/08c_five_measures_of_one_spending.mmd",
+      "sha256": "db86a5ab685b05a6a6baec9bf24e372bd6417dab491518a47980ba5885c69e5c"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/08d_from_agency_reports_to_national_totals.mmd",
+      "origin": "docs/models/diagrams/mermaid/08d_from_agency_reports_to_national_totals.mmd",
+      "sha256": "85b965bc25b1b602d3d5f7a8c31c016bd62c9c989c0947947b8f6857f02b6ee5"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/08e_accounting_recognition_events.mmd",
+      "origin": "docs/models/diagrams/mermaid/08e_accounting_recognition_events.mmd",
+      "sha256": "efe7d77085783897d12061fdcabded6423a8056b9a8e0861982682d656b5fa41"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/08f_multilateral_reconciliation.mmd",
+      "origin": "docs/models/diagrams/mermaid/08f_multilateral_reconciliation.mmd",
+      "sha256": "d51435269e8081a3d263777d48e2c4c5272532391502e8f6d0dab9895cb6eafd"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/09a_audit_sequence.mmd",
+      "origin": "docs/models/diagrams/mermaid/09a_audit_sequence.mmd",
+      "sha256": "ec696b67ce858b1360b252a61339e49558b09f07217ebfd82af89275dfd1e2ac"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/09b_audit_finding_states.mmd",
+      "origin": "docs/models/diagrams/mermaid/09b_audit_finding_states.mmd",
+      "sha256": "080b8fb8ed79996caf36710edca07cf3f7bc3279be1a923b2dacd80f8e4a5bfc"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/09c_oversight_map.mmd",
+      "origin": "docs/models/diagrams/mermaid/09c_oversight_map.mmd",
+      "sha256": "19abad73abe0a8242f1755498cc3e0c5b2b0653723cf0bd74952208ba8d5b7a0"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/09d_controls_audit_and_responses.mmd",
+      "origin": "docs/models/diagrams/mermaid/09d_controls_audit_and_responses.mmd",
+      "sha256": "3dee651f0c14bbc6aeb7802e44bb0fc534effc051f19fbec1c468a35d31b0bac"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/10a_revenue_classification.mmd",
+      "origin": "docs/models/diagrams/mermaid/10a_revenue_classification.mmd",
+      "sha256": "39a4d425752ee8c420ca6dfab54b0373e8d6e76453631817a1f7d986a7dde3f7"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/10b_tax_and_customs_collection_sequence.mmd",
+      "origin": "docs/models/diagrams/mermaid/10b_tax_and_customs_collection_sequence.mmd",
+      "sha256": "8a03d5f04a4cecc4a0bd02024f7e5b115127ed6b35e30789ebdd811c284b6e51"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/10c_agency_collections.mmd",
+      "origin": "docs/models/diagrams/mermaid/10c_agency_collections.mmd",
+      "sha256": "04a7ce440816dd7175512244c079f206a92af101bdaad8ef3f1c4080bffb5569"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/10d_tax_refund_sequence.mmd",
+      "origin": "docs/models/diagrams/mermaid/10d_tax_refund_sequence.mmd",
+      "sha256": "f7831d2a747544aefe30346243624ca2655a5dc272b6b50fc9bc025880ea8bb3"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/10e_revenue_administration_full_lifecycle.mmd",
+      "origin": "docs/models/diagrams/mermaid/10e_revenue_administration_full_lifecycle.mmd",
+      "sha256": "8885312635a52583a90077c1846086ad618700ceb35673db1d60236caa460e2f"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/10f_revenue_refunds_and_adjustments.mmd",
+      "origin": "docs/models/diagrams/mermaid/10f_revenue_refunds_and_adjustments.mmd",
+      "sha256": "9642b53a473cec57d75c818cd171e102c2b45e880d492690a683d3a5a93878e8"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/11a_tsa_account_structure.mmd",
+      "origin": "docs/models/diagrams/mermaid/11a_tsa_account_structure.mmd",
+      "sha256": "4672d89638287abf87a5d3b6f73e5cf9279f03b41555f3b1af707339752bdbd6"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/11b_cash_programming_sequence.mmd",
+      "origin": "docs/models/diagrams/mermaid/11b_cash_programming_sequence.mmd",
+      "sha256": "dabbf5d9d370dfed51175b3e0863b8954f77b0e8f56118f5ad3bb6560aa8dfb5"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/11c_financing_and_debt.mmd",
+      "origin": "docs/models/diagrams/mermaid/11c_financing_and_debt.mmd",
+      "sha256": "1e6a1ac3e23bd5147117c28853062292e613d6df9af5e8f0a42186ac85fafa7b"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/11d_foreign_loan_sequence.mmd",
+      "origin": "docs/models/diagrams/mermaid/11d_foreign_loan_sequence.mmd",
+      "sha256": "69689c4b276e21997ca586361fd39dcff40aee9f226f8a2f2fc53cc4231c09f8"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/11e_treasury_cash_synchronization.mmd",
+      "origin": "docs/models/diagrams/mermaid/11e_treasury_cash_synchronization.mmd",
+      "sha256": "fdae266c6cab5964d2aa8b5ad87e51324ce0ff3d61293752fae69671fcbc3362"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/12a_position_to_payroll_sequence.mmd",
+      "origin": "docs/models/diagrams/mermaid/12a_position_to_payroll_sequence.mmd",
+      "sha256": "50219a5189a193e013514084dad16504d1a6cb418747b4960c4091eecf871410"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/12b_personnel_funding_and_deductions.mmd",
+      "origin": "docs/models/diagrams/mermaid/12b_personnel_funding_and_deductions.mmd",
+      "sha256": "20eb2a50598e7eb845b9fad14aea1dfbbdb172c6fe265b5f3ed6528a98443028"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/13a_asset_lifecycle.mmd",
+      "origin": "docs/models/diagrams/mermaid/13a_asset_lifecycle.mmd",
+      "sha256": "30837f5a87e732074ff02c36c8f30efe5498edf38c378c30c044c6f8b2b909d8"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/14a_lgu_budget_sequence.mmd",
+      "origin": "docs/models/diagrams/mermaid/14a_lgu_budget_sequence.mmd",
+      "sha256": "253503e6a1487f967286b4ff6f7ef526dd00b6a544415fce6782a63677da88ba"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/14b_lgu_funds_and_mandatory_allocations.mmd",
+      "origin": "docs/models/diagrams/mermaid/14b_lgu_funds_and_mandatory_allocations.mmd",
+      "sha256": "eca4eeff0c814388ecfdbcea6cc0416bbb6858d913f03bf591d8262dc92a9511"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/14c_national_local_interfaces.mmd",
+      "origin": "docs/models/diagrams/mermaid/14c_national_local_interfaces.mmd",
+      "sha256": "f80c5a5c96aa88ed303d8831aface8fc833f9401f4b47cefc0ebf156e6b552da"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/14e_local_revenue_and_borrowing.mmd",
+      "origin": "docs/models/diagrams/mermaid/14e_local_revenue_and_borrowing.mmd",
+      "sha256": "89a4c6b2d036dfc9fb8fe4b47fb999f294d6c8bc14d754b44969440b547df192"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/14f_barangay_budget_sequence.mmd",
+      "origin": "docs/models/diagrams/mermaid/14f_barangay_budget_sequence.mmd",
+      "sha256": "270d6ea523de5465820eadfcc8de314d6e193f32d2cc2e0bbca98170fb845ba8"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/14g_lgu_two_coupled_cycles.mmd",
+      "origin": "docs/models/diagrams/mermaid/14g_lgu_two_coupled_cycles.mmd",
+      "sha256": "257b1ebffd500518b3eafb989dcd26a9d09f45e254e70f98338662ae190bd7f0"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/15a_gocc_budget_sequence.mmd",
+      "origin": "docs/models/diagrams/mermaid/15a_gocc_budget_sequence.mmd",
+      "sha256": "344b61b2102d3f50629c07d9bb5b3925ffbcec1d2955405910fae8b52c2afe75"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/15b_inter_agency_transfers.mmd",
+      "origin": "docs/models/diagrams/mermaid/15b_inter_agency_transfers.mmd",
+      "sha256": "d6b2d16d3c47410e1f56aee429b67ef7f7e3446dddcbef9344d5e49e50e274e2"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/15c_spending_paths.mmd",
+      "origin": "docs/models/diagrams/mermaid/15c_spending_paths.mmd",
+      "sha256": "4577f2cd3a0cd1ba11fc11495db720b233ca410a04a8f1c4209439f5c5bcc060"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/15d_fund_clusters.mmd",
+      "origin": "docs/models/diagrams/mermaid/15d_fund_clusters.mmd",
+      "sha256": "df7fa392bace3f39cfd3f60f9609cb3508885c3030faf6a1aca6ae891d5bf701"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/15e_disaster_funds.mmd",
+      "origin": "docs/models/diagrams/mermaid/15e_disaster_funds.mmd",
+      "sha256": "503741a4453735a71996e0e003e665e0bf792fd04e411ee76a8871e4b48d828c"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/15f_cash_aid_to_persons_sequence.mmd",
+      "origin": "docs/models/diagrams/mermaid/15f_cash_aid_to_persons_sequence.mmd",
+      "sha256": "d0c94b26205b2bca01cfd488c2cae30dc1793ac89aee857d99ced19abbace5eb"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/15g_entity_and_fund_specific_paths.mmd",
+      "origin": "docs/models/diagrams/mermaid/15g_entity_and_fund_specific_paths.mmd",
+      "sha256": "730789482481443f9fa67dd0429c1d074cbda29e8ddeb5206ec69bedc878efcc"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/16a_systems_by_function.mmd",
+      "origin": "docs/models/diagrams/mermaid/16a_systems_by_function.mmd",
+      "sha256": "d5851fcae549392933593690fe9de4d97f4fd838b459ae14d05c2373a34dc4dd"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/16c_btms_execution_flow.mmd",
+      "origin": "docs/models/diagrams/mermaid/16c_btms_execution_flow.mmd",
+      "sha256": "a3be9514e0a20088a38e646668688e13d07b710a98154e710b4bdd0f40ac8b5f"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/16d_ifmis_target_architecture.mmd",
+      "origin": "docs/models/diagrams/mermaid/16d_ifmis_target_architecture.mmd",
+      "sha256": "72052c967ce1d9c5ad0112213fab1db48f35b7f7083a585f8a50d8778549f814"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/16e_digital_pfm_timeline.mmd",
+      "origin": "docs/models/diagrams/mermaid/16e_digital_pfm_timeline.mmd",
+      "sha256": "46317fe19dcbe07212dbee8a174584cc7738cb56b1ff9c14983493dbcce15834"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/16f_document_verification_blockchain.mmd",
+      "origin": "docs/models/diagrams/mermaid/16f_document_verification_blockchain.mmd",
+      "sha256": "2add6a456dabe89141d4410c0f4172e555d7db66491e829a79bfb6c0764d2b96"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/16h_ifmis_deployment_confidence.mmd",
+      "origin": "docs/models/diagrams/mermaid/16h_ifmis_deployment_confidence.mmd",
+      "sha256": "453b2d8647311dbdde6f9d6c73930fcf38fe0de8640203615c7a363da95ee08b"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/16i_interface_failure_and_reconciliation.mmd",
+      "origin": "docs/models/diagrams/mermaid/16i_interface_failure_and_reconciliation.mmd",
+      "sha256": "05afea05722325a818dd5f0082b454f0c1535a45e19626db194635047756b33c"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/17a_uacs_structure.mmd",
+      "origin": "docs/models/diagrams/mermaid/17a_uacs_structure.mmd",
+      "sha256": "16cddc65f51c00f61fa8ed003ab9318b21cfc69d3f9ca3a31c8967db053c03ab"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/17b_identifier_chain.mmd",
+      "origin": "docs/models/diagrams/mermaid/17b_identifier_chain.mmd",
+      "sha256": "d00884a77e7fb9fe7ebfd533cc50140c845f716c5f3f259f4a7b4172e4b78b21"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/17c_record_lineage_er.mmd",
+      "origin": "docs/models/diagrams/mermaid/17c_record_lineage_er.mmd",
+      "sha256": "386eeda6644d405053cf9f6d6c4bffbf265b2503224f194def1e321551c6cb77"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/17d_uacs_class_not_instance.mmd",
+      "origin": "docs/models/diagrams/mermaid/17d_uacs_class_not_instance.mmd",
+      "sha256": "cc495328953e7a63f52cc4720ed988864529207fba6b59f1444c0455c3af588c"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/17e_multi_identifier_lineage.mmd",
+      "origin": "docs/models/diagrams/mermaid/17e_multi_identifier_lineage.mmd",
+      "sha256": "67878a0eaf01039cfc2413f15991c387bb03a188db568537f9281dfae6fb5ca3"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/17f_uacs_version_crosswalk.mmd",
+      "origin": "docs/models/diagrams/mermaid/17f_uacs_version_crosswalk.mmd",
+      "sha256": "361faee36690ab29ca4200242e8e2bf8185c8e7b6d310a5ba1eb415ca9ed4c57"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/18a_performance_information_flow.mmd",
+      "origin": "docs/models/diagrams/mermaid/18a_performance_information_flow.mmd",
+      "sha256": "cb2045ff2a1d205168385485da5eff6fd2139cd632d386015b0604537a357d16"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/18b_four_examinations_of_performance.mmd",
+      "origin": "docs/models/diagrams/mermaid/18b_four_examinations_of_performance.mmd",
+      "sha256": "cb47f29be1269f6e3979399b747db5328c28d8aa77f167f9121225b6261c67ee"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/18c_performance_budget_learning.mmd",
+      "origin": "docs/models/diagrams/mermaid/18c_performance_budget_learning.mmd",
+      "sha256": "fa7b714000e95b3c0190bbcb5de5dab523078e6833a567a8fae61518cf265e7f"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/19a_fiscal_risks_map.mmd",
+      "origin": "docs/models/diagrams/mermaid/19a_fiscal_risks_map.mmd",
+      "sha256": "6a681068b7b53bdb3307f402bf5b3ed1143304fb5d7190e3e7f528cb3ec3ec20"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/mermaid/19c_fiscal_risk_multiyear.mmd",
+      "origin": "docs/models/diagrams/mermaid/19c_fiscal_risk_multiyear.mmd",
+      "sha256": "56847e193929464ed3dbc88f5ce6440a65b6897f112d4d6a13d35366b7756980"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/plantuml/00f_end_to_end_swimlane.puml",
+      "origin": "docs/models/diagrams/plantuml/00f_end_to_end_swimlane.puml",
+      "sha256": "ee6845a420d5e197748791dbd6c895815a74460da8170a16d49b167c04839bec"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/plantuml/00l_four_parallel_authority_lanes.puml",
+      "origin": "docs/models/diagrams/plantuml/00l_four_parallel_authority_lanes.puml",
+      "sha256": "96f66a1ee00a9ab18d1ced025ee3c9e4f85ac9efe969f49f592cffd6ee6b41f8"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/plantuml/03b_budget_preparation_swimlane.puml",
+      "origin": "docs/models/diagrams/plantuml/03b_budget_preparation_swimlane.puml",
+      "sha256": "40a641b706c3f1ec470e02ea1d977aba640df45c229d43f825a9425049310df1"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/plantuml/06d_competitive_bidding_swimlane.puml",
+      "origin": "docs/models/diagrams/plantuml/06d_competitive_bidding_swimlane.puml",
+      "sha256": "5d49846231cc71815efbb2bfdd1d63d6bfe37abefda16958daf3b8036291612e"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/plantuml/07b_obligation_to_payment_swimlane.puml",
+      "origin": "docs/models/diagrams/plantuml/07b_obligation_to_payment_swimlane.puml",
+      "sha256": "652d223c34dfc39c8ff4e6ff7e852dbf85dd70118f14fa696e6ae76ebd072149"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/plantuml/07j_payment_control_gate_sequence.puml",
+      "origin": "docs/models/diagrams/plantuml/07j_payment_control_gate_sequence.puml",
+      "sha256": "7b99497a69ea85aef85cc3fcc8d231ca41da5699e6959f85a54da1425c96aeeb"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/plantuml/08g_recording_and_audit_lanes.puml",
+      "origin": "docs/models/diagrams/plantuml/08g_recording_and_audit_lanes.puml",
+      "sha256": "4b1b5e87045d6418c2e6e5f191382600da7383de9489362922cc699d6fdef73b"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/plantuml/14d_lgu_budget_swimlane.puml",
+      "origin": "docs/models/diagrams/plantuml/14d_lgu_budget_swimlane.puml",
+      "sha256": "113a3ee7ad5401391cfa17d1d4fb2c87640c70971d01f8010d8923a5c9ffb273"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/plantuml/16b_systems_components_spending.puml",
+      "origin": "docs/models/diagrams/plantuml/16b_systems_components_spending.puml",
+      "sha256": "dee6b556d8a741a6e5420154f96b5537538e53bdf21619e7c506b81982b0b3af"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/plantuml/16g_systems_components_revenue_treasury.puml",
+      "origin": "docs/models/diagrams/plantuml/16g_systems_components_revenue_treasury.puml",
+      "sha256": "ee4e2f4c937f5cdecaf06cf45c6941bd507e76dfc2a348cd2cb650bb90e4afa1"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/plantuml/16j_system_of_record_vs_interfaces.puml",
+      "origin": "docs/models/diagrams/plantuml/16j_system_of_record_vs_interfaces.puml",
+      "sha256": "5ec50e6de14320bdeb0b51921990c66a39abd73837d34a4848951a106267c226"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/plantuml/17g_financial_record_class_model.puml",
+      "origin": "docs/models/diagrams/plantuml/17g_financial_record_class_model.puml",
+      "sha256": "02005b1ef52b576567966ecaa00b8793d28cb4224fc3a2e90a450860eed7ef89"
+    },
+    {
+      "file": "preservation/legacy_web/models/diagrams/plantuml/19b_ppp_project_swimlane.puml",
+      "origin": "docs/models/diagrams/plantuml/19b_ppp_project_swimlane.puml",
+      "sha256": "5905f55e665001721b3f1fc58268d966b10ee87d10d65e15dcfc416edd2073d5"
+    },
+    {
+      "file": "preservation/legacy_web/models/reference/H_reference_model_contract.md",
+      "origin": "docs/models/reference/H_reference_model_contract.md",
+      "sha256": "718ab334c55506f4f961b38b68cb060c1ae129300a1da5e52bb483a18acea9ca"
+    },
+    {
+      "file": "preservation/legacy_web/models/reference/I_interface_evidence_and_status.md",
+      "origin": "docs/models/reference/I_interface_evidence_and_status.md",
+      "sha256": "4dc429193e52c7350ee96a93e817e3cbccf645c2f163c2ddbbbbda0de9967ab6"
+    },
+    {
+      "file": "preservation/legacy_web/models/reference/J_controls_exceptions_and_temporal_model.md",
+      "origin": "docs/models/reference/J_controls_exceptions_and_temporal_model.md",
+      "sha256": "f570e7f66d60b9863d99bee93bd14edbf94f142dda90955cad3ad5e6adc2f625"
+    },
+    {
+      "file": "preservation/legacy_web/models/reference/K_validation_and_traceability.md",
+      "origin": "docs/models/reference/K_validation_and_traceability.md",
+      "sha256": "31777e384b069e18f2737f4b6d5f01ab491e9bde5de2f6606c2189657696e7e0"
+    },
+    {
+      "file": "preservation/legacy_web/models/reference/L_change_log_and_remaining_limits.md",
+      "origin": "docs/models/reference/L_change_log_and_remaining_limits.md",
+      "sha256": "96653bbf904eaa5b988d3d91a049f75633391e316158f3ccb8d9f0d1cef8ccf0"
+    },
+    {
+      "file": "preservation/legacy_web/models/reference/interface_register.csv",
+      "origin": "docs/models/reference/interface_register.csv",
+      "sha256": "cff15e7449fc89f350be534e4bc1c4afc5a6be54eea048cd405c92a5ff1dee60"
+    },
+    {
+      "file": "preservation/legacy_web/models/registers/authority_register.csv",
+      "origin": "docs/models/registers/authority_register.csv",
+      "sha256": "89a8314e9ee446029b7a35018e606a043061a48a52dbf110991f266926d2c573"
+    },
+    {
+      "file": "preservation/legacy_web/models/registers/control_rule_register.csv",
+      "origin": "docs/models/registers/control_rule_register.csv",
+      "sha256": "2090a6c0855d29013a2d044efc1d96d0697f0adf38ca1541e976584bd63df515"
+    },
+    {
+      "file": "preservation/legacy_web/models/registers/event_register.csv",
+      "origin": "docs/models/registers/event_register.csv",
+      "sha256": "3760a57e64a8dc4ad515bec55fab0892b4da00123fd34a05acfb0968ab00ca6a"
+    },
+    {
+      "file": "preservation/legacy_web/models/registers/interface_evidence_register.csv",
+      "origin": "docs/models/registers/interface_evidence_register.csv",
+      "sha256": "85bb2b148601ef4e4e354e45fbb3b7f6c90ffb764212608452b3463c494c1353"
+    },
+    {
+      "file": "preservation/legacy_web/models/registers/interface_register.csv",
+      "origin": "docs/models/registers/interface_register.csv",
+      "sha256": "cff15e7449fc89f350be534e4bc1c4afc5a6be54eea048cd405c92a5ff1dee60"
+    },
+    {
+      "file": "preservation/legacy_web/models/registers/record_type_register.csv",
+      "origin": "docs/models/registers/record_type_register.csv",
+      "sha256": "4d011246835a7af67b6f32b5fad79db3bc39c216c4fc12931dfe961d87948c4e"
+    },
+    {
+      "file": "preservation/prior_research/research_models/README.md",
+      "origin": "research_models/README.md",
+      "sha256": "45669dceba795acc12cda8f03d025071d7bfa1bc15485f182990368f490571af"
+    },
+    {
+      "file": "preservation/prior_research/research_models/reference/H_reference_model_contract.md",
+      "origin": "research_models/reference/H_reference_model_contract.md",
+      "sha256": "718ab334c55506f4f961b38b68cb060c1ae129300a1da5e52bb483a18acea9ca"
+    },
+    {
+      "file": "preservation/prior_research/research_models/reference/I_interface_evidence_and_status.md",
+      "origin": "research_models/reference/I_interface_evidence_and_status.md",
+      "sha256": "4dc429193e52c7350ee96a93e817e3cbccf645c2f163c2ddbbbbda0de9967ab6"
+    },
+    {
+      "file": "preservation/prior_research/research_models/reference/J_controls_exceptions_and_temporal_model.md",
+      "origin": "research_models/reference/J_controls_exceptions_and_temporal_model.md",
+      "sha256": "f570e7f66d60b9863d99bee93bd14edbf94f142dda90955cad3ad5e6adc2f625"
+    },
+    {
+      "file": "preservation/prior_research/research_models/registers/authority_register.csv",
+      "origin": "research_models/registers/authority_register.csv",
+      "sha256": "89a8314e9ee446029b7a35018e606a043061a48a52dbf110991f266926d2c573"
+    },
+    {
+      "file": "preservation/prior_research/research_models/registers/control_rule_register.csv",
+      "origin": "research_models/registers/control_rule_register.csv",
+      "sha256": "2090a6c0855d29013a2d044efc1d96d0697f0adf38ca1541e976584bd63df515"
+    },
+    {
+      "file": "preservation/prior_research/research_models/registers/event_register.csv",
+      "origin": "research_models/registers/event_register.csv",
+      "sha256": "3760a57e64a8dc4ad515bec55fab0892b4da00123fd34a05acfb0968ab00ca6a"
+    },
+    {
+      "file": "preservation/prior_research/research_models/registers/interface_evidence_register.csv",
+      "origin": "research_models/registers/interface_evidence_register.csv",
+      "sha256": "85bb2b148601ef4e4e354e45fbb3b7f6c90ffb764212608452b3463c494c1353"
+    },
+    {
+      "file": "preservation/prior_research/research_models/registers/record_type_register.csv",
+      "origin": "research_models/registers/record_type_register.csv",
+      "sha256": "4d011246835a7af67b6f32b5fad79db3bc39c216c4fc12931dfe961d87948c4e"
+    },
+    {
+      "file": "preservation/prior_sources/src/00_BIG_PICTURE.md",
+      "origin": "src/00_BIG_PICTURE.md",
+      "sha256": "989a85fab5172446c4164c4d49ce4a9f21e83aa13a9d41cff346786239ceb2de"
+    },
+    {
+      "file": "preservation/prior_sources/src/README.md",
+      "origin": "src/README.md",
+      "sha256": "276ed237b8aafb0ade0ecd9a68a7bdb086c3c95b9d5f429a861d8ff93d38baf7"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/00a_pfm_cycle_overview.mmd",
+      "origin": "src/diagrams/mermaid/00a_pfm_cycle_overview.mmd",
+      "sha256": "6c65083e0627ec62183b03e6590581d8b5c423ebbbe50ff8b33af296791227c4"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/00b_authorities_map.mmd",
+      "origin": "src/diagrams/mermaid/00b_authorities_map.mmd",
+      "sha256": "76f6dacb49a804fb4d3d607dd9001906f475670f18773bc8922d40130cb1a37c"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/00c_systems_landscape.mmd",
+      "origin": "src/diagrams/mermaid/00c_systems_landscape.mmd",
+      "sha256": "9c2c16e01105d9beba135be6286edfa55dc6fa7fe59ded7c245265be7a695047"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/00d_four_chains.mmd",
+      "origin": "src/diagrams/mermaid/00d_four_chains.mmd",
+      "sha256": "cf13711be7c03a5585da16404d414d53240dfd88bef04560de4fe721dbf5990b"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/00e_calendar_three_budgets.mmd",
+      "origin": "src/diagrams/mermaid/00e_calendar_three_budgets.mmd",
+      "sha256": "a0474cb0bc0701d99bb261d408a9e41d2a8e4b209f771e30fb07e0f293f1c7b8"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/00g_exchanges_between_authorities.mmd",
+      "origin": "src/diagrams/mermaid/00g_exchanges_between_authorities.mmd",
+      "sha256": "933a2370524a0cba2be6bad8f695476ac39595d05d856a627706312e08c8199a"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/00h_worked_example_one_contract.mmd",
+      "origin": "src/diagrams/mermaid/00h_worked_example_one_contract.mmd",
+      "sha256": "11d67579f00f8e742fbaffebef3ae27a176d80a579a3e7f4590ccf8199105445"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/01a_plan_hierarchy.mmd",
+      "origin": "src/diagrams/mermaid/01a_plan_hierarchy.mmd",
+      "sha256": "1c4bdc5fe1305212b5b5e4ecfd81e51c8b97dd615f936da8a9d709cc153b4bdf"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/01b_investment_programming_sequence.mmd",
+      "origin": "src/diagrams/mermaid/01b_investment_programming_sequence.mmd",
+      "sha256": "2fc8689f9e5067cd614d216ad2c902db887b8d086dce930bf39c7c787b0e39bb"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/02a_fiscal_framework.mmd",
+      "origin": "src/diagrams/mermaid/02a_fiscal_framework.mmd",
+      "sha256": "85a0d9463a0f9635b2638c7f42cc59a5717bc6c856563daf12127eedb4464c4e"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/03a_budget_preparation_sequence.mmd",
+      "origin": "src/diagrams/mermaid/03a_budget_preparation_sequence.mmd",
+      "sha256": "987218d6f6e146f52ff765bf6dc11adcb9ea3942b978868fb9429dff2923bf74"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/03c_two_tier_budgeting.mmd",
+      "origin": "src/diagrams/mermaid/03c_two_tier_budgeting.mmd",
+      "sha256": "8429d0e0ebae9d55ae58437458b58980b9ef25313a316c9dd044649078da7935"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/03d_budget_forms_and_documents.mmd",
+      "origin": "src/diagrams/mermaid/03d_budget_forms_and_documents.mmd",
+      "sha256": "5c05f9a928f16296aad6708e81da50daa0033610fed51a6d9e3df675baf47bb6"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/04a_legislation_sequence.mmd",
+      "origin": "src/diagrams/mermaid/04a_legislation_sequence.mmd",
+      "sha256": "2ae18b685a570ba5030877cc56b25cdf1b6f8a359226e9f9237e6481ce489ade"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/04b_bill_states.mmd",
+      "origin": "src/diagrams/mermaid/04b_bill_states.mmd",
+      "sha256": "79562c2d66d3a2d2e6a8c704c2da5d795e55b82b5c917b9aef00b5ae142c24fe"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/04c_appropriation_types.mmd",
+      "origin": "src/diagrams/mermaid/04c_appropriation_types.mmd",
+      "sha256": "ff29436afa13f8a54e4525884af0455583ecc9454efd66f5b1e4da352890f62a"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/05a_release_sequence.mmd",
+      "origin": "src/diagrams/mermaid/05a_release_sequence.mmd",
+      "sha256": "c901f5d855007cba7152adb8f7087bf2d92df56ae27cbba8438eccaa80c600c3"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/05b_release_decision_tree.mmd",
+      "origin": "src/diagrams/mermaid/05b_release_decision_tree.mmd",
+      "sha256": "61f771540a6b5960315198a98861cbfe3fcc5e8a545a53864367cfec2e3597c6"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/05c_budget_line_states.mmd",
+      "origin": "src/diagrams/mermaid/05c_budget_line_states.mmd",
+      "sha256": "9feed47882ec931d39cb9997926b987997c2f24c54156e8f2130e3b835c7d1ff"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/05d_cash_authorities.mmd",
+      "origin": "src/diagrams/mermaid/05d_cash_authorities.mmd",
+      "sha256": "37a3ef103a63c7869934394e803ff59d6f99a747c00e30917c0aa1a59fc1f427"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/05e_modification_and_savings.mmd",
+      "origin": "src/diagrams/mermaid/05e_modification_and_savings.mmd",
+      "sha256": "c920d9522b79545fef5e16335b8fb1cdbc3c101d3d768ce1b10a46c7ad9a5abc"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/06a_procurement_planning.mmd",
+      "origin": "src/diagrams/mermaid/06a_procurement_planning.mmd",
+      "sha256": "5e8412d791c8eb8b46b89f852458c0caa25144e34fd807f247f61ebb2bc2289a"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/06b_competitive_bidding_sequence.mmd",
+      "origin": "src/diagrams/mermaid/06b_competitive_bidding_sequence.mmd",
+      "sha256": "ed36e5bf6e56f6d7cb6948bc0478faee7f440755fd262231be3bf77ad873af13"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/06c_procurement_modes.mmd",
+      "origin": "src/diagrams/mermaid/06c_procurement_modes.mmd",
+      "sha256": "ae4ba0e729f9e0281f2dcde94324e691c3c0b91d26ed980318bf6ec20cfee2f5"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/06e_contract_implementation.mmd",
+      "origin": "src/diagrams/mermaid/06e_contract_implementation.mmd",
+      "sha256": "4c109d7b133e74209399c9d213daf901c70461d836d3a478d3add0facf6e7590"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/06f_multi_year_contracts.mmd",
+      "origin": "src/diagrams/mermaid/06f_multi_year_contracts.mmd",
+      "sha256": "6a7d94fa98379bbe566af837b422e7a6939694453ac6de468cab6fe48946546b"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/06g_framework_agreement.mmd",
+      "origin": "src/diagrams/mermaid/06g_framework_agreement.mmd",
+      "sha256": "5128cb1a93d4f5313d1b251e94d58aba57ee86d6ece9c77031ed68e31f32ef75"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/07a_obligation_to_payment_sequence.mmd",
+      "origin": "src/diagrams/mermaid/07a_obligation_to_payment_sequence.mmd",
+      "sha256": "580541aa1e52d6751036d5e23905dc22969a3965184fe5bed460b6d26ec079f7"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/07c_voucher_certifications.mmd",
+      "origin": "src/diagrams/mermaid/07c_voucher_certifications.mmd",
+      "sha256": "3026f996517932474ef7cc411980678ce1356908c1583c3f6ade04c994c36132"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/07d_payment_settlement_sequence.mmd",
+      "origin": "src/diagrams/mermaid/07d_payment_settlement_sequence.mmd",
+      "sha256": "9f7dcedec9e795822ca99c349df24cefe90bd24f92303d0043459f50b0573854"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/07e_payment_modes.mmd",
+      "origin": "src/diagrams/mermaid/07e_payment_modes.mmd",
+      "sha256": "0ffddf489456ea8fb966e52183c797473920938e43f55c8929c7c9b570b3c264"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/07f_cash_advance_states.mmd",
+      "origin": "src/diagrams/mermaid/07f_cash_advance_states.mmd",
+      "sha256": "e54e78299dd5a7a7c71a3dc86dd4d09930a21c9f2ebfb58f7ba9d6c26c0c208f"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/07g_when_a_step_fails.mmd",
+      "origin": "src/diagrams/mermaid/07g_when_a_step_fails.mmd",
+      "sha256": "676b96d832bbb43f046defb558ab402936ae09c9cd1a761675927b00edfcf9f1"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/07h_kinds_of_claim.mmd",
+      "origin": "src/diagrams/mermaid/07h_kinds_of_claim.mmd",
+      "sha256": "d50d9fd99eb6a5803042645b60cc436755c7beca451b0bd84b20c66cd3aa0b0a"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/07i_advance_progress_retention.mmd",
+      "origin": "src/diagrams/mermaid/07i_advance_progress_retention.mmd",
+      "sha256": "c1d7691a3606f0a1c77bfcb2777d31b2bc956c1d534ca3f62621c75cc7584a71"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/08a_accounting_records_flow.mmd",
+      "origin": "src/diagrams/mermaid/08a_accounting_records_flow.mmd",
+      "sha256": "11e4d300526e47274c4278290f60ebfeb82bb3d6ff1f1845456758630b43f7a9"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/08b_reporting_flows.mmd",
+      "origin": "src/diagrams/mermaid/08b_reporting_flows.mmd",
+      "sha256": "bb73efa442d3fb53d3edb68ed1f584bf2275bca726618965722ab3020f1ed338"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/08c_five_measures_of_one_spending.mmd",
+      "origin": "src/diagrams/mermaid/08c_five_measures_of_one_spending.mmd",
+      "sha256": "a2e617825616ef2b4c9e834ab822dabc0916de4002daa55576b7b40a7575bc69"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/08d_from_agency_reports_to_national_totals.mmd",
+      "origin": "src/diagrams/mermaid/08d_from_agency_reports_to_national_totals.mmd",
+      "sha256": "8f62d4b9045faceb1125c8101633db42c00051eb8281fe8f49f6ad3fc42562c9"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/08e_one_event_several_records.mmd",
+      "origin": "src/diagrams/mermaid/08e_one_event_several_records.mmd",
+      "sha256": "c7b00f9b89e8e360f22564f3da1d0ca5f943c9dd146088a044df06e4ec7448ed"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/09a_audit_sequence.mmd",
+      "origin": "src/diagrams/mermaid/09a_audit_sequence.mmd",
+      "sha256": "9061302a30945bbb4554aef658918d5d20a28caa9718c329c2aa2e60a5d4f253"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/09b_audit_finding_states.mmd",
+      "origin": "src/diagrams/mermaid/09b_audit_finding_states.mmd",
+      "sha256": "ab5d38fb780d2531a172d549a43c3756d8553feebd3d1bc344d7debb9110f25e"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/09c_oversight_map.mmd",
+      "origin": "src/diagrams/mermaid/09c_oversight_map.mmd",
+      "sha256": "469b31a89592b22ece11dae4d39a79571c96152dc6df65bdead90a04d1805e79"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/10a_revenue_classification.mmd",
+      "origin": "src/diagrams/mermaid/10a_revenue_classification.mmd",
+      "sha256": "332be97cfbcb765743b83d6601ca5191578bb3ad16f9bf26915f7ab66377d7cb"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/10b_tax_and_customs_collection_sequence.mmd",
+      "origin": "src/diagrams/mermaid/10b_tax_and_customs_collection_sequence.mmd",
+      "sha256": "8a03d5f04a4cecc4a0bd02024f7e5b115127ed6b35e30789ebdd811c284b6e51"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/10c_agency_collections.mmd",
+      "origin": "src/diagrams/mermaid/10c_agency_collections.mmd",
+      "sha256": "102be34c9607d5d77178bd511be03cbb99dc20975d737981aaf97fa07ad710d9"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/10d_tax_refund_sequence.mmd",
+      "origin": "src/diagrams/mermaid/10d_tax_refund_sequence.mmd",
+      "sha256": "f7831d2a747544aefe30346243624ca2655a5dc272b6b50fc9bc025880ea8bb3"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/11a_tsa_account_structure.mmd",
+      "origin": "src/diagrams/mermaid/11a_tsa_account_structure.mmd",
+      "sha256": "4672d89638287abf87a5d3b6f73e5cf9279f03b41555f3b1af707339752bdbd6"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/11b_cash_programming_sequence.mmd",
+      "origin": "src/diagrams/mermaid/11b_cash_programming_sequence.mmd",
+      "sha256": "dabbf5d9d370dfed51175b3e0863b8954f77b0e8f56118f5ad3bb6560aa8dfb5"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/11c_financing_and_debt.mmd",
+      "origin": "src/diagrams/mermaid/11c_financing_and_debt.mmd",
+      "sha256": "49c74d8c0bc232c5fdca5b2d2adc885145c9298070611fe5dfacfd90acadd52a"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/11d_foreign_loan_sequence.mmd",
+      "origin": "src/diagrams/mermaid/11d_foreign_loan_sequence.mmd",
+      "sha256": "1ed97e224b881dfac79288887fc9b09b2765a196215e2292ac10d87d1f405fb7"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/12a_position_to_payroll_sequence.mmd",
+      "origin": "src/diagrams/mermaid/12a_position_to_payroll_sequence.mmd",
+      "sha256": "5c1d4346f2aab00b748a721cc85eaea4c9d1c3ed56b7adcf87634c59f2fc0dc7"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/12b_personnel_funding_and_deductions.mmd",
+      "origin": "src/diagrams/mermaid/12b_personnel_funding_and_deductions.mmd",
+      "sha256": "d224efff247fd7503b6599f17b7f662cdce08adcd649fa38c442314aaa19fd33"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/13a_asset_lifecycle.mmd",
+      "origin": "src/diagrams/mermaid/13a_asset_lifecycle.mmd",
+      "sha256": "36102677a0b3fffd64bf46583f9e9942308958ff8a467cf8f46dd7da39759e7b"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/14a_lgu_budget_sequence.mmd",
+      "origin": "src/diagrams/mermaid/14a_lgu_budget_sequence.mmd",
+      "sha256": "253503e6a1487f967286b4ff6f7ef526dd00b6a544415fce6782a63677da88ba"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/14b_lgu_funds_and_mandatory_allocations.mmd",
+      "origin": "src/diagrams/mermaid/14b_lgu_funds_and_mandatory_allocations.mmd",
+      "sha256": "eca4eeff0c814388ecfdbcea6cc0416bbb6858d913f03bf591d8262dc92a9511"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/14c_national_local_interfaces.mmd",
+      "origin": "src/diagrams/mermaid/14c_national_local_interfaces.mmd",
+      "sha256": "f80c5a5c96aa88ed303d8831aface8fc833f9401f4b47cefc0ebf156e6b552da"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/14e_local_revenue_and_borrowing.mmd",
+      "origin": "src/diagrams/mermaid/14e_local_revenue_and_borrowing.mmd",
+      "sha256": "89a4c6b2d036dfc9fb8fe4b47fb999f294d6c8bc14d754b44969440b547df192"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/14f_barangay_budget_sequence.mmd",
+      "origin": "src/diagrams/mermaid/14f_barangay_budget_sequence.mmd",
+      "sha256": "270d6ea523de5465820eadfcc8de314d6e193f32d2cc2e0bbca98170fb845ba8"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/15a_gocc_budget_sequence.mmd",
+      "origin": "src/diagrams/mermaid/15a_gocc_budget_sequence.mmd",
+      "sha256": "344b61b2102d3f50629c07d9bb5b3925ffbcec1d2955405910fae8b52c2afe75"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/15b_inter_agency_transfers.mmd",
+      "origin": "src/diagrams/mermaid/15b_inter_agency_transfers.mmd",
+      "sha256": "36e2b4c8aa58ace58d5af195d0ffa8370e073888a23a8750fe1d055dc99390f6"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/15c_spending_paths.mmd",
+      "origin": "src/diagrams/mermaid/15c_spending_paths.mmd",
+      "sha256": "c7b36798c9a6ddecbf42e1907e6426c718b9fa3807475f21b4166d41991e92c1"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/15d_fund_clusters.mmd",
+      "origin": "src/diagrams/mermaid/15d_fund_clusters.mmd",
+      "sha256": "0c05a916bd661ed811eab8d3c1eec4ef6b852c67c26bcf5f06f13cb16618ccd4"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/15e_disaster_funds.mmd",
+      "origin": "src/diagrams/mermaid/15e_disaster_funds.mmd",
+      "sha256": "503741a4453735a71996e0e003e665e0bf792fd04e411ee76a8871e4b48d828c"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/15f_cash_aid_to_persons_sequence.mmd",
+      "origin": "src/diagrams/mermaid/15f_cash_aid_to_persons_sequence.mmd",
+      "sha256": "d0c94b26205b2bca01cfd488c2cae30dc1793ac89aee857d99ced19abbace5eb"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/16a_systems_by_function.mmd",
+      "origin": "src/diagrams/mermaid/16a_systems_by_function.mmd",
+      "sha256": "d396853e541d519fdeb8b982174b3666f3e789f3918f626df46348971cc574c9"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/16c_btms_execution_flow.mmd",
+      "origin": "src/diagrams/mermaid/16c_btms_execution_flow.mmd",
+      "sha256": "a3be9514e0a20088a38e646668688e13d07b710a98154e710b4bdd0f40ac8b5f"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/16d_ifmis_target_architecture.mmd",
+      "origin": "src/diagrams/mermaid/16d_ifmis_target_architecture.mmd",
+      "sha256": "0a6134dd54a88aebb27b2bb4c6af07eb5787e628d3b92c90217485051fe2e8b1"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/16e_digital_pfm_timeline.mmd",
+      "origin": "src/diagrams/mermaid/16e_digital_pfm_timeline.mmd",
+      "sha256": "46317fe19dcbe07212dbee8a174584cc7738cb56b1ff9c14983493dbcce15834"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/16f_document_verification_blockchain.mmd",
+      "origin": "src/diagrams/mermaid/16f_document_verification_blockchain.mmd",
+      "sha256": "2add6a456dabe89141d4410c0f4172e555d7db66491e829a79bfb6c0764d2b96"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/17a_uacs_structure.mmd",
+      "origin": "src/diagrams/mermaid/17a_uacs_structure.mmd",
+      "sha256": "16cddc65f51c00f61fa8ed003ab9318b21cfc69d3f9ca3a31c8967db053c03ab"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/17b_identifier_chain.mmd",
+      "origin": "src/diagrams/mermaid/17b_identifier_chain.mmd",
+      "sha256": "bf685badb80b9045ae53903561bf9ec8d15b5d0270868c6178c29d13d545ab3e"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/17c_record_lineage_er.mmd",
+      "origin": "src/diagrams/mermaid/17c_record_lineage_er.mmd",
+      "sha256": "89ffc3ef3b1379a28730f8fd75ca20671d808536fd7985fda5fab3ad57fd3f6c"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/17d_uacs_class_not_instance.mmd",
+      "origin": "src/diagrams/mermaid/17d_uacs_class_not_instance.mmd",
+      "sha256": "9cbefc41a1958567241e65a4746f7c8b0010e2ecc060aadb9e1d286f84ebb308"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/18a_performance_information_flow.mmd",
+      "origin": "src/diagrams/mermaid/18a_performance_information_flow.mmd",
+      "sha256": "cb2045ff2a1d205168385485da5eff6fd2139cd632d386015b0604537a357d16"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/18b_four_examinations_of_performance.mmd",
+      "origin": "src/diagrams/mermaid/18b_four_examinations_of_performance.mmd",
+      "sha256": "cb47f29be1269f6e3979399b747db5328c28d8aa77f167f9121225b6261c67ee"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/mermaid/19a_fiscal_risks_map.mmd",
+      "origin": "src/diagrams/mermaid/19a_fiscal_risks_map.mmd",
+      "sha256": "a6ae1fb4b8a0b92597faa26bdd43780ab0ce10a59641876e73529b01cc64f5d5"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/plantuml/00f_end_to_end_swimlane.puml",
+      "origin": "src/diagrams/plantuml/00f_end_to_end_swimlane.puml",
+      "sha256": "1aa4ac255cee805cb1b426cbdef4de9ab50d1d509e77281e7aa7298232f7a5fe"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/plantuml/03b_budget_preparation_swimlane.puml",
+      "origin": "src/diagrams/plantuml/03b_budget_preparation_swimlane.puml",
+      "sha256": "40a641b706c3f1ec470e02ea1d977aba640df45c229d43f825a9425049310df1"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/plantuml/06d_competitive_bidding_swimlane.puml",
+      "origin": "src/diagrams/plantuml/06d_competitive_bidding_swimlane.puml",
+      "sha256": "1931a22fe899828c48bfbf5a91f7f900b215bcee061f2565b79f4f11e8c37af4"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/plantuml/07b_obligation_to_payment_swimlane.puml",
+      "origin": "src/diagrams/plantuml/07b_obligation_to_payment_swimlane.puml",
+      "sha256": "e1e4ee5c4e3a2bfbd24caa28880d18fd5654b03529803b9868760944f788d64e"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/plantuml/14d_lgu_budget_swimlane.puml",
+      "origin": "src/diagrams/plantuml/14d_lgu_budget_swimlane.puml",
+      "sha256": "113a3ee7ad5401391cfa17d1d4fb2c87640c70971d01f8010d8923a5c9ffb273"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/plantuml/16b_systems_components_spending.puml",
+      "origin": "src/diagrams/plantuml/16b_systems_components_spending.puml",
+      "sha256": "2194fa2d7e11d33ed49bbb05d7270ac279f93cb6c7f5e853472703c6887b89f2"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/plantuml/16g_systems_components_revenue_treasury.puml",
+      "origin": "src/diagrams/plantuml/16g_systems_components_revenue_treasury.puml",
+      "sha256": "30fa228ea268fab721fa0e0ade06c15486983c57a072f9943afd55059836a62e"
+    },
+    {
+      "file": "preservation/prior_sources/src/diagrams/plantuml/19b_ppp_project_swimlane.puml",
+      "origin": "src/diagrams/plantuml/19b_ppp_project_swimlane.puml",
+      "sha256": "5905f55e665001721b3f1fc58268d966b10ee87d10d65e15dcfc416edd2073d5"
+    },
+    {
+      "file": "preservation/prior_sources/src/processes/01_planning_and_investment_programming.md",
+      "origin": "src/processes/01_planning_and_investment_programming.md",
+      "sha256": "104f4cbe2562871de38fb8ff49342d1f6857b15afc13a678e84afce245b95ca5"
+    },
+    {
+      "file": "preservation/prior_sources/src/processes/02_macro_fiscal_framework.md",
+      "origin": "src/processes/02_macro_fiscal_framework.md",
+      "sha256": "524bc11626bab95ba9f75ae0b20111d6b6aa9b3a6404be399ca1c1e18c9dfbb0"
+    },
+    {
+      "file": "preservation/prior_sources/src/processes/03_budget_preparation.md",
+      "origin": "src/processes/03_budget_preparation.md",
+      "sha256": "f3774ce767be404dbba36f4ab97c01d790e6da0aaf6850a35de04bbe45dc75a4"
+    },
+    {
+      "file": "preservation/prior_sources/src/processes/04_budget_legislation.md",
+      "origin": "src/processes/04_budget_legislation.md",
+      "sha256": "7e9abac28417859f9e84d8128adc84dafa6bc25fcc60e3b6d2eafde1e0b733de"
+    },
+    {
+      "file": "preservation/prior_sources/src/processes/05_budget_release_allotment_and_cash_authority.md",
+      "origin": "src/processes/05_budget_release_allotment_and_cash_authority.md",
+      "sha256": "a97c2bc1a28e5e15bad0efc35e465bc862507d466e6e1299cc152f8f0655e1d6"
+    },
+    {
+      "file": "preservation/prior_sources/src/processes/06_procurement.md",
+      "origin": "src/processes/06_procurement.md",
+      "sha256": "8774bd10f24ab86afe68725438d5c313213b76c58c5faecd8e0829682620e8a2"
+    },
+    {
+      "file": "preservation/prior_sources/src/processes/07_obligation_delivery_payment.md",
+      "origin": "src/processes/07_obligation_delivery_payment.md",
+      "sha256": "f51f6c6e0427e08e71658a36061edb8aed7bfd17c99d8d779dd41f9c095a582b"
+    },
+    {
+      "file": "preservation/prior_sources/src/processes/08_accounting_and_reporting.md",
+      "origin": "src/processes/08_accounting_and_reporting.md",
+      "sha256": "f032310feb0f2a95af699f8a8219308126a0517200a1c1a3e0b9f7275d78a7be"
+    },
+    {
+      "file": "preservation/prior_sources/src/processes/09_audit_and_oversight.md",
+      "origin": "src/processes/09_audit_and_oversight.md",
+      "sha256": "6f889ca15a49463962b223556f4ae381212394d599ea79a88f8bb91e08f2fcd0"
+    },
+    {
+      "file": "preservation/prior_sources/src/processes/10_revenue_collection.md",
+      "origin": "src/processes/10_revenue_collection.md",
+      "sha256": "249b5ef688d84d704fa74cc1e80c220e8281fd27f5529d948b9bf6c79fb5667f"
+    },
+    {
+      "file": "preservation/prior_sources/src/processes/11_treasury_cash_and_debt.md",
+      "origin": "src/processes/11_treasury_cash_and_debt.md",
+      "sha256": "79d14d4804704cab543e3627f1ac2b550a7b800249d6da2e56ccd7ef2c3db5c5"
+    },
+    {
+      "file": "preservation/prior_sources/src/processes/12_personnel_and_payroll.md",
+      "origin": "src/processes/12_personnel_and_payroll.md",
+      "sha256": "9eed522241200adf561220ffbf77f1e8914ef9415b274f72ed296c6dccf0014e"
+    },
+    {
+      "file": "preservation/prior_sources/src/processes/13_assets_and_property.md",
+      "origin": "src/processes/13_assets_and_property.md",
+      "sha256": "f7d7e15e792277035188dc0e817087bdf348fc2bc8783c8de4a5904187f5d45b"
+    },
+    {
+      "file": "preservation/prior_sources/src/processes/14_local_governments.md",
+      "origin": "src/processes/14_local_governments.md",
+      "sha256": "6663c61ddd3e50d096dffb3b72f2e6946b72048777a60e5c7b7227aeece958f5"
+    },
+    {
+      "file": "preservation/prior_sources/src/processes/15_gocc_transfers_and_fund_clusters.md",
+      "origin": "src/processes/15_gocc_transfers_and_fund_clusters.md",
+      "sha256": "dff161539bb5c51b49e2869b422aeef501ee4d89098dab53b8d60985d705b047"
+    },
+    {
+      "file": "preservation/prior_sources/src/processes/16_information_systems_and_ifmis.md",
+      "origin": "src/processes/16_information_systems_and_ifmis.md",
+      "sha256": "b15987fe5c05433e85b461d652c56405061586960c5018ff066ccea8f5c559ff"
+    },
+    {
+      "file": "preservation/prior_sources/src/processes/17_uacs_and_record_identifiers.md",
+      "origin": "src/processes/17_uacs_and_record_identifiers.md",
+      "sha256": "2b93ffaf0222a13621ddc3638758f261d1addfa6f1b1ba8a59ddea9300f25035"
+    },
+    {
+      "file": "preservation/prior_sources/src/processes/18_performance_information_and_evaluation.md",
+      "origin": "src/processes/18_performance_information_and_evaluation.md",
+      "sha256": "b08cd9525fba18d0f901d6083c9ea3f2dd4746f21bc22fa0947e78c29f0deb67"
+    },
+    {
+      "file": "preservation/prior_sources/src/processes/19_fiscal_risks_ppp_and_contingent_liabilities.md",
+      "origin": "src/processes/19_fiscal_risks_ppp_and_contingent_liabilities.md",
+      "sha256": "d75fbad18c12c4b34021ba1d8d41e678f03eace3ca6cfce9f2c25433a90384e0"
+    },
+    {
+      "file": "preservation/prior_sources/src/reference/A_authorities_and_mandates.md",
+      "origin": "src/reference/A_authorities_and_mandates.md",
+      "sha256": "8fbc8f36a23065fde2eb730e490e09f97df88765c7bfce9cf2b2721b0aedd232"
+    },
+    {
+      "file": "preservation/prior_sources/src/reference/B_information_systems_inventory.md",
+      "origin": "src/reference/B_information_systems_inventory.md",
+      "sha256": "257341a7aa32f6d9aad760e96afcc20d0d1c4b3e7154ef3a7cf8fae8db8fe222"
+    },
+    {
+      "file": "preservation/prior_sources/src/reference/C_documents_and_identifiers.md",
+      "origin": "src/reference/C_documents_and_identifiers.md",
+      "sha256": "4487c2555ae50ddc9822965351bc69812c2b17eafc545f9b7003a08ae072bd59"
+    },
+    {
+      "file": "preservation/prior_sources/src/reference/D_legal_framework.md",
+      "origin": "src/reference/D_legal_framework.md",
+      "sha256": "d92fec775781bfc8ecf0e0f043a646161fc3dac495454077fb1d9229ccbed303"
+    },
+    {
+      "file": "preservation/prior_sources/src/reference/E_glossary.md",
+      "origin": "src/reference/E_glossary.md",
+      "sha256": "153332b33e5c9132479da46db7351b3e8478a658aaa3275e8d613415ae340759"
+    },
+    {
+      "file": "preservation/prior_sources/src/reference/F_sources_and_verification.md",
+      "origin": "src/reference/F_sources_and_verification.md",
+      "sha256": "7dbab67364cc6632d32c47ec9b39cbf15f69095f1fccabc171be2d637ca21a96"
+    },
+    {
+      "file": "preservation/prior_sources/src/reference/G_open_questions_and_known_gaps.md",
+      "origin": "src/reference/G_open_questions_and_known_gaps.md",
+      "sha256": "52306fe23cd861609f666d71487b043e85e632694d2a9ff420e180fcb369f9a5"
+    },
+    {
+      "file": "research_models/00_REVISED_BIG_PICTURE.md",
+      "origin": "research_models/00_REVISED_BIG_PICTURE.md",
+      "sha256": "9cc01436d1b36892a2e1370031e981de7f13b670933a06400b7a92e2fd1d7a3a"
+    },
+    {
+      "file": "research_models/VALIDATION_REPORT.md",
+      "origin": "research_models/VALIDATION_REPORT.md",
+      "sha256": "60c40ff799d7d817044938687954483abdd384fd0c0f72cbb8249a960f8ac163"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/00a_pfm_cycle_overview.mmd",
+      "origin": "research_models/diagrams/mermaid/00a_pfm_cycle_overview.mmd",
+      "sha256": "8498120fb2074b82ed992ff04ceeb059eff03f3420061b325ee7c34e570bf1a0"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/00b_authorities_map.mmd",
+      "origin": "research_models/diagrams/mermaid/00b_authorities_map.mmd",
+      "sha256": "76f6dacb49a804fb4d3d607dd9001906f475670f18773bc8922d40130cb1a37c"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/00c_systems_landscape.mmd",
+      "origin": "research_models/diagrams/mermaid/00c_systems_landscape.mmd",
+      "sha256": "781e5f895283640c2ba145cb17603b93e2cf98e52971ffbd3ba24878e641d4a6"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/00d_four_chains.mmd",
+      "origin": "research_models/diagrams/mermaid/00d_four_chains.mmd",
+      "sha256": "c13939a624ec604ca5227320483db61e3738288330ec1503fb54c0450f14ec05"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/00e_calendar_three_budgets.mmd",
+      "origin": "research_models/diagrams/mermaid/00e_calendar_three_budgets.mmd",
+      "sha256": "a0474cb0bc0701d99bb261d408a9e41d2a8e4b209f771e30fb07e0f293f1c7b8"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/00g_exchanges_between_authorities.mmd",
+      "origin": "research_models/diagrams/mermaid/00g_exchanges_between_authorities.mmd",
+      "sha256": "933a2370524a0cba2be6bad8f695476ac39595d05d856a627706312e08c8199a"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/00h_worked_example_one_contract.mmd",
+      "origin": "research_models/diagrams/mermaid/00h_worked_example_one_contract.mmd",
+      "sha256": "bb022b117f4c2c58f13fb643c2f17e0035a214891c5b65fc19ad08bd16cf89f0"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/00i_concurrent_pfm_architecture.mmd",
+      "origin": "research_models/diagrams/mermaid/00i_concurrent_pfm_architecture.mmd",
+      "sha256": "6fdf7ccfb1cae242cd23c8325d865b9eb661b9c1447ca6e769deedcc9ea6fb11"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/00j_pfm_domains_not_a_pipeline.mmd",
+      "origin": "research_models/diagrams/mermaid/00j_pfm_domains_not_a_pipeline.mmd",
+      "sha256": "e31dedbcbb14739ce6aef59bef31d8b860b15d52864bf1830264cdf7dc91547b"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/00k_event_authority_record_system_metagraph.mmd",
+      "origin": "research_models/diagrams/mermaid/00k_event_authority_record_system_metagraph.mmd",
+      "sha256": "63f27cf0644794caf610c2431650a71d746f0651c86ac30885e8a7d9373d866e"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/01a_plan_hierarchy.mmd",
+      "origin": "research_models/diagrams/mermaid/01a_plan_hierarchy.mmd",
+      "sha256": "1c4bdc5fe1305212b5b5e4ecfd81e51c8b97dd615f936da8a9d709cc153b4bdf"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/01b_investment_programming_sequence.mmd",
+      "origin": "research_models/diagrams/mermaid/01b_investment_programming_sequence.mmd",
+      "sha256": "945fc4ac976ea37160d0ed643dd8401e206c85997a2b1ed5634b0bcf7f76e7a9"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/02a_fiscal_framework.mmd",
+      "origin": "research_models/diagrams/mermaid/02a_fiscal_framework.mmd",
+      "sha256": "85a0d9463a0f9635b2638c7f42cc59a5717bc6c856563daf12127eedb4464c4e"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/03a_budget_preparation_sequence.mmd",
+      "origin": "research_models/diagrams/mermaid/03a_budget_preparation_sequence.mmd",
+      "sha256": "987218d6f6e146f52ff765bf6dc11adcb9ea3942b978868fb9429dff2923bf74"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/03c_two_tier_budgeting.mmd",
+      "origin": "research_models/diagrams/mermaid/03c_two_tier_budgeting.mmd",
+      "sha256": "8429d0e0ebae9d55ae58437458b58980b9ef25313a316c9dd044649078da7935"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/03d_budget_forms_and_documents.mmd",
+      "origin": "research_models/diagrams/mermaid/03d_budget_forms_and_documents.mmd",
+      "sha256": "5c05f9a928f16296aad6708e81da50daa0033610fed51a6d9e3df675baf47bb6"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/04a_legislation_sequence.mmd",
+      "origin": "research_models/diagrams/mermaid/04a_legislation_sequence.mmd",
+      "sha256": "2ae18b685a570ba5030877cc56b25cdf1b6f8a359226e9f9237e6481ce489ade"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/04b_bill_states.mmd",
+      "origin": "research_models/diagrams/mermaid/04b_bill_states.mmd",
+      "sha256": "79562c2d66d3a2d2e6a8c704c2da5d795e55b82b5c917b9aef00b5ae142c24fe"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/04c_appropriation_types.mmd",
+      "origin": "research_models/diagrams/mermaid/04c_appropriation_types.mmd",
+      "sha256": "c2e00f8a8828808cd46ef2adad89581cdc4f99d88c685767e90a095b254eb66b"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/05a_release_sequence.mmd",
+      "origin": "research_models/diagrams/mermaid/05a_release_sequence.mmd",
+      "sha256": "e5900b821c005e1f5e3edb2ed944d565f347bf635346c1d040f9cb9146f5eff6"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/05b_release_decision_tree.mmd",
+      "origin": "research_models/diagrams/mermaid/05b_release_decision_tree.mmd",
+      "sha256": "61f771540a6b5960315198a98861cbfe3fcc5e8a545a53864367cfec2e3597c6"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/05c_budget_line_states.mmd",
+      "origin": "research_models/diagrams/mermaid/05c_budget_line_states.mmd",
+      "sha256": "b0acd570420789edce9ce0ed1a7cd3fdd2bd5acbd1d9962601ea7673ecc94b13"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/05d_cash_authorities.mmd",
+      "origin": "research_models/diagrams/mermaid/05d_cash_authorities.mmd",
+      "sha256": "ce1802bc9bbb2c65abdfae4c081fca42b76f965e7b9bb01a0211a3978e105369"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/05e_modification_and_savings.mmd",
+      "origin": "research_models/diagrams/mermaid/05e_modification_and_savings.mmd",
+      "sha256": "c920d9522b79545fef5e16335b8fb1cdbc3c101d3d768ce1b10a46c7ad9a5abc"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/05f_independent_authorities_and_cash.mmd",
+      "origin": "research_models/diagrams/mermaid/05f_independent_authorities_and_cash.mmd",
+      "sha256": "e887c175b0172e48a22b3ebd8cd42cd34257f39eb7f428ad1203f21d726ef0de"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/06a_procurement_planning.mmd",
+      "origin": "research_models/diagrams/mermaid/06a_procurement_planning.mmd",
+      "sha256": "a3c6ecd9feda7e540036df471294a4cb36c0bb95cfa223a9a54da6a917ab403e"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/06b_competitive_bidding_sequence.mmd",
+      "origin": "research_models/diagrams/mermaid/06b_competitive_bidding_sequence.mmd",
+      "sha256": "8ce722f6d3b9ec992f32a321b4c79ab139d3c161fca24467b11eb117b3a19f9f"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/06c_procurement_modes.mmd",
+      "origin": "research_models/diagrams/mermaid/06c_procurement_modes.mmd",
+      "sha256": "dfec640d4691a2981c2f65fd4ee806973b277c9fc04db46058aceb31795eac6a"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/06e_contract_implementation.mmd",
+      "origin": "research_models/diagrams/mermaid/06e_contract_implementation.mmd",
+      "sha256": "d89304dfc1b48a94f4395fb8b8845febf9902f77d3f74ecb02e8f05323b7e54e"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/06f_multi_year_contracts.mmd",
+      "origin": "research_models/diagrams/mermaid/06f_multi_year_contracts.mmd",
+      "sha256": "6a7d94fa98379bbe566af837b422e7a6939694453ac6de468cab6fe48946546b"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/07a_obligation_to_payment_sequence.mmd",
+      "origin": "research_models/diagrams/mermaid/07a_obligation_to_payment_sequence.mmd",
+      "sha256": "ad25daacd073b66efe856fbf5d45415c7d810bf11210a4624ca27e3c38b4a7e7"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/07c_voucher_certifications.mmd",
+      "origin": "research_models/diagrams/mermaid/07c_voucher_certifications.mmd",
+      "sha256": "a158db9ef83faae88fc0a6c0b01b6acc46713b9eacd71bcd8dc1db7f623ed068"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/07d_payment_settlement_sequence.mmd",
+      "origin": "research_models/diagrams/mermaid/07d_payment_settlement_sequence.mmd",
+      "sha256": "9969ef7e99e48a11f235c34c4a1d13d598309b4ea4811559b1a581aa3ba8102b"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/07e_payment_modes.mmd",
+      "origin": "research_models/diagrams/mermaid/07e_payment_modes.mmd",
+      "sha256": "af512d6cb073dfdd9dbbddd6989786f3206808e4b998e74dcae5c9f78b36903d"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/07f_cash_advance_states.mmd",
+      "origin": "research_models/diagrams/mermaid/07f_cash_advance_states.mmd",
+      "sha256": "70d67df7fa046a470e8cc9e96d119a5a96b4ecbf7dff03fa1b178825dac10002"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/07g_when_a_step_fails.mmd",
+      "origin": "research_models/diagrams/mermaid/07g_when_a_step_fails.mmd",
+      "sha256": "1bea594607fe1a1ec61cc5dfa44df62a68f67d3448d2db173029680f9023ee0b"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/07h_disbursement_pattern_catalog.mmd",
+      "origin": "research_models/diagrams/mermaid/07h_disbursement_pattern_catalog.mmd",
+      "sha256": "8b85864b768692d0debcc9adca1cabd5c5d780b9ada24d77bec3206dccfd1ab7"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/07i_standard_contract_payment_controls.mmd",
+      "origin": "research_models/diagrams/mermaid/07i_standard_contract_payment_controls.mmd",
+      "sha256": "2756bc6fd514bb4ce5750e75186f8dc18019122e147dce3c24a09751164dab8f"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/08a_accounting_records_flow.mmd",
+      "origin": "research_models/diagrams/mermaid/08a_accounting_records_flow.mmd",
+      "sha256": "1a6ce0122e7a8b56c13fd8ce0f4020e98a994110af4cb7ccd5fc4a7c5bbc33df"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/08b_reporting_flows.mmd",
+      "origin": "research_models/diagrams/mermaid/08b_reporting_flows.mmd",
+      "sha256": "acd0e747f9ad14e1cd60aa542342ac398b3277cf34966f881559c5f75a4337d4"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/08c_five_measures_of_one_spending.mmd",
+      "origin": "research_models/diagrams/mermaid/08c_five_measures_of_one_spending.mmd",
+      "sha256": "db86a5ab685b05a6a6baec9bf24e372bd6417dab491518a47980ba5885c69e5c"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/08d_from_agency_reports_to_national_totals.mmd",
+      "origin": "research_models/diagrams/mermaid/08d_from_agency_reports_to_national_totals.mmd",
+      "sha256": "85b965bc25b1b602d3d5f7a8c31c016bd62c9c989c0947947b8f6857f02b6ee5"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/08e_accounting_recognition_events.mmd",
+      "origin": "research_models/diagrams/mermaid/08e_accounting_recognition_events.mmd",
+      "sha256": "efe7d77085783897d12061fdcabded6423a8056b9a8e0861982682d656b5fa41"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/08f_multilateral_reconciliation.mmd",
+      "origin": "research_models/diagrams/mermaid/08f_multilateral_reconciliation.mmd",
+      "sha256": "d51435269e8081a3d263777d48e2c4c5272532391502e8f6d0dab9895cb6eafd"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/09a_audit_sequence.mmd",
+      "origin": "research_models/diagrams/mermaid/09a_audit_sequence.mmd",
+      "sha256": "ec696b67ce858b1360b252a61339e49558b09f07217ebfd82af89275dfd1e2ac"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/09b_audit_finding_states.mmd",
+      "origin": "research_models/diagrams/mermaid/09b_audit_finding_states.mmd",
+      "sha256": "080b8fb8ed79996caf36710edca07cf3f7bc3279be1a923b2dacd80f8e4a5bfc"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/09c_oversight_map.mmd",
+      "origin": "research_models/diagrams/mermaid/09c_oversight_map.mmd",
+      "sha256": "19abad73abe0a8242f1755498cc3e0c5b2b0653723cf0bd74952208ba8d5b7a0"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/09d_controls_audit_and_responses.mmd",
+      "origin": "research_models/diagrams/mermaid/09d_controls_audit_and_responses.mmd",
+      "sha256": "3dee651f0c14bbc6aeb7802e44bb0fc534effc051f19fbec1c468a35d31b0bac"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/10a_revenue_classification.mmd",
+      "origin": "research_models/diagrams/mermaid/10a_revenue_classification.mmd",
+      "sha256": "39a4d425752ee8c420ca6dfab54b0373e8d6e76453631817a1f7d986a7dde3f7"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/10b_tax_and_customs_collection_sequence.mmd",
+      "origin": "research_models/diagrams/mermaid/10b_tax_and_customs_collection_sequence.mmd",
+      "sha256": "8a03d5f04a4cecc4a0bd02024f7e5b115127ed6b35e30789ebdd811c284b6e51"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/10c_agency_collections.mmd",
+      "origin": "research_models/diagrams/mermaid/10c_agency_collections.mmd",
+      "sha256": "04a7ce440816dd7175512244c079f206a92af101bdaad8ef3f1c4080bffb5569"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/10d_tax_refund_sequence.mmd",
+      "origin": "research_models/diagrams/mermaid/10d_tax_refund_sequence.mmd",
+      "sha256": "f7831d2a747544aefe30346243624ca2655a5dc272b6b50fc9bc025880ea8bb3"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/10e_revenue_administration_full_lifecycle.mmd",
+      "origin": "research_models/diagrams/mermaid/10e_revenue_administration_full_lifecycle.mmd",
+      "sha256": "8885312635a52583a90077c1846086ad618700ceb35673db1d60236caa460e2f"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/10f_revenue_refunds_and_adjustments.mmd",
+      "origin": "research_models/diagrams/mermaid/10f_revenue_refunds_and_adjustments.mmd",
+      "sha256": "9642b53a473cec57d75c818cd171e102c2b45e880d492690a683d3a5a93878e8"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/11a_tsa_account_structure.mmd",
+      "origin": "research_models/diagrams/mermaid/11a_tsa_account_structure.mmd",
+      "sha256": "4672d89638287abf87a5d3b6f73e5cf9279f03b41555f3b1af707339752bdbd6"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/11b_cash_programming_sequence.mmd",
+      "origin": "research_models/diagrams/mermaid/11b_cash_programming_sequence.mmd",
+      "sha256": "dabbf5d9d370dfed51175b3e0863b8954f77b0e8f56118f5ad3bb6560aa8dfb5"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/11c_financing_and_debt.mmd",
+      "origin": "research_models/diagrams/mermaid/11c_financing_and_debt.mmd",
+      "sha256": "1e6a1ac3e23bd5147117c28853062292e613d6df9af5e8f0a42186ac85fafa7b"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/11d_foreign_loan_sequence.mmd",
+      "origin": "research_models/diagrams/mermaid/11d_foreign_loan_sequence.mmd",
+      "sha256": "69689c4b276e21997ca586361fd39dcff40aee9f226f8a2f2fc53cc4231c09f8"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/11e_treasury_cash_synchronization.mmd",
+      "origin": "research_models/diagrams/mermaid/11e_treasury_cash_synchronization.mmd",
+      "sha256": "fdae266c6cab5964d2aa8b5ad87e51324ce0ff3d61293752fae69671fcbc3362"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/12a_position_to_payroll_sequence.mmd",
+      "origin": "research_models/diagrams/mermaid/12a_position_to_payroll_sequence.mmd",
+      "sha256": "50219a5189a193e013514084dad16504d1a6cb418747b4960c4091eecf871410"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/12b_personnel_funding_and_deductions.mmd",
+      "origin": "research_models/diagrams/mermaid/12b_personnel_funding_and_deductions.mmd",
+      "sha256": "20eb2a50598e7eb845b9fad14aea1dfbbdb172c6fe265b5f3ed6528a98443028"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/13a_asset_lifecycle.mmd",
+      "origin": "research_models/diagrams/mermaid/13a_asset_lifecycle.mmd",
+      "sha256": "30837f5a87e732074ff02c36c8f30efe5498edf38c378c30c044c6f8b2b909d8"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/14a_lgu_budget_sequence.mmd",
+      "origin": "research_models/diagrams/mermaid/14a_lgu_budget_sequence.mmd",
+      "sha256": "253503e6a1487f967286b4ff6f7ef526dd00b6a544415fce6782a63677da88ba"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/14b_lgu_funds_and_mandatory_allocations.mmd",
+      "origin": "research_models/diagrams/mermaid/14b_lgu_funds_and_mandatory_allocations.mmd",
+      "sha256": "eca4eeff0c814388ecfdbcea6cc0416bbb6858d913f03bf591d8262dc92a9511"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/14c_national_local_interfaces.mmd",
+      "origin": "research_models/diagrams/mermaid/14c_national_local_interfaces.mmd",
+      "sha256": "f80c5a5c96aa88ed303d8831aface8fc833f9401f4b47cefc0ebf156e6b552da"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/14e_local_revenue_and_borrowing.mmd",
+      "origin": "research_models/diagrams/mermaid/14e_local_revenue_and_borrowing.mmd",
+      "sha256": "89a4c6b2d036dfc9fb8fe4b47fb999f294d6c8bc14d754b44969440b547df192"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/14f_barangay_budget_sequence.mmd",
+      "origin": "research_models/diagrams/mermaid/14f_barangay_budget_sequence.mmd",
+      "sha256": "270d6ea523de5465820eadfcc8de314d6e193f32d2cc2e0bbca98170fb845ba8"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/14g_lgu_two_coupled_cycles.mmd",
+      "origin": "research_models/diagrams/mermaid/14g_lgu_two_coupled_cycles.mmd",
+      "sha256": "257b1ebffd500518b3eafb989dcd26a9d09f45e254e70f98338662ae190bd7f0"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/15a_gocc_budget_sequence.mmd",
+      "origin": "research_models/diagrams/mermaid/15a_gocc_budget_sequence.mmd",
+      "sha256": "344b61b2102d3f50629c07d9bb5b3925ffbcec1d2955405910fae8b52c2afe75"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/15b_inter_agency_transfers.mmd",
+      "origin": "research_models/diagrams/mermaid/15b_inter_agency_transfers.mmd",
+      "sha256": "d6b2d16d3c47410e1f56aee429b67ef7f7e3446dddcbef9344d5e49e50e274e2"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/15c_spending_paths.mmd",
+      "origin": "research_models/diagrams/mermaid/15c_spending_paths.mmd",
+      "sha256": "4577f2cd3a0cd1ba11fc11495db720b233ca410a04a8f1c4209439f5c5bcc060"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/15d_fund_clusters.mmd",
+      "origin": "research_models/diagrams/mermaid/15d_fund_clusters.mmd",
+      "sha256": "df7fa392bace3f39cfd3f60f9609cb3508885c3030faf6a1aca6ae891d5bf701"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/15e_disaster_funds.mmd",
+      "origin": "research_models/diagrams/mermaid/15e_disaster_funds.mmd",
+      "sha256": "503741a4453735a71996e0e003e665e0bf792fd04e411ee76a8871e4b48d828c"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/15f_cash_aid_to_persons_sequence.mmd",
+      "origin": "research_models/diagrams/mermaid/15f_cash_aid_to_persons_sequence.mmd",
+      "sha256": "d0c94b26205b2bca01cfd488c2cae30dc1793ac89aee857d99ced19abbace5eb"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/15g_entity_and_fund_specific_paths.mmd",
+      "origin": "research_models/diagrams/mermaid/15g_entity_and_fund_specific_paths.mmd",
+      "sha256": "730789482481443f9fa67dd0429c1d074cbda29e8ddeb5206ec69bedc878efcc"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/16a_systems_by_function.mmd",
+      "origin": "research_models/diagrams/mermaid/16a_systems_by_function.mmd",
+      "sha256": "d5851fcae549392933593690fe9de4d97f4fd838b459ae14d05c2373a34dc4dd"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/16c_btms_execution_flow.mmd",
+      "origin": "research_models/diagrams/mermaid/16c_btms_execution_flow.mmd",
+      "sha256": "a3be9514e0a20088a38e646668688e13d07b710a98154e710b4bdd0f40ac8b5f"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/16d_ifmis_target_architecture.mmd",
+      "origin": "research_models/diagrams/mermaid/16d_ifmis_target_architecture.mmd",
+      "sha256": "72052c967ce1d9c5ad0112213fab1db48f35b7f7083a585f8a50d8778549f814"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/16e_digital_pfm_timeline.mmd",
+      "origin": "research_models/diagrams/mermaid/16e_digital_pfm_timeline.mmd",
+      "sha256": "46317fe19dcbe07212dbee8a174584cc7738cb56b1ff9c14983493dbcce15834"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/16f_document_verification_blockchain.mmd",
+      "origin": "research_models/diagrams/mermaid/16f_document_verification_blockchain.mmd",
+      "sha256": "2add6a456dabe89141d4410c0f4172e555d7db66491e829a79bfb6c0764d2b96"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/16h_ifmis_deployment_confidence.mmd",
+      "origin": "research_models/diagrams/mermaid/16h_ifmis_deployment_confidence.mmd",
+      "sha256": "453b2d8647311dbdde6f9d6c73930fcf38fe0de8640203615c7a363da95ee08b"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/16i_interface_failure_and_reconciliation.mmd",
+      "origin": "research_models/diagrams/mermaid/16i_interface_failure_and_reconciliation.mmd",
+      "sha256": "05afea05722325a818dd5f0082b454f0c1535a45e19626db194635047756b33c"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/17a_uacs_structure.mmd",
+      "origin": "research_models/diagrams/mermaid/17a_uacs_structure.mmd",
+      "sha256": "16cddc65f51c00f61fa8ed003ab9318b21cfc69d3f9ca3a31c8967db053c03ab"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/17b_identifier_chain.mmd",
+      "origin": "research_models/diagrams/mermaid/17b_identifier_chain.mmd",
+      "sha256": "d00884a77e7fb9fe7ebfd533cc50140c845f716c5f3f259f4a7b4172e4b78b21"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/17c_record_lineage_er.mmd",
+      "origin": "research_models/diagrams/mermaid/17c_record_lineage_er.mmd",
+      "sha256": "386eeda6644d405053cf9f6d6c4bffbf265b2503224f194def1e321551c6cb77"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/17d_uacs_class_not_instance.mmd",
+      "origin": "research_models/diagrams/mermaid/17d_uacs_class_not_instance.mmd",
+      "sha256": "cc495328953e7a63f52cc4720ed988864529207fba6b59f1444c0455c3af588c"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/17e_multi_identifier_lineage.mmd",
+      "origin": "research_models/diagrams/mermaid/17e_multi_identifier_lineage.mmd",
+      "sha256": "67878a0eaf01039cfc2413f15991c387bb03a188db568537f9281dfae6fb5ca3"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/17f_uacs_version_crosswalk.mmd",
+      "origin": "research_models/diagrams/mermaid/17f_uacs_version_crosswalk.mmd",
+      "sha256": "361faee36690ab29ca4200242e8e2bf8185c8e7b6d310a5ba1eb415ca9ed4c57"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/18a_performance_information_flow.mmd",
+      "origin": "research_models/diagrams/mermaid/18a_performance_information_flow.mmd",
+      "sha256": "cb2045ff2a1d205168385485da5eff6fd2139cd632d386015b0604537a357d16"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/18b_four_examinations_of_performance.mmd",
+      "origin": "research_models/diagrams/mermaid/18b_four_examinations_of_performance.mmd",
+      "sha256": "cb47f29be1269f6e3979399b747db5328c28d8aa77f167f9121225b6261c67ee"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/18c_performance_budget_learning.mmd",
+      "origin": "research_models/diagrams/mermaid/18c_performance_budget_learning.mmd",
+      "sha256": "fa7b714000e95b3c0190bbcb5de5dab523078e6833a567a8fae61518cf265e7f"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/19a_fiscal_risks_map.mmd",
+      "origin": "research_models/diagrams/mermaid/19a_fiscal_risks_map.mmd",
+      "sha256": "6a681068b7b53bdb3307f402bf5b3ed1143304fb5d7190e3e7f528cb3ec3ec20"
+    },
+    {
+      "file": "research_models/diagrams/mermaid/19c_fiscal_risk_multiyear.mmd",
+      "origin": "research_models/diagrams/mermaid/19c_fiscal_risk_multiyear.mmd",
+      "sha256": "56847e193929464ed3dbc88f5ce6440a65b6897f112d4d6a13d35366b7756980"
+    },
+    {
+      "file": "research_models/diagrams/plantuml/00f_end_to_end_swimlane.puml",
+      "origin": "research_models/diagrams/plantuml/00f_end_to_end_swimlane.puml",
+      "sha256": "ee6845a420d5e197748791dbd6c895815a74460da8170a16d49b167c04839bec"
+    },
+    {
+      "file": "research_models/diagrams/plantuml/00l_four_parallel_authority_lanes.puml",
+      "origin": "research_models/diagrams/plantuml/00l_four_parallel_authority_lanes.puml",
+      "sha256": "96f66a1ee00a9ab18d1ced025ee3c9e4f85ac9efe969f49f592cffd6ee6b41f8"
+    },
+    {
+      "file": "research_models/diagrams/plantuml/03b_budget_preparation_swimlane.puml",
+      "origin": "research_models/diagrams/plantuml/03b_budget_preparation_swimlane.puml",
+      "sha256": "40a641b706c3f1ec470e02ea1d977aba640df45c229d43f825a9425049310df1"
+    },
+    {
+      "file": "research_models/diagrams/plantuml/06d_competitive_bidding_swimlane.puml",
+      "origin": "research_models/diagrams/plantuml/06d_competitive_bidding_swimlane.puml",
+      "sha256": "5d49846231cc71815efbb2bfdd1d63d6bfe37abefda16958daf3b8036291612e"
+    },
+    {
+      "file": "research_models/diagrams/plantuml/07b_obligation_to_payment_swimlane.puml",
+      "origin": "research_models/diagrams/plantuml/07b_obligation_to_payment_swimlane.puml",
+      "sha256": "652d223c34dfc39c8ff4e6ff7e852dbf85dd70118f14fa696e6ae76ebd072149"
+    },
+    {
+      "file": "research_models/diagrams/plantuml/07j_payment_control_gate_sequence.puml",
+      "origin": "research_models/diagrams/plantuml/07j_payment_control_gate_sequence.puml",
+      "sha256": "7b99497a69ea85aef85cc3fcc8d231ca41da5699e6959f85a54da1425c96aeeb"
+    },
+    {
+      "file": "research_models/diagrams/plantuml/08g_recording_and_audit_lanes.puml",
+      "origin": "research_models/diagrams/plantuml/08g_recording_and_audit_lanes.puml",
+      "sha256": "4b1b5e87045d6418c2e6e5f191382600da7383de9489362922cc699d6fdef73b"
+    },
+    {
+      "file": "research_models/diagrams/plantuml/14d_lgu_budget_swimlane.puml",
+      "origin": "research_models/diagrams/plantuml/14d_lgu_budget_swimlane.puml",
+      "sha256": "113a3ee7ad5401391cfa17d1d4fb2c87640c70971d01f8010d8923a5c9ffb273"
+    },
+    {
+      "file": "research_models/diagrams/plantuml/16b_systems_components_spending.puml",
+      "origin": "research_models/diagrams/plantuml/16b_systems_components_spending.puml",
+      "sha256": "dee6b556d8a741a6e5420154f96b5537538e53bdf21619e7c506b81982b0b3af"
+    },
+    {
+      "file": "research_models/diagrams/plantuml/16g_systems_components_revenue_treasury.puml",
+      "origin": "research_models/diagrams/plantuml/16g_systems_components_revenue_treasury.puml",
+      "sha256": "ee4e2f4c937f5cdecaf06cf45c6941bd507e76dfc2a348cd2cb650bb90e4afa1"
+    },
+    {
+      "file": "research_models/diagrams/plantuml/16j_system_of_record_vs_interfaces.puml",
+      "origin": "research_models/diagrams/plantuml/16j_system_of_record_vs_interfaces.puml",
+      "sha256": "5ec50e6de14320bdeb0b51921990c66a39abd73837d34a4848951a106267c226"
+    },
+    {
+      "file": "research_models/diagrams/plantuml/17g_financial_record_class_model.puml",
+      "origin": "research_models/diagrams/plantuml/17g_financial_record_class_model.puml",
+      "sha256": "02005b1ef52b576567966ecaa00b8793d28cb4224fc3a2e90a450860eed7ef89"
+    },
+    {
+      "file": "research_models/diagrams/plantuml/19b_ppp_project_swimlane.puml",
+      "origin": "research_models/diagrams/plantuml/19b_ppp_project_swimlane.puml",
+      "sha256": "5905f55e665001721b3f1fc58268d966b10ee87d10d65e15dcfc416edd2073d5"
+    },
+    {
+      "file": "research_models/reference/K_validation_and_traceability.md",
+      "origin": "research_models/reference/K_validation_and_traceability.md",
+      "sha256": "31777e384b069e18f2737f4b6d5f01ab491e9bde5de2f6606c2189657696e7e0"
+    },
+    {
+      "file": "research_models/reference/L_change_log_and_remaining_limits.md",
+      "origin": "research_models/reference/L_change_log_and_remaining_limits.md",
+      "sha256": "96653bbf904eaa5b988d3d91a049f75633391e316158f3ccb8d9f0d1cef8ccf0"
+    },
+    {
+      "file": "research_models/supplemental_index.json",
+      "origin": "research_models/supplemental_index.json",
+      "sha256": "3d7191922d3fe7326884642b1a08e869e80cc0fbb7157d3ad3b048811ab87a27"
+    }
+  ]
+}

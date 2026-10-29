@@ -1,0 +1,55 @@
+---
+title: "14e  Money that a local government raises itself: real property tax and loans"
+config:
+  flowchart:
+    wrappingWidth: 900
+---
+flowchart TB
+  %% QUESTION THIS DIAGRAM ANSWERS: diagram 14b shows the share in national taxes. Which steps and which outside approvals does a local government need for the two main sources that it controls itself: the tax on real property, and loans?
+  %% IDEA: a local government decides its own tax rates and its own loans, but in both cases a national office checks one technical input before the local legislature may decide. For the property tax the input is the schedule of market values. For a loan the input is the capacity to repay.
+  %% READING: one frame shows the real property tax, the other shows loans. In each frame the blue boxes are the checks by national offices, and the purple box is the decision of the sanggunian (the local legislature). Bottom = where both amounts enter the local budget and the reports.
+  %% SOURCES, PROPERTY TAX: preparation of the Schedule of Market Values by the assessors, review by BLGF within 45 and 30 days, certification by the Secretary of Finance within 30 days, effect 15 days after publication [RA12001 ss.15-16]; revenue and tax impact report with three options, and adjustment of assessment levels and tax rates by the sanggunian [RA12001 ss.17-18]; update within two years and then every three years [RA12001 s.19]; increase limited to 6 percent in the first year [RA12001 s.29]; electronic database of real property transactions at BLGF [RA12001 s.22].
+  %% SOURCES, LOANS: power to create indebtedness under section 296 of the Code, the two controls before borrowing, the four documents, the rules of the Monetary Board opinion, the ordinance, and the reports after borrowing [DOF-LGULOAN]. Debt service not above 20 percent of regular income [LGC s.324]. The local finance committee recommends borrowing measures [LGC s.316]. Statements of receipts and expenditures through eSRE [eSRE].
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: the billing and collection of the property tax by the local treasurer, the division of the tax between province, municipality and barangay, the additional levy for the Special Education Fund, and the other local taxes and fees (for example the business tax). They are in Book II of the Local Government Code, which I did not open.
+
+  subgraph RPT["REAL PROPERTY TAX"]
+    direction TB
+    A1["Provincial, city or municipal ASSESSOR<br/>prepares the Schedule of Market Values,<br/>after two public consultations"]
+    A2["BLGF regional office reviews (45 days).<br/>Head of BLGF endorses (30 days)"]:::nat
+    A3["SECRETARY OF FINANCE certifies that the schedule<br/>follows the valuation standards (30 days).<br/>In effect 15 days after publication"]:::nat
+    A4["Assessor and local treasurer: report on the effect<br/>on revenue and on taxpayers, with three options"]
+    A5["SANGGUNIAN adjusts assessment levels<br/>and tax rates by ordinance"]:::leg
+    A6["Local treasurer bills and collects the tax"]
+    A1 --> A2 --> A3 --> A4 --> A5 --> A6
+    AR["Limits in the 2024 law: schedule updated every three years.<br/>In the first year the tax may rise by 6 percent at most"]:::rule
+    A5 --- AR
+  end
+
+  subgraph LOAN["LOAN"]
+    direction TB
+    B1["Project in the approved local development plan<br/>and investment program. The local finance<br/>committee recommends the borrowing"]
+    B2["BLGF: Certificate of Net Debt Service Ceiling<br/>and Borrowing Capacity. Four documents, among them<br/>the latest audit certificate of COA"]:::nat
+    B3["BSP MONETARY BOARD: opinion on the loan,<br/>requested before the release. Valid for one year"]:::nat
+    B4["SANGGUNIAN: ordinance that approves the terms,<br/>the purpose and the amount for each project"]:::leg
+    B5["The lender releases the loan"]
+    B6["Report to BSP within 30 days after the last release.<br/>Yearly statement of indebtedness by the local treasurer"]
+    B1 --> B2 --> B3 --> B4 --> B5 --> B6
+    BR["Limit in the Code: the appropriation for debt service<br/>may not exceed 20 percent of regular income"]:::rule
+    B4 --- BR
+  end
+
+  BUD["LOCAL BUDGET (see 14a)<br/>estimated income includes the tax. Loan proceeds finance the named projects.<br/>Debt service is a mandatory item of each later budget"]
+  REP["Statement of receipts and expenditures<br/>to BLGF through eSRE, quarterly and yearly"]:::nat
+  DB["BLGF keeps an electronic database<br/>of real property transactions"]:::nat
+
+  A6 --> BUD
+  B5 --> BUD
+  BUD -.-> REP
+  A3 -.- DB
+
+  classDef default fill:#ffffff,stroke:#444444,color:#111
+  classDef nat fill:#dbe9f7,stroke:#1f4e8c,color:#111
+  classDef leg fill:#ead9f5,stroke:#5b3a8c,color:#111
+  classDef rule fill:#f3eefa,stroke:#5b3a8c,color:#111,stroke-width:2px
+  style RPT fill:#edf7ed,stroke:#2e6b2e
+  style LOAN fill:#edf7ed,stroke:#2e6b2e

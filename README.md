@@ -1,6 +1,6 @@
 # Philippine PFM Atlas
 
-A map of public financial management (PFM) of the Philippine national government: the process from planning to audit, the authorities that participate in it, and their information systems. The atlas follows the budget cycle in the illustration of the Department of Budget and Management (DBM): four phases with 32 steps. It has 38 chapters, 7 reference files and 85 diagrams in Mermaid and PlantUML, and a website that presents them. Facts on current events are as of 8 October 2026.
+A map of public financial management (PFM) of the Philippine national government: the process from planning to audit, the authorities that participate in it, and their information systems. The atlas follows the budget cycle in the illustration of the Department of Budget and Management (DBM): four phases with 32 steps. It has 32 numbered activity chapters, four phase overviews, two supporting technical references, 7 reference files and 85 diagrams in Mermaid and PlantUML, and a website that presents them. Facts on current events are as of 8 October 2026.
 
 This is an independent reference. It is not an official publication of the Philippine government, and it does not replace the laws, circulars and manuals that it cites.
 
@@ -14,9 +14,9 @@ This is an independent reference. It is not an official publication of the Phili
 
 ## How the chapters are arranged
 
-The chapters follow the budget cycle. Each phase has a chapter that describes the phase as a whole, and each step of the phase has a chapter of its own. Two chapters describe what all phases share.
+The public chapter sequence contains **exactly 32 activities**. Phase overview pages (P0, L0, E0, A0) and the technical references (IS, UACS) provide context without extending or competing with that sequence.
 
-| Phase | Chapter of the phase | Chapters of the steps |
+| Phase | Phase overview (not a chapter) | Numbered chapters |
 |---|---|---|
 | Preparation | P0 | P1 to P12 |
 | Legislation | L0 | L1 to L5 |
@@ -35,11 +35,11 @@ A diagram has the ID of its chapter, a hyphen and a letter: diagram E4-a is the 
 | Budget cycle (the home page) | A scroll story of the 32 steps of the DBM illustration, a step explorer, and the map of the four lines with their meeting points |
 | Guided lessons | Eight short lessons, each with a few diagrams |
 | Big picture | The whole on a few pages |
-| Chapters | The 38 chapters, in the order of the budget cycle, grouped by phase |
+| Chapters | Exactly 32 numbered activities in budget-cycle order, with separate phase introductions and technical references |
 | References | Authorities, systems, documents and identifiers, laws, terms, sources, open points |
 | Diagrams | One page for each diagram: the image, what it shows, its steps where it is a sequence, and its code. The list is grouped by chapter |
 | Systems and UACS | A starting page for the information systems and the codes |
-| Research models | Eight models that are not part of the chapters, each with a note on what it is for, and the research references and registers |
+| Research models | Eight curated models with images; the 25 source-only analytical sketches are restored from the prior commit, alongside historical research references and registers |
 | Open points | Reference G, with a filter by status: open, partly settled, settled, sources differ |
 | Search | Search in the text of all pages, including codes and form names such as `LDDAP-ADA` |
 
@@ -67,7 +67,8 @@ Other texts can cite the atlas by these identifiers.
 
 | Item | Identifier | Address on the website |
 |---|---|---|
-| Chapter | P0 to P12, L0 to L5, E0 to E6, A0 to A9, IS, UACS | `chapters/E4.html` |
+| Activity chapter | P1–P12, L1–L5, E1–E6, A1–A9 | `chapters/E4.html` |
+| Phase overview and technical reference | P0/L0/E0/A0 and IS/UACS (not numbered chapters) | `chapters/E0.html` |
 | Section of a chapter | Its number | `chapters/E4.html#section-3` |
 | Budget-cycle step | The ID of its chapter (P1 to P12, L1 to L5, E1 to E6, A1 to A9) | `index.html#step-E4` |
 | Diagram | The ID of its chapter (or BP), a hyphen and a letter | `diagrams/E4-b.html` |
@@ -75,7 +76,7 @@ Other texts can cite the atlas by these identifiers.
 | Point of Reference G | Its number | `reference/g.html#point-60` |
 | Row of the register of interfaces (Reference B, section 4) | Its number | `reference/b.html#flow-41` |
 | Source | Its code in Reference F | `reference/f.html#source-gam-v1` |
-| Research model | RM-1 to RM-8 | `models/RM-1.html` |
+| Research model | RM-1 to RM-8; supplementary source-only sketches at `models/model-ID.html` | `models/RM-1.html` |
 
 A section number changes when a section is added before it, so the addresses of sections are less stable than the addresses of chapters and diagrams. A new diagram receives the next free letter of its chapter. A removed item leaves its identifier unused.
 
@@ -144,3 +145,17 @@ The file `docs/.nojekyll` must be in the repository. It tells GitHub Pages to se
 ## Research models
 
 The folder `research_models/` holds eight models, RM-1 to RM-8, that are not part of the chapters. A research model is a proposal, a method or a general model. It is not a description of Philippine PFM from a source, so it is kept apart from the chapters, and its page on the website says what it is for and why it is not in a chapter. The research references H to J and the six registers in CSV form are research material of the same kind. The register of events names, for each event, the chapter of the atlas that describes it.
+
+## Preservation of the analytical corpus
+
+This migration is intended to preserve research rather than equate every older sketch with a current-procedure diagram.
+Run `python tools/preserve_prior_assets.py` in a Git checkout that retains the pre-migration commit before publishing.
+The command restores missing research-model sources and reference documents, snapshots the prior text under
+`preservation/prior_sources/`, and creates raw-asset aliases under `preservation/legacy_web/` for old direct URLs.
+`python tools/extend_source_manifest.py` adds hashes for **newly recovered** research files without accepting an
+undocumented change to an existing file. `python tools/check_preservation.py` then verifies every recovered checksum.
+The build publishes the 25 supplementary sketches as source-only analytical material, never as replacements for
+procedural diagrams, and preserves the previous raw URLs without listing them as an alternative chapter hierarchy.
+
+Earlier source snapshots are retained for traceability without appearing as a public navigation catalogue.
+The primary site remains 32 activity chapters, supported by unnumbered phase and technical pages.

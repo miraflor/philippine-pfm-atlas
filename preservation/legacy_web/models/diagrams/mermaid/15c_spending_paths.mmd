@@ -1,0 +1,34 @@
+---
+title: "15c  The path after allotment depends on the kind of spending"
+config:
+  flowchart:
+    wrappingWidth: 900
+---
+flowchart LR
+  %% QUESTION THIS DIAGRAM ANSWERS: chapters 06 and 07 follow one purchase by one agency. Which other paths does public money take, and which steps does each path omit?
+  %% READING: each row is one kind of spending. A grey box marks the point where the records of the national agency stop showing what happens next. The last column names the chapter that continues the path.
+  %% WHY IT MATTERS FOR A PROCESS MODEL: this is a choice among eight branches directly after the allotment. Only branch B contains procurement by the spending agency itself.
+  %% SOURCES: A personnel [GMIS][NBC599]. B procurement and payment [RA12009][CL2013-16A]. C share of local governments, automatic appropriation and direct release by BTr [LGC s.286][MANDANAS][GAA2026-GP]. D budgetary support to corporations through BTr [BSGC2026]. F transfers not disbursed until used by the receiver [NBC599 s.3.4]. G interest as automatic appropriation [NBC599]. H direct payment by a lender and Non-Cash Availment Authority [NBC599].
+  %% ROW E: payment of cash grants through authorized government depository banks or accredited remittance institutions is verified for one program [RA11310 s.9]. Diagram 15f shows that program.
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: the other steps of row E and the liquidation steps. Each program has its own guidelines.
+
+  A0(["Allotment<br/>available"]) --> Q{"Kind of<br/>spending"}
+
+  Q --> A1["A  PERSONNEL SERVICES<br/>positions and pay fixed by<br/>staffing and salary rules"] --> A2["Payroll computed<br/>each period"] --> A3["Net pay credited to<br/>employee accounts"] --> A4["Deductions remitted to BIR,<br/>GSIS, PhilHealth, Pag-IBIG.<br/>Chapter 12"]
+
+  Q --> B1["B  GOODS, SERVICES, WORKS<br/>bought by the agency"] --> B2["Procurement, contract,<br/>obligation"] --> B3["Delivery accepted,<br/>voucher approved"] --> B4["Payment order, bank pays<br/>the supplier. Chapters 06, 07"]
+
+  Q --> C1["C  SHARE OF LOCAL GOVERNMENTS<br/>fixed by law"] --> C2["Automatic appropriation,<br/>no agency voucher"] --> C3["BTr releases directly<br/>to the local treasurer"] --> C4["Local budget cycle, own accounts,<br/>audited by COA. Chapter 14"]:::edge
+
+  Q --> D1["D  SUBSIDY OR EQUITY TO A<br/>GOVERNMENT CORPORATION"] --> D2["Special Budget Request,<br/>release document"] --> D3["BTr releases directly<br/>to the corporation"] --> D4["Spent under the corporate<br/>operating budget. Chapter 15"]:::edge
+
+  Q --> E1["E  CASH AID TO PERSONS"] --> E2["List of beneficiaries<br/>approved"] --> E3["Payout by bank, payment<br/>provider or accountable officer"] --> E4["Proof of payment to each<br/>person. See 15f"]:::edge
+
+  Q --> G1["F  TRANSFER TO ANOTHER BODY<br/>THAT WILL IMPLEMENT"] --> G2["Agreement signed,<br/>cash transferred"] --> G3["Receiver procures and pays.<br/>Source agency has NOT yet<br/>disbursed"]:::edge --> G4["Liquidation. Then the source<br/>agency reports the<br/>disbursement. Chapter 15"]:::edge
+
+  Q --> H1["G  INTEREST ON DEBT"] --> H2["Automatic<br/>appropriation"] --> H3["BTr pays creditors on<br/>the due dates"] --> H4["Repayment of principal is financing,<br/>not spending. Chapter 11"]
+
+  Q --> J1["H  FOREIGN-ASSISTED PROJECT<br/>WITH DIRECT PAYMENT"] --> J2["Agency approves the<br/>supplier's claim"] --> J3["Lender pays the<br/>supplier directly"] --> J4["Non-Cash Availment Authority<br/>records it. Chapter 11"]
+
+  classDef default fill:#ffffff,stroke:#444444,color:#111
+  classDef edge fill:#e6e6e6,stroke:#555555,color:#111

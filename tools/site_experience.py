@@ -12,6 +12,8 @@ import re
 from pathlib import Path
 from budget_cycle_nav import (home_cycle, reorganize_diagram_library, lesson_index, phase_context)
 from budget_cycle_story import SLOT as CYCLE_STORY_SLOT
+from budget_cycle_story import STEP as ACTIVITY_EVIDENCE, PHASES as ACTIVITY_PHASES
+from atlas_pages import STEP_ORDER
 
 ROOT = Path(__file__).resolve().parent.parent if Path(__file__).name == 'site_experience.py' and Path(__file__).parent.name == 'tools' else None
 # Overlay source is alongside apply_patch.py until installed under tools/.
@@ -39,8 +41,60 @@ def enhance_page(url: str, body: str, diagrams: list[dict]) -> str:
     if url.startswith(('chapters/', 'diagrams/', 'guide/')):
         context = phase_context(url)
         if context:
+            if url.startswith('chapters/'):
+                pid = url.split('/')[-1].split('.')[0]
+                return context + activity_reading_guide(pid) + body
             return context + body
     return body
+
+
+# The source corpus remains word-for-word intact. These are reading aids, not new legal claims.
+# Some activity chapters have only their verified step tables, while broader source chapters
+# also include technical domains larger than the activity after which they are named.
+THIN_ACTIVITIES = frozenset(('P2 P3 P4 P6 P7 P8 P9 P10 P11 L1 L2 L3 L4 E2 A7 A8').split())
+WIDE_CONTEXT = {
+    'P1': 'Planning, macro-fiscal programming and fiscal risks support the Budget Call; they are not all actions performed at P1.',
+    'E1': 'The detailed procurement lifecycle below extends beyond the early procurement activity itself.',
+    'E3': 'The discussion of local-government finance describes a related but distinct budgeting pathway.',
+    'E4': 'Payroll and personnel administration are related expenditure cases, not synonymous with recording an obligation.',
+    'E5': 'Revenue collection, borrowing and debt are broader treasury topics, not parts of the NCA issuance step.',
+    'E6': 'Fund clusters and other institutional pathways are related disbursement contexts, not one standard payment workflow.',
+    'A4': 'Asset and property accounting provides supporting context; it is not the whole of agency accountability reporting.',
+}
+
+
+def activity_reading_guide(pid):
+    """Expose exact evidence locations and honest scope boundaries, with no fabricated procedure."""
+    if pid not in STEP_ORDER:
+        return ''
+    info = ACTIVITY_EVIDENCE[pid]
+    phase = next(p for p in ACTIVITY_PHASES if p['id'].upper().startswith(pid[0]))
+    labels = {p['id']: p['name'] for p in ACTIVITY_PHASES}
+    name = next(name for p in ACTIVITY_PHASES for name, _, id_ in p['steps'] if id_ == pid)
+    links = []
+    seen = set()
+    for chapter, section in info.get('refs', []):
+        url = '../chapters/%s.html%s' % (chapter, '#section-' + section.replace('.', '-') if section else '')
+        if url not in seen:
+            seen.add(url)
+            links.append('<a href="%s">%s evidence%s</a>' % (esc(url), esc(chapter),
+                         (', section ' + esc(section)) if section else ''))
+    for did in info.get('dg', []):
+        links.append('<a href="../diagrams/%s.html">Diagram %s</a>' % (esc(did), esc(did)))
+    if not links:
+        # No source-specific authority is established by absence of a diagram or section link.
+        links.append('<a href="../reference/f.html">Source verification ledger</a>')
+    if pid in THIN_ACTIVITIES:
+        status = ('The source corpus does not provide a self-contained account of this exact activity. '
+                  'Its step table records what is supported; the links below lead to relevant phase or '
+                  'technical evidence. Do not treat the budget-cycle illustration alone as a procedural rule.')
+    elif pid in WIDE_CONTEXT:
+        status = WIDE_CONTEXT[pid]
+    else:
+        return ''
+    return ('<aside class="activity-reading" aria-label="Reading guide for this activity">'
+            '<p class="atlas-kicker">Evidence and scope</p><p>%s</p>'
+            '<div class="activity-reading-links">%s</div></aside>' % (esc(status), ' · '.join(links)))
 
 
 def hero_threads():

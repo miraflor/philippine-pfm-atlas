@@ -1,0 +1,51 @@
+---
+title: "15e  Money for disasters: standby funds of agencies, the national fund, and the fund of each local government"
+config:
+  flowchart:
+    wrappingWidth: 900
+---
+flowchart TB
+  %% QUESTION THIS DIAGRAM ANSWERS: after a disaster, money is needed within days, and the normal path (release request, procurement, payment) takes months. Which money is already available, who must approve the rest, and which records show the use?
+  %% IDEA: speed is obtained in three ways. First, an amount is placed in advance in the budgets of the agencies that respond first (Quick Response Fund), so that no release is needed at the moment of the disaster. Second, a national fund without a named project is kept in the budget law and released case by case. Third, every local government must set aside its own fund each year. The normal controls remain: appropriation, obligation, voucher, audit.
+  %% READING: upper frame = national level. Lower frame = local level. Blue = decision of an authority. Thick arrows = money. The grey boxes show where the use becomes visible.
+  %% SOURCES, NATIONAL: amount of PHP 39.82 billion in FY 2026 and its four purposes, approval by the President with the recommendation of the national disaster council, the agencies with a Quick Response Fund, replenishment when the balance reaches 50 percent subject to approval by DBM, the People's Survival Fund, the assistance program for local governments, and the reporting rule [GAA2026-NDRRMF]. The Quick Response Fund as a standby fund that is built into the budgets of the agencies and that they use immediately, and the request for replenishment [DBM-QRF]. The table of the amounts by agency (PHP 10.69 billion in total) is printed in the chapter of the national fund [GAA2026-NDRRMF]. Releases by SARO with their numbers, published by DBM each month; by 31 May 2026 three releases to DSWD of PHP 5.92 billion in total, all to replenish its Quick Response Fund [NDRRMF-STATUS]. Emergency cases as a ground for negotiated procurement [IRR12009 s.35.2].
+  %% SOURCES, LOCAL: not less than 5 percent of estimated revenue from regular sources, 30 percent of it as a Quick Response Fund, and the special trust fund for unexpended amounts for five years, after which they revert to the general fund [RA10121]. I read these rules only in two documents that quote the law and its implementing rules, not in the law itself.
+  %% NOT VERIFIED: the condition (a declared state of calamity) for the use of the local Quick Response Fund, and who approves the use of the local fund. The uses of the remaining 70 percent are from a page that summarizes the joint circular of 2013: preparedness and training, rescue equipment, supplies and medicines, activities after a disaster, and insurance premiums [RA10121].
+
+  subgraph NAT["NATIONAL LEVEL"]
+    direction LR
+    Q1["QUICK RESPONSE FUND<br/>an amount already inside the budget of twelve agencies<br/>and corporations, for example DSWD, DepEd, DPWH, DA, OCD, DOH.<br/>The agency uses it immediately, without a new release"]
+    Q2["When the balance of this fund decreases to 50 percent,<br/>the agency asks DBM to replenish it<br/>from the national fund"]:::auth
+    N1["NATIONAL DISASTER RISK REDUCTION AND MANAGEMENT FUND<br/>in the budget law, no project named in advance.<br/>FY 2026: PHP 39.82 billion in four parts: relief, reconstruction, the People's<br/>Survival Fund, and assistance to local governments (15.33 billion of the total)"]
+    N2["National disaster council (NDRRMC)<br/>recommends.<br/>THE PRESIDENT APPROVES"]:::auth
+    N3["DBM issues a SARO<br/>and cash authority to the<br/>implementing agency"]:::auth
+    N4["Agency or local government<br/>implements: relief, repair,<br/>reconstruction.<br/>Emergency case: negotiated<br/>procurement is allowed<br/>instead of bidding (see 06c)"]
+    NR["VISIBLE IN: status of the fund<br/>published by DBM each month,<br/>with SARO numbers.<br/>Quarterly reports of the agencies<br/>through URS and on their websites"]:::rec
+    N1 --> N2 --> N3
+    N3 ==> N4
+    Q1 ==> N4
+    Q1 --- Q2
+    N4 -.-> NR
+  end
+
+  subgraph LOC["LOCAL LEVEL: EVERY PROVINCE, CITY, MUNICIPALITY AND BARANGAY"]
+    direction LR
+    L1["LOCAL DISASTER RISK REDUCTION<br/>AND MANAGEMENT FUND<br/>at least 5 percent of estimated revenue from<br/>regular sources, in every yearly budget"]
+    L2["30 percent: Quick Response Fund,<br/>a standby fund for relief and recovery"]
+    L3["70 percent: the other purposes of the fund,<br/>among them preparedness before a disaster"]
+    L4["Not spent at the end of the year:<br/>moved to a special trust fund, kept for<br/>disaster purposes for five years"]
+    L5["Still not spent after five years:<br/>returns to the general fund"]
+    LR2["VISIBLE IN: the local budget<br/>and accounts, audited by COA<br/>(chapter 14)"]:::rec
+    L1 --> L2 --> L4
+    L1 --> L3 --> L4
+    L4 --> L5
+    L4 -.-> LR2
+  end
+
+  NAT ~~~ LOC
+
+  classDef default fill:#ffffff,stroke:#444444,color:#111
+  classDef auth fill:#dbe9f7,stroke:#1f4e8c,color:#111
+  classDef rec fill:#e6e6e6,stroke:#555555,color:#111
+  style NAT fill:#eef4fb,stroke:#1f4e8c
+  style LOC fill:#edf7ed,stroke:#2e6b2e

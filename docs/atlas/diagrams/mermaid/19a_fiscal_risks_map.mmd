@@ -1,0 +1,33 @@
+---
+title: "19a  Fiscal risks: payments that the Treasury may have to make, although no budget line of today names them"
+config:
+  flowchart:
+    wrappingWidth: 900
+---
+flowchart LR
+  %% QUESTION THIS DIAGRAM ANSWERS: the budget law lists the spending that is decided. Which possible payments are not decided, where could they come from, who monitors each source, and from which authority would a payment be made if the event occurs?
+  %% IDEA: a fiscal risk is an event that would change revenue, spending or debt compared with the plan. One group of risks are contingent liabilities: the government has promised to pay IF a stated event occurs (for example, if a corporation cannot repay a guaranteed loan). Such a promise costs nothing on the day it is made, so it does not appear as spending. It appears only in a risk statement, until the event occurs.
+  %% READING: each row is one source of risk, in the order of the chapters of the Fiscal Risks Statement. Column 2 = the office that monitors it. Column 3 (grey) = the authority from which a payment would be made if the event occurs.
+  %% SOURCES: the Fiscal Risks Statement is issued by the DBCC. Its chapters cover macroeconomic assumptions, fiscal performance, public debt, the financial sector, and "Other Contingent Central Government Obligations": government corporations, public-private partnerships and other contingent liabilities, local governments, natural disasters [FRS2023]. Members of the DBCC [DBCC-PAGE][AO37]. Interest and net lending as automatic appropriations, budgetary support to corporations, the Contingent Fund and the disaster fund as items released by SARO [NBC599]. The PPP Risk Management Fund pays contingent liabilities from partnerships; the PPP Center manages it and the DBCC sets its target amount [RA11966 s.27]. Disaster funds, see 15e [GAA2026-NDRRMF]. BLGF certifies the borrowing capacity of local governments [DOF-LGULOAN]. Rows of the consolidated public sector position [BESF2026-A3].
+  %% IN THE ACCOUNTS AND IN THE LAW: a contingent liability is disclosed in the notes and is not recorded as a liability [GAM-V1 Ch.18 s.3]. A guarantee of the national government that is called is paid from an automatic appropriation, and corporations report their guaranteed obligations to DOF and DBM [EO292-B6 s.26, s.30]. An asset built by a private operator under a concession is recorded by the government body that granted it, with a liability of the same amount [GAM-V1 Ch.14 s.3, s.5].
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: that DOF and BTr decide on guarantees for the loans of corporations; that the Governance Commission for GOCCs monitors the performance of corporations; unprogrammed appropriations as a source of payment; the statement in row 5 that no national authority pays the debts of a local government by rule. The latest Fiscal Risks Statement that I could open is that of 2023, and its last chapter was cut in my copy.
+  %% NOT COVERED BY THE ASSESSMENT PAGES I READ: indicator 10 (fiscal risk reporting) of the 2025 assessment [PEFA2025].
+
+  S(["Fiscal Risks<br/>Statement<br/>of the DBCC"]):::exec
+
+  S --> A1["1  THE ECONOMY DIFFERS FROM THE ASSUMPTIONS<br/>growth, inflation, exchange rate, interest rates"] --> A2["DBCC: DBM, DOF, DEPDev,<br/>with the central bank"]:::exec --> A3["Revenue falls or interest rises.<br/>Interest is paid under an automatic appropriation.<br/>The rest needs a change of the program (chapter 02)"]:::rec
+
+  S --> B1["2  PUBLIC DEBT<br/>cost of refinancing, share in foreign currency"] --> B2["BTr and DOF"]:::fin --> B3["Debt service: automatic appropriation,<br/>paid by BTr (chapter 11)"]:::rec
+
+  S --> C1["3  GOVERNMENT CORPORATIONS<br/>losses, and loans that the national<br/>government has guaranteed"] --> C2["DOF and BTr.<br/>DBM for the corporate budgets"]:::fin --> C3["Budgetary support to corporations and net lending,<br/>in the budget law (chapter 15)"]:::rec
+
+  S --> D1["4  PARTNERSHIPS WITH PRIVATE FIRMS (PPP)<br/>payments promised in a contract if a<br/>stated event occurs"] --> D2["PPP Center. DOF clears<br/>the undertakings (see 19b)"]:::exec --> D3["PPP Risk Management Fund.<br/>The DBCC sets its target amount"]:::rec
+
+  S --> E1["5  LOCAL GOVERNMENTS<br/>debts and unpaid obligations<br/>of local governments"] --> E2["BLGF: borrowing capacity<br/>and yearly statements (see 14e)"]:::fin --> E3["No national authority pays by rule.<br/>Each local government pays from its own budget"]:::rec
+
+  S --> F1["6  NATURAL DISASTERS"] --> F2["National disaster council<br/>and Office of Civil Defense"]:::exec --> F3["Quick Response Funds, the national disaster fund,<br/>local disaster funds (see 15e)"]:::rec
+
+  classDef default fill:#ffffff,stroke:#444444,color:#111
+  classDef exec fill:#dbe9f7,stroke:#1f4e8c,color:#111
+  classDef fin fill:#fdf6d8,stroke:#8a6d1a,color:#111
+  classDef rec fill:#e6e6e6,stroke:#555555,color:#111

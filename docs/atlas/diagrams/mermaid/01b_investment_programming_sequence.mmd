@@ -1,0 +1,41 @@
+---
+title: "01b  Investment programming: how a project enters the PIP and TRIP and reaches the budget"
+---
+sequenceDiagram
+  autonumber
+  %% QUESTION THIS DIAGRAM ANSWERS: who does what, in which system, from the call for projects to the point where the project may be proposed for funding?
+  %% SOURCES: steps 1, 4, 5, 6, 7 and 15 [PIP-MEMO] (memorandum of 31 October 2024 for the FY 2026 budget, page 3 of 4 only). Steps 2, 3, 12, 13 and 14 [NBM156]. ICC coverage in the note [ICC-NEWS]. The gap in the last note [ROADMAP2024].
+  %% MORE SOURCES: the action plan of the Roadmap names as gaps that no standard project identifier exists and that the planning and budgeting platforms lack interoperability, and it plans an integrated planning and budgeting tool [SFA1].
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: steps 8 to 11 (content of an ICC submission, appraisal, confirmation by the ED Council).
+  %% DATES: the example dates are those of the call for the FY 2026 budget. Each yearly call sets its own dates.
+  participant DEP as DEPDev (PIP and TRIP secretariats)
+  participant RO as Agency regional offices
+  participant RDC as Regional Development Council
+  participant CO as Agency central office
+  participant PIPOL as PIPOL system
+  participant ICC as ICC
+  participant EDC as ED Council
+  participant DBM as DBM
+
+  DEP->>CO: Joint call to update the PIP and formulate the TRIP,<br/>with guidelines and calendar
+  RO->>RDC: Regional priority programs and projects
+  RDC-->>RO: Endorsement, or recommendations
+  CO->>PIPOL: Reconfirm ongoing programs and projects.<br/>Encode new or updated ones: cost per year,<br/>physical and financial progress
+  CO->>PIPOL: Head of agency endorses the submission<br/>(example window: 8 November to 6 December 2024)
+  PIPOL-->>DEP: Only submissions marked "as endorsed" are processed
+  DEP->>DEP: Check each entry against the PIP criteria<br/>and the scope of the TRIP<br/>#nbsp;
+
+  Note over CO,EDC: ICC REVIEW applies to projects of PHP 5 billion or more funded by the national budget,<br/>to PPP projects, and to every project funded by a foreign loan
+  opt Project needs ICC review
+    CO->>ICC: Project proposal with feasibility study and financing plan
+    ICC->>ICC: Technical, economic and financial appraisal<br/>#nbsp;
+    ICC->>EDC: Recommendation
+    EDC-->>CO: Approval or confirmation
+  end
+
+  DEP->>DBM: PIP and TRIP as input to budget preparation
+  DBM->>CO: Budget Call. A Tier 2 proposal must be implementation-ready<br/>and must have the required endorsements and approvals
+  CO->>DBM: Tier 2 proposals in OSBPS (a different system from PIPOL)
+  CO->>PIPOL: After the budget is known, update yearly costs to match<br/>the GAA and the National Expenditure Program
+
+  Note over PIPOL,DBM: GAP REPORTED BY THE PFM REFORMS ROADMAP AND ITS ACTION PLAN: PIPOL and OSBPS are separate systems,<br/>and no standard project identifier connects an entry with a line of the budget proposal.<br/>A working group of DEPDev and DBM was created to link them. An integrated planning and budgeting tool is planned.

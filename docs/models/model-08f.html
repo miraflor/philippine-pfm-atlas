@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Page moved · Philippine PFM Atlas</title>
-<meta name="description" content="This page has moved."><meta name="robots" content="noindex">
+<title>Supplementary model: 08f multilateral reconciliation · Philippine PFM Atlas</title>
+<meta name="description" content="Supplementary model: 08f multilateral reconciliation">
 <meta name="color-scheme" content="light">
 <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('pfm-atlas-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(error){}</script>
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -21,7 +21,34 @@
 <nav class="wrap site-nav" aria-label="Main"><a href="../index.html">Budget cycle</a><a href="../walkthrough.html">Guided lessons</a><a href="../big-picture.html">Big picture</a><a href="../chapters/index.html">Chapters</a><a href="../reference/index.html">References</a><a href="../diagrams/index.html">Diagrams</a><a href="../systems.html">Systems &amp; UACS</a><a href="../models/index.html">Research models</a><a href="../reference/g.html">Open points</a><a href="../search.html">Search</a><a href="../about.html">About</a></nav>
 </header>
 <main id="main" class="wrap">
-<div class="doc-head"><p class="eyebrow">Address moved</p><h1>This page has moved</h1></div><p class="prose-block">Its content is now in <a href="RM-2.html">research model RM-2</a>.</p><script>(function(){var m={};var h=location.hash.slice(1);var t=(h&&m[h])?m[h]:"RM-2.html";location.replace(t);})();</script>
+<p class="eyebrow">Supplementary analytical sketch</p><h1>08f multilateral reconciliation</h1><p class="model-note"><strong>Source-only analytical sketch.</strong> This model is exploratory and is not evidence of an operational interface or a universal government process. It is retained for analysis, not substituted for a diagram that answers a narrower question.</p><p><strong>Notation:</strong> Mermaid · <a href="diagrams/mermaid/08f_multilateral_reconciliation.mmd" download>Get source code</a></p><h2>Source</h2><pre class="model-code"><code class="model-source">---
+title: &quot;08f  Reconciliation across budget, accounting, bank and physical evidence&quot;
+---
+  %% QUESTION THIS DIAGRAM ANSWERS: What differences must be explained instead of assumed to be errors?
+  %% SOURCES: [GAM] [JC2019-1] conceptual control model
+  %% SCOPE: Reference view; not a verified deployed system interface.
+  %% READING: Arrows show possible evidence, authority or event dependencies, not a universal time order or verified API.
+flowchart TB
+  BR[&quot;Budget registers
+allotment / obligation / disbursement&quot;] --&gt; MATCH[&quot;Reconciliation and exception worklist&quot;]
+  GL[&quot;Accounting books
+receivable / payable / expense / asset&quot;] --&gt; MATCH
+  BNK[&quot;Servicing bank and BTr
+settlement / cash balances&quot;] --&gt; MATCH
+  DOC[&quot;Contracts, receipts, deliveries, claims&quot;] --&gt; MATCH
+  ASSET[&quot;Property and asset ledgers&quot;] --&gt; MATCH
+  MATCH --&gt; CAUSE{&quot;Difference explained?&quot;}
+  CAUSE --&gt;|Timing| TIM[&quot;Cutoff / in-transit / accrual difference&quot;]
+  CAUSE --&gt;|Classification| CL[&quot;UACS / account / fund / fiscal period mapping&quot;]
+  CAUSE --&gt;|Missing link| MIS[&quot;Obligation / contract / voucher / payment reference issue&quot;]
+  CAUSE --&gt;|Irregularity| EXC[&quot;Escalate as control exception and investigate&quot;]
+  CAUSE --&gt;|Aligned| OK[&quot;Reconciled with evidence and sign-off&quot;]
+  TIM --&gt; FIX[&quot;Document adjusting or reconciling item&quot;]
+  CL --&gt; FIX
+  MIS --&gt; FIX
+  EXC --&gt; FIX
+  FIX --&gt; MATCH
+</code></pre><p><a href="index.html">← Analytical models</a></p>
 </main>
 <footer class="site-footer"><div class="wrap"><p>Philippine PFM Atlas. An independent reference. It is not an official publication of the Philippine government, and it does not replace the laws, circulars and manuals that it cites. Facts on current events are as of 8 October 2026.</p><p><a href="../about.html">About the atlas</a> · <a href="../reference/f.html">Sources</a> · <a href="../reference/g.html">Open points</a></p></div></footer>
 <script src="../assets/site.js" defer></script>

@@ -1,0 +1,39 @@
+---
+title: "07i  A works contract with an advance, progress billings and retention money (example of the Manual)"
+---
+sequenceDiagram
+  autonumber
+  %% QUESTION THIS DIAGRAM ANSWERS: when a contractor receives an advance and is then paid by progress billings, which amounts leave the Treasury on which occasion, what is retained, and what do the books show at each step?
+  %% IDEA: the advance is not a cost. It is money of the government in the hands of the contractor, covered by a security, and it is recovered from the later billings. A part of each payment is kept as retention money until final acceptance. Over the whole contract the payments, the retention and the tax together equal the contract price.
+  %% THE EXAMPLE: the amounts and the accounts are those of the worked example of the Manual for a building of PHP 800,000 [GAM-V1 Ch.10 s.8]. The Manual is of 2015 and its example follows the rules of that time.
+  %% THE RULES OF 2025: advance of not more than 15 percent, on the written request of the contractor and against an irrevocable standby letter of credit, a bank guarantee or a surety bond [IRR12009 s.71.2.5]. Progress billing not more often than once a month, checked and certified by the engineer of the agency. Deductions: work already paid, the part of the advance that is recovered, retention money, third-party liabilities, uncorrected defects [IRR12009 s.71.2.7]. Retention of 10 percent of the amount due before any deduction, from every progress payment until 50 percent of the works are completed, and released upon final acceptance [IRR12009 s.71.2.8]. Performance security before the contract is signed: 10 percent for works in cash or bank instruments, 30 percent as surety bond [IRR12009 s.68]. Damages for delay: at least one tenth of one percent of the cost of the unperformed portion for every day [IRR12009 s.71.2.4]. Defects liability period of one year from completion [IRR12009 s.90.2.2].
+  %% DIFFERENCES BETWEEN THE EXAMPLE AND THE RULES OF 2025: (1) the example retains 10 percent of the payable after the advance is recovered (34,000). The rules of 2025 base the retention on the amount due before any deduction, and stop it after 50 percent of the works when the work is satisfactory and on schedule. (2) The performance security of the example is 75,000. Ten percent of the contract price would be 80,000. (3) The example computes the damages as one tenth of one percent of the contract. The rules of 2025 use the cost of the unperformed portion.
+  %% CHECK OF THE ARITHMETIC: cash to the contractor 120,000 + 282,200 + 282,200 + 68,000 = 752,400. Tax withheld 23,800 + 23,800 = 47,600. Together 800,000, the contract price.
+  participant CON as Contractor
+  participant ENG as Project unit and<br/>engineer of the agency
+  participant BUD as Budget<br/>unit
+  participant ACC as Accounting<br/>unit
+  participant CSH as Cash unit and<br/>servicing bank
+
+  Note over CON,CSH: BEFORE THE WORK
+  CON->>CSH: Performance security before the contract is signed. In the<br/>example: cash of 75,000. Books: Guaranty/Security Deposits<br/>Payable 75,000
+  BUD->>BUD: Obligation for the whole contract price: 800,000 in the<br/>registry. No journal entry<br/>#nbsp;
+  CON->>ENG: Written request for an advance, with a letter of credit, a<br/>bank guarantee or a surety bond
+  ACC->>CON: Advance of 15 percent: 120,000. Books: debit Advances to<br/>Contractors 120,000, credit Cash-MDS, Regular 120,000
+
+  Note over CON,CSH: FIRST PROGRESS BILLING: 50 percent of the work
+  CON->>ENG: Statement of work accomplished: 400,000
+  ENG->>ACC: The engineer checks the statement and certifies the amount<br/>to be paid
+  ACC->>ACC: Books: debit Construction in Progress 400,000. Credit<br/>Advances to Contractors 60,000 (half of the advance is<br/>recovered) and Accounts Payable 340,000<br/>#nbsp;
+  ACC->>CON: Payment of 282,200. Books: debit Accounts Payable 340,000.<br/>Credit Cash-MDS, Regular 282,200, Guaranty/Security<br/>Deposits Payable 34,000 (retention), Due to BIR 23,800<br/>(tax withheld)
+
+  Note over CON,CSH: FINAL BILLING: the other 50 percent, completed late
+  CON->>ENG: Statement of work accomplished: 400,000. Certificate of<br/>completion
+  ACC->>ACC: Books: debit Construction in Progress 400,000. Credit<br/>Advances to Contractors 60,000 and Accounts Payable<br/>340,000<br/>#nbsp;
+  CON->>CSH: Damages for the delay: 8,000, collected in cash. Books:<br/>Miscellaneous Income 8,000
+  ACC->>CON: Payment of 282,200. Retention 34,000. Tax withheld 23,800
+  ACC->>ACC: Turn-over of the building. Books: debit Buildings 800,000,<br/>credit Construction in Progress 800,000<br/>#nbsp;
+
+  Note over CON,CSH: AFTER FINAL ACCEPTANCE
+  ACC->>CON: Release of the retention money: 68,000. Books: debit<br/>Guaranty/Security Deposits Payable 68,000, credit<br/>Cash-MDS, Regular 68,000
+  CSH->>CON: Return of the performance security: 75,000

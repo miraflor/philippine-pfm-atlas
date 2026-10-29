@@ -1,0 +1,87 @@
+---
+title: "16d  Planned IFMIS: BTMS as the core, other systems connected through interfaces"
+config:
+  flowchart:
+    wrappingWidth: 900
+---
+flowchart TB
+  %% QUESTION THIS DIAGRAM ANSWERS: what is the Integrated Financial Management Information System (IFMIS) meant to be, and what is the place of BTMS in it?
+  %% IDEA: the IFMIS is not one large program that replaces everything. The PFM Reforms Roadmap describes it as a central core (BTMS) plus interfaces (APIs) that connect the systems each institution already has. For this to work, all connected systems must use the same codes and the same definitions of each record.
+  %% READING: top = who decides. Second row = the common rules that every connected system must follow. Middle = the core. Below = systems to be connected. Dashed border = planned, not yet in use. This diagram shows a PLAN.
+  %% SOURCES: BTMS as the "interoperable core", interfaces (APIs) that connect the existing systems to a central core, agencies keep existing systems, national hub (ADRS, BPMS, BTMS, DIME, eBudget, eNGAS, NGCDS, OSBPS, TSA, URS), local hub (eBudget, eCAT, ePFMAT, NTA, NWP) [ROADMAP2024]. Five functions now, budget management and treasury modules later, interfaces to procurement, document management, electronic funds transfer and financial systems, governance by the PFM Committee, a central project group and the DBM project office [CL2025-8]. Integration and data architecture, unified PFM data model, metadata registry, data governance, UACS review, system controls, IPMRS, NGHRPS, eGovPay, unified portal, off-budget accounts, third-party audit and certification of BTMS, targets of 2, 115 and 198 agencies [SFA6]. PFM Committee members, support of DICT [EO29][ROADMAP2024]. Status in 2026 [INQ-BTMS].
+  %% MORE SOURCES: the COMPASS portal exists since June 2026. Executive Order No. 126 of 28 September 2026 makes it the platform for budget disclosures. According to the press release of DBM, the order says that the portal must be able to interface with existing systems, and it names the IFMIS, BTMS, PhilGEPS and DIME [COMPASS-LAUNCH][EO126].
+  %% INFERENCE: the action plan names "a unified portal and mobile applications" [SFA6]. The sources I read do not say that COMPASS is this planned portal. I place COMPASS in that box. Which system supplies the figures of the portal today is not stated in the sources I read.
+  %% NOT EXPLAINED IN THE SOURCES I READ: what eCAT, ePFMAT and NWP in the local hub do. The Roadmap names them in a figure. NWP is expanded there as National Wealth Portal.
+
+  subgraph GOV["WHO DECIDES"]
+    direction LR
+    G1["PFM Committee (EO 29 of 2023)<br/>DBM, DOF, COA, BTr.<br/>Resource institutions: DICT, DEPDev"]
+    G2["BTMS project management office in DBM,<br/>central project management group,<br/>project team in each agency"]
+    G1 ~~~ G2
+  end
+
+  subgraph STD["COMMON RULES FOR ALL CONNECTED SYSTEMS (planned 2026-2028)"]
+    direction LR
+    S1["UACS, reviewed and updated<br/>(one coding structure)"]:::plan
+    S2["Unified PFM data model and<br/>metadata registry<br/>(one definition of each record)"]:::plan
+    S3["Interface standards (APIs)<br/>and data governance"]:::plan
+    S4["System controls framework<br/>(checks done by the system)"]:::plan
+    S1 ~~~ S2
+    S2 ~~~ S3
+    S3 ~~~ S4
+  end
+
+  subgraph CORE["CORE: BTMS (Budget and Treasury Management System)"]
+    direction LR
+    C1["IN USE, phased rollout<br/>commitment and obligations, payments,<br/>receipts, property, accounting and reporting"]:::core
+    C2["LATER STAGE<br/>budget management module,<br/>treasury modules"]:::plan
+    C3["ROLLOUT<br/>DBM and BTr use BTMS since December 2025.<br/>Pilots in 2026. About 110 to 115 agencies<br/>in 2027, 198 in 2028. Total 315"]
+    C1 ~~~ C2
+    C2 ~~~ C3
+  end
+
+  API["INTERFACE LAYER (APIs)<br/>each connected system keeps its own functions<br/>and exchanges agreed records with the core"]:::plan
+
+  subgraph NAT["SYSTEMS OF THE NATIONAL GOVERNMENT TO BE CONNECTED"]
+    direction LR
+    N1["Budget preparation and release<br/>OSBPS, BPMS, e-Budget, ADRS"]
+    N2["Reporting and accounting<br/>URS, eNGAS"]
+    N3["Treasury<br/>NGCDS, Treasury Single Account,<br/>electronic funds transfer through banks"]
+    N4["Procurement and documents<br/>PhilGEPS, document management"]
+    N5["Monitoring<br/>DIME"]
+    N1 ~~~ N2
+    N2 ~~~ N3
+    N3 ~~~ N4
+    N4 ~~~ N5
+  end
+
+  subgraph NEW["NEW SYSTEMS: THREE PLANNED, ONE IN USE"]
+    direction LR
+    W1["IPMRS<br/>project monitoring and reporting"]:::plan
+    W2["NGHRPS<br/>HR and payroll"]:::plan
+    W3["eGovPay platform (DICT)<br/>collections and payments"]:::plan
+    W4["Portal for the public<br/>COMPASS, in use since June 2026. By an order of 2026<br/>it must be able to interface with the IFMIS,<br/>BTMS, PhilGEPS and DIME"]
+    W1 ~~~ W2
+    W2 ~~~ W3
+    W3 ~~~ W4
+  end
+
+  subgraph LOC["SEPARATE HUB FOR LOCAL GOVERNMENTS (named in the Roadmap)"]
+    direction LR
+    L1["eBudget, eCAT, ePFMAT,<br/>National Tax Allotment,<br/>National Wealth Portal"]:::plan
+  end
+
+  GOV --> STD --> CORE --> API
+  API --> NAT
+  API --> NEW
+  NEW ~~~ LOC
+
+  classDef default fill:#ffffff,stroke:#444444,color:#111
+  classDef core fill:#fde0c2,stroke:#a35200,color:#111,stroke-width:2px
+  classDef plan fill:#ffffff,stroke:#444444,color:#111,stroke-dasharray: 5 4
+  style GOV fill:#f3eefa,stroke:#5b3a8c
+  style STD fill:#eef4fb,stroke:#1f4e8c
+  style CORE fill:#fff3e6,stroke:#a35200
+  style NAT fill:#f2f2f2,stroke:#555555
+  style NEW fill:#f2f2f2,stroke:#555555
+  style LOC fill:#edf7ed,stroke:#2e6b2e

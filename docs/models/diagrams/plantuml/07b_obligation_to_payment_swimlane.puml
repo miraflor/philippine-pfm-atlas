@@ -1,0 +1,113 @@
+@startuml 07b_obligation_to_payment_swimlane
+' QUESTION THIS DIAGRAM ANSWERS: which lines of work must BOTH be finished before the next step of a payment may happen?
+' IDEA: a payment needs three meetings. (1) An allotment and an award must both exist before the contract is signed and the obligation is recorded. (2) The obligation and an accepted delivery must both exist before the voucher is approved. (3) The approved voucher and a cash authority (NCA) must both exist before the payment order is issued.
+' READING: one column (lane) = one actor. A thick bar that opens = branches run in parallel. The thick bar that closes = ALL branches must be finished (AND-join).
+' WHY PLANTUML: Mermaid has no activity diagram with lanes and AND-joins. The Mermaid diagram 00d shows the same structure as a net without lanes.
+' SOURCES: [NBC599] allotment and NCA. [RA12009 s.12, s.49] funds before award. [ORS-FORM] [DV-BOXES] certifications. [JC2019-1] due and demandable. [CL2013-16A] LDDAP-ADA, SLIIE, bank and BTr steps. [GAM-GUIDE] registries and journal entries. [COA2011-002] audit after payment.
+' GENERAL KNOWLEDGE (GK), NOT OPENED IN A SOURCE HERE: inspection documents and the bank report of items not paid.
+title 07b  The three meeting points before a payment (national agency, contract for goods, services or works)
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 12
+skinparam ActivityBackgroundColor #FFFFFF
+skinparam ActivityBorderColor #444444
+skinparam ActivityDiamondBackgroundColor #FFFDE7
+skinparam ActivityDiamondBorderColor #8A6D00
+skinparam ArrowColor #333333
+skinparam NoteBackgroundColor #FFFDE7
+skinparam NoteBorderColor #8A6D00
+skinparam SwimlaneBorderColor #777777
+skinparam SwimlaneTitleFontStyle bold
+
+|#EEF4FB|DBM|
+start
+fork
+  :Release the ALLOTMENT
+  (GAA as allotment order,
+  or SARO / GARO);
+fork again
+  |#EDF7ED|Head of agency and BAC|
+  :Procure: bidding, evaluation,
+  post-qualification,
+  recommendation of AWARD;
+end fork
+note right
+  MEETING POINT 1
+  allotment + award
+end note
+|#EDF7ED|Head of agency and BAC|
+:Notice of award. Contract signed.
+Notice to proceed;
+|#EDF7ED|Budget unit|
+:Obligation Request and Status (ORS).
+Box A requesting head, Box B budget officer.
+OBLIGATION entered in the registry;
+fork
+  |#F2F2F2|Supplier|
+  :Deliver goods or services,
+  or accomplish work.
+  Send invoice or billing;
+  |#EDF7ED|End-user, inspectors|
+  :Inspect and accept.
+  ACCEPTED DELIVERY;
+fork again
+  |#EDF7ED|Budget unit|
+  :Obligation stays open
+  in the registry;
+end fork
+note right
+  MEETING POINT 2
+  obligation + accepted delivery
+end note
+|#EDF7ED|Accounting unit|
+:Disbursement voucher (DV).
+Box A requesting head.
+Box B accounting entry.
+Box C chief accountant: cash available,
+documents complete, amount proper;
+:Journal entry: expense or asset,
+and accounts payable;
+|#EDF7ED|Head of agency and BAC|
+:Box D: head of agency
+approves for payment.
+APPROVED CLAIM;
+fork
+  |#FFF8DC|BTr and BSP|
+  :Collections and loan proceeds
+  enter the Treasury Single Account;
+  |#EEF4FB|DBM|
+  :Issue the Notice of Cash
+  Allocation (NCA) to the servicing bank,
+  from the monthly disbursement program.
+  CASH AUTHORITY;
+fork again
+  |#EDF7ED|Accounting unit|
+  :Approved claim waits
+  for cash authority;
+end fork
+note right
+  MEETING POINT 3
+  approved claim + cash authority
+end note
+|#EDF7ED|Accounting unit|
+:Prepare LDDAP-ADA and its
+summary list (SLIIE).
+Head of accounting certifies,
+head of agency approves;
+|#FFF8DC|Servicing bank|
+:Check signatures and NCA balance.
+Debit the MDS sub-account.
+Credit the payee;
+|#F2F2F2|Supplier|
+:Payee PAID (net of tax withheld);
+|#FFF8DC|BTr and BSP|
+:Replenish the servicing bank
+from the Treasury Single Account;
+|#EDF7ED|Accounting unit|
+:Journal entry for the payment.
+Remit tax withheld to BIR.
+Budget unit updates the registry;
+|#FDF1E3|COA|
+:Audit after payment;
+stop
+@enduml

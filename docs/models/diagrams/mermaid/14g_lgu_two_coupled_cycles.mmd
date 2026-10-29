@@ -1,0 +1,20 @@
+---
+title: "14g  LGU own budget and national transfers are coupled, not one cycle"
+---
+  %% QUESTION THIS DIAGRAM ANSWERS: Where do local legal authority and national cash/information flows intersect?
+  %% SOURCES: [LGC] [NBC599] [eSRE]; timing needs LGU/BTr verification
+  %% SCOPE: Reference view; not a verified deployed system interface.
+  %% READING: Arrows show possible evidence, authority or event dependencies, not a universal time order or verified API.
+flowchart LR
+  subgraph LG["LOCAL: autonomous budget process subject to law"]
+    PLAN["Local plan / investment priorities"] --> REV["Local revenue projections and transfers estimate"] --> EX["Local executive budget"] --> SANG["Sanggunian appropriation ordinance"] --> IMPL["Local obligation, payment and service delivery"] --> LOCAL["Local books, fiscal reports and COA audit"]
+  end
+  subgraph NG["NATIONAL: separate process"]
+    NTA["Statutory national tax allotment determination"] --> REL["National release / BTr payment arrangements"]
+    OTR["Conditional grants and national programs"] --> REL
+  end
+  REL --> REV
+  REL --> IMPL
+  LOCAL --> ESRE["BLGF eSRE / fiscal monitoring"]
+  LOCAL --> COA["COA audit and findings"]
+  COA -.-> PLAN

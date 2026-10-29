@@ -1,0 +1,20 @@
+---
+title: "05f  Budget authority and cash authority have different predicates"
+---
+  %% QUESTION THIS DIAGRAM ANSWERS: Which conditions govern obligation and payment independently?
+  %% SOURCES: [NBC599] [PD1445] [GAM] subject to FY-specific exceptions
+  %% SCOPE: Reference view; not a verified deployed system interface.
+  %% READING: Arrows show possible evidence, authority or event dependencies, not a universal time order or verified API.
+flowchart TB
+  LAW["Lawful appropriation or alternative statutory funding basis"] --> ALLOT{"Applicable allotment / release<br/>and conditions satisfied?"}
+  ALLOT -->|Yes| COMMIT["Agency may consider valid commitment under applicable rules"]
+  ALLOT -->|No| HOLD1["No new obligation; obtain proper authority / resolve condition"]
+  COMMIT --> VALID["Obligation recorded; source and validity period captured"]
+  VALID --> CLAIM["Entitlement or delivery verified and claim approved"]
+  REV["Actual receipts, borrowing and balances"] --> CASHPLAN["BTr / DBM cash planning"] --> CASH{"Applicable cash or disbursement authority valid?"}
+  CLAIM --> BANK{"Payment controls and available balance pass?"}
+  CASH -->|Yes| BANK
+  CASH -->|No| HOLD2["Await applicable cash release or use authorized alternate payment method"]
+  BANK -->|Yes| SETTLE["Disbursement and bank settlement"]
+  BANK -->|No| RET["Hold, correct or resubmit"]
+  SETTLE --> RECON["Books / registries / bank reconciliation"]

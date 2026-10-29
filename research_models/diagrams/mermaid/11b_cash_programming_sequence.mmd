@@ -1,0 +1,45 @@
+---
+title: "11b  Cash programming: how the amount of cash authority for a period is decided"
+---
+sequenceDiagram
+  autonumber
+  %% QUESTION THIS DIAGRAM ANSWERS: an agency has an allotment and an approved claim, but DBM gives it less cash authority than it asked for. Who decided the amount, and from which information?
+  %% IDEA: allotments are fixed by the budget. Cash arrives daily from taxes and borrowing. The cash program matches the planned payments of all agencies to the expected cash. The NCA is the instrument that keeps payments inside that plan.
+  %% SOURCES: fiscal program of the DBCC [DBCC-PAGE]. Monthly Disbursement Program (BED 3) as the basis of the NCA, first NCA for the first quarter, later NCAs subject to spending performance and the fiscal position, quarterly lapse, Cash Operations Report [NBC599]. Three-month cash forecast under DOF Department Order No. 032.2015 [BTR-SITE]. DBM issues the disbursement program and NCAs, BTr coordinates daily cash needs with large spending agencies, systems used [ROADMAP2024]. Daily collections to the Treasury Single Account, cash forecasting rated A [PEFA2025]. Bank collection reports through NGCDS [BTR-SYS]. Replenishment of servicing banks [CL2013-16A][PRIMER]. BTr invests idle balances and manages borrowing [EO449].
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: steps 4 and 5 (how the forecasts of revenue and of disbursements reach BTr), step 7 (how the borrowing schedule follows the forecast).
+  participant AGY as Agencies
+  participant DBM as DBM
+  participant DBCC as DBCC
+  participant REV as DOF, BIR,<br/>BOC
+  participant BTR as BTr
+  participant GSB as Servicing<br/>banks
+  participant BSP as BSP (Treasury<br/>Single Account)
+
+  Note over AGY,BSP: BEFORE AND AT THE START OF THE YEAR
+  DBCC->>DBM: Fiscal program of the year: revenue, disbursements, deficit, financing
+  DBCC->>BTR: Same fiscal program, with the financing program
+  AGY->>DBM: Monthly Disbursement Program (BED 3) through URS
+  DBM->>BTR: Disbursement program of the government, by month
+  REV->>BTR: Revenue forecast, by month
+  BTR->>BTR: Cash forecast for the next three months, updated regularly<br/>#nbsp;
+  BTR->>BTR: Plan the borrowing schedule and the placement of surplus cash<br/>#nbsp;
+
+  Note over AGY,BSP: DURING THE YEAR
+  DBM->>GSB: NCA for the quarter, per agency, by month
+  loop Every working day
+    GSB->>BTR: Payments made on agency orders
+    BTR->>BSP: Replenish the servicing banks
+    REV->>BSP: Collections of BIR and BOC arrive through collecting banks
+    BTR->>BTR: Check the cash balance against the forecast<br/>#nbsp;
+  end
+  AGY->>DBM: Monthly Report of Disbursements (FAR 4)
+  DBM->>DBM: Compare actual payments with the program<br/>#nbsp;
+  opt Agency spends slower than its program, or cash is not sufficient
+    DBM-->>AGY: Later NCAs adjusted to spending performance<br/>and to the fiscal position
+  end
+  opt Agency needs more cash than its program
+    AGY->>DBM: Request for additional NCA, with justification
+  end
+  BTR->>DBCC: Monthly Cash Operations Report: revenue, disbursements, surplus or deficit, financing
+
+  Note over AGY,BSP: END OF EACH QUARTER: the unused balance of a regular NCA lapses. Cash that was not used stays in the Treasury Single Account.

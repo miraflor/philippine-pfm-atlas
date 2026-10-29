@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Page moved · Philippine PFM Atlas</title>
-<meta name="description" content="This page has moved."><meta name="robots" content="noindex">
+<title>Supplementary model: 17e multi identifier lineage · Philippine PFM Atlas</title>
+<meta name="description" content="Supplementary model: 17e multi identifier lineage">
 <meta name="color-scheme" content="light">
 <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('pfm-atlas-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(error){}</script>
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -21,7 +21,28 @@
 <nav class="wrap site-nav" aria-label="Main"><a href="../index.html">Budget cycle</a><a href="../walkthrough.html">Guided lessons</a><a href="../big-picture.html">Big picture</a><a href="../chapters/index.html">Chapters</a><a href="../reference/index.html">References</a><a href="../diagrams/index.html">Diagrams</a><a href="../systems.html">Systems &amp; UACS</a><a href="../models/index.html">Research models</a><a href="../reference/g.html">Open points</a><a href="../search.html">Search</a><a href="../about.html">About</a></nav>
 </header>
 <main id="main" class="wrap">
-<div class="doc-head"><p class="eyebrow">Address moved</p><h1>This page has moved</h1></div><p class="prose-block">Its content is now in <a href="../diagrams/UACS-b.html">diagram UACS-b: The chain of records for one purchase: each record&#x27;s own number, the codes it contains, and the number that connects it to the next record</a>.</p><script>(function(){var m={};var h=location.hash.slice(1);var t=(h&&m[h])?m[h]:"../diagrams/UACS-b.html";location.replace(t);})();</script>
+<p class="eyebrow">Supplementary analytical sketch</p><h1>17e multi identifier lineage</h1><p class="model-note"><strong>Source-only analytical sketch.</strong> This model is exploratory and is not evidence of an operational interface or a universal government process. It is retained for analysis, not substituted for a diagram that answers a narrower question.</p><p><strong>Notation:</strong> Mermaid · <a href="diagrams/mermaid/17e_multi_identifier_lineage.mmd" download>Get source code</a></p><h2>Source</h2><pre class="model-code"><code class="model-source">---
+title: &quot;17e  Multi-identifier lineage across planning, budget and payments&quot;
+---
+  %% QUESTION THIS DIAGRAM ANSWERS: How can one project, many appropriations and many payments be joined without conflating IDs?
+  %% SOURCES: Proposed conceptual model; actual agency field links not proven; GENERAL KNOWLEDGE / atlas inference
+  %% SCOPE: Reference view; not a verified deployed system interface.
+  %% READING: Arrows show possible evidence, authority or event dependencies, not a universal time order or verified API.
+flowchart LR
+  PIP[&quot;Investment project ID (if assigned)&quot;] --&gt; XW[&quot;Documented project-PAP crosswalk&quot;]
+  XW --&gt; PAP[&quot;Program / activity / project code and budget version&quot;]
+  PAP --&gt; APP[&quot;Appropriation item and fiscal year&quot;] --&gt; ALL[&quot;Allotment source / release ID&quot;]
+  ALL --&gt; ORS[&quot;One or many obligation references&quot;]
+  CON[&quot;Contract or award ID&quot;] --&gt; ORS
+  ORS --&gt; CLAIM[&quot;One or many deliveries / billings / vouchers&quot;]
+  CLAIM --&gt; PAY[&quot;One or many bank payment IDs&quot;]
+  CLAIM --&gt; GL[&quot;Accounting entry / liability ID&quot;]
+  PAY --&gt; GL
+  UACS[&quot;UACS class code with effective dates&quot;] -.-&gt; PAP
+  UACS -.-&gt; ORS
+  UACS -.-&gt; GL
+  NOTE[&quot;Links require evidence; identical UACS does not prove same event&quot;] -.-&gt; XW
+</code></pre><p><a href="index.html">← Analytical models</a></p>
 </main>
 <footer class="site-footer"><div class="wrap"><p>Philippine PFM Atlas. An independent reference. It is not an official publication of the Philippine government, and it does not replace the laws, circulars and manuals that it cites. Facts on current events are as of 8 October 2026.</p><p><a href="../about.html">About the atlas</a> · <a href="../reference/f.html">Sources</a> · <a href="../reference/g.html">Open points</a></p></div></footer>
 <script src="../assets/site.js" defer></script>

@@ -1,0 +1,40 @@
+---
+title: "10b  Collection of taxes and customs duties: from the taxpayer to the Treasury Single Account"
+---
+sequenceDiagram
+  autonumber
+  %% QUESTION THIS DIAGRAM ANSWERS: BIR and BOC assess taxes, but they do not hold the money. Through which channels does the money reach the Treasury, and which records must agree afterwards?
+  %% IDEA: three parties each keep a record of the same payment: the revenue agency (what was assessed and paid), the collecting bank (what was received), and the Treasury (what was remitted). Reconciliation means comparing these three records.
+  %% SOURCES: filing channels eFPS, eBIRForms and tax software providers, payment through authorized agent banks, revenue collection officers and ePay gateways [BIR-PAY]. Payment Application Secure, operated by the Philippine Clearing House Corporation, by which banks send abstracts of customs collections to BOC [PAS]. Daily transfer of collections to the Treasury Single Account [PEFA2025]. eTRAMS monitors revenue collections and disbursements of the national government [BTR-SYS]. NGCDS is described only for authorized government depository banks, which receive agency collections (see 10c) [BTR-SYS]. Treasury Single Account at BSP [BTR-SITE][ROADMAP2024]. Tax Remittance Advice [NBC599].
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: steps 3, 4 and 5 (bank confirmation, bank report to BIR, posting), steps 6, 7 and 11 (customs declaration, assessment, release of goods), step 13 (how the banks that collect taxes report to BTr), steps 15 and 16 (comparison of remittances with collection reports).
+  participant TP as Taxpayer<br/>or importer
+  participant BIR as BIR<br/>(eFPS, eBIRForms)
+  participant BOC as BOC<br/>(customs system)
+  participant AAB as Authorized agent bank,<br/>ePay gateway, or<br/>revenue collection officer
+  participant PAS as PAS (clearing<br/>house system)
+  participant BTR as BTr<br/>(eTRAMS)
+  participant BSP as BSP (Treasury<br/>Single Account)
+
+  Note over TP,AAB: INTERNAL REVENUE TAXES (BIR)
+  TP->>BIR: File the return electronically
+  TP->>AAB: Pay: bank debit, online gateway, at a bank branch,<br/>or to a revenue collection officer where there is no bank
+  AAB-->>TP: Payment confirmation
+  AAB->>BIR: Report of payments received
+  BIR->>BIR: Post the payment to the taxpayer account<br/>#nbsp;
+
+  Note over TP,PAS: CUSTOMS DUTIES AND TAXES ON IMPORTS (BOC)
+  TP->>BOC: Goods declaration
+  BOC-->>TP: Assessment of duties and taxes
+  TP->>AAB: Pay the assessed amount
+  AAB->>PAS: Abstract of collection, encrypted and authenticated
+  PAS->>BOC: Confirmed payment
+  BOC-->>TP: Release of the goods
+
+  Note over AAB,BSP: REMITTANCE TO THE TREASURY
+  AAB->>BSP: Remit collections to the account of the Treasury, daily
+  AAB->>BTR: Report of collections to BTr
+  BTR->>BTR: Monitor collections and disbursements (eTRAMS)<br/>#nbsp;
+  BTR-->>BIR: Compare remittances with collection reports
+  BTR-->>BOC: Compare remittances with collection reports
+
+  Note over TP,BSP: TAXES WITHHELD BY GOVERNMENT AGENCIES from their own payments are recorded by Tax Remittance Advice.<br/>BIR records a collection, but no cash passes through a bank.

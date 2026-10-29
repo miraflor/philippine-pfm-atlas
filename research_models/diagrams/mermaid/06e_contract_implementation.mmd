@@ -1,0 +1,54 @@
+---
+title: "06e  States of one contract, from award to closing"
+---
+stateDiagram-v2
+  direction TB
+  %% QUESTION THIS DIAGRAM ANSWERS: after the award, through which states does a contract pass, and which events remove it from the normal path?
+  %% READING: the middle line is the normal path. The states on the sides are the exits and the returns. An arrow without text that returns to "In performance" means that the work continues.
+  %% SHORT LABELS: "change agreed" = both parties agree to a variation or amendment within the legal limits. "allowed reason" = a reason for suspension or extension that the contract allows. "date passed" = the completion date passed, and liquidated damages are deducted from later payments. "legal ground" = default of the contractor or another ground for termination in the law.
+  %% SOURCES: performance security before signing [RA12009 s.68]. Contract signing and notice to proceed [RA12009 s.66]. Warranty (retention money or bank guarantee for goods, repair of defects for works) [RA12009 s.90]. Blacklisting [RA12009 ss.98-105]. Multi-year contracts need a Multi-Year Contractual Authority, and payments may not exceed the cash appropriations of the year [GAA2026-GP][EO91]. Delivery must be inspected and accepted before the claim is due and demandable [JC2019-1].
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: advance payment, progress billing, variation orders, suspension and extension of time, liquidated damages, termination. Their limits and percentages are in the Implementing Rules (GPPB Resolution No. 02-2025), which I did not open.
+
+  state "Awarded" as AW
+  state "Performance security provided" as PS
+  state "Contract signed, obligation recorded" as SG
+  state "Notice to proceed issued" as NTP
+  state "In performance" as PERF
+  state "Delivery or milestone claimed (billing)" as CL
+  state "Inspected and accepted" as ACC
+  state "Paid (partial or final)" as PAID
+  state "Warranty period" as WAR
+  state "Closed, securities released" as CLOSED
+  state "Changed (variation or amendment)" as VAR
+  state "Suspended, or time extended" as SUSP
+  state "In delay, liquidated damages apply" as DELAY
+  state "Terminated" as TERM
+  state "Contractor blacklisted" as BL
+  state "Rejected, to be corrected" as REJ
+
+  [*] --> AW: head of the procuring entity issues the notice of award
+  AW --> PS: winning bidder
+  PS --> SG: head of the procuring entity and contractor, within 10 days from the notice of award
+  SG --> NTP: within 3 days from approval of the contract
+  NTP --> PERF: contractor starts
+  PERF --> CL: contractor delivers or reports work accomplished
+  CL --> ACC: inspection and acceptance by the agency
+  CL --> REJ: delivery does not meet the contract
+  REJ --> CL: contractor corrects
+  ACC --> PAID: voucher, payment order (chapter 07)
+  PAID --> PERF: more to deliver
+  PAID --> WAR: final acceptance
+  WAR --> CLOSED: no defect, or defects repaired
+  PERF --> VAR: change agreed
+  VAR --> PERF
+  PERF --> SUSP: allowed reason
+  SUSP --> PERF
+  PERF --> DELAY: date passed
+  DELAY --> CL: late delivery
+  DELAY --> TERM: default
+  PERF --> TERM: legal ground
+  TERM --> BL: grounds proven
+  WAR --> BL: defects not repaired
+  CLOSED --> [*]
+  TERM --> [*]
+  BL --> [*]

@@ -1,0 +1,41 @@
+---
+title: "E3-e  Points of contact between the national PFM system and a local government"
+config:
+  flowchart:
+    wrappingWidth: 900
+---
+flowchart TB
+  %% QUESTION THIS DIAGRAM ANSWERS: a local government follows its own cycle. At which points does a national body give it money, review its decisions, or receive its reports?
+  %% READING: upper part = bodies that give money, rules or reviews to the local government. Lower part = bodies that receive information from it. Thick arrow = money. Thin arrow = a decision or review. Dotted arrow = information. An arrow with two heads shows the two things named in its label, one in each direction.
+  %% SOURCES: BIR, BOC and BTr certify the base, DBM computes each share, automatic appropriation [MANDANAS]. Release by BTr directly to the beneficiary local governments through authorized government servicing banks [ALGU2026][GAA2026-GP][LGC s.286]. For FY 2026 DBM issued one SARO and the corresponding NCAs on 26 January 2026 for the tax allotment of the full year [NTA-PR]. Review of ordinances by DBM and by the provincial sanggunian [LGC s.326, s.327]. Development plans furnished to DILG [LGC s.287]. Harmonization of local and national plans [LGC s.305]. eSRE to BLGF [eSRE]. COA audit [CONST IX-D]. Transfers from national agencies are not disbursed until used [NBC599 s.3.4]. Local Government Support Fund by SARO [NBC599]. Local governments do not use UACS [UACS-FAQ]. Planned systems hub for local governments [ROADMAP2024].
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: general supervision by the President through DILG, appointment of local treasurers by the Secretary of Finance, certificates of borrowing capacity from BLGF.
+
+  REVA["BIR, BOC, BTr<br/>certify the national taxes<br/>of the base year"]
+  DBM["DBM"]
+  BTR["BTr"]
+  PROV["Provincial<br/>sanggunian"]
+  DEP["DEPDev and Regional<br/>Development Council"]
+  NGA["National agencies with<br/>devolved or shared programs"]
+
+  LGU["LOCAL GOVERNMENT UNIT<br/>local chief executive, sanggunian,<br/>treasurer, accountant, budget officer"]:::lgu
+
+  DILG["DILG"]
+  BLGF["DOF - BLGF"]
+  COA["COA"]
+
+  REVA -.-> DBM
+  DBM -- "SARO and NCAs for<br/>the tax allotment" --> BTR
+  DBM -- "amount of each unit's share, yearly budget rules,<br/>Local Government Support Fund (SARO),<br/>review of budgets of provinces and of<br/>highly urbanized and independent cities" --> LGU
+  BTR == "National Tax Allotment and<br/>other shares, released<br/>automatically and directly" ==> LGU
+  PROV -- "review of budgets of<br/>component cities<br/>and municipalities" --> LGU
+  DEP -. "national and regional<br/>plans to follow" .-> LGU
+  NGA <== "fund transfers to the local government,<br/>liquidation reports from it" ==> LGU
+  LGU -. "local development<br/>plans" .-> DILG
+  LGU -. "statements of receipts and<br/>expenditures (eSRE),<br/>quarterly and annual" .-> BLGF
+  LGU <-. "accounts and statements to COA,<br/>audit report and notices from COA" .-> COA
+
+  N["NOT SHARED WITH THE NATIONAL SYSTEM: local governments do not use UACS and are not in BTMS, URS or the MDS.<br/>Each one has its own books, bank accounts and systems. The PFM Reforms Roadmap plans a separate systems hub for them."]
+  BLGF ~~~ N
+
+  classDef default fill:#ffffff,stroke:#444444,color:#111
+  classDef lgu fill:#d5ecd5,stroke:#2e6b2e,color:#111,stroke-width:2px

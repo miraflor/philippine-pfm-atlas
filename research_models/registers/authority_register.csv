@@ -1,4 +1,4 @@
-﻿authority_id,authority_name,role_summary,source_code,jurisdiction,evidence_state
+authority_id,authority_name,role_summary,source_code,jurisdiction,evidence_state
 CONGRESS,Congress,"enact appropriation, tax and borrowing statutes",Constitution,national,atlas_source_reviewed_not_transaction_tested
 PRES,President,"propose budget, approve or veto legislation, lawful executive decisions",Constitution,national,atlas_source_reviewed_not_transaction_tested
 DBCC,DBCC,recommend fiscal program and aggregates,DBCC-PAGE,national,atlas_source_reviewed_not_transaction_tested

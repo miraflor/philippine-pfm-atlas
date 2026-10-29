@@ -1,0 +1,36 @@
+---
+title: "E6-a  Payment and settlement: how money moves from the Treasury Single Account to the payee (Modified Disbursement System)"
+---
+sequenceDiagram
+  autonumber
+  %% QUESTION THIS DIAGRAM ANSWERS: the agency holds no cash for its regular budget. Through which accounts does the money pass when the agency pays, at which moment does cash leave the Treasury, and on which date does each party record the payment?
+  %% IDEA: under the Modified Disbursement System (MDS) the servicing bank pays first, from a fund that the Treasury keeps filled. The NCA is only a limit recorded at the bank. The Manual says of the account Cash-MDS in the books of the agency that "there is no actual cash with the GSBs" [GAM-V1 Ch.19 s.56]. Cash leaves the Treasury Single Account when BTr replenishes the bank for payments already made.
+  %% THREE DATES FOR ONE PAYMENT: the agency credits its account Cash-MDS on the day of the daily report of payment orders issued. That report also contains payment orders that are not yet delivered to the bank [GAM-V1 Ch.6 s.52, s.54]. The bank credits the payee 24 to 48 hours after it receives the payment order [GAM-V1 Ch.6 s.2]. The Treasury records the subsidy to the agency when the bank has paid [GAM-V1 Annex H]. The monthly bank reconciliation explains the differences [GAM-V1 Ch.21].
+  %% SOURCES: NCA credited to MDS sub-accounts at LBP, DBP and PVB, lapsing at the end of the quarter [NBC599]. Receipt of the NCA in the books, no official receipt [GAM-V1 Ch.5 s.38]. Payment order, summary list, copies, same-day copy to BTr for the replenishment of the MDS Seed Fund, validated copy, invalidated items [GAM-V1 Ch.6 ss.50-56][CL2013-16A]. Daily replenishment of servicing banks [PRIMER]. Electronic facility of LBP, adopted by a joint order of DBM and DOF of 12 March 2015 [GAM-V1 Ch.6 s.58][eMDS]. Checks, the daily advice of checks issued and cancelled, stale checks [GAM-V1 Ch.6 s.2, s.12, s.44]. Bank reconciliation [GAM-V1 Ch.21][PD1445 s.74]. Entry for the unused NCA [GAM-V1 Ch.19 s.55]. Treasury Single Account as a unified structure of government bank accounts [BTR-SITE]. Daily bank reconciliation in BTMS, payments by PESONet and InstaPay [BTMS-SITE][CL2025-8].
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: steps 9 and 10 (the instruction to BSP and the entries at BSP).
+  participant DBM as DBM
+  participant AGY as Agency<br/>(accounting and cash units)
+  participant GSB as Servicing bank<br/>(LBP, DBP or PVB)
+  participant PB as Payee's<br/>bank account
+  participant BTR as BTr
+  participant BSP as BSP (Treasury<br/>Single Account)
+
+  DBM->>GSB: NCA: limit for the MDS sub-account of the agency
+  AGY->>AGY: Books: debit Cash-MDS, Regular, credit Subsidy from National<br/>Government. Registry of the NCA. No official receipt is<br/>issued for an NCA<br/>#nbsp;
+  AGY->>GSB: Payment order (LDDAP-ADA) in three copies and summary list<br/>(SLIIE) in two, on paper or through the electronic facility<br/>of the bank
+  AGY->>AGY: Books, on the day of the daily report: credit Cash-MDS,<br/>Regular<br/>#nbsp;
+  GSB->>GSB: Check the payment order and the NCA balance. Debit the MDS<br/>sub-account (the NCA balance decreases)<br/>#nbsp;
+  alt Payee has an account in the same bank
+    GSB->>PB: Direct credit, not earlier than 24 hours and not later than<br/>48 hours after receipt
+  else Payee has an account in another bank
+    GSB->>PB: Bank transfer. The payee bears the bank charge
+  end
+  GSB->>BTR: One copy of the summary list and of the payment order on the<br/>same day: notice of the amount to be replenished
+  BTR->>BSP: Instruction to replenish the servicing bank
+  BSP->>GSB: Debit the Treasury account, credit the account of the bank<br/>at BSP
+  BTR->>BTR: Books of the Treasury: debit Subsidy to NGAs, credit Cash in<br/>Bank<br/>#nbsp;
+  GSB-->>AGY: Validated copy of the payment order. Items that could not be<br/>credited are marked
+  AGY->>AGY: For an item not credited: journal entry to cancel it, and a<br/>new payment order. Each month: reconcile the books with the<br/>bank statement of the sub-account<br/>#nbsp;
+
+  Note over DBM,BSP: PAYMENT BY CHECK (exception): an MDS check is drawn on the account of the Treasurer of the Philippines.<br/>The agency sends the bank an Advice of Checks Issued and Cancelled at least daily, so that the payees can cash the checks.<br/>The bank treats a check as stale after six months.
+  Note over DBM,BSP: END OF QUARTER: the unused balance of a regular NCA lapses. Books of the agency: debit Subsidy from National Government,<br/>credit Cash-MDS, Regular.<br/>IN AGENCIES THAT USE BTMS: payments are made by electronic transfer (PESONet, InstaPay) or check,<br/>and the system reconciles with electronic bank statements each day.

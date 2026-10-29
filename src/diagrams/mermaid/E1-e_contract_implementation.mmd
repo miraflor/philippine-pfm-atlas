@@ -1,0 +1,59 @@
+---
+title: "E1-e  States of one contract, from award to closing"
+---
+stateDiagram-v2
+  direction TB
+  %% QUESTION THIS DIAGRAM ANSWERS: after the award, through which states does a contract pass, which events remove it from the normal path, and which limit applies to each event?
+  %% READING: the middle line is the normal path. The states on the sides are the exits and the returns. An arrow without text that returns to "In performance" means that the work continues.
+  %% SHORT LABELS: "change within the limit" = an amendment to order (goods) or a variation order (works) of not more than 10 percent of the original contract price, or up to 20 percent with the approval of the head of the procuring entity. "allowed reason" = a reason for suspension or extension that the rules allow. "date passed" = the completion date passed: for each day of delay, damages of one tenth of one percent of the cost of the part that is not performed. "legal ground" = default of the contractor, convenience of the procuring entity (for example when the funding is withheld), unlawful acts, or an event beyond control.
+  %% THE ADVANCE: for works, an advance of not more than 15 percent of the contract price, only on the written request of the contractor and against an irrevocable standby letter of credit, a bank guarantee or a surety bond. For goods: 15 percent against a letter of credit or bank guarantee of the same amount. Diagram E6-f follows the amounts.
+  %% SOURCES: the Implementing Rules of Republic Act No. 12009, text published on 10 February 2025 [IRR12009]: award, contract and securities ss.66-69. Amendment to order and variation order s.71.1.1, s.71.2.1. Suspension and extension s.71.1.2, s.71.2.2, s.71.2.3. Liquidated damages s.71.1.4, s.71.2.4, s.97. Advance payment s.71.1.5, s.71.2.5. Progress payment and retention money s.71.2.7, s.71.2.8. Termination s.71.4. Warranty s.90. Sanctions ss.98-105. Period for the notice to proceed [RA12009 s.66]. Multi-year contracts need a Multi-Year Contractual Authority [IRR12009 s.9][CL2025-6]. No payment before a certificate that the delivery was inspected and accepted, except an approved advance [PD1445 s.88].
+  %% A DIFFERENCE INSIDE THE RULES: for goods, the damages are counted on the cost of the delayed goods [IRR12009 s.71.1.4]. The general rule counts them on the cost of the unperformed portion [IRR12009 s.97].
+  %% LIMIT: later amendments of the Rules are not in the text that I read. The Rules leave other details of contract implementation to manuals of the GPPB, which I did not open [IRR12009 s.71.1.6].
+
+  state "Awarded" as AW
+  state "Performance security provided" as PS
+  state "Contract signed, obligation recorded" as SG
+  state "Notice to proceed issued" as NTP
+  state "Advance paid against a security" as ADV
+  state "In performance" as PERF
+  state "Delivery or work claimed (billing)" as CL
+  state "Inspected and accepted, or work certified" as ACC
+  state "Paid (partial or final)" as PAID
+  state "Warranty or defects liability period" as WAR
+  state "Closed, retention money and securities released" as CLOSED
+  state "Changed (amendment or variation order)" as VAR
+  state "Suspended, or time extended" as SUSP
+  state "In delay, liquidated damages apply" as DELAY
+  state "Terminated" as TERM
+  state "Contractor suspended or blacklisted" as BL
+  state "Rejected, to be corrected" as REJ
+
+  [*] --> AW: head of the procuring entity issues the notice of award
+  AW --> PS: winning bidder, 5 or 10 percent of the contract price
+  PS --> SG: within 10 days from receipt of the notice of award
+  SG --> NTP: within 3 days from approval of the contract
+  NTP --> PERF: contractor starts
+  NTP --> ADV: written request and security (see header)
+  ADV --> PERF
+  PERF --> CL: contractor delivers, or bills the work done (works, once a month)
+  CL --> ACC: inspection and acceptance, or certificate of the engineer of the agency
+  CL --> REJ: delivery does not meet the contract
+  REJ --> CL: contractor corrects
+  ACC --> PAID: voucher, payment order (chapter E6), less advance recovered and retention money
+  PAID --> PERF: more to deliver
+  PAID --> WAR: last delivery accepted, or works completed
+  WAR --> CLOSED: period ends without defect, or defects repaired
+  PERF --> VAR: change within the limit
+  VAR --> PERF
+  PERF --> SUSP: allowed reason
+  SUSP --> PERF
+  PERF --> DELAY: date passed
+  DELAY --> CL: late delivery
+  DELAY --> TERM: damages reach 10 percent of the contract price
+  PERF --> TERM: legal ground
+  TERM --> BL: grounds proven
+  WAR --> BL: defects not repaired within 90 days
+  CLOSED --> [*]
+  TERM --> [*]
+  BL --> [*]

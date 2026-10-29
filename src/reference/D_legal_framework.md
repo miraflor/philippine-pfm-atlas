@@ -68,23 +68,23 @@ The Code is of 1978. It uses the names of that time. The atlas writes the presen
 
 | Sections | Rule | Chapters |
 |---|---|---|
-| 2, 102, 124 | All resources of the government are managed and spent in accordance with law. The head of an agency is immediately and primarily responsible for all funds and property of the agency, and must install and monitor a system of internal control | 07, 09, 13 |
-| 4 | Fundamental principles. Among them: no money is paid out of the Treasury except in pursuance of an appropriation law or other specific statutory authority. Disbursements bear the approval of the proper officials. Claims are supported with complete documentation | 07, 10 |
-| 26, 29, 33 | Jurisdiction of COA over all accounts. Its authority over bodies that receive subsidies or whose loans the government guarantees. Its power to issue rules that prevent irregular, unnecessary, excessive or extravagant expenditures | 09, 15, 19 |
-| 41, 43 | Annual report of COA not later than the last day of September. Year-end trial balances of agencies not later than 14 February. A report of audit for each year on the last working day of February | 08, 09 |
-| 48 to 52 | Appeal to the Commission within six months. Its decision within sixty days. Petition to the Supreme Court within thirty days. A decision that is not appealed is final. A settled account may be opened again within three years | 09 |
-| 63 to 71 | Receipts. Income of agencies goes to the National Treasury and to the General Fund, unless a law provides otherwise. Receipts are income of a special, fiduciary or trust fund only when a law authorizes it. An official receipt is issued for every payment. Collections are deposited in full, not later than the following banking day | 10 |
-| 74 | Depositories report the state of each account at the close of each month, and the agency reconciles this with its books | 08, 11 |
-| 76 to 79 | Transfer of property between agencies. Unserviceable property: inspection, then destruction or sale at public auction | 13 |
-| 82 | A suspension that is not explained within ninety days becomes a disallowance | 09 |
-| 84 | Revenue funds are paid out only under an appropriation law. National funds leave the Treasury only upon a warrant or another instrument of withdrawal that the Secretary of Finance approves on the recommendation of the Treasurer | 05, 10, 11 |
-| 85 to 87 | No contract without an appropriation that is sufficient. No contract without the certificate of the accounting official that funds are available. A contract against these rules is void | 05, 06, 07 |
-| 88 | No advance payment without the prior approval of the President. No payment under a contract without the certificate that the delivery was inspected and accepted | 07 |
-| 89 | A cash advance only for a lawful specific purpose. It is liquidated when the purpose is served. No new advance before the earlier one is settled | 07 |
-| 91, 92 | Payments only upon the approval of the head of the agency. No member of the accounting unit may be designated to draw checks | 07 |
-| 97, 98 | A check that is outstanding for two years is not paid. COA may revert to the General Fund accounts payable that are outstanding for two years or more and against which no claim was filed | 07 |
-| 101 to 106 | Accountable officers are bonded. Spending against law or rules is the personal liability of the official directly responsible. An order of a superior does not free the officer, unless the officer gave written notice | 07, 09, 13 |
-| 109 to 122 | Government accounting. COA prescribes the chart of accounts. Double entry with a general ledger. "A common terminology and classification shall be used consistently throughout the budget, the accounts and the financial reports" (section 115) | 08, 17 |
+| 2, 102, 124 | All resources of the government are managed and spent in accordance with law. The head of an agency is immediately and primarily responsible for all funds and property of the agency, and must install and monitor a system of internal control | E4, E6, A0, A4, A9 |
+| 4 | Fundamental principles. Among them: no money is paid out of the Treasury except in pursuance of an appropriation law or other specific statutory authority. Disbursements bear the approval of the proper officials. Claims are supported with complete documentation | E4 to E6 |
+| 26, 29, 33 | Jurisdiction of COA over all accounts. Its authority over bodies that receive subsidies or whose loans the government guarantees. Its power to issue rules that prevent irregular, unnecessary, excessive or extravagant expenditures | P1, E6, A9 |
+| 41, 43 | Annual report of COA not later than the last day of September. Year-end trial balances of agencies not later than 14 February. A report of audit for each year on the last working day of February | A0, A4, A6, A9 |
+| 48 to 52 | Appeal to the Commission within six months. Its decision within sixty days. Petition to the Supreme Court within thirty days. A decision that is not appealed is final. A settled account may be opened again within three years | A9 |
+| 63 to 71 | Receipts. Income of agencies goes to the National Treasury and to the General Fund, unless a law provides otherwise. Receipts are income of a special, fiduciary or trust fund only when a law authorizes it. An official receipt is issued for every payment. Collections are deposited in full, not later than the following banking day | E5 |
+| 74 | Depositories report the state of each account at the close of each month, and the agency reconciles this with its books | E5, A0, A4, A6 |
+| 76 to 79 | Transfer of property between agencies. Unserviceable property: inspection, then destruction or sale at public auction | A4 |
+| 82 | A suspension that is not explained within ninety days becomes a disallowance | A9 |
+| 84 | Revenue funds are paid out only under an appropriation law. National funds leave the Treasury only upon a warrant or another instrument of withdrawal that the Secretary of Finance approves on the recommendation of the Treasurer | E0, E5 |
+| 85 to 87 | No contract without an appropriation that is sufficient. No contract without the certificate of the accounting official that funds are available. A contract against these rules is void | E0, E1, E4 |
+| 88 | No advance payment without the prior approval of the President. No payment under a contract without the certificate that the delivery was inspected and accepted | E6 |
+| 89 | A cash advance only for a lawful specific purpose. It is liquidated when the purpose is served. No new advance before the earlier one is settled | E6 |
+| 91, 92 | Payments only upon the approval of the head of the agency. No member of the accounting unit may be designated to draw checks | E4 |
+| 97, 98 | A check that is outstanding for two years is not paid. COA may revert to the General Fund accounts payable that are outstanding for two years or more and against which no claim was filed | E6 |
+| 101 to 106 | Accountable officers are bonded. Spending against law or rules is the personal liability of the official directly responsible. An order of a superior does not free the officer, unless the officer gave written notice | E4, E6, A4, A9 |
+| 109 to 122 | Government accounting. COA prescribes the chart of accounts. Double entry with a general ledger. "A common terminology and classification shall be used consistently throughout the budget, the accounts and the financial reports" (section 115) | A0, A4, A6, UACS |
 
 Basis of this table: [PD1445], read as a file.
 
@@ -92,11 +92,11 @@ Basis of this table: [PD1445], read as a file.
 
 | Sections | Rule | How I read it | Chapters |
 |---|---|---|---|
-| 2 | Definitions of appropriation, allotment, obligation, continuing appropriation, program, project and others | Word for word | Big picture, 04, 05 |
-| 11 to 22 | Budget preparation. Submission within thirty days from the opening of the regular session. The four bodies that recommend the levels of revenue, spending and debt. Budget estimates of agencies. Review of each proposal on its merits, with a zero-base approach. Budgets of government corporations. Personal services | Summary with quotations | 02, 03, 12, 15, 19 |
-| 23 to 30 | Budget authorization. Content of the budget law. No increase by Congress. Automatic appropriations for retirement premiums, debt service and guarantees that are called. Reversion of unspent balances. Loan proceeds are used only with a release of funds. Reports on contingent liabilities | Summary with quotations | 04, 05, 11, 12, 19 |
-| 32 to 45 | Budget execution. Allotment by the Secretary, by quarters. Program of expenditure. Cash budget. Reserves. Suspension of spending by the President. Use of savings. Certificate of availability of funds. No spending above the allotment. Spending against the Code or the budget law is void. Special, fiduciary and trust funds | Summary with quotations | 05, 07, 10, 11, 12, 15 |
-| 51 to 57 | Budget accountability. Evaluation of the performance of agencies. The categories in which spending is recorded: agency, program, object, region, economic or functional class, obligational authority and cash. Standard costs. Report of accomplishments every six months. The payment of salary is suspended for officials who do not submit required reports | Word for word | 08, 17, 18 |
+| 2 | Definitions of appropriation, allotment, obligation, continuing appropriation, program, project and others | Word for word | Big picture, L5, E0 |
+| 11 to 22 | Budget preparation. Submission within thirty days from the opening of the regular session. The four bodies that recommend the levels of revenue, spending and debt. Budget estimates of agencies. Review of each proposal on its merits, with a zero-base approach. Budgets of government corporations. Personal services | Summary with quotations | P0, P1, E4, E6 |
+| 23 to 30 | Budget authorization. Content of the budget law. No increase by Congress. Automatic appropriations for retirement premiums, debt service and guarantees that are called. Reversion of unspent balances. Loan proceeds are used only with a release of funds. Reports on contingent liabilities | Summary with quotations | P1, L0, L5, E0, E4, E5 |
+| 32 to 45 | Budget execution. Allotment by the Secretary, by quarters. Program of expenditure. Cash budget. Reserves. Suspension of spending by the President. Use of savings. Certificate of availability of funds. No spending above the allotment. Spending against the Code or the budget law is void. Special, fiduciary and trust funds | Summary with quotations | E0, E4 to E6 |
+| 51 to 57 | Budget accountability. Evaluation of the performance of agencies. The categories in which spending is recorded: agency, program, object, region, economic or functional class, obligational authority and cash. Standard costs. Report of accomplishments every six months. The payment of salary is suspended for officials who do not submit required reports | Word for word | A1, A4, UACS |
 | 58 to 80 | Expenditure of appropriated funds: contracting of services, pay and travel, vehicles, stock of supplies, misuse of funds | Summary only | Not used for single statements |
 
 Basis of this table: [EO292-B6]. The limits of my reading are in Reference F, section 3.

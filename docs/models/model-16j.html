@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Research model 16j: 16J System Of Record Vs Interfaces · Philippine PFM Atlas</title>
-<meta name="description" content="Research model 16j: 16J System Of Record Vs Interfaces">
+<title>Page moved · Philippine PFM Atlas</title>
+<meta name="description" content="This page has moved."><meta name="robots" content="noindex">
 <meta name="color-scheme" content="light">
 <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('pfm-atlas-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(error){}</script>
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -21,40 +21,7 @@
 <nav class="wrap site-nav" aria-label="Main"><a href="../index.html">Budget cycle</a><a href="../walkthrough.html">Guided lessons</a><a href="../big-picture.html">Big picture</a><a href="../chapters/index.html">Chapters</a><a href="../reference/index.html">References</a><a href="../diagrams/index.html">Diagrams</a><a href="../systems.html">Systems &amp; UACS</a><a href="../models/index.html">Research models</a><a href="../reference/g.html">Open points</a><a href="../search.html">Search</a><a href="../about.html">About</a></nav>
 </header>
 <main id="main" class="wrap">
-<p class="eyebrow">Supplementary analytic model · 10 October 2026</p><h1>16J System Of Record Vs Interfaces</h1><div class="model-note"><strong>Versioned, source-only model.</strong> This diagram is from the earlier strengthened research edition. It has not been reconciled against the latest 12 October procedures, and no verified PNG rendering is supplied. A reused ID such as 07h does <em>not</em> replace the current diagram of that ID.</div><p><strong>Historical ID:</strong> 16j · <strong>Notation:</strong> plantuml · <a href="diagrams/plantuml/16j_system_of_record_vs_interfaces.puml" download>Download original editable code</a> · <a href="../diagrams/index.html">Current diagram gallery</a></p><h2>Source code</h2><div class="copy-row"><button type="button" data-copy="model-16j">Copy code</button></div><pre class="model-code" id="model-16j"><code class="model-source">&#x27; QUESTION THIS DIAGRAM ANSWERS: What must be verified before one application is drawn as integrated with another?
-&#x27; SOURCES: Reference enterprise architecture model (proposed)
-&#x27; GENERAL KNOWLEDGE / conceptual schema; not statutory structure
-@startuml
-title 16j Authority, source-of-record and integration distinction
-skinparam shadowing false
-component &quot;Authorizing institution
-(mandate, instrument)&quot; as Auth
-component &quot;System of record A
-(specific entity + period)&quot; as A
-component &quot;Agency application B
-(user data / output)&quot; as B
-interface &quot;Interface evidence
-(schema / logs / owner)&quot; as I
-component &quot;Manual transfer / portal
-(if used)&quot; as M
-component &quot;Reconciliation evidence
-(matched IDs and balances)&quot; as R
-Auth --&gt; A : creates/controls mandate
-A --&gt; I : observed exchange only if verified
-I --&gt; B : production/pilot/planned
-status required
-A --&gt; M : alternative route
-M --&gt; B : re-entry / upload
-B --&gt; R : compare receiving record
-A --&gt; R : authoritative original
-note bottom of I
-Name, environment, protocol, payload,
-owner, dates and audit evidence.
-Do not infer a live API from both
-systems appearing in an architecture.
-end note
-@enduml
-</code></pre><p><a href="index.html">← All research models</a></p>
+<div class="doc-head"><p class="eyebrow">Address moved</p><h1>This page has moved</h1></div><p class="prose-block">Its content is now in <a href="../diagrams/IS-b.html">diagram IS-b: Spending side: information systems inside their owner institutions, and what passes between them (2026)</a>.</p><script>(function(){var m={};var h=location.hash.slice(1);var t=(h&&m[h])?m[h]:"../diagrams/IS-b.html";location.replace(t);})();</script>
 </main>
 <footer class="site-footer"><div class="wrap"><p>Philippine PFM Atlas. An independent reference. It is not an official publication of the Philippine government, and it does not replace the laws, circulars and manuals that it cites. Facts on current events are as of 8 October 2026.</p><p><a href="../about.html">About the atlas</a> · <a href="../reference/f.html">Sources</a> · <a href="../reference/g.html">Open points</a></p></div></footer>
 <script src="../assets/site.js" defer></script>

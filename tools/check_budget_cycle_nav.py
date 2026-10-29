@@ -7,6 +7,7 @@ import sys
 from pathlib import Path
 from bs4 import BeautifulSoup
 from budget_cycle_nav import CHAPTER_PHASE, LESSON_PHASES, PHASES
+from atlas_pages import ORDER
 from budget_cycle_story import THREE_BUDGETS_VIEW, calendar_span, steps, validate_timeline
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -53,9 +54,12 @@ def check():
         s = by_id[item['id']]
         assert item['calendar'] == list(calendar_span(s)) and item['r'] == list(s['r']) and item['to'] == s['to'], \
             'docs/index.html is older than tools/budget_cycle_story.py (step %s)' % s['id']
-        text = ' '.join(home.select_one('#step-' + s['id']).get_text(' ', strip=True).split())
+        text = ' '.join(home.select_one('#step-' + s['id']).get_text('').split())
         assert ' '.join(s['docs'].split()) in text, \
-            'docs/index.html is older than tools/budget_cycle_story.py (documents of %s)' % s['id']
+            'docs/index.html is older than the chapter of step %s (documents)' % s['id']
+        # each step of the cycle list and of the explorer opens the chapter of the step
+        assert home.select_one('#step-%s a[href="chapters/%s.html"]' % (s['id'], s['id'])), \
+            'the explorer panel of %s does not link to its chapter' % s['id']
 
     # An FY 2025 closeout is not active in October 2026: do not claim all three are active every day.
     def active_in_month(fy, month):
@@ -70,15 +74,19 @@ def check():
     assert 'performance-review feedback informs proposals for a later budget' in explorer_text
     assert 'Hands its documents to (same budget year)' not in explorer_text
 
+    for p in PHASES:
+        for label, _, chapter in p['steps']:
+            assert home.select_one('#phase-%s a[href="chapters/%s.html"]' % (p['id'], chapter)), \
+                'the cycle list does not link %s to its chapter' % chapter
     chapters = page('chapters/index.html')
-    original = chapters.select('a.row-id[href$=".html"]')
-    assert len(original) == 19
-    assert {n.get_text(strip=True) for n in original} == set(CHAPTER_PHASE)
+    rows = chapters.select('a.row-id[href$=".html"]')
+    assert [n.get_text(strip=True) for n in rows] == ORDER, 'the chapter index does not list the chapters in order'
+    assert set(ORDER) == set(CHAPTER_PHASE)
     for key in ('preparation', 'legislation', 'execution', 'accountability', 'across'):
         assert chapters.select_one('#cycle-chapters-' + key)
-    for chapter in CHAPTER_PHASE:
+    for chapter in ORDER:
         detail = page('chapters/' + chapter + '.html')
-        assert detail.select_one('.pfm-cycle-context')
+        assert detail.select_one('.pfm-cycle-context'), chapter
 
     diagrams = page('diagrams/index.html')
     diagram_cards = diagrams.select('.atlas-diagram-card')
@@ -103,8 +111,8 @@ def check():
         detail=page('guide/'+slug+'.html')
         assert detail.select_one('.pfm-cycle-context'), slug
 
-    print('OK: four phases, 32 activities, 19 chapters, 85 diagrams, 8 lessons')
-    print('OK: existing four-line analytical map and detail links retained')
+    print('OK: four phases, 32 activities, %d chapters in the order of the cycle, 85 diagrams, 8 lessons' % len(ORDER))
+    print('OK: each step links to its own chapter; four-line analytical map retained')
     print('OK: budget-cycle story with 15 scenes; step explorer with 32 steps and 32 panels')
     print('OK: calendar months agree with the budgets served in 2026; built page and assets match the tools')
 

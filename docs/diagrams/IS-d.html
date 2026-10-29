@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diagram IS-d: BTMS Budget Execution Module: records, the links between them, and the checks made by the system · Philippine PFM Atlas</title>
+<meta name="description" content="when an agency works in the Budget and Treasury Management System (BTMS), which records does it create, how is each record linked to the one before, and which rules does the system enforce by itself?">
+<meta name="color-scheme" content="light">
+<script>document.documentElement.classList.add('js');try{if(localStorage.getItem('pfm-atlas-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(error){}</script>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="site-header">
+<div class="wrap header-row">
+<a class="brand" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="6" fill="#ffffff" stroke="#deded9"/><path d="M6 8.5H26" stroke="#1f4e8c" stroke-width="3.2" stroke-linecap="round"/><path d="M6 14H26" stroke="#2e6b2e" stroke-width="3.2" stroke-linecap="round"/><path d="M6 19.5H26" stroke="#a35200" stroke-width="3.2" stroke-linecap="round"/><path d="M6 25H26" stroke="#555555" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="0.1 4.9"/><path d="M17 8.5V14" stroke="#1b1b1b" stroke-width="3.6" stroke-linecap="round"/></svg><span>Philippine PFM Atlas</span></a>
+<form class="header-search" action="../search.html" role="search"><label class="visually-hidden" for="q-top">Search the atlas</label><input id="q-top" name="q" type="search" placeholder="Search: SARO, voucher, BTMS"></form>
+<button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">Dark mode</button>
+</div>
+<nav class="wrap site-nav" aria-label="Main"><a href="../index.html">Budget cycle</a><a href="../walkthrough.html">Guided lessons</a><a href="../big-picture.html">Big picture</a><a href="../chapters/index.html">Chapters</a><a href="../reference/index.html">References</a><a href="../diagrams/index.html" aria-current="page">Diagrams</a><a href="../systems.html">Systems &amp; UACS</a><a href="../models/index.html">Research models</a><a href="../reference/g.html">Open points</a><a href="../search.html">Search</a><a href="../about.html">About</a></nav>
+</header>
+<main id="main" class="wrap">
+<nav class="pfm-cycle-context" aria-label="Budget-cycle context"><a href="../index.html#budget-cycle">Budget cycle</a> <span> / </span><a href="../index.html#budget-cycle">Shared by all phases</a> <span> / </span><a href="../diagrams/index.html#cycle-diagrams-across">Browse this phase</a></nav><div class="doc-head"><p class="eyebrow">Diagram <span class="id">IS-d</span> · Mermaid flowchart</p><h1>BTMS Budget Execution Module: records, the links between them, and the checks made by the system</h1><p class="prose-block"><strong>Question:</strong> When an agency works in the Budget and Treasury Management System (BTMS), which records does it create, how is each record linked to the one before, and which rules does the system enforce by itself?</p><p class="muted">In: <a href="../chapters/IS.html">IS. Information systems and the IFMIS</a></p></div><figure class="diagram" id="figure-IS-d"><a href="../atlas/rendered/IS-d_btms_execution_flow.png"><img alt="Diagram IS-d: BTMS Budget Execution Module: records, the links between them, and the checks made by the system" height="1344" loading="lazy" src="../atlas/rendered/IS-d_btms_execution_flow.png" width="3968"/></a></figure><div class="prose-block"><h2 id="about">What the diagram shows</h2><ul>
+<li><strong>Question:</strong> when an agency works in the Budget and Treasury Management System (BTMS), which records does it create, how is each record linked to the one before, and which rules does the system enforce by itself?</li>
+<li><strong>Idea:</strong> in the paper process each document is separate and a person writes the number of the earlier document on the next one. In BTMS each record is created FROM the earlier record, so the link is stored by the system, and the system refuses a record that breaks a limit.</li>
+<li><strong>How to read it:</strong> frames = the five functions named in DBM Circular Letter No. 2025-8. Box = a record. Solid arrow = "is created from". Red dotted arrow = a limit that the system checks.</li>
+<li><strong>Sources:</strong> the five functions, the list of transactions (purchase request, obligation request, purchase order, goods received note, goods return note, disbursement voucher, journal entry voucher, revenue voucher, revenue receipt voucher, advice for use of PS allotment, modification advice form), forms and reports, payment by check or electronic transfer, interfaces <a class="basis" href="../reference/f.html#source-cl2025-8" title="DBM Circular Letter No. 2025-8 of 28 August 2025, Enhanced Guidelines on the Adoption and Use of BTMS for Budget Execution.">[CL2025-8]</a>. Scope from receipt of allotment and NCA to disbursement, blocking of commitments and obligations above allotments, obligation request made manually or from a commitment or from an approved purchase order, voucher linked to an approved obligation request, supplier database, limits of cash allocation and bank balance, matching of expenditures with purchase orders and goods received notes, payment extracts, daily bank reconciliation, automatic journal entries from vouchers, revenue vouchers and asset transactions <a class="basis" href="../reference/f.html#source-btms-site" title='BTMS website, page "Phase II: Budget Execution".'>[BTMS-SITE]</a>.</li>
+<li><strong>Not verified:</strong> the internal design of BTMS beyond these two public sources. The arrows show the links that the sources describe, not the full data model.</li>
+</ul>
+</div><h2 id="code">Code</h2><div class="copy-row"><button type="button" data-copy="code-IS-d">Copy the code</button><a href="../atlas/diagrams/mermaid/IS-d_btms_execution_flow.mmd">Code file</a><a href="../atlas/rendered/IS-d_btms_execution_flow.png">Image in full size</a></div><pre id="code-IS-d"><code>---
+title: &quot;IS-d  BTMS Budget Execution Module: records, the links between them, and the checks made by the system&quot;
+config:
+  flowchart:
+    wrappingWidth: 900
+---
+flowchart LR
+  %% QUESTION THIS DIAGRAM ANSWERS: when an agency works in the Budget and Treasury Management System (BTMS), which records does it create, how is each record linked to the one before, and which rules does the system enforce by itself?
+  %% IDEA: in the paper process each document is separate and a person writes the number of the earlier document on the next one. In BTMS each record is created FROM the earlier record, so the link is stored by the system, and the system refuses a record that breaks a limit.
+  %% READING: frames = the five functions named in DBM Circular Letter No. 2025-8. Box = a record. Solid arrow = &quot;is created from&quot;. Red dotted arrow = a limit that the system checks.
+  %% SOURCES: the five functions, the list of transactions (purchase request, obligation request, purchase order, goods received note, goods return note, disbursement voucher, journal entry voucher, revenue voucher, revenue receipt voucher, advice for use of PS allotment, modification advice form), forms and reports, payment by check or electronic transfer, interfaces [CL2025-8]. Scope from receipt of allotment and NCA to disbursement, blocking of commitments and obligations above allotments, obligation request made manually or from a commitment or from an approved purchase order, voucher linked to an approved obligation request, supplier database, limits of cash allocation and bank balance, matching of expenditures with purchase orders and goods received notes, payment extracts, daily bank reconciliation, automatic journal entries from vouchers, revenue vouchers and asset transactions [BTMS-SITE].
+  %% NOT VERIFIED: the internal design of BTMS beyond these two public sources. The arrows show the links that the sources describe, not the full data model.
+
+  subgraph IN[&quot;LOADED FROM THE BUDGET&quot;]
+    AL[&quot;Allotment&lt;br/&gt;(GAA as allotment order,&lt;br/&gt;SARO, GARO)&quot;]
+    NCA[&quot;Notice of Cash&lt;br/&gt;Allocation&quot;]
+    MAF[&quot;Changes: modification advice form,&lt;br/&gt;advice for use of PS allotment&quot;]
+  end
+
+  subgraph F1[&quot;1  COMMITMENT AND OBLIGATIONS MANAGEMENT&quot;]
+    PR[&quot;Purchase request&quot;]
+    CM[&quot;Commitment&lt;br/&gt;(amount reserved)&quot;]
+    PO[&quot;Purchase order&lt;br/&gt;(approved)&quot;]
+    OBR[&quot;Obligation request&lt;br/&gt;(OBR)&quot;]
+    PR --&gt; CM --&gt; PO --&gt; OBR
+    CM --&gt; OBR
+  end
+
+  subgraph F2[&quot;2  PAYMENTS MANAGEMENT&quot;]
+    GRN[&quot;Goods received note,&lt;br/&gt;goods return note&quot;]
+    DV[&quot;Disbursement voucher&lt;br/&gt;(linked to an approved OBR.&lt;br/&gt;Payee details come from the&lt;br/&gt;supplier database)&quot;]
+    PAY[&quot;Payment&lt;br/&gt;electronic transfer (PESONet,&lt;br/&gt;InstaPay) or check&quot;]
+    REC[&quot;Bank reconciliation&lt;br/&gt;each day, from electronic&lt;br/&gt;bank statements&quot;]
+    GRN --&gt; DV --&gt; PAY --&gt; REC
+  end
+
+  subgraph F3[&quot;3  RECEIPT MANAGEMENT&quot;]
+    RV[&quot;Revenue voucher&quot;]
+    RRV[&quot;Revenue receipt voucher&quot;]
+    RV --&gt; RRV
+  end
+
+  subgraph F4[&quot;4  PROPERTY MANAGEMENT&quot;]
+    PPE[&quot;Register of property, plant and equipment,&lt;br/&gt;and asset transactions.&lt;br/&gt;(The sources do not say from which&lt;br/&gt;record an asset entry is created)&quot;]
+  end
+
+  subgraph F5[&quot;5  ACCOUNTING AND FINANCIAL REPORTING&quot;]
+    JEV[&quot;Journal entry voucher&lt;br/&gt;created by the system&quot;]
+    GL[&quot;Ledgers&quot;]
+    RPT[&quot;Reports: FAR 1 to 6, BAR 1,&lt;br/&gt;registry of allotments,&lt;br/&gt;NCA listings, statements&quot;]
+    JEV --&gt; GL --&gt; RPT
+  end
+
+  MAF --&gt; AL
+  PO --&gt; GRN
+  OBR --&gt; DV
+  DV --&gt; JEV
+  RRV --&gt; JEV
+  PPE --&gt; JEV
+
+  AL -. &quot;CHECK: no commitment or&lt;br/&gt;obligation above the allotment&quot; .-&gt; OBR
+  NCA -. &quot;CHECK: no payment above the cash&lt;br/&gt;allocation or the bank balance&quot; .-&gt; PAY
+  PO -. &quot;CHECK: voucher matched with purchase&lt;br/&gt;order and goods received note&quot; .-&gt; DV
+
+  linkStyle 16,17,18 stroke:#b00020,stroke-width:2px,stroke-dasharray: 4 3
+
+  classDef default fill:#ffffff,stroke:#444444,color:#111
+  style IN fill:#eef4fb,stroke:#1f4e8c
+  style F1 fill:#fde0c2,stroke:#a35200
+  style F2 fill:#fde0c2,stroke:#a35200
+  style F3 fill:#fde0c2,stroke:#a35200
+  style F4 fill:#fde0c2,stroke:#a35200
+  style F5 fill:#fde0c2,stroke:#a35200
+</code></pre><nav class="pager" aria-label="Pages"><a class="prev" href="IS-c.html">← Diagram IS-c</a><a class="next" href="IS-e.html">Diagram IS-e →</a></nav>
+</main>
+<footer class="site-footer"><div class="wrap"><p>Philippine PFM Atlas. An independent reference. It is not an official publication of the Philippine government, and it does not replace the laws, circulars and manuals that it cites. Facts on current events are as of 8 October 2026.</p><p><a href="../about.html">About the atlas</a> · <a href="../reference/f.html">Sources</a> · <a href="../reference/g.html">Open points</a></p></div></footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

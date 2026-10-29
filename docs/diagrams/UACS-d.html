@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diagram UACS-d: Why UACS alone cannot follow one contract: a code names a class, a document number names one record · Philippine PFM Atlas</title>
+<meta name="description" content="is UACS the key that connects all PFM records? For which questions is it enough, and for which is it not?">
+<meta name="color-scheme" content="light">
+<script>document.documentElement.classList.add('js');try{if(localStorage.getItem('pfm-atlas-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(error){}</script>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="site-header">
+<div class="wrap header-row">
+<a class="brand" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="6" fill="#ffffff" stroke="#deded9"/><path d="M6 8.5H26" stroke="#1f4e8c" stroke-width="3.2" stroke-linecap="round"/><path d="M6 14H26" stroke="#2e6b2e" stroke-width="3.2" stroke-linecap="round"/><path d="M6 19.5H26" stroke="#a35200" stroke-width="3.2" stroke-linecap="round"/><path d="M6 25H26" stroke="#555555" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="0.1 4.9"/><path d="M17 8.5V14" stroke="#1b1b1b" stroke-width="3.6" stroke-linecap="round"/></svg><span>Philippine PFM Atlas</span></a>
+<form class="header-search" action="../search.html" role="search"><label class="visually-hidden" for="q-top">Search the atlas</label><input id="q-top" name="q" type="search" placeholder="Search: SARO, voucher, BTMS"></form>
+<button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">Dark mode</button>
+</div>
+<nav class="wrap site-nav" aria-label="Main"><a href="../index.html">Budget cycle</a><a href="../walkthrough.html">Guided lessons</a><a href="../big-picture.html">Big picture</a><a href="../chapters/index.html">Chapters</a><a href="../reference/index.html">References</a><a href="../diagrams/index.html" aria-current="page">Diagrams</a><a href="../systems.html">Systems &amp; UACS</a><a href="../models/index.html">Research models</a><a href="../reference/g.html">Open points</a><a href="../search.html">Search</a><a href="../about.html">About</a></nav>
+</header>
+<main id="main" class="wrap">
+<nav class="pfm-cycle-context" aria-label="Budget-cycle context"><a href="../index.html#budget-cycle">Budget cycle</a> <span> / </span><a href="../index.html#budget-cycle">Shared by all phases</a> <span> / </span><a href="../diagrams/index.html#cycle-diagrams-across">Browse this phase</a></nav><div class="doc-head"><p class="eyebrow">Diagram <span class="id">UACS-d</span> · Mermaid flowchart</p><h1>Why UACS alone cannot follow one contract: a code names a class, a document number names one record</h1><p class="prose-block"><strong>Question:</strong> Is UACS the key that connects all PFM records? For which questions is it enough, and for which is it not?</p><p class="muted">In: <a href="../chapters/UACS.html">UACS. UACS and the identifiers of records</a></p></div><figure class="diagram" id="figure-UACS-d"><a href="../atlas/rendered/UACS-d_uacs_class_not_instance.png"><img alt="Diagram UACS-d: Why UACS alone cannot follow one contract: a code names a class, a document number names one record" height="2254" loading="lazy" src="../atlas/rendered/UACS-d_uacs_class_not_instance.png" width="1952"/></a></figure><div class="prose-block"><h2 id="about">What the diagram shows</h2><ul>
+<li><strong>Question:</strong> is UACS the key that connects all PFM records? For which questions is it enough, and for which is it not?</li>
+<li><strong>Idea:</strong> a UACS code names a group of records: all records with the same funding source, office, area, purpose and object. It does not name one record inside the group. Two contracts paid from the same budget line have exactly the same UACS code on every record. To separate them you need the numbers of the documents.</li>
+<li><strong>Example (invented, for illustration only):</strong> one budget line funds two contracts. Every box in the same colour has the same UACS code. The records of contract A and of contract B differ only in their document numbers.</li>
+<li><strong>A question that UACS answers:</strong> how much was allotted, obligated and paid under this program, by this office, for this expense class, in this year? All records with the same code are summed. This is what report FAR 1 does.</li>
+<li><strong>A question that UACS does not answer:</strong> which payments belong to contract B, and was the work of contract B accepted before each payment? The code is the same for A and B. The answer needs the chain ORS number, voucher number, payment order number, and the contract number, which is not a coded field on the obligation request.</li>
+<li><strong>Sources:</strong> UACS is a classification with segments for funding source, organization, location, program and object <a class="basis" href="../reference/f.html#source-jc2017-1" title="COA-DBM-DOF Joint Circular No. 1 of 11 August 2017, UACS and the Program Expenditure Classification.">[JC2017-1]</a>. The location code is the area of mandate of the operating unit, not the site of a project <a class="basis" href="../reference/f.html#source-jc2017-1" title="COA-DBM-DOF Joint Circular No. 1 of 11 August 2017, UACS and the Program Expenditure Classification.">[JC2017-1 s.5.2]</a>. Fields of the obligation request and of the payment order <a class="basis" href="../reference/f.html#source-gam-v2" title="The same Manual, Volume II, Accounting Books, Registries, Records, Forms and Reports: 81 appendices. Each appendix is a form with its instructions. Files read: the forms as …">[GAM-V2 App.11, App.42]</a>. NCA number on payment orders that agencies published <a class="basis" href="../reference/f.html#source-lddap-form" title="LDDAP-ADA forms that national agencies filled and published on their websites, for example">[LDDAP-FORM]</a>. FAR 1 by program and by object <a class="basis" href="../reference/f.html#source-jc2019-1" title="COA-DBM Joint Circular No. 2019-1 of 1 January 2019, Budget and Financial Accountability Reports.">[JC2019-1]</a>. Record links stored by the system in BTMS <a class="basis" href="../reference/f.html#source-btms-site" title='BTMS website, page "Phase II: Budget Execution".'>[BTMS-SITE]</a>.</li>
+</ul>
+</div><h2 id="code">Code</h2><div class="copy-row"><button type="button" data-copy="code-UACS-d">Copy the code</button><a href="../atlas/diagrams/mermaid/UACS-d_uacs_class_not_instance.mmd">Code file</a><a href="../atlas/rendered/UACS-d_uacs_class_not_instance.png">Image in full size</a></div><pre id="code-UACS-d"><code>---
+title: &quot;UACS-d  Why UACS alone cannot follow one contract: a code names a class, a document number names one record&quot;
+config:
+  flowchart:
+    wrappingWidth: 900
+---
+flowchart TB
+  %% QUESTION THIS DIAGRAM ANSWERS: is UACS the key that connects all PFM records? For which questions is it enough, and for which is it not?
+  %% IDEA: a UACS code names a group of records: all records with the same funding source, office, area, purpose and object. It does not name one record inside the group. Two contracts paid from the same budget line have exactly the same UACS code on every record. To separate them you need the numbers of the documents.
+  %% EXAMPLE (invented, for illustration only): one budget line funds two contracts. Every box in the same colour has the same UACS code. The records of contract A and of contract B differ only in their document numbers.
+  %% A QUESTION THAT UACS ANSWERS: how much was allotted, obligated and paid under this program, by this office, for this expense class, in this year? All records with the same code are summed. This is what report FAR 1 does.
+  %% A QUESTION THAT UACS DOES NOT ANSWER: which payments belong to contract B, and was the work of contract B accepted before each payment? The code is the same for A and B. The answer needs the chain ORS number, voucher number, payment order number, and the contract number, which is not a coded field on the obligation request.
+  %% SOURCES: UACS is a classification with segments for funding source, organization, location, program and object [JC2017-1]. The location code is the area of mandate of the operating unit, not the site of a project [JC2017-1 s.5.2]. Fields of the obligation request and of the payment order [GAM-V2 App.11, App.42]. NCA number on payment orders that agencies published [LDDAP-FORM]. FAR 1 by program and by object [JC2019-1]. Record links stored by the system in BTMS [BTMS-SITE].
+
+  L[&quot;ONE GAA LINE&lt;br/&gt;one full UACS code: funding source + organization + location + program code + expense class&lt;br/&gt;amount: 100&quot;]:::code
+
+  L --&gt; AL[&quot;ALLOTMENT under that code&lt;br/&gt;amount released: 100&quot;]:::code
+
+  AL --&gt; O1[&quot;OBLIGATION for contract A&lt;br/&gt;ORS no. 0101, amount 60&lt;br/&gt;same UACS code&quot;]:::a
+  AL --&gt; O2[&quot;OBLIGATION for contract B&lt;br/&gt;ORS no. 0102, amount 40&lt;br/&gt;same UACS code&quot;]:::b
+
+  O1 --&gt; V1[&quot;VOUCHER DV no. 0450&lt;br/&gt;quotes ORS no. 0101&lt;br/&gt;progress payment 30&quot;]:::a
+  O1 --&gt; V2[&quot;VOUCHER DV no. 0612&lt;br/&gt;quotes ORS no. 0101&lt;br/&gt;final payment 30&quot;]:::a
+  O2 --&gt; V3[&quot;VOUCHER DV no. 0507&lt;br/&gt;quotes ORS no. 0102&lt;br/&gt;payment 40&quot;]:::b
+
+  V1 --&gt; P1[&quot;PAYMENT ORDER line&lt;br/&gt;LDDAP-ADA no. 0088&lt;br/&gt;quotes ORS no. 0101&quot;]:::a
+  V2 --&gt; P2[&quot;PAYMENT ORDER line&lt;br/&gt;LDDAP-ADA no. 0131&lt;br/&gt;quotes ORS no. 0101&quot;]:::a
+  V3 --&gt; P3[&quot;PAYMENT ORDER line&lt;br/&gt;LDDAP-ADA no. 0097&lt;br/&gt;quotes ORS no. 0102&quot;]:::b
+
+  P1 --&gt; R[&quot;REPORT ROW for that UACS code (FAR 1)&lt;br/&gt;allotment 100, obligations 100, disbursements 100&lt;br/&gt;The report cannot show contracts A and B separately&quot;]:::code
+  P2 --&gt; R
+  P3 --&gt; R
+
+  K[&quot;CONSEQUENCE FOR AN INTEGRATED SYSTEM: UACS must be the common CLASSIFICATION in every connected system.&lt;br/&gt;It cannot be the common IDENTIFIER. Each record also needs its own number, and each record must store the number of the record it comes from.&lt;br/&gt;The site of a project is not in UACS either: under the 2017 circular the location segment gives the area of the responsible office.&quot;]
+  R ~~~ K
+
+  classDef default fill:#ffffff,stroke:#444444,color:#111
+  classDef code fill:#d6e4f7,stroke:#1f4e8c,color:#111,stroke-width:2px
+  classDef a fill:#d5ecd5,stroke:#2e6b2e,color:#111
+  classDef b fill:#fde0c2,stroke:#a35200,color:#111
+</code></pre><nav class="pager" aria-label="Pages"><a class="prev" href="UACS-c.html">← Diagram UACS-c</a></nav>
+</main>
+<footer class="site-footer"><div class="wrap"><p>Philippine PFM Atlas. An independent reference. It is not an official publication of the Philippine government, and it does not replace the laws, circulars and manuals that it cites. Facts on current events are as of 8 October 2026.</p><p><a href="../about.html">About the atlas</a> · <a href="../reference/f.html">Sources</a> · <a href="../reference/g.html">Open points</a></p></div></footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

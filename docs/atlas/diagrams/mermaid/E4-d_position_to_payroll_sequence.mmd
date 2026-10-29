@@ -1,0 +1,44 @@
+---
+title: "E4-d  Personnel spending: from an authorized position to the monthly payroll and the remittances"
+---
+sequenceDiagram
+  autonumber
+  %% QUESTION THIS DIAGRAM ANSWERS: salaries are paid without any procurement. What replaces the contract and the delivery, and who controls each step?
+  %% IDEA: for personnel, the place of the contract is taken by an authorized position with a valid appointment. The place of the acceptance report is taken by a certificate on the payroll that the services were rendered. The amount is fixed by law (salary grade and step), not by a bid. The main control is the list of positions kept by DBM.
+  %% A FACT FROM THE MANUAL THAT CHANGES THE ORDER OF THE STEPS: payrolls are prepared in advance, before the reports of attendance arrive. An overpayment for an absence without pay is therefore found after the payment and is demanded back [GAM-V1 Ch.6 s.48].
+  %% SOURCES: monthly update of the plantilla of personnel in GMIS with an encoder and two approvers, personnel budget based on filled positions, Miscellaneous Personnel Benefits Fund for unfilled and new positions, Pension and Gratuity Fund, BP Forms 204 and 205 [GMIS][NBM156]. Allotment for filled positions through the GAA as allotment order, retirement and life insurance premiums by GARO, special purpose funds by SARO, Advice for use of PS Allotment [NBC599]. Tax Remittance Advice [NBC599]. Planned National Government HR and Payroll System [SFA6]. The form of the payroll with its certificates A to D [GAM-V2 App.33]. The entries for the payroll, the advance to the disbursing officer and its liquidation within five days after the pay period [GAM-V1 Ch.6 s.15, s.18, s.19]. Salaries paid through the accounts of the employees [GAM-V1 Ch.6 s.57]. Tax withheld by Tax Remittance Advice, and remittance to the insurance bodies [GAM-V1 Ch.5 s.38, Annex H].
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: step 1 (the document by which DBM approves positions), and steps 5 to 7 (appointment and attestation by the Civil Service Commission).
+  participant DBM as DBM<br/>(GMIS)
+  participant HR as Agency<br/>personnel unit
+  participant HEAD as Head of<br/>agency
+  participant CSC as Civil Service<br/>Commission
+  participant EMP as Employee
+  participant FIN as Agency budget and<br/>accounting units
+  participant GSB as Servicing<br/>bank
+  participant REM as BIR, GSIS, PhilHealth,<br/>Pag-IBIG
+
+  Note over DBM,HEAD: POSITIONS. A salary can be paid only for a position that DBM has authorized.
+  DBM->>HR: Approved staffing pattern: positions,<br/>classification, salary grades
+  HR->>DBM: Monthly update of the plantilla of personnel in GMIS<br/>(PSIPOP): filled and vacant positions
+  HEAD->>DBM: Approval of the update in GMIS (second approver)
+  DBM->>DBM: Personnel budget of the next year computed<br/>from the FILLED positions in GMIS<br/>#nbsp;
+
+  Note over HR,EMP: APPOINTMENT
+  HEAD->>EMP: Appointment to a vacant, funded position
+  HR->>CSC: Appointment papers for attestation
+  CSC-->>HR: Attested appointment
+
+  Note over EMP,REM: PAYROLL OF EACH PERIOD
+  HR->>FIN: Payroll, prepared in advance: gross pay, deductions and net pay of each<br/>employee. An authorized official certifies: services duly rendered (Box A)
+  FIN->>FIN: Budget unit: obligation request. Head of accounting certifies: documents<br/>complete, cash available (Box B). Journal entry: salary expense, and the<br/>amounts due to BIR, to the insurance bodies and to the employees<br/>#nbsp;
+  FIN->>HEAD: Payroll for approval
+  HEAD-->>FIN: Approved for payment (Box C)
+  FIN->>GSB: Payment order for the net pay: to the accounts of the employees,<br/>or as an advance to the disbursing officer who pays in cash
+  GSB->>EMP: Net pay. For cash: each employee signs the payroll, and the<br/>disbursing officer certifies that each one was paid (Box D)
+  EMP->>HR: Reports of attendance, after the payroll. An overpayment<br/>for an absence without pay is demanded back
+  FIN->>REM: Tax withheld (by Tax Remittance Advice),<br/>premiums and contributions of employee and government
+
+  Note over DBM,FIN: WHERE THE ALLOTMENT COMES FROM: filled positions = agency budget, released by the GAA as allotment order.<br/>New or newly filled positions and some benefits = Miscellaneous Personnel Benefits Fund, by SARO.<br/>Government share of retirement and life insurance premiums = automatic appropriation, by GARO.<br/>Retirement benefits = Pension and Gratuity Fund, by SARO.
+  opt Shortage in one personnel benefit
+    HEAD->>FIN: Advice for use of PS Allotment (APSA)
+  end

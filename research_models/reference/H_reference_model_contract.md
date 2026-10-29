@@ -30,6 +30,6 @@ Store at least `event_date`, `posting_date`, `fiscal_year`, `authority_valid_fro
 - `target`: planned architecture, **never** a production assertion.
 - `unknown`: absence of evidence; **never** assert an integration does not exist.
 
-**Reference diagrams:** [00i](../diagrams/mermaid/00i_concurrent_pfm_architecture.mmd), [00k](../diagrams/mermaid/00k_event_authority_record_system_metagraph.mmd), [17e](../diagrams/mermaid/17e_multi_identifier_lineage.mmd), [17g](../diagrams/plantuml/17g_financial_record_class_model.puml).
+**Research models:** [RM-1](../diagrams/mermaid/RM-1_event_authority_record_system_metagraph.mmd), [RM-8](../diagrams/plantuml/RM-8_financial_record_class_model.puml).
 
 **Primary research anchors:** [DBM PFM Roadmap Midterm Update](https://www.dbm.gov.ph/wp-content/uploads/DBM%20Publications/PFM-Reforms/Midterm-Update/PHIL%20PFM%20Roadmap%20Midterm%20Update%20v2.pdf); COA Government Accounting Manual; FY 2026 [NBC 599](https://www.dbm.gov.ph/index.php/dbm-issuances/national-budget-circulars?catid=428&id=3824%3Anational-budget-circular-no-599&view=article). The ontology itself is this atlas's proposed analytic structure.

@@ -7,8 +7,9 @@ Run from the root of the repository:
     python3 tools/build_atlas.py --check   # builds into a temporary folder and reports any file of docs/atlas/ that differs
 
 Directives in the source files (each alone on a line):
-  {{mermaid:ID}}             embed a Mermaid diagram (ID = unique file-name prefix)
+  {{mermaid:ID}}             embed a Mermaid diagram (ID = unique file-name prefix, for example E4-a)
   {{plantuml:ID}}            embed a PlantUML diagram as image + code
+                             The heading of an embedded diagram is one level below the heading before it.
   {{steps:ID|1=CODE;2-4=CODE;...}}   table of the numbered steps of a sequence diagram
   {{index:diagrams}}         table of all diagram files (id, title, form, code file, image)
   {{count:interfaces}}       counts by carrier, stage of use and kind of the register of interfaces in the same file
@@ -19,6 +20,9 @@ three CSV files into docs/atlas/reference/: diagram_index.csv, steps_register.cs
 It does not draw the images in docs/atlas/rendered/. For that, see tools/render_diagrams.py.
 """
 import os, re, sys, glob, csv, shutil, tempfile, filecmp
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from atlas_pages import diagram_sort_key, page_of_diagram  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "src")
@@ -109,27 +113,27 @@ def tidy_code(code):
         res.append(l)
     return "\n".join(res).strip("\n")
 
-def emb_mermaid(ident, rel):
+def emb_mermaid(ident, rel, level=3):
     path = find(MMD, ident, ".mmd")
     base = os.path.basename(path)[:-4]
     text = open(path, encoding="utf-8").read()
     title = mermaid_title(text)
     comments, code = split_comments(text, "%%")
-    parts = [f"### Diagram {title}", "",
+    parts = [f"{'#' * level} Diagram {title}", "",
              f"Code file: `{rel}diagrams/mermaid/{base}.mmd`. Rendered image: [`{rel}rendered/{base}.png`]({rel}rendered/{base}.png).", ""]
     if comments:
         parts += [comment_block(comments), ""]
     parts += ["```mermaid", tidy_code(code), "```", ""]
     return "\n".join(parts)
 
-def emb_plantuml(ident, rel):
+def emb_plantuml(ident, rel, level=3):
     path = find(PUML, ident, ".puml")
     base = os.path.basename(path)[:-5]
     text = open(path, encoding="utf-8").read()
     m = re.search(r'^title\s+(.*)$', text, flags=re.M)
     title = m.group(1).strip() if m else base
     comments, code = split_comments(text, "'")
-    parts = [f"### Diagram {title} (PlantUML)", "",
+    parts = [f"{'#' * level} Diagram {title} (PlantUML)", "",
              f"Code file: `{rel}diagrams/plantuml/{base}.puml`. Rendered image: [`{rel}rendered/{base}.png`]({rel}rendered/{base}.png).", ""]
     if comments:
         parts += [comment_block(comments), ""]
@@ -310,7 +314,7 @@ def emb_index(rel):
         base = os.path.basename(p)[:-5]
         m = re.search(r'^title\s+(.*)$', text, flags=re.M)
         items.append((base, m.group(1).strip() if m else base, diagram_form(text, True), f"{rel}diagrams/plantuml/{base}.puml"))
-    for base, title, form, code in sorted(items):
+    for base, title, form, code in sorted(items, key=lambda x: diagram_sort_key(x[0].split("_")[0])):
         ident = base.split("_")[0]
         title = re.sub(r'^' + re.escape(ident) + r'\s+', '', title)
         rows.append(f"| {ident} | {title} | {form} | [`{os.path.basename(code)}`]({code}) | [image]({rel}rendered/{base}.png) |")
@@ -322,7 +326,11 @@ def build(srcfile):
     rel = "../" * depth
     out = []
     srctext = open(srcfile, encoding="utf-8").read()
+    level = 1
     for line in srctext.split("\n"):
+        h = re.match(r'^(#{1,6}) ', line)
+        if h:
+            level = len(h.group(1))
         m = re.match(r'^\{\{(mermaid|plantuml|steps|index|count|register):(.*)\}\}\s*$', line)
         if not m:
             out.append(line)
@@ -330,12 +338,12 @@ def build(srcfile):
         kind, arg = m.group(1), m.group(2).strip()
         if kind == "mermaid":
             name = os.path.basename(find(MMD, arg, ".mmd"))
-            EMBEDDED.add(name); EMBED_AT.setdefault(name, []).append(relpath)
-            out.append(emb_mermaid(arg, rel))
+            EMBEDDED.add(name); EMBED_AT.setdefault(name, []).append(relpath.replace(os.sep, "/"))
+            out.append(emb_mermaid(arg, rel, min(level + 1, 4)))
         elif kind == "plantuml":
             name = os.path.basename(find(PUML, arg, ".puml"))
-            EMBEDDED.add(name); EMBED_AT.setdefault(name, []).append(relpath)
-            out.append(emb_plantuml(arg, rel))
+            EMBEDDED.add(name); EMBED_AT.setdefault(name, []).append(relpath.replace(os.sep, "/"))
+            out.append(emb_plantuml(arg, rel, min(level + 1, 4)))
         elif kind == "index":
             out.append(emb_index(rel))
         elif kind == "count":
@@ -347,7 +355,7 @@ def build(srcfile):
     dest = os.path.join(OUT, relpath)
     os.makedirs(os.path.dirname(dest), exist_ok=True)
     with open(dest, "w", encoding="utf-8", newline="\n") as fh:
-        fh.write("\n".join(out))
+        fh.write("\n".join(out).rstrip("\n") + "\n")
     return dest
 
 def header_line(text, marker, key):
@@ -363,7 +371,8 @@ def write_csv_files():
     ref = os.path.join(OUT, "reference")
     # 1. index of all diagrams
     rows = []
-    for p in sorted(glob.glob(os.path.join(MMD, "*.mmd")) + glob.glob(os.path.join(PUML, "*.puml")), key=os.path.basename):
+    for p in sorted(glob.glob(os.path.join(MMD, "*.mmd")) + glob.glob(os.path.join(PUML, "*.puml")),
+                    key=lambda p: diagram_sort_key(os.path.basename(p).split("_")[0])):
         text = open(p, encoding="utf-8").read()
         name = os.path.basename(p)
         puml = name.endswith(".puml")
@@ -375,7 +384,7 @@ def write_csv_files():
         else:
             title = mermaid_title(text)
         title = re.sub(r'^' + re.escape(ident) + r'\s+', '', title)
-        rows.append([ident, ident[:2], "PlantUML" if puml else "Mermaid", diagram_form(text, puml), title,
+        rows.append([ident, page_of_diagram(ident), "PlantUML" if puml else "Mermaid", diagram_form(text, puml), title,
                      header_line(text, "'" if puml else "%%", "QUESTION THIS DIAGRAM ANSWERS"),
                      ("diagrams/plantuml/" if puml else "diagrams/mermaid/") + name, "rendered/" + base + ".png",
                      "; ".join(EMBED_AT.get(name, []))])
@@ -387,7 +396,7 @@ def write_csv_files():
     with open(os.path.join(ref, "steps_register.csv"), "w", encoding="utf-8", newline="") as fh:
         w = csv.writer(fh, lineterminator="\n")
         w.writerow(["diagram_id", "diagram_file", "step", "who_acts", "towards_whom", "what_is_done_or_passed", "basis"])
-        w.writerows(sorted(STEP_ROWS, key=lambda r: (r[0], r[2])))
+        w.writerows(sorted(STEP_ROWS, key=lambda r: (diagram_sort_key(r[0]), r[2])))
     # 3. register of interfaces
     with open(os.path.join(ref, "interface_register.csv"), "w", encoding="utf-8", newline="") as fh:
         w = csv.writer(fh, lineterminator="\n")
@@ -408,11 +417,26 @@ def copy_diagrams():
             os.remove(os.path.join(dst_dir, name))
             print("removed old copy", os.path.join("diagrams", kind, name))
 
+def remove_stale(built):
+    """Remove Markdown files of OUT that no source file produced, and folders that are left empty."""
+    keep = {os.path.abspath(p) for p in built}
+    for p in sorted(glob.glob(os.path.join(OUT, "**", "*.md"), recursive=True)):
+        if os.path.abspath(p) not in keep:
+            os.remove(p)
+            print("removed old file", os.path.relpath(p, OUT))
+    for d, dirs, fs in sorted(os.walk(OUT, topdown=False)):
+        if d != OUT and not os.listdir(d):
+            os.rmdir(d)
+
+
 def build_all():
     files = sorted(glob.glob(os.path.join(SRC, "**", "*.md"), recursive=True))
+    built = []
     for f in files:
         d = build(f)
+        built.append(d)
         print("built", os.path.relpath(d, OUT))
+    remove_stale(built)
     copy_diagrams()
     allfiles = {os.path.basename(p) for p in glob.glob(os.path.join(MMD, "*.mmd"))} | {os.path.basename(p) for p in glob.glob(os.path.join(PUML, "*.puml"))}
     missing = sorted(allfiles - EMBEDDED)

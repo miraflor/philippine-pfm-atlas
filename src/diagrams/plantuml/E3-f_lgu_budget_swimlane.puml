@@ -1,0 +1,100 @@
+@startuml E3-f_lgu_budget_swimlane
+' QUESTION THIS DIAGRAM ANSWERS: in the local budget cycle, where are the decision points, and what happens at each one if the answer is "no"?
+' READING: one column (lane) = one actor. Diamond = a decision with its two outcomes.
+' WHY PLANTUML: the cycle has three decision points with different effects (no ordinance in time, review finds a violation, certification refused). A lane diagram shows them with the responsible actor.
+' SOURCES: Republic Act No. 7160 [LGC] ss.316, 317, 318, 319, 323, 324, 325, 326, 327, 344, 286. [eSRE] for reports to BLGF. [CONST IX-D] for audit.
+' GENERAL KNOWLEDGE (GK), NOT OPENED IN A SOURCE HERE: the budget call, the veto of the local chief executive, the allotment release.
+title E3-f  Local budget cycle: decision points and their effects (province, city or municipality)
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 12
+skinparam ActivityBackgroundColor #FFFFFF
+skinparam ActivityBorderColor #444444
+skinparam ActivityDiamondBackgroundColor #FFFDE7
+skinparam ActivityDiamondBorderColor #8A6D00
+skinparam ArrowColor #333333
+skinparam NoteBackgroundColor #FFFDE7
+skinparam NoteBorderColor #8A6D00
+skinparam SwimlaneBorderColor #777777
+skinparam SwimlaneTitleFontStyle bold
+
+|#EDF7ED|Local finance committee|
+start
+:Estimate income.
+Recommend the spending ceiling by
+sector from approved local plans;
+|#EDF7ED|Local chief executive|
+:Budget call with ceilings (GK);
+|#EDF7ED|Department heads|
+:Budget proposals, on or before 15 July;
+|#EDF7ED|Local chief executive|
+:Prepare the executive budget.
+Submit it to the sanggunian
+not later than 16 October;
+|#F3EEFA|Sanggunian|
+if (Appropriation ordinance enacted\nby the end of the fiscal year?) then (yes)
+  :Ordinance within the limits:
+  total not above estimated income,
+  20 percent of the tax allotment for
+  development, 5 percent calamity fund,
+  ceiling on personal services;
+else (no)
+  :Stay in session without
+  other business;
+  if (Enacted within 90 days from\nthe start of the fiscal year?) then (yes)
+  else (no)
+    :Ordinance of the previous year is
+    deemed reenacted, only for salaries,
+    statutory and contractual obligations,
+    essential operating expenses;
+  endif
+endif
+|#EEF4FB|Reviewing authority|
+:Receive the ordinance.
+DBM for provinces, highly urbanized
+and independent component cities.
+Provincial sanggunian for component
+cities and municipalities;
+if (Action within 90 days?) then (no)
+  :Ordinance deemed reviewed.
+  It stays in full force;
+else (yes)
+  if (Items within the legal limits?) then (yes)
+    :Ordinance stays in force;
+  else (no)
+    :Declare the ordinance inoperative
+    in whole or in part. Disallow or
+    reduce the items;
+    |#EDF7ED|Treasurer, accountant, budget officer|
+    :Treasurer makes no further payment
+    from the affected items;
+  endif
+endif
+|#EDF7ED|Treasurer, accountant, budget officer|
+:Collect local revenues.
+Receive the National Tax Allotment,
+released automatically by BTr;
+:For each claim:
+budget officer certifies the appropriation,
+accountant obligates it,
+treasurer certifies that funds are available;
+if (All three certifications given?) then (yes)
+  |#EDF7ED|Department heads|
+  :Certify and approve the voucher;
+  |#EDF7ED|Local chief executive|
+  :Approve the voucher. Not required for
+  regularly recurring administrative expenses
+  (payrolls, utilities, remittances);
+  |#EDF7ED|Treasurer, accountant, budget officer|
+  :Pay. Record in the books;
+else (no)
+  :No money may be disbursed;
+endif
+:Report receipts and expenditures to
+BLGF (eSRE), quarterly and annually.
+Send accounts to COA;
+|#FDF1E3|COA|
+:Audit the accounts
+of the local government;
+stop
+@enduml

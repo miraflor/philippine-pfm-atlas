@@ -4,8 +4,10 @@
 Usage, from the root of the repository:
 
     python3 tools/render_diagrams.py              # draws every diagram whose image is missing or older than its code
-    python3 tools/render_diagrams.py 07a 16b      # draws the diagrams whose file name starts with these IDs
+    python3 tools/render_diagrams.py E4-a IS-b    # draws the diagrams whose file name starts with these IDs
     python3 tools/render_diagrams.py --all        # draws every diagram
+    python3 tools/render_diagrams.py --research   # the same for the research models: research_models/diagrams/
+                                                  # to research_models/rendered/ (combine with --all or with IDs)
 
 After a fresh clone every file carries the date of the clone, so the comparison of dates says nothing. Name the IDs
 of the diagrams that you changed, or use --all.
@@ -15,7 +17,7 @@ Programs that it needs:
                  with version 11.16.0. If the browser that mmdc uses needs options, put them in a JSON file and set
                  the environment variable MMDC_PUPPETEER_CONFIG to its path.
     PlantUML     Java and plantuml.jar. Set the environment variable PLANTUML_JAR to the path of the jar file.
-                 The images were drawn with PlantUML 1.2026.8. The component diagrams 16b and 16g also need Graphviz.
+                 The images were drawn with PlantUML 1.2026.8. The component diagrams IS-b and IS-c also need Graphviz.
     Pillow       the Python package, to reduce each image to 256 colours. This makes the files smaller and does not
                  change what is shown. Without Pillow the images are kept as drawn.
 """
@@ -53,8 +55,12 @@ def draw_plantuml(path):
     return r.returncode == 0 and os.path.exists(out), out, (r.stdout + r.stderr).strip()
 
 def main():
+    global SRC, OUT
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     every = "--all" in sys.argv[1:]
+    if "--research" in sys.argv[1:]:
+        SRC = os.path.join(ROOT, "research_models", "diagrams")
+        OUT = os.path.join(ROOT, "research_models", "rendered")
     files = sorted(glob.glob(os.path.join(SRC, "mermaid", "*.mmd")) + glob.glob(os.path.join(SRC, "plantuml", "*.puml")))
     chosen = []
     for f in files:

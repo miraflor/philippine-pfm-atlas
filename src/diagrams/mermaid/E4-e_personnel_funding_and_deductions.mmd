@@ -1,0 +1,47 @@
+---
+title: "E4-e  Personnel spending: sources of the allotment, and where each part of the gross pay goes"
+config:
+  flowchart:
+    wrappingWidth: 900
+---
+flowchart LR
+  %% QUESTION THIS DIAGRAM ANSWERS: from which budget items is personnel spending paid, and to whom does each peso of gross pay go?
+  %% READING: left = budget source and release document. Middle = the payroll. Right = receivers.
+  %% SOURCES: the four sources and their release documents [NBC599][GMIS]. Tax Remittance Advice [NBC599]. Personnel services as the first expense class in the budget forms, lists of non-permanent positions and of retirees [NBM156].
+  %% FROM THE ACCOUNTING MANUAL: the certificates on the payroll [GAM-V2 App.33]. The deductions and the bodies that receive them, as accounts of the books: Due to BIR, Due to GSIS, Due to Pag-IBIG, Due to PhilHealth, Other Payables, and the net pay as Due to Officers and Employees [GAM-V1 Ch.6 s.19, Annex H]. Payment of net pay through the accounts of the employees, or in cash by an advance to the disbursing officer [GAM-V1 Ch.6 s.15, s.57]. The funding source codes of the three central items [GAM-V1 Annex P].
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: the components of gross pay, and the attestation of the appointment.
+
+  subgraph SRC["BUDGET SOURCE AND RELEASE DOCUMENT"]
+    S1["Agency budget, personnel services<br/>FILLED positions.<br/>Released by the GAA as allotment order"]
+    S2["Miscellaneous Personnel Benefits Fund<br/>new and newly filled positions,<br/>some benefits. Released by SARO"]
+    S3["Retirement and life insurance premiums<br/>government share. Automatic<br/>appropriation, released by GARO"]
+    S4["Pension and Gratuity Fund<br/>retirement and terminal leave benefits,<br/>pensions paid from the budget.<br/>Released by SARO"]
+  end
+
+  PAY["PAYROLL OF THE AGENCY<br/>gross pay = salary fixed by salary grade and step<br/>+ allowances and bonuses authorized by law.<br/>CERTIFIED ON THE PAYROLL BEFORE PAYMENT: services duly rendered<br/>(an authorized official), documents complete and cash available<br/>(head of accounting), approved for payment (head of agency).<br/>The position must be in the plantilla (GMIS)"]:::pay
+  RET["Benefits of a retiring employee"]:::pay
+
+  subgraph OUT["RECEIVERS"]
+    O1["Employee<br/>net pay, credited to a bank<br/>account by the servicing bank"]
+    O2["BIR<br/>income tax withheld,<br/>by Tax Remittance Advice"]
+    O3["GSIS<br/>employee premium and<br/>government share"]
+    O4["PhilHealth and Pag-IBIG<br/>contributions of employee<br/>and government"]
+    O5["Other authorized deductions<br/>for example loan repayments"]
+    O6["Retiree<br/>gratuity and terminal<br/>leave pay"]
+  end
+
+  S1 --> PAY
+  S2 --> PAY
+  S3 --> O3
+  S4 --> RET
+  PAY --> O1
+  PAY --> O2
+  PAY --> O3
+  PAY --> O4
+  PAY --> O5
+  RET --> O6
+
+  classDef default fill:#ffffff,stroke:#444444,color:#111
+  classDef pay fill:#d5ecd5,stroke:#2e6b2e,color:#111,stroke-width:2px
+  style SRC fill:#eef4fb,stroke:#1f4e8c
+  style OUT fill:#f2f2f2,stroke:#555555

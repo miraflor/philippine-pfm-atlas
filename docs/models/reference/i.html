@@ -21,10 +21,10 @@
 <nav class="wrap site-nav" aria-label="Main"><a href="../../index.html">Budget cycle</a><a href="../../walkthrough.html">Guided lessons</a><a href="../../big-picture.html">Big picture</a><a href="../../chapters/index.html">Chapters</a><a href="../../reference/index.html">References</a><a href="../../diagrams/index.html">Diagrams</a><a href="../../systems.html">Systems &amp; UACS</a><a href="../../models/index.html">Research models</a><a href="../../reference/g.html">Open points</a><a href="../../search.html">Search</a><a href="../../about.html">About</a></nav>
 </header>
 <main id="main" class="wrap">
-<div class="model-note"><strong>Historical research reference (10 October 2026).</strong> Proposed modeling material, not the current procedural atlas and not an official information-system specification. Some older diagram IDs and claims have been superseded.</div><article class="prose"><h1>Reference I — IFMIS and interface evidence protocol</h1>
+<div class="model-note"><strong>Research reference.</strong> Proposed modelling material, not a chapter of the atlas and not an official information-system specification.</div><article class="prose"><h1>Reference I — IFMIS and interface evidence protocol</h1>
 <h2>1. The minimum assertion</h2>
 <p>Do not write <code>A → B (API)</code> merely because both applications are mentioned in an integration roadmap. An assertion about integration must state <strong>source and destination application</strong>, <strong>specific owner and deployment context</strong>, <strong>type of payload</strong>, <strong>transmission mechanism</strong>, <strong>operational status</strong>, <strong>date</strong>, and <strong>evidence level</strong>.</p>
-<p>The original <a href="interface_register.csv">interface register</a> is preserved verbatim. The <a href="../registers/interface_evidence_register.csv">interface evidence register</a> re-expresses each legacy row as a <em>claim requiring validation</em>; its blank mechanism, deployment and protocol fields are intentional, not signs of failure. It does <strong>not</strong> assert that blank fields mean an interface is absent.</p>
+<p>The original <a href="../registers/interface_register.csv">interface register</a> is preserved verbatim. The <a href="../registers/interface_evidence_register.csv">interface evidence register</a> re-expresses each legacy row as a <em>claim requiring validation</em>; its blank mechanism, deployment and protocol fields are intentional, not signs of failure. It does <strong>not</strong> assert that blank fields mean an interface is absent.</p>
 <h2>2. Orthogonal evidence axes</h2>
 <table>
 <thead>
@@ -73,7 +73,7 @@
 </ul>
 <h2>4. Interface failure contract</h2>
 <p>Every confirmed or proposed interface needs identifier translation, immutable source references, idempotency/duplicate detection, cutoff and retry policy, reconciliation ownership, exception queue, and data dictionary versioning. Treat these as recommended technical requirements unless an actual legal or technical document mandates them.</p>
-<p><strong>Diagrams:</strong> <a href="../diagrams/mermaid/16h_ifmis_deployment_confidence.mmd">16h</a>, <a href="../diagrams/mermaid/16i_interface_failure_and_reconciliation.mmd">16i</a>, <a href="../diagrams/plantuml/16j_system_of_record_vs_interfaces.puml">16j</a>.</p>
+<p><strong>Research models:</strong> <a href="../diagrams/mermaid/RM-5_ifmis_deployment_confidence.mmd">RM-5</a>, <a href="../diagrams/mermaid/RM-6_interface_failure_and_reconciliation.mmd">RM-6</a>.</p>
 </article><p><a href="../index.html">← Research models</a></p>
 </main>
 <footer class="site-footer"><div class="wrap"><p>Philippine PFM Atlas. An independent reference. It is not an official publication of the Philippine government, and it does not replace the laws, circulars and manuals that it cites. Facts on current events are as of 8 October 2026.</p><p><a href="../../about.html">About the atlas</a> · <a href="../../reference/f.html">Sources</a> · <a href="../../reference/g.html">Open points</a></p></div></footer>

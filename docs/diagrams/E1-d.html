@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diagram E1-d: Competitive bidding under RA 12009: decisions, loops and exits · Philippine PFM Atlas</title>
+<meta name="description" content="where can a competitive bidding stop or return to an earlier step, and who decides at each of these points?">
+<meta name="color-scheme" content="light">
+<script>document.documentElement.classList.add('js');try{if(localStorage.getItem('pfm-atlas-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(error){}</script>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="site-header">
+<div class="wrap header-row">
+<a class="brand" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="6" fill="#ffffff" stroke="#deded9"/><path d="M6 8.5H26" stroke="#1f4e8c" stroke-width="3.2" stroke-linecap="round"/><path d="M6 14H26" stroke="#2e6b2e" stroke-width="3.2" stroke-linecap="round"/><path d="M6 19.5H26" stroke="#a35200" stroke-width="3.2" stroke-linecap="round"/><path d="M6 25H26" stroke="#555555" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="0.1 4.9"/><path d="M17 8.5V14" stroke="#1b1b1b" stroke-width="3.6" stroke-linecap="round"/></svg><span>Philippine PFM Atlas</span></a>
+<form class="header-search" action="../search.html" role="search"><label class="visually-hidden" for="q-top">Search the atlas</label><input id="q-top" name="q" type="search" placeholder="Search: SARO, voucher, BTMS"></form>
+<button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">Dark mode</button>
+</div>
+<nav class="wrap site-nav" aria-label="Main"><a href="../index.html">Budget cycle</a><a href="../walkthrough.html">Guided lessons</a><a href="../big-picture.html">Big picture</a><a href="../chapters/index.html">Chapters</a><a href="../reference/index.html">References</a><a href="../diagrams/index.html" aria-current="page">Diagrams</a><a href="../systems.html">Systems &amp; UACS</a><a href="../models/index.html">Research models</a><a href="../reference/g.html">Open points</a><a href="../search.html">Search</a><a href="../about.html">About</a></nav>
+</header>
+<main id="main" class="wrap">
+<nav class="pfm-cycle-context" aria-label="Budget-cycle context"><a href="../index.html#budget-cycle">Budget cycle</a> <span> / </span><a href="../index.html#phase-execution">Execution</a> <span> / </span><a href="../diagrams/index.html#cycle-diagrams-execution">Browse this phase</a></nav><div class="doc-head"><p class="eyebrow">Diagram <span class="id">E1-d</span> · PlantUML activity diagram with lanes</p><h1>Competitive bidding under RA 12009: decisions, loops and exits</h1><p class="prose-block"><strong>Question:</strong> Where can a competitive bidding stop or return to an earlier step, and who decides at each of these points?</p><p class="muted">In: <a href="../chapters/E1.html">E1. Early procurement activities</a></p></div><figure class="diagram" id="figure-E1-d"><a href="../atlas/rendered/E1-d_competitive_bidding_swimlane.png"><img alt="Diagram E1-d: Competitive bidding under RA 12009: decisions, loops and exits" height="2055" loading="lazy" src="../atlas/rendered/E1-d_competitive_bidding_swimlane.png" width="1387"/></a></figure><div class="prose-block"><h2 id="about">What the diagram shows</h2><ul>
+<li><strong>Question:</strong> where can a competitive bidding stop or return to an earlier step, and who decides at each of these points?</li>
+<li><strong>How to read it:</strong> one column (lane) = one actor. Diamond = decision. The sequence <a href="E1-b.html">diagram E1-b</a> shows the same process as messages; this diagram shows the branches and loops.</li>
+<li><strong>Why PlantUML:</strong> the process has loops (next bidder in rank) and exits (failure of bidding). Mermaid has no lane diagram with loops.</li>
+<li><strong>Sources:</strong> the Implementing Rules of Republic Act No. 12009, text published on 10 February 2025 <a class="basis" href="../reference/f.html#source-irr12009" title="Implementing Rules and Regulations of Republic Act No. 12009, Annex A of GPPB Resolution No. 02-2025 of 4 February 2025, in effect since 25 February 2025. Read as a file of 193 …">[IRR12009]</a> ss.12, 43, 49, 51, 54, 58, 59, 60, 61, 62, 63, 64, 66, 67, 68, 83-85. Failure of bidding and what follows it <a class="basis" href="../reference/f.html#source-irr12009" title="Implementing Rules and Regulations of Republic Act No. 12009, Annex A of GPPB Resolution No. 02-2025 of 4 February 2025, in effect since 25 February 2025. Read as a file of 193 …">[IRR12009 s.64, s.35.1]</a>. The period for the notice to proceed is from the Act <a class="basis" href="../reference/f.html#source-ra12009" title="Republic Act No. 12009, New Government Procurement Act, 20 July 2024.">[RA12009 s.66]</a>.</li>
+<li><strong>Limit:</strong> later amendments of the Rules are not in the text that I read. All days are calendar days.</li>
+</ul>
+</div><h2 id="code">Code</h2><div class="copy-row"><button type="button" data-copy="code-E1-d">Copy the code</button><a href="../atlas/diagrams/plantuml/E1-d_competitive_bidding_swimlane.puml">Code file</a><a href="../atlas/rendered/E1-d_competitive_bidding_swimlane.png">Image in full size</a></div><pre id="code-E1-d"><code>@startuml E1-d_competitive_bidding_swimlane
+&#x27; QUESTION THIS DIAGRAM ANSWERS: where can a competitive bidding stop or return to an earlier step, and who decides at each of these points?
+&#x27; READING: one column (lane) = one actor. Diamond = decision. The sequence diagram E1-b shows the same process as messages; this diagram shows the branches and loops.
+&#x27; WHY PLANTUML: the process has loops (next bidder in rank) and exits (failure of bidding). Mermaid has no lane diagram with loops.
+&#x27; SOURCES: the Implementing Rules of Republic Act No. 12009, text published on 10 February 2025 [IRR12009] ss.12, 43, 49, 51, 54, 58, 59, 60, 61, 62, 63, 64, 66, 67, 68, 83-85. Failure of bidding and what follows it [IRR12009 s.64, s.35.1]. The period for the notice to proceed is from the Act [RA12009 s.66].
+&#x27; LIMIT: later amendments of the Rules are not in the text that I read. All days are calendar days.
+title E1-d  Competitive bidding under RA 12009: decisions, loops and exits
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 12
+skinparam ActivityBackgroundColor #FFFFFF
+skinparam ActivityBorderColor #444444
+skinparam ActivityDiamondBackgroundColor #FFFDE7
+skinparam ActivityDiamondBorderColor #8A6D00
+skinparam ArrowColor #333333
+skinparam NoteBackgroundColor #FFFDE7
+skinparam NoteBorderColor #8A6D00
+skinparam SwimlaneBorderColor #777777
+skinparam SwimlaneTitleFontStyle bold
+
+|#EDF7ED|End-user unit|
+start
+:Purchase request, specifications
+and bidding documents for an item
+in the Annual Procurement Plan;
+|#EEF4FB|BAC|
+:Pre-procurement conference.
+Confirm that the procurement follows
+the plan and that appropriations
+are available;
+:Post the invitation to bid in PhilGEPS,
+on the website of the entity
+and at its premises;
+:Pre-bid conference
+(at least 12 days before the deadline);
+|#F2F2F2|Bidders|
+:Submit bids in two sealed envelopes:
+technical (with eligibility documents
+and bid security) and financial;
+|#EEF4FB|BAC|
+:Opening of bids immediately after
+the deadline, with observers present.
+Each envelope passes or fails;
+if (At least one eligible bid\nnot above the approved budget\nfor the contract?) then (no)
+  :Declare failure of bidding.
+  Mandatory review of terms and budget,
+  then bid again. After a second failure:
+  negotiated procurement;
+  stop
+else (yes)
+endif
+:Evaluate bids (within 7, 14 or 21 days,
+by the award criterion).
+Rank by the award criterion;
+repeat
+  :Post-qualification of the bidder
+  first in rank (within 12 days);
+  backward :Take the next bidder in rank;
+repeat while (Bidder passes\npost-qualification?) is (no) not (yes)
+:Recommendation of award, with the
+document that authorizes the entity
+to incur the obligation;
+|#FFF8DC|Head of the procuring entity|
+if (Funding approved and effective?\n(question arises in\nearly procurement)) then (no)
+  :Wait. No award may be made
+  before the funding is effective;
+else (yes)
+endif
+:Act on the recommendation
+(within 10 days). Issue the
+notice of award;
+|#F2F2F2|Bidders|
+:Winning bidder provides
+the performance security;
+|#FFF8DC|Head of the procuring entity|
+:Sign the contract (within 10 days
+from receipt of the notice of award).
+Issue the notice to proceed
+(within 3 days from approval
+of the contract);
+note right
+  From opening of bids
+  to award: not more
+  than 60 days
+end note
+|#EEF4FB|BAC|
+:Publish the award in PhilGEPS.
+Observers send their report to the
+head of the procuring entity,
+PhilGEPS and COA;
+|#F2F2F2|Bidders|
+if (A losing bidder objects?) then (yes)
+  :Request reconsideration from the BAC.
+  Then protest to the head of the
+  procuring entity through the
+  electronic system, with a fee.
+  Then review by the Regional Trial Court;
+else (no)
+endif
+|#EDF7ED|End-user unit|
+:Contract implementation starts
+(see E1-e and chapter E4);
+stop
+@enduml
+</code></pre><nav class="pager" aria-label="Pages"><a class="prev" href="E1-c.html">← Diagram E1-c</a><a class="next" href="E1-e.html">Diagram E1-e →</a></nav>
+</main>
+<footer class="site-footer"><div class="wrap"><p>Philippine PFM Atlas. An independent reference. It is not an official publication of the Philippine government, and it does not replace the laws, circulars and manuals that it cites. Facts on current events are as of 8 October 2026.</p><p><a href="../about.html">About the atlas</a> · <a href="../reference/f.html">Sources</a> · <a href="../reference/g.html">Open points</a></p></div></footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

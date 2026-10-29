@@ -30,4 +30,4 @@ An agency can be in a BTMS rollout without every companion system operating an A
 
 Every confirmed or proposed interface needs identifier translation, immutable source references, idempotency/duplicate detection, cutoff and retry policy, reconciliation ownership, exception queue, and data dictionary versioning. Treat these as recommended technical requirements unless an actual legal or technical document mandates them.
 
-**Diagrams:** [16h](../diagrams/mermaid/16h_ifmis_deployment_confidence.mmd), [16i](../diagrams/mermaid/16i_interface_failure_and_reconciliation.mmd), [16j](../diagrams/plantuml/16j_system_of_record_vs_interfaces.puml).
+**Research models:** [RM-5](../diagrams/mermaid/RM-5_ifmis_deployment_confidence.mmd), [RM-6](../diagrams/mermaid/RM-6_interface_failure_and_reconciliation.mmd).

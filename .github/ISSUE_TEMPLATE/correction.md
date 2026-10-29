@@ -5,7 +5,7 @@ title: ""
 labels: ""
 ---
 
-**Where:** the chapter, reference file or diagram, with its number. For example: Reference G, point 60. Diagram 07b. Chapter 05, section 4.
+**Where:** the chapter, reference file or diagram, with its ID or number. For example: Reference G, point 60. Diagram E4-b. Chapter E0, section 4.
 
 **What is wrong or missing:**
 

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Research model 17g: 17G Financial Record Class Model · Philippine PFM Atlas</title>
-<meta name="description" content="Research model 17g: 17G Financial Record Class Model">
+<title>Page moved · Philippine PFM Atlas</title>
+<meta name="description" content="This page has moved."><meta name="robots" content="noindex">
 <meta name="color-scheme" content="light">
 <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('pfm-atlas-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(error){}</script>
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -21,87 +21,7 @@
 <nav class="wrap site-nav" aria-label="Main"><a href="../index.html">Budget cycle</a><a href="../walkthrough.html">Guided lessons</a><a href="../big-picture.html">Big picture</a><a href="../chapters/index.html">Chapters</a><a href="../reference/index.html">References</a><a href="../diagrams/index.html">Diagrams</a><a href="../systems.html">Systems &amp; UACS</a><a href="../models/index.html">Research models</a><a href="../reference/g.html">Open points</a><a href="../search.html">Search</a><a href="../about.html">About</a></nav>
 </header>
 <main id="main" class="wrap">
-<p class="eyebrow">Supplementary analytic model · 10 October 2026</p><h1>17G Financial Record Class Model</h1><div class="model-note"><strong>Versioned, source-only model.</strong> This diagram is from the earlier strengthened research edition. It has not been reconciled against the latest 12 October procedures, and no verified PNG rendering is supplied. A reused ID such as 07h does <em>not</em> replace the current diagram of that ID.</div><p><strong>Historical ID:</strong> 17g · <strong>Notation:</strong> plantuml · <a href="diagrams/plantuml/17g_financial_record_class_model.puml" download>Download original editable code</a> · <a href="../diagrams/index.html">Current diagram gallery</a></p><h2>Source code</h2><div class="copy-row"><button type="button" data-copy="model-17g">Copy code</button></div><pre class="model-code" id="model-17g"><code class="model-source">&#x27; QUESTION THIS DIAGRAM ANSWERS: How can many-to-many references be represented without treating UACS as a transaction key?
-&#x27; SOURCES: Proposed logical schema; technical field contracts require verification
-&#x27; GENERAL KNOWLEDGE / conceptual schema; not statutory structure
-@startuml
-title 17g Typed financial records with stable IDs and versioned classification
-skinparam shadowing false
-hide methods
-class Authority {
-  id
-  issuer
-  effective_interval
-}
-class Rule {
-  rule_id
-  scope
-  validity_start
-  validity_end
-}
-class Event {
-  event_id
-  event_type
-  occurred_at
-  fiscal_year
-  amount
-  currency
-  jurisdiction
-}
-class Record {
-  record_id
-  record_type
-  authority_owner
-  version
-  issued_at
-}
-class EventRecordLink {
-  role
-  relationship
-  valid_from
-  evidence_id
-}
-class Classification {
-  taxonomy
-  code
-  version
-  effective_date
-}
-class ClassificationAssignment {
-  assignment_id
-  applied_date
-  mapping_basis
-}
-class Application {
-  system_id
-  owner
-  environment
-  deployment_status
-}
-class Exchange {
-  exchange_id
-  mechanism
-  evidence_level
-  observed_at
-}
-class Balance {
-  kind
-  currency
-  as_of
-  source_record_id
-}
-Authority &quot;1&quot; --&gt; &quot;0..*&quot; Event : authorizes / acts
-Rule &quot;0..*&quot; --&gt; &quot;0..*&quot; Event : constrains
-Event &quot;1&quot; -- &quot;0..*&quot; EventRecordLink
-Record &quot;1&quot; -- &quot;0..*&quot; EventRecordLink
-Record &quot;1&quot; -- &quot;0..*&quot; ClassificationAssignment
-Classification &quot;1&quot; -- &quot;0..*&quot; ClassificationAssignment
-Event &quot;0..*&quot; --&gt; &quot;0..*&quot; Balance : changes / explains
-Application &quot;0..*&quot; --&gt; &quot;0..*&quot; Record : contains copy / original
-Application &quot;1&quot; --&gt; &quot;0..*&quot; Exchange : origin
-Exchange &quot;0..*&quot; --&gt; &quot;1&quot; Application : destination
-@enduml
-</code></pre><p><a href="index.html">← All research models</a></p>
+<div class="doc-head"><p class="eyebrow">Address moved</p><h1>This page has moved</h1></div><p class="prose-block">Its content is now in <a href="RM-8.html">research model RM-8</a>.</p><script>(function(){var m={};var h=location.hash.slice(1);var t=(h&&m[h])?m[h]:"RM-8.html";location.replace(t);})();</script>
 </main>
 <footer class="site-footer"><div class="wrap"><p>Philippine PFM Atlas. An independent reference. It is not an official publication of the Philippine government, and it does not replace the laws, circulars and manuals that it cites. Facts on current events are as of 8 October 2026.</p><p><a href="../about.html">About the atlas</a> · <a href="../reference/f.html">Sources</a> · <a href="../reference/g.html">Open points</a></p></div></footer>
 <script src="../assets/site.js" defer></script>

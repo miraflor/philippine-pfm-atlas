@@ -1,0 +1,50 @@
+---
+title: "A9-b  States of one audit finding on a transaction"
+---
+stateDiagram-v2
+  direction TB
+  %% QUESTION THIS DIAGRAM ANSWERS: a transaction was questioned by the auditor. In which state is the finding now, and what are the possible next states?
+  %% SOURCES: the notices, the settlement, the appeal levels, the Notice of Finality of Decision and the COA Order of Execution [COA2009-006] (Rules and Regulations on the Settlement of Accounts, COA Circular No. 2009-006).
+  %% FROM THE AUDITING CODE OF 1978: a suspension that is not explained within ninety days becomes a disallowance [PD1445 s.82]. Appeal from the decision of an auditor within six months [PD1445 s.48]. The Commission decides within sixty days [PD1445 s.49]. Petition to the Supreme Court within thirty days [PD1445 s.50]. A decision that is not appealed is final and executory [PD1445 s.51]. A settled account may be opened again within three years [PD1445 s.52]. A disallowance is recorded in the books of the agency only when it is final and executory, as a receivable from the persons liable [GAM-V1 Ch.6 s.46].
+  %% LIMIT: the Code names the Commission as the body of appeal. The rules of 2009 place a Director before the Commission Proper [COA2009-006]. The rules of procedure of COA set the present periods, and I did not open them.
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: the Audit Observation Memorandum as the first step, and the referral to the Ombudsman.
+
+  state "Transaction paid, in the accounts" as PAID
+  state "Audit Observation Memorandum issued" as AOM
+  state "Closed: explanation accepted" as OK1
+  state "Notice of Suspension" as NS
+  state "Notice of Disallowance or Notice of Charge" as ND
+  state "Settled: requirement met or amount paid" as SET
+  state "On appeal to the Cluster or Regional Director" as AP1
+  state "On review by the Commission Proper" as AP2
+  state "Before the Supreme Court" as SC
+  state "Lifted: appeal granted" as LIFT
+  state "Final: Notice of Finality of Decision" as NFD
+  state "COA Order of Execution" as COE
+  state "Referred for administrative or criminal action" as REF
+
+  [*] --> PAID
+  PAID --> AOM: auditor finds a deficiency
+  PAID --> [*]: no finding
+  AOM --> OK1: management explains
+  AOM --> NS: a requirement is missing
+  AOM --> ND: expense not allowed, or revenue not collected in full
+  NS --> SET: requirement met in time
+  NS --> ND: not explained within 90 days
+  ND --> SET: persons liable pay
+  ND --> AP1: persons liable appeal (within six months)
+  AP1 --> LIFT: granted
+  AP1 --> AP2: denied, petition for review
+  AP2 --> LIFT: granted
+  AP2 --> SC: denied, petition to the Supreme Court (within 30 days)
+  AP2 --> NFD: denied, no further petition
+  SC --> LIFT: court reverses
+  SC --> NFD: court affirms
+  ND --> NFD: no appeal in time
+  NFD --> COE: amount still unpaid
+  COE --> SET: paid, or withheld from pay
+  NFD --> REF: facts show an offence
+  OK1 --> [*]
+  SET --> [*]
+  LIFT --> [*]
+  REF --> [*]

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "RM-1",
+    "title": "Shared reference model of a financial event",
+    "kind": "mermaid",
+    "filename": "RM-1_event_authority_record_system_metagraph.mmd",
+    "path": "diagrams/mermaid/RM-1_event_authority_record_system_metagraph.mmd",
+    "purpose": "Names the parts that one financial event connects: the authority, the rule, the input and output records, the classification, the system, the balance that changes and the delivered output. It gives the terms that the research registers use.",
+    "not_in_a_chapter": "It is a proposal for a data model, not a description of Philippine PFM from a source."
+  },
+  {
+    "id": "RM-2",
+    "title": "Reconciliation across budget, accounting, bank and physical evidence",
+    "kind": "mermaid",
+    "filename": "RM-2_multilateral_reconciliation.mmd",
+    "path": "diagrams/mermaid/RM-2_multilateral_reconciliation.mmd",
+    "purpose": "A proposed way to sort the differences that a reconciliation finds: differences of timing, of classification, of a missing link between records, and irregularities.",
+    "not_in_a_chapter": "It is a proposed procedure. The atlas describes the differences themselves in chapter A0, section 4, and the reconciliations that the Manual requires in chapter A4."
+  },
+  {
+    "id": "RM-3",
+    "title": "Revenue administration beyond collecting tax",
+    "kind": "mermaid",
+    "filename": "RM-3_revenue_administration_full_lifecycle.mmd",
+    "path": "diagrams/mermaid/RM-3_revenue_administration_full_lifecycle.mmd",
+    "purpose": "The steps of revenue administration before and after a collection: registration, declaration or assessment, arrears and enforcement, matching of records, refunds and adjustments.",
+    "not_in_a_chapter": "The atlas has no source for these steps in the rules of BIR and BOC. Chapter E5, section 4, describes the collections and the refunds that the sources cover."
+  },
+  {
+    "id": "RM-4",
+    "title": "Entity and funding channel variants",
+    "kind": "mermaid",
+    "filename": "RM-4_entity_and_fund_specific_paths.mmd",
+    "path": "diagrams/mermaid/RM-4_entity_and_fund_specific_paths.mmd",
+    "purpose": "The kinds of public body whose money follows other rules than a national agency: local governments, government corporations, government financial institutions, the Bangsamoro region, and special funds.",
+    "not_in_a_chapter": "Two of these kinds, the government financial institutions and the Bangsamoro region, are not covered by the atlas, and the diagram names no source for them."
+  },
+  {
+    "id": "RM-5",
+    "title": "IFMIS implementation is not equivalent to an interface",
+    "kind": "mermaid",
+    "filename": "RM-5_ifmis_deployment_confidence.mmd",
+    "path": "diagrams/mermaid/RM-5_ifmis_deployment_confidence.mmd",
+    "purpose": "A method to grade a statement that two information systems exchange data: from a planned interface to an interface that is shown to work, with the evidence that each grade needs.",
+    "not_in_a_chapter": "It is a method. The register of interfaces in Reference B uses its own classification: carrier, stage of use and the check of both sides."
+  },
+  {
+    "id": "RM-6",
+    "title": "IFMIS interface failure and duplicate entry pattern",
+    "kind": "mermaid",
+    "filename": "RM-6_interface_failure_and_reconciliation.mmd",
+    "path": "diagrams/mermaid/RM-6_interface_failure_and_reconciliation.mmd",
+    "purpose": "The pattern of an exchange between two systems that fails: a record that is missing, duplicated, old, different or in the wrong period, and the owner who must correct it.",
+    "not_in_a_chapter": "It is a general pattern, not a description of an exchange that a source documents."
+  },
+  {
+    "id": "RM-7",
+    "title": "UACS code revisions and crosswalk controls",
+    "kind": "mermaid",
+    "filename": "RM-7_uacs_version_crosswalk.mmd",
+    "path": "diagrams/mermaid/RM-7_uacs_version_crosswalk.mmd",
+    "purpose": "A proposed control for comparing data that use two versions of the UACS codes: a versioned mapping, and the checks for codes that are split, merged or removed.",
+    "not_in_a_chapter": "It is a proposal. Chapter UACS describes the structure of the code. The sources that the atlas read name a review of UACS, and no procedure for comparing versions."
+  },
+  {
+    "id": "RM-8",
+    "title": "Typed financial records with stable IDs and versioned classification",
+    "kind": "plantuml",
+    "filename": "RM-8_financial_record_class_model.puml",
+    "path": "diagrams/plantuml/RM-8_financial_record_class_model.puml",
+    "purpose": "A proposed data schema for typed financial records with stable identifiers and versioned classification. It is the schema behind the research registers.",
+    "not_in_a_chapter": "It is a proposal for a data model, not a description of Philippine PFM from a source."
+  }
+]

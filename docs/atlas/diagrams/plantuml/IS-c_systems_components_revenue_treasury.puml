@@ -1,0 +1,123 @@
+@startuml IS-c_systems_components_revenue_treasury
+' QUESTION THIS DIAGRAM ANSWERS: on the REVENUE AND TREASURY side (taxes, customs, agency collections, cash, borrowing), which information system belongs to which institution, and what passes from one system to another today?
+' READING: one frame = one institution. One box inside = one information system or account. Arrow = what passes, with a short label.
+'   Thick green arrow = money.
+'   Solid black arrow = a source describes an electronic channel. The register in Reference B, section 4, gives the carrier of each arrow.
+'   Dashed grey arrow = paper copies, a flow from general knowledge (GK), or a carrier that the sources do not state. The label says which.
+'   "NOT STATED" NEVER MEANS "ABSENT": it means that the sources that I read do not say how the content passes.
+'   POSITION OF THE LABELS: the drawing program places each label near the middle of its arrow, often a little above the line. Where two labels are close together, the table in chapter IS, section 6.2, lists every flow in words.
+' THE SPENDING SIDE is in diagram IS-b.
+' SOURCES: [BIR-PAY] eFPS, eBIRForms, ePay gateways, authorized agent banks, revenue collection officers. [PAS] abstracts of customs collections sent by banks to BOC through the clearing house. [BTR-SYS] NGCDS (authorized government depository banks upload daily and monthly collection reports, BTr issues certificates of deposited national collections to agencies), eTRAMS (monitors revenue collections and disbursements), NRoSS. [BTR-SITE] Treasury Single Account, collections of BIR, BOC and agencies reported to BTr. [PEFA2025] daily transfer of collections. [NRoSS] bids by dealers, settlement through the BSP payment system. [EO449] debt records. [PD1445 s.65, s.68, s.69] official receipt for every payment, deposit of the full amount not later than the following banking day. [GAM-V1 Ch.5 s.39, s.40, s.41] daily report of collections and deposits on paper, deposit through a depository bank for the account of the National Treasurer, consolidated report of daily collections from the bank to the accounting unit. [GAM-V1 Ch.6 ss.60-62] returns of taxes withheld and the electronic Tax Remittance Advice, filed by each agency in the electronic system of BIR. [JC2019-1] FAR 5. [CL2013-16A] replenishment of servicing banks. [GAA2026-GP] release of local shares by BTr through servicing banks. [eSRE] local reports to BLGF. [BOC-MOD] the name of the customs system in use (E2M) and the plan of a new Customs Processing System.
+' GENERAL KNOWLEDGE (GK), NOT OPENED IN A SOURCE HERE: what the customs system does, the internal tax system, bank reports to BIR, the debt recording system, the names of accounts at BSP, the passing of NGCDS data to eTRAMS.
+' NOT DESCRIBED IN THE SOURCES I READ: who sends the data on BIR and BOC collections to eTRAMS, and into which BTr system the report FAR 5 goes. No arrow is drawn from the tax-collecting banks to a BTr system for that reason.
+title IS-c  Revenue and treasury side: information systems and accounts inside their owner institutions (2026)
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 12
+skinparam componentStyle rectangle
+skinparam ArrowColor #333333
+skinparam ArrowFontSize 11
+skinparam packageStyle frame
+skinparam nodesep 35
+skinparam ranksep 70
+skinparam component {
+  BackgroundColor #FFFFFF
+  BorderColor #444444
+}
+skinparam package {
+  BorderColor #555555
+  FontStyle bold
+}
+left to right direction
+
+actor "Taxpayers,\nimporters" as TP
+actor "Payers of fees" as FP
+actor "Dealers in\nsecurities,\nlenders" as GSED
+
+package "BIR" #FFF8DC {
+  [eFPS, eBIRForms\ntax returns] as EFPS
+  [ePay gateways] as EPAY
+  [Internal tax system\ntaxpayer accounts (GK)] as BIRINT
+}
+
+package "BOC" #FFF8DC {
+  [E2M customs system\ndeclarations, assessment (GK)] as E2M
+}
+
+package "Agencies that collect fees" #EDF7ED {
+  [Collecting officers,\nofficial receipts] as COLL
+  [Accounting unit] as AACC
+}
+
+package "Collecting banks and clearing house" #FFF8DC {
+  [Authorized agent banks] as AAB
+  [Authorized government\ndepository banks] as AGDB
+  [PAS (PCHC)\ncustoms abstracts] as PAS
+}
+
+package "BTr" #FFF8DC {
+  [NGCDS\ncollection reports of\ndepository banks] as NGCDS
+  [eTRAMS\nmonitors collections (BIR, BOC,\nagencies) and disbursements] as TRAMS
+  [NRoSS\nauctions, registry,\nsettlement of securities] as NROSS
+  [Debt and accounting\nsystems (GK)] as DEBT
+}
+
+package "BSP" #FFF8DC {
+  [Treasury Single Account\n(accounts of the Treasury)] as TSA
+  [Settlement system] as RTGS
+}
+
+package "Government servicing banks" #FFF8DC {
+  [MDS sub-accounts\nof agencies] as MDS
+}
+
+package "DBM" #EEF4FB {
+  [URS\nreports] as URS
+}
+
+package "Local governments and BLGF" #EDF7ED {
+  [Local treasuries] as LTR
+  [eSRE\nlocal fiscal reports] as ESRE
+}
+
+' ---- internal revenue
+TP --> EFPS : returns
+TP -[#2E6B2E,bold]-> EPAY : payments
+TP -[#2E6B2E,bold]-> AAB : payments
+EPAY -[#2E6B2E,bold]-> AAB : payments
+AAB ..[#888888]> BIRINT : report of\npayments (GK)
+EFPS ..[#888888]> BIRINT : returns (GK)
+
+' ---- customs
+TP ..[#888888]> E2M : goods\ndeclarations (GK)
+AAB --> PAS : collection\nabstracts
+PAS --> E2M : abstracts of\ncollection (to BOC)
+
+' ---- agency collections
+FP -[#2E6B2E,bold]-> COLL : fees
+COLL -[#2E6B2E,bold]-> AGDB : deposit in full, by the\nnext banking day
+COLL ..[#888888]> AACC : daily report of collections\nand deposits (paper)
+AGDB ..[#888888]> AACC : report of daily collections\n(carrier not stated)
+AACC --> EFPS : returns of taxes withheld,\ntax remittance advice
+AACC --> URS : FAR 5,\nquarterly
+
+' ---- remittance and monitoring
+AAB -[#2E6B2E,bold]-> TSA : remittance,\ndaily
+AGDB -[#2E6B2E,bold]-> TSA : transfer
+AGDB --> NGCDS : collection\nreports
+NGCDS ..[#888888]> TRAMS : collections (GK)
+URS --> TRAMS : FAR 5\n(to BTr)
+
+' ---- borrowing and debt
+GSED --> NROSS : bids
+NROSS --> RTGS : settlement\ninstruction
+GSED -[#2E6B2E,bold]-> TSA : proceeds
+NROSS ..[#888888]> DEBT : new debt (GK)
+TSA -[#2E6B2E,bold]-> GSED : interest and\nprincipal
+
+' ---- outflows
+TSA -[#2E6B2E,bold]-> MDS : replenishment for\npayments made
+MDS ..[#888888]> TRAMS : report of\npayments made
+TSA -[#2E6B2E,bold]-> LTR : National Tax Allotment\n(through servicing banks)
+LTR --> ESRE : receipts and\nexpenditures
+@enduml

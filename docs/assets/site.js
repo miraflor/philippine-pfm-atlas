@@ -450,12 +450,11 @@
     }, figure.id.replace(/^figure-/, "Diagram "));
   });
 
-  // Supplementary historical models have editable source but no authoritative PNG.
-  // Reuse that source without confusing their IDs with current atlas diagrams.
+  // Research models: the viewer reads the code shown on the page.
   document.querySelectorAll("pre.model-code").forEach(function (pre) {
     const code = pre.querySelector("code.model-source");
     if (!code || !document.querySelector('a[download][href$=".mmd"]')) return;
-    createViewer(pre, function () { return code.textContent; }, "Historical research model");
+    createViewer(pre, function () { return code.textContent; }, "Research model");
   });
 })();
 /* END PFM MERMAID INTERACTIVE PATCH v2 */

@@ -1,4 +1,4 @@
-﻿control_id,name,gate_event,evidence_record_type,responsible_authority_id,source_code,legal_sufficiency,requires_actual_issuance_check
+control_id,name,gate_event,evidence_record_type,responsible_authority_id,source_code,legal_sufficiency,requires_actual_issuance_check
 AUTH_APPRO,Valid appropriation/legal basis,pre_commitment,GAA_ITEM,AGENCY,NBC599,illustrative_not_exhaustive,yes
 AUTH_ALLOT,Allotment availability for eligible amount and period,commitment,ALLOTMENT,AGENCY,NBC599,illustrative_not_exhaustive,yes
 AUTH_AWARD,Funding/effectivity conditions before award,procurement_award,AWARD,AGENCY,RA12009,illustrative_not_exhaustive,yes

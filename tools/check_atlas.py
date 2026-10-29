@@ -32,6 +32,9 @@ What it does not check
 """
 import csv, glob, os, re, shutil, subprocess, sys, tempfile
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from atlas_pages import ID as CHAPTER_ID, DIAGRAM_ID  # noqa: E402
+
 RESERVED = {"end", "class", "call", "click", "style", "default", "graph", "flowchart", "subgraph",
             "direction", "linkStyle", "classDef", "href", "interpolate"}
 
@@ -215,6 +218,8 @@ def main():
                 for tok in re.findall(r'[A-Za-z][A-Za-z0-9]*(?:-[A-Za-z0-9]+)*', cell):
                     if tok in defined:
                         note(tok, rel(f))
+                    elif CHAPTER_ID.match(tok) or DIAGRAM_ID.match(tok):
+                        continue   # the ID of a chapter or of a diagram, not a source code
                     elif shape.match(tok) and not roman.match(tok):
                         note(tok, rel(f))
     for c in sorted(used):

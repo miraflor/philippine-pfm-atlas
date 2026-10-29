@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diagram E3-f: Local budget cycle: decision points and their effects (province, city or municipality) · Philippine PFM Atlas</title>
+<meta name="description" content="in the local budget cycle, where are the decision points, and what happens at each one if the answer is &quot;no&quot;?">
+<meta name="color-scheme" content="light">
+<script>document.documentElement.classList.add('js');try{if(localStorage.getItem('pfm-atlas-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(error){}</script>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="site-header">
+<div class="wrap header-row">
+<a class="brand" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="6" fill="#ffffff" stroke="#deded9"/><path d="M6 8.5H26" stroke="#1f4e8c" stroke-width="3.2" stroke-linecap="round"/><path d="M6 14H26" stroke="#2e6b2e" stroke-width="3.2" stroke-linecap="round"/><path d="M6 19.5H26" stroke="#a35200" stroke-width="3.2" stroke-linecap="round"/><path d="M6 25H26" stroke="#555555" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="0.1 4.9"/><path d="M17 8.5V14" stroke="#1b1b1b" stroke-width="3.6" stroke-linecap="round"/></svg><span>Philippine PFM Atlas</span></a>
+<form class="header-search" action="../search.html" role="search"><label class="visually-hidden" for="q-top">Search the atlas</label><input id="q-top" name="q" type="search" placeholder="Search: SARO, voucher, BTMS"></form>
+<button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">Dark mode</button>
+</div>
+<nav class="wrap site-nav" aria-label="Main"><a href="../index.html">Budget cycle</a><a href="../walkthrough.html">Guided lessons</a><a href="../big-picture.html">Big picture</a><a href="../chapters/index.html">Chapters</a><a href="../reference/index.html">References</a><a href="../diagrams/index.html" aria-current="page">Diagrams</a><a href="../systems.html">Systems &amp; UACS</a><a href="../models/index.html">Research models</a><a href="../reference/g.html">Open points</a><a href="../search.html">Search</a><a href="../about.html">About</a></nav>
+</header>
+<main id="main" class="wrap">
+<nav class="pfm-cycle-context" aria-label="Budget-cycle context"><a href="../index.html#budget-cycle">Budget cycle</a> <span> / </span><a href="../index.html#phase-execution">Execution</a> <span> / </span><a href="../diagrams/index.html#cycle-diagrams-execution">Browse this phase</a></nav><div class="doc-head"><p class="eyebrow">Diagram <span class="id">E3-f</span> · PlantUML activity diagram with lanes</p><h1>Local budget cycle: decision points and their effects (province, city or municipality)</h1><p class="prose-block"><strong>Question:</strong> In the local budget cycle, where are the decision points, and what happens at each one if the answer is &quot;no&quot;?</p><p class="muted">In: <a href="../chapters/E3.html">E3. Allotment release</a></p></div><figure class="diagram" id="figure-E3-f"><a href="../atlas/rendered/E3-f_lgu_budget_swimlane.png"><img alt="Diagram E3-f: Local budget cycle: decision points and their effects (province, city or municipality)" height="1807" loading="lazy" src="../atlas/rendered/E3-f_lgu_budget_swimlane.png" width="2912"/></a></figure><div class="prose-block"><h2 id="about">What the diagram shows</h2><ul>
+<li><strong>Question:</strong> in the local budget cycle, where are the decision points, and what happens at each one if the answer is "no"?</li>
+<li><strong>How to read it:</strong> one column (lane) = one actor. Diamond = a decision with its two outcomes.</li>
+<li><strong>Why PlantUML:</strong> the cycle has three decision points with different effects (no ordinance in time, review finds a violation, certification refused). A lane diagram shows them with the responsible actor.</li>
+<li><strong>Sources:</strong> Republic Act No. 7160 <a class="basis" href="../reference/f.html#source-lgc" title="Republic Act No. 7160, Local Government Code of 1991.">[LGC]</a> ss.316, 317, 318, 319, 323, 324, 325, 326, 327, 344, 286. <a class="basis" href="../reference/f.html#source-esre" title='DOF article "DOF issues new eSRE reporting system for LGU treasurers" (Department Order No. 049-2016).'>[eSRE]</a> for reports to BLGF. <a class="basis" href="../reference/f.html#source-const" title="1987 Constitution of the Philippines.">[CONST IX-D]</a> for audit.</li>
+<li><strong>General knowledge (GK), not opened in a source here:</strong> the budget call, the veto of the local chief executive, the allotment release.</li>
+</ul>
+</div><h2 id="code">Code</h2><div class="copy-row"><button type="button" data-copy="code-E3-f">Copy the code</button><a href="../atlas/diagrams/plantuml/E3-f_lgu_budget_swimlane.puml">Code file</a><a href="../atlas/rendered/E3-f_lgu_budget_swimlane.png">Image in full size</a></div><pre id="code-E3-f"><code>@startuml E3-f_lgu_budget_swimlane
+&#x27; QUESTION THIS DIAGRAM ANSWERS: in the local budget cycle, where are the decision points, and what happens at each one if the answer is &quot;no&quot;?
+&#x27; READING: one column (lane) = one actor. Diamond = a decision with its two outcomes.
+&#x27; WHY PLANTUML: the cycle has three decision points with different effects (no ordinance in time, review finds a violation, certification refused). A lane diagram shows them with the responsible actor.
+&#x27; SOURCES: Republic Act No. 7160 [LGC] ss.316, 317, 318, 319, 323, 324, 325, 326, 327, 344, 286. [eSRE] for reports to BLGF. [CONST IX-D] for audit.
+&#x27; GENERAL KNOWLEDGE (GK), NOT OPENED IN A SOURCE HERE: the budget call, the veto of the local chief executive, the allotment release.
+title E3-f  Local budget cycle: decision points and their effects (province, city or municipality)
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 12
+skinparam ActivityBackgroundColor #FFFFFF
+skinparam ActivityBorderColor #444444
+skinparam ActivityDiamondBackgroundColor #FFFDE7
+skinparam ActivityDiamondBorderColor #8A6D00
+skinparam ArrowColor #333333
+skinparam NoteBackgroundColor #FFFDE7
+skinparam NoteBorderColor #8A6D00
+skinparam SwimlaneBorderColor #777777
+skinparam SwimlaneTitleFontStyle bold
+
+|#EDF7ED|Local finance committee|
+start
+:Estimate income.
+Recommend the spending ceiling by
+sector from approved local plans;
+|#EDF7ED|Local chief executive|
+:Budget call with ceilings (GK);
+|#EDF7ED|Department heads|
+:Budget proposals, on or before 15 July;
+|#EDF7ED|Local chief executive|
+:Prepare the executive budget.
+Submit it to the sanggunian
+not later than 16 October;
+|#F3EEFA|Sanggunian|
+if (Appropriation ordinance enacted\nby the end of the fiscal year?) then (yes)
+  :Ordinance within the limits:
+  total not above estimated income,
+  20 percent of the tax allotment for
+  development, 5 percent calamity fund,
+  ceiling on personal services;
+else (no)
+  :Stay in session without
+  other business;
+  if (Enacted within 90 days from\nthe start of the fiscal year?) then (yes)
+  else (no)
+    :Ordinance of the previous year is
+    deemed reenacted, only for salaries,
+    statutory and contractual obligations,
+    essential operating expenses;
+  endif
+endif
+|#EEF4FB|Reviewing authority|
+:Receive the ordinance.
+DBM for provinces, highly urbanized
+and independent component cities.
+Provincial sanggunian for component
+cities and municipalities;
+if (Action within 90 days?) then (no)
+  :Ordinance deemed reviewed.
+  It stays in full force;
+else (yes)
+  if (Items within the legal limits?) then (yes)
+    :Ordinance stays in force;
+  else (no)
+    :Declare the ordinance inoperative
+    in whole or in part. Disallow or
+    reduce the items;
+    |#EDF7ED|Treasurer, accountant, budget officer|
+    :Treasurer makes no further payment
+    from the affected items;
+  endif
+endif
+|#EDF7ED|Treasurer, accountant, budget officer|
+:Collect local revenues.
+Receive the National Tax Allotment,
+released automatically by BTr;
+:For each claim:
+budget officer certifies the appropriation,
+accountant obligates it,
+treasurer certifies that funds are available;
+if (All three certifications given?) then (yes)
+  |#EDF7ED|Department heads|
+  :Certify and approve the voucher;
+  |#EDF7ED|Local chief executive|
+  :Approve the voucher. Not required for
+  regularly recurring administrative expenses
+  (payrolls, utilities, remittances);
+  |#EDF7ED|Treasurer, accountant, budget officer|
+  :Pay. Record in the books;
+else (no)
+  :No money may be disbursed;
+endif
+:Report receipts and expenditures to
+BLGF (eSRE), quarterly and annually.
+Send accounts to COA;
+|#FDF1E3|COA|
+:Audit the accounts
+of the local government;
+stop
+@enduml
+</code></pre><nav class="pager" aria-label="Pages"><a class="prev" href="E3-e.html">← Diagram E3-e</a><a class="next" href="E3-g.html">Diagram E3-g →</a></nav>
+</main>
+<footer class="site-footer"><div class="wrap"><p>Philippine PFM Atlas. An independent reference. It is not an official publication of the Philippine government, and it does not replace the laws, circulars and manuals that it cites. Facts on current events are as of 8 October 2026.</p><p><a href="../about.html">About the atlas</a> · <a href="../reference/f.html">Sources</a> · <a href="../reference/g.html">Open points</a></p></div></footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

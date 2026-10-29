@@ -6,21 +6,21 @@
 
 How do the parts of Philippine public financial management (PFM) relate to each other: the functions, the authorities that perform them, the information systems that these authorities use, and the records that pass from one to the next?
 
-This file gives the whole on a few pages. Each part has its own chapter with the steps, the documents, the systems and the sources.
+This file gives the whole on a few pages. Each phase and each step of the budget cycle has its own chapter, with the documents, the systems and the sources. Section 16 lists the chapters.
 
 ## 2. The whole in plain words
 
-Public money does not belong to the person who handles it. For this reason a rule decides, at every step, who may do what. PFM has five parts. Only the first part is a sequence of steps. Diagram 00a shows the five parts.
+Public money does not belong to the person who handles it. For this reason a rule decides, at every step, who may do what. PFM has five parts. Only the first part is a sequence of steps. Diagram BP-a shows the five parts.
 
 <!-- site:parts -->
 
 | Part | What happens | Order in time | Chapters |
 |---|---|---|---|
-| A. Decide | Plan, set the fiscal frame, prepare the budget, pass the budget law | One after the other, for one fiscal year | 01 to 04 |
-| B. Execute | Three lines of steps: legal authority, the claim, cash | At the same time. Money may leave the Treasury only where the three meet | 05 to 07, 10 to 12, 15 |
-| C. Record and check | Registries, books of accounts, property records, certifications by officers | At the same time as every act of part B | 07, 08, 13 |
-| D. Close each period | Reconcile, report, audit, oversee | At the end of each month, quarter and year. The audit of single payments continues during the whole year | 08, 09, 18 |
-| E. What remains | Assets, debts, and promises that bind later budgets | After the year | 11, 13, 19 |
+| A. Decide | Plan, set the fiscal frame, prepare the budget, pass the budget law | One after the other, for one fiscal year | P0 to P12, L0 to L5 |
+| B. Execute | Three lines of steps: legal authority, the claim, cash | At the same time. Money may leave the Treasury only where the three meet | E0 to E6 |
+| C. Record and check | Registries, books of accounts, property records, certifications by officers | At the same time as every act of part B | E4, A4 |
+| D. Close each period | Reconcile, report, audit, oversee | At the end of each month, quarter and year. The audit of single payments continues during the whole year | A0 to A9 |
+| E. What remains | Assets, debts, and promises that bind later budgets | After the year | P1, E5, A4 |
 
 <!-- /site:parts -->
 
@@ -41,7 +41,7 @@ Lines 1, 3 and 4 have the same steps for every payment. Line 2 has a different f
 
 <!-- site:meeting-points -->
 
-The lines run at the same time. They do not form one line. A payment can be made only at a point where the lines meet. Two lines meet where one act needs a result from both of them. For one payment under a contract there are three such points (diagram 00d).
+The lines run at the same time. They do not form one line. A payment can be made only at a point where the lines meet. Two lines meet where one act needs a result from both of them. For one payment under a contract there are three such points (diagram BP-d).
 
 1. An **allotment** meets an **award**. Only then may the agency sign the contract and record the obligation. The procurement law says that no contract may be awarded before the funding is approved and effective [RA12009 s.12]. The Auditing Code says that no contract may be entered into before the accounting official has certified that funds are available [PD1445 s.86].
 2. An **obligation** meets an **accepted delivery**. Only then is the amount a payable. The Manual defines accounts payable as obligations for which goods, services or projects "have been delivered/rendered/completed and accepted" [GAM-V1 Ch.6 s.2]. The budget reports call such an amount due and demandable [JC2019-1].
@@ -49,7 +49,7 @@ The lines run at the same time. They do not form one line. A payment can be made
 
 <!-- /site:meeting-points -->
 
-The second point has a lawful exception, the advance payment. The Auditing Code allows no advance payment "Except with the prior approval of the President" [PD1445 s.88]. An order of the President of 2011 gave this approval for goods under the earlier procurement law [MO15-2011]. The procurement rules of 2025 name the cases: for example an advance of not more than 15 percent of a works contract, on the written request of the contractor and against an irrevocable standby letter of credit, a bank guarantee or a surety bond [IRR12009 s.71.2.5]. In such a case the security replaces the accepted delivery. Chapter 07, section 7.2, follows such a contract with amounts.
+The second point has a lawful exception, the advance payment. The Auditing Code allows no advance payment "Except with the prior approval of the President" [PD1445 s.88]. An order of the President of 2011 gave this approval for goods under the earlier procurement law [MO15-2011]. The procurement rules of 2025 name the cases: for example an advance of not more than 15 percent of a works contract, on the written request of the contractor and against an irrevocable standby letter of credit, a bank guarantee or a surety bond [IRR12009 s.71.2.5]. In such a case the security replaces the accepted delivery. Chapter E6, section 3.2, follows such a contract with amounts.
 
 <!-- site:cases -->
 
@@ -61,55 +61,55 @@ A case where it fails: the delivery is accepted on 28 June, and the voucher reac
 
 A drawing with one line of steps cannot show this. I think this is the main reason why a map of "the PFM process" as one flow looks incomplete, even when it has many boxes. Five more facts increase the difficulty.
 
-- **Three budgets are active in one calendar year.** In 2026, agencies close the accounts of fiscal year 2025, execute the budget of 2026 and prepare the budget of 2027 (diagram 00e).
-- **The records do not wait for the payment.** The allotment and the obligation are entered in registries when they occur, and they have no journal entry. The first journal entry is made when the cash authority arrives. The payable is recorded when the delivery is accepted [GAM-V1 Annex H]. Section 7 and chapter 08 show which unit writes which record, and when.
+- **Three budgets are active in one calendar year.** In 2026, agencies close the accounts of fiscal year 2025, execute the budget of 2026 and prepare the budget of 2027 (diagram BP-f).
+- **The records do not wait for the payment.** The allotment and the obligation are entered in registries when they occur, and they have no journal entry. The first journal entry is made when the cash authority arrives. The payable is recorded when the delivery is accepted [GAM-V1 Annex H]. Section 7 and chapter A4 show which unit writes which record, and when.
 - **Not all money follows the route of a purchase.** Salaries, the share of local governments, support to government corporations, transfers to other bodies, cash aid to persons, interest on debt and direct payments by lenders each have another form of claim (section 12).
-- **One spending has several amounts.** The authority, the commitment, the accepted delivery, the cash paid and the result are recorded on different dates and appear in different reports. For the same program and the same year these amounts differ, and none of them is wrong (section 9, and chapter 08, section 12).
-- **Some decisions of today bind the budgets of later years.** A contract for several years, a partnership with a private firm and a guarantee are such decisions. The appropriation of the present year does not show them in full (chapter 19).
+- **One spending has several amounts.** The authority, the commitment, the accepted delivery, the cash paid and the result are recorded on different dates and appear in different reports. For the same program and the same year these amounts differ, and none of them is wrong (section 9, and chapter A0, section 4).
+- **Some decisions of today bind the budgets of later years.** A contract for several years, a partnership with a private firm and a guarantee are such decisions. The appropriation of the present year does not show them in full (chapter P1, section 4).
 
 Terms used in this file, in the words of the law where I could read them. An **appropriation** is "an authorization made by law or other legislative enactment, directing payment out of government funds under specified conditions or for specified purposes". An **allotment** is "an authorization issued by the Department of the Budget to an agency, which allows it to incur obligations for specified amounts contained in a legislative appropriation". An **obligation** is "an amount committed to be paid by the Government for any lawful act made by an authorized officer for and in behalf of the government" [EO292-B6 s.2]. A **Notice of Cash Allocation (NCA)** "specifies the maximum amount of withdrawal that an entity can make from a government bank for the period indicated" [GAM-V1 Ch.5 s.38]. A **voucher** is the document that approves one claim for payment. A **registry** is a running list with balances that the budget unit keeps. The **books of accounts** are the journals and ledgers that the accounting unit keeps by double entry. The glossary is in [Reference E](reference/E_glossary.md).
 
 ## 3. The parts of the cycle and their chapters
 
-Diagram 00a shows the parts. The table adds the lead authority, the main documents and the main systems. Only the four functions of part A follow one another. The functions of parts B and C happen at the same time.
+Diagram BP-a shows the parts. The table adds the lead authority, the main documents and the main systems. Only the four functions of part A follow one another. The functions of parts B and C happen at the same time.
 
 | Part | Function | Lead authorities | Main documents | Main systems | Chapter |
 |---|---|---|---|---|---|
-| A, step 1 | Plan | DEPDev, Economy and Development Council, Investment Coordination Committee, Regional Development Councils | Development plan, Public Investment Program, Three-Year Rolling Infrastructure Program | PIPOL | [01](processes/01_planning_and_investment_programming.md) |
-| A, step 2 | Set the fiscal frame | Development Budget Coordination Committee (DBCC) | Macroeconomic assumptions, revenue program, spending ceiling, deficit target, borrowing program | None named in the sources | [02](processes/02_macro_fiscal_framework.md) |
-| A, step 3 | Prepare the budget | DBM, agencies, the President | Budget Call, proposals in two tiers, National Expenditure Program, Budget of Expenditures and Sources of Financing, Budget Message | OSBPS, BPMS, GMIS | [03](processes/03_budget_preparation.md) |
-| A, step 4 | Legislate | House of Representatives, Senate, the President | General Appropriations Bill, General Appropriations Act (GAA) | None named in the sources | [04](processes/04_budget_legislation.md) |
-| B, line 1 | Legal authority: release and commit | Congress, DBM, the budget unit of the agency | Execution plans, the GAA as allotment order, SARO, GARO, obligation request | URS, ADRS, agency registries, BTMS | [05](processes/05_budget_release_allotment_and_cash_authority.md), [07](processes/07_obligation_delivery_payment.md) |
-| B, line 2 | The claim: a purchase | Agency, Bids and Awards Committee, bidders, supplier | Procurement plan, bidding documents, notice of award, contract or purchase order, delivery receipt, acceptance report | PhilGEPS, BTMS | [06](processes/06_procurement.md), [07](processes/07_obligation_delivery_payment.md) |
-| B, line 2 | The claim: a salary, and other claims | Agency, DBM, employees, receivers of transfers | List of positions, appointment, payroll, memorandum of agreement, loan agreement | GMIS, agency payroll systems | [12](processes/12_personnel_and_payroll.md), [15](processes/15_gocc_transfers_and_fund_clusters.md), [11](processes/11_treasury_cash_and_debt.md) |
-| B, line 3 | Cash: collect, borrow, hold, authorize, pay | BIR, BOC, banks, BTr, BSP, DOF, DBM, the cash unit of the agency | Tax returns, official receipts, government securities, loan agreements, NCA, disbursement voucher, payment order (LDDAP-ADA) | eFPS, Payment Application Secure, NGCDS, eTRAMS, NRoSS, bank facility such as eMDS, BTMS | [10](processes/10_revenue_collection.md), [11](processes/11_treasury_cash_and_debt.md), [07](processes/07_obligation_delivery_payment.md) |
-| C | Record and check, at the time of each act | Budget, accounting, cash and property units of the agency. BTr for cash and debt | Registries, journal entry vouchers, journals and ledgers, records of checks and payment orders, property cards, certifications on each document | eNGAS or other software, the eBudget of COA, BTMS | [08](processes/08_accounting_and_reporting.md), [13](processes/13_assets_and_property.md), [07](processes/07_obligation_delivery_payment.md) |
-| D | Reconcile and report, at the end of each period | The same units, to DBM, COA and BTr | Bank reconciliation statement, trial balance, accountability reports, financial statements | URS, AFR System, BTMS | [08](processes/08_accounting_and_reporting.md) |
-| D | Audit and oversee | COA, Congress, the public | Audit observations, notices of suspension, disallowance and charge, audit reports | None named in the sources | [09](processes/09_audit_and_oversight.md) |
-| E | What remains after the year | Agencies, BTr, DOF, DBCC, the PPP Center | Property records, debt records, Fiscal Risks Statement, partnership contracts, Multi-Year Contractual Authority | National Asset Registry System. None named for promises | [13](processes/13_assets_and_property.md), [11](processes/11_treasury_cash_and_debt.md), [19](processes/19_fiscal_risks_ppp_and_contingent_liabilities.md) |
-| Outside the main sequence | Other public bodies and other funds | Local governments, government corporations | Appropriation ordinance, Corporate Operating Budget | eSRE, own systems | [14](processes/14_local_governments.md), [15](processes/15_gocc_transfers_and_fund_clusters.md) |
-| Parallel to the money | Results | Agencies, DBM, the planning department, COA | Targets in the budget law, physical plan, quarterly physical report, yearly performance review, evaluations | URS, COMPASS portal | [18](processes/18_performance_information_and_evaluation.md) |
-| For all parts | Common base | PFM Committee, DBM, COA | UACS, laws and yearly rules, the Government Accounting Manual | The planned IFMIS with BTMS as core | [16](processes/16_information_systems_and_ifmis.md), [17](processes/17_uacs_and_record_identifiers.md) |
+| A, step 1 | Plan | DEPDev, Economy and Development Council, Investment Coordination Committee, Regional Development Councils | Development plan, Public Investment Program, Three-Year Rolling Infrastructure Program | PIPOL | [P1](chapters/P1_budget_call.md) |
+| A, step 2 | Set the fiscal frame | Development Budget Coordination Committee (DBCC) | Macroeconomic assumptions, revenue program, spending ceiling, deficit target, borrowing program | None named in the sources | [P1](chapters/P1_budget_call.md) |
+| A, step 3 | Prepare the budget | DBM, agencies, the President | Budget Call, proposals in two tiers, National Expenditure Program, Budget of Expenditures and Sources of Financing, Budget Message | OSBPS, BPMS, GMIS | [P0](chapters/P0_preparation.md) to [P12](chapters/P12_presidents_budget.md) |
+| A, step 4 | Legislate | House of Representatives, Senate, the President | General Appropriations Bill, General Appropriations Act (GAA) | None named in the sources | [L0](chapters/L0_legislation.md) to [L5](chapters/L5_enactment_of_the_gaa.md) |
+| B, line 1 | Legal authority: release and commit | Congress, DBM, the budget unit of the agency | Execution plans, the GAA as allotment order, SARO, GARO, obligation request | URS, ADRS, agency registries, BTMS | [E0](chapters/E0_execution.md), [E2](chapters/E2_budget_execution_program.md), [E3](chapters/E3_allotment_release.md), [E4](chapters/E4_obligation.md) |
+| B, line 2 | The claim: a purchase | Agency, Bids and Awards Committee, bidders, supplier | Procurement plan, bidding documents, notice of award, contract or purchase order, delivery receipt, acceptance report | PhilGEPS, BTMS | [E1](chapters/E1_early_procurement.md), [E4](chapters/E4_obligation.md) |
+| B, line 2 | The claim: a salary, and other claims | Agency, DBM, employees, receivers of transfers | List of positions, appointment, payroll, memorandum of agreement, loan agreement | GMIS, agency payroll systems | [E4](chapters/E4_obligation.md), [E6](chapters/E6_disbursement.md), [E5](chapters/E5_cash_allocation.md) |
+| B, line 3 | Cash: collect, borrow, hold, authorize, pay | BIR, BOC, banks, BTr, BSP, DOF, DBM, the cash unit of the agency | Tax returns, official receipts, government securities, loan agreements, NCA, disbursement voucher, payment order (LDDAP-ADA) | eFPS, Payment Application Secure, NGCDS, eTRAMS, NRoSS, bank facility such as eMDS, BTMS | [E5](chapters/E5_cash_allocation.md), [E6](chapters/E6_disbursement.md) |
+| C | Record and check, at the time of each act | Budget, accounting, cash and property units of the agency. BTr for cash and debt | Registries, journal entry vouchers, journals and ledgers, records of checks and payment orders, property cards, certifications on each document | eNGAS or other software, the eBudget of COA, BTMS | [A4](chapters/A4_accountability_reports.md), [E4](chapters/E4_obligation.md) |
+| D | Reconcile and report, at the end of each period | The same units, to DBM, COA and BTr | Bank reconciliation statement, trial balance, accountability reports, financial statements | URS, AFR System, BTMS | [A4](chapters/A4_accountability_reports.md), [A6](chapters/A6_in_year_reports.md) |
+| D | Audit and oversee | COA, Congress, the public | Audit observations, notices of suspension, disallowance and charge, audit reports | None named in the sources | [A9](chapters/A9_audit_report.md), [A0](chapters/A0_accountability.md) |
+| E | What remains after the year | Agencies, BTr, DOF, DBCC, the PPP Center | Property records, debt records, Fiscal Risks Statement, partnership contracts, Multi-Year Contractual Authority | National Asset Registry System. None named for promises | [A4](chapters/A4_accountability_reports.md), [E5](chapters/E5_cash_allocation.md), [P1](chapters/P1_budget_call.md) |
+| Outside the main sequence | Other public bodies and other funds | Local governments, government corporations | Appropriation ordinance, Corporate Operating Budget | eSRE, own systems | [E3](chapters/E3_allotment_release.md), [E6](chapters/E6_disbursement.md) |
+| Parallel to the money | Results | Agencies, DBM, the planning department, COA | Targets in the budget law, physical plan, quarterly physical report, yearly performance review, evaluations | URS, COMPASS portal | [A1](chapters/A1_performance_targets.md), [A2](chapters/A2_citizen_engagement_in_accountability.md), [A3](chapters/A3_monitoring_and_evaluation.md), [A5](chapters/A5_performance_review.md) |
+| For all parts | Common base | PFM Committee, DBM, COA | UACS, laws and yearly rules, the Government Accounting Manual | The planned IFMIS with BTMS as core | [IS](chapters/IS_information_systems.md), [UACS](chapters/UACS_uacs_and_record_identifiers.md) |
 
 The cycle is not a closed loop for one year. The results of year N (actual figures, audit findings, evaluations) return to the plans and budgets of later years, because the budget of year N+1 is already prepared and voted while year N is executed.
 
 A case where the order of part A matters: Congress may not increase the appropriations that the President recommended, so an amount that is missing in the proposal of step 3 cannot be added in step 4 beyond that limit [EO292-B6 s.24]. A case where no order exists: the accounting unit does not wait for the payment to record a delivery. It records the payable when the delivery is accepted, and the budget unit recorded the obligation months before [GAM-V1 Annex H].
 
-### Diagram 00a  The whole of PFM for the national government: what happens in order, what happens at the same time, and the chapter for each part
+### Diagram BP-a  The whole of PFM for the national government: what happens in order, what happens at the same time, and the chapter for each part
 
-Code file: `diagrams/mermaid/00a_pfm_cycle_overview.mmd`. Rendered image: [`rendered/00a_pfm_cycle_overview.png`](rendered/00a_pfm_cycle_overview.png).
+Code file: `diagrams/mermaid/BP-a_pfm_cycle_overview.mmd`. Rendered image: [`rendered/BP-a_pfm_cycle_overview.png`](rendered/BP-a_pfm_cycle_overview.png).
 
 - **Question:** which parts form public financial management (PFM) in the Philippines, which of them follow one another, which of them happen at the same time, and which chapter of this atlas describes each one?
-- **Idea:** only the decisions of part A follow one another for one fiscal year. In part B three lines of steps run at the same time, and money may leave the Treasury only where all three have a result for the same amount (diagram 00d). Part C is not a later step: every act of part B writes a record at the time of the act. Part D happens at the end of each month, quarter and year. Part E is what stays after the year.
+- **Idea:** only the decisions of part A follow one another for one fiscal year. In part B three lines of steps run at the same time, and money may leave the Treasury only where all three have a result for the same amount (diagram BP-d). Part C is not a later step: every act of part B writes a record at the time of the act. Part D happens at the end of each month, quarter and year. Part E is what stays after the year.
 - **How to read it:** a solid arrow between two frames = the lower frame needs the result of the upper frame. The dotted arrow from B to C = every act in B writes a record in C at the same time. Inside a frame, an arrow = the order of the steps of that line. The frames at the sides are active during the whole year.
 - **The cycle is not a simple loop:** results return to the plans and budgets of LATER fiscal years, so the last node is drawn as an exit and not as an arrow back to part A.
 - **Why the records stand at every act:** the Manual records the allotment and the obligation in registries when they occur, makes the first journal entry when the Notice of Cash Allocation arrives, and records the payable when the delivery is accepted, before any payment [GAM-V1 Annex H]. Recording is therefore not a step after payment.
 - **Sources:** DBM primer on the budget process [PRIMER], FY 2027 Budget Call [NBM156], FY 2026 release guidelines [NBC599], procurement law [RA12009], reporting circular [JC2019-1], the Government Accounting Manual for the records of each unit and the order of the entries [GAM-V1 Ch.2 s.8, s.12, Ch.3, Annex H], Auditing Code [PD1445 s.41], PFM Reforms Roadmap 2024-2028 [ROADMAP2024]. The arrangement in five parts is my own.
-- **Limit:** local governments and government corporations have their own complete cycles (chapters 14 and 15). Here they appear only where national money passes to them.
+- **Limit:** local governments and government corporations have their own complete cycles (chapters E3 and E6). Here they appear only where national money passes to them.
 
 ```mermaid
 ---
-title: "00a  The whole of PFM for the national government: what happens in order, what happens at the same time, and the chapter for each part"
+title: "BP-a  The whole of PFM for the national government: what happens in order, what happens at the same time, and the chapter for each part"
 config:
   flowchart:
     wrappingWidth: 460
@@ -118,33 +118,33 @@ flowchart TB
 
   subgraph A["A  DECIDE  -  in this order for one fiscal year"]
     direction LR
-    A1["1  PLAN  -  chapter 01<br/>DEPDev, Economy and Development Council, ICC,<br/>Regional Development Councils.<br/>Development plan, investment program (PIPOL)"] --> A2["2  SET THE FISCAL FRAME  -  chapter 02<br/>DBCC.<br/>Assumptions, revenue program,<br/>spending ceiling, deficit, borrowing"] --> A3["3  PREPARE THE BUDGET  -  chapter 03<br/>Agencies, DBM, President.<br/>Budget Call, proposals (OSBPS),<br/>NEP, BESF, Budget Message"] --> A4["4  LEGISLATE  -  chapter 04<br/>House, Senate, President.<br/>General Appropriations Act (GAA).<br/>If none on 1 January: the last one is re-enacted"]
+    A1["1  PLAN  -  chapter P1, section 2<br/>DEPDev, Economy and Development Council, ICC,<br/>Regional Development Councils.<br/>Development plan, investment program (PIPOL)"] --> A2["2  SET THE FISCAL FRAME  -  chapter P1, section 3<br/>DBCC.<br/>Assumptions, revenue program,<br/>spending ceiling, deficit, borrowing"] --> A3["3  PREPARE THE BUDGET  -  chapters P0 to P12<br/>Agencies, DBM, President.<br/>Budget Call, proposals (OSBPS),<br/>NEP, BESF, Budget Message"] --> A4["4  LEGISLATE  -  chapters L0 to L5<br/>House, Senate, President.<br/>General Appropriations Act (GAA).<br/>If none on 1 January: the last one is re-enacted"]
   end
 
   subgraph BC["DURING THE YEAR  -  parts B and C happen at the same time"]
     direction LR
-    subgraph B["B  EXECUTE  -  three lines of steps at the same time. Money may leave only where all three meet (diagram 00d)"]
+    subgraph B["B  EXECUTE  -  three lines of steps at the same time. Money may leave only where all three meet (diagram BP-d)"]
       direction TB
-      subgraph B5["5  LEGAL AUTHORITY  -  chapter 05  -  Congress, DBM, budget unit of the agency"]
+      subgraph B5["5  LEGAL AUTHORITY  -  chapters E0, E3 and E4  -  Congress, DBM, budget unit of the agency"]
         direction LR
         B5a["Appropriation<br/>(one line of the GAA,<br/>or an automatic appropriation)"] --> B5b["ALLOTMENT = authority to commit.<br/>The GAA itself, or SARO / GARO"] --> B5c["OBLIGATION = a commitment<br/>(obligation request, ORS)"]
       end
-      subgraph B6["6  THE CLAIM: why the government owes this party  -  chapters 06, 07, 12, 15"]
+      subgraph B6["6  THE CLAIM: why the government owes this party  -  chapters E1, E4 and E6"]
         direction LR
         B6a["Purchase: procurement plan,<br/>bidding, award, contract<br/>(BAC, PhilGEPS)"] --> B6b["Delivery, inspection<br/>and acceptance"]
         B6c["Salary: position,<br/>appointment, payroll certified<br/>'services duly rendered'"]
-        B6d["Other claims: advance against a security,<br/>transfer, debt service, tax refund,<br/>cash aid (diagram 07h)"]
+        B6d["Other claims: advance against a security,<br/>transfer, debt service, tax refund,<br/>cash aid (diagram E6-e)"]
         B6b ~~~ B6c
         B6c ~~~ B6d
       end
-      subgraph B7["7  CASH  -  chapters 10, 11, 07  -  BIR, BOC, banks, BTr, BSP, DBM, cash unit of the agency"]
+      subgraph B7["7  CASH  -  chapters E5 and E6  -  BIR, BOC, banks, BTr, BSP, DBM, cash unit of the agency"]
         direction LR
         B7a["Taxes, duties, fees<br/>and borrowing"] --> B7b["Treasury Single<br/>Account at BSP"] --> B7c["CASH AUTHORITY = limit for payments<br/>(NCA at the servicing bank)"] --> B7d["Payment order or check.<br/>The bank pays the payee"] --> B7e["The Treasury repays<br/>the bank"]
       end
       B5 ~~~ B6
       B6 ~~~ B7
     end
-    subgraph C["C  RECORD AND CHECK  -  at the same time as every act of part B  -  chapters 08, 13, 07"]
+    subgraph C["C  RECORD AND CHECK  -  at the same time as every act of part B  -  chapters E4 and A4"]
       direction TB
       C1["Budget registries (budget unit):<br/>appropriations, allotments,<br/>obligations, disbursements.<br/>No journal entry"]
       C2["Books of accounts (accounting unit):<br/>journal entry when the NCA arrives,<br/>when a delivery is accepted (payable),<br/>and when a payment is made"]
@@ -161,18 +161,18 @@ flowchart TB
     B -. "every act writes<br/>a record at the time" .-> C
   end
 
-  subgraph D["D  AT THE END OF EACH PERIOD  -  chapters 08, 09, 18"]
+  subgraph D["D  AT THE END OF EACH PERIOD  -  chapters A0 to A9"]
     direction LR
     D1["Reconcile: books with the bank,<br/>books with the Treasury,<br/>registries with DBM and COA records,<br/>property count with property cards"] --> D2["Report: monthly and quarterly<br/>accountability reports (URS),<br/>physical report of outputs"] --> D3["Year-end statements<br/>to COA by 14 February"] --> D4["Audit by COA: transactions<br/>during the year, after payment.<br/>Accounts at the year end.<br/>Annual report by 30 September"] --> D5["Oversight by Congress<br/>and the public"]
   end
 
-  subgraph E["E  WHAT REMAINS AFTER THE YEAR  -  chapters 13, 11, 19"]
+  subgraph E["E  WHAT REMAINS AFTER THE YEAR  -  chapters P1, E5 and A4"]
     direction LR
     E1["Assets: property, plant<br/>and equipment, inventories"] ~~~ E2["Debts: securities and loans,<br/>unpaid obligations"]
     E2 ~~~ E3["Promises that bind later budgets:<br/>multi-year contracts, partnerships<br/>with private firms, guarantees"]
   end
 
-  subgraph X["OTHER PUBLIC BODIES  -  chapters 14 and 15"]
+  subgraph X["OTHER PUBLIC BODIES  -  chapters E3 and E6"]
     direction TB
     Xa["Local governments:<br/>National Tax Allotment,<br/>own budget cycle"]
     Xb["Government corporations:<br/>subsidy, equity,<br/>own corporate budgets"]
@@ -181,7 +181,7 @@ flowchart TB
     Xb ~~~ Xc
   end
 
-  subgraph Z["COMMON BASE  -  chapters 16 and 17"]
+  subgraph Z["COMMON BASE  -  chapters IS and UACS"]
     direction LR
     Za["Laws and rules:<br/>Constitution, EO 292 Book VI,<br/>PD 1445, yearly GAA provisions,<br/>Government Accounting Manual"] ~~~ Zb["UACS: one classification<br/>for budget, books and reports.<br/>Document numbers that<br/>connect single records"]
     Zb ~~~ Zc["Information systems, and the<br/>planned integration with<br/>BTMS as the core (IFMIS)"]
@@ -213,7 +213,7 @@ flowchart TB
 
 ## 4. The authorities
 
-Diagram 00b groups the authorities by their position in government. The table gives each group in one line. The legal basis of every role is in [Reference A](reference/A_authorities_and_mandates.md).
+Diagram BP-b groups the authorities by their position in government. The table gives each group in one line. The legal basis of every role is in [Reference A](reference/A_authorities_and_mandates.md).
 
 | Group | Authorities | What the group does in PFM |
 |---|---|---|
@@ -229,19 +229,19 @@ Diagram 00b groups the authorities by their position in government. The table gi
 
 The DBM Secretary chairs the DBCC. The Secretary of Finance is co-chairperson since Administrative Order No. 37 of 13 August 2025 [DBCC-PAGE][AO37].
 
-### Diagram 00b  The authorities of Philippine PFM, grouped by their position in government
+### Diagram BP-b  The authorities of Philippine PFM, grouped by their position in government
 
-Code file: `diagrams/mermaid/00b_authorities_map.mmd`. Rendered image: [`rendered/00b_authorities_map.png`](rendered/00b_authorities_map.png).
+Code file: `diagrams/mermaid/BP-b_authorities_map.mmd`. Rendered image: [`rendered/BP-b_authorities_map.png`](rendered/BP-b_authorities_map.png).
 
 - **Question:** which bodies participate in PFM, to which branch or group does each belong, and what is the role of each in one sentence?
-- **How to read it:** one frame = one group. One box = one authority and its PFM role. This diagram shows membership only. The exchanges between the authorities are in 00g. The legal basis of each role is in reference file A.
+- **How to read it:** one frame = one group. One box = one authority and its PFM role. This diagram shows membership only. The exchanges between the authorities are in BP-c. The legal basis of each role is in reference file A.
 - **Sources:** Congress, President, COA and local governments [CONST]. DBCC members and functions [DBCC-PAGE]. ED Council and its committees [AO37]. PFM Committee [EO29]. BTr functions [EO449]. GPPB and PS-DBM [RA12009]. BLGF and eSRE [eSRE]. Servicing banks LBP, DBP, PVB [NBC599]. GCG and DBM roles for corporations [COB].
 - **General knowledge, not opened in a source here:** names of the oversight committees of Congress, the roles of CSC, the Ombudsman, DILG, and the role of BSP as banker of the government.
 - **DBCC chair:** the DBM page names the DBM Secretary as chair [DBCC-PAGE]. Administrative Order No. 37 of 13 August 2025 designates the Secretary of Finance as co-chairperson [AO37]. Executive Order No. 108 of 26 January 2026 moved the functions of the former special assistant for economic affairs, who sat in these committees for the Office of the President, to the Office of the Executive Secretary [EO108].
 
 ```mermaid
 ---
-title: "00b  The authorities of Philippine PFM, grouped by their position in government"
+title: "BP-b  The authorities of Philippine PFM, grouped by their position in government"
 config:
   flowchart:
     wrappingWidth: 460
@@ -360,28 +360,28 @@ flowchart TB
 
 ## 5. What passes between the authorities
 
-Three kinds of thing pass from one authority to another: a **decision** (a document that authorizes or requests something), **money**, and **information** (a report, a record, a finding). Diagram 00g shows them with three kinds of arrow. A fourth kind enters from outside the government: the goods, services or works that a supplier delivers. The table lists the main exchanges of the process.
+Three kinds of thing pass from one authority to another: a **decision** (a document that authorizes or requests something), **money**, and **information** (a report, a record, a finding). Diagram BP-c shows them with three kinds of arrow. A fourth kind enters from outside the government: the goods, services or works that a supplier delivers. The table lists the main exchanges of the process.
 
 | From | To | What passes | Kind | Chapter |
 |---|---|---|---|---|
-| DBCC | President, DBM | Fiscal program, ceilings | Decision | 02 |
-| DBM | Agencies | Budget Call | Decision | 03 |
-| Agencies | DBM | Budget proposals | Information | 03 |
-| President | Congress | Proposed budget | Decision | 03, 04 |
-| Congress and President | DBM and agencies | The budget law | Decision | 04 |
-| DBM | Agencies | Allotment: the law itself, or a SARO or GARO | Decision | 05 |
-| DBM | Servicing bank | Notice of Cash Allocation | Decision | 05 |
-| Agency | Supplier | Contract | Decision | 06 |
-| Supplier | Agency | Delivery and billing | Goods, services or works | 07 |
-| Agency | Servicing bank | Payment order | Decision | 07 |
-| Servicing bank | Supplier, employees | Payment | Money | 07, 12 |
-| BTr and BSP | Servicing bank | Replenishment for payments made | Money | 07, 11 |
-| Taxpayers, through banks | Treasury Single Account | Taxes, duties, fees | Money | 10 |
-| Lenders and investors | Treasury Single Account, and back | Loan and bond proceeds. Interest and principal | Money | 11 |
-| BTr | Local governments and government corporations | Tax allotment, subsidy, equity | Money | 14, 15 |
-| Agencies | DBM, COA, BTr | Accountability reports and financial statements | Information | 08 |
-| COA | Agencies | Observations, notices, audit report | Information | 09 |
-| COA | President and Congress | Annual report | Information | 09 |
+| DBCC | President, DBM | Fiscal program, ceilings | Decision | P1 |
+| DBM | Agencies | Budget Call | Decision | P1 |
+| Agencies | DBM | Budget proposals | Information | P5, P8 |
+| President | Congress | Proposed budget | Decision | P12, L1 |
+| Congress and President | DBM and agencies | The budget law | Decision | L5 |
+| DBM | Agencies | Allotment: the law itself, or a SARO or GARO | Decision | E3 |
+| DBM | Servicing bank | Notice of Cash Allocation | Decision | E5 |
+| Agency | Supplier | Contract | Decision | E1 |
+| Supplier | Agency | Delivery and billing | Goods, services or works | E4 |
+| Agency | Servicing bank | Payment order | Decision | E6 |
+| Servicing bank | Supplier, employees | Payment | Money | E6, E4 |
+| BTr and BSP | Servicing bank | Replenishment for payments made | Money | E6, E5 |
+| Taxpayers, through banks | Treasury Single Account | Taxes, duties, fees | Money | E5 |
+| Lenders and investors | Treasury Single Account, and back | Loan and bond proceeds. Interest and principal | Money | E5 |
+| BTr | Local governments and government corporations | Tax allotment, subsidy, equity | Money | E3, E6 |
+| Agencies | DBM, COA, BTr | Accountability reports and financial statements | Information | A4 |
+| COA | Agencies | Observations, notices, audit report | Information | A9 |
+| COA | President and Congress | Annual report | Information | A9 |
 
 ### 5.1 Kinds of arrows, and what would show that an arrow is wrong
 
@@ -389,34 +389,34 @@ An arrow in a diagram is a statement about the process. The statements are of di
 
 | Kind of arrow | What it states | Example | Where the atlas uses it | An observation that would show it to be wrong |
 |---|---|---|---|---|
-| Order of acts | Act B may happen only after act A, or only when state A exists | The contract may be signed only when an allotment and an award both exist | 00d, the lane diagrams, the state diagrams | A rule or a lawful case in which B happens without A. First example: the bidding does not need an allotment. Only the award needs it, so an arrow from "allotment" to "invitation to bid" would be wrong. Second example: an advance payment is lawful without an accepted delivery, so diagram 00d draws it as a separate path |
-| Writing of a record | An act produces an entry in a registry or in a book at the time of the act | The acceptance of a delivery produces the journal entry for the payable | 00d (dotted arrow to a grey node), 08e | The entry is made at another time, by another unit, or not at all. Example: an obligation is entered in a registry and has no journal entry, so an arrow from "obligation" to "journal" would be wrong |
-| Authority | A gives B the right or the duty to act | DBM gives an agency an allotment | 00g (thin solid arrow), the sequence diagrams | The legal text gives the right in another way. Example: for an item without conditions the budget law itself is the allotment, so an arrow "DBM issues a SARO" is wrong for that item |
+| Order of acts | Act B may happen only after act A, or only when state A exists | The contract may be signed only when an allotment and an award both exist | BP-d, the lane diagrams, the state diagrams | A rule or a lawful case in which B happens without A. First example: the bidding does not need an allotment. Only the award needs it, so an arrow from "allotment" to "invitation to bid" would be wrong. Second example: an advance payment is lawful without an accepted delivery, so diagram BP-d draws it as a separate path |
+| Writing of a record | An act produces an entry in a registry or in a book at the time of the act | The acceptance of a delivery produces the journal entry for the payable | BP-d (dotted arrow to a grey node), A4-b | The entry is made at another time, by another unit, or not at all. Example: an obligation is entered in a registry and has no journal entry, so an arrow from "obligation" to "journal" would be wrong |
+| Authority | A gives B the right or the duty to act | DBM gives an agency an allotment | BP-c (thin solid arrow), the sequence diagrams | The legal text gives the right in another way. Example: for an item without conditions the budget law itself is the allotment, so an arrow "DBM issues a SARO" is wrong for that item |
 | Document | A document passes from A to B | The agency sends the payment order to the bank | The sequence diagrams | The document goes to another receiver, or it does not exist as a separate document |
-| Money | An amount leaves one account and enters another | The Treasury repays the servicing bank | 00g (thick arrow), 07d, 11a, 16g (green arrow) | No account is debited. Example: a Notice of Cash Allocation is a limit, and an arrow "DBM sends cash to the agency" is wrong |
-| Information | B receives data about an event. Nothing is authorized and no money moves | Agencies report to DBM, COA and BTr | 00g (dotted arrow), 08b | The report goes to another body, or B does not receive it |
-| Link between systems | Data pass from system A to system B | ADRS delivers a release document to an agency | 16b, 16g, and the register in Reference B, section 4 | A person enters the same data a second time, or the data pass as a file or on paper. The register gives the evidence for each flow |
-| Reference between records | Record B contains the number of record A | The payment order contains the number of the obligation request | 17b, 17c | The form has no such field, or the field is free text |
-| Classification | A record belongs to a class | An obligation has an object code of UACS | 17a, 17d | The record has no code, or two systems use different lists of codes |
+| Money | An amount leaves one account and enters another | The Treasury repays the servicing bank | BP-c (thick arrow), E6-a, E5-b, IS-c (green arrow) | No account is debited. Example: a Notice of Cash Allocation is a limit, and an arrow "DBM sends cash to the agency" is wrong |
+| Information | B receives data about an event. Nothing is authorized and no money moves | Agencies report to DBM, COA and BTr | BP-c (dotted arrow), A4-c | The report goes to another body, or B does not receive it |
+| Link between systems | Data pass from system A to system B | ADRS delivers a release document to an agency | IS-b, IS-c, and the register in Reference B, section 4 | A person enters the same data a second time, or the data pass as a file or on paper. The register gives the evidence for each flow |
+| Reference between records | Record B contains the number of record A | The payment order contains the number of the obligation request | UACS-b, UACS-c | The form has no such field, or the field is free text |
+| Classification | A record belongs to a class | An obligation has an object code of UACS | UACS-a, UACS-d | The record has no code, or two systems use different lists of codes |
 
 A case where the kinds matter: a drawing shows an arrow from DBM to an agency with the label "NCA". Read as money, it says that DBM pays the agency. Read as authority, it says that DBM sets a limit up to which the bank may pay. Only the second reading is correct [NBC599].
 
 A case where the kinds are not enough: an arrow of the kind "order of acts" is correct by the rule, and practice differs. The atlas draws the rules. Where an assessment reports that practice differs, the chapter says so in its section on weaknesses.
 
-An arrow of the kind "order of acts" between two parts of diagram 00a does not say that the lower part starts when the upper part has ended. Parts B and C happen at the same time, and the diagram draws them side by side for this reason.
+An arrow of the kind "order of acts" between two parts of diagram BP-a does not say that the lower part starts when the upper part has ended. Parts B and C happen at the same time, and the diagram draws them side by side for this reason.
 
-### Diagram 00g  What passes between the authorities: decisions, money and information
+#### Diagram BP-c  What passes between the authorities: decisions, money and information
 
-Code file: `diagrams/mermaid/00g_exchanges_between_authorities.mmd`. Rendered image: [`rendered/00g_exchanges_between_authorities.png`](rendered/00g_exchanges_between_authorities.png).
+Code file: `diagrams/mermaid/BP-c_exchanges_between_authorities.mmd`. Rendered image: [`rendered/BP-c_exchanges_between_authorities.png`](rendered/BP-c_exchanges_between_authorities.png).
 
 - **Question:** for each pair of authorities, what does one give to the other?
 - **How to read it:** three kinds of arrow. Thin solid arrow = a decision or a document that authorizes or requests something. Thick arrow = money. Dotted arrow = information (a report, a record, a finding). An arrow with two heads shows the two things named in its label, one in each direction.
-- **Scope:** national government agencies. The exchanges of local governments and government corporations are in chapters 14 and 15.
+- **Scope:** national government agencies. The exchanges of local governments and government corporations are in chapters E3 and E6.
 - **Sources:** budget submission and enactment [CONST]. DBCC outputs [DBCC-PAGE]. Budget Call and proposals [NBM156]. Allotment, NCA, plans and reports [NBC599][JC2019-1]. Payment orders and bank replenishment [CL2013-16A]. Collections remitted to the Treasury Single Account [PEFA2025][BTR-SITE]. Releases by BTr to local governments and corporations [NBC599]. Statements to COA [COA-GAS]. COA annual report [CONST IX-D.4].
 
 ```mermaid
 ---
-title: "00g  What passes between the authorities: decisions, money and information"
+title: "BP-c  What passes between the authorities: decisions, money and information"
 config:
   flowchart:
     wrappingWidth: 460
@@ -480,7 +480,7 @@ flowchart TB
 
 ## 6. Three lines of steps, three meeting points, and the records
 
-Diagram 00d is the formal version of section 2. It uses the form of a Petri net. A rounded node is a state that is true or not yet true. A rectangle is an act by the persons named in it. An act with two incoming solid arrows needs both states to be true. The colours mark the lines: blue for legal authority, green for the claim, orange for cash, grey for records and audit.
+Diagram BP-d is the formal version of section 2. It uses the form of a Petri net. A rounded node is a state that is true or not yet true. A rectangle is an act by the persons named in it. An act with two incoming solid arrows needs both states to be true. The colours mark the lines: blue for legal authority, green for the claim, orange for cash, grey for records and audit.
 
 The three meeting points are the acts t3 (sign the contract and obligate), t6 (prepare and examine the claim) and t6c (certify cash and approve the voucher).
 
@@ -503,14 +503,14 @@ The dashed green path is the lawful exception of section 2: for an advance payme
 The form has three limits, and all matter if the diagram is used as a model.
 
 - An allotment and a cash authority are balances, not single items. A model needs an amount on each of them.
-- One line of the budget funds many contracts, and one contract has many payments. One case identifier therefore does not fit all places of the net. Chapter 17 explains this with an example.
-- The green line is drawn for a purchase. For a salary, a transfer, debt service or a refund, another event creates the claim. Diagram 07h compares the forms.
+- One line of the budget funds many contracts, and one contract has many payments. One case identifier therefore does not fit all places of the net. Chapter UACS explains this with an example.
+- The green line is drawn for a purchase. For a salary, a transfer, debt service or a refund, another event creates the claim. Diagram E6-e compares the forms.
 
 A difference inside the Manual: its worked example records the payable at delivery, from the delivery receipt and the acceptance report [GAM-V1 Annex H]. Its section on payment orders says that payables are recorded "based on approved DVs" [GAM-V1 Ch.6 s.57]. The diagram follows the worked example. Under the second reading, record r4 would be written at act t6c.
 
-### Diagram 00d  Three lines of steps, the three points where they must meet, and the record that each act writes (one payment under a contract)
+### Diagram BP-d  Three lines of steps, the three points where they must meet, and the record that each act writes (one payment under a contract)
 
-Code file: `diagrams/mermaid/00d_four_chains.mmd`. Rendered image: [`rendered/00d_four_chains.png`](rendered/00d_four_chains.png).
+Code file: `diagrams/mermaid/BP-d_four_chains.mmd`. Rendered image: [`rendered/BP-d_four_chains.png`](rendered/BP-d_four_chains.png).
 
 - **Question:** which conditions must all be true before one payment to a contractor can be made, who makes each condition true, and which record is written at each act?
 - **Idea:** a payment is not the end of one line of steps. Three lines of steps run at the same time: legal authority, the claim, and cash. A payment is possible only when they meet. The fourth line, the records, does not come after the payment: each act writes its record when it happens. A diagram with one line of steps hides both facts.
@@ -518,15 +518,15 @@ Code file: `diagrams/mermaid/00d_four_chains.mmd`. Rendered image: [`rendered/00
 - **Colours:** blue = legal authority to spend. Green = the claim: the contract, the work and its acceptance. Orange = cash. Grey = records, reports and audit.
 - **The small separate chain (pT to p19):** the closing of a period does not follow one payment. It follows the calendar, and it uses all records that exist on that day. The audit of one paid transaction (t14) follows the payment, because the paid voucher goes to the auditor with the daily report of payment orders issued [GAM-V1 Ch.6 s.56].
 - **The three meeting points:** t3 (allotment meets award), t6 (obligation meets accepted delivery), t6c (the claim meets cash authority). The third point is the certificate "cash available" on the voucher: the head of accounting looks into the registry of the NCA, and when the balance is not sufficient the voucher is kept until cash is available [GAM-V1 Ch.6 s.12]. No check and no payment order may be issued without a covering NCA [GAM-V1 Ch.6 s.3].
-- THE EXCEPTION AT t6: the law allows no advance payment without the prior approval of the President, and no payment without a certificate that the delivery was inspected and accepted [PD1445 s.88]. The procurement rules give that approval in defined cases: for works, an advance of not more than 15 percent on the written request of the contractor and against an irrevocable standby letter of credit, a bank guarantee or a surety bond [IRR12009 s.71.2.5]. In that case the security (p8b) replaces the accepted delivery (p8). The dashed green path shows it. Diagram 07i follows such a contract with amounts.
+- THE EXCEPTION AT t6: the law allows no advance payment without the prior approval of the President, and no payment without a certificate that the delivery was inspected and accepted [PD1445 s.88]. The procurement rules give that approval in defined cases: for works, an advance of not more than 15 percent on the written request of the contractor and against an irrevocable standby letter of credit, a bank guarantee or a surety bond [IRR12009 s.71.2.5]. In that case the security (p8b) replaces the accepted delivery (p8). The dashed green path shows it. Diagram E6-f follows such a contract with amounts.
 - The dotted arrow into t9 is a read arc: DBM consults the cash position of the Treasury but does not consume it when it issues an NCA.
-- **Limits of this form:** (1) allotment and NCA are balances, so each token would need an amount. (2) One appropriation line funds many contracts and one contract has many payments, so one case identifier does not fit all places (see 17d). (3) The claim is drawn for a purchase. For a salary, a transfer, debt service or a refund another event creates the claim (diagram 07h).
+- **Limits of this form:** (1) allotment and NCA are balances, so each token would need an amount. (2) One appropriation line funds many contracts and one contract has many payments, so one case identifier does not fit all places (see UACS-d). (3) The claim is drawn for a purchase. For a salary, a transfer, debt service or a refund another event creates the claim (diagram E6-e).
 - **Sources:** allotment before commitment and NCA before payment [NBC599]. Certificate of availability of funds before a contract [PD1445 s.86][EO292-B6 s.40]. Award only after funding is effective [RA12009 s.12]. Payable = delivered and accepted [GAM-V1 Ch.6 s.2]. The boxes of the voucher [GAM-V2 App.32]. Registry of the NCA, checked before the voucher is certified [GAM-V1 Ch.6 s.12]. Payment order, bank and Treasury steps [CL2013-16A][GAM-V1 Ch.6 s.56]. Which record is written at which act, and that appropriation, allotment and obligation have no journal entry [GAM-V1 Annex H, Ch.3 ss.8-17]. Entry in the books of the Treasury [GAM-V1 Annex H]. Audit after payment [COA2011-002].
 - **A difference inside the manual:** its worked example records the payable at delivery, from the delivery receipt and the acceptance report [GAM-V1 Annex H]. Its section on payment orders says that payables are recorded "based on approved DVs" [GAM-V1 Ch.6 s.57]. The diagram follows the worked example.
 
 ```mermaid
 ---
-title: "00d  Three lines of steps, the three points where they must meet, and the record that each act writes (one payment under a contract)"
+title: "BP-d  Three lines of steps, the three points where they must meet, and the record that each act writes (one payment under a contract)"
 config:
   flowchart:
     wrappingWidth: 460
@@ -635,7 +635,7 @@ flowchart TB
 
 ## 7. One fiscal year from plan to audit, by actor
 
-Diagram 00f shows the same content as a lane diagram: one column for each authority, read from top to bottom. A thick bar that splits the flow means that the branches run at the same time. The bar that closes them means that both branches must be finished before the next step. The diagram is written in PlantUML, because Mermaid has no lane diagram with such bars.
+Diagram BP-e shows the same content as a lane diagram: one column for each authority, read from top to bottom. A thick bar that splits the flow means that the branches run at the same time. The bar that closes them means that both branches must be finished before the next step. The diagram is written in PlantUML, because Mermaid has no lane diagram with such bars.
 
 In each step of the execution, a line that starts with "Record:" names the record that is written at that step, and the unit that writes it. The diagram has no separate step "record" after the payment. Its last two branches run at the same time: the audit of each paid voucher by COA, and the closing of each month, quarter and year by the agency.
 
@@ -651,9 +651,9 @@ In each step of the execution, a line that starts with "Record:" names the recor
 | Bank repaid | Books of the Treasury | BTr | GAM-V1 Annex H |
 | End of month, quarter, year | Bank reconciliation, trial balance, reports, statements | Accounting unit, budget unit | GAM-V1 Ch.19 s.60, Ch.21. JC2019-1 |
 
-### Diagram 00f  One fiscal year from plan to audit: who acts at each step, and which record is written there (national government agency) (PlantUML)
+### Diagram BP-e  One fiscal year from plan to audit: who acts at each step, and which record is written there (national government agency) (PlantUML)
 
-Code file: `diagrams/plantuml/00f_end_to_end_swimlane.puml`. Rendered image: [`rendered/00f_end_to_end_swimlane.png`](rendered/00f_end_to_end_swimlane.png).
+Code file: `diagrams/plantuml/BP-e_end_to_end_swimlane.puml`. Rendered image: [`rendered/BP-e_end_to_end_swimlane.png`](rendered/BP-e_end_to_end_swimlane.png).
 
 - **Question:** for one fiscal year, which authority acts at each step from plan to audit, where do two lines of work run at the same time and then have to meet, and at which step is each record written?
 - **Idea:** the steps of deciding (plan, fiscal frame, proposal, law) follow one another. In execution, two lines of work run at the same time three times, and each time both must be finished before the next step. The records are not a last step: the text of each step names the record that is written at that step. Only the closing of a period and the audit of the statements follow the calendar.
@@ -662,14 +662,14 @@ Code file: `diagrams/plantuml/00f_end_to_end_swimlane.puml`. Rendered image: [`r
 - **Why the records stand at every act:** the Manual shows that the registries are written at the allotment and at the obligation, the first journal entry at the receipt of the NCA, and the payable at the accepted delivery [GAM-V1 Annex H]. The certificate "cash available" on the voucher is a separate step, because it is the point where the claim meets the cash authority [GAM-V1 Ch.6 s.12].
 - **Sources:** [PRIMER] [NBM156] [CONST] [NBC599] [RA12009] [PD1445 s.41, s.86] [GAM-V1 Ch.3, Ch.6 s.12, s.56, Ch.19 s.60, Ch.21, Annex H] [GAM-V2 App.32] [CL2013-16A] [JC2019-1] [COA2011-002]. Steps marked (GK) are general knowledge, not opened in a source during this work.
 
-![00f  One fiscal year from plan to audit: who acts at each step, and which record is written there (national government agency)](rendered/00f_end_to_end_swimlane.png)
+![BP-e  One fiscal year from plan to audit: who acts at each step, and which record is written there (national government agency)](rendered/BP-e_end_to_end_swimlane.png)
 
 <details>
 <summary>PlantUML code</summary>
 
 ```plantuml
-@startuml 00f_end_to_end_swimlane
-title 00f  One fiscal year from plan to audit: who acts at each step, and which record is written there (national government agency)
+@startuml BP-e_end_to_end_swimlane
+title BP-e  One fiscal year from plan to audit: who acts at each step, and which record is written there (national government agency)
 skinparam shadowing false
 skinparam defaultFontName SansSerif
 skinparam defaultFontSize 12
@@ -843,7 +843,7 @@ stop
 
 ## 8. The calendar: three budgets in one year
 
-The fiscal year is the calendar year. In one calendar year, work is done for at least three fiscal years. Diagram 00e shows this for 2026.
+The fiscal year is the calendar year. In one calendar year, work is done for at least three fiscal years. Diagram BP-f shows this for 2026.
 
 | Fiscal year | What is done for it in 2026 | Dates | Basis |
 |---|---|---|---|
@@ -854,9 +854,9 @@ The fiscal year is the calendar year. In one calendar year, work is done for at 
 
 The third reading in the House was expected on 12 October 2026. I made no check of events after 8 October 2026. The first target date was 9 October [NEP2027-NEWS][GAB2027-NEWS].
 
-### Diagram 00e  Three budgets are active in one calendar year (example: calendar year 2026)
+### Diagram BP-f  Three budgets are active in one calendar year (example: calendar year 2026)
 
-Code file: `diagrams/mermaid/00e_calendar_three_budgets.mmd`. Rendered image: [`rendered/00e_calendar_three_budgets.png`](rendered/00e_calendar_three_budgets.png).
+Code file: `diagrams/mermaid/BP-f_calendar_three_budgets.mmd`. Rendered image: [`rendered/BP-f_calendar_three_budgets.png`](rendered/BP-f_calendar_three_budgets.png).
 
 - **Question:** at a given date, which fiscal year does each activity belong to?
 - **How to read it:** each section is one fiscal year (the Philippine fiscal year is the calendar year). Bars and diamonds show what is done FOR that fiscal year DURING calendar year 2026.
@@ -866,7 +866,7 @@ Code file: `diagrams/mermaid/00e_calendar_three_budgets.mmd`. Rendered image: [`
 
 ```mermaid
 ---
-title: "00e  Three budgets are active in one calendar year (example: calendar year 2026)"
+title: "BP-f  Three budgets are active in one calendar year (example: calendar year 2026)"
 config:
   gantt:
     leftPadding: 250
@@ -915,7 +915,7 @@ gantt
 
 ## 9. One contract with dates
 
-The diagrams of sections 6 and 7 show the order of the steps. They do not show how long a step takes, or in which year it occurs. Diagram 00h follows one contract through the lines of steps of section 2. The contract is invented: a school building of PHP 48 million, paid from the FY 2026 budget, with an advance of 15 percent and three progress billings. The rules that fix the earliest and the latest dates are real.
+The diagrams of sections 6 and 7 show the order of the steps. They do not show how long a step takes, or in which year it occurs. Diagram BP-g follows one contract through the lines of steps of section 2. The contract is invented: a school building of PHP 48 million, paid from the FY 2026 budget, with an advance of 15 percent and three progress billings. The rules that fix the earliest and the latest dates are real.
 
 | When | Line of steps | What happens | Rule that fixes or limits the date | Basis |
 |---|---|---|---|---|
@@ -938,30 +938,30 @@ What the example shows.
 2. **The three meeting points of section 2 have dates.** The allotment meets the award on 16 January 2026. The obligation meets certified work three times. The claim meets a cash authority three times, and the third time it waits from 10 December 2026 to 15 February 2027.
 3. **The exception has a date too.** On 10 February 2026 the agency pays PHP 7.2 million although no work is accepted. A security of the same amount replaces the accepted work.
 4. **At the end of 2026 the contract has different amounts in different records.** The registry of the budget unit shows an obligation of PHP 48 million. The books show a building of PHP 48 million, the third bill as a payable, and the retention money as a liability [GAM-V1 Ch.10 s.8]. The report of disbursements shows the advance and the first two payments. All three records are correct.
-5. **Every record of the example is written on the date of its act.** The last section of diagram 00h shows these dates between the dates of the reports.
+5. **Every record of the example is written on the date of its act.** The last section of diagram BP-g shows these dates between the dates of the reports.
 
 A case where the example is typical: a capital outlay without conditions, with competitive bidding and early procurement. The FY 2026 rules allow such an item to be obligated until 31 December 2027 [NBC599 s.3.3]. The table of that section was partly unreadable in my copy.
 
-A case where it is not: an item that needs a release order, a contract for more than one year, a purchase in an emergency, or a salary. Each of these omits steps of the example or adds steps to it (section 12, and chapter 06, section 5).
+A case where it is not: an item that needs a release order, a contract for more than one year, a purchase in an emergency, or a salary. Each of these omits steps of the example or adds steps to it (section 12, and chapter E1, section 2.5).
 
-The arithmetic of an advance, of its recovery and of the retention money is in chapter 07, section 7.2, with the example of the Manual.
+The arithmetic of an advance, of its recovery and of the retention money is in chapter E6, section 3.2, with the example of the Manual.
 
-### Diagram 00h  One contract with dates: a school building paid from the FY 2026 budget (invented example, real rules)
+### Diagram BP-g  One contract with dates: a school building paid from the FY 2026 budget (invented example, real rules)
 
-Code file: `diagrams/mermaid/00h_worked_example_one_contract.mmd`. Rendered image: [`rendered/00h_worked_example_one_contract.png`](rendered/00h_worked_example_one_contract.png).
+Code file: `diagrams/mermaid/BP-g_worked_example_one_contract.mmd`. Rendered image: [`rendered/BP-g_worked_example_one_contract.png`](rendered/BP-g_worked_example_one_contract.png).
 
 - **Question:** the other diagrams show the order of steps. How long does each step take for one contract, in which fiscal year does each step occur, and on which date is each record written?
-- **Idea:** one contract extends over three calendar years. Its budget is prepared in the year before, the work is done in the budget year, and the last progress payment, the release of the retention money and the audit occur in the year after. The four sections are the four lines of steps of diagram 00d: authority, the claim, cash, records. The records are written on the dates of the acts, and not after the last payment.
+- **Idea:** one contract extends over three calendar years. Its budget is prepared in the year before, the work is done in the budget year, and the last progress payment, the release of the retention money and the audit occur in the year after. The four sections are the four lines of steps of diagram BP-d: authority, the claim, cash, records. The records are written on the dates of the acts, and not after the last payment.
 - THE EXAMPLE IS INVENTED. The agency, the amounts and the dates of the single steps are not real. The rules that fix the earliest and latest dates are real, and they are listed here with their sources.
 - **The example:** an agency builds a school building for PHP 48 million. The amount is a capital outlay in the FY 2026 budget law, without a pre-condition for release. The contractor asks for an advance of 15 percent. The work takes nine months and is billed in three parts.
 - **Rules used, with sources:** the agency may hold the bidding before the budget law exists, once the President's budget is submitted, but it may not award before the funding is in effect and the head of the agency has approved the final procurement plan [IRR12009 s.12][RA12009 s.12]. The FY 2026 budget law took effect on 5 January 2026, and the law itself is the allotment for items without pre-conditions [NBC599]. Award within 60 days from the opening of bids, contract within 10 days after the notice of award [IRR12009 s.66, s.67], notice to proceed within 3 days [RA12009 s.66]. The chief accountant certifies that funds are available before the contract [PD1445 s.86]. Advance to a works contractor: not more than 15 percent, on written request and against a letter of credit, bank guarantee or surety bond [IRR12009 s.71.2.5]. Progress billing not more often than once a month. Each bill is reduced by the part of the advance that is recovered and by the retention money [IRR12009 s.71.2.7, s.71.2.8]. Defects liability period of one year from completion to final acceptance. The retention money is due for release upon final acceptance [IRR12009 s.90.2.2, s.71.2.8]. A regular NCA lapses at the end of its quarter, and the regular NCA of a later period also covers payables of earlier years [NBC599 s.4.2]. The bank credits the payee within two banking days after it receives the payment order [CL2018-14]. Quarterly reports within 30 days after each quarter, and the report on unpaid obligations within 30 days after the year [JC2019-1]. Year-end statements to COA by 14 February, annual report of COA by 30 September [PD1445 s.41]. Capital outlays of FY 2026 may be obligated until 31 December 2027 (the table in my copy was partly unreadable) [NBC599 s.3.3].
 - **Records, with sources:** the obligation is entered in the registry and has no journal entry. An advance is recorded as Advances to Contractors. Each certified progress billing is recorded as Construction in Progress and as Accounts Payable. At the turn-over of the completed building the cost moves to the account Buildings. Retention money is held as Guaranty/Security Deposits Payable until it is released [GAM-V1 Ch.3 s.15, Ch.10 s.8, Annex H].
-- **Where the example fails on purpose:** the third bill is certified on 20 November 2026, but the cash authority of the fourth quarter is fully used. The contractor is paid on 15 February 2027. During these weeks the amount is a cost of construction and a payable in the books, an obligation in the registry, and no disbursement. Diagram 08c explains these measures.
+- **Where the example fails on purpose:** the third bill is certified on 20 November 2026, but the cash authority of the fourth quarter is fully used. The contractor is paid on 15 February 2027. During these weeks the amount is a cost of construction and a payable in the books, an obligation in the registry, and no disbursement. Diagram A0-c explains these measures.
 - **General knowledge, not opened in a source here:** the dates of the budget preparation in 2025 (the pattern of 2026 is used), and the month in which the audit report of the agency is issued.
 
 ```mermaid
 ---
-title: "00h  One contract with dates: a school building paid from the FY 2026 budget (invented example, real rules)"
+title: "BP-g  One contract with dates: a school building paid from the FY 2026 budget (invented example, real rules)"
 config:
   gantt:
     leftPadding: 400
@@ -1025,7 +1025,7 @@ gantt
 
 ## 10. The information systems
 
-Each institution built systems for its own part of the process. Diagram 00c shows them by owner. The table names the main system at each stage. The full inventory, with owner, user and recipient of each system, is in [Reference B](reference/B_information_systems_inventory.md). The flows of data and documents between the systems and the offices are in [chapter 16](processes/16_information_systems_and_ifmis.md). Reference B, section 4, lists every flow with six properties: what passes, the kind of flow, the carrier, the stage of use, the check that compares both sides, and the basis.
+Each institution built systems for its own part of the process. Diagram BP-h shows them by owner. The table names the main system at each stage. The full inventory, with owner, user and recipient of each system, is in [Reference B](reference/B_information_systems_inventory.md). The flows of data and documents between the systems and the offices are in [chapter IS](chapters/IS_information_systems.md). Reference B, section 4, lists every flow with six properties: what passes, the kind of flow, the carrier, the stage of use, the check that compares both sides, and the basis.
 
 | Stage | System and owner | Basis |
 |---|---|---|
@@ -1049,23 +1049,23 @@ Four statements summarize the present state and the plan.
 1. **Today the systems are separate.** Data passes between them by reports, by files and by typing the same data again. The Roadmap names three gaps: the same report is prepared more than once, processing is manual, and the systems are not integrated [ROADMAP2024]. Many flows between an agency, its bank, the Treasury and the auditor are numbered copies of paper forms. The Manual of 2015 prescribes them copy by copy [GAM-V1 Ch.6 s.56].
 2. **The plan is a core with interfaces, not one system for everything.** Executive Order No. 29 of 2023 directs all national government entities to adopt the Integrated Financial Management Information System (IFMIS). The Roadmap makes BTMS its core and connects the other systems to it through interfaces. Agencies keep their systems [EO29][ROADMAP2024][SFA6]. The procurement rules of 2025 also name the IFMIS: the electronic payment system for procurement "shall be defined in the context of the Integrated Financial Management Information System to be developed by the DBM, COA, and Department of Finance" [IRR12009 s.21].
 3. **The core is at an early stage, and official statements on its state differ.** A press report of DBM statements and the action plan of the Roadmap say: DBM and BTr use BTMS, five more pilot agencies prepare in 2026, and the plan is about 110 to 115 agencies in 2027 and 198 in 2028, 315 in total [INQ-BTMS][SFA6]. A speech of the DBM Secretary of 22 January 2026 says that BTMS was launched in 2024, was piloted with seven agencies in 2025, and reaches 155 agencies in 2026 [DBM-SPEECH26]. The atlas uses the first account, because two sources agree on it and it is the more detailed one. Reference G lists the difference.
-4. **A portal for the public exists since June 2026.** DBM launched the COMPASS portal on 26 June 2026. Executive Order No. 126 of 28 September 2026 makes it the platform of the government for budget and expenditure disclosures, and requires national agencies and government corporations to submit and update their information. Each agency is responsible for the accuracy of what it submits. The order permits the use of distributed ledger technology and does not require it [COMPASS-LAUNCH][EO126]. I read the order in press releases, not in its text. Chapter 16, section 11, gives the details.
+4. **A portal for the public exists since June 2026.** DBM launched the COMPASS portal on 26 June 2026. Executive Order No. 126 of 28 September 2026 makes it the platform of the government for budget and expenditure disclosures, and requires national agencies and government corporations to submit and update their information. Each agency is responsible for the accuracy of what it submits. The order permits the use of distributed ledger technology and does not require it [COMPASS-LAUNCH][EO126]. I read the order in press releases, not in its text. Chapter IS, section 11, gives the details.
 
-### Diagram 00c  Information systems of Philippine PFM, grouped by the institution that owns or operates each one
+### Diagram BP-h  Information systems of Philippine PFM, grouped by the institution that owns or operates each one
 
-Code file: `diagrams/mermaid/00c_systems_landscape.mmd`. Rendered image: [`rendered/00c_systems_landscape.png`](rendered/00c_systems_landscape.png).
+Code file: `diagrams/mermaid/BP-h_systems_landscape.mmd`. Rendered image: [`rendered/BP-h_systems_landscape.png`](rendered/BP-h_systems_landscape.png).
 
 - **Question:** which information systems exist, and which institution owns or operates each one?
 - **How to read it:** one frame = one owner. One box = one system and what it holds. White = in use. Orange = BTMS, the planned core, now in phased rollout. Dashed border = planned, not yet in use.
 - **The owner is not always the user:** for example COA owns eNGAS but agencies enter the data. DBM owns URS but agencies submit the reports. Reference file B lists owner, users and recipients of data for each system.
-- THIS DIAGRAM HAS NO DATA FLOWS. The flows between systems are in two PlantUML component diagrams: 16b (spending side) and 16g (revenue and treasury side). The systems by PFM function are in 16a.
+- THIS DIAGRAM HAS NO DATA FLOWS. The flows between systems are in two PlantUML component diagrams: IS-b (spending side) and IS-c (revenue and treasury side). The systems by PFM function are in IS-a.
 - **Sources:** systems by function in the PFM Reforms Roadmap [ROADMAP2024]. OSBPS [NBM156]. URS and ADRS [NBC599][ADRS]. BTMS [CL2025-8]. PhilGEPS [RA12009 s.20]. COA systems [COA-GAS]. BTr systems [BTR-SYS][BTR-SITE]. BIR channels [BIR-PAY]. PAS [PAS]. eSRE [eSRE]. eMDS [eMDS]. GMIS and PSIPOP [GMIS]. PIPOL [PIP-MEMO]. Planned systems [SFA6].
 - **More sources:** COMPASS portal [COMPASS-LAUNCH][EO126]. Name of the customs system and the planned new system [BOC-MOD]. Virtual store and e-marketplace of the modernized PhilGEPS [PS-FAQ]. TradeNet [TRADENET] and PNPKI [PNPKI].
 - **General knowledge, not opened in a source here:** the internal tax system of BIR, the debt recording system of BTr, the settlement system of BSP, what BPMS and the DBM e-Budget do in detail, the full name of DIME.
 
 ```mermaid
 ---
-title: "00c  Information systems of Philippine PFM, grouped by the institution that owns or operates each one"
+title: "BP-h  Information systems of Philippine PFM, grouped by the institution that owns or operates each one"
 config:
   flowchart:
     wrappingWidth: 460
@@ -1231,34 +1231,34 @@ Two kinds of mark connect the records of the process, and each has a different f
 
 The totals of two systems can be compared only when both use the same classification, or when a documented table translates the codes of one into the codes of the other. UACS is the common classification that COA, DBM and DOF prescribed [JC2017-1]. The sources that I read name no translation table between PFM systems, and the action plan of the Roadmap reports that classification codes are not consistent across systems [SFA6].
 
-UACS is not sufficient to follow one transaction, because two contracts under one budget line have the same code on every record. [Chapter 17](processes/17_uacs_and_record_identifiers.md) shows the chain of numbers for one purchase, form by form, and the places where a form has no field for the number of the record before it.
+UACS is not sufficient to follow one transaction, because two contracts under one budget line have the same code on every record. [Chapter UACS](chapters/UACS_uacs_and_record_identifiers.md) shows the chain of numbers for one purchase, form by form, and the places where a form has no field for the number of the record before it.
 
 One link at the start of a purchase has neither a code nor a number. The form of the procurement plan that is mandatory since 21 September 2025 names the source of funds of each line in words, for example "GAA 2026 - Current Appropriation", and has no column for a budget code [APP-FORM2025]. The form of 2015 began with a column "Code (PAP)", and its circular does not say which code belongs there [APP-FORM]. A line of the plan can now be matched with a line of the budget law only by words and amounts. In a purchase, the first record that carries the program code and the object code is the obligation request.
 
 ## 12. Other forms of the claim: money outside the route of a purchase
 
-Chapters 05 to 07 follow one purchase by one agency. In other payments the legal authority, the cash and the records are still needed, but another event creates the claim. Diagram 07h in chapter 07 compares the forms.
+Chapters E0 to E6 follow one purchase by one agency. In other payments the legal authority, the cash and the records are still needed, but another event creates the claim. Diagram E6-e in chapter E6 compares the forms.
 
 | Kind of payment | What creates the claim | What is different from a purchase after delivery | Chapter |
 |---|---|---|---|
-| Purchase, paid after delivery | A contract or purchase order, and a delivery that was inspected and accepted | The route of chapters 05 to 07 | [06](processes/06_procurement.md), [07](processes/07_obligation_delivery_payment.md) |
-| Advance payment under a contract | The contract and a security posted by the supplier or contractor | Money leaves before any delivery. Allowed only in the cases that the rules name. It is recovered from later billings | [07](processes/07_obligation_delivery_payment.md) |
-| Progress payment for works | Work done in the period, certified by the engineer of the agency | The payment is reduced by the part of the advance that is recovered and by retention money, which is paid after final acceptance | [07](processes/07_obligation_delivery_payment.md) |
-| Salaries | A position, an appointment, and service in the pay period. The payroll carries the certificate "Services duly rendered as stated" | No procurement. The amount follows from the list of positions and the pay rules | [12](processes/12_personnel_and_payroll.md) |
-| Cash advance to an officer | A purpose that the law allows, for example a payroll in cash, travel or small payments | The officer receives the money first and must account for it afterwards | [07](processes/07_obligation_delivery_payment.md) |
-| Tax withheld by the agency | The tax law | No cash moves. One paper, the Tax Remittance Advice, produces entries in the books of the agency, of BIR and of the Treasury | [07](processes/07_obligation_delivery_payment.md), [08](processes/08_accounting_and_reporting.md) |
-| Share of local governments in national taxes | The Local Government Code | Automatic appropriation. BTr releases to the local governments, which then follow their own cycle | [14](processes/14_local_governments.md) |
-| Subsidy or equity to a government corporation | The budget law and the budget that the board of the corporation approved | BTr releases to the corporation, which spends under its own corporate budget | [15](processes/15_gocc_transfers_and_fund_clusters.md) |
-| Transfer to another body that will implement | A memorandum of agreement | The source agency has not disbursed until the receiver has used the money for accepted deliveries and has reported it | [15](processes/15_gocc_transfers_and_fund_clusters.md) |
-| Interest and principal of debt | A loan agreement or a government security, and its due date | Automatic appropriation. BTr pays on the due dates | [11](processes/11_treasury_cash_and_debt.md) |
-| Foreign-assisted project with direct payment | A contract, an accepted delivery, and a withdrawal application to the lender | The lender pays the supplier. No cash passes through the Treasury. A Non-Cash Availment Authority records the payment | [11](processes/11_treasury_cash_and_debt.md) |
-| Income that an agency may keep, and money held in trust | The law that allows the agency to keep the income, or the purpose of the trust | Outside the yearly appropriation, in separate fund clusters with separate registries and reports | [10](processes/10_revenue_collection.md), [15](processes/15_gocc_transfers_and_fund_clusters.md) |
-| Cash aid to persons | The law of the program, and a list of persons who qualify | The list replaces the contract and the delivery. One payment order pays many persons through a bank | [15](processes/15_gocc_transfers_and_fund_clusters.md) |
-| Money for disasters | The disaster, and for the national fund the approval of the President | Amounts kept ready inside the budgets of twelve agencies may be used immediately | [15](processes/15_gocc_transfers_and_fund_clusters.md) |
-| Refund of a tax | A tax that was paid in excess, and an approved claim of the taxpayer | Money leaves the Treasury without a purchase. It needs an appropriation, and it reduces net revenue | [10](processes/10_revenue_collection.md) |
-| Payments to the private partner of a partnership | The partnership contract | The contract fixes payments for many years. Each yearly amount must be in the budget law of its year | [19](processes/19_fiscal_risks_ppp_and_contingent_liabilities.md) |
-| Contract for more than one year | The contract, and a permission of DBM before the procurement starts | The money of each year comes from the budget law of that year | [06](processes/06_procurement.md) |
-| Purchase under a framework agreement | The agreement fixes the supplier and the prices for one to three years. Each order under it, a Call-Off, is a purchase order | The certificate of funds is issued before each order, not before the agreement. The atlas concludes that the obligation is also recorded for each order | [06](processes/06_procurement.md) |
+| Purchase, paid after delivery | A contract or purchase order, and a delivery that was inspected and accepted | The route of chapters E0 to E6 | [E1](chapters/E1_early_procurement.md), [E4](chapters/E4_obligation.md), [E6](chapters/E6_disbursement.md) |
+| Advance payment under a contract | The contract and a security posted by the supplier or contractor | Money leaves before any delivery. Allowed only in the cases that the rules name. It is recovered from later billings | [E6](chapters/E6_disbursement.md) |
+| Progress payment for works | Work done in the period, certified by the engineer of the agency | The payment is reduced by the part of the advance that is recovered and by retention money, which is paid after final acceptance | [E6](chapters/E6_disbursement.md) |
+| Salaries | A position, an appointment, and service in the pay period. The payroll carries the certificate "Services duly rendered as stated" | No procurement. The amount follows from the list of positions and the pay rules | [E4](chapters/E4_obligation.md) |
+| Cash advance to an officer | A purpose that the law allows, for example a payroll in cash, travel or small payments | The officer receives the money first and must account for it afterwards | [E6](chapters/E6_disbursement.md) |
+| Tax withheld by the agency | The tax law | No cash moves. One paper, the Tax Remittance Advice, produces entries in the books of the agency, of BIR and of the Treasury | [E4](chapters/E4_obligation.md), [E5](chapters/E5_cash_allocation.md), [A4](chapters/A4_accountability_reports.md) |
+| Share of local governments in national taxes | The Local Government Code | Automatic appropriation. BTr releases to the local governments, which then follow their own cycle | [E3](chapters/E3_allotment_release.md) |
+| Subsidy or equity to a government corporation | The budget law and the budget that the board of the corporation approved | BTr releases to the corporation, which spends under its own corporate budget | [E6](chapters/E6_disbursement.md) |
+| Transfer to another body that will implement | A memorandum of agreement | The source agency has not disbursed until the receiver has used the money for accepted deliveries and has reported it | [E6](chapters/E6_disbursement.md) |
+| Interest and principal of debt | A loan agreement or a government security, and its due date | Automatic appropriation. BTr pays on the due dates | [E5](chapters/E5_cash_allocation.md) |
+| Foreign-assisted project with direct payment | A contract, an accepted delivery, and a withdrawal application to the lender | The lender pays the supplier. No cash passes through the Treasury. A Non-Cash Availment Authority records the payment | [E5](chapters/E5_cash_allocation.md) |
+| Income that an agency may keep, and money held in trust | The law that allows the agency to keep the income, or the purpose of the trust | Outside the yearly appropriation, in separate fund clusters with separate registries and reports | [E5](chapters/E5_cash_allocation.md), [E6](chapters/E6_disbursement.md) |
+| Cash aid to persons | The law of the program, and a list of persons who qualify | The list replaces the contract and the delivery. One payment order pays many persons through a bank | [E6](chapters/E6_disbursement.md) |
+| Money for disasters | The disaster, and for the national fund the approval of the President | Amounts kept ready inside the budgets of twelve agencies may be used immediately | [E6](chapters/E6_disbursement.md) |
+| Refund of a tax | A tax that was paid in excess, and an approved claim of the taxpayer | Money leaves the Treasury without a purchase. It needs an appropriation, and it reduces net revenue | [E5](chapters/E5_cash_allocation.md) |
+| Payments to the private partner of a partnership | The partnership contract | The contract fixes payments for many years. Each yearly amount must be in the budget law of its year | [P1](chapters/P1_budget_call.md) |
+| Contract for more than one year | The contract, and a permission of DBM before the procurement starts | The money of each year comes from the budget law of that year | [E1](chapters/E1_early_procurement.md) |
+| Purchase under a framework agreement | The agreement fixes the supplier and the prices for one to three years. Each order under it, a Call-Off, is a purchase order | The certificate of funds is issued before each order, not before the agreement. The atlas concludes that the obligation is also recorded for each order | [E1](chapters/E1_early_procurement.md) |
 
 Basis of the second column: for the purchase, the advance and the progress payment [PD1445 s.88][IRR12009 s.71]. For the salary [GAM-V2 App.33]. For the cash advance [PD1445 s.89]. For the tax withheld [GAM-V1 Ch.5 s.38]. For the transfer [GAM-V1 Ch.6 s.63]. For debt [EO292-B6 s.26]. For the direct payment [GAM-V1 Ch.6 ss.66-68]. The other rows are from the chapters named.
 
@@ -1321,7 +1321,7 @@ Every table of steps has a column "Basis", and every diagram file contains comme
 The sources were read in two ways. A statement from a source of the first kind is more certain than a statement from a source of the second kind.
 
 - **Read as files, word for word:** the three volumes of the Government Accounting Manual of 2015 [GAM-V1][GAM-V2][GAM-V3], the Government Auditing Code [PD1445], and the Implementing Rules of the procurement law as approved in February 2025 [IRR12009]. A program compares every quotation from these five sources with the text. Of Volume I, I read the chapters on procedure and the worked examples, and not the chapters on single accounting standards.
-- **Read through a tool that returns a summary of each page with short quotations:** all other sources, among them the release rules of FY 2026, the Budget Call, the reporting circular, the circulars on BTMS and on payment through the bank, Book VI of the Administrative Code [EO292-B6], and the resolutions of the GPPB of 2025 and 2026 with the forms of the procurement plans (chapter 06, section 3.1).
+- **Read through a tool that returns a summary of each page with short quotations:** all other sources, among them the release rules of FY 2026, the Budget Call, the reporting circular, the circulars on BTMS and on payment through the bank, Book VI of the Administrative Code [EO292-B6], and the resolutions of the GPPB of 2025 and 2026 with the forms of the procurement plans (chapter E1, section 2.3.1).
 
 What is well supported: the constitutional rules, the release rules of FY 2026, the Budget Call of FY 2027, the procurement law and its complete rules, the steps from the obligation to the payment with the forms and the certificates, the records of each unit of an agency and the accounting entries, the rules on cash advances and on transfers between agencies, the property records, the powers of COA and the liability of officers in the Auditing Code, the reporting circular, the structure of UACS and the chain of numbers on the forms, the BTMS circular, the functions of BTr, the sections of the Local Government Code that are cited, the Partnership Code, the national disaster fund of FY 2026, and the assessment scores.
 
@@ -1337,24 +1337,43 @@ Two more limits are as before. Executive Order No. 126 of 2026 and the state of 
 
 | Chapter | The question it answers | Diagrams |
 |---|---|---|
-| [01 Planning and investment programming](processes/01_planning_and_investment_programming.md) | Which plans exist, and how does a project enter the investment program? | 01a, 01b |
-| [02 Macro-fiscal framework](processes/02_macro_fiscal_framework.md) | Who fixes the total that may be spent, and from what? | 02a |
-| [03 Budget preparation](processes/03_budget_preparation.md) | How does a proposal of an agency become part of the budget of the President? | 03a to 03d |
-| [04 Budget legislation](processes/04_budget_legislation.md) | Which body may change what, and what happens without a law on 1 January? | 04a to 04c |
-| [05 Release](processes/05_budget_release_allotment_and_cash_authority.md) | What must an agency hold before it may sign, and before it may pay? | 05a to 05e |
-| [06 Procurement](processes/06_procurement.md) | How is a supplier chosen, who decides at each step, and what allows a contract for several years? | 06a to 06f |
-| [07 Obligation, verification and payment](processes/07_obligation_delivery_payment.md) | Which officer states which fact, through which accounts does the money move, what replaces the accepted delivery in other kinds of payment, and what happens when a step fails? | 07a to 07i |
-| [08 Accounting and reporting](processes/08_accounting_and_reporting.md) | Which unit records each event, in which record and on which date, how do records become reports, and why do correct amounts differ? | 08a to 08e |
-| [09 Audit and oversight](processes/09_audit_and_oversight.md) | Who examines the spending afterwards, and with what effect? | 09a to 09c |
-| [10 Revenue](processes/10_revenue_collection.md) | How does each kind of receipt reach the Treasury, and how is a tax paid back? | 10a to 10d |
-| [11 Treasury, cash and debt](processes/11_treasury_cash_and_debt.md) | Where is the cash, who limits payments, and how is the gap financed? | 11a to 11d |
-| [12 Personnel and payroll](processes/12_personnel_and_payroll.md) | What replaces contract and delivery for salaries? | 12a, 12b |
-| [13 Assets and property](processes/13_assets_and_property.md) | In which records does a purchased item continue? | 13a |
-| [14 Local governments](processes/14_local_governments.md) | How does a local budget work, where does it meet the national system, and how do local taxes, loans and barangay budgets work? | 14a to 14f |
-| [15 Corporations, transfers, other paths, fund clusters](processes/15_gocc_transfers_and_fund_clusters.md) | Which other routes does public money take, among them disaster funds and cash aid? | 15a to 15f |
-| [16 Information systems and the IFMIS](processes/16_information_systems_and_ifmis.md) | Which system holds which record, and what is planned? | 16a to 16g |
-| [17 UACS and record identifiers](processes/17_uacs_and_record_identifiers.md) | Is UACS the key, and which numbers connect the records? | 17a to 17d |
-| [18 Performance information and evaluation](processes/18_performance_information_and_evaluation.md) | Who records whether a target was reached, who checks the record, and who uses it? | 18a, 18b |
-| [19 Fiscal risks, partnerships and contingent liabilities](processes/19_fiscal_risks_ppp_and_contingent_liabilities.md) | Which payments may become necessary although no budget line of today names them? | 19a, 19b |
+| [P0 Preparation](chapters/P0_preparation.md) | How does a proposal of an agency become part of the budget of the President? | P0-a to P0-c |
+| [P1 Budget Call](chapters/P1_budget_call.md) | What does the Budget Call ask of agencies, and which plans, totals and risks set its frame? | P1-a to P1-e |
+| [P2 Citizen engagement](chapters/P2_citizen_engagement_in_preparation.md) | How do civil society organizations give their inputs to the proposals? | None |
+| [P3 Regional Development Council consultations](chapters/P3_rdc_consultations.md) | How do the Regional Development Councils give their inputs to the proposals? | None |
+| [P4 Program convergence](chapters/P4_program_convergence.md) | How are the programs of several agencies proposed together? | None |
+| [P5 Agency Tier 1 proposals: ongoing expenditures](chapters/P5_tier_1_proposals.md) | Which forms carry the proposal of an agency, and what is Tier 1? | None |
+| [P6 Tier 1 deliberations](chapters/P6_tier_1_deliberations.md) | Where are the proposals examined? | None |
+| [P7 Budget Priorities Framework](chapters/P7_budget_priorities_framework.md) | What does the atlas know about the framework of the budget priorities? | None |
+| [P8 Agency Tier 2 proposals: new or expanded spending](chapters/P8_tier_2_proposals.md) | What is a Tier 2 proposal, and which approvals does a project need? | None |
+| [P9 Tier 2 deliberations](chapters/P9_tier_2_deliberations.md) | How do the Tier 2 proposals compete for the fiscal space? | None |
+| [P10 Presentation to the President and Cabinet](chapters/P10_presentation_to_the_president.md) | Who receives the proposed budget levels? | None |
+| [P11 Confirmation and finalization](chapters/P11_confirmation_and_finalization.md) | Who approves the budget before it goes to Congress? | None |
+| [P12 The President's Budget submitted to Congress](chapters/P12_presidents_budget.md) | Which documents go to Congress, and by which date? | P12-a |
+| [L0 Legislation](chapters/L0_legislation.md) | Which body may change what, and what happens without a law on 1 January? | L0-a, L0-b |
+| [L1 House deliberations](chapters/L1_house_deliberations.md) | What does the House do with the budget bill? | None |
+| [L2 Senate deliberations](chapters/L2_senate_deliberations.md) | What does the Senate do with the budget bill? | None |
+| [L3 Bicameral deliberations](chapters/L3_bicameral_deliberations.md) | How are the two versions of the bill reconciled? | None |
+| [L4 Ratification and enrolment](chapters/L4_ratification_and_enrolment.md) | How does the bill become the enrolled bill? | None |
+| [L5 Enactment of the General Appropriations Act](chapters/L5_enactment_of_the_gaa.md) | What does the President sign, and which kinds of appropriation does the law contain? | L5-a |
+| [E0 Execution](chapters/E0_execution.md) | What must an agency hold before it may sign, and before it may pay? | E0-a, E0-b |
+| [E1 Early procurement activities](chapters/E1_early_procurement.md) | How is a supplier chosen, who decides at each step, and what allows a contract for several years? | E1-a to E1-g |
+| [E2 Budget execution program](chapters/E2_budget_execution_program.md) | Which documents plan the execution of the year? | None |
+| [E3 Allotment release](chapters/E3_allotment_release.md) | Which release document applies to an item, how can an allotment change, and how does a local budget work? | E3-a to E3-h |
+| [E4 Obligation](chapters/E4_obligation.md) | Which officer states which fact before a claim is in order, and what replaces the contract for salaries? | E4-a to E4-e |
+| [E5 Cash allocation](chapters/E5_cash_allocation.md) | Who limits the payments, where is the cash, where does it come from, and how is the gap financed? | E5-a to E5-i |
+| [E6 Disbursement](chapters/E6_disbursement.md) | Through which accounts does the money move, what replaces the accepted delivery in other kinds of payment, and which other routes does public money take? | E6-a to E6-l |
+| [A0 Accountability](chapters/A0_accountability.md) | What does each examination ask, and why do correct amounts differ? | A0-a to A0-c |
+| [A1 Performance targets](chapters/A1_performance_targets.md) | Who records whether a target was reached, and who checks the record? | A1-a |
+| [A2 Citizen engagement](chapters/A2_citizen_engagement_in_accountability.md) | What can citizens see of the results? | None |
+| [A3 Monitoring and evaluation](chapters/A3_monitoring_and_evaluation.md) | Who examines whether a program caused its result? | None |
+| [A4 Agencies' accountability reports](chapters/A4_accountability_reports.md) | Which unit records each event, how do records become reports, and in which records does a purchased item continue? | A4-a to A4-d |
+| [A5 Performance review](chapters/A5_performance_review.md) | Who reviews the performance of each agency, and what depends on the review? | None |
+| [A6 In-year reports](chapters/A6_in_year_reports.md) | Who adds the reports of each body into national totals? | A6-a |
+| [A7 DBCC Mid-Year Report](chapters/A7_dbcc_mid_year_report.md) | What does the atlas know about the mid-year report of the DBCC? | None |
+| [A8 DBCC Year-End Report](chapters/A8_dbcc_year_end_report.md) | What does the atlas know about the year-end report of the DBCC? | None |
+| [A9 Audit report](chapters/A9_audit_report.md) | Who examines the spending afterwards, and with what effect? | A9-a, A9-b |
+| [IS Information systems and the IFMIS](chapters/IS_information_systems.md) | Which system holds which record, and what is planned? | IS-a to IS-g |
+| [UACS UACS and the identifiers of records](chapters/UACS_uacs_and_record_identifiers.md) | Is UACS the key, and which numbers connect the records? | UACS-a to UACS-d |
 
 Reference files: [A authorities](reference/A_authorities_and_mandates.md), [B information systems, with the register of interfaces](reference/B_information_systems_inventory.md), [C documents and identifiers, with what each record proves](reference/C_documents_and_identifiers.md), [D legal framework](reference/D_legal_framework.md), [E glossary](reference/E_glossary.md), [F sources and verification](reference/F_sources_and_verification.md), [G open questions and coverage](reference/G_open_questions_and_known_gaps.md).

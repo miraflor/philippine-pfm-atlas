@@ -2,7 +2,7 @@
 
 *Part of the Philippine PFM Atlas. Facts as of 8 October 2026. The codes in the column "Basis" are explained in [Reference F](F_sources_and_verification.md). "GK" means general knowledge that I did not open in a source during this work.*
 
-This file lists the documents of the process. For each one it says who issues it, what it does, and how it is identified. Section 11 adds, for 39 records, what each one proves and what it does not prove. Two kinds of identifier exist, and the difference matters for any attempt to connect records (see chapter 17).
+This file lists the documents of the process. For each one it says who issues it, what it does, and how it is identified. Section 11 adds, for 39 records, what each one proves and what it does not prove. Two kinds of identifier exist, and the difference matters for any attempt to connect records (see chapter UACS).
 
 - A **document number** identifies one document, for example one SARO or one voucher.
 - A **classification code** (UACS) says to which class the amount belongs. Many documents have the same code.
@@ -77,7 +77,7 @@ The forms of sections 5, 6 and 8 are read in Volume II of the Government Account
 
 ## 5. Obligation, verification and payment
 
-Chapter 07, section 9, lists for the main forms the fields that hold the number of another record.
+Chapter E4, section 7, lists for the main forms the fields that hold the number of another record.
 
 | Document | Issued or prepared by | What it does | Identified by | Basis |
 |---|---|---|---|---|
@@ -148,7 +148,7 @@ A difference inside the Manual: the form of the voucher has five boxes, A to E. 
 
 ## 8. Property and supplies
 
-Chapter 13, section 5, lists the fields of these forms that hold the number of another record.
+Chapter A4, section 15.5, lists the fields of these forms that hold the number of another record.
 
 | Document | Issued or prepared by | What it does | Identified by | Basis |
 |---|---|---|---|---|
@@ -174,12 +174,12 @@ Chapter 13, section 5, lists the fields of these forms that hold the number of a
 | Certificate of Net Debt Service Ceiling and Borrowing Capacity | BLGF | States how much a local government can borrow | Local government, date | DOF-LGULOAN |
 | Opinion of the Monetary Board on a local loan | BSP | Opinion on the effect of the loan, required before release | Local government, loan | DOF-LGULOAN |
 | Statement of Indebtedness, Payments and Balances | Provincial, city or municipal treasurer | Yearly statement of the loans of the local government | Local government, year | DOF-LGULOAN |
-| Partnership contract, clearance of undertakings, monitoring report | Implementing agency and private partner. DOF for the clearance | Documents of a public-private partnership (chapter 19) | Not described | RA11966 ss.7, 8, 16 |
+| Partnership contract, clearance of undertakings, monitoring report | Implementing agency and private partner. DOF for the clearance | Documents of a public-private partnership (chapter P1, section 4) | Not described | RA11966 ss.7, 8, 16 |
 | List of beneficiaries of a cash aid program | The agency that runs the program | Names the persons who qualify. It replaces a contract and a delivery | Program, period | RA11310 s.5 for one program. Form of the list: GK |
 
 ## 10. Summary: which number links which record
 
-The table has the same 19 links as chapter 17, section 6, where each link has its basis. The last column says whether the later record has a field that holds a number or a code of the earlier record.
+The table has the same 19 links as chapter UACS, section 6, where each link has its basis. The last column says whether the later record has a field that holds a number or a code of the earlier record.
 
 | No. | From record | To record | Linking key | Kind of key | Field read on a form or in a rule? |
 |---|---|---|---|---|---|
@@ -203,7 +203,7 @@ The table has the same 19 links as chapter 17, section 6, where each link has it
 | 18 | Obligation | Report row | UACS codes | Classification | Yes |
 | 19 | Payment order | Report row | Amount by code, through the line of the daily report | Classification | Yes |
 
-Basis of this summary: the forms of the Manual [GAM-V2], the form of the procurement plan of 2025 and the form of 2015 [APP-FORM2025][APP-FORM], payment orders that agencies published [LDDAP-FORM], and the UACS manual [JC2017-1]. Diagram 17b shows the same chain.
+Basis of this summary: the forms of the Manual [GAM-V2], the form of the procurement plan of 2025 and the form of 2015 [APP-FORM2025][APP-FORM], payment orders that agencies published [LDDAP-FORM], and the UACS manual [JC2017-1]. Diagram UACS-b shows the same chain.
 
 What the forms show. The purchase order has a field for the ORS number, the acceptance report has fields for the numbers of the purchase order and of the invoice, and the voucher has fields for the numbers of the obligation request and of the journal entry voucher [GAM-V2 App.61, App.62, App.32]. Three gaps remain. No form has a field for a contract number or for a PhilGEPS number. The acceptance report is connected with the voucher only as an attached paper. And link 4 has no code: the form of the procurement plan that is mandatory since 21 September 2025 has no column for a budget code, so the link is a text and an amount [APP-FORM2025].
 
@@ -215,7 +215,7 @@ The table gives, for the main records, the statement that the record supports an
 
 A case where the table helps: a report shows that 95 percent of an allotment is obligated. Row 10 says what this proves: that amount was charged to the allotment. It does not prove that anything was delivered or paid.
 
-A case where it does not help: two records disagree, for example the registry of the agency and the bank statement. The table says what each one proves. It does not say which one is right. That needs a reconciliation (chapter 08, section 12).
+A case where it does not help: two records disagree, for example the registry of the agency and the bank statement. The table says what each one proves. It does not say which one is right. That needs a reconciliation (chapter A0, section 4).
 
 | No. | Record | What it proves | What it does not prove | Basis |
 |---|---|---|---|---|

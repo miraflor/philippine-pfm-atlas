@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Research model 00i: 00i  PFM concurrent operating architecture · Philippine PFM Atlas</title>
-<meta name="description" content="Research model 00i: 00i  PFM concurrent operating architecture">
+<title>Page moved · Philippine PFM Atlas</title>
+<meta name="description" content="This page has moved."><meta name="robots" content="noindex">
 <meta name="color-scheme" content="light">
 <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('pfm-atlas-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(error){}</script>
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -21,46 +21,7 @@
 <nav class="wrap site-nav" aria-label="Main"><a href="../index.html">Budget cycle</a><a href="../walkthrough.html">Guided lessons</a><a href="../big-picture.html">Big picture</a><a href="../chapters/index.html">Chapters</a><a href="../reference/index.html">References</a><a href="../diagrams/index.html">Diagrams</a><a href="../systems.html">Systems &amp; UACS</a><a href="../models/index.html">Research models</a><a href="../reference/g.html">Open points</a><a href="../search.html">Search</a><a href="../about.html">About</a></nav>
 </header>
 <main id="main" class="wrap">
-<p class="eyebrow">Supplementary analytic model · 10 October 2026</p><h1>00i  PFM concurrent operating architecture</h1><div class="model-note"><strong>Versioned, source-only model.</strong> This diagram is from the earlier strengthened research edition. It has not been reconciled against the latest 12 October procedures, and no verified PNG rendering is supplied. A reused ID such as 07h does <em>not</em> replace the current diagram of that ID.</div><p><strong>Historical ID:</strong> 00i · <strong>Notation:</strong> mermaid · <a href="diagrams/mermaid/00i_concurrent_pfm_architecture.mmd" download>Download original editable code</a> · <a href="../diagrams/index.html">Current diagram gallery</a></p><h2>Source code</h2><div class="copy-row"><button type="button" data-copy="model-00i">Copy code</button></div><pre class="model-code" id="model-00i"><code class="model-source">---
-title: &quot;00i  PFM concurrent operating architecture&quot;
----
-  %% QUESTION THIS DIAGRAM ANSWERS: How do contemporaneous processes interact without implying that accounting only follows payment?
-  %% SOURCES: [PRIMER] [NBC599] [JC2019-1] [COA-GAS] [ROADMAP2024]
-  %% SCOPE: Reference view; not a verified deployed system interface.
-  %% READING: Arrows show possible evidence, authority or event dependencies, not a universal time order or verified API.
-flowchart LR
-  subgraph PLAN[&quot;Policy and budget formulation - multiple fiscal years&quot;]
-    P[&quot;Development and investment planning&quot;] --&gt; F[&quot;Fiscal framework&quot;] --&gt; B[&quot;Agency and executive proposals&quot;] --&gt; G[&quot;Enacted appropriation&quot;]
-  end
-  subgraph EXP[&quot;Expenditure authority and service delivery&quot;]
-    A[&quot;Applicable allotment / budget authority&quot;] --&gt; O[&quot;Commitment / obligation&quot;] --&gt; D[&quot;Delivery, entitlement or service&quot;] --&gt; L[&quot;Liability / verified claim&quot;]
-  end
-  subgraph CASH[&quot;Treasury and cash - continuous&quot;]
-    R[&quot;Revenue and financing&quot;] --&gt; T[&quot;Cash position / TSA&quot;] --&gt; N[&quot;Cash programming and authority&quot;] --&gt; PAY[&quot;Payment instruction and settlement&quot;]
-  end
-  subgraph BOOK[&quot;Accounting, property and control - continuous&quot;]
-    REC[&quot;Record financial events when recognition criteria hold&quot;] --&gt; RECON[&quot;Reconcile budget, books, bank and assets&quot;] --&gt; REP[&quot;Financial and performance reports&quot;]
-  end
-  subgraph OV[&quot;Assurance and feedback - throughout and afterwards&quot;]
-    IC[&quot;Agency controls and internal audit&quot;] --&gt; COA[&quot;COA independent audit and findings&quot;] --&gt; FEED[&quot;Corrective action and future plans&quot;]
-  end
-  G --&gt; A
-  O --&gt; L
-  L --&gt; PAY
-  N --&gt; PAY
-  D --&gt; REC
-  O --&gt; REC
-  R --&gt; REC
-  PAY --&gt; REC
-  PAY --&gt; RECON
-  G --&gt; REP
-  REP --&gt; COA
-  IC -.-&gt; O
-  IC -.-&gt; L
-  IC -.-&gt; PAY
-  FEED -.-&gt; P
-  classDef default fill:#fff,stroke:#41516a,color:#111;
-</code></pre><p><a href="index.html">← All research models</a></p>
+<div class="doc-head"><p class="eyebrow">Address moved</p><h1>This page has moved</h1></div><p class="prose-block">Its content is now in <a href="../diagrams/BP-d.html">diagram BP-d: Three lines of steps, the three points where they must meet, and the record that each act writes (one payment under a contract)</a>.</p><script>(function(){var m={};var h=location.hash.slice(1);var t=(h&&m[h])?m[h]:"../diagrams/BP-d.html";location.replace(t);})();</script>
 </main>
 <footer class="site-footer"><div class="wrap"><p>Philippine PFM Atlas. An independent reference. It is not an official publication of the Philippine government, and it does not replace the laws, circulars and manuals that it cites. Facts on current events are as of 8 October 2026.</p><p><a href="../about.html">About the atlas</a> · <a href="../reference/f.html">Sources</a> · <a href="../reference/g.html">Open points</a></p></div></footer>
 <script src="../assets/site.js" defer></script>

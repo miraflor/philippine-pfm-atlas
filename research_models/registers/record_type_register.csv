@@ -1,4 +1,4 @@
-﻿record_type_id,name,typical_primary_issuer_id,record_domain,per_instance_identifier,uacs_classification,field_mapping_verified
+record_type_id,name,typical_primary_issuer_id,record_domain,per_instance_identifier,uacs_classification,field_mapping_verified
 DEVELOPMENT_PLAN,Development / regional plan,DEPDEV,policy,REQUIRED_FOR_LINEAGE,where_applicable,no
 INVESTMENT_ID,Investment project or proposed project identifier,DEPDEV,planning,REQUIRED_FOR_LINEAGE,where_applicable,no
 FISCAL_FRAME,Fiscal frame and aggregate recommendations,DBCC,policy,REQUIRED_FOR_LINEAGE,where_applicable,no

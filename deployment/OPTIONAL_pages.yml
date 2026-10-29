@@ -30,6 +30,8 @@ jobs:
       - run: python tools/check_atlas.py
       - run: python tools/build_site.py
       - run: python tools/validate_site.py
+      - run: python tools/validate_consolidated.py
+      - run: python tools/check_budget_cycle_nav.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

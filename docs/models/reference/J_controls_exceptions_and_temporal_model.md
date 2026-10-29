@@ -26,4 +26,4 @@ Record items **when recognition criteria are met**, not only after cash moves. A
 
 Agency management controls operate during procurement, obligation, payment, accounting and reporting. Internal audit is separate where established. COA's independent audit may examine transactions and balances over time; specific notices, appeals and outcomes require the governing COA rules and procedural facts. Avoid the inference that every payment must wait for COA's audit.
 
-**Diagrams:** [07h](../diagrams/mermaid/07h_disbursement_pattern_catalog.mmd), [08e](../diagrams/mermaid/08e_accounting_recognition_events.mmd), [08f](../diagrams/mermaid/08f_multilateral_reconciliation.mmd), [09d](../diagrams/mermaid/09d_controls_audit_and_responses.mmd).
+**Research model:** [RM-2](../diagrams/mermaid/RM-2_multilateral_reconciliation.mmd).

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Diagram 07b: The three meeting points before a payment, and the record written at each step (national agency, contract for goods) · Philippine PFM Atlas</title>
-<meta name="description" content="which lines of work must BOTH be finished before the next step of a payment may happen, and which record does each unit write at its step?">
+<title>Page moved · Philippine PFM Atlas</title>
+<meta name="description" content="This page has moved."><meta name="robots" content="noindex">
 <meta name="color-scheme" content="light">
 <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('pfm-atlas-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(error){}</script>
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -18,153 +18,10 @@
 <form class="header-search" action="../search.html" role="search"><label class="visually-hidden" for="q-top">Search the atlas</label><input id="q-top" name="q" type="search" placeholder="Search: SARO, voucher, BTMS"></form>
 <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">Dark mode</button>
 </div>
-<nav class="wrap site-nav" aria-label="Main"><a href="../index.html">Budget cycle</a><a href="../walkthrough.html">Guided lessons</a><a href="../big-picture.html">Big picture</a><a href="../chapters/index.html">Chapters</a><a href="../reference/index.html">References</a><a href="../diagrams/index.html" aria-current="page">Diagrams</a><a href="../systems.html">Systems &amp; UACS</a><a href="../models/index.html">Research models</a><a href="../reference/g.html">Open points</a><a href="../search.html">Search</a><a href="../about.html">About</a></nav>
+<nav class="wrap site-nav" aria-label="Main"><a href="../index.html">Budget cycle</a><a href="../walkthrough.html">Guided lessons</a><a href="../big-picture.html">Big picture</a><a href="../chapters/index.html">Chapters</a><a href="../reference/index.html">References</a><a href="../diagrams/index.html">Diagrams</a><a href="../systems.html">Systems &amp; UACS</a><a href="../models/index.html">Research models</a><a href="../reference/g.html">Open points</a><a href="../search.html">Search</a><a href="../about.html">About</a></nav>
 </header>
 <main id="main" class="wrap">
-<nav class="pfm-cycle-context" aria-label="Budget-cycle context"><a href="../index.html#budget-cycle">Budget cycle</a> <span> / </span><a href="../index.html#phase-execution">Execution</a> <span> / </span><a href="../diagrams/index.html#cycle-diagrams-execution">Browse this phase</a></nav><div class="doc-head"><p class="eyebrow">Diagram <span class="id">07b</span> · PlantUML activity diagram with lanes</p><h1>The three meeting points before a payment, and the record written at each step (national agency, contract for goods)</h1><p class="prose-block"><strong>Question:</strong> Which lines of work must BOTH be finished before the next step of a payment may happen, and which record does each unit write at its step?</p><p class="muted">In: <a href="../chapters/07.html">07. Obligation, verification and payment</a></p></div><figure class="diagram" id="figure-07b"><a href="../atlas/rendered/07b_obligation_to_payment_swimlane.png"><img alt="Diagram 07b: The three meeting points before a payment, and the record written at each step (national agency, contract for goods)" height="2223" loading="lazy" src="../atlas/rendered/07b_obligation_to_payment_swimlane.png" width="3250"/></a></figure><div class="prose-block"><h2 id="about">What the diagram shows</h2><ul>
-<li><strong>Question:</strong> which lines of work must BOTH be finished before the next step of a payment may happen, and which record does each unit write at its step?</li>
-<li><strong>Idea:</strong> a payment needs three meetings. (1) An allotment and an award must both exist before the contract is signed and the obligation is recorded. (2) The obligation and an accepted delivery must both exist before the amount is a payable. (3) The claim in order and a cash authority (NCA) must both exist before the head of accounting certifies "cash available" on the voucher. The payment order follows the third meeting.</li>
-<li><strong>How to read it:</strong> one column (lane) = one actor. A thick bar that opens = branches run in parallel. The thick bar that closes = ALL branches must be finished (AND-join). A line that starts with "Record:" names what is written at that step.</li>
-<li><strong>Why PlantUML:</strong> Mermaid has no activity diagram with lanes and AND-joins. The Mermaid <a href="00d.html">diagram 00d</a> shows the same structure as a net without lanes.</li>
-<li><strong>Where the meeting points are:</strong> the Manual places the check of the NCA at Box C of the voucher <a class="basis" href="../reference/f.html#source-gam-v1" title="Commission on Audit, Government Accounting Manual for National Government Agencies, Volume I, Accounting Policies, Guidelines and Procedures, and Illustrative Accounting …">[GAM-V1 Ch.6 s.12]</a>, and its worked example records the payable at the accepted delivery <a class="basis" href="../reference/f.html#source-gam-v1" title="Commission on Audit, Government Accounting Manual for National Government Agencies, Volume I, Accounting Policies, Guidelines and Procedures, and Illustrative Accounting …">[GAM-V1 Annex H]</a>.</li>
-<li><strong>Sources:</strong> <a class="basis" href="../reference/f.html#source-nbc599" title="DBM National Budget Circular No. 599 of 5 January 2026, Guidelines on the Release of Funds for FY 2026.">[NBC599]</a> allotment and NCA. <a class="basis" href="../reference/f.html#source-ra12009" title="Republic Act No. 12009, New Government Procurement Act, 20 July 2024.">[RA12009 s.12]</a> no award before funding. <a class="basis" href="../reference/f.html#source-pd1445" title='Presidential Decree No. 1445 of 11 June 1978, Government Auditing Code of the Philippines. Read as a file of 37 pages, from 10 October 2026. Its title page says "THE STATE …'>[PD1445 s.86]</a> certificate of funds before a contract. <a class="basis" href="../reference/f.html#source-gam-v1" title="Commission on Audit, Government Accounting Manual for National Government Agencies, Volume I, Accounting Policies, Guidelines and Procedures, and Illustrative Accounting …">[GAM-V1 Ch.3 s.15]</a> obligation. <a class="basis" href="../reference/f.html#source-gam-v1" title="Commission on Audit, Government Accounting Manual for National Government Agencies, Volume I, Accounting Policies, Guidelines and Procedures, and Illustrative Accounting …">[GAM-V1 Ch.8 s.15]</a> delivery, inspection, acceptance. <a class="basis" href="../reference/f.html#source-gam-v1" title="Commission on Audit, Government Accounting Manual for National Government Agencies, Volume I, Accounting Policies, Guidelines and Procedures, and Illustrative Accounting …">[GAM-V1 Ch.6 s.12, s.56]</a> voucher, registry of the NCA, payment order, daily report. <a class="basis" href="../reference/f.html#source-gam-v2" title="The same Manual, Volume II, Accounting Books, Registries, Records, Forms and Reports: 81 appendices. Each appendix is a form with its instructions. Files read: the forms as …">[GAM-V2 App.11, App.32, App.42, App.62]</a> wording of the forms. <a class="basis" href="../reference/f.html#source-gam-v1" title="Commission on Audit, Government Accounting Manual for National Government Agencies, Volume I, Accounting Policies, Guidelines and Procedures, and Illustrative Accounting …">[GAM-V1 Annex H]</a> entries of the agency and of the Treasury. <a class="basis" href="../reference/f.html#source-cl2013-16a" title="DBM Circular Letter No. 2013-16-A, Expanded Modified Direct Payment Scheme.">[CL2013-16A]</a> copy to BTr and replenishment. <a class="basis" href="../reference/f.html#source-coa2011-002" title="COA Circular No. 2011-002 of 22 July 2011, lifting of pre-audit.">[COA2011-002]</a> audit after payment.</li>
-<li><strong>General knowledge (GK), not opened in a source here:</strong> what the bank checks before it debits the sub-account.</li>
-</ul>
-</div><h2 id="code">Code</h2><div class="copy-row"><button type="button" data-copy="code-07b">Copy the code</button><a href="../atlas/diagrams/plantuml/07b_obligation_to_payment_swimlane.puml">Code file</a><a href="../atlas/rendered/07b_obligation_to_payment_swimlane.png">Image in full size</a></div><pre id="code-07b"><code>@startuml 07b_obligation_to_payment_swimlane
-&#x27; QUESTION THIS DIAGRAM ANSWERS: which lines of work must BOTH be finished before the next step of a payment may happen, and which record does each unit write at its step?
-&#x27; IDEA: a payment needs three meetings. (1) An allotment and an award must both exist before the contract is signed and the obligation is recorded. (2) The obligation and an accepted delivery must both exist before the amount is a payable. (3) The claim in order and a cash authority (NCA) must both exist before the head of accounting certifies &quot;cash available&quot; on the voucher. The payment order follows the third meeting.
-&#x27; READING: one column (lane) = one actor. A thick bar that opens = branches run in parallel. The thick bar that closes = ALL branches must be finished (AND-join). A line that starts with &quot;Record:&quot; names what is written at that step.
-&#x27; WHY PLANTUML: Mermaid has no activity diagram with lanes and AND-joins. The Mermaid diagram 00d shows the same structure as a net without lanes.
-&#x27; WHERE THE MEETING POINTS ARE: the Manual places the check of the NCA at Box C of the voucher [GAM-V1 Ch.6 s.12], and its worked example records the payable at the accepted delivery [GAM-V1 Annex H].
-&#x27; SOURCES: [NBC599] allotment and NCA. [RA12009 s.12] no award before funding. [PD1445 s.86] certificate of funds before a contract. [GAM-V1 Ch.3 s.15] obligation. [GAM-V1 Ch.8 s.15] delivery, inspection, acceptance. [GAM-V1 Ch.6 s.12, s.56] voucher, registry of the NCA, payment order, daily report. [GAM-V2 App.11, App.32, App.42, App.62] wording of the forms. [GAM-V1 Annex H] entries of the agency and of the Treasury. [CL2013-16A] copy to BTr and replenishment. [COA2011-002] audit after payment.
-&#x27; GENERAL KNOWLEDGE (GK), NOT OPENED IN A SOURCE HERE: what the bank checks before it debits the sub-account.
-title 07b  The three meeting points before a payment, and the record written at each step (national agency, contract for goods)
-skinparam shadowing false
-skinparam defaultFontName SansSerif
-skinparam defaultFontSize 12
-skinparam ActivityBackgroundColor #FFFFFF
-skinparam ActivityBorderColor #444444
-skinparam ActivityDiamondBackgroundColor #FFFDE7
-skinparam ActivityDiamondBorderColor #8A6D00
-skinparam ArrowColor #333333
-skinparam NoteBackgroundColor #FFFDE7
-skinparam NoteBorderColor #8A6D00
-skinparam SwimlaneBorderColor #777777
-skinparam SwimlaneTitleFontStyle bold
-
-|#EEF4FB|DBM|
-start
-fork
-  :Release the ALLOTMENT
-  (GAA as allotment order,
-  or SARO / GARO);
-  |#EDF7ED|Budget unit|
-  :Record: allotment entered
-  in the registries.
-  No journal entry;
-fork again
-  |#EDF7ED|Head of agency and BAC|
-  :Procure: bidding, evaluation,
-  post-qualification,
-  recommendation of AWARD;
-end fork
-|#EDF7ED|Head of agency and BAC|
-:MEETING POINT 1: allotment + award.
-Notice of award;
-|#EDF7ED|Budget unit|
-:Obligation Request and Status (ORS).
-Box A requesting head, Box B budget officer.
-Record: OBLIGATION entered in the registry.
-No journal entry;
-|#EDF7ED|Accounting unit|
-:Chief accountant certifies on the
-purchase order or contract:
-funds available, with the ORS number;
-|#EDF7ED|Head of agency and BAC|
-:Contract or purchase order signed;
-fork
-  |#F2F2F2|Supplier|
-  :Deliver goods with
-  delivery receipt and invoice;
-  |#EDF7ED|Property unit, inspector|
-  :Inspection officer inspects.
-  Property custodian accepts.
-  Record: inspection and acceptance
-  report, with the numbers of the
-  purchase order and of the invoice;
-fork again
-  |#EDF7ED|Budget unit|
-  :Obligation stays open
-  in the registry;
-end fork
-|#EDF7ED|Accounting unit|
-:MEETING POINT 2: obligation + accepted delivery.
-Record: journal entry for the asset or expense
-and ACCOUNTS PAYABLE. The budget unit enters
-the payable in part C of the ORS;
-:Disbursement voucher (DV) from the requesting office.
-Box A: supervisor certifies the expense.
-Examine the documents. Assign the DV number.
-Look into the index of payments.
-Box B: accounting entry;
-fork
-  |#FFF8DC|BTr and BSP|
-  :Collections and loan proceeds
-  enter the Treasury Single Account;
-  |#EEF4FB|DBM|
-  :Issue the Notice of Cash
-  Allocation (NCA) to the servicing bank,
-  from the monthly disbursement program.
-  CASH AUTHORITY;
-  |#EDF7ED|Accounting unit|
-  :Record: journal entry
-  (Cash-MDS, Regular) and
-  registry of the NCA;
-fork again
-  |#EDF7ED|Accounting unit|
-  :Claim in order waits
-  for cash authority;
-end fork
-|#EDF7ED|Accounting unit|
-:MEETING POINT 3: claim in order + cash authority.
-Head of accounting looks into the registry of the NCA
-and signs Box C: cash available, documents complete,
-amount proper. Record: amount entered as used;
-|#EDF7ED|Head of agency and BAC|
-:Box D: approved for payment;
-|#EDF7ED|Accounting unit|
-:Prepare the LDDAP-ADA.
-Chief accountant certifies the list,
-head of agency approves it;
-|#EDF7ED|Cash unit|
-:Cashier signs the advice to debit the account,
-head of agency countersigns. Summary list (SLIIE).
-Record: record of checks and payment orders,
-daily report of payment orders issued;
-|#EDF7ED|Accounting unit|
-:Record, on the day of the daily report:
-journal entry for the payment
-(Accounts Payable, Cash-MDS, Due to BIR).
-Budget unit enters the payment in the registries.
-Tax withheld is remitted later by Tax Remittance Advice;
-|#FFF8DC|Servicing bank|
-:Check the payment order and the NCA balance.
-Debit the MDS sub-account.
-Credit the payee within 24 to 48 hours.
-Copy of the summary list to BTr on the same day;
-|#F2F2F2|Supplier|
-:Payee PAID (net of tax withheld).
-Official receipt to the agency;
-|#FFF8DC|BTr and BSP|
-:Replenish the servicing bank
-from the Treasury Single Account.
-Record: books of the Treasury;
-|#FDF1E3|COA|
-:Receive the daily report with the paid vouchers.
-Audit after payment;
-stop
-@enduml
-</code></pre><nav class="pager" aria-label="Pages"><a class="prev" href="07a.html">← Diagram 07a</a><a class="next" href="07c.html">Diagram 07c →</a></nav>
+<div class="doc-head"><p class="eyebrow">Address moved</p><h1>This page has moved</h1></div><p class="prose-block">Its content is now in <a href="E4-b.html">diagram E4-b: The three meeting points before a payment, and the record written at each step (national agency, contract for goods)</a>.</p><script>(function(){var m={};var h=location.hash.slice(1);var t=(h&&m[h])?m[h]:"E4-b.html";location.replace(t);})();</script>
 </main>
 <footer class="site-footer"><div class="wrap"><p>Philippine PFM Atlas. An independent reference. It is not an official publication of the Philippine government, and it does not replace the laws, circulars and manuals that it cites. Facts on current events are as of 8 October 2026.</p><p><a href="../about.html">About the atlas</a> · <a href="../reference/f.html">Sources</a> · <a href="../reference/g.html">Open points</a></p></div></footer>
 <script src="../assets/site.js" defer></script>

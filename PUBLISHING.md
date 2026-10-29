@@ -13,14 +13,14 @@ GitHub's own instructions:
 - https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site
 - https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
 
-Every page, image, script and style sheet of the website is in `docs/`, so publishing from this folder needs no build on GitHub. The website loads nothing from other servers.
+Every page, image, script and style sheet of the website is in `docs/`, so publishing from this folder needs no build on GitHub. The website loads one program from another server: when a Mermaid diagram comes into view, the browser loads the Mermaid library from jsDelivr to draw the diagram so that the reader can zoom, move and edit it. Without it the reader sees the PNG image.
 
 ## Update cycle
 
 1. Edit the sources in `src/`: the Markdown files and the diagram code in `src/diagrams/`.
 2. Draw the image of each diagram whose code changed: `python tools/render_diagrams.py ID`. The images are in `docs/atlas/rendered/`.
 3. Build the atlas: `python tools/build_atlas.py`. Check it: `python tools/check_atlas.py`.
-4. Build the website: `python tools/build_site.py`. Check it: `python tools/validate_site.py`.
+4. Build the website: `python tools/build_site.py`. Check it: `python tools/validate_site.py`, `python tools/validate_consolidated.py` and `python tools/check_budget_cycle_nav.py`.
 5. Commit `src/`, `docs/atlas/` and the rest of `docs/` together, and push.
 
 `tools/build_site.py` removes every file of `docs/` except `docs/atlas/` before it writes the website again. A file that is added by hand to `docs/` is therefore lost at the next build. Change the website in `tools/build_site.py` and in `tools/site/`.
@@ -29,7 +29,9 @@ Four blocks of the big picture stand between the lines `<!-- site:NAME -->` and 
 
 ## Identifiers
 
-The [README](README.md) lists the identifiers that do not change after publication: chapter numbers, reference letters, the numbers of the points of Reference G, the numbers of the rows of the register in Reference B, the source codes, and the diagram IDs. A new item receives the next free number. A removed item leaves its number unused. `tools/build_atlas.py` accepts gaps in the numbers of the register, and stops if a number occurs twice.
+The [README](README.md) lists the identifiers that other texts can cite: the IDs of the chapters (P0 to P12, L0 to L5, E0 to E6, A0 to A9, IS, UACS), the IDs of the diagrams (for example E4-b), the reference letters, the numbers of the points of Reference G, the numbers of the rows of the register in Reference B, the source codes, and the IDs of the research models. A new diagram receives the next free letter of its chapter. A removed item leaves its identifier unused. `tools/build_atlas.py` accepts gaps in the numbers of the register, and stops if a number occurs twice.
+
+The files `tools/forwarding.json` and `tools/research_forwarding.json` keep addresses that an earlier version of the website used: at each of them the build writes a page that sends the reader to the new place. Keep these files, so that links in other documents keep working.
 
 ## Optional: build and publish with GitHub Actions
 

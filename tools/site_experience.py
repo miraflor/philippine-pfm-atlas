@@ -10,7 +10,7 @@ import json
 import math
 import re
 from pathlib import Path
-from budget_cycle_nav import (home_cycle, chapter_index, reorganize_diagram_library, lesson_index, phase_context)
+from budget_cycle_nav import (home_cycle, reorganize_diagram_library, lesson_index, phase_context)
 from budget_cycle_story import SLOT as CYCLE_STORY_SLOT
 
 ROOT = Path(__file__).resolve().parent.parent if Path(__file__).name == 'site_experience.py' and Path(__file__).parent.name == 'tools' else None
@@ -36,8 +36,6 @@ def enhance_page(url: str, body: str, diagrams: list[dict]) -> str:
         return library(body, diagrams)
     if url == 'about.html':
         return about(body)
-    if url == 'chapters/index.html':
-        return chapter_index(body)
     if url.startswith(('chapters/', 'diagrams/', 'guide/')):
         context = phase_context(url)
         if context:
@@ -176,7 +174,7 @@ def library(body,diagrams):
     n_mermaid=sum(1 for d in diagrams if d['notation']=='Mermaid')
     n_puml=len(diagrams)-n_mermaid
     hero=f'''<div class="atlas-catalog-hero" {MARK}><p class="atlas-kicker">Visual index · An atlas to explore</p><div class="atlas-catalog-heading"><div><p class="atlas-catalog-overline">DIAGRAM LIBRARY</p><h1>See the system.<br><em>Explore its forms.</em></h1><p>Browse the existing diagrams by chapter, question and notation. Open any card for its explanation, original image, source code and interactive Mermaid view where available.</p></div>
-<div class="atlas-catalog-stat" aria-label="Diagram counts"><strong>{len(diagrams)}</strong><span>diagrams in the current atlas</span><div><b>{n_mermaid}</b> Mermaid <b>{n_puml}</b> PlantUML</div></div></div></div>'''
+<div class="atlas-catalog-stat" aria-label="Diagram counts"><strong>{len(diagrams)}</strong><span>diagrams in the atlas</span><div><b>{n_mermaid}</b> Mermaid <b>{n_puml}</b> PlantUML</div></div></div></div>'''
     body=hero+body
     # Keep original title and explanatory paragraph, only restyle it (no content removed).
     body=body.replace('<div class="doc-head"><p class="eyebrow">Diagrams</p><h1>The diagrams</h1></div>',
@@ -195,8 +193,9 @@ def library(body,diagrams):
 <div class="atlas-diagram-thumb"><img loading="lazy" decoding="async" src="../atlas/{esc(d['image'])}" alt="Preview of diagram {esc(did)}"/><span class="atlas-diagram-id">{esc(did)}</span></div>
 <div class="atlas-diagram-content"><span class="form">{esc(d['form'])}</span><strong>{esc(d['title'])}</strong><span class="q">Question: {esc(d['question'])}</span><span class="atlas-open-caption">Open diagram <span aria-hidden="true">↗</span></span></div>
 </a></li>''')
-        return f'''<section class="diagram-group atlas-diagram-group" id="group-{esc(ident)}"><div class="atlas-diagram-group-head"><div><span class="atlas-chapter-label">CHAPTER {esc(ident)}</span><h2 id="chapter-{esc(ident)}">{heading}</h2></div><span class="atlas-group-count">{len(entries)} {"diagram" if len(entries)==1 else "diagrams"}</span></div><ul class="diagram-list atlas-diagram-grid">{''.join(cards)}</ul></section>'''
-    regex=re.compile(r'<section class="diagram-group"><h2 id="chapter-(\d{2})">(.*?)</h2><ul class="diagram-list">.*?</ul></section>',re.S)
+        label = 'THE BIG PICTURE' if ident == 'BP' else 'CHAPTER ' + ident
+        return f'''<section class="diagram-group atlas-diagram-group" id="group-{esc(ident)}"><div class="atlas-diagram-group-head"><div><span class="atlas-chapter-label">{esc(label)}</span><h2 id="chapter-{esc(ident)}">{heading}</h2></div><span class="atlas-group-count">{len(entries)} {"diagram" if len(entries)==1 else "diagrams"}</span></div><ul class="diagram-list atlas-diagram-grid">{''.join(cards)}</ul></section>'''
+    regex=re.compile(r'<section class="diagram-group"><h2 id="chapter-([A-Z][A-Z0-9]*)">(.*?)</h2><ul class="diagram-list">.*?</ul></section>',re.S)
     body,n=regex.subn(make_group,body)
     if n!=len({d['chapter'] for d in diagrams}):
         raise ValueError(f'Library transformed {n} groups, expected {len(set(d["chapter"] for d in diagrams))}')

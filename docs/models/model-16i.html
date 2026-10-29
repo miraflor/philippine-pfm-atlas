@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Research model 16i: 16i  IFMIS interface failure and duplicate entry pattern · Philippine PFM Atlas</title>
-<meta name="description" content="Research model 16i: 16i  IFMIS interface failure and duplicate entry pattern">
+<title>Page moved · Philippine PFM Atlas</title>
+<meta name="description" content="This page has moved."><meta name="robots" content="noindex">
 <meta name="color-scheme" content="light">
 <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('pfm-atlas-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(error){}</script>
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -21,25 +21,7 @@
 <nav class="wrap site-nav" aria-label="Main"><a href="../index.html">Budget cycle</a><a href="../walkthrough.html">Guided lessons</a><a href="../big-picture.html">Big picture</a><a href="../chapters/index.html">Chapters</a><a href="../reference/index.html">References</a><a href="../diagrams/index.html">Diagrams</a><a href="../systems.html">Systems &amp; UACS</a><a href="../models/index.html">Research models</a><a href="../reference/g.html">Open points</a><a href="../search.html">Search</a><a href="../about.html">About</a></nav>
 </header>
 <main id="main" class="wrap">
-<p class="eyebrow">Supplementary analytic model · 10 October 2026</p><h1>16i  IFMIS interface failure and duplicate entry pattern</h1><div class="model-note"><strong>Versioned, source-only model.</strong> This diagram is from the earlier strengthened research edition. It has not been reconciled against the latest 12 October procedures, and no verified PNG rendering is supplied. A reused ID such as 07h does <em>not</em> replace the current diagram of that ID.</div><p><strong>Historical ID:</strong> 16i · <strong>Notation:</strong> mermaid · <a href="diagrams/mermaid/16i_interface_failure_and_reconciliation.mmd" download>Download original editable code</a> · <a href="../diagrams/index.html">Current diagram gallery</a></p><h2>Source code</h2><div class="copy-row"><button type="button" data-copy="model-16i">Copy code</button></div><pre class="model-code" id="model-16i"><code class="model-source">---
-title: &quot;16i  IFMIS interface failure and duplicate entry pattern&quot;
----
-  %% QUESTION THIS DIAGRAM ANSWERS: How can two systems disagree even when both have UACS?
-  %% SOURCES: Reference control pattern (not assertion that a specific integration exists); GENERAL KNOWLEDGE / atlas inference
-  %% SCOPE: Reference view; not a verified deployed system interface.
-  %% READING: Arrows show possible evidence, authority or event dependencies, not a universal time order or verified API.
-flowchart LR
-  A[&quot;System A: authoritative event with ID, date and UACS version&quot;] --&gt; S{&quot;Exchange path?&quot;}
-  S --&gt;|API / batch| T[&quot;Transport, schema and receipt acknowledgement&quot;]
-  S --&gt;|Manual reentry| M[&quot;Human copies / recodes event&quot;]
-  T --&gt; B[&quot;System B: referenced or copied record&quot;]
-  M --&gt; B
-  B --&gt; V{&quot;Record identity, classification and amount align?&quot;}
-  V --&gt;|Yes| ACK[&quot;Matched with evidence and owner&quot;]
-  V --&gt;|No| EX[&quot;Exception: missing, duplicate, stale, mismatch or wrong period&quot;]
-  EX --&gt; OWN[&quot;Named owner investigates / corrects or reverses&quot;]
-  OWN --&gt; V
-</code></pre><p><a href="index.html">← All research models</a></p>
+<div class="doc-head"><p class="eyebrow">Address moved</p><h1>This page has moved</h1></div><p class="prose-block">Its content is now in <a href="RM-6.html">research model RM-6</a>.</p><script>(function(){var m={};var h=location.hash.slice(1);var t=(h&&m[h])?m[h]:"RM-6.html";location.replace(t);})();</script>
 </main>
 <footer class="site-footer"><div class="wrap"><p>Philippine PFM Atlas. An independent reference. It is not an official publication of the Philippine government, and it does not replace the laws, circulars and manuals that it cites. Facts on current events are as of 8 October 2026.</p><p><a href="../about.html">About the atlas</a> · <a href="../reference/f.html">Sources</a> · <a href="../reference/g.html">Open points</a></p></div></footer>
 <script src="../assets/site.js" defer></script>

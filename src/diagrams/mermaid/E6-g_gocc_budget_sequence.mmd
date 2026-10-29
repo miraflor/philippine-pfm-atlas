@@ -1,0 +1,41 @@
+---
+title: "E6-g  Government corporations (GOCCs): corporate operating budget, budgetary support and reports"
+---
+sequenceDiagram
+  autonumber
+  %% QUESTION THIS DIAGRAM ANSWERS: a government corporation is not an agency in the GAA. Who approves its budget, how does national money reach it, and what does it return?
+  %% IDEA: a corporation spends its own income under a Corporate Operating Budget (COB) approved by its board and reviewed by DBM. Only the part that comes from the national budget (subsidy, equity) passes through the GAA and the Treasury.
+  %% SOURCES: review and approval of the COB by DBM, legal bases (EO 518 of 1979, RA 10149, Corporate Budget Circular No. 24), forms, deadline of 31 March, 20 working days, rule for late submission [COB]. Special provisions of the FY 2026 GAA on budgetary support: release through BTr, Special Budget Request, request must be in the board-approved COB, offsetting, dividends of at least 50 percent of net earnings (RA 7656), quarterly reports through URS within 30 days, notice to DBM and Congress [BSGC2026]. Year-end statements to COA by 14 February [COA2015-004]. Releases by BTr to subsidized corporations [NBC599].
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: step 6 (the corporation's request during national budget preparation), what the Governance Commission for GOCCs does in step 17 (the source only states which corporations it covers), step 16 (audit report to the board), guarantees and lending by DOF.
+  participant MG as GOCC<br/>management
+  participant BD as GOCC governing<br/>board
+  participant DBM as DBM (Budget and<br/>Management Bureau C)
+  participant BTR as BTr
+  participant GCG as Governance Commission<br/>for GOCCs
+  participant COA as COA
+  participant CON as Congress
+
+  Note over MG,DBM: CORPORATE OPERATING BUDGET (every corporation, with or without national support)
+  MG->>BD: Proposed COB
+  BD-->>MG: Board approval
+  MG->>DBM: COB on or before 31 March, with DBM Forms 700, 703-A to 703-C, 705, 706
+  DBM->>DBM: Evaluate: uses agree with the board approval, sources cover uses,<br/>national priorities, physical performance, use of last year's budget, financial ratios<br/>#nbsp;
+  DBM-->>MG: COB approval letter (within 20 working days)
+
+  Note over MG,CON: BUDGETARY SUPPORT FROM THE NATIONAL GOVERNMENT (only some corporations)
+  MG->>DBM: Request for subsidy or equity in the national budget proposal
+  CON-->>DBM: GAA item "Budgetary Support to Government Corporations"
+  MG->>DBM: Special Budget Request. The amount must be in the board-approved COB
+  DBM->>BTR: Release document
+  BTR->>MG: Cash released directly to the corporation
+  opt The corporation owes the Treasury
+    BTR->>BTR: Offset the release against dividends due,<br/>guarantee fees, advances and other receivables<br/>#nbsp;
+  end
+
+  Note over MG,CON: WHAT THE CORPORATION RETURNS
+  MG->>BTR: Dividends: at least 50 percent of annual net earnings
+  MG->>DBM: Quarterly financial and physical reports through URS,<br/>within 30 days after each quarter. Also published on its website
+  MG->>CON: Written notice that the reports were submitted and published
+  MG->>COA: Year-end financial statements by 14 February
+  COA-->>BD: Audit report
+  GCG->>BD: Performance targets and evaluation of the corporation

@@ -1,0 +1,107 @@
+---
+title: "BP-a  The whole of PFM for the national government: what happens in order, what happens at the same time, and the chapter for each part"
+config:
+  flowchart:
+    wrappingWidth: 460
+---
+flowchart TB
+  %% QUESTION THIS DIAGRAM ANSWERS: which parts form public financial management (PFM) in the Philippines, which of them follow one another, which of them happen at the same time, and which chapter of this atlas describes each one?
+  %% IDEA: only the decisions of part A follow one another for one fiscal year. In part B three lines of steps run at the same time, and money may leave the Treasury only where all three have a result for the same amount (diagram BP-d). Part C is not a later step: every act of part B writes a record at the time of the act. Part D happens at the end of each month, quarter and year. Part E is what stays after the year.
+  %% READING: a solid arrow between two frames = the lower frame needs the result of the upper frame. The dotted arrow from B to C = every act in B writes a record in C at the same time. Inside a frame, an arrow = the order of the steps of that line. The frames at the sides are active during the whole year.
+  %% THE CYCLE IS NOT A SIMPLE LOOP: results return to the plans and budgets of LATER fiscal years, so the last node is drawn as an exit and not as an arrow back to part A.
+  %% WHY THE RECORDS STAND AT EVERY ACT: the Manual records the allotment and the obligation in registries when they occur, makes the first journal entry when the Notice of Cash Allocation arrives, and records the payable when the delivery is accepted, before any payment [GAM-V1 Annex H]. Recording is therefore not a step after payment.
+  %% SOURCES: DBM primer on the budget process [PRIMER], FY 2027 Budget Call [NBM156], FY 2026 release guidelines [NBC599], procurement law [RA12009], reporting circular [JC2019-1], the Government Accounting Manual for the records of each unit and the order of the entries [GAM-V1 Ch.2 s.8, s.12, Ch.3, Annex H], Auditing Code [PD1445 s.41], PFM Reforms Roadmap 2024-2028 [ROADMAP2024]. The arrangement in five parts is my own.
+  %% LIMIT: local governments and government corporations have their own complete cycles (chapters E3 and E6). Here they appear only where national money passes to them.
+
+  subgraph A["A  DECIDE  -  in this order for one fiscal year"]
+    direction LR
+    A1["1  PLAN  -  chapter P1, section 2<br/>DEPDev, Economy and Development Council, ICC,<br/>Regional Development Councils.<br/>Development plan, investment program (PIPOL)"] --> A2["2  SET THE FISCAL FRAME  -  chapter P1, section 3<br/>DBCC.<br/>Assumptions, revenue program,<br/>spending ceiling, deficit, borrowing"] --> A3["3  PREPARE THE BUDGET  -  chapters P0 to P12<br/>Agencies, DBM, President.<br/>Budget Call, proposals (OSBPS),<br/>NEP, BESF, Budget Message"] --> A4["4  LEGISLATE  -  chapters L0 to L5<br/>House, Senate, President.<br/>General Appropriations Act (GAA).<br/>If none on 1 January: the last one is re-enacted"]
+  end
+
+  subgraph BC["DURING THE YEAR  -  parts B and C happen at the same time"]
+    direction LR
+    subgraph B["B  EXECUTE  -  three lines of steps at the same time. Money may leave only where all three meet (diagram BP-d)"]
+      direction TB
+      subgraph B5["5  LEGAL AUTHORITY  -  chapters E0, E3 and E4  -  Congress, DBM, budget unit of the agency"]
+        direction LR
+        B5a["Appropriation<br/>(one line of the GAA,<br/>or an automatic appropriation)"] --> B5b["ALLOTMENT = authority to commit.<br/>The GAA itself, or SARO / GARO"] --> B5c["OBLIGATION = a commitment<br/>(obligation request, ORS)"]
+      end
+      subgraph B6["6  THE CLAIM: why the government owes this party  -  chapters E1, E4 and E6"]
+        direction LR
+        B6a["Purchase: procurement plan,<br/>bidding, award, contract<br/>(BAC, PhilGEPS)"] --> B6b["Delivery, inspection<br/>and acceptance"]
+        B6c["Salary: position,<br/>appointment, payroll certified<br/>'services duly rendered'"]
+        B6d["Other claims: advance against a security,<br/>transfer, debt service, tax refund,<br/>cash aid (diagram E6-e)"]
+        B6b ~~~ B6c
+        B6c ~~~ B6d
+      end
+      subgraph B7["7  CASH  -  chapters E5 and E6  -  BIR, BOC, banks, BTr, BSP, DBM, cash unit of the agency"]
+        direction LR
+        B7a["Taxes, duties, fees<br/>and borrowing"] --> B7b["Treasury Single<br/>Account at BSP"] --> B7c["CASH AUTHORITY = limit for payments<br/>(NCA at the servicing bank)"] --> B7d["Payment order or check.<br/>The bank pays the payee"] --> B7e["The Treasury repays<br/>the bank"]
+      end
+      B5 ~~~ B6
+      B6 ~~~ B7
+    end
+    subgraph C["C  RECORD AND CHECK  -  at the same time as every act of part B  -  chapters E4 and A4"]
+      direction TB
+      C1["Budget registries (budget unit):<br/>appropriations, allotments,<br/>obligations, disbursements.<br/>No journal entry"]
+      C2["Books of accounts (accounting unit):<br/>journal entry when the NCA arrives,<br/>when a delivery is accepted (payable),<br/>and when a payment is made"]
+      C3["Records of the cash unit:<br/>checks and payment orders issued"]
+      C4["Property records (property unit):<br/>what was received and who holds it"]
+      C5["Books of the Treasury:<br/>cash and public debt"]
+      C6["Internal control: each fact is certified<br/>by a different officer before payment"]
+      C1 ~~~ C2
+      C2 ~~~ C3
+      C3 ~~~ C4
+      C4 ~~~ C5
+      C5 ~~~ C6
+    end
+    B -. "every act writes<br/>a record at the time" .-> C
+  end
+
+  subgraph D["D  AT THE END OF EACH PERIOD  -  chapters A0 to A9"]
+    direction LR
+    D1["Reconcile: books with the bank,<br/>books with the Treasury,<br/>registries with DBM and COA records,<br/>property count with property cards"] --> D2["Report: monthly and quarterly<br/>accountability reports (URS),<br/>physical report of outputs"] --> D3["Year-end statements<br/>to COA by 14 February"] --> D4["Audit by COA: transactions<br/>during the year, after payment.<br/>Accounts at the year end.<br/>Annual report by 30 September"] --> D5["Oversight by Congress<br/>and the public"]
+  end
+
+  subgraph E["E  WHAT REMAINS AFTER THE YEAR  -  chapters P1, E5 and A4"]
+    direction LR
+    E1["Assets: property, plant<br/>and equipment, inventories"] ~~~ E2["Debts: securities and loans,<br/>unpaid obligations"]
+    E2 ~~~ E3["Promises that bind later budgets:<br/>multi-year contracts, partnerships<br/>with private firms, guarantees"]
+  end
+
+  subgraph X["OTHER PUBLIC BODIES  -  chapters E3 and E6"]
+    direction TB
+    Xa["Local governments:<br/>National Tax Allotment,<br/>own budget cycle"]
+    Xb["Government corporations:<br/>subsidy, equity,<br/>own corporate budgets"]
+    Xc["Special accounts, retained<br/>income and trust funds"]
+    Xa ~~~ Xb
+    Xb ~~~ Xc
+  end
+
+  subgraph Z["COMMON BASE  -  chapters IS and UACS"]
+    direction LR
+    Za["Laws and rules:<br/>Constitution, EO 292 Book VI,<br/>PD 1445, yearly GAA provisions,<br/>Government Accounting Manual"] ~~~ Zb["UACS: one classification<br/>for budget, books and reports.<br/>Document numbers that<br/>connect single records"]
+    Zb ~~~ Zc["Information systems, and the<br/>planned integration with<br/>BTMS as the core (IFMIS)"]
+  end
+
+  NEXT(["Returns to part A of LATER fiscal years:<br/>actual figures, audit findings, evaluation results"])
+
+  A -- "the budget law" --> BC
+  BC --> D
+  D --> E
+  D -.-> NEXT
+  E ~~~ Z
+  A -- "automatic appropriations<br/>and transfers" --> X
+
+  classDef default fill:#ffffff,stroke:#444444,color:#111
+  style A fill:#eef4fb,stroke:#1f4e8c
+  style BC fill:#ffffff,stroke:#888888,stroke-dasharray: 6 4
+  style B fill:#f7f7f7,stroke:#444444
+  style B5 fill:#d6e4f7,stroke:#1f4e8c
+  style B6 fill:#d5ecd5,stroke:#2e6b2e
+  style B7 fill:#fde0c2,stroke:#a35200
+  style C fill:#e6e6e6,stroke:#555555
+  style D fill:#fdf1e3,stroke:#a35200
+  style E fill:#f3eefa,stroke:#5b3a8c
+  style X fill:#f2f2f2,stroke:#555555
+  style Z fill:#f2f2f2,stroke:#555555

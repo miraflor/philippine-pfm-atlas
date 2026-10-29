@@ -1,5 +1,5 @@
 /* Philippine PFM Atlas: style of the website.
-   Colour is used only for meaning: the four lines of the atlas, with the colours of diagram 00d, and, in the
+   Colour is used only for meaning: the four lines of the atlas, with the colours of diagram BP-d, and, in the
    budget-cycle story of the home page, the four budget phases.
    Everything else is neutral. The optional browser-based Mermaid viewer loads its library on demand from jsDelivr. */
 
@@ -117,7 +117,7 @@ td.basis-cell { font-family: var(--mono); font-size: 0.78rem; color: var(--muted
 td.basis-cell a.basis { font-size: 1em; }
 a.row-id { font-family: var(--mono); font-weight: 600; text-decoration: none; white-space: nowrap; }
 a.row-id:hover { text-decoration: underline; }
-.id { font-family: var(--mono); }
+.id { font-family: var(--mono); white-space: nowrap; }
 
 /* The four lines */
 .chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.6rem 0 0; }

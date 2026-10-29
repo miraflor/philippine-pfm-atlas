@@ -9,7 +9,7 @@ This atlas is not an official publication of the Philippine government. It does 
 ## 1. Where to start
 
 1. Read [00_BIG_PICTURE.md](00_BIG_PICTURE.md). It gives the whole on a few pages and contains the eight overview diagrams.
-2. Open the chapter of the part you need (section 4 below). Each chapter explains one process and contains its diagrams.
+2. Open the chapter of the phase or the step that you need (section 4 below). The chapters follow the budget cycle in the illustration of DBM: four phases with 32 steps. Each phase has a chapter that describes it as a whole, and each step has a chapter of its own.
 3. Use the reference files for the authorities, the information systems, the documents, the laws, the terms, the sources, and the open questions (section 5).
 4. Before a diagram is reused for another purpose, read section 5.1 of the big picture. It names the nine kinds of arrows of this atlas and, for each kind, an observation that would show an arrow to be wrong.
 5. To see what is not settled, read [Reference G](reference/G_open_questions_and_known_gaps.md): 18 differences between sources and 68 facts that I could not verify, each with a number.
@@ -20,7 +20,7 @@ This atlas is not an official publication of the Philippine government. It does 
 |---|---|---|
 | `00_BIG_PICTURE.md` | The big picture | 1 |
 | `README.md` | This file | 1 |
-| `processes/` | One description for each process | 19 |
+| `chapters/` | One chapter for each phase and for each step of the budget cycle, and two chapters on the information systems and on UACS | 38 |
 | `reference/` | Reference files A to G in Markdown | 7 |
 | `reference/` | Three tables in CSV form, for use by a program (section 9) | 3 |
 | `diagrams/mermaid/` | Diagram code in Mermaid (`.mmd`) | 77 |
@@ -31,7 +31,7 @@ In the repository these files are in the folder `docs/atlas/`. They are built fr
 
 ## 3. All diagrams
 
-The first two characters of an ID give the chapter. Chapter 00 is the big picture.
+The part of an ID before the hyphen names the chapter that shows the diagram. BP is the big picture.
 
 {{index:diagrams}}
 
@@ -39,27 +39,46 @@ The first two characters of an ID give the chapter. Chapter 00 is the big pictur
 
 | File | Subject | Diagrams |
 |---|---|---|
-| [processes/01_planning_and_investment_programming.md](processes/01_planning_and_investment_programming.md) | Development plan, investment program, appraisal of large projects | 01a, 01b |
-| [processes/02_macro_fiscal_framework.md](processes/02_macro_fiscal_framework.md) | The DBCC and the fiscal program | 02a |
-| [processes/03_budget_preparation.md](processes/03_budget_preparation.md) | Budget Call, proposals in two tiers, the budget of the President | 03a to 03d |
-| [processes/04_budget_legislation.md](processes/04_budget_legislation.md) | Congress, veto, reenactment, kinds of appropriation | 04a to 04c |
-| [processes/05_budget_release_allotment_and_cash_authority.md](processes/05_budget_release_allotment_and_cash_authority.md) | Allotment and cash authority | 05a to 05e |
-| [processes/06_procurement.md](processes/06_procurement.md) | Procurement under Republic Act No. 12009 and the guidelines of the GPPB to August 2026, the forms of the procurement plans, early procurement, contracts for more than one year, framework agreements, the election period of 2026 | 06a to 06g |
-| [processes/07_obligation_delivery_payment.md](processes/07_obligation_delivery_payment.md) | Obligation, acceptance, voucher, payment through the bank, the kinds of claim, advance payment and retention, cash advances, and what happens when a step fails | 07a to 07i |
-| [processes/08_accounting_and_reporting.md](processes/08_accounting_and_reporting.md) | Which unit keeps which record, one event in several records, reports, closing of a period, five measures of one spending, national totals | 08a to 08e |
-| [processes/09_audit_and_oversight.md](processes/09_audit_and_oversight.md) | Audit by COA, notices, oversight | 09a to 09c |
-| [processes/10_revenue_collection.md](processes/10_revenue_collection.md) | Taxes, customs duties, fees, refunds | 10a to 10d |
-| [processes/11_treasury_cash_and_debt.md](processes/11_treasury_cash_and_debt.md) | Treasury Single Account, cash program, borrowing, debt | 11a to 11d |
-| [processes/12_personnel_and_payroll.md](processes/12_personnel_and_payroll.md) | Positions, payroll, remittances | 12a, 12b |
-| [processes/13_assets_and_property.md](processes/13_assets_and_property.md) | Life of a physical asset | 13a |
-| [processes/14_local_governments.md](processes/14_local_governments.md) | Local budget cycle and its contacts with the national system, property tax, loans, barangay budgets | 14a to 14f |
-| [processes/15_gocc_transfers_and_fund_clusters.md](processes/15_gocc_transfers_and_fund_clusters.md) | Government corporations, fund transfers, other spending paths, disaster funds, cash aid, fund clusters | 15a to 15f |
-| [processes/16_information_systems_and_ifmis.md](processes/16_information_systems_and_ifmis.md) | Systems, data flows, BTMS, the planned IFMIS, the COMPASS portal | 16a to 16g |
-| [processes/17_uacs_and_record_identifiers.md](processes/17_uacs_and_record_identifiers.md) | UACS and the numbers that connect records | 17a to 17d |
-| [processes/18_performance_information_and_evaluation.md](processes/18_performance_information_and_evaluation.md) | Targets, reports of results, performance review, evaluation | 18a, 18b |
-| [processes/19_fiscal_risks_ppp_and_contingent_liabilities.md](processes/19_fiscal_risks_ppp_and_contingent_liabilities.md) | Fiscal risks, partnerships with private firms, promises under conditions | 19a, 19b |
+| [chapters/P0_preparation.md](chapters/P0_preparation.md) | The phase as a whole: the Budget Call, the proposals in two tiers and the budget of the President. Authorities, steps, systems, controls and calendar | P0-a to P0-c |
+| [chapters/P1_budget_call.md](chapters/P1_budget_call.md) | The Budget Call, and what sets its frame: the development plan and the investment program, the DBCC and the fiscal program, fiscal risks, partnerships with private firms and promises under conditions | P1-a to P1-e |
+| [chapters/P2_citizen_engagement_in_preparation.md](chapters/P2_citizen_engagement_in_preparation.md) | BP Form D: the inputs of civil society organizations | None |
+| [chapters/P3_rdc_consultations.md](chapters/P3_rdc_consultations.md) | BP Form C: the inputs of the Regional Development Councils | None |
+| [chapters/P4_program_convergence.md](chapters/P4_program_convergence.md) | BP Form 206: programs that several agencies implement jointly | None |
+| [chapters/P5_tier_1_proposals.md](chapters/P5_tier_1_proposals.md) | The forms of the proposal, and Tier 1: the cost of ongoing programs | None |
+| [chapters/P6_tier_1_deliberations.md](chapters/P6_tier_1_deliberations.md) | The technical budget hearings | None |
+| [chapters/P7_budget_priorities_framework.md](chapters/P7_budget_priorities_framework.md) | The framework of the budget priorities | None |
+| [chapters/P8_tier_2_proposals.md](chapters/P8_tier_2_proposals.md) | Tier 2: new or expanded programs and projects, and the approvals that a project needs | None |
+| [chapters/P9_tier_2_deliberations.md](chapters/P9_tier_2_deliberations.md) | The evaluation and the executive review of the Tier 2 proposals | None |
+| [chapters/P10_presentation_to_the_president.md](chapters/P10_presentation_to_the_president.md) | The proposed budget levels before the DBCC, the President and the Cabinet | None |
+| [chapters/P11_confirmation_and_finalization.md](chapters/P11_confirmation_and_finalization.md) | The approval of the budget, and the preparation of the budget documents | None |
+| [chapters/P12_presidents_budget.md](chapters/P12_presidents_budget.md) | The documents that go to Congress | P12-a |
+| [chapters/L0_legislation.md](chapters/L0_legislation.md) | The phase as a whole: Congress, the veto, reenactment, and what Congress and the President may change | L0-a, L0-b |
+| [chapters/L1_house_deliberations.md](chapters/L1_house_deliberations.md) | The House: hearings, committee report, plenary and three readings | None |
+| [chapters/L2_senate_deliberations.md](chapters/L2_senate_deliberations.md) | The Senate: hearings, committee report and plenary | None |
+| [chapters/L3_bicameral_deliberations.md](chapters/L3_bicameral_deliberations.md) | The bicameral conference committee | None |
+| [chapters/L4_ratification_and_enrolment.md](chapters/L4_ratification_and_enrolment.md) | Ratification by both chambers, and the enrolled bill | None |
+| [chapters/L5_enactment_of_the_gaa.md](chapters/L5_enactment_of_the_gaa.md) | The signature and the item veto, and the kinds of appropriation that the law contains | L5-a |
+| [chapters/E0_execution.md](chapters/E0_execution.md) | The phase as a whole: the two authorities, allotment and cash authority, the law behind them, the steps of release, the states of one budget line | E0-a, E0-b |
+| [chapters/E1_early_procurement.md](chapters/E1_early_procurement.md) | Procurement under Republic Act No. 12009 and the guidelines of the GPPB to August 2026: the procurement plans, early procurement, competitive bidding, the eleven modes, contracts for more than one year, framework agreements, the election period of 2026 | E1-a to E1-g |
+| [chapters/E2_budget_execution_program.md](chapters/E2_budget_execution_program.md) | The budget execution documents: financial plan, physical plan and monthly disbursement program | None |
+| [chapters/E3_allotment_release.md](chapters/E3_allotment_release.md) | Which release document applies, and changes during the year. Local governments: their budget cycle, their money, the limits of national law, and their contacts with the national system | E3-a to E3-h |
+| [chapters/E4_obligation.md](chapters/E4_obligation.md) | The obligation and the claim: who certifies what, from the obligation request to the voucher. Salaries and the payroll | E4-a to E4-e |
+| [chapters/E5_cash_allocation.md](chapters/E5_cash_allocation.md) | The kinds of cash authority. The Treasury Single Account, cash programming, borrowing and debt. Revenue, collections and refunds | E5-a to E5-i |
+| [chapters/E6_disbursement.md](chapters/E6_disbursement.md) | Payment through the bank, the kinds of claim, advance payment and retention, cash advances, what happens when a step fails. Other routes of public money: government corporations, transfers, disaster funds, cash aid, fund clusters | E6-a to E6-l |
+| [chapters/A0_accountability.md](chapters/A0_accountability.md) | The phase as a whole: the layers of control around one agency, four examinations, five measures of the same spending | A0-a to A0-c |
+| [chapters/A1_performance_targets.md](chapters/A1_performance_targets.md) | Performance information: targets, plans and reports, and their path through one year | A1-a |
+| [chapters/A2_citizen_engagement_in_accountability.md](chapters/A2_citizen_engagement_in_accountability.md) | The public portal of budget and performance information | None |
+| [chapters/A3_monitoring_and_evaluation.md](chapters/A3_monitoring_and_evaluation.md) | The evaluation of programs | None |
+| [chapters/A4_accountability_reports.md](chapters/A4_accountability_reports.md) | Records and reports of agencies: registries, books of accounts, reports, closing of a period. Assets and property | A4-a to A4-d |
+| [chapters/A5_performance_review.md](chapters/A5_performance_review.md) | The yearly review of performance, and the bonus of the personnel | None |
+| [chapters/A6_in_year_reports.md](chapters/A6_in_year_reports.md) | From the reports of each body to national totals | A6-a |
+| [chapters/A7_dbcc_mid_year_report.md](chapters/A7_dbcc_mid_year_report.md) | The mid-year report of the DBCC | None |
+| [chapters/A8_dbcc_year_end_report.md](chapters/A8_dbcc_year_end_report.md) | The year-end report of the DBCC | None |
+| [chapters/A9_audit_report.md](chapters/A9_audit_report.md) | External audit by COA: steps, findings, notices, and the use of the reports by Congress | A9-a, A9-b |
+| [chapters/IS_information_systems.md](chapters/IS_information_systems.md) | Systems, data flows, BTMS, the planned IFMIS, the COMPASS portal | IS-a to IS-g |
+| [chapters/UACS_uacs_and_record_identifiers.md](chapters/UACS_uacs_and_record_identifiers.md) | UACS and the numbers that connect records | UACS-a to UACS-d |
 
-Most chapters have the same parts: the question it answers, the idea in plain words with one case where the process works and one where it fails, the authorities and their roles, the steps, the documents and identifiers, the information systems, the controls (what each one checks and what it does not check), the timing, the reported weaknesses, the diagrams, and the verification status.
+Each chapter of a step starts with a table that places the step in the budget cycle: its phase, its timing in the illustration of DBM, its documents, its place on the four lines, the steps from which it receives documents and to which it passes them, and where to read more. A chapter that describes a whole process, for example a phase, has the same parts as the descriptions of processes inside the longer chapters of the steps: the question it answers, the idea in plain words with one case where the process works and one where it fails, the authorities and their roles, the steps, the documents and identifiers, the information systems, the controls (what each one checks and what it does not check), the timing, the reported weaknesses, the diagrams, and the verification status.
 
 ## 5. The reference files
 
@@ -106,13 +125,13 @@ Four limits remain. The Manual is of 2015, and I checked only one later change o
 
 **Colours.** In the overview diagrams and in most others, the colour of a frame or box marks the kind of authority: blue for the executive (DBM, DEPDev, the President and the collegial bodies), purple for Congress, green for spending agencies and local governments, yellow for the finance side (DOF and its bureaus, the Treasury accounts, the banks), light orange for COA and the other independent bodies, a stronger orange for BTMS, and grey for parties outside government and for planned items. Some diagrams use colour for another purpose, and their `READING:` line says so.
 
-**Arrows.** In diagrams that show exchanges: a thin solid arrow is a decision or a document, a thick arrow is money, a dotted arrow is information. In the two component diagrams of chapter 16, a solid black arrow means that a source describes an electronic channel, and a dashed grey arrow means paper, an entry by staff in a record of their own body, or a carrier that the sources do not state. The label of each arrow says which. In diagram 17b the colour of an arrow says whether a field of a form holds the number that links two records. Section 5.1 of the big picture lists all kinds of arrows.
+**Arrows.** In diagrams that show exchanges: a thin solid arrow is a decision or a document, a thick arrow is money, a dotted arrow is information. In the two component diagrams of chapter IS, a solid black arrow means that a source describes an electronic channel, and a dashed grey arrow means paper, an entry by staff in a record of their own body, or a carrier that the sources do not state. The label of each arrow says which. In diagram UACS-b the colour of an arrow says whether a field of a form holds the number that links two records. Section 5.1 of the big picture lists all kinds of arrows.
 
 **Numbers in sequence diagrams.** The steps are numbered by Mermaid. The tables of steps in the chapters use the same numbers.
 
 **One technical mark in sequence diagrams.** A step that an actor performs alone (a message from an actor to itself) ends with a line that contains only `#nbsp;`. This code means a non-breaking space, which is a space character that the program does not delete. The empty line moves the text away from the step number in the picture. It has no other meaning.
 
-**Why some diagrams are in PlantUML.** Mermaid is the main notation. Eight diagrams are in PlantUML because Mermaid cannot draw them well: six lane diagrams with parallel bars or decision points (00f, 03b, 06d, 07b, 14d, 19b), and two component diagrams that place systems inside frames of their owner institutions (16b, 16g).
+**Why some diagrams are in PlantUML.** Mermaid is the main notation. Eight diagrams are in PlantUML because Mermaid cannot draw them well: six lane diagrams with parallel bars or decision points (BP-e, P0-b, E1-d, E4-b, E3-f, P1-e), and two component diagrams that place systems inside frames of their owner institutions (IS-b, IS-c).
 
 ## 8. How to render the diagrams
 
@@ -122,10 +141,10 @@ In the repository the script `tools/render_diagrams.py` draws the images from th
 
 ```
 # Mermaid: needs Node.js and the package @mermaid-js/mermaid-cli
-mmdc -i diagrams/mermaid/07a_obligation_to_payment_sequence.mmd -o 07a.png -b white -s 2 -w 2000
+mmdc -i diagrams/mermaid/E4-a_obligation_to_payment_sequence.mmd -o E4-a.png -b white -s 2 -w 2000
 
 # PlantUML: needs Java and plantuml.jar. The two component diagrams also need Graphviz
-java -DPLANTUML_LIMIT_SIZE=16384 -jar plantuml.jar -tpng diagrams/plantuml/07b_obligation_to_payment_swimlane.puml
+java -DPLANTUML_LIMIT_SIZE=16384 -jar plantuml.jar -tpng diagrams/plantuml/E4-b_obligation_to_payment_swimlane.puml
 ```
 
 The code can also be pasted into an online editor for Mermaid or PlantUML. Most `.mmd` files start with a block between two lines of three hyphens. This block sets the title and one layout option, and it needs a recent version of Mermaid.

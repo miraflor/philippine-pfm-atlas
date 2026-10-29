@@ -5,12 +5,15 @@
     "kicker": "01 / Orientation",
     "time": "6 min",
     "diagram_ids": [
-      "00a",
-      "00b",
-      "00g"
+      "BP-a",
+      "BP-b",
+      "BP-c"
     ],
     "chapters": [
-      "01_planning_and_investment_programming"
+      "P0",
+      "L0",
+      "E0",
+      "A0"
     ]
   },
   {
@@ -19,17 +22,17 @@
     "kicker": "02 / Decide",
     "time": "9 min",
     "diagram_ids": [
-      "01a",
-      "02a",
-      "03a",
-      "03c",
-      "04a"
+      "P1-a",
+      "P1-c",
+      "P0-a",
+      "P0-c",
+      "L0-a"
     ],
     "chapters": [
-      "01_planning_and_investment_programming",
-      "02_macro_fiscal_framework",
-      "03_budget_preparation",
-      "04_budget_legislation"
+      "P0",
+      "P1",
+      "L0",
+      "L5"
     ]
   },
   {
@@ -38,13 +41,15 @@
     "kicker": "03 / Authorize",
     "time": "8 min",
     "diagram_ids": [
-      "05a",
-      "05b",
-      "05d",
-      "00d"
+      "E0-a",
+      "E3-a",
+      "E5-a",
+      "BP-d"
     ],
     "chapters": [
-      "05_budget_release_allotment_and_cash_authority"
+      "E0",
+      "E3",
+      "E5"
     ]
   },
   {
@@ -53,16 +58,16 @@
     "kicker": "04 / Commit and verify",
     "time": "10 min",
     "diagram_ids": [
-      "06a",
-      "06b",
-      "07h",
-      "07a",
-      "07i"
+      "E1-a",
+      "E1-b",
+      "E6-e",
+      "E4-a",
+      "E6-f"
     ],
     "chapters": [
-      "06_procurement",
-      "07_obligation_delivery_payment",
-      "12_personnel_and_payroll"
+      "E1",
+      "E4",
+      "E6"
     ]
   },
   {
@@ -71,14 +76,14 @@
     "kicker": "05 / Finance and settle",
     "time": "9 min",
     "diagram_ids": [
-      "10b",
-      "11a",
-      "11b",
-      "07d"
+      "E5-g",
+      "E5-b",
+      "E5-c",
+      "E6-a"
     ],
     "chapters": [
-      "10_revenue_collection",
-      "11_treasury_cash_and_debt"
+      "E5",
+      "E6"
     ]
   },
   {
@@ -87,15 +92,16 @@
     "kicker": "06 / Account and assure",
     "time": "10 min",
     "diagram_ids": [
-      "08e",
-      "08c",
-      "08d",
-      "09a"
+      "A4-b",
+      "A0-c",
+      "A6-a",
+      "A9-a"
     ],
     "chapters": [
-      "08_accounting_and_reporting",
-      "09_audit_and_oversight",
-      "13_assets_and_property"
+      "A0",
+      "A4",
+      "A6",
+      "A9"
     ]
   },
   {
@@ -104,17 +110,17 @@
     "kicker": "07 / Other pathways",
     "time": "10 min",
     "diagram_ids": [
-      "12a",
-      "14a",
-      "14c",
-      "15a",
-      "19a"
+      "E4-d",
+      "E3-c",
+      "E3-e",
+      "E6-g",
+      "P1-d"
     ],
     "chapters": [
-      "12_personnel_and_payroll",
-      "14_local_governments",
-      "15_gocc_transfers_and_fund_clusters",
-      "19_fiscal_risks_ppp_and_contingent_liabilities"
+      "P1",
+      "E3",
+      "E4",
+      "E6"
     ]
   },
   {
@@ -123,16 +129,16 @@
     "kicker": "08 / Connect systems",
     "time": "10 min",
     "diagram_ids": [
-      "16a",
-      "16b",
-      "16d",
-      "17a",
-      "17b",
-      "17d"
+      "IS-a",
+      "IS-b",
+      "IS-e",
+      "UACS-a",
+      "UACS-b",
+      "UACS-d"
     ],
     "chapters": [
-      "16_information_systems_and_ifmis",
-      "17_uacs_and_record_identifiers"
+      "IS",
+      "UACS"
     ]
   }
 ]

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Diagram 04b: States of the budget bill, from proposal to law · Philippine PFM Atlas</title>
-<meta name="description" content="in which state is the budget of a fiscal year at a given date, and which act moves it to the next state?">
+<title>Page moved · Philippine PFM Atlas</title>
+<meta name="description" content="This page has moved."><meta name="robots" content="noindex">
 <meta name="color-scheme" content="light">
 <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('pfm-atlas-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(error){}</script>
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -18,51 +18,10 @@
 <form class="header-search" action="../search.html" role="search"><label class="visually-hidden" for="q-top">Search the atlas</label><input id="q-top" name="q" type="search" placeholder="Search: SARO, voucher, BTMS"></form>
 <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">Dark mode</button>
 </div>
-<nav class="wrap site-nav" aria-label="Main"><a href="../index.html">Budget cycle</a><a href="../walkthrough.html">Guided lessons</a><a href="../big-picture.html">Big picture</a><a href="../chapters/index.html">Chapters</a><a href="../reference/index.html">References</a><a href="../diagrams/index.html" aria-current="page">Diagrams</a><a href="../systems.html">Systems &amp; UACS</a><a href="../models/index.html">Research models</a><a href="../reference/g.html">Open points</a><a href="../search.html">Search</a><a href="../about.html">About</a></nav>
+<nav class="wrap site-nav" aria-label="Main"><a href="../index.html">Budget cycle</a><a href="../walkthrough.html">Guided lessons</a><a href="../big-picture.html">Big picture</a><a href="../chapters/index.html">Chapters</a><a href="../reference/index.html">References</a><a href="../diagrams/index.html">Diagrams</a><a href="../systems.html">Systems &amp; UACS</a><a href="../models/index.html">Research models</a><a href="../reference/g.html">Open points</a><a href="../search.html">Search</a><a href="../about.html">About</a></nav>
 </header>
 <main id="main" class="wrap">
-<nav class="pfm-cycle-context" aria-label="Budget-cycle context"><a href="../index.html#budget-cycle">Budget cycle</a> <span> / </span><a href="../index.html#phase-legislation">Legislation</a> <span> / </span><a href="../diagrams/index.html#cycle-diagrams-legislation">Browse this phase</a></nav><div class="doc-head"><p class="eyebrow">Diagram <span class="id">04b</span> · Mermaid state diagram</p><h1>States of the budget bill, from proposal to law</h1><p class="prose-block"><strong>Question:</strong> In which state is the budget of a fiscal year at a given date, and which act moves it to the next state?</p><p class="muted">In: <a href="../chapters/04.html">04. Budget legislation</a></p></div><figure class="diagram" id="figure-04b"><a href="../atlas/rendered/04b_bill_states.png"><img alt="Diagram 04b: States of the budget bill, from proposal to law" height="3490" loading="lazy" src="../atlas/rendered/04b_bill_states.png" width="1408"/></a></figure><div class="prose-block"><h2 id="about">What the diagram shows</h2><ul>
-<li><strong>Question:</strong> in which state is the budget of a fiscal year at a given date, and which act moves it to the next state?</li>
-<li><strong>How to read it:</strong> one box = one state of the document. The text on an arrow = the act and the body that performs it.</li>
-<li><strong>Sources:</strong> <a class="basis" href="../reference/f.html#source-const" title="1987 Constitution of the Philippines.">[CONST VII.22]</a> submission. <a class="basis" href="../reference/f.html#source-const" title="1987 Constitution of the Philippines.">[CONST VI.24]</a> the bill starts in the House. <a class="basis" href="../reference/f.html#source-const" title="1987 Constitution of the Philippines.">[CONST VI.25(7)]</a> reenactment. <a class="basis" href="../reference/f.html#source-const" title="1987 Constitution of the Philippines.">[CONST VI.27(2)]</a> item veto. <a class="basis" href="../reference/f.html#source-inq-guide" title='Philippine Daily Inquirer, "The PH budget process: step-by-step visual guide" (2025).'>[INQ-GUIDE]</a> the stages in Congress and the two-thirds override. <a class="basis" href="../reference/f.html#source-nbc599" title="DBM National Budget Circular No. 599 of 5 January 2026, Guidelines on the Release of Funds for FY 2026.">[NBC599]</a> the dates of the FY 2026 example.</li>
-<li><strong>General knowledge, not opened in a source here:</strong> the names of the readings and the publication step.</li>
-</ul>
-</div><h2 id="code">Code</h2><div class="copy-row"><button type="button" data-copy="code-04b">Copy the code</button><a href="../atlas/diagrams/mermaid/04b_bill_states.mmd">Code file</a><a href="../atlas/rendered/04b_bill_states.png">Image in full size</a></div><pre id="code-04b"><code>---
-title: &quot;04b  States of the budget bill, from proposal to law&quot;
----
-stateDiagram-v2
-  direction TB
-  %% QUESTION THIS DIAGRAM ANSWERS: in which state is the budget of a fiscal year at a given date, and which act moves it to the next state?
-  %% READING: one box = one state of the document. The text on an arrow = the act and the body that performs it.
-  %% SOURCES: [CONST VII.22] submission. [CONST VI.24] the bill starts in the House. [CONST VI.25(7)] reenactment. [CONST VI.27(2)] item veto. [INQ-GUIDE] the stages in Congress and the two-thirds override. [NBC599] the dates of the FY 2026 example.
-  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: the names of the readings and the publication step.
-
-  state &quot;Proposed by the President (NEP, BESF, Budget Message)&quot; as NEP
-  state &quot;General Appropriations Bill in the House committee&quot; as HCOM
-  state &quot;Approved by the House on third reading&quot; as HAPP
-  state &quot;Approved by the Senate with amendments&quot; as SAPP
-  state &quot;In the bicameral conference committee&quot; as BICAM
-  state &quot;Conference report ratified by both chambers&quot; as RATIF
-  state &quot;Enrolled bill with the President&quot; as ENR
-  state &quot;General Appropriations Act (GAA) in effect&quot; as GAA
-  state &quot;Item vetoed&quot; as VETO
-  state &quot;Previous GAA deemed re-enacted&quot; as REEN
-
-  [*] --&gt; NEP: President submits within 30 days from the opening of the regular session
-  NEP --&gt; HCOM: filed in the House and referred to the Committee on Appropriations
-  HCOM --&gt; HAPP: committee report, plenary debates, amendments, vote
-  HAPP --&gt; SAPP: Senate committee and plenary act on the House bill
-  SAPP --&gt; BICAM: the two versions differ
-  BICAM --&gt; RATIF: conferees agree, both chambers ratify
-  RATIF --&gt; ENR: sent to the President
-  ENR --&gt; GAA: President signs
-  ENR --&gt; VETO: President vetoes particular items
-  VETO --&gt; GAA: Congress overrides by two thirds of each chamber
-  VETO --&gt; [*]: the item is not law
-  NEP --&gt; REEN: the fiscal year starts and no GAA is in force
-  REEN --&gt; GAA: the new GAA takes effect (FY 2026 example, 5 January 2026)
-  GAA --&gt; [*]: execution starts (chapter 05)
-</code></pre><nav class="pager" aria-label="Pages"><a class="prev" href="04a.html">← Diagram 04a</a><a class="next" href="04c.html">Diagram 04c →</a></nav>
+<div class="doc-head"><p class="eyebrow">Address moved</p><h1>This page has moved</h1></div><p class="prose-block">Its content is now in <a href="L0-b.html">diagram L0-b: States of the budget bill, from proposal to law</a>.</p><script>(function(){var m={};var h=location.hash.slice(1);var t=(h&&m[h])?m[h]:"L0-b.html";location.replace(t);})();</script>
 </main>
 <footer class="site-footer"><div class="wrap"><p>Philippine PFM Atlas. An independent reference. It is not an official publication of the Philippine government, and it does not replace the laws, circulars and manuals that it cites. Facts on current events are as of 8 October 2026.</p><p><a href="../about.html">About the atlas</a> · <a href="../reference/f.html">Sources</a> · <a href="../reference/g.html">Open points</a></p></div></footer>
 <script src="../assets/site.js" defer></script>

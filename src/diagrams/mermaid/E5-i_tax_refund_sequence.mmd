@@ -1,0 +1,33 @@
+---
+title: "E5-i  A tax refund: how money collected as tax is paid back"
+---
+sequenceDiagram
+  autonumber
+  %% QUESTION THIS DIAGRAM ANSWERS: a tax that was collected must sometimes be returned. From which authority is it paid, and how does it change the reported collections?
+  %% IDEA: a refund is not spending for a program, but it is still money that leaves the Treasury. The Constitution allows no payment from the Treasury without an appropriation, so the budget law contains an amount for refunds in the budget of the Bureau of Internal Revenue. A refund reduces net revenue. A report of collections must therefore say whether it is before or after refunds.
+  %% SOURCES: the rule that money leaves the Treasury only under an appropriation [CONST VI.29(1)]. The amount for "Tax Refund" in the BIR budget, its treatment as trust receipts, the limit of VAT refunds to 5 percent of the VAT collections of BIR in the preceding year, payment of other refunds from the collections of the current year, the adjustment of the collection report, the audit by COA, and the reversion of the unused balance [GAA2025-BIR]. This is the text of the FY 2025 budget law. I did not find the FY 2026 text.
+  %% FROM A PRESS REPORT [TRIB-REFUND]: BIR issuances of 29 September 2026 on refund claims, and the period of 180 days for regular claims.
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: the period of 90 days for VAT refund claims (section 112 of the Tax Code), the appeal to the Court of Tax Appeals, and the way in which the cash reaches the taxpayer (steps 6 and 7). Refunds of customs duties by the Bureau of Customs follow separate rules that I did not read.
+  participant TP as Taxpayer
+  participant BO as BIR office that<br/>processes the claim
+  participant BA as BIR approving official
+  participant DBM as DBM
+  participant BTR as BTr and bank
+  participant COA as COA
+
+  Note over TP,BA: CLAIM
+  TP->>BO: Claim for refund with documents. Kinds: input VAT on zero-rated sales,<br/>tax collected by error, excess creditable withholding tax,<br/>conversion of a tax credit certificate into cash
+  BO->>BO: Verify the claim within the time limit<br/>(180 days for regular claims, 90 days for VAT claims)<br/>#nbsp;
+  BO->>BA: Recommendation
+  BA-->>TP: Decision: grant in full, grant in part, or deny.<br/>A denied claim may go to the tax court
+
+  Note over BA,BTR: PAYMENT FROM THE AMOUNT "TAX REFUND" IN THE BIR BUDGET
+  BA->>DBM: Request for release against the amount for tax refunds.<br/>VAT refunds: not more than 5 percent of last year's VAT collections of BIR.<br/>Other refunds: from the collections of the current year
+  DBM-->>BTR: Release. The amount is treated as trust receipts
+  BTR->>TP: Refund paid
+
+  Note over BO,COA: RECORDS AND AUDIT
+  BO->>BO: Collection report adjusted for the refunds of the<br/>current year and of earlier years (net collections)<br/>#nbsp;
+  BO->>DBM: Quarterly financial and physical reports through URS
+  COA->>BO: Audit of the refunds
+  BA->>BTR: End of year: the unused balance reverts to the<br/>unappropriated surplus of the General Fund

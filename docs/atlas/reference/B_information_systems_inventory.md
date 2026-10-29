@@ -12,7 +12,7 @@ For each system it is useful to separate three roles, because they are often hel
 
 Example: COA owns eNGAS, the accounting unit of each agency is the user, and COA auditors are among the recipients. A table that names only the owner hides who is responsible for the correctness of the data, and that is the user.
 
-Diagram 00c shows the systems by owner. Diagrams 16b and 16g show what passes between them, and diagram 08a shows what passes between the units of one agency. Section 4 of this file lists every one of these flows with its kind, its carrier, its stage of use, the control that compares both sides, and the evidence. Diagram 16a shows the systems by PFM function.
+Diagram BP-h shows the systems by owner. Diagrams IS-b and IS-c show what passes between them, and diagram A4-a shows what passes between the units of one agency. Section 4 of this file lists every one of these flows with its kind, its carrier, its stage of use, the control that compares both sides, and the evidence. Diagram IS-a shows the systems by PFM function.
 
 ## 2. Systems in use
 
@@ -71,7 +71,7 @@ Diagram 00c shows the systems by owner. Diagrams 16b and 16g show what passes be
 
 ## 4. Register of interfaces: every flow between two systems or bodies, with the evidence for it
 
-A diagram of systems is quick to draw and difficult to verify, because an arrow between two boxes can mean very different things: a program that sends data to another program, a person who types the same data again, a paper that is carried, a movement of money, or a plan. One word for the state of an arrow cannot hold all of this. The register therefore answers five separate questions for each flow of diagrams 16b, 16g and 08a.
+A diagram of systems is quick to draw and difficult to verify, because an arrow between two boxes can mean very different things: a program that sends data to another program, a person who types the same data again, a paper that is carried, a movement of money, or a plan. One word for the state of an arrow cannot hold all of this. The register therefore answers five separate questions for each flow of diagrams IS-b, IS-c and A4-a.
 
 | Column | Question | Values |
 |---|---|---|
@@ -91,7 +91,7 @@ A second case: a model assumes that the bank and the Treasury learn of a payment
 
 A case where the register is not enough: the stage "In use" says that a source describes the flow as existing. It does not say that the flow works without error or delay, and it does not say what the receiving side does with the content. The last column names the control that could show this, where I read one.
 
-### 4.1 Spending side (diagram 16b)
+### 4.1 Spending side (diagram IS-b)
 
 | No. | From | To | What passes | Kind | Carrier | Stage of use | Check of both sides | Basis |
 |---|---|---|---|---|---|---|---|---|
@@ -139,7 +139,7 @@ A case where the register is not enough: the stage "In use" says that a source d
 
 Notes. Rows 25, 27 and 28 apply only to the agencies that use BTMS (section 5). For row 28, the website of BTMS describes the function, and I did not verify that bank statements arrive each day. For row 30, the order requires that the portal can interface with BTMS, and no source says which data pass. Rows 17 and 32 are two carriers of the same documents: the Manual describes the paper copies, and it describes the electronic facility as a mode for the agencies with sub-accounts at the Land Bank. I read no figure on how many agencies use each carrier. Row 39 is a feature that the procurement rules require of PhilGEPS. A resolution of the GPPB of September 2025 asks the Procurement Service for an updated plan for the required features and does not state the status of this one [GPPB2025-09]. For the Electronic Marketplace, guidelines of the same month name the modes of payment (section 2), and the Procurement Service pays the merchant after the entity accepts the goods [GPPB2025-10]. Row 41: since 2026 the plan and the report are submitted through an online form, in which the entity gives a link to a folder with the documents. Email is no longer accepted. The advisory prescribes this channel, and I did not verify how many entities use it [GPPB-TSO2026-2].
 
-### 4.2 Revenue and treasury side (diagram 16g)
+### 4.2 Revenue and treasury side (diagram IS-c)
 
 | No. | From | To | What passes | Kind | Carrier | Stage of use | Check of both sides | Basis |
 |---|---|---|---|---|---|---|---|---|
@@ -168,11 +168,11 @@ Notes. Rows 25, 27 and 28 apply only to the agencies that use BTMS (section 5). 
 | 64 | Payers of fees | Collecting officer of an agency | Fees, against an official receipt | Money | Cash or check | In use | The accounting unit issues an order of payment before the collection, and the officer issues a numbered official receipt immediately | PD1445 s.68, GAM-V1 Ch.5 s.40 |
 | 65 | Authorized agent bank or depository bank | Accounting unit of the collecting agency | Consolidated report of daily collections, and the credit memo or abstract of deposits | Document | Not stated | In use | The accounting unit prepares its journal entry from this report | GAM-V1 Ch.5 s.41, Ch.3 ss.6-7 |
 
-Rows 20 and 61 also appear in diagram 16g as the replenishment of the servicing banks and the report of payments made.
+Rows 20 and 61 also appear in diagram IS-c as the replenishment of the servicing banks and the report of payments made.
 
-### 4.3 Inside one agency (diagram 08a)
+### 4.3 Inside one agency (diagram A4-a)
 
-These four flows pass between units of the same agency. They belong in the register because the units often keep their records in different systems, or on paper, and each flow is then a point where the same figure is written a second time. In an agency that uses BTMS these records are entries in one system (chapter 16, section 7).
+These four flows pass between units of the same agency. They belong in the register because the units often keep their records in different systems, or on paper, and each flow is then a point where the same figure is written a second time. In an agency that uses BTMS these records are entries in one system (chapter IS, section 7).
 
 | No. | From | To | What passes | Kind | Carrier | Stage of use | Check of both sides | Basis |
 |---|---|---|---|---|---|---|---|---|

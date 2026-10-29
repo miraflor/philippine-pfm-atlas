@@ -1,0 +1,32 @@
+{
+ "note": "Addresses of research models that are no longer published, and the page that now holds the same content.",
+ "kept": {
+  "00k": "RM-1",
+  "08f": "RM-2",
+  "10e": "RM-3",
+  "15g": "RM-4",
+  "16h": "RM-5",
+  "16i": "RM-6",
+  "17f": "RM-7",
+  "17g": "RM-8"
+ },
+ "redundant": {
+  "00i": "BP-d",
+  "00j": "BP-a",
+  "00l": "BP-e",
+  "05f": "E0-a",
+  "07h": "E6-e",
+  "07i": "E4-a",
+  "07j": "E6-e",
+  "08e": "A4-b",
+  "08g": "A4-a",
+  "09d": "A0-a",
+  "10f": "E5-i",
+  "11e": "E5-c",
+  "14g": "E3-e",
+  "16j": "IS-b",
+  "17e": "UACS-b",
+  "18c": "A1-a",
+  "19c": "P1-d"
+ }
+}

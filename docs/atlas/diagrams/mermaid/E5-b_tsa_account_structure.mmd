@@ -1,0 +1,71 @@
+---
+title: "E5-b  The Treasury Single Account and the other bank accounts of the government"
+config:
+  flowchart:
+    wrappingWidth: 900
+---
+flowchart TB
+  %% QUESTION THIS DIAGRAM ANSWERS: in which bank accounts is the cash of the national government held, and which accounts are outside the single account?
+  %% IDEA: the Treasury Single Account (TSA) is not one account and not software. BTr defines it as a unified structure of government bank accounts. The balances are consolidated at the central bank so that BTr can see and use the cash as one amount. Agencies hold spending limits (NCA) at servicing banks, not cash.
+  %% READING: thick arrows = cash. Grey boxes with a dashed border = accounts that are not part of the single account.
+  %% SOURCES: definition and legal basis of the TSA (EO 55 of 2011, EO 338 of 1996, EO 431 of 2005), eTRAMS for collections reported by BIR, BOC and agencies [BTR-SITE]. TSA at BSP [ROADMAP2024]. MDS sub-accounts (regular, special accounts, trust, foreign-assisted projects) at LBP, DBP and PVB [NBC599]. Daily replenishment of servicing banks, the MDS seed fund [PRIMER][CL2013-16A]. Same-day deposit of collections with authorized government depository banks, investment of idle balances, Bond Sinking Fund [EO449]. Daily transfer of collections, some foreign-funded and trust accounts outside the TSA [PEFA2025]. Shares of local governments released directly by BTr through servicing banks [GAA2026-GP]. Releases to corporations through BTr [BSGC2026]. Revolving funds in authorized depository banks [GAA2026-GP].
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: the names of the Treasury accounts at BSP, the settlement system of BSP, the arrangement by which depository banks transfer balances to BSP.
+
+  subgraph INF["CASH RECEIVED"]
+    direction LR
+    AAB["Authorized agent banks<br/>taxes and duties<br/>(BIR, BOC)"]
+    AGDB["Authorized government<br/>depository banks<br/>fees and other agency collections"]
+    LOAN["Lenders and investors<br/>proceeds of securities<br/>and loans"]
+    AAB ~~~ AGDB
+    AGDB ~~~ LOAN
+  end
+
+  TSA["TREASURY SINGLE ACCOUNT<br/>accounts of the Treasurer of the Philippines at BSP,<br/>managed by BTr as one cash balance"]:::tsa
+
+  subgraph GSB["GOVERNMENT SERVICING BANKS: LBP, DBP, PVB"]
+    direction LR
+    M1["Regular MDS sub-account<br/>of each agency and operating unit.<br/>Holds an NCA limit, not cash"]
+    M2["MDS sub-account for<br/>special accounts"]
+    M3["Trust MDS<br/>sub-account"]
+    M4["MDS sub-account for<br/>foreign-assisted projects"]
+    M1 ~~~ M2
+    M2 ~~~ M3
+    M3 ~~~ M4
+  end
+
+  subgraph DIR["PAID OR RELEASED DIRECTLY BY BTr"]
+    direction LR
+    P2["Creditors of the government<br/>interest and principal"]
+    P3["Local governments<br/>National Tax Allotment and other shares,<br/>through servicing banks"]
+    P4["Government corporations<br/>subsidy, equity, lending"]
+    P5["Placements<br/>of idle cash"]
+    P2 ~~~ P3
+    P3 ~~~ P4
+    P4 ~~~ P5
+  end
+
+  P1["PAID BY THE SERVICING BANK ON AGENCY ORDERS<br/>suppliers, contractors, employees and other payees"]
+
+  subgraph OUTSIDE["ACCOUNTS OUTSIDE THE SINGLE ACCOUNT"]
+    direction LR
+    X1["Agency accounts for retained income<br/>and revolving funds, in depository banks"]:::off
+    X2["Some trust accounts and<br/>special accounts of<br/>foreign-funded projects"]:::off
+    X3["Own accounts of government<br/>corporations and of<br/>local governments"]:::off
+    X1 ~~~ X2
+    X2 ~~~ X3
+  end
+
+  INF == "remitted or<br/>credited daily" ==> TSA
+  TSA == "replenishment, after the bank reports<br/>the payments it already made" ==> GSB
+  TSA ==> DIR
+  GSB ==> P1
+  P1 ~~~ OUTSIDE
+  DIR ~~~ OUTSIDE
+
+  classDef default fill:#ffffff,stroke:#444444,color:#111
+  classDef tsa fill:#fde0c2,stroke:#a35200,color:#111,stroke-width:3px
+  classDef off fill:#f2f2f2,stroke:#555555,color:#111,stroke-dasharray: 5 4
+  style INF fill:#edf7ed,stroke:#2e6b2e
+  style GSB fill:#fff8dc,stroke:#8a6d00
+  style DIR fill:#eef4fb,stroke:#1f4e8c
+  style OUTSIDE fill:#ffffff,stroke:#555555

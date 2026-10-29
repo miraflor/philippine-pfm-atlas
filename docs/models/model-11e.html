@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Research model 11e: 11e  Treasury planning, liquidity and settlement · Philippine PFM Atlas</title>
-<meta name="description" content="Research model 11e: 11e  Treasury planning, liquidity and settlement">
+<title>Page moved · Philippine PFM Atlas</title>
+<meta name="description" content="This page has moved."><meta name="robots" content="noindex">
 <meta name="color-scheme" content="light">
 <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('pfm-atlas-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(error){}</script>
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -21,27 +21,7 @@
 <nav class="wrap site-nav" aria-label="Main"><a href="../index.html">Budget cycle</a><a href="../walkthrough.html">Guided lessons</a><a href="../big-picture.html">Big picture</a><a href="../chapters/index.html">Chapters</a><a href="../reference/index.html">References</a><a href="../diagrams/index.html">Diagrams</a><a href="../systems.html">Systems &amp; UACS</a><a href="../models/index.html">Research models</a><a href="../reference/g.html">Open points</a><a href="../search.html">Search</a><a href="../about.html">About</a></nav>
 </header>
 <main id="main" class="wrap">
-<p class="eyebrow">Supplementary analytic model · 10 October 2026</p><h1>11e  Treasury planning, liquidity and settlement</h1><div class="model-note"><strong>Versioned, source-only model.</strong> This diagram is from the earlier strengthened research edition. It has not been reconciled against the latest 12 October procedures, and no verified PNG rendering is supplied. A reused ID such as 07h does <em>not</em> replace the current diagram of that ID.</div><p><strong>Historical ID:</strong> 11e · <strong>Notation:</strong> mermaid · <a href="diagrams/mermaid/11e_treasury_cash_synchronization.mmd" download>Download original editable code</a> · <a href="../diagrams/index.html">Current diagram gallery</a></p><h2>Source code</h2><div class="copy-row"><button type="button" data-copy="model-11e">Copy code</button></div><pre class="model-code" id="model-11e"><code class="model-source">---
-title: &quot;11e  Treasury planning, liquidity and settlement&quot;
----
-  %% QUESTION THIS DIAGRAM ANSWERS: What temporal and accounting processes link resources and disbursements?
-  %% SOURCES: [NBC599] [ROADMAP2024] [BTR-SITE] precise payment rail interfaces not verified
-  %% SCOPE: Reference view; not a verified deployed system interface.
-  %% READING: Arrows show possible evidence, authority or event dependencies, not a universal time order or verified API.
-flowchart TB
-  TAX[&quot;Actual revenue and remittance data&quot;] --&gt; POSITION[&quot;BTr cash position / TSA&quot;]
-  DEBT[&quot;Borrowing and debt service calendar&quot;] --&gt; POSITION
-  FORECAST[&quot;DBM agency disbursement plans and demand&quot;] --&gt; PLAN[&quot;Cash forecast and scheduling&quot;]
-  POSITION --&gt; PLAN
-  PLAN --&gt; RULE[&quot;Applicable cash authority / direct settlement method&quot;]
-  RULE --&gt; INSTR[&quot;Agency or authorized originator payment instruction&quot;]
-  INSTR --&gt; BANK[&quot;Servicing bank / payment infrastructure&quot;] --&gt; PAY[&quot;Beneficiary account credited&quot;]
-  BANK --&gt; SETTLE[&quot;Bank reimbursement / TSA movement as applicable&quot;]
-  SETTLE --&gt; POSITION
-  BANK --&gt; RECON[&quot;BTr, agency, bank reconciliation&quot;]
-  PAY --&gt; RECON
-  POSITION --&gt; RECON
-</code></pre><p><a href="index.html">← All research models</a></p>
+<div class="doc-head"><p class="eyebrow">Address moved</p><h1>This page has moved</h1></div><p class="prose-block">Its content is now in <a href="../diagrams/E5-c.html">diagram E5-c: Cash programming: how the amount of cash authority for a period is decided</a>.</p><script>(function(){var m={};var h=location.hash.slice(1);var t=(h&&m[h])?m[h]:"../diagrams/E5-c.html";location.replace(t);})();</script>
 </main>
 <footer class="site-footer"><div class="wrap"><p>Philippine PFM Atlas. An independent reference. It is not an official publication of the Philippine government, and it does not replace the laws, circulars and manuals that it cites. Facts on current events are as of 8 October 2026.</p><p><a href="../about.html">About the atlas</a> · <a href="../reference/f.html">Sources</a> · <a href="../reference/g.html">Open points</a></p></div></footer>
 <script src="../assets/site.js" defer></script>

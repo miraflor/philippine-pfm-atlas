@@ -47,8 +47,8 @@ def norm(s):
 
 # --- Which page shows which Markdown file ---
 URL = {"00_BIG_PICTURE.md": "big-picture.html", "README.md": "about.html"}
-for p in sorted(ATLAS.glob("processes/[0-9][0-9]_*.md")):
-    URL["processes/" + p.name] = "chapters/%s.html" % p.name[:2]
+for p in sorted(ATLAS.glob("chapters/*.md")):
+    URL["chapters/" + p.name] = "chapters/%s.html" % p.name.split("_", 1)[0]
 for p in sorted(ATLAS.glob("reference/[A-Z]_*.md")):
     URL["reference/" + p.name] = "reference/%s.html" % p.name[0].lower()
 

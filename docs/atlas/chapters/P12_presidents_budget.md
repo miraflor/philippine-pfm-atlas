@@ -1,0 +1,107 @@
+# P12. The President's Budget submitted to Congress
+
+*Part of the Philippine PFM Atlas. Facts as of 8 October 2026. The codes in the column "Basis" are explained in [Reference F](../reference/F_sources_and_verification.md). "GK" means general knowledge that I did not open in a source during this work.*
+
+## 1. The step in the budget cycle
+
+| Item | This step |
+|---|---|
+| Phase | Preparation, step 12 of 12 |
+| When | July-August of the prior FY. The timing in the illustration of DBM is indicative [DBM-CYCLE] |
+| Documents | The President's Budget Message, the National Expenditure Program (NEP) and the Budget of Expenditures and Sources of Financing (BESF) [PRIMER]. A staffing summary (GK) |
+| Not drawn in the loop | Its submission also opens early procurement (chapter E1): an agency may start bidding, but it may not award a contract [IRR12009 s.12] |
+| Receives documents from | Chapter P11 |
+| Passes documents to | Chapters L1 and E1 |
+| Read more | Step 19 of diagram P0-a. The documents that go to Congress: section 2, and diagram P12-a. The deadline: chapter P0, section 8 |
+
+## 2. Documents that go to Congress
+
+| Document | Content | Basis |
+|---|---|---|
+| President's Budget Message | Policy and priorities | PRIMER |
+| National Expenditure Program (NEP) | Proposed appropriations of each agency by program, expense class and performance target | PRIMER. Detail of content: GK |
+| Budget of Expenditures and Sources of Financing (BESF) | Assumptions, revenues, spending by sector and region, financing, debt | PRIMER. Detail of content: GK |
+| Staffing summary | Positions of each agency | GK |
+
+### Diagram P12-a  Budget preparation records: from agency forms to the documents sent to Congress
+
+Code file: `../diagrams/mermaid/P12-a_budget_forms_and_documents.mmd`. Rendered image: [`../rendered/P12-a_budget_forms_and_documents.png`](../rendered/P12-a_budget_forms_and_documents.png).
+
+- **Question:** which forms does an agency complete, where do they go, and which budget documents are built from them?
+- **How to read it:** left = input forms and their source. Middle = systems. Right = the documents of the President's budget and who receives them.
+- **Sources:** BP forms and their subjects, OSBPS v2.0, the 15-digit program code in the Program Budget Matrix [NBM156]. GMIS as the source of filled positions [GMIS]. NEP, BESF and Budget Message as the three submitted documents [PRIMER]. BPMS named as a DBM system [ROADMAP2024]. Certification of the local government share by BIR, BOC and BTr [MANDANAS].
+- **Note on form titles:** the copy of the Budget Call that I could read was partly unreadable. The subjects of the forms are reliable. The exact titles should be checked against Annex B of National Budget Memorandum No. 156.
+- **General knowledge, not opened in a source here:** what BPMS does in detail, the content of each budget document, the staffing summary as a separate document.
+
+```mermaid
+---
+title: "P12-a  Budget preparation records: from agency forms to the documents sent to Congress"
+config:
+  flowchart:
+    wrappingWidth: 460
+---
+flowchart LR
+
+  subgraph FORMS["AGENCY INPUT: Budget Preparation (BP) forms"]
+    direction TB
+    FA["BP Form A  Program Budget Matrix<br/>programs under each organizational outcome,<br/>with the 15-digit program code (PREXC)"]
+    FB["BP Form B  Agency Performance Measures<br/>indicators and targets"]
+    F100["BP Forms 100, 100-A to 100-C<br/>statements of revenues"]
+    F201["BP Forms 201-A to 201-D<br/>Tier 1 by expense class: personnel services,<br/>operating expenses, financial expenses, capital outlays"]
+    F202["BP Forms 202 and 203<br/>Tier 2 proposals, and profile of<br/>foreign-assisted projects"]
+    F204["BP Forms 204 and 205<br/>non-permanent positions, list of retirees"]
+    F206["BP Form 206<br/>convergence programs across agencies"]
+    FCD["BP Forms C and D<br/>inputs of Regional Development Councils<br/>and of civil society organizations"]
+    F300["BP Form 300<br/>proposed provisions (text of special provisions)"]
+    FA ~~~ FB
+    FB ~~~ F100
+    F100 ~~~ F201
+    F201 ~~~ F202
+    F202 ~~~ F204
+    F204 ~~~ F206
+    F206 ~~~ FCD
+    FCD ~~~ F300
+  end
+
+  subgraph OTHER["OTHER INPUTS"]
+    direction TB
+    G1["GMIS (DBM)<br/>filled positions and salaries<br/>from the plantilla of personnel"]
+    G2["DBCC<br/>macroeconomic assumptions,<br/>revenue and financing program"]
+    G3["BIR, BOC, BTr<br/>certified base for the<br/>share of local governments"]
+    G4["BTr<br/>debt service estimates"]
+    G1 ~~~ G2
+    G2 ~~~ G3
+    G3 ~~~ G4
+  end
+
+  subgraph SYS["SYSTEMS"]
+    direction TB
+    OS["OSBPS v2.0<br/>Online Submission of<br/>Budget Proposals System<br/>agencies encode the forms"]
+    BP["BPMS<br/>Budget Preparation<br/>Management System<br/>DBM builds the budget"]
+    OS --> BP
+  end
+
+  subgraph DOCS["THE PRESIDENT'S BUDGET"]
+    direction TB
+    D1["President's Budget Message<br/>policy and priorities"]
+    D2["National Expenditure Program (NEP)<br/>proposed appropriations of each agency by program,<br/>expense class and performance target.<br/>It becomes the General Appropriations Bill"]
+    D3["Budget of Expenditures and Sources of Financing (BESF)<br/>the fiscal tables: assumptions, revenues, spending<br/>by sector and region, financing, debt"]
+    D4["Staffing summary<br/>positions of each agency"]
+    D1 ~~~ D2
+    D2 ~~~ D3
+    D3 ~~~ D4
+  end
+
+  CONG(["Congress<br/>House first, then Senate"])
+
+  FORMS --> OS
+  OTHER --> BP
+  BP --> DOCS
+  DOCS --> CONG
+
+  classDef default fill:#ffffff,stroke:#444444,color:#111
+  style FORMS fill:#edf7ed,stroke:#2e6b2e
+  style OTHER fill:#f2f2f2,stroke:#555555
+  style SYS fill:#eef4fb,stroke:#1f4e8c
+  style DOCS fill:#fff8dc,stroke:#8a6d00
+```

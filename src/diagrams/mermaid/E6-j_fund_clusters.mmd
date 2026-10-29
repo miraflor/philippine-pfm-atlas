@@ -1,0 +1,57 @@
+---
+title: "E6-j  Fund clusters: seven groups of money inside one agency, each with its own books and reports"
+config:
+  flowchart:
+    wrappingWidth: 900
+---
+flowchart LR
+  %% QUESTION THIS DIAGRAM ANSWERS: an agency handles money from the GAA, from loans, from its own income and from other parties. How are these separated, and which report covers each group?
+  %% IDEA: a fund cluster is a group of funds that must be recorded and reported separately. The fund cluster is the first two digits of the funding source segment of UACS. Each cluster has its own set of books.
+  %% READING: left = fund cluster. Solid arrow = the budget report that covers it. Dotted arrow = the form in which its cash is held.
+  %% SOURCES: fund cluster as the first element of the funding source code [JC2017-1]. FAR 2 and 2-A for off-budgetary funds in clusters 05 and 06, FAR 6 for trust receipts in cluster 07, FAR 5 for revenue of clusters 01 to 07, FAR 1 for appropriations [JC2019-1]. Four MDS sub-accounts: regular, special accounts, trust, foreign-assisted projects [NBC599]. Revolving funds in authorized government depository banks, trust receipts, special accounts [GAA2026-GP]. Plan to include off-budget accounts in BTMS or URS [SFA6].
+  %% NAMES AND CONTENT OF THE SEVEN CLUSTERS: from the Government Accounting Manual. The names [GAM-V1 Ch.2 s.13]. The funding sources that belong to each cluster [GAM-V1 Annex P]. The Manual calls cluster 05 "Off-Budgetary Funds - Retained Income Funds" and cluster 06 "Off-Budgetary Funds-Revolving Funds".
+  %% THE CASH ACCOUNTS: the books have three accounts for the NCA: Cash-MDS, Regular, Cash-MDS, Special Account and Cash-MDS, Trust [GAM-V1 Ch.5 s.38]. The FY 2026 circular lists four kinds of sub-account [NBC599]. The diagram does not pair each cluster with one sub-account.
+  %% A FACT FROM THE MANUAL: money that one agency receives from another agency to implement a project is recorded in the trust fund books of the receiver, in cluster 07 [GAM-V1 Ch.2 s.13, Annex M].
+
+  subgraph ON["IN THE BUDGET (appropriated)"]
+    C1["01  Regular Agency Fund<br/>General Fund: new, continuing, supplemental and<br/>automatic appropriations, unprogrammed funds"]
+    C2["02  Foreign Assisted Projects Fund<br/>counterpart funds of the government, and one<br/>funding source code for each lender or donor"]
+    C3["03  Special Account, Locally Funded<br/>and Domestic Grants Fund"]
+    C4["04  Special Account, Foreign Assisted<br/>and Foreign Grants Fund"]
+  end
+
+  subgraph OFF["OFF-BUDGET (not appropriated each year)"]
+    C5["05  Internally Generated Funds<br/>retained income, for example the income<br/>of state universities and colleges"]
+    C6["06  Business Related Funds<br/>revolving funds, for example the revolving<br/>fund of the Procurement Service"]
+    C7["07  Trust Receipts<br/>money held for others or for a purpose, including<br/>money received from another agency to implement a project"]
+  end
+
+  R1["FAR 1, 1-A, 1-B, 1-C<br/>appropriations, allotments, obligations,<br/>disbursements and balances"]:::rep
+  R2["FAR 2, 2-A<br/>approved budget, utilization,<br/>disbursements and balances"]:::rep
+  R6["FAR 6<br/>approved budget, utilization, disbursements<br/>and balances of trust receipts"]:::rep
+
+  K1["CASH: none held by the agency.<br/>NCA limits in MDS sub-accounts at the servicing bank<br/>(regular, special accounts, foreign-assisted projects),<br/>or a Non-Cash Availment Authority"]:::cash
+  K2["CASH: agency account in an authorized<br/>government depository bank"]:::cash
+  K3["CASH: trust MDS sub-account,<br/>or a trust account"]:::cash
+
+  C1 --> R1
+  C2 --> R1
+  C3 --> R1
+  C4 --> R1
+  C5 --> R2
+  C6 --> R2
+  C7 --> R6
+  R1 -.-> K1
+  R2 -.-> K2
+  R6 -.-> K3
+
+  R5["FAR 5<br/>revenue and other receipts<br/>of ALL seven clusters"]:::rep
+  PLAN["PLANNED (PFM Reforms Roadmap): include off-budget accounts in BTMS<br/>or, if that is not feasible, in URS. Feasibility report due in<br/>the fourth quarter of 2026, pilot in 2028"]
+  K1 ~~~ R5
+  K3 ~~~ PLAN
+
+  classDef default fill:#ffffff,stroke:#444444,color:#111
+  classDef rep fill:#fff8dc,stroke:#8a6d00,color:#111
+  classDef cash fill:#edf7ed,stroke:#2e6b2e,color:#111
+  style ON fill:#eef4fb,stroke:#1f4e8c
+  style OFF fill:#f2f2f2,stroke:#555555

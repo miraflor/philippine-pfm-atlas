@@ -28,7 +28,7 @@
 <h2 id="section-1">1. Where to start</h2>
 <ol>
 <li>Read <a href="big-picture.html">00_BIG_PICTURE.md</a>. It gives the whole on a few pages and contains the eight overview diagrams.</li>
-<li>Open the chapter of the part you need (section 4 below). Each chapter explains one process and contains its diagrams.</li>
+<li>Open the chapter of the phase or the step that you need (section 4 below). The chapters follow the budget cycle in the illustration of DBM: four phases with 32 steps. Each phase has a chapter that describes it as a whole, and each step has a chapter of its own.</li>
 <li>Use the reference files for the authorities, the information systems, the documents, the laws, the terms, the sources, and the open questions (section 5).</li>
 <li>Before a diagram is reused for another purpose, read section 5.1 of the big picture. It names the nine kinds of arrows of this atlas and, for each kind, an observation that would show an arrow to be wrong.</li>
 <li>To see what is not settled, read <a href="reference/g.html">Reference G</a>: 18 differences between sources and 68 facts that I could not verify, each with a number.</li>
@@ -54,9 +54,9 @@
 <td>1</td>
 </tr>
 <tr>
-<td><code>processes/</code></td>
-<td>One description for each process</td>
-<td>19</td>
+<td><code>chapters/</code></td>
+<td>One chapter for each phase and for each step of the budget cycle, and two chapters on the information systems and on UACS</td>
+<td>38</td>
 </tr>
 <tr>
 <td><code>reference/</code></td>
@@ -87,7 +87,7 @@
 </table></div>
 <p>In the repository these files are in the folder <code>docs/atlas/</code>. They are built from the sources in the folder <code>src/</code> by the script <code>tools/build_atlas.py</code>, and the website of the atlas is built from them (section 10, and the README of the repository).</p>
 <h2 id="section-3">3. All diagrams</h2>
-<p>The first two characters of an ID give the chapter. Chapter 00 is the big picture.</p>
+<p>The part of an ID before the hyphen names the chapter that shows the diagram. BP is the big picture.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -100,599 +100,599 @@
 </thead>
 <tbody>
 <tr>
-<td>00a</td>
+<td>BP-a</td>
 <td>The whole of PFM for the national government: what happens in order, what happens at the same time, and the chapter for each part</td>
 <td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/00a_pfm_cycle_overview.mmd"><code>00a_pfm_cycle_overview.mmd</code></a></td>
-<td><a href="atlas/rendered/00a_pfm_cycle_overview.png">image</a></td>
+<td><a href="atlas/diagrams/mermaid/BP-a_pfm_cycle_overview.mmd"><code>BP-a_pfm_cycle_overview.mmd</code></a></td>
+<td><a href="atlas/rendered/BP-a_pfm_cycle_overview.png">image</a></td>
 </tr>
 <tr>
-<td>00b</td>
+<td>BP-b</td>
 <td>The authorities of Philippine PFM, grouped by their position in government</td>
 <td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/00b_authorities_map.mmd"><code>00b_authorities_map.mmd</code></a></td>
-<td><a href="atlas/rendered/00b_authorities_map.png">image</a></td>
+<td><a href="atlas/diagrams/mermaid/BP-b_authorities_map.mmd"><code>BP-b_authorities_map.mmd</code></a></td>
+<td><a href="atlas/rendered/BP-b_authorities_map.png">image</a></td>
 </tr>
 <tr>
-<td>00c</td>
-<td>Information systems of Philippine PFM, grouped by the institution that owns or operates each one</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/00c_systems_landscape.mmd"><code>00c_systems_landscape.mmd</code></a></td>
-<td><a href="atlas/rendered/00c_systems_landscape.png">image</a></td>
-</tr>
-<tr>
-<td>00d</td>
-<td>Three lines of steps, the three points where they must meet, and the record that each act writes (one payment under a contract)</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/00d_four_chains.mmd"><code>00d_four_chains.mmd</code></a></td>
-<td><a href="atlas/rendered/00d_four_chains.png">image</a></td>
-</tr>
-<tr>
-<td>00e</td>
-<td>Three budgets are active in one calendar year (example: calendar year 2026)</td>
-<td>Mermaid Gantt chart</td>
-<td><a href="atlas/diagrams/mermaid/00e_calendar_three_budgets.mmd"><code>00e_calendar_three_budgets.mmd</code></a></td>
-<td><a href="atlas/rendered/00e_calendar_three_budgets.png">image</a></td>
-</tr>
-<tr>
-<td>00f</td>
-<td>One fiscal year from plan to audit: who acts at each step, and which record is written there (national government agency)</td>
-<td>PlantUML activity diagram with lanes</td>
-<td><a href="atlas/diagrams/plantuml/00f_end_to_end_swimlane.puml"><code>00f_end_to_end_swimlane.puml</code></a></td>
-<td><a href="atlas/rendered/00f_end_to_end_swimlane.png">image</a></td>
-</tr>
-<tr>
-<td>00g</td>
+<td>BP-c</td>
 <td>What passes between the authorities: decisions, money and information</td>
 <td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/00g_exchanges_between_authorities.mmd"><code>00g_exchanges_between_authorities.mmd</code></a></td>
-<td><a href="atlas/rendered/00g_exchanges_between_authorities.png">image</a></td>
+<td><a href="atlas/diagrams/mermaid/BP-c_exchanges_between_authorities.mmd"><code>BP-c_exchanges_between_authorities.mmd</code></a></td>
+<td><a href="atlas/rendered/BP-c_exchanges_between_authorities.png">image</a></td>
 </tr>
 <tr>
-<td>00h</td>
+<td>BP-d</td>
+<td>Three lines of steps, the three points where they must meet, and the record that each act writes (one payment under a contract)</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/BP-d_four_chains.mmd"><code>BP-d_four_chains.mmd</code></a></td>
+<td><a href="atlas/rendered/BP-d_four_chains.png">image</a></td>
+</tr>
+<tr>
+<td>BP-e</td>
+<td>One fiscal year from plan to audit: who acts at each step, and which record is written there (national government agency)</td>
+<td>PlantUML activity diagram with lanes</td>
+<td><a href="atlas/diagrams/plantuml/BP-e_end_to_end_swimlane.puml"><code>BP-e_end_to_end_swimlane.puml</code></a></td>
+<td><a href="atlas/rendered/BP-e_end_to_end_swimlane.png">image</a></td>
+</tr>
+<tr>
+<td>BP-f</td>
+<td>Three budgets are active in one calendar year (example: calendar year 2026)</td>
+<td>Mermaid Gantt chart</td>
+<td><a href="atlas/diagrams/mermaid/BP-f_calendar_three_budgets.mmd"><code>BP-f_calendar_three_budgets.mmd</code></a></td>
+<td><a href="atlas/rendered/BP-f_calendar_three_budgets.png">image</a></td>
+</tr>
+<tr>
+<td>BP-g</td>
 <td>One contract with dates: a school building paid from the FY 2026 budget (invented example, real rules)</td>
 <td>Mermaid Gantt chart</td>
-<td><a href="atlas/diagrams/mermaid/00h_worked_example_one_contract.mmd"><code>00h_worked_example_one_contract.mmd</code></a></td>
-<td><a href="atlas/rendered/00h_worked_example_one_contract.png">image</a></td>
+<td><a href="atlas/diagrams/mermaid/BP-g_worked_example_one_contract.mmd"><code>BP-g_worked_example_one_contract.mmd</code></a></td>
+<td><a href="atlas/rendered/BP-g_worked_example_one_contract.png">image</a></td>
 </tr>
 <tr>
-<td>01a</td>
-<td>From development plan to budget proposal: the chain of plans, national and local</td>
+<td>BP-h</td>
+<td>Information systems of Philippine PFM, grouped by the institution that owns or operates each one</td>
 <td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/01a_plan_hierarchy.mmd"><code>01a_plan_hierarchy.mmd</code></a></td>
-<td><a href="atlas/rendered/01a_plan_hierarchy.png">image</a></td>
+<td><a href="atlas/diagrams/mermaid/BP-h_systems_landscape.mmd"><code>BP-h_systems_landscape.mmd</code></a></td>
+<td><a href="atlas/rendered/BP-h_systems_landscape.png">image</a></td>
 </tr>
 <tr>
-<td>01b</td>
-<td>Investment programming: how a project enters the PIP and TRIP and reaches the budget</td>
-<td>Mermaid sequence diagram</td>
-<td><a href="atlas/diagrams/mermaid/01b_investment_programming_sequence.mmd"><code>01b_investment_programming_sequence.mmd</code></a></td>
-<td><a href="atlas/rendered/01b_investment_programming_sequence.png">image</a></td>
-</tr>
-<tr>
-<td>02a</td>
-<td>The fiscal frame: what the DBCC receives, what it decides, and where each decision is used</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/02a_fiscal_framework.mmd"><code>02a_fiscal_framework.mmd</code></a></td>
-<td><a href="atlas/rendered/02a_fiscal_framework.png">image</a></td>
-</tr>
-<tr>
-<td>03a</td>
+<td>P0-a</td>
 <td>Budget preparation: from the fiscal program to the President's budget (example: FY 2027 budget, prepared in 2026)</td>
 <td>Mermaid sequence diagram</td>
-<td><a href="atlas/diagrams/mermaid/03a_budget_preparation_sequence.mmd"><code>03a_budget_preparation_sequence.mmd</code></a></td>
-<td><a href="atlas/rendered/03a_budget_preparation_sequence.png">image</a></td>
+<td><a href="atlas/diagrams/mermaid/P0-a_budget_preparation_sequence.mmd"><code>P0-a_budget_preparation_sequence.mmd</code></a></td>
+<td><a href="atlas/rendered/P0-a_budget_preparation_sequence.png">image</a></td>
 </tr>
 <tr>
-<td>03b</td>
+<td>P0-b</td>
 <td>Budget preparation by office (example: FY 2027 budget, prepared in 2026)</td>
 <td>PlantUML activity diagram with lanes</td>
-<td><a href="atlas/diagrams/plantuml/03b_budget_preparation_swimlane.puml"><code>03b_budget_preparation_swimlane.puml</code></a></td>
-<td><a href="atlas/rendered/03b_budget_preparation_swimlane.png">image</a></td>
+<td><a href="atlas/diagrams/plantuml/P0-b_budget_preparation_swimlane.puml"><code>P0-b_budget_preparation_swimlane.puml</code></a></td>
+<td><a href="atlas/rendered/P0-b_budget_preparation_swimlane.png">image</a></td>
 </tr>
 <tr>
-<td>03c</td>
+<td>P0-c</td>
 <td>The Two-Tier Budgeting Approach: how one program or project enters the proposed budget</td>
 <td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/03c_two_tier_budgeting.mmd"><code>03c_two_tier_budgeting.mmd</code></a></td>
-<td><a href="atlas/rendered/03c_two_tier_budgeting.png">image</a></td>
+<td><a href="atlas/diagrams/mermaid/P0-c_two_tier_budgeting.mmd"><code>P0-c_two_tier_budgeting.mmd</code></a></td>
+<td><a href="atlas/rendered/P0-c_two_tier_budgeting.png">image</a></td>
 </tr>
 <tr>
-<td>03d</td>
-<td>Budget preparation records: from agency forms to the documents sent to Congress</td>
+<td>P1-a</td>
+<td>From development plan to budget proposal: the chain of plans, national and local</td>
 <td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/03d_budget_forms_and_documents.mmd"><code>03d_budget_forms_and_documents.mmd</code></a></td>
-<td><a href="atlas/rendered/03d_budget_forms_and_documents.png">image</a></td>
+<td><a href="atlas/diagrams/mermaid/P1-a_plan_hierarchy.mmd"><code>P1-a_plan_hierarchy.mmd</code></a></td>
+<td><a href="atlas/rendered/P1-a_plan_hierarchy.png">image</a></td>
 </tr>
 <tr>
-<td>04a</td>
-<td>Budget legislation: from the President's budget to the General Appropriations Act (GAA)</td>
+<td>P1-b</td>
+<td>Investment programming: how a project enters the PIP and TRIP and reaches the budget</td>
 <td>Mermaid sequence diagram</td>
-<td><a href="atlas/diagrams/mermaid/04a_legislation_sequence.mmd"><code>04a_legislation_sequence.mmd</code></a></td>
-<td><a href="atlas/rendered/04a_legislation_sequence.png">image</a></td>
+<td><a href="atlas/diagrams/mermaid/P1-b_investment_programming_sequence.mmd"><code>P1-b_investment_programming_sequence.mmd</code></a></td>
+<td><a href="atlas/rendered/P1-b_investment_programming_sequence.png">image</a></td>
 </tr>
 <tr>
-<td>04b</td>
-<td>States of the budget bill, from proposal to law</td>
-<td>Mermaid state diagram</td>
-<td><a href="atlas/diagrams/mermaid/04b_bill_states.mmd"><code>04b_bill_states.mmd</code></a></td>
-<td><a href="atlas/rendered/04b_bill_states.png">image</a></td>
-</tr>
-<tr>
-<td>04c</td>
-<td>Kinds of appropriation: the legal bases on which public money may be paid</td>
+<td>P1-c</td>
+<td>The fiscal frame: what the DBCC receives, what it decides, and where each decision is used</td>
 <td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/04c_appropriation_types.mmd"><code>04c_appropriation_types.mmd</code></a></td>
-<td><a href="atlas/rendered/04c_appropriation_types.png">image</a></td>
+<td><a href="atlas/diagrams/mermaid/P1-c_fiscal_framework.mmd"><code>P1-c_fiscal_framework.mmd</code></a></td>
+<td><a href="atlas/rendered/P1-c_fiscal_framework.png">image</a></td>
 </tr>
 <tr>
-<td>05a</td>
-<td>Release of funds: two separate authorities, allotment (to commit) and cash authority (to pay). Example: FY 2026</td>
-<td>Mermaid sequence diagram</td>
-<td><a href="atlas/diagrams/mermaid/05a_release_sequence.mmd"><code>05a_release_sequence.mmd</code></a></td>
-<td><a href="atlas/rendered/05a_release_sequence.png">image</a></td>
-</tr>
-<tr>
-<td>05b</td>
-<td>Which release document applies to one budget item (FY 2026 rules)</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/05b_release_decision_tree.mmd"><code>05b_release_decision_tree.mmd</code></a></td>
-<td><a href="atlas/rendered/05b_release_decision_tree.png">image</a></td>
-</tr>
-<tr>
-<td>05c</td>
-<td>States of one budget line, and the exits at each stage</td>
-<td>Mermaid state diagram</td>
-<td><a href="atlas/diagrams/mermaid/05c_budget_line_states.mmd"><code>05c_budget_line_states.mmd</code></a></td>
-<td><a href="atlas/rendered/05c_budget_line_states.png">image</a></td>
-</tr>
-<tr>
-<td>05d</td>
-<td>Kinds of disbursement authority: who issues each one, to whom, and what it allows</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/05d_cash_authorities.mmd"><code>05d_cash_authorities.mmd</code></a></td>
-<td><a href="atlas/rendered/05d_cash_authorities.png">image</a></td>
-</tr>
-<tr>
-<td>05e</td>
-<td>Changing an allotment during the year: modification, use of personnel allotment, augmentation from savings</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/05e_modification_and_savings.mmd"><code>05e_modification_and_savings.mmd</code></a></td>
-<td><a href="atlas/rendered/05e_modification_and_savings.png">image</a></td>
-</tr>
-<tr>
-<td>06a</td>
-<td>Procurement planning: from a need to an approved procurement plan, aligned with the budget calendar</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/06a_procurement_planning.mmd"><code>06a_procurement_planning.mmd</code></a></td>
-<td><a href="atlas/rendered/06a_procurement_planning.png">image</a></td>
-</tr>
-<tr>
-<td>06b</td>
-<td>Competitive bidding under the New Government Procurement Act (RA 12009): who does what, with the time limits</td>
-<td>Mermaid sequence diagram</td>
-<td><a href="atlas/diagrams/mermaid/06b_competitive_bidding_sequence.mmd"><code>06b_competitive_bidding_sequence.mmd</code></a></td>
-<td><a href="atlas/rendered/06b_competitive_bidding_sequence.png">image</a></td>
-</tr>
-<tr>
-<td>06c</td>
-<td>The eleven modes of procurement in RA 12009, with the type that the GPPB added in 2026</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/06c_procurement_modes.mmd"><code>06c_procurement_modes.mmd</code></a></td>
-<td><a href="atlas/rendered/06c_procurement_modes.png">image</a></td>
-</tr>
-<tr>
-<td>06d</td>
-<td>Competitive bidding under RA 12009: decisions, loops and exits</td>
-<td>PlantUML activity diagram with lanes</td>
-<td><a href="atlas/diagrams/plantuml/06d_competitive_bidding_swimlane.puml"><code>06d_competitive_bidding_swimlane.puml</code></a></td>
-<td><a href="atlas/rendered/06d_competitive_bidding_swimlane.png">image</a></td>
-</tr>
-<tr>
-<td>06e</td>
-<td>States of one contract, from award to closing</td>
-<td>Mermaid state diagram</td>
-<td><a href="atlas/diagrams/mermaid/06e_contract_implementation.mmd"><code>06e_contract_implementation.mmd</code></a></td>
-<td><a href="atlas/rendered/06e_contract_implementation.png">image</a></td>
-</tr>
-<tr>
-<td>06f</td>
-<td>A contract that lasts more than one year: the Multi-Year Contractual Authority (MYCA)</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/06f_multi_year_contracts.mmd"><code>06f_multi_year_contracts.mmd</code></a></td>
-<td><a href="atlas/rendered/06f_multi_year_contracts.png">image</a></td>
-</tr>
-<tr>
-<td>06g</td>
-<td>A framework agreement: funds are certified before each order, not before the agreement</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/06g_framework_agreement.mmd"><code>06g_framework_agreement.mmd</code></a></td>
-<td><a href="atlas/rendered/06g_framework_agreement.png">image</a></td>
-</tr>
-<tr>
-<td>07a</td>
-<td>From obligation to payment: who certifies what, and which record each step writes (goods bought by a national agency, paid by payment order)</td>
-<td>Mermaid sequence diagram</td>
-<td><a href="atlas/diagrams/mermaid/07a_obligation_to_payment_sequence.mmd"><code>07a_obligation_to_payment_sequence.mmd</code></a></td>
-<td><a href="atlas/rendered/07a_obligation_to_payment_sequence.png">image</a></td>
-</tr>
-<tr>
-<td>07b</td>
-<td>The three meeting points before a payment, and the record written at each step (national agency, contract for goods)</td>
-<td>PlantUML activity diagram with lanes</td>
-<td><a href="atlas/diagrams/plantuml/07b_obligation_to_payment_swimlane.puml"><code>07b_obligation_to_payment_swimlane.puml</code></a></td>
-<td><a href="atlas/rendered/07b_obligation_to_payment_swimlane.png">image</a></td>
-</tr>
-<tr>
-<td>07c</td>
-<td>The chain of certifications for one payment: who signs, what the signature states, and who checks it</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/07c_voucher_certifications.mmd"><code>07c_voucher_certifications.mmd</code></a></td>
-<td><a href="atlas/rendered/07c_voucher_certifications.png">image</a></td>
-</tr>
-<tr>
-<td>07d</td>
-<td>Payment and settlement: how money moves from the Treasury Single Account to the payee (Modified Disbursement System)</td>
-<td>Mermaid sequence diagram</td>
-<td><a href="atlas/diagrams/mermaid/07d_payment_settlement_sequence.mmd"><code>07d_payment_settlement_sequence.mmd</code></a></td>
-<td><a href="atlas/rendered/07d_payment_settlement_sequence.png">image</a></td>
-</tr>
-<tr>
-<td>07e</td>
-<td>Ways in which a national agency settles a payment</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/07e_payment_modes.mmd"><code>07e_payment_modes.mmd</code></a></td>
-<td><a href="atlas/rendered/07e_payment_modes.png">image</a></td>
-</tr>
-<tr>
-<td>07f</td>
-<td>States of one cash advance, from grant to liquidation</td>
-<td>Mermaid state diagram</td>
-<td><a href="atlas/diagrams/mermaid/07f_cash_advance_states.mmd"><code>07f_cash_advance_states.mmd</code></a></td>
-<td><a href="atlas/rendered/07f_cash_advance_states.png">image</a></td>
-</tr>
-<tr>
-<td>07g</td>
-<td>When a step fails: who acts, where the transaction continues, and which record shows it</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/07g_when_a_step_fails.mmd"><code>07g_when_a_step_fails.mmd</code></a></td>
-<td><a href="atlas/rendered/07g_when_a_step_fails.png">image</a></td>
-</tr>
-<tr>
-<td>07h</td>
-<td>Kinds of payment: what creates the claim, what proves it before payment, and what the books record at that time</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/07h_kinds_of_claim.mmd"><code>07h_kinds_of_claim.mmd</code></a></td>
-<td><a href="atlas/rendered/07h_kinds_of_claim.png">image</a></td>
-</tr>
-<tr>
-<td>07i</td>
-<td>A works contract with an advance, progress billings and retention money (example of the Manual)</td>
-<td>Mermaid sequence diagram</td>
-<td><a href="atlas/diagrams/mermaid/07i_advance_progress_retention.mmd"><code>07i_advance_progress_retention.mmd</code></a></td>
-<td><a href="atlas/rendered/07i_advance_progress_retention.png">image</a></td>
-</tr>
-<tr>
-<td>08a</td>
-<td>The records inside one agency: which unit keeps which record, from which document, and which report is built from it</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/08a_accounting_records_flow.mmd"><code>08a_accounting_records_flow.mmd</code></a></td>
-<td><a href="atlas/rendered/08a_accounting_records_flow.png">image</a></td>
-</tr>
-<tr>
-<td>08b</td>
-<td>Reporting: which report goes to whom, through which system, and when</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/08b_reporting_flows.mmd"><code>08b_reporting_flows.mmd</code></a></td>
-<td><a href="atlas/rendered/08b_reporting_flows.png">image</a></td>
-</tr>
-<tr>
-<td>08c</td>
-<td>Five measures of the same spending: the record, the report, and the reason why each differs from the next</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/08c_five_measures_of_one_spending.mmd"><code>08c_five_measures_of_one_spending.mmd</code></a></td>
-<td><a href="atlas/rendered/08c_five_measures_of_one_spending.png">image</a></td>
-</tr>
-<tr>
-<td>08d</td>
-<td>From the reports of each body to national totals: who adds what, and on which basis</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/08d_from_agency_reports_to_national_totals.mmd"><code>08d_from_agency_reports_to_national_totals.mmd</code></a></td>
-<td><a href="atlas/rendered/08d_from_agency_reports_to_national_totals.png">image</a></td>
-</tr>
-<tr>
-<td>08e</td>
-<td>One event, several records: what each unit and each body writes for the same purchase (national agency, payment order, tax withheld)</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/08e_one_event_several_records.mmd"><code>08e_one_event_several_records.mmd</code></a></td>
-<td><a href="atlas/rendered/08e_one_event_several_records.png">image</a></td>
-</tr>
-<tr>
-<td>09a</td>
-<td>External audit by COA: from submission of accounts to the annual reports</td>
-<td>Mermaid sequence diagram</td>
-<td><a href="atlas/diagrams/mermaid/09a_audit_sequence.mmd"><code>09a_audit_sequence.mmd</code></a></td>
-<td><a href="atlas/rendered/09a_audit_sequence.png">image</a></td>
-</tr>
-<tr>
-<td>09b</td>
-<td>States of one audit finding on a transaction</td>
-<td>Mermaid state diagram</td>
-<td><a href="atlas/diagrams/mermaid/09b_audit_finding_states.mmd"><code>09b_audit_finding_states.mmd</code></a></td>
-<td><a href="atlas/rendered/09b_audit_finding_states.png">image</a></td>
-</tr>
-<tr>
-<td>09c</td>
-<td>Layers of control and oversight over one spending agency</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/09c_oversight_map.mmd"><code>09c_oversight_map.mmd</code></a></td>
-<td><a href="atlas/rendered/09c_oversight_map.png">image</a></td>
-</tr>
-<tr>
-<td>10a</td>
-<td>Receipts of the national government: kinds, collectors, and the fund each receipt enters</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/10a_revenue_classification.mmd"><code>10a_revenue_classification.mmd</code></a></td>
-<td><a href="atlas/rendered/10a_revenue_classification.png">image</a></td>
-</tr>
-<tr>
-<td>10b</td>
-<td>Collection of taxes and customs duties: from the taxpayer to the Treasury Single Account</td>
-<td>Mermaid sequence diagram</td>
-<td><a href="atlas/diagrams/mermaid/10b_tax_and_customs_collection_sequence.mmd"><code>10b_tax_and_customs_collection_sequence.mmd</code></a></td>
-<td><a href="atlas/rendered/10b_tax_and_customs_collection_sequence.png">image</a></td>
-</tr>
-<tr>
-<td>10c</td>
-<td>Fees and other income collected by an agency: from payment to the correct fund</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/10c_agency_collections.mmd"><code>10c_agency_collections.mmd</code></a></td>
-<td><a href="atlas/rendered/10c_agency_collections.png">image</a></td>
-</tr>
-<tr>
-<td>10d</td>
-<td>A tax refund: how money collected as tax is paid back</td>
-<td>Mermaid sequence diagram</td>
-<td><a href="atlas/diagrams/mermaid/10d_tax_refund_sequence.mmd"><code>10d_tax_refund_sequence.mmd</code></a></td>
-<td><a href="atlas/rendered/10d_tax_refund_sequence.png">image</a></td>
-</tr>
-<tr>
-<td>11a</td>
-<td>The Treasury Single Account and the other bank accounts of the government</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/11a_tsa_account_structure.mmd"><code>11a_tsa_account_structure.mmd</code></a></td>
-<td><a href="atlas/rendered/11a_tsa_account_structure.png">image</a></td>
-</tr>
-<tr>
-<td>11b</td>
-<td>Cash programming: how the amount of cash authority for a period is decided</td>
-<td>Mermaid sequence diagram</td>
-<td><a href="atlas/diagrams/mermaid/11b_cash_programming_sequence.mmd"><code>11b_cash_programming_sequence.mmd</code></a></td>
-<td><a href="atlas/rendered/11b_cash_programming_sequence.png">image</a></td>
-</tr>
-<tr>
-<td>11c</td>
-<td>Financing and debt: from the borrowing need to debt service</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/11c_financing_and_debt.mmd"><code>11c_financing_and_debt.mmd</code></a></td>
-<td><a href="atlas/rendered/11c_financing_and_debt.png">image</a></td>
-</tr>
-<tr>
-<td>11d</td>
-<td>One foreign project loan: approvals, signing, use of the loan and repayment</td>
-<td>Mermaid sequence diagram</td>
-<td><a href="atlas/diagrams/mermaid/11d_foreign_loan_sequence.mmd"><code>11d_foreign_loan_sequence.mmd</code></a></td>
-<td><a href="atlas/rendered/11d_foreign_loan_sequence.png">image</a></td>
-</tr>
-<tr>
-<td>12a</td>
-<td>Personnel spending: from an authorized position to the monthly payroll and the remittances</td>
-<td>Mermaid sequence diagram</td>
-<td><a href="atlas/diagrams/mermaid/12a_position_to_payroll_sequence.mmd"><code>12a_position_to_payroll_sequence.mmd</code></a></td>
-<td><a href="atlas/rendered/12a_position_to_payroll_sequence.png">image</a></td>
-</tr>
-<tr>
-<td>12b</td>
-<td>Personnel spending: sources of the allotment, and where each part of the gross pay goes</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/12b_personnel_funding_and_deductions.mmd"><code>12b_personnel_funding_and_deductions.mmd</code></a></td>
-<td><a href="atlas/rendered/12b_personnel_funding_and_deductions.png">image</a></td>
-</tr>
-<tr>
-<td>13a</td>
-<td>Life of a physical asset: from plan to disposal, with the record made at each stage</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/13a_asset_lifecycle.mmd"><code>13a_asset_lifecycle.mmd</code></a></td>
-<td><a href="atlas/rendered/13a_asset_lifecycle.png">image</a></td>
-</tr>
-<tr>
-<td>14a</td>
-<td>Budget cycle of a local government unit (province, city or municipality) under the Local Government Code</td>
-<td>Mermaid sequence diagram</td>
-<td><a href="atlas/diagrams/mermaid/14a_lgu_budget_sequence.mmd"><code>14a_lgu_budget_sequence.mmd</code></a></td>
-<td><a href="atlas/rendered/14a_lgu_budget_sequence.png">image</a></td>
-</tr>
-<tr>
-<td>14b</td>
-<td>Money of a local government: sources, and the limits that every local budget must respect</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/14b_lgu_funds_and_mandatory_allocations.mmd"><code>14b_lgu_funds_and_mandatory_allocations.mmd</code></a></td>
-<td><a href="atlas/rendered/14b_lgu_funds_and_mandatory_allocations.png">image</a></td>
-</tr>
-<tr>
-<td>14c</td>
-<td>Points of contact between the national PFM system and a local government</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/14c_national_local_interfaces.mmd"><code>14c_national_local_interfaces.mmd</code></a></td>
-<td><a href="atlas/rendered/14c_national_local_interfaces.png">image</a></td>
-</tr>
-<tr>
-<td>14d</td>
-<td>Local budget cycle: decision points and their effects (province, city or municipality)</td>
-<td>PlantUML activity diagram with lanes</td>
-<td><a href="atlas/diagrams/plantuml/14d_lgu_budget_swimlane.puml"><code>14d_lgu_budget_swimlane.puml</code></a></td>
-<td><a href="atlas/rendered/14d_lgu_budget_swimlane.png">image</a></td>
-</tr>
-<tr>
-<td>14e</td>
-<td>Money that a local government raises itself: real property tax and loans</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/14e_local_revenue_and_borrowing.mmd"><code>14e_local_revenue_and_borrowing.mmd</code></a></td>
-<td><a href="atlas/rendered/14e_local_revenue_and_borrowing.png">image</a></td>
-</tr>
-<tr>
-<td>14f</td>
-<td>The budget of a barangay: who prepares, who enacts, who reviews</td>
-<td>Mermaid sequence diagram</td>
-<td><a href="atlas/diagrams/mermaid/14f_barangay_budget_sequence.mmd"><code>14f_barangay_budget_sequence.mmd</code></a></td>
-<td><a href="atlas/rendered/14f_barangay_budget_sequence.png">image</a></td>
-</tr>
-<tr>
-<td>15a</td>
-<td>Government corporations (GOCCs): corporate operating budget, budgetary support and reports</td>
-<td>Mermaid sequence diagram</td>
-<td><a href="atlas/diagrams/mermaid/15a_gocc_budget_sequence.mmd"><code>15a_gocc_budget_sequence.mmd</code></a></td>
-<td><a href="atlas/rendered/15a_gocc_budget_sequence.png">image</a></td>
-</tr>
-<tr>
-<td>15b</td>
-<td>Transfer of funds from one agency to another body that will implement</td>
-<td>Mermaid sequence diagram</td>
-<td><a href="atlas/diagrams/mermaid/15b_inter_agency_transfers.mmd"><code>15b_inter_agency_transfers.mmd</code></a></td>
-<td><a href="atlas/rendered/15b_inter_agency_transfers.png">image</a></td>
-</tr>
-<tr>
-<td>15c</td>
-<td>The path after allotment depends on the kind of spending</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/15c_spending_paths.mmd"><code>15c_spending_paths.mmd</code></a></td>
-<td><a href="atlas/rendered/15c_spending_paths.png">image</a></td>
-</tr>
-<tr>
-<td>15d</td>
-<td>Fund clusters: seven groups of money inside one agency, each with its own books and reports</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/15d_fund_clusters.mmd"><code>15d_fund_clusters.mmd</code></a></td>
-<td><a href="atlas/rendered/15d_fund_clusters.png">image</a></td>
-</tr>
-<tr>
-<td>15e</td>
-<td>Money for disasters: standby funds of agencies, the national fund, and the fund of each local government</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/15e_disaster_funds.mmd"><code>15e_disaster_funds.mmd</code></a></td>
-<td><a href="atlas/rendered/15e_disaster_funds.png">image</a></td>
-</tr>
-<tr>
-<td>15f</td>
-<td>Cash aid to persons: from the list of beneficiaries to the credit in each account</td>
-<td>Mermaid sequence diagram</td>
-<td><a href="atlas/diagrams/mermaid/15f_cash_aid_to_persons_sequence.mmd"><code>15f_cash_aid_to_persons_sequence.mmd</code></a></td>
-<td><a href="atlas/rendered/15f_cash_aid_to_persons_sequence.png">image</a></td>
-</tr>
-<tr>
-<td>16a</td>
-<td>Information systems by PFM function: in use today, and planned under the IFMIS</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/16a_systems_by_function.mmd"><code>16a_systems_by_function.mmd</code></a></td>
-<td><a href="atlas/rendered/16a_systems_by_function.png">image</a></td>
-</tr>
-<tr>
-<td>16b</td>
-<td>Spending side: information systems inside their owner institutions, and what passes between them (2026)</td>
-<td>PlantUML component diagram</td>
-<td><a href="atlas/diagrams/plantuml/16b_systems_components_spending.puml"><code>16b_systems_components_spending.puml</code></a></td>
-<td><a href="atlas/rendered/16b_systems_components_spending.png">image</a></td>
-</tr>
-<tr>
-<td>16c</td>
-<td>BTMS Budget Execution Module: records, the links between them, and the checks made by the system</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/16c_btms_execution_flow.mmd"><code>16c_btms_execution_flow.mmd</code></a></td>
-<td><a href="atlas/rendered/16c_btms_execution_flow.png">image</a></td>
-</tr>
-<tr>
-<td>16d</td>
-<td>Planned IFMIS: BTMS as the core, other systems connected through interfaces</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/16d_ifmis_target_architecture.mmd"><code>16d_ifmis_target_architecture.mmd</code></a></td>
-<td><a href="atlas/rendered/16d_ifmis_target_architecture.png">image</a></td>
-</tr>
-<tr>
-<td>16e</td>
-<td>Digital PFM in the Philippines - main events, 2011 to 2028</td>
-<td>Mermaid timeline</td>
-<td><a href="atlas/diagrams/mermaid/16e_digital_pfm_timeline.mmd"><code>16e_digital_pfm_timeline.mmd</code></a></td>
-<td><a href="atlas/rendered/16e_digital_pfm_timeline.png">image</a></td>
-</tr>
-<tr>
-<td>16f</td>
-<td>Public verification of DBM release documents with a blockchain record</td>
-<td>Mermaid sequence diagram</td>
-<td><a href="atlas/diagrams/mermaid/16f_document_verification_blockchain.mmd"><code>16f_document_verification_blockchain.mmd</code></a></td>
-<td><a href="atlas/rendered/16f_document_verification_blockchain.png">image</a></td>
-</tr>
-<tr>
-<td>16g</td>
-<td>Revenue and treasury side: information systems and accounts inside their owner institutions (2026)</td>
-<td>PlantUML component diagram</td>
-<td><a href="atlas/diagrams/plantuml/16g_systems_components_revenue_treasury.puml"><code>16g_systems_components_revenue_treasury.puml</code></a></td>
-<td><a href="atlas/rendered/16g_systems_components_revenue_treasury.png">image</a></td>
-</tr>
-<tr>
-<td>17a</td>
-<td>Structure of the Unified Accounts Code Structure (UACS): 54 digits in five segments</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/17a_uacs_structure.mmd"><code>17a_uacs_structure.mmd</code></a></td>
-<td><a href="atlas/rendered/17a_uacs_structure.png">image</a></td>
-</tr>
-<tr>
-<td>17b</td>
-<td>The chain of records for one purchase: each record's own number, the codes it contains, and the number that connects it to the next record</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/17b_identifier_chain.mmd"><code>17b_identifier_chain.mmd</code></a></td>
-<td><a href="atlas/rendered/17b_identifier_chain.png">image</a></td>
-</tr>
-<tr>
-<td>17c</td>
-<td>Records of budget execution as a data model: fields, own numbers (PK) and quoted numbers (FK)</td>
-<td>Mermaid entity-relationship diagram</td>
-<td><a href="atlas/diagrams/mermaid/17c_record_lineage_er.mmd"><code>17c_record_lineage_er.mmd</code></a></td>
-<td><a href="atlas/rendered/17c_record_lineage_er.png">image</a></td>
-</tr>
-<tr>
-<td>17d</td>
-<td>Why UACS alone cannot follow one contract: a code names a class, a document number names one record</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/17d_uacs_class_not_instance.mmd"><code>17d_uacs_class_not_instance.mmd</code></a></td>
-<td><a href="atlas/rendered/17d_uacs_class_not_instance.png">image</a></td>
-</tr>
-<tr>
-<td>18a</td>
-<td>From a target in the budget law to a reported result: the path of performance information</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/18a_performance_information_flow.mmd"><code>18a_performance_information_flow.mmd</code></a></td>
-<td><a href="atlas/rendered/18a_performance_information_flow.png">image</a></td>
-</tr>
-<tr>
-<td>18b</td>
-<td>Four ways to examine performance, and the question that each one answers</td>
-<td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/18b_four_examinations_of_performance.mmd"><code>18b_four_examinations_of_performance.mmd</code></a></td>
-<td><a href="atlas/rendered/18b_four_examinations_of_performance.png">image</a></td>
-</tr>
-<tr>
-<td>19a</td>
+<td>P1-d</td>
 <td>Fiscal risks: payments that the Treasury may have to make, although no budget line of today names them</td>
 <td>Mermaid flowchart</td>
-<td><a href="atlas/diagrams/mermaid/19a_fiscal_risks_map.mmd"><code>19a_fiscal_risks_map.mmd</code></a></td>
-<td><a href="atlas/rendered/19a_fiscal_risks_map.png">image</a></td>
+<td><a href="atlas/diagrams/mermaid/P1-d_fiscal_risks_map.mmd"><code>P1-d_fiscal_risks_map.mmd</code></a></td>
+<td><a href="atlas/rendered/P1-d_fiscal_risks_map.png">image</a></td>
 </tr>
 <tr>
-<td>19b</td>
+<td>P1-e</td>
 <td>A national public-private partnership: approvals, promises of the government, and the two links to the budget</td>
 <td>PlantUML activity diagram with lanes</td>
-<td><a href="atlas/diagrams/plantuml/19b_ppp_project_swimlane.puml"><code>19b_ppp_project_swimlane.puml</code></a></td>
-<td><a href="atlas/rendered/19b_ppp_project_swimlane.png">image</a></td>
+<td><a href="atlas/diagrams/plantuml/P1-e_ppp_project_swimlane.puml"><code>P1-e_ppp_project_swimlane.puml</code></a></td>
+<td><a href="atlas/rendered/P1-e_ppp_project_swimlane.png">image</a></td>
+</tr>
+<tr>
+<td>P12-a</td>
+<td>Budget preparation records: from agency forms to the documents sent to Congress</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/P12-a_budget_forms_and_documents.mmd"><code>P12-a_budget_forms_and_documents.mmd</code></a></td>
+<td><a href="atlas/rendered/P12-a_budget_forms_and_documents.png">image</a></td>
+</tr>
+<tr>
+<td>L0-a</td>
+<td>Budget legislation: from the President's budget to the General Appropriations Act (GAA)</td>
+<td>Mermaid sequence diagram</td>
+<td><a href="atlas/diagrams/mermaid/L0-a_legislation_sequence.mmd"><code>L0-a_legislation_sequence.mmd</code></a></td>
+<td><a href="atlas/rendered/L0-a_legislation_sequence.png">image</a></td>
+</tr>
+<tr>
+<td>L0-b</td>
+<td>States of the budget bill, from proposal to law</td>
+<td>Mermaid state diagram</td>
+<td><a href="atlas/diagrams/mermaid/L0-b_bill_states.mmd"><code>L0-b_bill_states.mmd</code></a></td>
+<td><a href="atlas/rendered/L0-b_bill_states.png">image</a></td>
+</tr>
+<tr>
+<td>L5-a</td>
+<td>Kinds of appropriation: the legal bases on which public money may be paid</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/L5-a_appropriation_types.mmd"><code>L5-a_appropriation_types.mmd</code></a></td>
+<td><a href="atlas/rendered/L5-a_appropriation_types.png">image</a></td>
+</tr>
+<tr>
+<td>E0-a</td>
+<td>Release of funds: two separate authorities, allotment (to commit) and cash authority (to pay). Example: FY 2026</td>
+<td>Mermaid sequence diagram</td>
+<td><a href="atlas/diagrams/mermaid/E0-a_release_sequence.mmd"><code>E0-a_release_sequence.mmd</code></a></td>
+<td><a href="atlas/rendered/E0-a_release_sequence.png">image</a></td>
+</tr>
+<tr>
+<td>E0-b</td>
+<td>States of one budget line, and the exits at each stage</td>
+<td>Mermaid state diagram</td>
+<td><a href="atlas/diagrams/mermaid/E0-b_budget_line_states.mmd"><code>E0-b_budget_line_states.mmd</code></a></td>
+<td><a href="atlas/rendered/E0-b_budget_line_states.png">image</a></td>
+</tr>
+<tr>
+<td>E1-a</td>
+<td>Procurement planning: from a need to an approved procurement plan, aligned with the budget calendar</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/E1-a_procurement_planning.mmd"><code>E1-a_procurement_planning.mmd</code></a></td>
+<td><a href="atlas/rendered/E1-a_procurement_planning.png">image</a></td>
+</tr>
+<tr>
+<td>E1-b</td>
+<td>Competitive bidding under the New Government Procurement Act (RA 12009): who does what, with the time limits</td>
+<td>Mermaid sequence diagram</td>
+<td><a href="atlas/diagrams/mermaid/E1-b_competitive_bidding_sequence.mmd"><code>E1-b_competitive_bidding_sequence.mmd</code></a></td>
+<td><a href="atlas/rendered/E1-b_competitive_bidding_sequence.png">image</a></td>
+</tr>
+<tr>
+<td>E1-c</td>
+<td>The eleven modes of procurement in RA 12009, with the type that the GPPB added in 2026</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/E1-c_procurement_modes.mmd"><code>E1-c_procurement_modes.mmd</code></a></td>
+<td><a href="atlas/rendered/E1-c_procurement_modes.png">image</a></td>
+</tr>
+<tr>
+<td>E1-d</td>
+<td>Competitive bidding under RA 12009: decisions, loops and exits</td>
+<td>PlantUML activity diagram with lanes</td>
+<td><a href="atlas/diagrams/plantuml/E1-d_competitive_bidding_swimlane.puml"><code>E1-d_competitive_bidding_swimlane.puml</code></a></td>
+<td><a href="atlas/rendered/E1-d_competitive_bidding_swimlane.png">image</a></td>
+</tr>
+<tr>
+<td>E1-e</td>
+<td>States of one contract, from award to closing</td>
+<td>Mermaid state diagram</td>
+<td><a href="atlas/diagrams/mermaid/E1-e_contract_implementation.mmd"><code>E1-e_contract_implementation.mmd</code></a></td>
+<td><a href="atlas/rendered/E1-e_contract_implementation.png">image</a></td>
+</tr>
+<tr>
+<td>E1-f</td>
+<td>A contract that lasts more than one year: the Multi-Year Contractual Authority (MYCA)</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/E1-f_multi_year_contracts.mmd"><code>E1-f_multi_year_contracts.mmd</code></a></td>
+<td><a href="atlas/rendered/E1-f_multi_year_contracts.png">image</a></td>
+</tr>
+<tr>
+<td>E1-g</td>
+<td>A framework agreement: funds are certified before each order, not before the agreement</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/E1-g_framework_agreement.mmd"><code>E1-g_framework_agreement.mmd</code></a></td>
+<td><a href="atlas/rendered/E1-g_framework_agreement.png">image</a></td>
+</tr>
+<tr>
+<td>E3-a</td>
+<td>Which release document applies to one budget item (FY 2026 rules)</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/E3-a_release_decision_tree.mmd"><code>E3-a_release_decision_tree.mmd</code></a></td>
+<td><a href="atlas/rendered/E3-a_release_decision_tree.png">image</a></td>
+</tr>
+<tr>
+<td>E3-b</td>
+<td>Changing an allotment during the year: modification, use of personnel allotment, augmentation from savings</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/E3-b_modification_and_savings.mmd"><code>E3-b_modification_and_savings.mmd</code></a></td>
+<td><a href="atlas/rendered/E3-b_modification_and_savings.png">image</a></td>
+</tr>
+<tr>
+<td>E3-c</td>
+<td>Budget cycle of a local government unit (province, city or municipality) under the Local Government Code</td>
+<td>Mermaid sequence diagram</td>
+<td><a href="atlas/diagrams/mermaid/E3-c_lgu_budget_sequence.mmd"><code>E3-c_lgu_budget_sequence.mmd</code></a></td>
+<td><a href="atlas/rendered/E3-c_lgu_budget_sequence.png">image</a></td>
+</tr>
+<tr>
+<td>E3-d</td>
+<td>Money of a local government: sources, and the limits that every local budget must respect</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/E3-d_lgu_funds_and_mandatory_allocations.mmd"><code>E3-d_lgu_funds_and_mandatory_allocations.mmd</code></a></td>
+<td><a href="atlas/rendered/E3-d_lgu_funds_and_mandatory_allocations.png">image</a></td>
+</tr>
+<tr>
+<td>E3-e</td>
+<td>Points of contact between the national PFM system and a local government</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/E3-e_national_local_interfaces.mmd"><code>E3-e_national_local_interfaces.mmd</code></a></td>
+<td><a href="atlas/rendered/E3-e_national_local_interfaces.png">image</a></td>
+</tr>
+<tr>
+<td>E3-f</td>
+<td>Local budget cycle: decision points and their effects (province, city or municipality)</td>
+<td>PlantUML activity diagram with lanes</td>
+<td><a href="atlas/diagrams/plantuml/E3-f_lgu_budget_swimlane.puml"><code>E3-f_lgu_budget_swimlane.puml</code></a></td>
+<td><a href="atlas/rendered/E3-f_lgu_budget_swimlane.png">image</a></td>
+</tr>
+<tr>
+<td>E3-g</td>
+<td>Money that a local government raises itself: real property tax and loans</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/E3-g_local_revenue_and_borrowing.mmd"><code>E3-g_local_revenue_and_borrowing.mmd</code></a></td>
+<td><a href="atlas/rendered/E3-g_local_revenue_and_borrowing.png">image</a></td>
+</tr>
+<tr>
+<td>E3-h</td>
+<td>The budget of a barangay: who prepares, who enacts, who reviews</td>
+<td>Mermaid sequence diagram</td>
+<td><a href="atlas/diagrams/mermaid/E3-h_barangay_budget_sequence.mmd"><code>E3-h_barangay_budget_sequence.mmd</code></a></td>
+<td><a href="atlas/rendered/E3-h_barangay_budget_sequence.png">image</a></td>
+</tr>
+<tr>
+<td>E4-a</td>
+<td>From obligation to payment: who certifies what, and which record each step writes (goods bought by a national agency, paid by payment order)</td>
+<td>Mermaid sequence diagram</td>
+<td><a href="atlas/diagrams/mermaid/E4-a_obligation_to_payment_sequence.mmd"><code>E4-a_obligation_to_payment_sequence.mmd</code></a></td>
+<td><a href="atlas/rendered/E4-a_obligation_to_payment_sequence.png">image</a></td>
+</tr>
+<tr>
+<td>E4-b</td>
+<td>The three meeting points before a payment, and the record written at each step (national agency, contract for goods)</td>
+<td>PlantUML activity diagram with lanes</td>
+<td><a href="atlas/diagrams/plantuml/E4-b_obligation_to_payment_swimlane.puml"><code>E4-b_obligation_to_payment_swimlane.puml</code></a></td>
+<td><a href="atlas/rendered/E4-b_obligation_to_payment_swimlane.png">image</a></td>
+</tr>
+<tr>
+<td>E4-c</td>
+<td>The chain of certifications for one payment: who signs, what the signature states, and who checks it</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/E4-c_voucher_certifications.mmd"><code>E4-c_voucher_certifications.mmd</code></a></td>
+<td><a href="atlas/rendered/E4-c_voucher_certifications.png">image</a></td>
+</tr>
+<tr>
+<td>E4-d</td>
+<td>Personnel spending: from an authorized position to the monthly payroll and the remittances</td>
+<td>Mermaid sequence diagram</td>
+<td><a href="atlas/diagrams/mermaid/E4-d_position_to_payroll_sequence.mmd"><code>E4-d_position_to_payroll_sequence.mmd</code></a></td>
+<td><a href="atlas/rendered/E4-d_position_to_payroll_sequence.png">image</a></td>
+</tr>
+<tr>
+<td>E4-e</td>
+<td>Personnel spending: sources of the allotment, and where each part of the gross pay goes</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/E4-e_personnel_funding_and_deductions.mmd"><code>E4-e_personnel_funding_and_deductions.mmd</code></a></td>
+<td><a href="atlas/rendered/E4-e_personnel_funding_and_deductions.png">image</a></td>
+</tr>
+<tr>
+<td>E5-a</td>
+<td>Kinds of disbursement authority: who issues each one, to whom, and what it allows</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/E5-a_cash_authorities.mmd"><code>E5-a_cash_authorities.mmd</code></a></td>
+<td><a href="atlas/rendered/E5-a_cash_authorities.png">image</a></td>
+</tr>
+<tr>
+<td>E5-b</td>
+<td>The Treasury Single Account and the other bank accounts of the government</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/E5-b_tsa_account_structure.mmd"><code>E5-b_tsa_account_structure.mmd</code></a></td>
+<td><a href="atlas/rendered/E5-b_tsa_account_structure.png">image</a></td>
+</tr>
+<tr>
+<td>E5-c</td>
+<td>Cash programming: how the amount of cash authority for a period is decided</td>
+<td>Mermaid sequence diagram</td>
+<td><a href="atlas/diagrams/mermaid/E5-c_cash_programming_sequence.mmd"><code>E5-c_cash_programming_sequence.mmd</code></a></td>
+<td><a href="atlas/rendered/E5-c_cash_programming_sequence.png">image</a></td>
+</tr>
+<tr>
+<td>E5-d</td>
+<td>Financing and debt: from the borrowing need to debt service</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/E5-d_financing_and_debt.mmd"><code>E5-d_financing_and_debt.mmd</code></a></td>
+<td><a href="atlas/rendered/E5-d_financing_and_debt.png">image</a></td>
+</tr>
+<tr>
+<td>E5-e</td>
+<td>One foreign project loan: approvals, signing, use of the loan and repayment</td>
+<td>Mermaid sequence diagram</td>
+<td><a href="atlas/diagrams/mermaid/E5-e_foreign_loan_sequence.mmd"><code>E5-e_foreign_loan_sequence.mmd</code></a></td>
+<td><a href="atlas/rendered/E5-e_foreign_loan_sequence.png">image</a></td>
+</tr>
+<tr>
+<td>E5-f</td>
+<td>Receipts of the national government: kinds, collectors, and the fund each receipt enters</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/E5-f_revenue_classification.mmd"><code>E5-f_revenue_classification.mmd</code></a></td>
+<td><a href="atlas/rendered/E5-f_revenue_classification.png">image</a></td>
+</tr>
+<tr>
+<td>E5-g</td>
+<td>Collection of taxes and customs duties: from the taxpayer to the Treasury Single Account</td>
+<td>Mermaid sequence diagram</td>
+<td><a href="atlas/diagrams/mermaid/E5-g_tax_and_customs_collection_sequence.mmd"><code>E5-g_tax_and_customs_collection_sequence.mmd</code></a></td>
+<td><a href="atlas/rendered/E5-g_tax_and_customs_collection_sequence.png">image</a></td>
+</tr>
+<tr>
+<td>E5-h</td>
+<td>Fees and other income collected by an agency: from payment to the correct fund</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/E5-h_agency_collections.mmd"><code>E5-h_agency_collections.mmd</code></a></td>
+<td><a href="atlas/rendered/E5-h_agency_collections.png">image</a></td>
+</tr>
+<tr>
+<td>E5-i</td>
+<td>A tax refund: how money collected as tax is paid back</td>
+<td>Mermaid sequence diagram</td>
+<td><a href="atlas/diagrams/mermaid/E5-i_tax_refund_sequence.mmd"><code>E5-i_tax_refund_sequence.mmd</code></a></td>
+<td><a href="atlas/rendered/E5-i_tax_refund_sequence.png">image</a></td>
+</tr>
+<tr>
+<td>E6-a</td>
+<td>Payment and settlement: how money moves from the Treasury Single Account to the payee (Modified Disbursement System)</td>
+<td>Mermaid sequence diagram</td>
+<td><a href="atlas/diagrams/mermaid/E6-a_payment_settlement_sequence.mmd"><code>E6-a_payment_settlement_sequence.mmd</code></a></td>
+<td><a href="atlas/rendered/E6-a_payment_settlement_sequence.png">image</a></td>
+</tr>
+<tr>
+<td>E6-b</td>
+<td>Ways in which a national agency settles a payment</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/E6-b_payment_modes.mmd"><code>E6-b_payment_modes.mmd</code></a></td>
+<td><a href="atlas/rendered/E6-b_payment_modes.png">image</a></td>
+</tr>
+<tr>
+<td>E6-c</td>
+<td>States of one cash advance, from grant to liquidation</td>
+<td>Mermaid state diagram</td>
+<td><a href="atlas/diagrams/mermaid/E6-c_cash_advance_states.mmd"><code>E6-c_cash_advance_states.mmd</code></a></td>
+<td><a href="atlas/rendered/E6-c_cash_advance_states.png">image</a></td>
+</tr>
+<tr>
+<td>E6-d</td>
+<td>When a step fails: who acts, where the transaction continues, and which record shows it</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/E6-d_when_a_step_fails.mmd"><code>E6-d_when_a_step_fails.mmd</code></a></td>
+<td><a href="atlas/rendered/E6-d_when_a_step_fails.png">image</a></td>
+</tr>
+<tr>
+<td>E6-e</td>
+<td>Kinds of payment: what creates the claim, what proves it before payment, and what the books record at that time</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/E6-e_kinds_of_claim.mmd"><code>E6-e_kinds_of_claim.mmd</code></a></td>
+<td><a href="atlas/rendered/E6-e_kinds_of_claim.png">image</a></td>
+</tr>
+<tr>
+<td>E6-f</td>
+<td>A works contract with an advance, progress billings and retention money (example of the Manual)</td>
+<td>Mermaid sequence diagram</td>
+<td><a href="atlas/diagrams/mermaid/E6-f_advance_progress_retention.mmd"><code>E6-f_advance_progress_retention.mmd</code></a></td>
+<td><a href="atlas/rendered/E6-f_advance_progress_retention.png">image</a></td>
+</tr>
+<tr>
+<td>E6-g</td>
+<td>Government corporations (GOCCs): corporate operating budget, budgetary support and reports</td>
+<td>Mermaid sequence diagram</td>
+<td><a href="atlas/diagrams/mermaid/E6-g_gocc_budget_sequence.mmd"><code>E6-g_gocc_budget_sequence.mmd</code></a></td>
+<td><a href="atlas/rendered/E6-g_gocc_budget_sequence.png">image</a></td>
+</tr>
+<tr>
+<td>E6-h</td>
+<td>Transfer of funds from one agency to another body that will implement</td>
+<td>Mermaid sequence diagram</td>
+<td><a href="atlas/diagrams/mermaid/E6-h_inter_agency_transfers.mmd"><code>E6-h_inter_agency_transfers.mmd</code></a></td>
+<td><a href="atlas/rendered/E6-h_inter_agency_transfers.png">image</a></td>
+</tr>
+<tr>
+<td>E6-i</td>
+<td>The path after allotment depends on the kind of spending</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/E6-i_spending_paths.mmd"><code>E6-i_spending_paths.mmd</code></a></td>
+<td><a href="atlas/rendered/E6-i_spending_paths.png">image</a></td>
+</tr>
+<tr>
+<td>E6-j</td>
+<td>Fund clusters: seven groups of money inside one agency, each with its own books and reports</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/E6-j_fund_clusters.mmd"><code>E6-j_fund_clusters.mmd</code></a></td>
+<td><a href="atlas/rendered/E6-j_fund_clusters.png">image</a></td>
+</tr>
+<tr>
+<td>E6-k</td>
+<td>Money for disasters: standby funds of agencies, the national fund, and the fund of each local government</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/E6-k_disaster_funds.mmd"><code>E6-k_disaster_funds.mmd</code></a></td>
+<td><a href="atlas/rendered/E6-k_disaster_funds.png">image</a></td>
+</tr>
+<tr>
+<td>E6-l</td>
+<td>Cash aid to persons: from the list of beneficiaries to the credit in each account</td>
+<td>Mermaid sequence diagram</td>
+<td><a href="atlas/diagrams/mermaid/E6-l_cash_aid_to_persons_sequence.mmd"><code>E6-l_cash_aid_to_persons_sequence.mmd</code></a></td>
+<td><a href="atlas/rendered/E6-l_cash_aid_to_persons_sequence.png">image</a></td>
+</tr>
+<tr>
+<td>A0-a</td>
+<td>Layers of control and oversight over one spending agency</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/A0-a_oversight_map.mmd"><code>A0-a_oversight_map.mmd</code></a></td>
+<td><a href="atlas/rendered/A0-a_oversight_map.png">image</a></td>
+</tr>
+<tr>
+<td>A0-b</td>
+<td>Four ways to examine performance, and the question that each one answers</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/A0-b_four_examinations_of_performance.mmd"><code>A0-b_four_examinations_of_performance.mmd</code></a></td>
+<td><a href="atlas/rendered/A0-b_four_examinations_of_performance.png">image</a></td>
+</tr>
+<tr>
+<td>A0-c</td>
+<td>Five measures of the same spending: the record, the report, and the reason why each differs from the next</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/A0-c_five_measures_of_one_spending.mmd"><code>A0-c_five_measures_of_one_spending.mmd</code></a></td>
+<td><a href="atlas/rendered/A0-c_five_measures_of_one_spending.png">image</a></td>
+</tr>
+<tr>
+<td>A1-a</td>
+<td>From a target in the budget law to a reported result: the path of performance information</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/A1-a_performance_information_flow.mmd"><code>A1-a_performance_information_flow.mmd</code></a></td>
+<td><a href="atlas/rendered/A1-a_performance_information_flow.png">image</a></td>
+</tr>
+<tr>
+<td>A4-a</td>
+<td>The records inside one agency: which unit keeps which record, from which document, and which report is built from it</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/A4-a_accounting_records_flow.mmd"><code>A4-a_accounting_records_flow.mmd</code></a></td>
+<td><a href="atlas/rendered/A4-a_accounting_records_flow.png">image</a></td>
+</tr>
+<tr>
+<td>A4-b</td>
+<td>One event, several records: what each unit and each body writes for the same purchase (national agency, payment order, tax withheld)</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/A4-b_one_event_several_records.mmd"><code>A4-b_one_event_several_records.mmd</code></a></td>
+<td><a href="atlas/rendered/A4-b_one_event_several_records.png">image</a></td>
+</tr>
+<tr>
+<td>A4-c</td>
+<td>Reporting: which report goes to whom, through which system, and when</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/A4-c_reporting_flows.mmd"><code>A4-c_reporting_flows.mmd</code></a></td>
+<td><a href="atlas/rendered/A4-c_reporting_flows.png">image</a></td>
+</tr>
+<tr>
+<td>A4-d</td>
+<td>Life of a physical asset: from plan to disposal, with the record made at each stage</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/A4-d_asset_lifecycle.mmd"><code>A4-d_asset_lifecycle.mmd</code></a></td>
+<td><a href="atlas/rendered/A4-d_asset_lifecycle.png">image</a></td>
+</tr>
+<tr>
+<td>A6-a</td>
+<td>From the reports of each body to national totals: who adds what, and on which basis</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/A6-a_from_agency_reports_to_national_totals.mmd"><code>A6-a_from_agency_reports_to_national_totals.mmd</code></a></td>
+<td><a href="atlas/rendered/A6-a_from_agency_reports_to_national_totals.png">image</a></td>
+</tr>
+<tr>
+<td>A9-a</td>
+<td>External audit by COA: from submission of accounts to the annual reports</td>
+<td>Mermaid sequence diagram</td>
+<td><a href="atlas/diagrams/mermaid/A9-a_audit_sequence.mmd"><code>A9-a_audit_sequence.mmd</code></a></td>
+<td><a href="atlas/rendered/A9-a_audit_sequence.png">image</a></td>
+</tr>
+<tr>
+<td>A9-b</td>
+<td>States of one audit finding on a transaction</td>
+<td>Mermaid state diagram</td>
+<td><a href="atlas/diagrams/mermaid/A9-b_audit_finding_states.mmd"><code>A9-b_audit_finding_states.mmd</code></a></td>
+<td><a href="atlas/rendered/A9-b_audit_finding_states.png">image</a></td>
+</tr>
+<tr>
+<td>IS-a</td>
+<td>Information systems by PFM function: in use today, and planned under the IFMIS</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/IS-a_systems_by_function.mmd"><code>IS-a_systems_by_function.mmd</code></a></td>
+<td><a href="atlas/rendered/IS-a_systems_by_function.png">image</a></td>
+</tr>
+<tr>
+<td>IS-b</td>
+<td>Spending side: information systems inside their owner institutions, and what passes between them (2026)</td>
+<td>PlantUML component diagram</td>
+<td><a href="atlas/diagrams/plantuml/IS-b_systems_components_spending.puml"><code>IS-b_systems_components_spending.puml</code></a></td>
+<td><a href="atlas/rendered/IS-b_systems_components_spending.png">image</a></td>
+</tr>
+<tr>
+<td>IS-c</td>
+<td>Revenue and treasury side: information systems and accounts inside their owner institutions (2026)</td>
+<td>PlantUML component diagram</td>
+<td><a href="atlas/diagrams/plantuml/IS-c_systems_components_revenue_treasury.puml"><code>IS-c_systems_components_revenue_treasury.puml</code></a></td>
+<td><a href="atlas/rendered/IS-c_systems_components_revenue_treasury.png">image</a></td>
+</tr>
+<tr>
+<td>IS-d</td>
+<td>BTMS Budget Execution Module: records, the links between them, and the checks made by the system</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/IS-d_btms_execution_flow.mmd"><code>IS-d_btms_execution_flow.mmd</code></a></td>
+<td><a href="atlas/rendered/IS-d_btms_execution_flow.png">image</a></td>
+</tr>
+<tr>
+<td>IS-e</td>
+<td>Planned IFMIS: BTMS as the core, other systems connected through interfaces</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/IS-e_ifmis_target_architecture.mmd"><code>IS-e_ifmis_target_architecture.mmd</code></a></td>
+<td><a href="atlas/rendered/IS-e_ifmis_target_architecture.png">image</a></td>
+</tr>
+<tr>
+<td>IS-f</td>
+<td>Digital PFM in the Philippines - main events, 2011 to 2028</td>
+<td>Mermaid timeline</td>
+<td><a href="atlas/diagrams/mermaid/IS-f_digital_pfm_timeline.mmd"><code>IS-f_digital_pfm_timeline.mmd</code></a></td>
+<td><a href="atlas/rendered/IS-f_digital_pfm_timeline.png">image</a></td>
+</tr>
+<tr>
+<td>IS-g</td>
+<td>Public verification of DBM release documents with a blockchain record</td>
+<td>Mermaid sequence diagram</td>
+<td><a href="atlas/diagrams/mermaid/IS-g_document_verification_blockchain.mmd"><code>IS-g_document_verification_blockchain.mmd</code></a></td>
+<td><a href="atlas/rendered/IS-g_document_verification_blockchain.png">image</a></td>
+</tr>
+<tr>
+<td>UACS-a</td>
+<td>Structure of the Unified Accounts Code Structure (UACS): 54 digits in five segments</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/UACS-a_uacs_structure.mmd"><code>UACS-a_uacs_structure.mmd</code></a></td>
+<td><a href="atlas/rendered/UACS-a_uacs_structure.png">image</a></td>
+</tr>
+<tr>
+<td>UACS-b</td>
+<td>The chain of records for one purchase: each record's own number, the codes it contains, and the number that connects it to the next record</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/UACS-b_identifier_chain.mmd"><code>UACS-b_identifier_chain.mmd</code></a></td>
+<td><a href="atlas/rendered/UACS-b_identifier_chain.png">image</a></td>
+</tr>
+<tr>
+<td>UACS-c</td>
+<td>Records of budget execution as a data model: fields, own numbers (PK) and quoted numbers (FK)</td>
+<td>Mermaid entity-relationship diagram</td>
+<td><a href="atlas/diagrams/mermaid/UACS-c_record_lineage_er.mmd"><code>UACS-c_record_lineage_er.mmd</code></a></td>
+<td><a href="atlas/rendered/UACS-c_record_lineage_er.png">image</a></td>
+</tr>
+<tr>
+<td>UACS-d</td>
+<td>Why UACS alone cannot follow one contract: a code names a class, a document number names one record</td>
+<td>Mermaid flowchart</td>
+<td><a href="atlas/diagrams/mermaid/UACS-d_uacs_class_not_instance.mmd"><code>UACS-d_uacs_class_not_instance.mmd</code></a></td>
+<td><a href="atlas/rendered/UACS-d_uacs_class_not_instance.png">image</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -707,103 +707,198 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="chapters/01.html">processes/01_planning_and_investment_programming.md</a></td>
-<td>Development plan, investment program, appraisal of large projects</td>
-<td>01a, 01b</td>
+<td><a href="chapters/P0.html">chapters/P0_preparation.md</a></td>
+<td>The phase as a whole: the Budget Call, the proposals in two tiers and the budget of the President. Authorities, steps, systems, controls and calendar</td>
+<td><a href="diagrams/P0-a.html">P0-a</a> to <a href="diagrams/P0-c.html">P0-c</a></td>
 </tr>
 <tr>
-<td><a href="chapters/02.html">processes/02_macro_fiscal_framework.md</a></td>
-<td>The DBCC and the fiscal program</td>
-<td>02a</td>
+<td><a href="chapters/P1.html">chapters/P1_budget_call.md</a></td>
+<td>The Budget Call, and what sets its frame: the development plan and the investment program, the DBCC and the fiscal program, fiscal risks, partnerships with private firms and promises under conditions</td>
+<td><a href="diagrams/P1-a.html">P1-a</a> to <a href="diagrams/P1-e.html">P1-e</a></td>
 </tr>
 <tr>
-<td><a href="chapters/03.html">processes/03_budget_preparation.md</a></td>
-<td>Budget Call, proposals in two tiers, the budget of the President</td>
-<td>03a to 03d</td>
+<td><a href="chapters/P2.html">chapters/P2_citizen_engagement_in_preparation.md</a></td>
+<td>BP Form D: the inputs of civil society organizations</td>
+<td>None</td>
 </tr>
 <tr>
-<td><a href="chapters/04.html">processes/04_budget_legislation.md</a></td>
-<td>Congress, veto, reenactment, kinds of appropriation</td>
-<td>04a to 04c</td>
+<td><a href="chapters/P3.html">chapters/P3_rdc_consultations.md</a></td>
+<td>BP Form C: the inputs of the Regional Development Councils</td>
+<td>None</td>
 </tr>
 <tr>
-<td><a href="chapters/05.html">processes/05_budget_release_allotment_and_cash_authority.md</a></td>
-<td>Allotment and cash authority</td>
-<td>05a to 05e</td>
+<td><a href="chapters/P4.html">chapters/P4_program_convergence.md</a></td>
+<td>BP Form 206: programs that several agencies implement jointly</td>
+<td>None</td>
 </tr>
 <tr>
-<td><a href="chapters/06.html">processes/06_procurement.md</a></td>
-<td>Procurement under Republic Act No. 12009 and the guidelines of the GPPB to August 2026, the forms of the procurement plans, early procurement, contracts for more than one year, framework agreements, the election period of 2026</td>
-<td>06a to 06g</td>
+<td><a href="chapters/P5.html">chapters/P5_tier_1_proposals.md</a></td>
+<td>The forms of the proposal, and Tier 1: the cost of ongoing programs</td>
+<td>None</td>
 </tr>
 <tr>
-<td><a href="chapters/07.html">processes/07_obligation_delivery_payment.md</a></td>
-<td>Obligation, acceptance, voucher, payment through the bank, the kinds of claim, advance payment and retention, cash advances, and what happens when a step fails</td>
-<td>07a to 07i</td>
+<td><a href="chapters/P6.html">chapters/P6_tier_1_deliberations.md</a></td>
+<td>The technical budget hearings</td>
+<td>None</td>
 </tr>
 <tr>
-<td><a href="chapters/08.html">processes/08_accounting_and_reporting.md</a></td>
-<td>Which unit keeps which record, one event in several records, reports, closing of a period, five measures of one spending, national totals</td>
-<td>08a to 08e</td>
+<td><a href="chapters/P7.html">chapters/P7_budget_priorities_framework.md</a></td>
+<td>The framework of the budget priorities</td>
+<td>None</td>
 </tr>
 <tr>
-<td><a href="chapters/09.html">processes/09_audit_and_oversight.md</a></td>
-<td>Audit by COA, notices, oversight</td>
-<td>09a to 09c</td>
+<td><a href="chapters/P8.html">chapters/P8_tier_2_proposals.md</a></td>
+<td>Tier 2: new or expanded programs and projects, and the approvals that a project needs</td>
+<td>None</td>
 </tr>
 <tr>
-<td><a href="chapters/10.html">processes/10_revenue_collection.md</a></td>
-<td>Taxes, customs duties, fees, refunds</td>
-<td>10a to 10d</td>
+<td><a href="chapters/P9.html">chapters/P9_tier_2_deliberations.md</a></td>
+<td>The evaluation and the executive review of the Tier 2 proposals</td>
+<td>None</td>
 </tr>
 <tr>
-<td><a href="chapters/11.html">processes/11_treasury_cash_and_debt.md</a></td>
-<td>Treasury Single Account, cash program, borrowing, debt</td>
-<td>11a to 11d</td>
+<td><a href="chapters/P10.html">chapters/P10_presentation_to_the_president.md</a></td>
+<td>The proposed budget levels before the DBCC, the President and the Cabinet</td>
+<td>None</td>
 </tr>
 <tr>
-<td><a href="chapters/12.html">processes/12_personnel_and_payroll.md</a></td>
-<td>Positions, payroll, remittances</td>
-<td>12a, 12b</td>
+<td><a href="chapters/P11.html">chapters/P11_confirmation_and_finalization.md</a></td>
+<td>The approval of the budget, and the preparation of the budget documents</td>
+<td>None</td>
 </tr>
 <tr>
-<td><a href="chapters/13.html">processes/13_assets_and_property.md</a></td>
-<td>Life of a physical asset</td>
-<td>13a</td>
+<td><a href="chapters/P12.html">chapters/P12_presidents_budget.md</a></td>
+<td>The documents that go to Congress</td>
+<td><a href="diagrams/P12-a.html">P12-a</a></td>
 </tr>
 <tr>
-<td><a href="chapters/14.html">processes/14_local_governments.md</a></td>
-<td>Local budget cycle and its contacts with the national system, property tax, loans, barangay budgets</td>
-<td>14a to 14f</td>
+<td><a href="chapters/L0.html">chapters/L0_legislation.md</a></td>
+<td>The phase as a whole: Congress, the veto, reenactment, and what Congress and the President may change</td>
+<td><a href="diagrams/L0-a.html">L0-a</a>, <a href="diagrams/L0-b.html">L0-b</a></td>
 </tr>
 <tr>
-<td><a href="chapters/15.html">processes/15_gocc_transfers_and_fund_clusters.md</a></td>
-<td>Government corporations, fund transfers, other spending paths, disaster funds, cash aid, fund clusters</td>
-<td>15a to 15f</td>
+<td><a href="chapters/L1.html">chapters/L1_house_deliberations.md</a></td>
+<td>The House: hearings, committee report, plenary and three readings</td>
+<td>None</td>
 </tr>
 <tr>
-<td><a href="chapters/16.html">processes/16_information_systems_and_ifmis.md</a></td>
+<td><a href="chapters/L2.html">chapters/L2_senate_deliberations.md</a></td>
+<td>The Senate: hearings, committee report and plenary</td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="chapters/L3.html">chapters/L3_bicameral_deliberations.md</a></td>
+<td>The bicameral conference committee</td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="chapters/L4.html">chapters/L4_ratification_and_enrolment.md</a></td>
+<td>Ratification by both chambers, and the enrolled bill</td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="chapters/L5.html">chapters/L5_enactment_of_the_gaa.md</a></td>
+<td>The signature and the item veto, and the kinds of appropriation that the law contains</td>
+<td><a href="diagrams/L5-a.html">L5-a</a></td>
+</tr>
+<tr>
+<td><a href="chapters/E0.html">chapters/E0_execution.md</a></td>
+<td>The phase as a whole: the two authorities, allotment and cash authority, the law behind them, the steps of release, the states of one budget line</td>
+<td><a href="diagrams/E0-a.html">E0-a</a>, <a href="diagrams/E0-b.html">E0-b</a></td>
+</tr>
+<tr>
+<td><a href="chapters/E1.html">chapters/E1_early_procurement.md</a></td>
+<td>Procurement under Republic Act No. 12009 and the guidelines of the GPPB to August 2026: the procurement plans, early procurement, competitive bidding, the eleven modes, contracts for more than one year, framework agreements, the election period of 2026</td>
+<td><a href="diagrams/E1-a.html">E1-a</a> to <a href="diagrams/E1-g.html">E1-g</a></td>
+</tr>
+<tr>
+<td><a href="chapters/E2.html">chapters/E2_budget_execution_program.md</a></td>
+<td>The budget execution documents: financial plan, physical plan and monthly disbursement program</td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="chapters/E3.html">chapters/E3_allotment_release.md</a></td>
+<td>Which release document applies, and changes during the year. Local governments: their budget cycle, their money, the limits of national law, and their contacts with the national system</td>
+<td><a href="diagrams/E3-a.html">E3-a</a> to <a href="diagrams/E3-h.html">E3-h</a></td>
+</tr>
+<tr>
+<td><a href="chapters/E4.html">chapters/E4_obligation.md</a></td>
+<td>The obligation and the claim: who certifies what, from the obligation request to the voucher. Salaries and the payroll</td>
+<td><a href="diagrams/E4-a.html">E4-a</a> to <a href="diagrams/E4-e.html">E4-e</a></td>
+</tr>
+<tr>
+<td><a href="chapters/E5.html">chapters/E5_cash_allocation.md</a></td>
+<td>The kinds of cash authority. The Treasury Single Account, cash programming, borrowing and debt. Revenue, collections and refunds</td>
+<td><a href="diagrams/E5-a.html">E5-a</a> to <a href="diagrams/E5-i.html">E5-i</a></td>
+</tr>
+<tr>
+<td><a href="chapters/E6.html">chapters/E6_disbursement.md</a></td>
+<td>Payment through the bank, the kinds of claim, advance payment and retention, cash advances, what happens when a step fails. Other routes of public money: government corporations, transfers, disaster funds, cash aid, fund clusters</td>
+<td><a href="diagrams/E6-a.html">E6-a</a> to <a href="diagrams/E6-l.html">E6-l</a></td>
+</tr>
+<tr>
+<td><a href="chapters/A0.html">chapters/A0_accountability.md</a></td>
+<td>The phase as a whole: the layers of control around one agency, four examinations, five measures of the same spending</td>
+<td><a href="diagrams/A0-a.html">A0-a</a> to <a href="diagrams/A0-c.html">A0-c</a></td>
+</tr>
+<tr>
+<td><a href="chapters/A1.html">chapters/A1_performance_targets.md</a></td>
+<td>Performance information: targets, plans and reports, and their path through one year</td>
+<td><a href="diagrams/A1-a.html">A1-a</a></td>
+</tr>
+<tr>
+<td><a href="chapters/A2.html">chapters/A2_citizen_engagement_in_accountability.md</a></td>
+<td>The public portal of budget and performance information</td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="chapters/A3.html">chapters/A3_monitoring_and_evaluation.md</a></td>
+<td>The evaluation of programs</td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="chapters/A4.html">chapters/A4_accountability_reports.md</a></td>
+<td>Records and reports of agencies: registries, books of accounts, reports, closing of a period. Assets and property</td>
+<td><a href="diagrams/A4-a.html">A4-a</a> to <a href="diagrams/A4-d.html">A4-d</a></td>
+</tr>
+<tr>
+<td><a href="chapters/A5.html">chapters/A5_performance_review.md</a></td>
+<td>The yearly review of performance, and the bonus of the personnel</td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="chapters/A6.html">chapters/A6_in_year_reports.md</a></td>
+<td>From the reports of each body to national totals</td>
+<td><a href="diagrams/A6-a.html">A6-a</a></td>
+</tr>
+<tr>
+<td><a href="chapters/A7.html">chapters/A7_dbcc_mid_year_report.md</a></td>
+<td>The mid-year report of the DBCC</td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="chapters/A8.html">chapters/A8_dbcc_year_end_report.md</a></td>
+<td>The year-end report of the DBCC</td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="chapters/A9.html">chapters/A9_audit_report.md</a></td>
+<td>External audit by COA: steps, findings, notices, and the use of the reports by Congress</td>
+<td><a href="diagrams/A9-a.html">A9-a</a>, <a href="diagrams/A9-b.html">A9-b</a></td>
+</tr>
+<tr>
+<td><a href="chapters/IS.html">chapters/IS_information_systems.md</a></td>
 <td>Systems, data flows, BTMS, the planned IFMIS, the COMPASS portal</td>
-<td>16a to 16g</td>
+<td><a href="diagrams/IS-a.html">IS-a</a> to <a href="diagrams/IS-g.html">IS-g</a></td>
 </tr>
 <tr>
-<td><a href="chapters/17.html">processes/17_uacs_and_record_identifiers.md</a></td>
+<td><a href="chapters/UACS.html">chapters/UACS_uacs_and_record_identifiers.md</a></td>
 <td>UACS and the numbers that connect records</td>
-<td>17a to 17d</td>
-</tr>
-<tr>
-<td><a href="chapters/18.html">processes/18_performance_information_and_evaluation.md</a></td>
-<td>Targets, reports of results, performance review, evaluation</td>
-<td>18a, 18b</td>
-</tr>
-<tr>
-<td><a href="chapters/19.html">processes/19_fiscal_risks_ppp_and_contingent_liabilities.md</a></td>
-<td>Fiscal risks, partnerships with private firms, promises under conditions</td>
-<td>19a, 19b</td>
+<td><a href="diagrams/UACS-a.html">UACS-a</a> to <a href="diagrams/UACS-d.html">UACS-d</a></td>
 </tr>
 </tbody>
 </table></div>
-<p>Most chapters have the same parts: the question it answers, the idea in plain words with one case where the process works and one where it fails, the authorities and their roles, the steps, the documents and identifiers, the information systems, the controls (what each one checks and what it does not check), the timing, the reported weaknesses, the diagrams, and the verification status.</p>
+<p>Each chapter of a step starts with a table that places the step in the budget cycle: its phase, its timing in the illustration of DBM, its documents, its place on the four lines, the steps from which it receives documents and to which it passes them, and where to read more. A chapter that describes a whole process, for example a phase, has the same parts as the descriptions of processes inside the longer chapters of the steps: the question it answers, the idea in plain words with one case where the process works and one where it fails, the authorities and their roles, the steps, the documents and identifiers, the information systems, the controls (what each one checks and what it does not check), the timing, the reported weaknesses, the diagrams, and the verification status.</p>
 <h2 id="section-5">5. The reference files</h2>
 <div class="table-wrap"><table>
 <thead>
@@ -915,18 +1010,18 @@
 </tbody>
 </table></div>
 <p><strong>Colours.</strong> In the overview diagrams and in most others, the colour of a frame or box marks the kind of authority: blue for the executive (DBM, DEPDev, the President and the collegial bodies), purple for Congress, green for spending agencies and local governments, yellow for the finance side (DOF and its bureaus, the Treasury accounts, the banks), light orange for COA and the other independent bodies, a stronger orange for BTMS, and grey for parties outside government and for planned items. Some diagrams use colour for another purpose, and their <code>READING:</code> line says so.</p>
-<p><strong>Arrows.</strong> In diagrams that show exchanges: a thin solid arrow is a decision or a document, a thick arrow is money, a dotted arrow is information. In the two component diagrams of <a href="chapters/16.html">chapter 16</a>, a solid black arrow means that a source describes an electronic channel, and a dashed grey arrow means paper, an entry by staff in a record of their own body, or a carrier that the sources do not state. The label of each arrow says which. In <a href="diagrams/17b.html">diagram 17b</a> the colour of an arrow says whether a field of a form holds the number that links two records. Section 5.1 of the big picture lists all kinds of arrows.</p>
+<p><strong>Arrows.</strong> In diagrams that show exchanges: a thin solid arrow is a decision or a document, a thick arrow is money, a dotted arrow is information. In the two component diagrams of <a href="chapters/IS.html">chapter IS</a>, a solid black arrow means that a source describes an electronic channel, and a dashed grey arrow means paper, an entry by staff in a record of their own body, or a carrier that the sources do not state. The label of each arrow says which. In <a href="diagrams/UACS-b.html">diagram UACS-b</a> the colour of an arrow says whether a field of a form holds the number that links two records. Section 5.1 of the big picture lists all kinds of arrows.</p>
 <p><strong>Numbers in sequence diagrams.</strong> The steps are numbered by Mermaid. The tables of steps in the chapters use the same numbers.</p>
 <p><strong>One technical mark in sequence diagrams.</strong> A step that an actor performs alone (a message from an actor to itself) ends with a line that contains only <code>#nbsp;</code>. This code means a non-breaking space, which is a space character that the program does not delete. The empty line moves the text away from the step number in the picture. It has no other meaning.</p>
-<p><strong>Why some diagrams are in PlantUML.</strong> Mermaid is the main notation. Eight diagrams are in PlantUML because Mermaid cannot draw them well: six lane diagrams with parallel bars or decision points (00f, 03b, 06d, 07b, 14d, 19b), and two component diagrams that place systems inside frames of their owner institutions (16b, 16g).</p>
+<p><strong>Why some diagrams are in PlantUML.</strong> Mermaid is the main notation. Eight diagrams are in PlantUML because Mermaid cannot draw them well: six lane diagrams with parallel bars or decision points (BP-e, P0-b, E1-d, E4-b, E3-f, P1-e), and two component diagrams that place systems inside frames of their owner institutions (IS-b, IS-c).</p>
 <h2 id="section-8">8. How to render the diagrams</h2>
 <p>The images in <code>rendered/</code> were made with Mermaid 11.16 (through the command-line tool <code>mmdc</code>, version 11.16.0) and PlantUML 1.2026.8. Afterwards each image was reduced to 256 colours, which makes the files smaller and does not change what is shown.</p>
 <p>In the repository the script <code>tools/render_diagrams.py</code> draws the images from the code files in <code>src/diagrams/</code> and reduces their colours. Its first lines say which programs it needs. One diagram can also be drawn by hand:</p>
 <pre><code># Mermaid: needs Node.js and the package @mermaid-js/mermaid-cli
-mmdc -i diagrams/mermaid/07a_obligation_to_payment_sequence.mmd -o 07a.png -b white -s 2 -w 2000
+mmdc -i diagrams/mermaid/E4-a_obligation_to_payment_sequence.mmd -o E4-a.png -b white -s 2 -w 2000
 
 # PlantUML: needs Java and plantuml.jar. The two component diagrams also need Graphviz
-java -DPLANTUML_LIMIT_SIZE=16384 -jar plantuml.jar -tpng diagrams/plantuml/07b_obligation_to_payment_swimlane.puml
+java -DPLANTUML_LIMIT_SIZE=16384 -jar plantuml.jar -tpng diagrams/plantuml/E4-b_obligation_to_payment_swimlane.puml
 </code></pre>
 <p>The code can also be pasted into an online editor for Mermaid or PlantUML. Most <code>.mmd</code> files start with a block between two lines of three hyphens. This block sets the title and one layout option, and it needs a recent version of Mermaid.</p>
 <h2 id="section-9">9. Notes on the Markdown files</h2>

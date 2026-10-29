@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research model RM-5: IFMIS implementation is not equivalent to an interface · Philippine PFM Atlas</title>
+<meta name="description" content="Research model RM-5: IFMIS implementation is not equivalent to an interface">
+<meta name="color-scheme" content="light">
+<script>document.documentElement.classList.add('js');try{if(localStorage.getItem('pfm-atlas-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(error){}</script>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="site-header">
+<div class="wrap header-row">
+<a class="brand" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="6" fill="#ffffff" stroke="#deded9"/><path d="M6 8.5H26" stroke="#1f4e8c" stroke-width="3.2" stroke-linecap="round"/><path d="M6 14H26" stroke="#2e6b2e" stroke-width="3.2" stroke-linecap="round"/><path d="M6 19.5H26" stroke="#a35200" stroke-width="3.2" stroke-linecap="round"/><path d="M6 25H26" stroke="#555555" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="0.1 4.9"/><path d="M17 8.5V14" stroke="#1b1b1b" stroke-width="3.6" stroke-linecap="round"/></svg><span>Philippine PFM Atlas</span></a>
+<form class="header-search" action="../search.html" role="search"><label class="visually-hidden" for="q-top">Search the atlas</label><input id="q-top" name="q" type="search" placeholder="Search: SARO, voucher, BTMS"></form>
+<button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">Dark mode</button>
+</div>
+<nav class="wrap site-nav" aria-label="Main"><a href="../index.html">Budget cycle</a><a href="../walkthrough.html">Guided lessons</a><a href="../big-picture.html">Big picture</a><a href="../chapters/index.html">Chapters</a><a href="../reference/index.html">References</a><a href="../diagrams/index.html">Diagrams</a><a href="../systems.html">Systems &amp; UACS</a><a href="../models/index.html">Research models</a><a href="../reference/g.html">Open points</a><a href="../search.html">Search</a><a href="../about.html">About</a></nav>
+</header>
+<main id="main" class="wrap">
+<p class="eyebrow">Research model RM-5</p><h1>IFMIS implementation is not equivalent to an interface</h1><div class="model-note"><p><strong>What it is for.</strong> A method to grade a statement that two information systems exchange data: from a planned interface to an interface that is shown to work, with the evidence that each grade needs.</p><p><strong>Why it is not in a chapter.</strong> It is a method. The register of interfaces in Reference B uses its own classification: carrier, stage of use and the check of both sides.</p></div><figure class="diagram"><a href="rendered/RM-5_ifmis_deployment_confidence.png"><img src="rendered/RM-5_ifmis_deployment_confidence.png" alt="Research model RM-5: IFMIS implementation is not equivalent to an interface" loading="lazy"></a></figure><p><strong>Notation:</strong> Mermaid · <a href="diagrams/mermaid/RM-5_ifmis_deployment_confidence.mmd" download>Download the code</a></p><h2>Code</h2><div class="copy-row"><button type="button" data-copy="model-RM-5">Copy the code</button></div><pre class="model-code" id="model-RM-5"><code class="model-source">---
+title: &quot;RM-5  IFMIS implementation is not equivalent to an interface&quot;
+---
+  %% QUESTION THIS DIAGRAM ANSWERS: What must be proven to move from concept to confirmed system exchange?
+  %% SOURCES: [ROADMAP-MID] [CL2025-8] architecture assurance rubric
+  %% SCOPE: Reference view; not a verified deployed system interface.
+  %% READING: Arrows show possible evidence, authority or event dependencies, not a universal time order or verified API.
+flowchart TB
+  ARCH[&quot;Target IFMIS architecture / named connected applications&quot;] --&gt; PROPOSE[&quot;Candidate interface&quot;]
+  PROPOSE --&gt; LIVE{&quot;Production evidence for named agency and period?&quot;}
+  LIVE --&gt;|No| UNCONF[&quot;Planned / pilot / unspecified - not production-confirmed&quot;]
+  LIVE --&gt;|Yes| MECH{&quot;Exchange mechanism proven?&quot;}
+  MECH --&gt;|Yes| DATA[&quot;Payload schema / timing / identifiers recorded&quot;]
+  MECH --&gt;|No| UK[&quot;Reported electronic flow - technical mode unknown&quot;]
+  DATA --&gt; TEST[&quot;Logs, reconciliation, incidents and system owners&quot;]
+  TEST --&gt; ASSURED[&quot;Production-confirmed interface with evidence date&quot;]
+  UNCONF --&gt; REVIEW[&quot;Obtain logs / SOP / system evidence&quot;]
+  UK --&gt; REVIEW
+  REVIEW --&gt; PROPOSE
+</code></pre><p><a href="index.html">← All research models</a></p>
+</main>
+<footer class="site-footer"><div class="wrap"><p>Philippine PFM Atlas. An independent reference. It is not an official publication of the Philippine government, and it does not replace the laws, circulars and manuals that it cites. Facts on current events are as of 8 October 2026.</p><p><a href="../about.html">About the atlas</a> · <a href="../reference/f.html">Sources</a> · <a href="../reference/g.html">Open points</a></p></div></footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+---
+title: "L0-b  States of the budget bill, from proposal to law"
+---
+stateDiagram-v2
+  direction TB
+  %% QUESTION THIS DIAGRAM ANSWERS: in which state is the budget of a fiscal year at a given date, and which act moves it to the next state?
+  %% READING: one box = one state of the document. The text on an arrow = the act and the body that performs it.
+  %% SOURCES: [CONST VII.22] submission. [CONST VI.24] the bill starts in the House. [CONST VI.25(7)] reenactment. [CONST VI.27(2)] item veto. [INQ-GUIDE] the stages in Congress and the two-thirds override. [NBC599] the dates of the FY 2026 example.
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: the names of the readings and the publication step.
+
+  state "Proposed by the President (NEP, BESF, Budget Message)" as NEP
+  state "General Appropriations Bill in the House committee" as HCOM
+  state "Approved by the House on third reading" as HAPP
+  state "Approved by the Senate with amendments" as SAPP
+  state "In the bicameral conference committee" as BICAM
+  state "Conference report ratified by both chambers" as RATIF
+  state "Enrolled bill with the President" as ENR
+  state "General Appropriations Act (GAA) in effect" as GAA
+  state "Item vetoed" as VETO
+  state "Previous GAA deemed re-enacted" as REEN
+
+  [*] --> NEP: President submits within 30 days from the opening of the regular session
+  NEP --> HCOM: filed in the House and referred to the Committee on Appropriations
+  HCOM --> HAPP: committee report, plenary debates, amendments, vote
+  HAPP --> SAPP: Senate committee and plenary act on the House bill
+  SAPP --> BICAM: the two versions differ
+  BICAM --> RATIF: conferees agree, both chambers ratify
+  RATIF --> ENR: sent to the President
+  ENR --> GAA: President signs
+  ENR --> VETO: President vetoes particular items
+  VETO --> GAA: Congress overrides by two thirds of each chamber
+  VETO --> [*]: the item is not law
+  NEP --> REEN: the fiscal year starts and no GAA is in force
+  REEN --> GAA: the new GAA takes effect (FY 2026 example, 5 January 2026)
+  GAA --> [*]: execution starts (chapter E0)

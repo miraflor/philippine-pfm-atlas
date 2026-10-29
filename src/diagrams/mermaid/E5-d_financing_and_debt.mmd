@@ -1,0 +1,56 @@
+---
+title: "E5-d  Financing and debt: from the borrowing need to debt service"
+config:
+  flowchart:
+    wrappingWidth: 900
+---
+flowchart TB
+  %% QUESTION THIS DIAGRAM ANSWERS: how is the amount to borrow decided, through which channels does the government borrow, which approvals are needed, and how is the debt paid?
+  %% READING: top = the need. Middle = the two channels (domestic, foreign) with their approvals. Bottom = where the proceeds go, how the debt is recorded and how it is serviced.
+  %% SOURCES: DBCC recommends the level of borrowing [DBCC-PAGE]. BTr issues, services and redeems government securities, tracks public debt, coordinates borrowing with BSP and DBM, administers the Bond Sinking Fund [EO449]. Auctions, registry and settlement in NRoSS, dealers (GSEDs), settlement through the BSP payment system with delivery versus payment [NRoSS][BTR-SYS]. The President may contract foreign loans with the prior concurrence of the Monetary Board [CONST VII.20]. Special Authority from the President, documents required, DBM Forward Obligational Authority for project loans, DBCC resolution for program loans [MC51]. ICC review of every project funded by a foreign loan [ICC-NEWS]. Sequence of approvals in one loan [ODA]. Non-Cash Availment Authority for direct payments, MDS sub-account for foreign-assisted projects [NBC599]. Interest payments and net lending as automatic appropriations [NBC599]. The current debt strategy of BTr does not meet the PEFA requirements for a medium-term debt strategy (indicator 13.3, score D), while recording and approval of debt are rated A [PEFA2025].
+  %% GENERAL KNOWLEDGE, NOT OPENED IN A SOURCE HERE: the formula for the gross borrowing need, the names of the instruments (Treasury bills, Treasury bonds, retail bonds, global bonds), the Auction Committee, the rule that repayment of principal is a financing transaction and not an expenditure in the presentation of the budget (in the accounts of BTr, principal reduces the liability Loans Payable and interest is an expense [GAM-V1 Annex I]), the legal basis of the automatic appropriation for debt service, the debt recording system.
+
+  N["BORROWING NEED OF THE YEAR<br/>= deficit (disbursements minus revenues)<br/>+ repayment of principal that matures<br/>+ or - planned change in the cash balance"]:::need
+  P["FINANCING PROGRAM (DBCC)<br/>total to borrow, and the split between<br/>domestic and foreign sources"]
+  N --> P
+
+  subgraph DOM["DOMESTIC BORROWING (BTr)"]
+    direction TB
+    D1["Auction schedule published by BTr<br/>Treasury bills (short term),<br/>Treasury bonds (long term), retail bonds"]
+    D2["Auction in NRoSS<br/>government securities eligible dealers<br/>submit bids. BTr decides the awards"]
+    D3["Settlement<br/>securities registered in NRoSS, payment through<br/>the BSP settlement system, both at the same time"]
+    D1 --> D2 --> D3
+  end
+
+  subgraph FOR["FOREIGN BORROWING (DOF, with BTr)"]
+    direction TB
+    F1["Kind of loan<br/>project loan (for one project), program loan<br/>(budget support), bonds sold abroad"]
+    F2["Approvals before signing<br/>ICC and ED Council for a project,<br/>DBM Forward Obligational Authority or DBCC resolution,<br/>Monetary Board concurrence,<br/>Special Authority from the President"]
+    F3["Negotiation and signing by DOF.<br/>Final Monetary Board approval, legal opinion of DOJ"]
+    F1 --> F2 --> F3
+  end
+
+  P --> D1
+  P --> F1
+
+  T["PROCEEDS<br/>cash enters the Treasury Single Account.<br/>Exception: a lender pays a supplier directly.<br/>Then no cash enters, and DBM issues a<br/>Non-Cash Availment Authority to the agency"]:::tsa
+  D3 --> T
+  F3 --> T
+
+  R["DEBT RECORDS (BTr)<br/>each loan and security, with its schedule<br/>of interest and principal"]
+  T --> R
+
+  subgraph SVC["DEBT SERVICE (BTr pays from the Treasury Single Account)"]
+    direction LR
+    S1["INTEREST<br/>an expenditure. Automatic appropriation:<br/>it is in the budget without a yearly vote on the amount"]
+    S2["PRINCIPAL<br/>a financing transaction, not an expenditure.<br/>Paid from new borrowing or from cash,<br/>with the Bond Sinking Fund for some issues.<br/>Principal that matures next year enters<br/>the borrowing need of next year (top box)"]
+    S1 ~~~ S2
+  end
+  R --> SVC
+
+  classDef default fill:#ffffff,stroke:#444444,color:#111
+  classDef need fill:#f3eefa,stroke:#5b3a8c,color:#111,stroke-width:2px
+  classDef tsa fill:#fde0c2,stroke:#a35200,color:#111,stroke-width:2px
+  style DOM fill:#edf7ed,stroke:#2e6b2e
+  style FOR fill:#eef4fb,stroke:#1f4e8c
+  style SVC fill:#fff8dc,stroke:#8a6d00

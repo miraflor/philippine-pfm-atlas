@@ -28,6 +28,9 @@ from pathlib import Path
 
 from site_experience import enhance_page
 import budget_cycle_story
+import budget_cycle_nav
+from atlas_pages import (ORDER, ID as CHAPTER_ID, DIAGRAM_ID, PHASE_KEY, PHASE_NAME, chapter_files, is_phase_intro,
+                         page_of_diagram)
 import mistune
 from bs4 import BeautifulSoup, Comment, NavigableString
 
@@ -113,14 +116,15 @@ def fail(msg):
 
 BIG = ATLAS / "00_BIG_PICTURE.md"
 README = ATLAS / "README.md"
-CHAPTERS = sorted(ATLAS.glob("processes/[0-9][0-9]_*.md"))
 REFERENCES = sorted(ATLAS.glob("reference/[A-Z]_*.md"))
-if not CHAPTERS or not REFERENCES or not BIG.exists() or not README.exists():
+if not (ATLAS / "chapters").is_dir() or not REFERENCES or not BIG.exists() or not README.exists():
     fail("docs/atlas/ is incomplete. Run tools/build_atlas.py first.")
+CHAPTER_FILE = chapter_files(ATLAS / "chapters")          # {ID: path}, in the order of the atlas
+CHAPTERS = list(CHAPTER_FILE.values())
 
 URL = {"00_BIG_PICTURE.md": "big-picture.html", "README.md": "about.html"}
-for _p in CHAPTERS:
-    URL["processes/" + _p.name] = "chapters/%s.html" % _p.name[:2]
+for _pid, _p in CHAPTER_FILE.items():
+    URL["chapters/" + _p.name] = "chapters/%s.html" % _pid
 for _p in REFERENCES:
     URL["reference/" + _p.name] = "reference/%s.html" % _p.name[0].lower()
 
@@ -186,8 +190,13 @@ FACTS_AS_OF = re.search(r"Facts on current events are as of ([^.]+)\.", read(REA
 FACTS_AS_OF = FACTS_AS_OF.group(1) if FACTS_AS_OF else ""
 
 
-def chapter_title(num):
-    return TITLE["processes/" + next(p.name for p in CHAPTERS if p.name[:2] == num)]
+def chapter_title(pid):
+    """The title of a chapter without its ID, for example 'Obligation'."""
+    return re.sub(r"^%s\.\s*" % re.escape(pid), "", TITLE["chapters/" + CHAPTER_FILE[pid].name])
+
+
+def chapter_label(pid):
+    return "%s · %s" % (pid, chapter_title(pid))
 
 
 # ---------------------------------------------------------------------------------------------------------------
@@ -200,7 +209,24 @@ PART_LABEL = {
 }
 
 
+ID_TOKEN = r"(?:P1[0-2]|P\d|L[0-5]|E[0-6]|A\d|IS|UACS)"
+
+
+def ids_in(text):
+    """Chapter IDs named in a text: 'P0 to P12, L0' -> ['P0', 'P1', ..., 'P12', 'L0']. Markdown links are read as their text."""
+    text = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", text)
+    out = []
+    for m in re.finditer(r"(?<![\w-])(%s)(?: to (%s))?(?![\w-])" % (ID_TOKEN, ID_TOKEN), text):
+        a, b = m.group(1), m.group(2)
+        if b:
+            out += ORDER[ORDER.index(a):ORDER.index(b) + 1]
+        else:
+            out.append(a)
+    return out
+
+
 def read_chapter_tags():
+    """Parts and lines of each chapter, from the table of section 3 of the big picture."""
     tags, inside = defaultdict(list), False
     for line in read(BIG).split("\n"):
         if line.startswith("| Part | Function | Lead authorities |"):
@@ -226,12 +252,11 @@ def read_chapter_tags():
             tag = ("part", PART_LABEL[part])
         else:
             fail("unknown part in the table of section 3 of the big picture: " + part)
-        for num in re.findall(r"\[(\d{2})\]", cells[-1]):
-            if tag not in tags[num]:
-                tags[num].append(tag)
-    missing = [p.name[:2] for p in CHAPTERS if p.name[:2] not in tags]
-    if missing:
-        fail("chapters without a part in section 3 of the big picture: " + ", ".join(missing))
+        for pid in ids_in(cells[-1]):
+            if pid not in CHAPTER_FILE:
+                fail("unknown chapter %s in the table of section 3 of the big picture" % pid)
+            if tag not in tags[pid]:
+                tags[pid].append(tag)
     return tags
 
 
@@ -264,7 +289,7 @@ def replace_in_text(container, pattern, maker, skip=("a", "code", "pre", "script
             tag = maker(m)
             if tag is None:
                 continue
-            parts += [text[last:m.start()], tag]
+            parts += [text[last:m.start()]] + (tag if isinstance(tag, list) else [tag])
             last = m.end()
         if not parts:
             continue
@@ -277,7 +302,7 @@ def heading_id(text, used):
     if m:
         base = "section-" + m.group(1).replace(".", "-")
     else:
-        m = re.match(r"^Diagram\s+(\d{2}[a-z])\b", text)
+        m = re.match(r"^Diagram\s+([A-Z][A-Z0-9]*-[a-z])\b", text)
         base = ("diagram-" + m.group(1)) if m else slugify(text, 60)
     hid, n = base, 2
     while hid in used:
@@ -293,7 +318,7 @@ def number_headings(soup):
         h["id"] = heading_id(text, used)
         if h.name in ("h2", "h3"):
             label = text
-            m = re.match(r"^(Diagram\s+\d{2}[a-z])\b", text)
+            m = re.match(r"^(Diagram\s+[A-Z][A-Z0-9]*-[a-z])\b", text)
             if m:
                 label = m.group(1)
             toc.append((h.name, h["id"], label))
@@ -333,7 +358,7 @@ def diagram_figure(soup, did, page_url):
 
 def embed_diagrams(soup, md_rel, page_url):
     base = posixpath.dirname(md_rel)
-    for h in soup.find_all("h3", id=re.compile(r"^diagram-\d{2}[a-z]$")):
+    for h in soup.find_all(["h3", "h4"], id=re.compile(r"^diagram-[A-Z][A-Z0-9]*-[a-z]$")):
         did = h["id"][len("diagram-"):]
         if did not in DIAG:
             continue
@@ -349,7 +374,7 @@ def embed_diagrams(soup, md_rel, page_url):
     # Mermaid code blocks: fold them away under the image
     for code in soup.select("pre > code.language-mermaid"):
         pre = code.parent
-        h = pre.find_previous("h3")
+        h = pre.find_previous(["h3", "h4"])
         did = h["id"][len("diagram-"):] if h and h.get("id", "").startswith("diagram-") else ""
         details = soup.new_tag("details", attrs={"class": "code"})
         summary = soup.new_tag("summary")
@@ -361,7 +386,7 @@ def embed_diagrams(soup, md_rel, page_url):
         if details.find("code", class_="language-plantuml"):
             details["class"] = "code"
     for img in soup.select("p > img"):
-        if re.search(r"rendered/\d{2}[a-z]_[^/]+\.png$", img.get("src", "")) and not img.parent.get_text(strip=True):
+        if re.search(r"rendered/[A-Z][A-Z0-9]*-[a-z]_[^/]+\.png$", img.get("src", "")) and not img.parent.get_text(strip=True):
             img.parent.decompose()
 
 
@@ -484,61 +509,137 @@ def link_sources(soup, page_url):
 
 
 CHAPTER_COLUMNS = ("Chapters", "Chapter", "Chapters affected")
-REF_IN_TEXT = re.compile(r"\b(?:(?P<diagram>[Dd]iagram (?P<did>\d{2}[a-z]))"
-                         r"|(?P<chapter>(?<!sections of )[Cc]hapters? (?P<num>\d{2})(?! of (?:Volume|the Manual|Book))"
-                         r"(?:, section (?P<csec>\d+(?:\.\d+)*))?)"
-                         r"|(?P<ref>Reference (?P<letter>[A-G])(?:, (?P<kind>section|point) (?P<rnum>\d+(?:\.\d+)*))?))\b")
+DIAGRAM_COLUMNS = ("Diagrams", "Diagram")
+DID_TOKEN = r"(?:BP|P1[0-2]|P\d|L[0-5]|E[0-6]|A\d|IS|UACS)-[a-z]"
+SEP = r"(?:,? and |, | to | or )"
+SEC = r"\d+(?:\.\d+)*"
+CHAP_PHRASE = re.compile(r"\b(?P<word>[Cc]hapters?) (?P<list>%s(?:%s%s)*)(?:, (?P<sword>sections?) (?P<secs>%s(?:(?:,? and |, | to )%s)*))?"
+                         r"(?![\w-])" % (ID_TOKEN, SEP, ID_TOKEN, SEC, SEC))
+DIAG_PHRASE = re.compile(r"\b(?P<word>[Dd]iagrams?) (?P<list>%s(?:%s%s)*)(?![\w-])" % (DID_TOKEN, SEP, DID_TOKEN))
+REF_PHRASE = re.compile(r"\bReference (?P<letter>[A-G])(?:, (?P<kind>section|point) (?P<rnum>\d+(?:\.\d+)*))?\b")
+BARE_SECTION = re.compile(r"(?<!, )(?<!its )\b(?P<word>[Ss]ections?) (?P<secs>%s(?:(?:,? and |, | to )%s)*)(?! of\b)(?![\d.]*\d)"
+                          % (SEC, SEC))
 POINT_IN_G = re.compile(r"\b[Pp]oints? (\d{1,3})\b")
 NO_LINK_IN = ("a", "code", "pre", "script", "style", "svg", "summary", "h1", "h2", "h3", "h4")
 
 
-def link_references(soup, page, page_url):
-    """Links for the names of diagrams, chapters and reference files in the text, and for chapter numbers in tables.
-    The text itself does not change."""
-    chapters = {p.name[:2] for p in CHAPTERS}
+def linked_tokens(soup, text, pattern, href_of):
+    """Nodes for 'text' in which every match of 'pattern' becomes a link (href_of(token) -> href or None)."""
+    nodes, last = [], 0
+    for m in re.finditer(pattern, text):
+        href = href_of(m.group(0))
+        if href is None:
+            continue
+        if m.start() > last:
+            nodes.append(NavigableString(text[last:m.start()]))
+        a = soup.new_tag("a", href=href)
+        a.string = m.group(0)
+        nodes.append(a)
+        last = m.end()
+    if last < len(text):
+        nodes.append(NavigableString(text[last:]))
+    return nodes
 
-    def make(m):
-        if m.group("diagram"):
-            if m.group("did") not in DIAG:
-                return None
-            href = relurl(page_url, "diagrams/%s.html" % m.group("did"))
-        elif m.group("chapter"):
-            if m.group("num") not in chapters:
-                return None
-            href = relurl(page_url, "chapters/%s.html" % m.group("num"))
-            if m.group("csec"):
-                href += "#section-" + m.group("csec").replace(".", "-")
+
+def section_list(secs):
+    out = []
+    for part in re.split(r",? and |, ", secs):
+        if " to " in part:
+            out += [x.strip() for x in part.split(" to ")]
         else:
-            href = relurl(page_url, "reference/%s.html" % m.group("letter").lower())
-            if m.group("kind") == "section":
-                href += "#section-" + m.group("rnum").replace(".", "-")
-            elif m.group("kind") == "point" and m.group("letter") == "G":
-                href += "#point-" + m.group("rnum")
+            out.append(part.strip())
+    return out
+
+
+def link_references(soup, page, page_url):
+    """Links for the names of chapters, sections, diagrams and reference files in the text, and for the IDs in the
+    columns of tables that list chapters or diagrams. The text itself does not change."""
+    own = {el["id"] for el in soup.find_all(id=True)}
+
+    def chapter_href(pid, sec=None):
+        if pid not in CHAPTER_FILE:
+            return None
+        href = relurl(page_url, "chapters/%s.html" % pid)
+        return href + ("#section-" + sec.replace(".", "-") if sec else "")
+
+    def diagram_href(did):
+        return relurl(page_url, "diagrams/%s.html" % did) if did in DIAG else None
+
+    def make_chapter(m):
+        ids = ids_in(m.group("list"))
+        if any(x not in CHAPTER_FILE for x in ids):
+            return None
+        secs = section_list(m.group("secs")) if m.group("secs") else []
+        if len(ids) == 1 and " to " not in m.group("list") and len(secs) <= 1:
+            a = soup.new_tag("a", href=chapter_href(ids[0], secs[0] if secs else None))
+            a.string = m.group(0)
+            return a
+        if len(ids) == 1 and " to " not in m.group("list"):
+            head = m.group(0)[:m.start("secs") - m.start()]
+            nodes = linked_tokens(soup, head, r"(?<![\w-])%s(?![\w-])" % ID_TOKEN, lambda t: chapter_href(t))
+            nodes += linked_tokens(soup, m.group("secs"), SEC, lambda t: chapter_href(ids[0], t))
+            return nodes
+        return linked_tokens(soup, m.group(0), r"(?<![\w-])%s(?![\w-])" % ID_TOKEN, lambda t: chapter_href(t))
+
+    def make_diagram(m):
+        ids = re.findall(DID_TOKEN, m.group("list"))
+        if any(d not in DIAG for d in ids):
+            return None
+        if len(ids) == 1:
+            a = soup.new_tag("a", href=diagram_href(ids[0]))
+            a.string = m.group(0)
+            return a
+        return linked_tokens(soup, m.group(0), DID_TOKEN, diagram_href)
+
+    def make_ref(m):
+        href = relurl(page_url, "reference/%s.html" % m.group("letter").lower())
+        if m.group("kind") == "section":
+            href += "#section-" + m.group("rnum").replace(".", "-")
+        elif m.group("kind") == "point" and m.group("letter") == "G":
+            href += "#point-" + m.group("rnum")
         a = soup.new_tag("a", href=href)
         a.string = m.group(0)
         return a
 
-    replace_in_text(soup, REF_IN_TEXT, make, skip=NO_LINK_IN)
+    def make_bare(m):
+        secs = section_list(m.group("secs"))
+        if not all("section-" + x.replace(".", "-") in own for x in secs):
+            return None
+        if len(secs) == 1:
+            a = soup.new_tag("a", href="#section-" + secs[0].replace(".", "-"))
+            a.string = m.group(0)
+            return a
+        return linked_tokens(soup, m.group(0), r"(?<=[ ,])%s" % SEC, lambda t: "#section-" + t.replace(".", "-"))
+
+    replace_in_text(soup, CHAP_PHRASE, make_chapter, skip=NO_LINK_IN)
+    replace_in_text(soup, DIAG_PHRASE, make_diagram, skip=NO_LINK_IN)
+    replace_in_text(soup, REF_PHRASE, make_ref, skip=NO_LINK_IN)
+    if page.startswith("chapter"):
+        replace_in_text(soup, BARE_SECTION, make_bare, skip=NO_LINK_IN)
     if page == "g":
         def make_point(m):
             a = soup.new_tag("a", href="#point-" + m.group(1))
             a.string = m.group(0)
             return a
         replace_in_text(soup, POINT_IN_G, make_point, skip=NO_LINK_IN)
+    if page == "e":
+        replace_in_text(soup, re.compile(r"\((?:%s)(?:, (?:%s))*\)" % (ID_TOKEN, ID_TOKEN)),
+                        lambda m: linked_tokens(soup, m.group(0), r"(?<![\w-])%s(?![\w-])" % ID_TOKEN, chapter_href),
+                        skip=NO_LINK_IN)
     for table in soup.find_all("table"):
         head = header_of(table)
-        cols = [i for i, h in enumerate(head) if h in CHAPTER_COLUMNS]
+        ccols = [i for i, h in enumerate(head) if h in CHAPTER_COLUMNS]
+        dcols = [i for i, h in enumerate(head) if h in DIAGRAM_COLUMNS]
         for tr in table.select("tbody tr"):
             tds = tr.find_all("td")
-            for k in cols:
+            for k in ccols:
                 if k < len(tds):
-                    def make_num(m):
-                        if m.group(1) not in chapters:
-                            return None
-                        a = soup.new_tag("a", href=relurl(page_url, "chapters/%s.html" % m.group(1)))
-                        a.string = m.group(1)
-                        return a
-                    replace_in_text(tds[k], re.compile(r"(?<![\d.])(\d{2})(?![\d.])"), make_num)
+                    replace_in_text(tds[k], re.compile(r"(?<![\w-])%s(?![\w-])" % ID_TOKEN),
+                                    lambda m: linked_tokens(soup, m.group(0), ".+", chapter_href))
+            for k in dcols:
+                if k < len(tds):
+                    replace_in_text(tds[k], re.compile(DID_TOKEN),
+                                    lambda m: linked_tokens(soup, m.group(0), ".+", diagram_href))
 
 
 def render(md_text, md_rel, page_url, page=""):
@@ -560,7 +661,8 @@ def render(md_text, md_rel, page_url, page=""):
 # Page frame
 
 
-def frame(url, title, body, description="", section=None, md_source=None, scripts=("site.js",), body_class=""):
+def frame(url, title, body, description="", section=None, md_source=None, scripts=("site.js",), body_class="",
+          robots=None):
     root = root_prefix(url)
     body = enhance_page(url, body, DIAGRAMS)
     nav = []
@@ -584,7 +686,7 @@ def frame(url, title, body, description="", section=None, md_source=None, script
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(page_title)}</title>
-<meta name="description" content="{esc(description or title)}">
+<meta name="description" content="{esc(description or title)}">{'<meta name="robots" content="%s">' % esc(robots) if robots else ''}
 <meta name="color-scheme" content="light">
 <script>document.documentElement.classList.add('js');try{{if(localStorage.getItem('pfm-atlas-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}}catch(error){{}}</script>
 <link rel="icon" href="{root}assets/favicon.svg" type="image/svg+xml">
@@ -706,14 +808,24 @@ def insert_status_filter(soup):
     first_h2.insert_before(block)
 
 
+def chapter_eyebrow(pid):
+    key = PHASE_KEY[pid]
+    if key == "shared":
+        return "Chapter %s · Shared by all phases" % pid
+    if is_phase_intro(pid):
+        return "Chapter %s · %s: the phase as a whole" % (pid, PHASE_NAME[key])
+    return "Chapter %s · %s, step %s" % (pid, PHASE_NAME[key], pid[1:])
+
+
 def build_chapters():
-    for i, p in enumerate(CHAPTERS):
-        num = p.name[:2]
-        prev = ("%s.html" % CHAPTERS[i - 1].name[:2], chapter_title(CHAPTERS[i - 1].name[:2])) if i > 0 else None
-        nxt = ("%s.html" % CHAPTERS[i + 1].name[:2], chapter_title(CHAPTERS[i + 1].name[:2])) if i + 1 < len(CHAPTERS) else None
-        markdown_page("processes/" + p.name, URL["processes/" + p.name], "Chapter %s" % num,
-                      page_key="chapter" + num, section="chapters/index.html",
-                      chips=chips_html(CHAPTER_TAGS[num]), pager=pager_html(prev, nxt))
+    ids = list(CHAPTER_FILE)
+    for i, pid in enumerate(ids):
+        p = CHAPTER_FILE[pid]
+        prev = ("%s.html" % ids[i - 1], chapter_label(ids[i - 1])) if i > 0 else None
+        nxt = ("%s.html" % ids[i + 1], chapter_label(ids[i + 1])) if i + 1 < len(ids) else None
+        markdown_page("chapters/" + p.name, URL["chapters/" + p.name], chapter_eyebrow(pid),
+                      page_key="chapter" + pid, section="chapters/index.html",
+                      chips=chips_html(CHAPTER_TAGS.get(pid, [])), pager=pager_html(prev, nxt))
 
 
 def build_references():
@@ -738,13 +850,13 @@ def block(name):
 
 
 MAP = [
-    ("authority", 70, "above", [("Appropriation", 330, "04"), ("Allotment", 450, "05"), ("Obligation", 590, "07")]),
-    ("claim", 160, "below", [("Plan", 330, "06"), ("Procurement", 450, "06"), ("Contract", 590, "06"),
-                             ("Delivery", 675, "07"), ("Acceptance", 760, "07")]),
-    ("cash", 250, "below", [("Collection and borrowing", 330, "10"), ("Single account of the Treasury", 460, "11"),
-                            ("Cash authority", 610, "05"), ("Payment", 900, "07"), ("Replenishment", 1005, "11")]),
-    ("records", 350, "below", [("Registries", 330, "08"), ("Journal entries", 470, "08"),
-                               ("Certifications on each document", 620, "07"), ("Reports", 790, "08"), ("Audit", 930, "09")]),
+    ("authority", 70, "above", [("Appropriation", 330, "L5"), ("Allotment", 450, "E3"), ("Obligation", 590, "E4")]),
+    ("claim", 160, "below", [("Plan", 330, "E1"), ("Procurement", 450, "E1"), ("Contract", 590, "E1"),
+                             ("Delivery", 675, "E4"), ("Acceptance", 760, "E4")]),
+    ("cash", 250, "below", [("Collection and borrowing", 330, "E5"), ("Single account of the Treasury", 460, "E5"),
+                            ("Cash authority", 610, "E5"), ("Payment", 900, "E6"), ("Replenishment", 1005, "E6")]),
+    ("records", 350, "below", [("Registries", 330, "A4"), ("Journal entries", 470, "A4"),
+                               ("Certifications on each document", 620, "E4"), ("Reports", 790, "A4"), ("Audit", 930, "A9")]),
 ]
 MEETINGS = [(1, 590, "authority", "claim"), (2, 760, "authority", "claim"), (3, 900, "claim", "cash")]
 
@@ -800,13 +912,14 @@ def map_svg(steps_by_line):
 
 
 def link_chapter_numbers(soup, cell, page_url):
+    """Links for the chapter IDs in a cell, for example 'P0 to P12, L0 to L5'."""
     def make(m):
-        if not any(p.name[:2] == m.group(1) for p in CHAPTERS):
+        if m.group(0) not in CHAPTER_FILE:
             return None
-        a = soup.new_tag("a", href=relurl(page_url, "chapters/%s.html" % m.group(1)))
-        a.string = m.group(1)
+        a = soup.new_tag("a", href=relurl(page_url, "chapters/%s.html" % m.group(0)))
+        a.string = m.group(0)
         return a
-    replace_in_text(cell, re.compile(r"\b(\d{2})\b"), make)
+    replace_in_text(cell, re.compile(r"(?<![\w-])%s(?![\w-])" % ID_TOKEN), make)
 
 
 def readme_table(heading_start):
@@ -886,8 +999,9 @@ def build_home():
     lookup.append('<a href="diagrams/index.html"><strong>Diagrams</strong><span>%d diagrams, %d in Mermaid and %d in '
                   'PlantUML, each with its image, its code and the question that it answers</span></a>'
                   % (len(DIAGRAMS), n_mmd, len(DIAGRAMS) - n_mmd))
-    lookup.append('<a href="chapters/index.html"><strong>Chapters</strong><span>The %d chapters, one for each process, '
-                  'with the lines and parts to which each belongs</span></a>' % len(CHAPTERS))
+    lookup.append('<a href="chapters/index.html"><strong>Chapters</strong><span>The %d chapters: one for each phase and '
+                  'for each step of the budget cycle, and two on the information systems and on UACS</span></a>'
+                  % len(CHAPTERS))
 
     body = f"""<div class="home">
 <section class="home-intro">
@@ -898,14 +1012,14 @@ def build_home():
 </section>
 <section class="start-paths" aria-label="Ways to explore the atlas">
 <h2>Choose a reading path</h2>
-<div class="path-grid"><a href="walkthrough.html"><strong>Learn the system</strong><span>Eight guided lessons, with curated diagrams and full references.</span><span class="more">Start walkthrough →</span></a><a href="chapters/index.html"><strong>Use the reference</strong><span>Nineteen documented processes and linked primary-source citations.</span><span class="more">Browse chapters →</span></a><a href="systems.html"><strong>Examine systems</strong><span>Institutional mandates, BTMS and IFMIS, record identity and integration evidence.</span><span class="more">Explore systems →</span></a><a href="models/index.html"><strong>Study the models</strong><span>Earlier analytical diagrams and typed registers, separately identified.</span><span class="more">View research models →</span></a></div>
+<div class="path-grid"><a href="walkthrough.html"><strong>Learn the system</strong><span>Eight guided lessons, with curated diagrams and full references.</span><span class="more">Start walkthrough →</span></a><a href="chapters/index.html"><strong>Use the reference</strong><span>A chapter for each phase and for each of the 32 steps of the budget cycle, with linked primary-source citations.</span><span class="more">Browse chapters →</span></a><a href="systems.html"><strong>Examine systems</strong><span>Institutional mandates, BTMS and IFMIS, record identity and integration evidence.</span><span class="more">Explore systems →</span></a><a href="models/index.html"><strong>Study the models</strong><span>Earlier analytical diagrams and typed registers, separately identified.</span><span class="more">View research models →</span></a></div>
 </section>
 <section id="lines">
 <h2>The four lines and the points where they meet</h2>
 <div class="prose-block"><p>{inline_md(opening, "00_BIG_PICTURE.md", url)}</p></div>
 <p class="map-hint">The drawing is wider than the screen. Move it sideways, or read the same lines in the table below it.</p>
 <div class="map">{map_svg(steps_by_line)}</div>
-<p class="map-note">Each step links to its chapter. The numbers 1 to 3 mark the meeting points, described below. Section 2 of the <a href="big-picture.html#section-2">big picture</a> explains the lines, and diagram <a href="diagrams/00d.html">00d</a> draws them as a net.</p>
+<p class="map-note">Each step links to its chapter. The numbers 1 to 3 mark the meeting points, described below. Section 2 of the <a href="big-picture.html#section-2">big picture</a> explains the lines, and diagram <a href="diagrams/BP-d.html">BP-d</a> draws them as a net.</p>
 {str(lines_soup)}
 </section>
 <section id="meeting-points">
@@ -940,7 +1054,7 @@ def build_home():
     try:
         story = budget_cycle_story.build(
             render_md=lambda md: str(render(md, "00_BIG_PICTURE.md", url)[0]), block=block, big_text=read(BIG),
-            link=link_fragment, chapter_dir=ATLAS / "processes", diagram_ids=set(DIAG),
+            link=link_fragment, chapter_dir=ATLAS / "chapters", diagram_ids=set(DIAG),
             source_codes=set(CODES))
     except ValueError as exc:
         fail(str(exc))
@@ -950,25 +1064,42 @@ def build_home():
 # --- Index pages -------------------------------------------------------------------------------------------------
 
 
+INDEX_GROUPS = [("preparation", "Budget phase 01", "Preparation"), ("legislation", "Budget phase 02", "Legislation"),
+                ("execution", "Budget phase 03", "Execution"), ("accountability", "Budget phase 04", "Accountability"),
+                ("shared", "Shared by all phases", "Information systems and UACS")]
+
+
 def build_chapter_index():
     url = "chapters/index.html"
-    subjects = {posixpath.basename(t)[:2]: cells[0] for t, cells in readme_table("## 4. The chapters")}
-    rows = []
-    for p in CHAPTERS:
-        num = p.name[:2]
-        diagrams = ", ".join('<a class="id" href="../diagrams/%s.html">%s</a>' % (d["id"], d["id"])
-                             for d in DIAGRAMS if d["chapter"] == num)
-        rows.append('<tr><td><a class="row-id" href="%s.html">%s</a></td><td><a href="%s.html">%s</a>%s</td><td>%s</td>'
-                    '<td>%s</td></tr>'
-                    % (num, num, num, esc(re.sub(r"^\d{2}\.\s*", "", chapter_title(num))), chips_html(CHAPTER_TAGS[num]),
-                       inline_md(subjects.get(num, ""), "README.md", url), diagrams))
+    subjects = {posixpath.basename(t).split("_", 1)[0]: cells[0] for t, cells in readme_table("## 4. The chapters")}
+    missing = [pid for pid in CHAPTER_FILE if pid not in subjects]
+    if missing:
+        fail("chapters without a subject in section 4 of the README of the atlas: " + ", ".join(missing))
+    groups = []
+    for key, eyebrow, title in INDEX_GROUPS:
+        rows = []
+        for pid in [x for x in CHAPTER_FILE if PHASE_KEY[x] == key]:
+            diagrams = ", ".join('<a class="id" href="../diagrams/%s.html">%s</a>' % (d["id"], d["id"])
+                                 for d in DIAGRAMS if d["chapter"] == pid)
+            intro = is_phase_intro(pid)
+            rows.append('<tr%s><td><a class="row-id" href="%s.html">%s</a></td><td><a href="%s.html">%s</a>%s%s</td>'
+                        '<td>%s</td><td>%s</td></tr>'
+                        % (' class="phase-intro"' if intro else "", pid, pid, pid, esc(chapter_title(pid)),
+                           '<span class="muted"> · the phase as a whole</span>' if intro else "",
+                           chips_html(CHAPTER_TAGS.get(pid, [])), inline_md(subjects[pid], "README.md", url),
+                           diagrams or '<span class="muted">None</span>'))
+        anchor = "across" if key == "shared" else key
+        groups.append('<section class="pfm-cycle-index-group" id="cycle-chapters-%s"><p class="pfm-cycle-eyebrow">%s</p>'
+                      '<h2>%s</h2><div class="table-wrap"><table><thead><tr><th>No.</th><th>Chapter</th><th>Subject</th>'
+                      '<th>Diagrams</th></tr></thead><tbody>%s</tbody></table></div></section>'
+                      % (anchor, esc(eyebrow.upper()), esc(title), "".join(rows)))
     body = ('<div class="doc-head"><p class="eyebrow">Chapters</p><h1>The chapters</h1></div>'
-            '<p class="prose-block">Each chapter describes one process: the question it answers, the idea in plain words, '
-            'the authorities, the steps, the documents, the systems, the controls, the timing, the reported weaknesses, '
-            'the diagrams and the verification status. The colours mark the lines to which a chapter belongs, as on the '
-            '<a href="../index.html">map</a>.</p>'
-            '<div class="table-wrap"><table><thead><tr><th>No.</th><th>Chapter</th><th>Subject</th><th>Diagrams</th></tr>'
-            '</thead><tbody>%s</tbody></table></div>' % "".join(rows))
+            '<p class="prose-block">The chapters follow the budget cycle in the illustration of DBM. Each of the four '
+            'phases has a chapter that describes it as a whole, and each of its steps has a chapter of its own. Two '
+            'chapters describe what all phases share: the information systems and UACS. The colours mark the lines to '
+            'which a chapter belongs, as on the <a href="../index.html#lines">map</a>.</p>'
+            '<div class="pfm-cycle-catalog" data-atlas-experience="1">%s%s</div>'
+            % (budget_cycle_nav.section_nav("chapters"), "".join(groups)))
     write_page(url, frame(url, "The chapters", body, section="chapters/index.html"))
 
 
@@ -995,11 +1126,11 @@ def build_reference_index():
 def build_diagram_index():
     url = "diagrams/index.html"
     groups = []
-    for num in ["00"] + [p.name[:2] for p in CHAPTERS]:
+    for num in ["BP"] + list(CHAPTER_FILE):
         items = [d for d in DIAGRAMS if d["chapter"] == num]
         if not items:
             continue
-        heading = "The big picture" if num == "00" else chapter_title(num)
+        heading = "The big picture" if num == "BP" else chapter_label(num)
         lis = "".join('<li><span class="id">%s</span><div><a href="%s.html">%s</a> <span class="form">%s</span>'
                       '<span class="q">Question: %s</span></div></li>'
                       % (d["id"], d["id"], esc(d["title"]), esc(d["form"]), esc(d["question"])) for d in items)
@@ -1007,11 +1138,11 @@ def build_diagram_index():
                       % (num, esc(heading), lis))
     n_mmd = sum(1 for d in DIAGRAMS if d["notation"] == "Mermaid")
     body = ('<div class="doc-head"><p class="eyebrow">Diagrams</p><h1>The diagrams</h1></div>'
-            '<p class="prose-block">%d diagrams: %d in Mermaid and %d in PlantUML. The first two characters of an ID '
-            'give the chapter; 00 is the big picture. Each diagram has a page with its image, what it shows, its steps '
-            'where it is a sequence, and its code.</p>'
+            '<p class="prose-block">%d diagrams: %d in Mermaid and %d in PlantUML. The part of an ID before the hyphen '
+            'names the chapter that shows the diagram; BP is the big picture. Each diagram has a page with its image, '
+            'what it shows, its steps where it is a sequence, and its code.</p>'
             '<p><label for="diagram-filter">Filter by words: </label><input id="diagram-filter" type="search" '
-            'placeholder="for example: voucher, BTMS, 07"> <span id="diagram-count" class="muted" role="status"></span></p>%s'
+            'placeholder="for example: voucher, BTMS, E4"> <span id="diagram-count" class="muted" role="status"></span></p>%s'
             % (len(DIAGRAMS), n_mmd, len(DIAGRAMS) - n_mmd, "".join(groups)))
     write_page(url, frame(url, "The diagrams", body, section="diagrams/index.html"))
 
@@ -1021,7 +1152,7 @@ def diagram_bullets(did):
     d = DIAG[did]
     md_rel = d["embedded_in"].split(";")[0].strip()
     lines = read(ATLAS / md_rel).split("\n")
-    start = next(i for i, l in enumerate(lines) if re.match(r"^### Diagram %s\b" % did, l))
+    start = next(i for i, l in enumerate(lines) if re.match(r"^#{3,4} Diagram %s(?![\w-])" % re.escape(did), l))
     i = start + 1
     while i < len(lines) and not lines[i].startswith("Code file:"):
         i += 1
@@ -1118,9 +1249,12 @@ def main():
     build_search_page()
     from build_extensions import build_extensions
     build_extensions(globals())
+    import forwarding
+    n_forward = forwarding.build(write_page, frame, relurl, chapter_label, lambda d: DIAG[d]["title"],
+                                 set(CHAPTER_FILE), set(DIAG))
     save(DOCS / "assets" / "search-index.json", json.dumps(SEARCH, ensure_ascii=False, separators=(",", ":")))
-    print("built site: %d pages, %d diagrams, %d chapters, %d references, %d search entries"
-          % (len(WRITTEN), len(DIAGRAMS), len(CHAPTERS), len(REFERENCES), len(SEARCH)))
+    print("built site: %d pages, %d diagrams, %d chapters, %d references, %d search entries, %d forwarding pages"
+          % (len(WRITTEN), len(DIAGRAMS), len(CHAPTERS), len(REFERENCES), len(SEARCH), n_forward))
 
 
 if __name__ == "__main__":

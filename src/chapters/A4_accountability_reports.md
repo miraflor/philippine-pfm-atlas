@@ -144,7 +144,7 @@ Diagram A4-c shows the flows. The first table gives the budget reports of the jo
 | Report | Content | Period and deadline | Sent to | Through | Basis |
 |---|---|---|---|---|---|
 | BAR 1 | Quarterly Physical Report of Operations: actual outputs against the physical plan (BED 2) | Quarterly, within 30 days after the quarter | DBM, COA | URS | JC2019-1 |
-| FAR 1 | Statement of Appropriations, Allotments, Obligations, Disbursements and Balances, by fund cluster and by program, activity and project | Quarterly, within 30 days | DBM, COA | URS | JC2019-1 |
+| FAR 1 (SAAODB) | Statement of Appropriations, Allotments, Obligations, Disbursements and Balances, by fund cluster and by program, activity and project | Quarterly, within 30 days | DBM, COA | URS | JC2019-1 |
 | FAR 1-A | The same by object of expenditure | Quarterly, within 30 days | DBM, COA | URS | JC2019-1 |
 | FAR 1-B | List of allotments and sub-allotments | Quarterly, within 30 days | DBM, COA | URS | JC2019-1 |
 | FAR 1-C | Obligations, disbursements, liquidations and balances of inter-agency fund transfers | Quarterly, within 30 days | DBM, COA | URS | JC2019-1 |

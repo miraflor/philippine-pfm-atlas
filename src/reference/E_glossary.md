@@ -18,7 +18,10 @@
 | Availability payment | A regular payment by the government to the private partner of a partnership for keeping a facility available, whether or not the public uses it. (P1) | A government undertaking. The Code treats the two as different things |
 | Bicameral conference | A meeting of members of the House and the Senate that reconciles two versions of a bill. (L0) |  |
 | Books of accounts | The journals and ledgers that the accounting unit keeps by double entry, for each fund cluster. (A4) | The registries of the budget unit. Both record the same spending, at different moments |
+| Budget Accountability Report (BAR) | A report on physical or other performance against targets; BAR No. 1 is the Quarterly Physical Report of Operations. It must not be read as proof of expenditure or independently verified output. (A4, section 6) | A Financial Accountability Report (FAR), which deals with amounts and balances. |
+| Budget and Financial Accountability Reports (BFARs) | The prescribed family of physical and financial accountability returns, including BAR and FAR forms. Different reports measure different dimensions of a budget and should not be mistaken for proof that a transaction was lawful or that a service was delivered. (A4, section 6; Reference C) | One financial report; BFAR refers to the family, not to a single form. |
 | Budget Call | The yearly memorandum by which DBM tells agencies how to prepare their proposals. (P0) | The budget ceiling of an agency, which is one content of the Call |
+| Budget Execution Document (BED) | A prescribed agency planning document for financial, physical or monthly disbursement programming. A BED is a plan, not a report of actual spending. (E2) | A Financial Accountability Report, which records execution after the event. |
 | Call-Off | An order under a framework agreement. It is a purchase order, and a certificate of availability of funds is issued for each one. (E1) | The framework agreement itself, for which no certificate is issued |
 | Capital outlays | Spending on assets that last more than one year, such as buildings, roads and equipment. (E0) | Infrastructure only. Capital outlays also include equipment |
 | Capitalization threshold | The unit cost from which an item is recorded as property, plant and equipment: PHP 50,000 since 2022. The Manual of 2015 says PHP 15,000. (A4) | The limit for one payment from petty cash, which is another rule |
@@ -43,6 +46,8 @@
 | Enrolled bill | The final text of a bill as passed by both chambers and sent to the President. (L0) | The law. The bill is not yet law when it is sent to the President |
 | Evaluation | An examination of whether a program caused the result that was intended, at a reasonable cost. (A3) | Monitoring (is the work on schedule), performance review (were the targets reached) and audit (was the money spent lawfully) |
 | Expense | In the books of an agency: the cost of goods or services received in a period, whether or not they are paid. (A4) | An obligation, which is a commitment, and a disbursement, which is cash paid |
+| Financial Accountability Report (FAR) | A numbered financial return prescribed for agencies, with distinct forms for appropriations and allotments, obligations, disbursements, off-budget funds, revenue, and trust receipts. See the FAR No. 1â€“6 list in A4, section 6, and Reference C. | BAR 1, a physical-output report, and an audited financial statement. |
+| Financial statements | Reports derived from accrual accounting records, such as financial position, financial performance and cash flows. They are not interchangeable with the budgetary execution measures in FAR 1. (A4) | Financial Accountability Reports, which use budget-execution reporting bases. |
 | Fiscal risk | An event that would make revenue, spending or debt differ from the plan. (P1) |  |
 | Fiscal space | The spending program minus the total cost of ongoing programs (Tier 1). It is the amount available for new or expanded programs. (P0) | Savings |
 | Fiscal year | The budget year. In the Philippines it is the calendar year. |  |
@@ -50,6 +55,7 @@
 | Framework agreement | An option contract for one, two or three years that fixes the terms and the prices of later orders with one supplier or with several. The agency may order or not order. (E1) | A contract for more than one year, which binds the government for every year and needs a Multi-Year Contractual Authority |
 | Fund cluster | A group of funds that must be recorded and reported separately. There are seven. The cluster is the first two digits of the funding source code. (E6) | A bank account. A cluster is a group in the records. Its cash may be a limit in a sub-account at a servicing bank, or an account in a depository bank |
 | General Fund | The fund that receives all government money for which no law provides a separate fund. (E5) | The Treasury Single Account, which is a structure of bank accounts. The General Fund is a category in the books |
+| Government Accounting Manual | The Commission on Audit manual for national government agencies: Volume I addresses policies and procedures, Volume II accounting books, registries and forms, and Volume III the Revised Chart of Accounts. The original edition is from 2015 and subsequent circulars may modify its provisions. (A4, Reference F) | A DBM budget execution circular or a current service requirement. |
 | Government undertaking | Any contribution or support that the government gives to the private partner of a partnership, for example a subsidy or a guarantee. (P1) | An availability payment |
 | Hash | A short number computed from a file. Any change in the file changes the number. (IS) | The file itself. The file cannot be rebuilt from the number |
 | Head of the procuring entity | The official who approves procurement plans and awards. For an agency this is the head of agency or an authorized official. (E1) | The Bids and Awards Committee, which recommends. The head decides |
@@ -93,6 +99,7 @@
 | Responsibility center | A part of an agency whose head is responsible for a set of activities. Its code is the organization code of UACS with three more digits. (UACS) | An operating unit, which receives release documents from DBM |
 | Retention money | A part of each progress payment that the agency keeps until the work is finally accepted. It covers defects. (E6) | A performance security, which the contractor posts |
 | Reversion | The return of an unused amount to the General Fund when the validity of the appropriation ends. (E0) | The lapse of an NCA at the end of a quarter. A lapsed NCA ends a cash limit. It does not end the allotment |
+| SAAODB | Statement of Appropriations, Allotments, Obligations, Disbursements and Balances (FAR No. 1). A quarterly summary of the stages and remaining balances of agency budget execution. (A4, section 6; Reference C) | A financial statement on the accrual basis, or evidence that physical outputs were delivered. |
 | Sanggunian | The legislature of a local government. (E3) |  |
 | Savings | Parts of an appropriation that are not needed after the purpose was completed or abandoned. The exact definition is in each budget law. (E3) | Any unused balance. An amount that was only not spent is not savings in this sense |
 | Schedule of Market Values | The list of values of land and buildings in a local government, prepared by its assessor, from which the real property tax is computed. (E3) | The tax rate, which the sanggunian sets |
@@ -106,6 +113,8 @@
 | Treasury Single Account | A unified structure of government bank accounts that lets BTr see and use the cash of the government as one balance. (E5) | One bank account, and the General Fund |
 | Trial balance | A list of all accounts of the general ledger with their balances at one date. (A4) | A financial statement. The statements are prepared from it |
 | Trust receipts | Money that the government holds for a specific purpose or for another party. (E5) |  |
+| Unified Accounts Code Structure (UACS) | The common classification for government budget and accounting information, including organizational, funding, program and object segments. It classifies an amount but does not uniquely identify a transaction. (UACS) | Document or transaction identifiers, such as an individual ORS or DV number. |
+| Unified Reporting System (URS) | The DBM platform through which agencies submit prescribed budget execution and financial accountability returns under applicable rules. (IS, A4) | BTMS, a broader budget-execution and accounting system with its own rollout status. |
 | Unprogrammed appropriations | Standby appropriations in the budget law that may be released only when stated conditions are met. (L5) | Off-budget funds, which are not in the budget law |
 | Validity | The period in which an appropriation may be obligated and paid. (E0) | The period of an NCA, which is shorter |
 | Variation order | A change of a works contract after the award. For goods the name is amendment to order. The rules limit the increase of the price. (E1) | A new contract |
@@ -246,6 +255,7 @@
 | RCI | Report of Checks Issued |
 | RDC | Regional Development Council |
 | RLIP | Retirement and life insurance premiums |
+| SAAODB | Statement of Appropriations, Allotments, Obligations, Disbursements and Balances; FAR No. 1 |
 | SARO | Special Allotment Release Order |
 | SBR | Special Budget Request |
 | SCBAA | Statement of Comparison of Budget and Actual Amounts |

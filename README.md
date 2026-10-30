@@ -37,6 +37,7 @@ A diagram has the ID of its chapter, a hyphen and a letter: diagram E4-a is the 
 | Big picture | The whole on a few pages |
 | Chapters | Exactly 32 numbered activities in budget-cycle order, with separate phase introductions and technical references |
 | References | Authorities, systems, documents and identifiers, laws, terms, sources, open points |
+| Evidence pathways | Cross-reference documents, transactions, registries, reports and decisions, with source and verification status |
 | Diagrams | One page for each diagram: the image, what it shows, its steps where it is a sequence, and its code. The list is grouped by chapter |
 | Systems and UACS | A starting page for the information systems and the codes |
 | Research models | Eight curated models with images; the 25 source-only analytical sketches are restored from the prior commit, alongside historical research references and registers |

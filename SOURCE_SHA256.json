@@ -1,12 +1,11 @@
 {
  "current_corpus": {
   "src/00_BIG_PICTURE.md": "3a592d21a0212581285bea66fce2c2b534d7c98dc5909000c4ba3e7e91dadef0",
-  "src/README.md": "905ff12e9bc167ccb791230188ee3982679e4f1b1ef72db09ba1997a8b1b9a54",
   "src/chapters/A0_accountability.md": "328a253db423f58adf8bafb5b6ab572cec1bbbb1cc26410424d883ec6faddf19",
   "src/chapters/A1_performance_targets.md": "ea64350b453a1d5416b46ea0dde65bada07d270fddd64d9fdaf3fe5100d256f0",
   "src/chapters/A2_citizen_engagement_in_accountability.md": "044c62e29457062bf0a05596a2122ba4a28f3f294c2c936dc5e92cd521c067af",
   "src/chapters/A3_monitoring_and_evaluation.md": "e135bb88c90208fb60b953056a90c9bf1986c453256b4ab046e59bd9a3bcad01",
-  "src/chapters/A4_accountability_reports.md": "37da57c3d20331844f4b7db12568336bb26dce2e8b3ae844727420b2f8b39652",
+  "src/chapters/A4_accountability_reports.md": "bca5a955cdc64801665e0c3af07545a7a91058dcf9505a997488e360febaf9ca",
   "src/chapters/A5_performance_review.md": "d1d93daaaf61c9003d1e898bd4923b56d804ff2638cdf242adeed39ab25a7356",
   "src/chapters/A6_in_year_reports.md": "07be82818ec1ef8b1d599bc0adf00ef65f34d0b55d7e15234ba5f677feba0634",
   "src/chapters/A7_dbcc_mid_year_report.md": "1c7a5313ee745a2f2d0d77010f5fcdb0787ba50156ca0eae648d730d26d44c55",
@@ -125,18 +124,18 @@
   "src/diagrams/plantuml/IS-c_systems_components_revenue_treasury.puml": "1f4d293a1fc39730090d9d60b46fc85e8be1c7ae7112e72f5795de35ed6a407e",
   "src/diagrams/plantuml/P0-b_budget_preparation_swimlane.puml": "12811ca6609c678bd64bae739b155f78f46de86428d62a3959631d4366f8c01a",
   "src/diagrams/plantuml/P1-e_ppp_project_swimlane.puml": "cf18025d8501b242990b00005cffcbdd44bf1d8727aab58f5b7b36e3dabde378",
+  "src/evidence/lineage.json": "cd9061a33a25a2504ecdb69e59666337d02c9144e7a2e50e6b54a48975624290",
+  "src/README.md": "905ff12e9bc167ccb791230188ee3982679e4f1b1ef72db09ba1997a8b1b9a54",
   "src/reference/A_authorities_and_mandates.md": "cbed202aeba222ac8ad36c3f93eb0bdadf0e11af2adaef9f2718347c45e7076a",
   "src/reference/B_information_systems_inventory.md": "795b7783d2a4a44c6252004ca650fe87d603693c202231723331bb0a679d3e73",
-  "src/reference/C_documents_and_identifiers.md": "4848a4aa9a596e57a44e0dcb43af65be48fb82a7ecddf010ed039eb6f20e7315",
+  "src/reference/C_documents_and_identifiers.md": "37a6b77025626177bf27fc8c3b2b2e154a8dfd30d46980186cd3cc5d20adaeb1",
   "src/reference/D_legal_framework.md": "6a4f3ebc5e909c3cfeadce27d469025d2b057b10ed6650f6b686cfb64db04384",
-  "src/reference/E_glossary.md": "44a902fc5c84a003a23feba083cb72e3276360a4eedae69b6dcd9522b62b70b4",
+  "src/reference/E_glossary.md": "af92553d09d617f4b4f1e8f63b557fadf609eac8976a45f987dc7d483bbe54fd",
   "src/reference/F_sources_and_verification.md": "6c61e5ad8d11ba4c58732e97696084287563e28b5613c4e20bcf48e173e0943a",
   "src/reference/G_open_questions_and_known_gaps.md": "c00da5e26a04da41dc060a34fe7161757969212b6405989c77ccba04d7a9109a"
  },
  "research_corpus": {
   "research_models/00_REVISED_BIG_PICTURE.md": "9cc01436d1b36892a2e1370031e981de7f13b670933a06400b7a92e2fd1d7a3a",
-  "research_models/README.md": "18982cfa5c0479fdb27a8fe013668a7a19e652e72d719b71c5a4c3a83e332cc8",
-  "research_models/VALIDATION_REPORT.md": "60c40ff799d7d817044938687954483abdd384fd0c0f72cbb8249a960f8ac163",
   "research_models/diagrams/mermaid/00a_pfm_cycle_overview.mmd": "8498120fb2074b82ed992ff04ceeb059eff03f3420061b325ee7c34e570bf1a0",
   "research_models/diagrams/mermaid/00b_authorities_map.mmd": "76f6dacb49a804fb4d3d607dd9001906f475670f18773bc8922d40130cb1a37c",
   "research_models/diagrams/mermaid/00c_systems_landscape.mmd": "781e5f895283640c2ba145cb17603b93e2cf98e52971ffbd3ba24878e641d4a6",
@@ -252,6 +251,7 @@
   "research_models/diagrams/plantuml/19b_ppp_project_swimlane.puml": "5905f55e665001721b3f1fc58268d966b10ee87d10d65e15dcfc416edd2073d5",
   "research_models/diagrams/plantuml/RM-8_financial_record_class_model.puml": "82c864f86e679817a485a7f69c5f4009071bb99a64f35f32fac3ef7d465de203",
   "research_models/models_index.json": "543a23f3b3f4e8b6044380e289e852023afeed29285f4f83473ef5f5ad4f1187",
+  "research_models/README.md": "18982cfa5c0479fdb27a8fe013668a7a19e652e72d719b71c5a4c3a83e332cc8",
   "research_models/reference/H_reference_model_contract.md": "aa5151f1c9f5fcab28d638a3bfe7286298fd1cfb5bfbb4810475ca1fb2d235ab",
   "research_models/reference/I_interface_evidence_and_status.md": "c9340fabaa29d6e757e613f7146e3711235e97e7e7ea59564428c9ccfae89a3d",
   "research_models/reference/J_controls_exceptions_and_temporal_model.md": "0e13c3b900c1703eddbfd51945bbadb2f632275608073e51a017310d33fb91fc",
@@ -271,6 +271,7 @@
   "research_models/rendered/RM-6_interface_failure_and_reconciliation.png": "9fbb3568a2bb0cc273aa91122979649d6339926820b954c5a1f2a4ba6b00fe15",
   "research_models/rendered/RM-7_uacs_version_crosswalk.png": "dde3862ea4da76410b225017e72916afe9ac42a8ce0c13c8a980e04b83a57841",
   "research_models/rendered/RM-8_financial_record_class_model.png": "eacff9580ea75c58c9a499288bdf780a6dbb430d3dd7e19987b0f9dec53ec87a",
-  "research_models/supplemental_index.json": "3d7191922d3fe7326884642b1a08e869e80cc0fbb7157d3ad3b048811ab87a27"
+  "research_models/supplemental_index.json": "3d7191922d3fe7326884642b1a08e869e80cc0fbb7157d3ad3b048811ab87a27",
+  "research_models/VALIDATION_REPORT.md": "60c40ff799d7d817044938687954483abdd384fd0c0f72cbb8249a960f8ac163"
  }
 }

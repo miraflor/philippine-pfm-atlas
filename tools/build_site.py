@@ -1124,6 +1124,9 @@ def build_reference_index():
     body = ('<div class="doc-head"><p class="eyebrow">References</p><h1>The reference files</h1></div>'
             '<div class="table-wrap"><table><thead><tr><th></th><th>Reference</th><th>Content</th></tr></thead>'
             '<tbody>%s</tbody></table></div>'
+            '<p class="prose-block">Follow the <a href="../evidence.html">evidence pathways</a> '
+            'from source documents to events, registries, financial reports and decisions; '
+            'each connection has a source and a verification status.</p>'
             '<p class="prose-block">Three tables are also available as CSV files, for use in a spreadsheet or a program: '
             '<a href="../atlas/reference/diagram_index.csv">diagram_index.csv</a>, '
             '<a href="../atlas/reference/steps_register.csv">steps_register.csv</a> and '
@@ -1283,6 +1286,9 @@ def build_search_page():
             '<form id="search-form" class="search-page" action="search.html" role="search"><label class="visually-hidden" '
             'for="q">Search the atlas</label><input id="q" name="q" type="search" placeholder="A word, a code or a form">'
             '<button type="submit">Search</button></form>'
+            '<p class="prose-block">Search abbreviations, official form names and report numbers. '
+            'See <a href="reference/e.html">Glossary</a> and '
+            '<a href="evidence.html">Evidence pathways</a> for document-to-decision links.</p>'
             '<p id="search-status" class="muted" role="status"></p><ol id="results"></ol>'
             '<noscript><p>The search needs JavaScript. Without it, use the <a href="chapters/index.html">chapters</a>, '
             'the <a href="reference/index.html">references</a> and the <a href="diagrams/index.html">diagrams</a>.</p></noscript>')
@@ -1317,6 +1323,8 @@ def main():
     build_diagram_index()
     build_diagram_pages()
     build_search_page()
+    from evidence_catalogue import build_evidence_page
+    build_evidence_page(globals())
     from build_extensions import build_extensions
     build_extensions(globals())
     import forwarding

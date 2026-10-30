@@ -1,0 +1,770 @@
+{
+  "schema_version": 1,
+  "scope_note": "Illustrative, source-qualified pathways, not a claim that all government transactions or reporting obligations have been mapped. Applicable rules depend on the agency, fund, fiscal year and transaction.",
+  "statuses": {
+    "documented": "Described in an existing Atlas chapter and cited source; current applicability still depends on later rules.",
+    "verify_current": "Relevant source or practice identified, but its current operative detail must be checked before treating it as a rule.",
+    "interpretation": "Analytical connection inferred from multiple records, not a quoted or mandatory exchange."
+  },
+  "items": [
+    {
+      "id": "appropriation",
+      "type": "document",
+      "name": "Appropriation in the GAA",
+      "aliases": [
+        "GAA appropriation",
+        "budget law appropriation"
+      ],
+      "definition": "Legal authorization for expenditure for a specified purpose and period; it is not a payment or, in every case, a separate release document.",
+      "chapter": "chapters/E0.html",
+      "source": "NBC599",
+      "status": "documented"
+    },
+    {
+      "id": "saro",
+      "type": "document",
+      "name": "Special Allotment Release Order",
+      "aliases": [
+        "SARO"
+      ],
+      "definition": "An allotment release instrument used where the GAA itself does not serve as the allotment order.",
+      "chapter": "chapters/E3.html",
+      "source": "NBC599",
+      "status": "documented"
+    },
+    {
+      "id": "nca",
+      "type": "document",
+      "name": "Notice of Cash Allocation",
+      "aliases": [
+        "NCA",
+        "cash allocation"
+      ],
+      "definition": "Disbursement authority setting a limit for payments through the applicable servicing-bank arrangement; not a transfer of cash to the agency.",
+      "chapter": "chapters/E5.html",
+      "source": "NBC599",
+      "status": "documented"
+    },
+    {
+      "id": "obligation",
+      "type": "transaction",
+      "name": "Recording an obligation",
+      "aliases": [
+        "obligation posting",
+        "incurring an obligation"
+      ],
+      "definition": "Charging a commitment to the applicable allotment, distinguished from later acceptance and payment.",
+      "chapter": "chapters/E4.html",
+      "source": "GAM-V1",
+      "status": "documented"
+    },
+    {
+      "id": "ors",
+      "type": "document",
+      "name": "Obligation Request and Status",
+      "aliases": [
+        "ORS",
+        "Obligation Request"
+      ],
+      "definition": "Document supporting and tracking a particular obligation and subsequent adjustments and payment information.",
+      "chapter": "chapters/E4.html",
+      "source": "GAM-V2",
+      "status": "documented"
+    },
+    {
+      "id": "iar",
+      "type": "document",
+      "name": "Inspection and Acceptance Report",
+      "aliases": [
+        "IAR",
+        "inspection report",
+        "acceptance report"
+      ],
+      "definition": "Records inspection and acceptance of delivered goods, distinguished from an obligation or a disbursement.",
+      "chapter": "chapters/E4.html",
+      "source": "GAM-V2",
+      "status": "documented"
+    },
+    {
+      "id": "acceptance",
+      "type": "transaction",
+      "name": "Acceptance of delivery",
+      "aliases": [
+        "goods acceptance",
+        "accepted delivery"
+      ],
+      "definition": "Recognition that delivery was inspected and accepted; may establish an account payable, not a payment.",
+      "chapter": "chapters/E4.html",
+      "source": "GAM-V1",
+      "status": "documented"
+    },
+    {
+      "id": "dv",
+      "type": "document",
+      "name": "Disbursement Voucher",
+      "aliases": [
+        "DV",
+        "voucher"
+      ],
+      "definition": "Document containing certifications and approval of a claim for payment; an approved voucher alone does not establish bank settlement.",
+      "chapter": "chapters/E4.html",
+      "source": "GAM-V2",
+      "status": "documented"
+    },
+    {
+      "id": "lddap-ada",
+      "type": "document",
+      "name": "List of Due and Demandable Accounts Payable with Advice to Debit Account",
+      "aliases": [
+        "LDDAP-ADA",
+        "LDDAP ADA",
+        "payment order"
+      ],
+      "definition": "Agency instruction to the servicing bank listing payees and amounts, not by itself proof that the payees were credited.",
+      "chapter": "chapters/E6.html",
+      "source": "GAM-V2",
+      "status": "documented"
+    },
+    {
+      "id": "settlement",
+      "type": "transaction",
+      "name": "Bank settlement",
+      "aliases": [
+        "bank payment",
+        "payee credit"
+      ],
+      "definition": "The bank's payment to a payee, which can occur on a different date from the agency's recording of the disbursement.",
+      "chapter": "chapters/E6.html",
+      "source": "GAM-V1",
+      "status": "documented"
+    },
+    {
+      "id": "rapal",
+      "type": "registry",
+      "name": "Registry of Appropriations and Allotments",
+      "aliases": [
+        "RAPAL"
+      ],
+      "definition": "Agency budget-unit registry of appropriations and allotments, not a double-entry accounting ledger.",
+      "chapter": "chapters/A4.html",
+      "source": "GAM-V2",
+      "status": "documented"
+    },
+    {
+      "id": "raod",
+      "type": "registry",
+      "name": "Registries of Allotments, Obligations and Disbursements",
+      "aliases": [
+        "RAOD",
+        "Registry of Allotments Obligations and Disbursements"
+      ],
+      "definition": "Budget-unit records of allotments, obligations, disbursements and related balances by applicable classification.",
+      "chapter": "chapters/A4.html",
+      "source": "GAM-V2",
+      "status": "documented"
+    },
+    {
+      "id": "rbud",
+      "type": "registry",
+      "name": "Registries of Budget, Utilization and Disbursements",
+      "aliases": [
+        "RBUD"
+      ],
+      "definition": "Budget-unit registries for specified funds that do not use the ordinary DBM allotment route.",
+      "chapter": "chapters/A4.html",
+      "source": "GAM-V2",
+      "status": "documented"
+    },
+    {
+      "id": "ranca",
+      "type": "registry",
+      "name": "Registry of Allotments and Notice of Cash Allocation",
+      "aliases": [
+        "RANCA",
+        "NCA registry"
+      ],
+      "definition": "Accounting-unit record of allotment, cash allocation and use of cash authority.",
+      "chapter": "chapters/A4.html",
+      "source": "GAM-V2",
+      "status": "documented"
+    },
+    {
+      "id": "jevs",
+      "type": "document",
+      "name": "Journal Entry Voucher",
+      "aliases": [
+        "JEV",
+        "journal entry voucher"
+      ],
+      "definition": "Document for recording accounting entries; distinct from agency budget-unit registries.",
+      "chapter": "chapters/A4.html",
+      "source": "GAM-V2",
+      "status": "documented"
+    },
+    {
+      "id": "transfer-agreement",
+      "type": "document",
+      "name": "Inter-agency fund-transfer agreement",
+      "aliases": [
+        "fund transfer MOA",
+        "transfer memorandum of agreement"
+      ],
+      "definition": "Agreement documenting the source and implementing agencies' respective responsibilities for a transfer.",
+      "chapter": "chapters/E6.html",
+      "source": "GAM-V1",
+      "status": "documented"
+    },
+    {
+      "id": "transfer",
+      "type": "transaction",
+      "name": "Inter-agency fund transfer",
+      "aliases": [
+        "interagency fund transfer",
+        "transferred funds"
+      ],
+      "definition": "Transfer to an implementing entity with accounting, use, reporting and liquidation requirements; cash transfer and reportable disbursement may occur at different times.",
+      "chapter": "chapters/E6.html",
+      "source": "NBC599",
+      "status": "documented"
+    },
+    {
+      "id": "liquidation",
+      "type": "document",
+      "name": "Transfer utilization and liquidation reports",
+      "aliases": [
+        "liquidation report",
+        "fund transfer liquidation",
+        "report of cash disbursements"
+      ],
+      "definition": "Reports from the implementing agency showing eligible actual project expenditure and the remaining balance.",
+      "chapter": "chapters/E6.html",
+      "source": "GAM-V1",
+      "status": "documented"
+    },
+    {
+      "id": "bar-family",
+      "type": "concept",
+      "name": "Budget Accountability Report",
+      "aliases": [
+        "BAR",
+        "BARs",
+        "Budget Accountability Reports"
+      ],
+      "definition": "Physical/performance accountability reports within the BFAR family, separate from the numbered Financial Accountability Reports.",
+      "chapter": "chapters/A4.html#section-6",
+      "source": "JC2019-1",
+      "status": "documented"
+    },
+    {
+      "id": "bed-family",
+      "type": "concept",
+      "name": "Budget Execution Document",
+      "aliases": [
+        "BED",
+        "BEDs",
+        "BED 1",
+        "BED 2",
+        "BED 3",
+        "Budget Execution Documents"
+      ],
+      "definition": "Budget execution plans submitted by agencies, including financial, physical and cash-disbursement programming; plans are not actual expenditure reports.",
+      "chapter": "chapters/E2.html",
+      "source": "NBC599",
+      "status": "documented"
+    },
+    {
+      "id": "gam",
+      "type": "concept",
+      "name": "Government Accounting Manual for National Government Agencies",
+      "aliases": [
+        "GAM",
+        "COA Government Accounting Manual",
+        "GAM Volume I",
+        "GAM Volume II",
+        "GAM Volume III"
+      ],
+      "definition": "COA manual covering accounting rules and procedures (Volume I), forms and records (Volume II), and the Revised Chart of Accounts (Volume III); later issuances may change particular provisions.",
+      "chapter": "chapters/A4.html",
+      "source": "GAM-V1",
+      "status": "documented"
+    },
+    {
+      "id": "uacs",
+      "type": "concept",
+      "name": "Unified Accounts Code Structure",
+      "aliases": [
+        "UACS",
+        "Philippine UACS"
+      ],
+      "definition": "Common coding structure for classification of government financial information; a code is not an identifier for a unique payment or voucher.",
+      "chapter": "chapters/UACS.html",
+      "source": "JC2017-1",
+      "status": "documented"
+    },
+    {
+      "id": "urs",
+      "type": "concept",
+      "name": "Unified Reporting System",
+      "aliases": [
+        "URS",
+        "DBM URS"
+      ],
+      "definition": "DBM reporting channel for prescribed budget execution and accountability documents, subject to the applicable rollout and reporting circulars.",
+      "chapter": "chapters/IS.html",
+      "source": "JC2019-1",
+      "status": "documented"
+    },
+    {
+      "id": "financial-statements",
+      "type": "concept",
+      "name": "Government agency financial statements",
+      "aliases": [
+        "financial statements",
+        "financial position",
+        "financial performance",
+        "accrual financial statements"
+      ],
+      "definition": "Accrual-based financial statements produced from accounting records; their measurement basis differs from an agency's budget execution FAR reports.",
+      "chapter": "chapters/A4.html",
+      "source": "GAM-V1",
+      "status": "documented"
+    },
+    {
+      "id": "far-family",
+      "type": "concept",
+      "name": "Financial Accountability Report",
+      "aliases": [
+        "FAR",
+        "FARs",
+        "Financial Accountability Reports"
+      ],
+      "definition": "A numbered financial reporting form within the Budget and Financial Accountability Reports family, including reports on execution, funds, obligations, disbursements and receipts.",
+      "chapter": "chapters/A4.html#section-6",
+      "source": "JC2019-1",
+      "status": "documented"
+    },
+    {
+      "id": "bfar-family",
+      "type": "concept",
+      "name": "Budget and Financial Accountability Reports",
+      "aliases": [
+        "BFAR",
+        "BFARs",
+        "Budget and Financial Accountability Report"
+      ],
+      "definition": "Family of prescribed budget and financial accountability returns; includes the BAR and FAR forms identified by the governing joint circular.",
+      "chapter": "chapters/A4.html#section-6",
+      "source": "JC2019-1",
+      "status": "documented"
+    },
+    {
+      "id": "far-1",
+      "type": "report",
+      "name": "FAR No. 1 — Statement of Appropriations, Allotments, Obligations, Disbursements and Balances",
+      "aliases": [
+        "SAAODB",
+        "FAR 1",
+        "FAR No 1",
+        "FAR No.1",
+        "Statement of Appropriations Allotments Obligations Disbursements and Balances"
+      ],
+      "definition": "Quarterly report comparing appropriations, allotments, obligations, disbursements and balances for the applicable agency, funding and program classifications.",
+      "chapter": "chapters/A4.html#section-6",
+      "source": "JC2019-1",
+      "status": "documented"
+    },
+    {
+      "id": "far-1a",
+      "type": "report",
+      "name": "FAR No. 1-A — Summary by Object of Expenditures",
+      "aliases": [
+        "FAR 1A",
+        "FAR 1-A",
+        "FAR No.1A",
+        "FAR No 1-A"
+      ],
+      "definition": "Quarterly companion of FAR 1 presenting amounts by object of expenditure.",
+      "chapter": "chapters/A4.html#section-6",
+      "source": "JC2019-1",
+      "status": "documented"
+    },
+    {
+      "id": "far-1b",
+      "type": "report",
+      "name": "FAR No. 1-B — List of Allotments and Sub-Allotments",
+      "aliases": [
+        "FAR 1B",
+        "FAR 1-B",
+        "FAR No.1B"
+      ],
+      "definition": "Quarterly list of allotments and sub-allotments.",
+      "chapter": "chapters/A4.html#section-6",
+      "source": "JC2019-1",
+      "status": "documented"
+    },
+    {
+      "id": "far-1c",
+      "type": "report",
+      "name": "FAR No. 1-C — Inter-Agency Fund Transfers",
+      "aliases": [
+        "FAR 1C",
+        "FAR 1-C",
+        "FAR No.1C",
+        "Statement of Obligations Disbursements Liquidations and Balances for Inter-agency Fund Transfers"
+      ],
+      "definition": "Quarterly statement of obligations, disbursements, liquidations and balances related to inter-agency fund transfers.",
+      "chapter": "chapters/A4.html#section-6",
+      "source": "JC2019-1",
+      "status": "documented"
+    },
+    {
+      "id": "far-2",
+      "type": "report",
+      "name": "FAR No. 2 — Off-Budget Fund Utilization",
+      "aliases": [
+        "FAR 2",
+        "FAR No.2"
+      ],
+      "definition": "Quarterly budget, utilization, disbursement and balance report for specified off-budget funds.",
+      "chapter": "chapters/A4.html#section-6",
+      "source": "JC2019-1",
+      "status": "documented"
+    },
+    {
+      "id": "far-2a",
+      "type": "report",
+      "name": "FAR No. 2-A — Off-Budget Funds by Object",
+      "aliases": [
+        "FAR 2A",
+        "FAR 2-A",
+        "FAR No.2A"
+      ],
+      "definition": "Companion presentation of off-budget fund execution by object of expenditure; confirm fields against the governing form.",
+      "chapter": "chapters/A4.html#section-6",
+      "source": "JC2019-1",
+      "status": "verify_current"
+    },
+    {
+      "id": "far-3",
+      "type": "report",
+      "name": "FAR No. 3 — Aging of Due and Demandable Obligations",
+      "aliases": [
+        "FAR 3",
+        "FAR No.3",
+        "aging of obligations"
+      ],
+      "definition": "Annual account of unpaid due-and-demandable obligations by age.",
+      "chapter": "chapters/A4.html#section-6",
+      "source": "JC2019-1",
+      "status": "documented"
+    },
+    {
+      "id": "far-4",
+      "type": "report",
+      "name": "FAR No. 4 — Monthly Report of Disbursements",
+      "aliases": [
+        "FAR 4",
+        "FAR No.4",
+        "monthly disbursement report"
+      ],
+      "definition": "Monthly report of disbursements by type of disbursement authority.",
+      "chapter": "chapters/A4.html#section-6",
+      "source": "JC2019-1",
+      "status": "documented"
+    },
+    {
+      "id": "far-5",
+      "type": "report",
+      "name": "FAR No. 5 — Quarterly Report of Revenue and Other Receipts",
+      "aliases": [
+        "FAR 5",
+        "FAR No.5",
+        "revenue and other receipts"
+      ],
+      "definition": "Quarterly report of revenue and other receipts by fund cluster.",
+      "chapter": "chapters/A4.html#section-6",
+      "source": "JC2019-1",
+      "status": "documented"
+    },
+    {
+      "id": "far-6",
+      "type": "report",
+      "name": "FAR No. 6 — Trust Receipts",
+      "aliases": [
+        "FAR 6",
+        "FAR No.6",
+        "Statement of Approved Budgets Utilizations Disbursements and Balances for Trust Receipts"
+      ],
+      "definition": "Quarterly report on approved budgets, utilization, disbursements and balances for specified trust receipts.",
+      "chapter": "chapters/A4.html#section-6",
+      "source": "JC2019-1",
+      "status": "documented"
+    },
+    {
+      "id": "bar-1",
+      "type": "report",
+      "name": "BAR No. 1 — Quarterly Physical Report of Operations",
+      "aliases": [
+        "BAR 1",
+        "BAR No.1",
+        "Quarterly Physical Report of Operation"
+      ],
+      "definition": "Quarterly report of physical outputs against targets, distinct from a financial disbursement report.",
+      "chapter": "chapters/A4.html#section-6",
+      "source": "JC2019-1",
+      "status": "documented"
+    },
+    {
+      "id": "decision-nca",
+      "type": "decision",
+      "name": "Review of an additional NCA request",
+      "aliases": [
+        "additional NCA",
+        "release additional NCA",
+        "DBM cash allocation review"
+      ],
+      "definition": "DBM service decision for requests for additional cash allocation; required supporting reports must be checked against the current Citizen's Charter and applicable circulars.",
+      "chapter": "chapters/E5.html",
+      "source": "NBC599",
+      "status": "verify_current"
+    },
+    {
+      "id": "decision-audit",
+      "type": "decision",
+      "name": "Audit finding or action",
+      "aliases": [
+        "COA audit",
+        "notice of disallowance",
+        "audit action"
+      ],
+      "definition": "COA audit work may examine agency financial records and reports; the individual finding depends on the evidence and applicable rules.",
+      "chapter": "chapters/A9.html",
+      "source": "PD1445",
+      "status": "documented"
+    },
+    {
+      "id": "coa-94-013",
+      "type": "authority",
+      "name": "COA Circular No. 94-013",
+      "aliases": [
+        "COA 94-013",
+        "COA Circular 94 013",
+        "Circular 94-013"
+      ],
+      "definition": "1994 COA issuance concerning the grant, utilization and liquidation of funds transferred to implementing agencies. Verify the current interaction with later issuances before operational use.",
+      "chapter": "chapters/E6.html#section-9",
+      "source_url": "https://www.coa.gov.ph/wp-content/uploads/ABC-Help/Various_Transaction/29circ94-013.htm",
+      "status": "verify_current"
+    }
+  ],
+  "links": [
+    {
+      "from": "saro",
+      "to": "obligation",
+      "relation": "authorizes",
+      "basis": "NBC599",
+      "status": "documented",
+      "note": "For appropriations requiring a separate release; some GAA items themselves serve as the allotment order."
+    },
+    {
+      "from": "ors",
+      "to": "obligation",
+      "relation": "documents",
+      "basis": "GAM-V2",
+      "status": "documented",
+      "note": "The obligation request records the particular obligation."
+    },
+    {
+      "from": "obligation",
+      "to": "raod",
+      "relation": "posted_to",
+      "basis": "GAM-V1",
+      "status": "documented",
+      "note": "Budget unit tracks the obligation in the relevant registry."
+    },
+    {
+      "from": "appropriation",
+      "to": "rapal",
+      "relation": "posted_to",
+      "basis": "GAM-V1",
+      "status": "documented",
+      "note": "Appropriation is tracked in the budget registry."
+    },
+    {
+      "from": "saro",
+      "to": "rapal",
+      "relation": "posted_to",
+      "basis": "GAM-V1",
+      "status": "documented",
+      "note": "The release is tracked in the appropriations/allotments registry."
+    },
+    {
+      "from": "iar",
+      "to": "acceptance",
+      "relation": "documents",
+      "basis": "GAM-V2",
+      "status": "documented",
+      "note": "For procurements subject to inspection and acceptance."
+    },
+    {
+      "from": "acceptance",
+      "to": "dv",
+      "relation": "supports",
+      "basis": "GAM-V1",
+      "status": "documented",
+      "note": "One common claim path; salaries, advances, and other payment types differ."
+    },
+    {
+      "from": "dv",
+      "to": "lddap-ada",
+      "relation": "supports",
+      "basis": "GAM-V2",
+      "status": "documented",
+      "note": "For payments using LDDAP-ADA rather than another valid disbursement mode."
+    },
+    {
+      "from": "nca",
+      "to": "ranca",
+      "relation": "posted_to",
+      "basis": "GAM-V1",
+      "status": "documented",
+      "note": "NCA receipt and use are tracked by the accounting unit."
+    },
+    {
+      "from": "nca",
+      "to": "lddap-ada",
+      "relation": "limits",
+      "basis": "GAM-V1",
+      "status": "documented",
+      "note": "Cash authority constrains eligible payments; this is not a transfer of cash to the agency."
+    },
+    {
+      "from": "lddap-ada",
+      "to": "settlement",
+      "relation": "instructs",
+      "basis": "GAM-V1",
+      "status": "documented",
+      "note": "Instruction is not evidence of payment; bank validation/credit happens subsequently."
+    },
+    {
+      "from": "raod",
+      "to": "far-1",
+      "relation": "aggregated_into",
+      "basis": "JC2019-1",
+      "status": "documented",
+      "note": "Agency budget registry is one report source; reconciliation with books is required."
+    },
+    {
+      "from": "raod",
+      "to": "far-1a",
+      "relation": "aggregated_into",
+      "basis": "JC2019-1",
+      "status": "documented",
+      "note": "Report detail is by object of expenditure."
+    },
+    {
+      "from": "rapal",
+      "to": "far-1b",
+      "relation": "aggregated_into",
+      "basis": "JC2019-1",
+      "status": "interpretation",
+      "note": "The list of release documents and sub-allotments must be reconciled with the prescribed FAR 1-B fields."
+    },
+    {
+      "from": "rbud",
+      "to": "far-2",
+      "relation": "aggregated_into",
+      "basis": "JC2019-1",
+      "status": "documented",
+      "note": "For relevant off-budget funds."
+    },
+    {
+      "from": "rbud",
+      "to": "far-2a",
+      "relation": "aggregated_into",
+      "basis": "JC2019-1",
+      "status": "verify_current",
+      "note": "Confirm detail and current prescribed template for FAR 2-A."
+    },
+    {
+      "from": "raod",
+      "to": "far-3",
+      "relation": "aggregated_into",
+      "basis": "JC2019-1",
+      "status": "interpretation",
+      "note": "Aging is based on verified outstanding due and demandable obligations, not any unpaid obligation."
+    },
+    {
+      "from": "raod",
+      "to": "far-4",
+      "relation": "compared_with",
+      "basis": "JC2019-1",
+      "status": "interpretation",
+      "note": "Disbursement figures should be reconciled with underlying payment and cash records; not a claim of direct automated data transfer."
+    },
+    {
+      "from": "transfer-agreement",
+      "to": "transfer",
+      "relation": "authorizes",
+      "basis": "GAM-V1",
+      "status": "documented",
+      "note": "Relevant MOA provisions and fund transfer conditions apply."
+    },
+    {
+      "from": "transfer",
+      "to": "liquidation",
+      "relation": "requires_followup",
+      "basis": "GAM-V1",
+      "status": "documented",
+      "note": "Implementing agency reports eligible project expenditure and balances."
+    },
+    {
+      "from": "liquidation",
+      "to": "far-1c",
+      "relation": "summarized_in",
+      "basis": "JC2019-1",
+      "status": "documented",
+      "note": "Report covers inter-agency obligations, disbursements, liquidations and balances."
+    },
+    {
+      "from": "coa-94-013",
+      "to": "transfer",
+      "relation": "governs",
+      "basis_url": "https://www.coa.gov.ph/wp-content/uploads/ABC-Help/Various_Transaction/29circ94-013.htm",
+      "status": "verify_current",
+      "note": "Historical COA circular identified; check later issuances and applicability before asserting a current obligation."
+    },
+    {
+      "from": "far-1",
+      "to": "decision-nca",
+      "relation": "supports_request",
+      "basis_url": "https://www.dbm.gov.ph/wp-content/uploads/AboutDBM/UPDATED-DBM-CITIZEN%27S-CHARTER_December-2019.pdf",
+      "status": "verify_current",
+      "note": "Documented in a 2019 DBM Citizen's Charter; recheck the 2026 edition and fiscal-year circulars."
+    },
+    {
+      "from": "far-4",
+      "to": "decision-nca",
+      "relation": "supports_request",
+      "basis_url": "https://www.dbm.gov.ph/wp-content/uploads/AboutDBM/UPDATED-DBM-CITIZEN%27S-CHARTER_December-2019.pdf",
+      "status": "verify_current",
+      "note": "Supporting financial report in a cited historical service process, not an unconditional present-day requirement."
+    },
+    {
+      "from": "far-1",
+      "to": "decision-audit",
+      "relation": "available_for_review",
+      "basis": "JC2019-1",
+      "status": "interpretation",
+      "note": "Reports may be examined in the broader audit process; filing alone does not establish correctness."
+    },
+    {
+      "from": "bar-1",
+      "to": "decision-audit",
+      "relation": "available_for_review",
+      "basis": "JC2019-1",
+      "status": "interpretation",
+      "note": "Physical output report is agency-supplied evidence and not independent verification of outputs."
+    }
+  ]
+}

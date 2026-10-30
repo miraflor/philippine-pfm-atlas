@@ -136,27 +136,43 @@ def _intro_nav(destination='home', prefix=''):
 
 
 def home_cycle():
-    """Compact four-phase wayfinder; the adjacent illustrated explorer is the one actionable 32-step route."""
+    """Four succinct, accessible phase disclosures; the 32-step explorer remains the primary detailed view."""
     out = [
         '<section id="budget-cycle" class="atlas-story-section pfm-cycle" aria-labelledby="pfm-cycle-title">',
         '<p class="atlas-kicker">The national budget process</p>',
-        '<h2 id="pfm-cycle-title">Explore the budget through its four phases.</h2>',
-        '<p class="pfm-cycle-lede">The interactive step explorer above opens each of the 32 activities. '
-        'Browse the same activities as full chapters, or read an introduction to any phase.</p>',
-        _intro_nav(),
-        '<p class="pfm-cycle-caveat"><strong>Several budget years overlap.</strong> '
-        'The calendar is illustrative, not an authoritative schedule of annual deadlines.</p>',
+        '<h2 id="pfm-cycle-title">Four phases. One budget cycle.</h2>',
+        '<p class="pfm-cycle-lede">Choose a phase to see its activities. The full 32-step explorer above '
+        'shows how the activities connect; the four-line map below explains the authorities, claims, cash and records.</p>',
+        '<div class="pfm-phase-disclosures">',
     ]
-    for p in PHASES:
-        out.append('<section class="pfm-cycle-phase" id="phase-%s"><div class="pfm-cycle-phase-head">'
-                   '<p class="pfm-cycle-eyebrow">PHASE %s</p><h3>%s</h3><p>%s</p></div>'
-                   '<p><a href="chapters/index.html#cycle-chapters-%s">Explore the %d activities</a> · '
-                   '<a href="chapters/%s0.html">Phase overview</a></p></section>' %
-                   (p['id'], p['number'], _esc(p['name']), _esc(p['summary']), p['id'],
-                    len(p['steps']), p['id'][0].upper()))
-    out.append('<aside class="pfm-cycle-related"><h3>Evidence beyond the expenditure sequence</h3>'
-               '<p>The four-line map below explains how legal authority, claims, cash and records interact. '
-               '<a href="systems.html">Information systems and UACS</a> support multiple activities.</p></aside>'
+    for i, p in enumerate(PHASES):
+        key, num = p['id'], p['number']
+        out.append('<details class="pfm-cycle-phase pfm-phase-%s" id="phase-%s" name="pfm-phase"%s>'
+                   % (key, key, ' open' if i == 0 else ''))
+        out.append('<summary class="pfm-phase-summary"><span class="pfm-cycle-eyebrow">%s / 04</span>'
+                   '<span class="pfm-phase-name">%s</span>'
+                   '<span class="pfm-phase-deck">%s</span>'
+                   '<span class="pfm-phase-count">%d activities <span aria-hidden="true">⌄</span></span></summary>'
+                   % (num, _esc(p['name']), _esc(p['summary']), len(p['steps'])))
+        out.append('<div class="pfm-phase-body">'
+                   '<p class="pfm-phase-when">%s</p>'
+                   '<div class="pfm-phase-facts">'
+                   '<p><strong>Institutions</strong> %s</p>'
+                   '<p><strong>Principal documents</strong> %s</p></div>'
+                   '<ol class="pfm-phase-steps" aria-label="%s activities">'
+                   % (_esc(p['when']), _esc(p['actors']), _esc(p['records']), _esc(p['name'])))
+        for title, when, code in p['steps']:
+            out.append('<li><a href="#step-%s"><span class="pfm-phase-step-id">%s</span>'
+                       '<span class="pfm-phase-step-title">%s</span></a></li>'
+                       % (code, code, _esc(title)))
+        out.append('</ol><p class="pfm-phase-footer">'
+                   '<a href="chapters/%s0.html">Read the %s phase overview</a>'
+                   '<span aria-hidden="true">·</span>'
+                   '<a href="chapters/index.html#cycle-chapters-%s">Browse chapter details</a></p>'
+                   '</div></details>' % (key[0].upper(), _esc(p['name']), key))
+    out.append('</div><p class="pfm-cycle-caveat"><strong>Timing is indicative.</strong> '
+               'Activities serving different budget years overlap; the illustration is not an official deadline calendar.</p>'
+               '<p class="pfm-cycle-bridge"><a href="#lines">Continue to the four-line map ↓</a></p>'
                '</section>')
     return '\n'.join(out)
 

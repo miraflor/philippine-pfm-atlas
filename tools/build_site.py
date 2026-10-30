@@ -50,12 +50,12 @@ NAV = [
     ("walkthrough.html", "Guided lessons"),
     ("big-picture.html", "Big picture"),
     ("chapters/index.html", "Chapters"),
-    ("reference/index.html", "References"),
     ("diagrams/index.html", "Diagrams"),
     ("systems.html", "Systems & UACS"),
     ("models/index.html", "Research models"),
     ("reference/g.html", "Open points"),
     ("search.html", "Search"),
+    ("reference/index.html", "References"),
     ("about.html", "About"),
 ]
 

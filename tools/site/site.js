@@ -665,3 +665,467 @@
   });
 })();
 /* END PH PFM Atlas Mermaid theater view v1 */
+
+/* PFM ATLAS SIMPLE SITE-WIDE NAVIGATION â€” October 2026.
+   One thin fixed Explore Atlas bar on every page; one contextual right-hand TOC.
+   No duplicate floating site menu or left rail. All destinations remain unchanged. */
+(function () {
+  'use strict';
+  var header = document.querySelector('.site-header');
+  var bar = header && header.querySelector('.header-row');
+  var siteNav = header && header.querySelector('nav.site-nav');
+  var main = document.getElementById('main');
+  if (!header || !bar || !siteNav || !main) return;
+
+  // Move, do not clone: original site links, active-page attributes and keyboard links survive.
+  var theme = document.getElementById('theme-toggle');
+  var menu = document.createElement('button');
+  menu.type = 'button';
+  menu.className = 'atlas-top-menu';
+  menu.setAttribute('aria-controls', 'atlas-global-links');
+  menu.setAttribute('aria-expanded', 'false');
+  menu.textContent = 'Explore Atlas';
+  siteNav.id = 'atlas-global-links';
+  bar.insertBefore(menu, theme);
+  bar.insertBefore(siteNav, menu);
+  document.body.classList.add('atlas-topbar-active');
+
+  function closeMenu() {
+    header.classList.remove('atlas-top-menu-open');
+    menu.setAttribute('aria-expanded','false');
+  }
+  menu.addEventListener('click', function () {
+    var open = !header.classList.contains('atlas-top-menu-open');
+    header.classList.toggle('atlas-top-menu-open', open);
+    menu.setAttribute('aria-expanded', String(open));
+  });
+  siteNav.addEventListener('click', function (event) {
+    if (event.target.closest('a')) closeMenu();
+  });
+  document.addEventListener('click', function (event) {
+    if (!header.contains(event.target)) closeMenu();
+  });
+
+  // The single page navigator is populated from existing authored anchors/TOCs.
+  // Do not generate replacement navigation for the entire site or duplicate content.
+  function link(id, label) {
+    var a = document.createElement('a'); a.href='#'+id; a.textContent=label; return a;
+  }
+  function pageLinks() {
+    // Walkthrough: derive the eight real authored scene anchors, never build labels
+    // by concatenating a Unicode separator (which can become 'A-circumflex dot').
+    var lessons = main.querySelectorAll('.atlas-lesson-scene[id]');
+    if (lessons.length) {
+      var labels = [
+        'See the whole system', 'From a priority to the GAA',
+        'Authority versus cash', 'When payment becomes due',
+        'How public money moves', 'Records and audit',
+        'LGUs, GOCCs, payroll and risks', 'UACS, IFMIS and interfaces'
+      ];
+      return Array.prototype.map.call(lessons, function (lesson, i) {
+        var h = lesson.querySelector('h2');
+        var full = h ? h.textContent.trim() : 'Lesson';
+        var anchor = link(lesson.id, '');
+        anchor.className = 'atlas-page-lesson-link';
+        anchor.title = full;
+        anchor.setAttribute('aria-label', 'Lesson ' + String(i + 1).padStart(2, '0') + ': ' + full);
+        var number = document.createElement('span');
+        number.className = 'atlas-page-lesson-number';
+        number.textContent = String(i + 1).padStart(2, '0');
+        var title = document.createElement('span');
+        title.className = 'atlas-page-lesson-name';
+        title.textContent = labels[i] || full;
+        anchor.appendChild(number);
+        anchor.appendChild(title);
+        return anchor;
+      });
+    }
+
+    // Diagram catalogue: its phase sections have genuine IDs on the containing
+    // section, not on its H2. The generic H2[id] scanner therefore misses them.
+    var catalogue = main.querySelector('[data-cycle-catalog="diagrams"]');
+    if (catalogue) {
+      var groups = [
+        ['preparation', 'Preparation'],
+        ['legislation', 'Legislation'],
+        ['execution', 'Execution'],
+        ['accountability', 'Accountability'],
+        ['across', 'Shared diagrams']
+      ];
+      return groups.filter(function (group) {
+        return !!document.getElementById('cycle-diagrams-' + group[0]);
+      }).map(function (group) {
+        var anchor = link('cycle-diagrams-' + group[0], group[1]);
+        anchor.className = 'atlas-page-diagram-phase-link';
+        return anchor;
+      });
+    }
+
+    var original = document.querySelector('.atlas-page-wayfinder');
+    if (original) return Array.prototype.slice.call(original.querySelectorAll('a[href^="#"]'));
+    var toc = document.querySelector('.doc-side nav.toc');
+    if (toc) {
+      var major = Array.prototype.slice.call(toc.querySelectorAll('a[href^="#"]')).filter(function (a) {
+        var target = document.getElementById(a.getAttribute('href').slice(1));
+        return target && target.tagName === 'H2';
+      });
+      if (major.length) return major;
+    }
+    var headings = main.querySelectorAll('h2[id]');
+    if (headings.length) return Array.prototype.map.call(headings, function (h) {
+      return link(h.id, h.textContent.trim());
+    });
+    return [];
+  }
+  var choices = pageLinks().filter(function (a) {
+    var href = a.getAttribute('href') || '';
+    return href[0]==='#' && document.getElementById(href.slice(1));
+  }).slice(0,20);
+  // Do not synthesize a floating navigation for pages without an authored outline.
+  var hasPageOutline = (new Set(choices.map(function (item) {
+    return item.getAttribute('href');
+  }))).size >= 2;
+
+  var rail = document.createElement('nav');
+  rail.className='atlas-page-float';
+  rail.setAttribute('aria-label','On this page');
+  var heading=document.createElement('div');
+  heading.className='atlas-page-float-head';
+  heading.textContent='ON THIS PAGE';
+  rail.appendChild(heading);
+  var button=document.createElement('button');
+  button.type='button'; button.className='atlas-page-float-toggle';
+  button.setAttribute('aria-expanded','false');
+  button.setAttribute('aria-label','Open page sections');
+  button.textContent='On this page';
+  rail.appendChild(button);
+  var list=document.createElement('div');
+  list.className='atlas-page-float-links';
+  choices.forEach(function (a) {list.appendChild(a.cloneNode(true));});
+  rail.appendChild(list);
+  if (choices.length >= 2) document.body.appendChild(rail);
+  var floatLinks=Array.prototype.slice.call(list.querySelectorAll('a'));
+  var sections=floatLinks.map(function (a) {return document.getElementById(a.hash.slice(1));});
+  var raf=false;
+  function update() {
+    raf=false;
+    var offset=header.getBoundingClientRect().height + 36;
+    var active=0;
+    sections.forEach(function (section,i) {
+      if (section && section.getBoundingClientRect().top < offset + window.innerHeight*.28) active=i;
+    });
+    floatLinks.forEach(function (a,i) {
+      if (i===active) a.setAttribute('aria-current','location');
+      else a.removeAttribute('aria-current');
+    });
+  }
+  function schedule(){if(!raf){raf=true;requestAnimationFrame(update);}}
+  function syncHeight() {
+    document.documentElement.style.setProperty('--atlas-topbar-height', Math.ceil(bar.getBoundingClientRect().height)+'px');
+    schedule();
+  }
+  button.addEventListener('click', function () {
+    var expanded=button.getAttribute('aria-expanded')!=='true';
+    rail.classList.toggle('is-open',expanded);
+    button.setAttribute('aria-expanded',String(expanded));
+  });
+  list.addEventListener('click', function (event) {
+    if (event.target.closest('a')) {
+      rail.classList.remove('is-open');
+      button.setAttribute('aria-expanded','false');
+    }
+  });
+  document.addEventListener('keydown', function (event) {
+    if (event.key==='Escape') {closeMenu();rail.classList.remove('is-open');button.setAttribute('aria-expanded','false');}
+  });
+  window.addEventListener('resize',function(){syncHeight();closeMenu();});
+  window.addEventListener('scroll',schedule,{passive:true});
+  window.addEventListener('hashchange',schedule);
+  if (window.ResizeObserver) new ResizeObserver(syncHeight).observe(bar);
+  syncHeight();
+  window.addEventListener('load',syncHeight);
+})();
+/* PFM NAV LABEL + OUTLINE FIX v2 */
+/* PFM WALKTHROUGH SIMPLIFICATION v1 */
+/* PFM ATLAS ASCII LESSONS + DIAGRAM OUTLINE 2026-10 v3 */
+
+/* PFM-CHAPTER-DUAL-FLOAT-2026-10-30: chapter catalogue left, local outline right. */
+(function () {
+  'use strict';
+  var match = /\/chapters\/([A-Z][A-Z0-9]*)\.html$/i.exec(location.pathname);
+  if (!match) return;
+  var chapterId = match[1].toUpperCase();
+  var article = document.querySelector('main .doc article.prose');
+  var right = document.querySelector('.atlas-page-float');
+  if (!article || !right) return;
+  var headings = Array.prototype.slice.call(article.querySelectorAll('h2[id], h3[id]'));
+  if (!headings.length) return;
+  document.body.classList.add('atlas-dual-chapter-nav');
+
+  // The chapter catalogue comes from budget_cycle_nav.PHASES when the patch is installed.
+  var chapters = [{"label":"Preparation","items":[["P0","Preparation overview"],["P1","Budget Call"],["P2","Citizen engagement"],["P3","Regional Development Council consultations"],["P4","Program convergence"],["P5","Agency Tier 1 proposals: ongoing expenditures"],["P6","Tier 1 deliberations"],["P7","Budget Priorities Framework"],["P8","Agency Tier 2 proposals: new or expanded spending"],["P9","Tier 2 deliberations"],["P10","Presentation to the President and Cabinet"],["P11","Confirmation and finalization"],["P12","The President's Budget submitted to Congress"]]},{"label":"Legislation","items":[["L0","Legislation overview"],["L1","House deliberations"],["L2","Senate deliberations"],["L3","Bicameral deliberations"],["L4","Ratification and enrolment"],["L5","Enactment of the General Appropriations Act"]]},{"label":"Execution","items":[["E0","Execution overview"],["E1","Early procurement activities"],["E2","Budget execution program"],["E3","Allotment release"],["E4","Obligation"],["E5","Cash allocation"],["E6","Disbursement"]]},{"label":"Accountability","items":[["A0","Accountability overview"],["A1","Performance targets"],["A2","Citizen engagement"],["A3","Monitoring and evaluation"],["A4","Agencies' accountability reports"],["A5","Performance review"],["A6","In-year reports"],["A7","DBCC Mid-Year Report"],["A8","DBCC Year-End Report"],["A9","Audit report"]]},{"label":"Shared chapters","items":[["IS","Information systems and IFMIS"],["UACS","UACS and record identifiers"]]}];
+  var left = document.createElement('nav');
+  left.className = 'atlas-chapter-catalog-float';
+  left.setAttribute('aria-label','All chapters');
+  var title = document.createElement('div');
+  title.className = 'atlas-chapter-catalog-head';
+  title.textContent = 'ALL CHAPTERS';
+  left.appendChild(title);
+  var toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.className = 'atlas-chapter-catalog-toggle';
+  toggle.setAttribute('aria-expanded','false');
+  toggle.setAttribute('aria-label','Show all chapters');
+  toggle.textContent = 'All chapters';
+  left.appendChild(toggle);
+  var all = document.createElement('div');
+  all.className = 'atlas-chapter-catalog-list';
+  var current = null;
+  chapters.forEach(function (phase) {
+    var group = document.createElement('section');
+    group.className = 'atlas-chapter-catalog-group';
+    var groupTitle = document.createElement('p');
+    groupTitle.className = 'atlas-chapter-catalog-phase';
+    groupTitle.textContent = phase.label;
+    group.appendChild(groupTitle);
+    phase.items.forEach(function (item) {
+      var a = document.createElement('a');
+      a.href = item[0] + '.html';
+      var code = document.createElement('span');
+      code.className = 'atlas-chapter-catalog-id';
+      code.textContent = item[0];
+      var label = document.createElement('span');
+      label.className = 'atlas-chapter-catalog-name';
+      label.textContent = item[1];
+      a.appendChild(code);
+      a.appendChild(label);
+      if (item[0] === chapterId) {
+        a.setAttribute('aria-current','page');
+        current = a;
+      }
+      group.appendChild(a);
+    });
+    all.appendChild(group);
+  });
+  left.appendChild(all);
+  document.body.appendChild(left);
+  function close() {left.classList.remove('is-open'); toggle.setAttribute('aria-expanded','false');}
+  toggle.addEventListener('click', function () {
+    var open = !left.classList.contains('is-open');
+    left.classList.toggle('is-open',open); toggle.setAttribute('aria-expanded',String(open));
+  });
+  all.addEventListener('click',function (event) {if (event.target.closest('a')) close();});
+  document.addEventListener('keydown',function (event) {if(event.key === 'Escape') close();});
+  document.addEventListener('click',function (event) {if (!left.contains(event.target)) close();});
+  if (current) requestAnimationFrame(function () {
+    all.scrollTop = Math.max(0, current.getBoundingClientRect().top - all.getBoundingClientRect().top + all.scrollTop - all.clientHeight / 2);
+  });
+
+  // Keep the original right-hand On this page float. Expand only the active section's subsections.
+  var list = right.querySelector('.atlas-page-float-links');
+  if (!list) return;
+  var group = null, records = [], links = {};
+  var fragment = document.createDocumentFragment();
+  headings.forEach(function (heading) {
+    if (heading.tagName === 'H2' || !group) {
+      group = document.createElement('div');
+      group.className = 'atlas-chapter-page-group';
+      var major = document.createElement('a');
+      major.href = '#' + heading.id;
+      major.className = 'atlas-chapter-page-major';
+      major.textContent = heading.textContent.trim();
+      group.appendChild(major);
+      var subs = document.createElement('div');
+      subs.className = 'atlas-chapter-page-subs';
+      group.appendChild(subs);
+      fragment.appendChild(group);
+      records.push({ id: heading.id, group: group, link: major });
+      links[heading.id] = major;
+    } else {
+      var sub = document.createElement('a');
+      sub.href = '#' + heading.id;
+      sub.className = 'atlas-chapter-page-sub';
+      sub.textContent = heading.textContent.trim();
+      group.lastChild.appendChild(sub);
+      links[heading.id] = sub;
+    }
+  });
+  list.replaceChildren(fragment);
+  var activeId = '';
+  function locate() {
+    var header = document.querySelector('.site-header');
+    var offset = (header ? header.getBoundingClientRect().height : 55) + 48;
+    var active = headings[0];
+    headings.forEach(function (h) {
+      if (h.getBoundingClientRect().top <= offset) active = h;
+    });
+    if (!active) return;
+    var majorId = records[0].id;
+    headings.some(function (h) {
+      if (h.tagName === 'H2') majorId = h.id;
+      return h === active;
+    });
+    if (activeId === active.id) return;
+    activeId = active.id;
+    records.forEach(function (r) {r.group.classList.toggle('is-current', r.id === majorId);});
+    Object.keys(links).forEach(function (id) {
+      if (id === activeId) links[id].setAttribute('aria-current','location');
+      else links[id].removeAttribute('aria-current');
+    });
+  }
+  var pending = false;
+  function update() {if (!pending) {pending = true;requestAnimationFrame(function () {pending = false;locate();});}}
+  window.addEventListener('scroll',update,{passive:true});
+  window.addEventListener('resize',update);
+  window.addEventListener('hashchange',function () {requestAnimationFrame(locate);});
+  list.addEventListener('click',function (event) {
+    var a = event.target.closest('a[href^="#"]');
+    if (a) {var id = a.getAttribute('href').slice(1);if (links[id]) {
+      activeId = '';
+      var hit = headings.find(function (h) {return h.id === id;});
+      if (hit) requestAnimationFrame(function () {hit.scrollIntoView({block:'start'});requestAnimationFrame(locate);});
+    }}
+  });
+  locate();
+})();
+
+/* PFM-LEFT-CHAPTER-CATALOG-FIX-2026-10-30: independent, responsive left chapter navigation. */
+(function () {
+  'use strict';
+  var match = /^\/chapters\/([A-Z][A-Z0-9]*)\.html$/i.exec(location.pathname);
+  if (!match) return;
+  var chapterId = match[1].toUpperCase();
+  // The left catalogue must not depend on whether the right-hand outline was initialized.
+  function init() {
+    if (!document.querySelector('main .doc article.prose')) return;
+    var left = document.querySelector('.atlas-chapter-catalog-float');
+    if (!left) {
+      var chapters = [{"label":"Preparation","items":[["P0","Preparation overview"],["P1","Budget Call"],["P2","Citizen engagement"],["P3","Regional Development Council consultations"],["P4","Program convergence"],["P5","Agency Tier 1 proposals: ongoing expenditures"],["P6","Tier 1 deliberations"],["P7","Budget Priorities Framework"],["P8","Agency Tier 2 proposals: new or expanded spending"],["P9","Tier 2 deliberations"],["P10","Presentation to the President and Cabinet"],["P11","Confirmation and finalization"],["P12","The President's Budget submitted to Congress"]]},{"label":"Legislation","items":[["L0","Legislation overview"],["L1","House deliberations"],["L2","Senate deliberations"],["L3","Bicameral deliberations"],["L4","Ratification and enrolment"],["L5","Enactment of the General Appropriations Act"]]},{"label":"Execution","items":[["E0","Execution overview"],["E1","Early procurement activities"],["E2","Budget execution program"],["E3","Allotment release"],["E4","Obligation"],["E5","Cash allocation"],["E6","Disbursement"]]},{"label":"Accountability","items":[["A0","Accountability overview"],["A1","Performance targets"],["A2","Citizen engagement"],["A3","Monitoring and evaluation"],["A4","Agencies' accountability reports"],["A5","Performance review"],["A6","In-year reports"],["A7","DBCC Mid-Year Report"],["A8","DBCC Year-End Report"],["A9","Audit report"]]},{"label":"Shared chapters","items":[["IS","Information systems and IFMIS"],["UACS","UACS and record identifiers"]]}];
+      left = document.createElement('nav');
+      left.className = 'atlas-chapter-catalog-float';
+      left.setAttribute('aria-label', 'All chapters');
+      var heading = document.createElement('div');
+      heading.className = 'atlas-chapter-catalog-head';
+      heading.textContent = 'ALL CHAPTERS';
+      left.appendChild(heading);
+      var toggle = document.createElement('button');
+      toggle.className = 'atlas-chapter-catalog-toggle';
+      toggle.type = 'button';
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Browse all chapters');
+      left.appendChild(toggle);
+      var list = document.createElement('div');
+      list.className = 'atlas-chapter-catalog-list';
+      chapters.forEach(function (phase) {
+        var group = document.createElement('section');
+        group.className = 'atlas-chapter-catalog-group';
+        var label = document.createElement('p');
+        label.className = 'atlas-chapter-catalog-phase';
+        label.textContent = phase.label;
+        group.appendChild(label);
+        phase.items.forEach(function (item) {
+          var a = document.createElement('a');
+          a.href = item[0] + '.html';
+          var code = document.createElement('span');
+          code.className = 'atlas-chapter-catalog-id';
+          code.textContent = item[0];
+          var text = document.createElement('span');
+          text.className = 'atlas-chapter-catalog-name';
+          text.textContent = item[1];
+          a.appendChild(code);
+          a.appendChild(text);
+          if (item[0] === chapterId) a.setAttribute('aria-current', 'page');
+          group.appendChild(a);
+        });
+        list.appendChild(group);
+      });
+      left.appendChild(list);
+      document.body.appendChild(left);
+      function close() { left.classList.remove('is-open'); toggle.setAttribute('aria-expanded', 'false'); }
+      toggle.addEventListener('click', function () {
+        var open = !left.classList.contains('is-open');
+        left.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+      document.addEventListener('click', function (e) { if (!left.contains(e.target)) close(); });
+      list.addEventListener('click', function (e) { if (e.target.closest('a')) close(); });
+    }
+    document.body.classList.add('atlas-dual-chapter-nav');
+    var button = left.querySelector('.atlas-chapter-catalog-toggle');
+    if (button) button.textContent = 'Chapters (' + chapterId + ')';
+    var current = left.querySelector('a[aria-current="page"]');
+    var list = left.querySelector('.atlas-chapter-catalog-list');
+    if (current && list) requestAnimationFrame(function () {
+      list.scrollTop = Math.max(0, current.offsetTop - list.offsetTop - list.clientHeight / 3);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
+  else init();
+})();
+
+/* PFM-CHAPTER-CATALOG-WIDTH-INDEX-2026-10-30: chapter index uses the same left rail. */
+(function () {
+  'use strict';
+  if (!/\/chapters\/index\.html$/i.test(window.location.pathname)) return;
+  function init() {
+    if (document.querySelector('.atlas-chapter-catalog-float')) return;
+    var phases = [{"label":"Preparation","items":[["P0","Preparation overview"],["P1","Budget Call"],["P2","Citizen engagement"],["P3","Regional Development Council consultations"],["P4","Program convergence"],["P5","Agency Tier 1 proposals: ongoing expenditures"],["P6","Tier 1 deliberations"],["P7","Budget Priorities Framework"],["P8","Agency Tier 2 proposals: new or expanded spending"],["P9","Tier 2 deliberations"],["P10","Presentation to the President and Cabinet"],["P11","Confirmation and finalization"],["P12","The President's Budget submitted to Congress"]]},{"label":"Legislation","items":[["L0","Legislation overview"],["L1","House deliberations"],["L2","Senate deliberations"],["L3","Bicameral deliberations"],["L4","Ratification and enrolment"],["L5","Enactment of the General Appropriations Act"]]},{"label":"Execution","items":[["E0","Execution overview"],["E1","Early procurement activities"],["E2","Budget execution program"],["E3","Allotment release"],["E4","Obligation"],["E5","Cash allocation"],["E6","Disbursement"]]},{"label":"Accountability","items":[["A0","Accountability overview"],["A1","Performance targets"],["A2","Citizen engagement"],["A3","Monitoring and evaluation"],["A4","Agencies' accountability reports"],["A5","Performance review"],["A6","In-year reports"],["A7","DBCC Mid-Year Report"],["A8","DBCC Year-End Report"],["A9","Audit report"]]},{"label":"Shared chapters","items":[["IS","Information systems and IFMIS"],["UACS","UACS and record identifiers"]]}];
+    var nav = document.createElement('nav');
+    nav.className = 'atlas-chapter-catalog-float';
+    nav.setAttribute('aria-label', 'All chapters');
+    var heading = document.createElement('div');
+    heading.className = 'atlas-chapter-catalog-head';
+    heading.textContent = 'ALL CHAPTERS';
+    nav.appendChild(heading);
+    var button = document.createElement('button');
+    button.className = 'atlas-chapter-catalog-toggle';
+    button.type = 'button';
+    button.setAttribute('aria-expanded', 'false');
+    button.setAttribute('aria-label', 'Browse all chapters');
+    button.textContent = 'All chapters';
+    nav.appendChild(button);
+    var list = document.createElement('div');
+    list.className = 'atlas-chapter-catalog-list';
+    phases.forEach(function (phase) {
+      var section = document.createElement('section');
+      section.className = 'atlas-chapter-catalog-group';
+      var label = document.createElement('p');
+      label.className = 'atlas-chapter-catalog-phase';
+      label.textContent = phase.label;
+      section.appendChild(label);
+      phase.items.forEach(function (item) {
+        var link = document.createElement('a');
+        link.href = item[0] + '.html';
+        var id = document.createElement('span');
+        id.className = 'atlas-chapter-catalog-id';
+        id.textContent = item[0];
+        var name = document.createElement('span');
+        name.className = 'atlas-chapter-catalog-name';
+        name.textContent = item[1];
+        link.appendChild(id);
+        link.appendChild(name);
+        section.appendChild(link);
+      });
+      list.appendChild(section);
+    });
+    nav.appendChild(list);
+    document.body.appendChild(nav);
+    // Reuse the proven responsive dual-chapter CSS; do not change the right-hand panel.
+    document.body.classList.add('atlas-dual-chapter-nav');
+    function close() {
+      nav.classList.remove('is-open');
+      button.setAttribute('aria-expanded', 'false');
+    }
+    button.addEventListener('click', function () {
+      var open = !nav.classList.contains('is-open');
+      nav.classList.toggle('is-open', open);
+      button.setAttribute('aria-expanded', String(open));
+    });
+    document.addEventListener('keydown', function (event) { if (event.key === 'Escape') close(); });
+    document.addEventListener('click', function (event) { if (!nav.contains(event.target)) close(); });
+    list.addEventListener('click', function (event) { if (event.target.closest('a')) close(); });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
+  else init();
+})();

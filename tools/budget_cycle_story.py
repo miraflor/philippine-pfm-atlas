@@ -501,16 +501,23 @@ def build(render_md, block, big_text, link, chapter_dir, diagram_ids, source_cod
         rows.append(('In the loop', chips([prev_id, next_id])))
         rows.append(('In the atlas', _atlas_links(s, chapter_dir, diagram_ids)))
         search = ' '.join([s['id'], s['name'], re.sub(r'\[[^\]]*\]', '', s['docs']), s['note'], s['ln']]).lower()
-        panels.append('<article class="cs-panel" id="step-%s" data-step="%s" data-search="%s">'
+        def relationship_row(label, content):
+            relation = ('downstream' if label == 'Downstream process links' else
+                        'upstream' if label == 'Upstream process links' else '')
+            cls = ' class="cs-rel-%s"' % relation if relation else ''
+            return '<dt%s>%s</dt><dd%s>%s</dd>' % (cls, label, cls, content)
+
+        panels.append('<article class="cs-panel" id="step-%s" data-step="%s" data-search="%s" '
+                      'style="--cs-focus:var(--cs-%s)">'
                       '<p class="cs-lab">%s · %s · %s</p><h3>%s</h3><dl>%s</dl></article>'
-                      % (s['id'], s['id'], _esc(search), s['id'], _esc(s['phase']), _esc(s['timing']),
-                         _esc(s['name']), ''.join('<dt>%s</dt><dd>%s</dd>' % r for r in rows)))
+                      % (s['id'], s['id'], _esc(search), s['ph'], s['id'], _esc(s['phase']), _esc(s['timing']),
+                         _esc(s['name']), ''.join(relationship_row(*r) for r in rows)))
 
     explorer = ('<section id="cycle-explorer" class="cs-explorer" aria-labelledby="cs-ex-title">'
                 '<div class="cs-ex-head"><p class="atlas-kicker">Step explorer</p>'
                 '<h2 id="cs-ex-title">The 32 steps, opened</h2>'
                 '<p class="cs-note">Same positions and order as the DBM budget-cycle illustration. Select a step. '
-                'Dashed blue outlines mark downstream links; dashed orange outlines mark upstream links. '
+                'Blue highlights mark steps receiving from the selection (downstream); amber highlights mark steps feeding it (upstream). The same colours appear inside the selected step panel. '
                 'Most relationships follow one budget through its lifecycle; performance-review feedback informs proposals for a later budget. '
                 'The FY labels show activities taking place in 2026, not one literal transaction trail. Each step has its own address, for example '
                 '<a href="#step-E4">#step-E4</a>.</p></div>'
@@ -523,10 +530,19 @@ def build(render_md, block, big_text, link, chapter_dir, diagram_ids, source_cod
                 'placeholder="SARO, NCA, BP Form 202" autocomplete="off"><span class="cs-hint" aria-live="polite">'
                 '</span></span></div>'
                 '<p class="cs-legend"></p>'
+                 '<div class="cs-relation-key" aria-label="Relationship key">'
+                 '<span class="cs-key-down">Downstream — receives from selected step</span>'
+                 '<span class="cs-key-up">Upstream — supplies selected step</span></div>'
                 '<div class="cs-grid">%s<div class="cs-panels">%s</div></div>'
                 '<p class="cs-note">Step names, order and indicative timing follow the DBM budget-cycle illustration; '
                 'the months are not binding deadlines. "Serves" names the budget that the step works on when it is '
                 'done in calendar year 2026. Where the atlas names no document for a step, the panel leaves the field '
                 'out.</p>'
                 '</section>' % (''.join(cells), link(''.join(panels))))
-    return story + explorer
+    # External destinations open in a new tab; choosing another explorer step stays here.
+    explorer_soup = BeautifulSoup(explorer, 'html.parser')
+    for a in explorer_soup.select('a[href]'):
+        if not a['href'].startswith('#'):
+            a['target'] = '_blank'
+            a['rel'] = 'noopener noreferrer'
+    return story + str(explorer_soup)

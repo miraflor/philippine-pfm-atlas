@@ -61,7 +61,7 @@
   var W = 600, H = 800, compact = false, scene = null, geo = {};
   function measure() {
     var wf = document.querySelector(".atlas-page-wayfinder");
-    story.style.setProperty("--cs-top", (wf ? wf.offsetHeight : 0) + "px");
+    story.style.setProperty("--cs-top", (document.querySelector(".site-header")?.offsetHeight || (wf ? wf.offsetHeight : 0)) + "px");
     var r = svg.getBoundingClientRect(); W = Math.max(280, r.width); H = Math.max(260, r.height);
     svg.setAttribute("viewBox", "0 0 " + W + " " + H); compact = W < 560 || H < 520; svg.classList.toggle("cs-compact", compact);
   }
@@ -359,8 +359,23 @@
     }
     return false;
   }
-  if (!fromHash()) select("E4");
+  if (!fromHash()) select("P1");
   else window.addEventListener("load", function () { if (/^#step-/.test(location.hash)) ex.scrollIntoView(); });
   window.addEventListener("hashchange", fromHash);
   window.addEventListener("popstate", fromHash);
+  /* The four-phase overview uses native disclosures. Wayfinder and deep links open the named phase. */
+  function revealPhase() {
+    var match = /^#phase-(preparation|legislation|execution|accountability)$/.exec(location.hash);
+    if (!match) return;
+    var target = document.getElementById("phase-" + match[1]);
+    if (target) target.open = true;
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('a[href^="#phase-"]'), function (link) {
+    link.addEventListener("click", function () {
+      var target = document.getElementById(link.getAttribute("href").slice(1));
+      if (target) target.open = true;
+    });
+  });
+  revealPhase();
+  window.addEventListener("hashchange", revealPhase);
 })();

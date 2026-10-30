@@ -23,7 +23,16 @@ def check():
 
     home = page('index.html')
     assert len(home.select('#budget-cycle .pfm-cycle-phase')) == 4
+    assert len(home.select('#budget-cycle details.pfm-cycle-phase')) == 4, 'phase disclosures missing'
+    assert home.select_one('#phase-preparation').has_attr('open'), 'Preparation should be open on first load'
+    assert len(home.select('#budget-cycle .pfm-phase-steps li')) == 32, '32 phase activity links must remain available'
     assert len(home.select('#budget-cycle .pfm-cycle-activities li')) == 0, 'duplicate activity lists reintroduced'
+    assert len(home.select('#cycle-explorer .cs-relation-key span')) == 2, 'relationship legend missing'
+    assert 'select("P1")' in (ROOT / 'tools' / 'site' / 'cycle-story.js').read_text(encoding='utf-8')
+    main_sections = [x.get('id') or ('paths' if 'start-paths' in x.get('class', []) else '')
+                     for x in home.select('.home > section')]
+    assert main_sections.index('lines') < main_sections.index('paths'), 'reading paths interrupt the four-line explanation'
+    assert main_sections[-1] == 'paths', 'reading paths should conclude the page'
     for p in PHASES:
         assert home.select_one('#phase-' + p['id'])
         assert home.select_one('#phase-' + p['id'] + ' a[href^="chapters/index.html"]')
@@ -77,7 +86,19 @@ def check():
     assert 'performance-review feedback informs proposals for a later budget' in explorer_text
     assert 'Hands its documents to (same budget year)' not in explorer_text
 
+    # Navigation target policy: chapter catalogue stays in the current tab;
+    # the budget-cycle explorer opens references in new tabs, not its step chips.
+    for link in home.select('#cycle-explorer a[href]'):
+        href = link['href']
+        if href.startswith('#'):
+            assert link.get('target') != '_blank', href
+        else:
+            assert link.get('target') == '_blank', href
+            assert 'noopener' in link.get('rel', []), href
+
     chapters = page('chapters/index.html')
+    assert all(link.get('target') != '_blank' for link in chapters.select('a[href]')), \
+        'Chapter index must navigate in the same tab'
     rows = chapters.select('a.row-id[href$=".html"]')
     assert [n.get_text(strip=True) for n in rows] == STEP_ORDER, 'public chapter index must list exactly 32 steps in order'
     assert set(ORDER) == set(CHAPTER_PHASE)

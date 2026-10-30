@@ -125,8 +125,10 @@ def home(body):
     body=body.replace('<section class="home-intro">', '<section class="home-intro atlas-home-hero"><p class="atlas-kicker">An atlas of public financial management · Philippines</p>',1)
     body=body.replace('<h1>Philippine PFM Atlas</h1>', '<div class="atlas-home-grid"><div class="atlas-home-headline"><h1>Follow the <em>budget cycle.</em></h1><p class="atlas-identity">Philippine PFM Atlas</p><a class="atlas-home-jump" href="#budget-cycle">Explore the budget cycle ↓</a></div><div class="atlas-home-explainer">',1)
     body=body.replace('</section>\n<section class="start-paths"', '</div></div></section>\n<section class="start-paths"',1)
-    nav='''<nav class="atlas-page-wayfinder" aria-label="Explore this page">
-<a href="#budget-cycle"><span>01</span> Budget cycle</a><a href="#phase-preparation"><span>02</span> Preparation</a><a href="#phase-legislation"><span>03</span> Legislation</a><a href="#phase-execution"><span>04</span> Execution</a><a href="#phase-accountability"><span>05</span> Accountability</a><a href="#lines"><span>06</span> Systems map</a><a href="#reference-files"><span>07</span> References</a><a href="#reliability"><span>08</span> Evidence</a></nav>'''
+    # This is a concise, non-sticky table of contents, not a second site navigation bar.
+    # Keep the four phases inside the existing interactive phase summary below.
+    nav='''<nav class="atlas-page-wayfinder" aria-label="On this page">
+<a href="#cycle-story"><span>01</span> Story</a><a href="#cycle-explorer"><span>02</span> 32 steps</a><a href="#budget-cycle"><span>03</span> Four phases</a><a href="#lines"><span>04</span> Four lines</a><a href="#reference-files"><span>05</span> References</a></nav>'''
     body=body.replace('</section>\n<section class="start-paths"', '</section>'+nav+'\n<section class="start-paths"',1)
     accents={'lines':'01 / A system of concurrent processes', 'meeting-points':'02 / Conditions before payment',
              'parts':'03 / Navigate the process', 'reference-files':'04 / Explore the evidence', 'reliability':'05 / Limits and uncertainties'}
@@ -142,6 +144,20 @@ def home(body):
     body=body.replace('<div class="map">',controls+'<div class="map" data-highlight-line="all">',1)
     body=body.replace('<section class="start-paths"', '<section class="start-paths atlas-story-section"',1)
     body=body.replace('<section class="start-paths atlas-story-section"', CYCLE_STORY_SLOT + '\n' + home_cycle() + '\n<section class="start-paths atlas-story-section"', 1)
+    # The reading-path cards are an exit from the narrative, not a break between the cycle and the four-line explanation.
+    path_start = body.index('<section class="start-paths atlas-story-section"')
+    path_end = body.index('</section>', path_start) + len('</section>')
+    paths = body[path_start:path_end]
+    paths = paths.replace('<h2>Choose a reading path</h2>',
+                          '<p class="atlas-kicker">Continue exploring</p>'
+                          '<h2>Choose a reading path</h2>'
+                          '<p class="pfm-next-lede">You have traced the cycle, its four lines and their meeting points. '
+                          'Choose where to go in the atlas next.</p>', 1)
+    body = body[:path_start] + body[path_end:]
+    closing = body.rfind('</div>')
+    if closing < 0:
+        raise ValueError('Homepage outer container not found')
+    body = body[:closing] + paths + '\n' + body[closing:]
     return body
 
 
@@ -219,7 +235,31 @@ def walkthrough(body, diagrams):
     if ending not in body:
         raise ValueError('Walkthrough closing marker missing')
     body=body.replace(ending,'</div></div><p><a href="big-picture.html">',1)
-    return body
+    # PFM WALKTHROUGH SIMPLIFICATION v1: keep the eight real lesson scenes and
+    # their previews, but remove two redundant directories above and below them.
+    # Reattach old phase deep-link anchors at the corresponding real lessons.
+    from bs4 import BeautifulSoup
+    soup = BeautifulSoup(body, 'html.parser')
+    phase_index = soup.select_one('#lessons-by-phase')
+    repeated_cards = soup.select_one('.atlas-all-lessons')
+    if phase_index is None or repeated_cards is None:
+        raise ValueError('Expected redundant lesson directories not found')
+    if len(soup.select('.atlas-lesson-scene')) != 8:
+        raise ValueError('The original eight lesson scenes were not found')
+    phase_index.decompose()
+    repeated_cards.decompose()
+    anchors = {1: ('across',), 2: ('preparation', 'legislation'),
+               3: ('execution',), 6: ('accountability',)}
+    for number, phases in anchors.items():
+        scene = soup.select_one('#lesson-%02d' % number)
+        if scene is None:
+            raise ValueError('Expected lesson missing: %d' % number)
+        for phase in phases:
+            anchor = soup.new_tag('span', id='cycle-guide-' + phase)
+            anchor['class'] = 'pfm-legacy-lesson-anchor'
+            anchor['aria-hidden'] = 'true'
+            scene.insert(0, anchor)
+    return str(soup)
 
 
 def library(body,diagrams):

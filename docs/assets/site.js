@@ -1129,3 +1129,380 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
   else init();
 })();
+
+/* PFM-REFERENCE-LEFT-NAV-TABLES-2026-10-30: reference catalogue and table sizing. */
+(function () {
+  'use strict';
+  var match = /\/reference\/(index|[a-g])\.html$/i.exec(window.location.pathname);
+  if (!match) return;
+  var activeId = match[1].toLowerCase();
+  if (document.querySelector('.atlas-reference-float')) return;
+
+  document.body.classList.add('atlas-reference-nav');
+  var entries = [
+    ['a', 'Authorities and mandates'],
+    ['b', 'Information systems'],
+    ['c', 'Documents and identifiers'],
+    ['d', 'Legal framework'],
+    ['e', 'Glossary and abbreviations'],
+    ['f', 'Sources and verification'],
+    ['g', 'Open questions and gaps']
+  ];
+  var rail = document.createElement('nav');
+  rail.className = 'atlas-reference-float';
+  rail.setAttribute('aria-label', 'All references');
+  var head = document.createElement('div');
+  head.className = 'atlas-reference-float-head';
+  head.textContent = 'ALL REFERENCES';
+  rail.appendChild(head);
+  var toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.className = 'atlas-reference-float-toggle';
+  toggle.textContent = 'All references';
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-controls', 'atlas-reference-float-links');
+  rail.appendChild(toggle);
+  var links = document.createElement('div');
+  links.className = 'atlas-reference-float-links';
+  links.id = 'atlas-reference-float-links';
+  function makeLink(id, title) {
+    var a = document.createElement('a');
+    a.href = id + '.html';
+    var badge = document.createElement('span');
+    badge.className = 'atlas-reference-float-code';
+    badge.textContent = id === 'index' ? 'ALL' : id.toUpperCase();
+    var name = document.createElement('span');
+    name.textContent = title;
+    a.appendChild(badge);
+    a.appendChild(name);
+    if (activeId === id) a.setAttribute('aria-current', 'page');
+    return a;
+  }
+  links.appendChild(makeLink('index', 'Reference index'));
+  entries.forEach(function (entry) { links.appendChild(makeLink(entry[0], entry[1])); });
+  rail.appendChild(links);
+  document.body.appendChild(rail);
+  function close() {
+    rail.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+  toggle.addEventListener('click', function () {
+    var opened = !rail.classList.contains('is-open');
+    rail.classList.toggle('is-open', opened);
+    toggle.setAttribute('aria-expanded', String(opened));
+  });
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') close();
+  });
+  document.addEventListener('click', function (event) {
+    if (!rail.contains(event.target)) close();
+  });
+  links.addEventListener('click', function (event) {
+    if (event.target.closest('a')) close();
+  });
+
+  // Only reference tables receive fixed, readable column geometry.
+  document.querySelectorAll('main .table-wrap > table').forEach(function (table) {
+    var headers = Array.prototype.map.call(table.querySelectorAll('thead tr:first-child th'), function (h) {
+      return h.textContent.trim().toLowerCase();
+    });
+    if (!headers.length) return;
+    table.classList.add('atlas-ref-table');
+    var n = Math.min(9, headers.length);
+    table.classList.add('atlas-ref-cols-' + n);
+    if (headers.indexOf('role in pfm') !== -1) table.classList.add('atlas-ref-role-table');
+    if (headers.indexOf('code') !== -1 && headers.indexOf('source') !== -1) {
+      table.classList.add('atlas-ref-source-table');
+    }
+  });
+})();
+
+/* PFM-REFERENCE-TABLE-READABILITY-V2-20261030: content-first, reversible table presentation. */
+(function () {
+  'use strict';
+  if (!/\/reference\/(?:index|[a-g])\.html$/i.test(window.location.pathname)) return;
+  function ready() {
+    var tables = Array.prototype.slice.call(document.querySelectorAll('main .table-wrap > table'));
+    if (!tables.length) return;
+    document.body.classList.add('atlas-ref-tables-v2');
+    var focused = null;
+    var lastFocus = null;
+    function closeWide() {
+      if (!focused) return;
+      var frame = focused;
+      focused = null;
+      frame.classList.remove('is-wide');
+      document.body.classList.remove('atlas-ref-wide-open');
+      frame.querySelector('.atlas-ref-wide-button').textContent = 'Full-width table';
+      if (lastFocus && document.contains(lastFocus)) lastFocus.focus();
+      lastFocus = null;
+      if (frame._refLayout) frame._refLayout();
+    }
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && focused) {
+        event.preventDefault();
+        closeWide();
+      }
+    });
+    function columnSpec(label) {
+      var h = label.toLowerCase().replace(/\s+/g, ' ').trim();
+      if (/^(no\.|no|code|mark|abbreviation|total|read\?|kind of key)$/.test(h)) return [4.5, 0];
+      if (/^(chapters|chapters affected|basis|where it shows)$/.test(h)) return [9, .4];
+      if (/^(kind|carrier|stage of use|state|status in the sources|lead|owner)$/.test(h)) return [9, .6];
+      if (/^(from|to|from record|to record|where|sections|provision|law|document|record|term|authority|party|system|issuance|bill|decision|subject|source|fact|column)$/.test(h)) return [13, 1];
+      if (/^(role in pfm|what it holds or does|what the atlas does|what it does|what it proves|what it does not prove|what it governs|what passes|how i read it|how it was read|what would settle it|what is missing in a row|effect on the atlas|least certain part|used for|rule|meaning|content|reason|plan|check of both sides|question|values)$/.test(h)) return [23, 3];
+      if (/^(text a|text b|source a|source b|recipient \(reads data\)|user \(enters data\)|do not confuse with|identified by|why it matters|where to check|open point|issued or prepared by|systems it owns|linking key|field read on a form or in a rule\?)$/.test(h)) return [17, 2];
+      if (/^(spending side|revenue and treasury side|inside one agency|how it was read|g o v e r n s|defect|full name|usual time of issue)$/.test(h)) return [14, 1];
+      return [15, 1.2];
+    }
+    tables.forEach(function (table, index) {
+      var headers = Array.prototype.map.call(table.querySelectorAll('thead tr:first-child th'), function (th) {
+        return th.textContent.trim();
+      });
+      if (!headers.length) return;
+      var wrap = table.parentElement;
+      var frame = document.createElement('div');
+      frame.className = 'atlas-ref-table-frame';
+      wrap.parentNode.insertBefore(frame, wrap);
+      var toolbar = document.createElement('div');
+      toolbar.className = 'atlas-ref-table-toolbar';
+      var caption = document.createElement('span');
+      caption.className = 'atlas-ref-table-caption';
+      var rows = Array.prototype.slice.call(table.querySelectorAll('tbody > tr'));
+      caption.textContent = 'Table ' + (index + 1) + ' · ' + rows.length + ' records';
+      toolbar.appendChild(caption);
+      var mode = document.createElement('div');
+      mode.className = 'atlas-ref-table-actions';
+      var asRecords = document.createElement('button');
+      asRecords.type = 'button'; asRecords.textContent = 'Read as records';
+      asRecords.setAttribute('aria-pressed', 'false');
+      var asTable = document.createElement('button');
+      asTable.type = 'button'; asTable.textContent = 'Table';
+      asTable.setAttribute('aria-pressed', 'true');
+      var wide = document.createElement('button');
+      wide.type = 'button'; wide.className = 'atlas-ref-wide-button'; wide.textContent = 'Full-width table';
+      mode.appendChild(asRecords); mode.appendChild(asTable); mode.appendChild(wide);
+      toolbar.appendChild(mode);
+      var hint = document.createElement('div');
+      hint.className = 'atlas-ref-table-hint';
+      hint.textContent = 'More columns available: scroll horizontally or open the full-width table.';
+      frame.appendChild(toolbar);
+      frame.appendChild(hint);
+      frame.appendChild(wrap);
+      table.classList.add('atlas-ref-v2-table');
+      var specs = headers.map(columnSpec);
+      var colgroup = document.createElement('colgroup');
+      specs.forEach(function () { colgroup.appendChild(document.createElement('col')); });
+      table.insertBefore(colgroup, table.firstChild);
+      var records = null;
+      var cards = null;
+      function buildRecords() {
+        if (records) return;
+        records = document.createElement('div');
+        records.className = 'atlas-ref-records';
+        var numberHeader = /^(no\.|no|code)$/i.test(headers[0]);
+        rows.forEach(function (tr, i) {
+          var cells = Array.prototype.slice.call(tr.children).filter(function (cell) {
+            return cell.tagName === 'TD' || cell.tagName === 'TH';
+          });
+          if (!cells.length) return;
+          var article = document.createElement('article');
+          article.className = 'atlas-ref-record';
+          if (tr.id) article.setAttribute('data-row-id', tr.id);
+          if (tr.hasAttribute('data-status')) article.setAttribute('data-status', tr.getAttribute('data-status'));
+          var head = document.createElement('div');
+          head.className = 'atlas-ref-record-head';
+          var tag = document.createElement('span'); tag.className = 'atlas-ref-record-tag';
+          var idLink = numberHeader ? cells[0].querySelector('a.row-id') : null;
+          tag.textContent = numberHeader ? (idLink ? idLink.textContent.trim() : cells[0].textContent.trim().split(/\s+/)[0]) : String(i + 1).padStart(2, '0');
+          head.appendChild(tag);
+          var statusDot = cells[0].querySelector('.status-dot[title]');
+          if (statusDot) {
+            var status = document.createElement('span');
+            status.className = 'atlas-ref-record-status';
+            status.textContent = statusDot.getAttribute('title');
+            head.appendChild(status);
+          }
+          var title = document.createElement('strong');
+          var mainCell = cells[numberHeader && cells.length > 1 ? 1 : 0];
+          if (mainCell.textContent.trim()) {
+            Array.prototype.forEach.call(mainCell.childNodes, function (node) {
+              var copy = node.cloneNode(true);
+              if (copy.nodeType === 1) {
+                if (copy.hasAttribute('id')) copy.removeAttribute('id');
+                Array.prototype.forEach.call(copy.querySelectorAll('[id]'), function (child) {child.removeAttribute('id');});
+              }
+              title.appendChild(copy);
+            });
+          } else title.textContent = 'Record ' + (i + 1);
+          head.appendChild(title);
+          article.appendChild(head);
+          var dl = document.createElement('dl');
+          dl.className = 'atlas-ref-record-fields';
+          cells.forEach(function (cell, c) {
+            if (c >= headers.length || c === 0 || (numberHeader && c === 1)) return;
+            if (!cell.textContent.trim()) return;
+            var entry = document.createElement('div');
+            entry.className = 'atlas-ref-record-field';
+            if (cell.textContent.trim().length > 130) entry.classList.add('is-long');
+            var dt = document.createElement('dt'); dt.textContent = headers[c] || ('Column ' + (c + 1));
+            var dd = document.createElement('dd');
+            Array.prototype.forEach.call(cell.childNodes, function (node) {
+              var copy = node.cloneNode(true);
+              if (copy.nodeType === 1) {
+                if (copy.hasAttribute('id')) copy.removeAttribute('id');
+                Array.prototype.forEach.call(copy.querySelectorAll('[id]'), function (child) {child.removeAttribute('id');});
+              }
+              dd.appendChild(copy);
+            });
+            entry.appendChild(dt); entry.appendChild(dd); dl.appendChild(entry);
+          });
+          article.appendChild(dl);
+          records.appendChild(article);
+          if (!cards) cards = [];
+          cards.push({tr:tr, article:article});
+        });
+        frame.appendChild(records);
+        function syncHidden() {
+          cards.forEach(function (pair) {
+            pair.article.hidden = pair.tr.hidden || pair.tr.style.display === 'none';
+          });
+        }
+        syncHidden();
+        if (cards.some(function (pair) {return pair.tr.hasAttribute('data-status');})) {
+          var observer = new MutationObserver(syncHidden);
+          observer.observe(table, {attributes:true, subtree:true, attributeFilter:['hidden','style']});
+          frame._refObserver = observer;
+        }
+      }
+      function layout() {
+        if (wrap.hidden) return;
+        var rem = parseFloat(window.getComputedStyle(document.documentElement).fontSize) || 16;
+        var available = Math.max(0, wrap.clientWidth - 4);
+        var widths = specs.map(function (spec) {return spec[0] * rem;});
+        var minimum = widths.reduce(function (sum,x) {return sum + x;},0);
+        var spare = Math.max(0, available - minimum);
+        var weightSum = specs.reduce(function (sum,spec) {return sum + spec[1];},0);
+        if (weightSum > 0 && spare) widths.forEach(function (width,j) {widths[j] += spare * specs[j][1] / weightSum;});
+        var total = Math.max(minimum, available);
+        Array.prototype.forEach.call(colgroup.children, function (col,j) {col.style.width = Math.ceil(widths[j]) + 'px';});
+        table.style.setProperty('width', Math.ceil(total) + 'px', 'important');
+        var overflow = total > available + 6;
+        frame.classList.toggle('has-horizontal-overflow', overflow);
+      }
+      frame._refLayout = layout;
+      function findDeepLink() {
+        if (!window.location.hash || !cards) return;
+        var hash = decodeURIComponent(window.location.hash.slice(1));
+        var match = cards.filter(function (pair) {return pair.tr.id === hash && !pair.article.hidden;})[0];
+        if (match && frame.classList.contains('is-record-mode')) {
+          requestAnimationFrame(function () {match.article.scrollIntoView({block:'start'});});
+        }
+      }
+      window.addEventListener('hashchange', findDeepLink);
+      function setMode(recordMode) {
+        if (focused) closeWide();
+        if (recordMode) buildRecords();
+        wrap.hidden = recordMode;
+        if (records) records.hidden = !recordMode;
+        frame.classList.toggle('is-record-mode', recordMode);
+        asRecords.setAttribute('aria-pressed', String(recordMode));
+        asTable.setAttribute('aria-pressed', String(!recordMode));
+        if (!recordMode) requestAnimationFrame(layout);
+        else findDeepLink();
+      }
+      asRecords.addEventListener('click', function () {setMode(true);});
+      asTable.addEventListener('click', function () {setMode(false);});
+      wide.addEventListener('click', function () {
+        if (focused === frame) {closeWide();return;}
+        if (focused) closeWide();
+        if (wrap.hidden) setMode(false);
+        focused = frame;
+        lastFocus = wide;
+        frame.classList.add('is-wide');
+        document.body.classList.add('atlas-ref-wide-open');
+        wide.textContent = 'Close wide view';
+        requestAnimationFrame(layout);
+        wide.focus();
+      });
+      var lenMax = 0;
+      rows.slice(0, 25).forEach(function (tr) {
+        Array.prototype.forEach.call(tr.children, function (td) {
+          lenMax = Math.max(lenMax, (td.textContent || '').trim().length);
+        });
+      });
+      var defaultRecords = (headers.length >= 5 && lenMax > 150) || (headers.length === 4 && lenMax > 450);
+      setMode(defaultRecords);
+      if (window.ResizeObserver) new ResizeObserver(layout).observe(wrap);
+      window.addEventListener('resize', layout);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', ready, {once:true});
+  else ready();
+})();
+
+
+/* PFM-DIAGRAM-CATALOG-V1: use the existing chapter-width left rail on diagram pages. */
+(function () {
+  'use strict';
+  var nav = document.querySelector('.atlas-diagram-catalog-float');
+  if (!nav) return;
+  var toggle = nav.querySelector('.atlas-chapter-catalog-toggle');
+  var links = nav.querySelector('.atlas-chapter-catalog-list');
+  var query = nav.querySelector('.atlas-diagram-catalog-search');
+  var phases = Array.prototype.slice.call(nav.querySelectorAll('.atlas-diagram-phase'));
+  var chapters = Array.prototype.slice.call(nav.querySelectorAll('.atlas-diagram-chapter'));
+  // Remember initial expansion states so a search can restore the normal outline.
+  function close() {
+    nav.classList.remove('is-open');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+  }
+  if (toggle) toggle.addEventListener('click', function () {
+    var expanded = !nav.classList.contains('is-open');
+    nav.classList.toggle('is-open', expanded);
+    toggle.setAttribute('aria-expanded', String(expanded));
+  });
+  if (links) links.addEventListener('click', function (event) {
+    if (event.target.closest('a')) close();
+  });
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') close();
+  });
+  document.addEventListener('click', function (event) {
+    if (!nav.contains(event.target)) close();
+  });
+  if (query) {
+    var wasOpen = null;
+    query.addEventListener('input', function () {
+      var needle = query.value.trim().toLocaleLowerCase();
+      if (needle && !wasOpen) wasOpen = new Map(phases.concat(chapters).map(function (d) {return [d, d.open];}));
+      nav.classList.toggle('is-filtering', !!needle);
+      chapters.forEach(function (chapter) {
+        var found = 0;
+        chapter.querySelectorAll('.atlas-diagram-catalog-link').forEach(function (a) {
+          var ok = !needle || (a.textContent + ' ' + a.title).toLocaleLowerCase().indexOf(needle) !== -1;
+          a.hidden = !ok;
+          if (ok) found += 1;
+        });
+        chapter.hidden = Boolean(needle) && !found;
+        if (needle && found) chapter.open = true;
+      });
+      phases.forEach(function (phase) {
+        var has = Array.prototype.some.call(phase.querySelectorAll('.atlas-diagram-chapter'), function (c) {
+          return !c.hidden;
+        });
+        phase.hidden = Boolean(needle) && !has;
+        if (needle && has) phase.open = true;
+      });
+      if (!needle && wasOpen) {
+        wasOpen.forEach(function (open, d) {d.open = open;});
+        wasOpen = null;
+      }
+    });
+  }
+  // Bring the active diagram into view without moving the article itself.
+  var current = nav.querySelector('.atlas-diagram-catalog-link[aria-current="page"]');
+  if (current && links) requestAnimationFrame(function () {
+    links.scrollTop = Math.max(0, current.offsetTop - links.offsetTop - links.clientHeight / 3);
+  });
+})();

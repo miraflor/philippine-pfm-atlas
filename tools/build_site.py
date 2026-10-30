@@ -1131,6 +1131,64 @@ def build_reference_index():
     write_page(url, frame(url, "The reference files", body, section="reference/index.html"))
 
 
+# Generated from the authoritative diagram_index.csv: no hand-maintained diagram list.
+def diagram_catalogue_nav(current_id=None):
+    """Left-hand diagram navigator; phases and chapter groups follow atlas order."""
+    phases = [
+        ("bp", "Big picture", lambda c: c == "BP"),
+        ("p", "Preparation", lambda c: c.startswith("P")),
+        ("l", "Legislation", lambda c: c.startswith("L")),
+        ("e", "Execution", lambda c: c.startswith("E")),
+        ("a", "Accountability", lambda c: c.startswith("A")),
+        ("shared", "Shared systems", lambda c: c in ("IS", "UACS")),
+    ]
+    active_chapter = DIAG[current_id]["chapter"] if current_id else None
+    parts = [
+        '<nav class="atlas-chapter-catalog-float atlas-diagram-catalog-float" aria-label="All diagrams">',
+        '<div class="atlas-chapter-catalog-head">ALL DIAGRAMS</div>',
+        '<button class="atlas-chapter-catalog-toggle" type="button" aria-expanded="false" '
+        'aria-controls="atlas-diagram-nav-list">Diagrams%s</button>' %
+        (' (' + esc(current_id) + ')' if current_id else ''),
+        '<div class="atlas-chapter-catalog-list" id="atlas-diagram-nav-list">',
+        '<div class="atlas-diagram-catalog-tools"><a href="index.html"%s>All diagrams index</a>'
+        '<input type="search" class="atlas-diagram-catalog-search" placeholder="Find diagram or code" '
+        'aria-label="Filter diagram navigation"></div>' %
+        (' aria-current="page"' if current_id is None else ''),
+    ]
+    for phase_id, phase_name, matches in phases:
+        members = [d for d in DIAGRAMS if matches(d["chapter"])]
+        if not members:
+            continue
+        this_phase = bool(active_chapter and matches(active_chapter))
+        # On the index, open Big picture initially; on detail pages, open current phase.
+        phase_open = this_phase or (current_id is None and phase_id == "bp")
+        parts.append('<details class="atlas-diagram-phase"%s>' % (' open' if phase_open else ''))
+        parts.append('<summary>%s <span class="atlas-diagram-count">%d</span></summary>' % (esc(phase_name), len(members)))
+        seen = []
+        for d in members:
+            if d['chapter'] not in seen: seen.append(d['chapter'])
+        for chapter in seen:
+            diagrams = [d for d in members if d['chapter'] == chapter]
+            chapter_label_text = ('Big picture' if chapter == 'BP' else chapter_title(chapter))
+            is_current_chapter = current_id is not None and chapter == active_chapter
+            # On index only, the first group has its diagrams shown immediately.
+            chapter_open = is_current_chapter or (current_id is None and phase_id == 'bp' and chapter == 'BP')
+            parts.append('<details class="atlas-diagram-chapter"%s>' % (' open' if chapter_open else ''))
+            parts.append('<summary><span class="atlas-diagram-chapter-code">%s</span>'
+                         '<span class="atlas-diagram-chapter-name" title="%s">%s</span>'
+                         '</summary>' % (esc(chapter), esc(chapter_label_text), esc(chapter_label_text)))
+            for d in diagrams:
+                chosen = d['id'] == current_id
+                parts.append('<a class="atlas-diagram-catalog-link" href="%s.html" '
+                             'title="%s"%s><span class="atlas-chapter-catalog-id">%s</span>'
+                             '<span class="atlas-diagram-catalog-title">%s</span></a>' %
+                             (esc(d['id']), esc(d['title']),
+                              ' aria-current="page"' if chosen else '', esc(d['id']), esc(d['title'])))
+            parts.append('</details>')
+        parts.append('</details>')
+    parts.append('</div></nav>')
+    return ''.join(parts)
+
 def build_diagram_index():
     url = "diagrams/index.html"
     groups = []
@@ -1152,7 +1210,9 @@ def build_diagram_index():
             '<p><label for="diagram-filter">Filter by words: </label><input id="diagram-filter" type="search" '
             'placeholder="for example: voucher, BTMS, E4"> <span id="diagram-count" class="muted" role="status"></span></p>%s'
             % (len(DIAGRAMS), n_mmd, len(DIAGRAMS) - n_mmd, "".join(groups)))
-    write_page(url, frame(url, "The diagrams", body, section="diagrams/index.html"))
+    body = diagram_catalogue_nav() + body
+    write_page(url, frame(url, "The diagrams", body, section="diagrams/index.html",
+                               body_class="atlas-dual-chapter-nav atlas-dual-diagram-nav"))
 
 
 def diagram_bullets(did):
@@ -1209,8 +1269,10 @@ def build_diagram_pages():
                 '%s<h2 id="code">Code</h2>%s<pre id="code-%s"><code>%s</code></pre>%s'
                 % (did, esc(d["form"]), esc(d["title"]), esc(question), " · ".join(where), str(figure), str(about),
                    steps, code_links, did, esc(code), nav))
+        body = diagram_catalogue_nav(did) + body
         write_page(url, frame(url, "Diagram %s: %s" % (did, d["title"]), body, description=d["question"],
-                              section="diagrams/index.html"))
+                              section="diagrams/index.html",
+                              body_class="atlas-dual-chapter-nav atlas-dual-diagram-nav"))
         SEARCH.append({"t": "Diagram %s: %s" % (did, d["title"]), "p": "Diagrams", "u": url,
                        "x": re.sub(r"\s+", " ", "Question: %s %s" % (d["question"], about.get_text(" ", strip=True)))})
 
